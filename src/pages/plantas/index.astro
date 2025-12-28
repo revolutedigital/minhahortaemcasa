@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+export const prerender = true;
+
+const allPlantas = await getCollection('plantas', ({ data }) => !data.draft);
+const sortedPlantas = allPlantas.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Guias de Plantas e Temperos"
+  description="Aprenda a cultivar ervas, temperos e vegetais em casa. Guias especificos para cada tipo de planta."
+>
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <nav class="text-sm text-gray-500 mb-4">
+          <a href="/" class="hover:text-primary-600">Inicio</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-900">Plantas</span>
+        </nav>
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Plantas e Temperos</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Guias detalhados para cultivar cada tipo de erva e tempero em casa.
+        </p>
+      </div>
+
+      <!-- Articles Grid -->
+      {sortedPlantas.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedPlantas.map((planta) => (
+            <ArticleCard
+              title={planta.data.title}
+              description={planta.data.description}
+              href={`/plantas/${planta.slug}`}
+              image={planta.data.image}
+              category="Planta"
+              readTime={planta.data.readTime}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16 bg-gray-50 rounded-xl">
+          <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+          </svg>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Guias de plantas em breve</h3>
+          <p class="text-gray-600">Estamos preparando guias incriveis para voce!</p>
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>

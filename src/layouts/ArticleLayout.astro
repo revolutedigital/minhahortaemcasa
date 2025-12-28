@@ -1,0 +1,144 @@
+---
+import Layout from './Layout.astro';
+import CTABox from '../components/CTABox.astro';
+import LeadMagnetPopup from '../components/LeadMagnetPopup.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    pubDate: string;
+    updatedDate?: string;
+    image?: string;
+    category?: string;
+    tags?: string[];
+    readTime?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+
+const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString('pt-BR', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": frontmatter.title,
+  "description": frontmatter.description,
+  "image": frontmatter.image,
+  "datePublished": frontmatter.pubDate,
+  "dateModified": frontmatter.updatedDate || frontmatter.pubDate,
+  "author": {
+    "@type": "Organization",
+    "name": "Horta em Casa"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Horta em Casa",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/logo.png"
+    }
+  }
+};
+---
+
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  image={frontmatter.image}
+  type="article"
+  publishedTime={frontmatter.pubDate}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-gray-500 mb-8">
+      <ol class="flex items-center gap-2">
+        <li><a href="/" class="hover:text-primary-600">Inicio</a></li>
+        <li>/</li>
+        {frontmatter.category && (
+          <>
+            <li><a href={`/${frontmatter.category.toLowerCase()}`} class="hover:text-primary-600 capitalize">{frontmatter.category}</a></li>
+            <li>/</li>
+          </>
+        )}
+        <li class="text-gray-900 truncate">{frontmatter.title}</li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <header class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        {frontmatter.category && (
+          <span class="px-3 py-1 bg-primary-50 text-primary-700 text-sm font-medium rounded-full">
+            {frontmatter.category}
+          </span>
+        )}
+        {frontmatter.readTime && (
+          <span class="text-gray-500 text-sm">{frontmatter.readTime} de leitura</span>
+        )}
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        {frontmatter.title}
+      </h1>
+      <p class="text-xl text-gray-600 mb-6">
+        {frontmatter.description}
+      </p>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <time datetime={frontmatter.pubDate}>{formattedDate}</time>
+        {frontmatter.updatedDate && (
+          <span>
+            (Atualizado em {new Date(frontmatter.updatedDate).toLocaleDateString('pt-BR')})
+          </span>
+        )}
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    {frontmatter.image && (
+      <img
+        src={frontmatter.image}
+        alt={frontmatter.title}
+        class="w-full aspect-video object-cover rounded-xl mb-8"
+      />
+    )}
+
+    <!-- Content -->
+    <div class="prose prose-lg max-w-none">
+      <slot />
+    </div>
+
+    <!-- CTA Box -->
+    <div class="mt-12">
+      <CTABox
+        title="Baixe o Checklist Gratuito"
+        description="7 Erros que Matam sua Horta (e Como Evitar) - Salve suas plantas hoje!"
+        buttonText="Baixar Checklist"
+        buttonHref="#newsletter"
+        variant="highlight"
+        icon="download"
+      />
+    </div>
+
+    <!-- Tags -->
+    {frontmatter.tags && frontmatter.tags.length > 0 && (
+      <div class="mt-8 pt-8 border-t border-gray-100">
+        <div class="flex flex-wrap gap-2">
+          {frontmatter.tags.map((tag) => (
+            <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    )}
+  </article>
+
+  <LeadMagnetPopup />
+</Layout>

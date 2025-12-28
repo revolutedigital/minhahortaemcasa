@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+export const prerender = true;
+
+const allProblemas = await getCollection('problemas', ({ data }) => !data.draft);
+const sortedProblemas = allProblemas.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Problemas Comuns em Hortas"
+  description="Solucoes rapidas para pragas, doencas, folhas amarelas e outros problemas comuns em hortas caseiras."
+>
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <nav class="text-sm text-gray-500 mb-4">
+          <a href="/" class="hover:text-primary-600">Inicio</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-900">Problemas</span>
+        </nav>
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Solucao de Problemas</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Diagnostico e solucoes rapidas para os problemas mais comuns em hortas caseiras.
+        </p>
+      </div>
+
+      <!-- Articles Grid -->
+      {sortedProblemas.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedProblemas.map((problema) => (
+            <ArticleCard
+              title={problema.data.title}
+              description={problema.data.description}
+              href={`/problemas/${problema.slug}`}
+              image={problema.data.image}
+              category="Problema"
+              readTime={problema.data.readTime}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16 bg-gray-50 rounded-xl">
+          <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Solucoes em breve</h3>
+          <p class="text-gray-600">Estamos preparando solucoes para os problemas mais comuns!</p>
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>

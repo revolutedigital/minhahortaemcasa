@@ -1,0 +1,58 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonHref: string;
+  variant?: 'primary' | 'secondary' | 'highlight';
+  icon?: 'download' | 'cart' | 'email';
+}
+
+const { title, description, buttonText, buttonHref, variant = 'primary', icon = 'download' } = Astro.props;
+
+const variantClasses = {
+  primary: 'bg-primary-50 border-primary-200',
+  secondary: 'bg-gray-50 border-gray-200',
+  highlight: 'bg-gradient-to-r from-primary-600 to-primary-700 border-primary-700 text-white',
+};
+
+const buttonVariantClasses = {
+  primary: 'bg-primary-600 text-white hover:bg-primary-700',
+  secondary: 'bg-gray-900 text-white hover:bg-gray-800',
+  highlight: 'bg-white text-primary-700 hover:bg-gray-100',
+};
+
+const textClasses = {
+  primary: 'text-gray-900',
+  secondary: 'text-gray-900',
+  highlight: 'text-white',
+};
+
+const descClasses = {
+  primary: 'text-gray-600',
+  secondary: 'text-gray-600',
+  highlight: 'text-primary-100',
+};
+
+const icons = {
+  download: `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
+  cart: `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>`,
+  email: `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+};
+---
+
+<div class={`rounded-xl border p-6 ${variantClasses[variant]}`}>
+  <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+    <div class="flex-1">
+      <h4 class={`font-bold text-lg mb-1 ${textClasses[variant]}`}>{title}</h4>
+      <p class={`text-sm ${descClasses[variant]}`}>{description}</p>
+    </div>
+    <a
+      href={buttonHref}
+      class={`inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium transition-colors ${buttonVariantClasses[variant]}`}
+    >
+      <Fragment set:html={icons[icon]} />
+      {buttonText}
+    </a>
+  </div>
+</div>

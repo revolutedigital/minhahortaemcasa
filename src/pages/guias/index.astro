@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+export const prerender = true;
+
+const allGuias = await getCollection('guias', ({ data }) => !data.draft);
+const sortedGuias = allGuias.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Guias de Horta em Casa"
+  description="Guias completos e praticos para montar e manter sua horta em apartamento, varanda ou qualquer espaco."
+>
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <nav class="text-sm text-gray-500 mb-4">
+          <a href="/" class="hover:text-primary-600">Inicio</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-900">Guias</span>
+        </nav>
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Guias de Cultivo</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Tutoriais completos e passo a passo para montar e manter sua horta em casa com sucesso.
+        </p>
+      </div>
+
+      <!-- Articles Grid -->
+      {sortedGuias.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedGuias.map((guia) => (
+            <ArticleCard
+              title={guia.data.title}
+              description={guia.data.description}
+              href={`/guias/${guia.slug}`}
+              image={guia.data.image}
+              category="Guia"
+              readTime={guia.data.readTime}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16 bg-gray-50 rounded-xl">
+          <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Guias em breve</h3>
+          <p class="text-gray-600">Estamos preparando guias incriveis para voce!</p>
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>

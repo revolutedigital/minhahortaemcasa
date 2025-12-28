@@ -1,0 +1,354 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTABox from '../../components/CTABox.astro';
+
+export const prerender = true;
+
+const features = [
+  {
+    title: "Guia Dia a Dia",
+    description: "7 dias de instrucoes detalhadas, do zero a horta funcionando",
+    icon: "calendar"
+  },
+  {
+    title: "Lista de Materiais",
+    description: "Tudo que voce precisa comprar, com precos e onde encontrar",
+    icon: "list"
+  },
+  {
+    title: "5 Plantas Faceis",
+    description: "Guias completos das plantas ideais para iniciantes",
+    icon: "leaf"
+  },
+  {
+    title: "Troubleshooting",
+    description: "20+ problemas comuns e como resolver cada um",
+    icon: "tool"
+  },
+  {
+    title: "Checklists",
+    description: "Listas imprimiveis para nunca esquecer nada",
+    icon: "check"
+  },
+  {
+    title: "Bonus: Receitas",
+    description: "5 receitas deliciosas para usar suas ervas frescas",
+    icon: "book"
+  }
+];
+
+const testimonials = [
+  {
+    text: "Nunca tinha plantado nada na vida. Com esse guia, meu manjericao esta lindo em menos de 1 mes!",
+    author: "Maria S.",
+    location: "Sao Paulo, SP"
+  },
+  {
+    text: "Finalmente parei de matar plantas. O passo a passo e tao claro que ate meu filho conseguiu acompanhar.",
+    author: "Roberto L.",
+    location: "Rio de Janeiro, RJ"
+  },
+  {
+    text: "Melhor investimento que fiz. Ja economizei muito mais que os R$19 em temperos frescos!",
+    author: "Ana C.",
+    location: "Belo Horizonte, MG"
+  }
+];
+
+const faqs = [
+  {
+    question: "Preciso ter experiencia com plantas?",
+    answer: "Nao! O guia foi feito especialmente para quem nunca plantou nada. Tudo e explicado do zero."
+  },
+  {
+    question: "Funciona em apartamento pequeno?",
+    answer: "Sim! O guia ensina a aproveitar qualquer espaco: janela, varanda ou ate dentro de casa."
+  },
+  {
+    question: "Quanto preciso investir em materiais?",
+    answer: "O investimento inicial e de R$ 60-100 em materiais basicos. O guia inclui lista completa com precos."
+  },
+  {
+    question: "Em quanto tempo vou colher?",
+    answer: "Depende da planta. Algumas ervas como hortela e manjericao podem ser colhidas em 30-45 dias."
+  },
+  {
+    question: "Tem garantia?",
+    answer: "Sim! Se nao gostar, devolvemos seu dinheiro em ate 7 dias, sem perguntas."
+  }
+];
+---
+
+<Layout
+  title="Kit Iniciante: Sua Primeira Horta em 7 Dias"
+  description="Guia passo a passo completo para montar sua horta do zero. Dia a dia do que fazer, lista de materiais, 5 plantas faceis e troubleshooting."
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block px-4 py-1 bg-white/20 rounded-full text-sm font-medium mb-6">
+            Mais de 500 hortas criadas
+          </span>
+          <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+            Sua Primeira Horta em 7 Dias
+          </h1>
+          <p class="text-xl text-primary-100 mb-8">
+            O guia passo a passo para quem nunca plantou nada. Sem complicacao, sem termos tecnicos. Apenas instrucoes claras que funcionam.
+          </p>
+          <div class="flex items-baseline gap-4 mb-8">
+            <span class="text-lg text-primary-200 line-through">R$ 47</span>
+            <span class="text-5xl font-bold">R$ 19</span>
+            <span class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold">
+              60% OFF
+            </span>
+          </div>
+          <a
+            href="#comprar"
+            class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-700 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
+          >
+            Quero Comecar Minha Horta
+            <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <p class="text-primary-200 text-sm mt-4">
+            Garantia de 7 dias. Se nao gostar, devolvemos seu dinheiro.
+          </p>
+        </div>
+        <div class="relative">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <h3 class="font-bold text-xl mb-6">O que esta incluso:</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Guia completo dia a dia (7 dias)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Lista de materiais com precos</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Guias das 5 plantas mais faceis</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Troubleshooting: 20+ problemas</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Checklists imprimiveis</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>BONUS: 5 receitas com ervas</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Voce ja passou por isso?
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-6 text-left">
+        <div class="bg-white p-6 rounded-xl border border-gray-100">
+          <div class="text-red-500 mb-3">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <p class="text-gray-700">"Comprei uma planta linda e em 2 semanas ela morreu. Nao sei o que fiz de errado."</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-100">
+          <div class="text-red-500 mb-3">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <p class="text-gray-700">"Quero ter uma horta mas nao sei por onde comecar. Tem tanta informacao na internet..."</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-100">
+          <div class="text-red-500 mb-3">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <p class="text-gray-700">"Moro em apartamento pequeno e acho que nao da para ter uma horta aqui."</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-gray-100">
+          <div class="text-red-500 mb-3">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <p class="text-gray-700">"Gasto dinheiro com temperos que estragam na geladeira antes de usar."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Tudo que voce precisa em um so lugar
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Sem videos longos, sem informacao desnecessaria. Apenas o essencial para voce comecar.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map((feature) => (
+          <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-gray-900 mb-2">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          O que estao dizendo
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial) => (
+          <div class="bg-white p-6 rounded-xl border border-gray-100">
+            <div class="flex mb-4">
+              {[1,2,3,4,5].map(() => (
+                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+            <div class="text-sm">
+              <p class="font-semibold text-gray-900">{testimonial.author}</p>
+              <p class="text-gray-500">{testimonial.location}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Perguntas Frequentes
+        </h2>
+      </div>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="bg-white p-6 rounded-xl border border-gray-100">
+            <h3 class="font-bold text-gray-900 mb-2">{faq.question}</h3>
+            <p class="text-gray-600">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="comprar" class="py-16 bg-primary-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-6">
+        Comece sua horta hoje
+      </h2>
+      <p class="text-xl text-primary-100 mb-8">
+        Por menos que um almoco voce tem acesso ao guia completo.
+      </p>
+      <div class="bg-white rounded-2xl p-8 max-w-md mx-auto">
+        <div class="flex items-baseline justify-center gap-4 mb-6">
+          <span class="text-lg text-gray-400 line-through">R$ 47</span>
+          <span class="text-5xl font-bold text-primary-600">R$ 19</span>
+        </div>
+        <ul class="text-left space-y-3 mb-8">
+          <li class="flex items-center gap-2 text-gray-700">
+            <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Acesso imediato ao PDF
+          </li>
+          <li class="flex items-center gap-2 text-gray-700">
+            <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Checklists imprimiveis
+          </li>
+          <li class="flex items-center gap-2 text-gray-700">
+            <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Bonus: Receitas com ervas
+          </li>
+          <li class="flex items-center gap-2 text-gray-700">
+            <svg class="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Garantia de 7 dias
+          </li>
+        </ul>
+        <a
+          href="https://kiwify.com.br/PLACEHOLDER"
+          class="block w-full py-4 bg-primary-600 text-white rounded-lg font-bold text-lg hover:bg-primary-700 transition-colors"
+        >
+          Comprar Agora
+        </a>
+        <p class="text-gray-500 text-sm mt-4">
+          Pagamento seguro via Kiwify. Cartao, PIX ou boleto.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantee -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">
+        Garantia de 7 Dias
+      </h2>
+      <p class="text-gray-600 max-w-xl mx-auto">
+        Se por qualquer motivo voce nao gostar do material, basta enviar um email em ate 7 dias que devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.
+      </p>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,14 @@
+[build]
+builder = "nixpacks"
+buildCommand = "npm run build"
+
+[deploy]
+startCommand = "node ./dist/server/entry.mjs"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[variables]
+HOST = "0.0.0.0"
+PORT = "3000"
