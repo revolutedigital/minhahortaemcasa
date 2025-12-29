@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import { getCollection } from 'astro:content';
+import ContentIllustration from '../../components/illustrations/ContentIllustration.astro';
+import Mascote from '../../components/illustrations/Mascote.astro';
 
 export const prerender = true;
 
@@ -13,44 +15,116 @@ const sortedGuias = allGuias.sort((a, b) => b.data.pubDate.valueOf() - a.data.pu
   title="Guias de Horta em Casa"
   description="Guias completos e praticos para montar e manter sua horta em apartamento, varanda ou qualquer espaco."
 >
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="text-center mb-12">
-        <nav class="text-sm text-gray-500 mb-4">
-          <a href="/" class="hover:text-primary-600">Inicio</a>
-          <span class="mx-2">/</span>
-          <span class="text-gray-900">Guias</span>
-        </nav>
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">Guias de Cultivo</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Tutoriais completos e passo a passo para montar e manter sua horta em casa com sucesso.
-        </p>
-      </div>
+  <!-- Hero Section -->
+  <section class="relative py-20 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-leaf-50"></div>
+    <div class="absolute top-20 left-10 w-72 h-72 bg-sky-200/30 rounded-full blur-3xl blob-animate"></div>
+    <div class="absolute bottom-10 right-10 w-64 h-64 bg-leaf-200/20 rounded-full blur-3xl blob-animate" style="animation-delay: -3s;"></div>
 
-      <!-- Articles Grid -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <!-- Content -->
+        <div class="flex-1 text-center lg:text-left">
+          <nav class="text-sm text-gray-500 mb-4">
+            <a href="/" class="hover:text-leaf-600 transition-colors">Inicio</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 font-medium">Guias</span>
+          </nav>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            Guias de <span class="text-gradient">Cultivo</span>
+          </h1>
+
+          <p class="text-xl text-gray-600 max-w-xl mb-8">
+            Tutoriais completos e passo a passo para montar e manter sua horta em casa com sucesso.
+          </p>
+
+          <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+            <span class="badge badge-leaf">Passo a passo</span>
+            <span class="badge badge-sun">Ilustrado</span>
+            <span class="badge badge-water">Para iniciantes</span>
+          </div>
+        </div>
+
+        <!-- Mascote -->
+        <div class="relative">
+          <Mascote mood="thinking" size="xl" />
+
+          <!-- Floating icons -->
+          <div class="absolute -top-2 -right-6 animate-float bg-white rounded-2xl shadow-lg p-3">
+            <svg class="w-8 h-8 text-leaf-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+
+          <div class="absolute -bottom-4 -left-4 animate-float bg-white rounded-2xl shadow-lg p-3" style="animation-delay: -2s;">
+            <svg class="w-8 h-8 text-sun-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guias Grid -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       {sortedGuias.length > 0 ? (
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sortedGuias.map((guia) => (
-            <ArticleCard
-              title={guia.data.title}
-              description={guia.data.description}
+          {sortedGuias.map((guia, index) => (
+            <a
               href={`/guias/${guia.slug}`}
-              slug={guia.slug}
-              category="Guias"
-              readTime={guia.data.readTime}
-            />
+              class={`group bg-white rounded-3xl border border-gray-100 p-6 hover:shadow-xl hover:border-leaf-200 transition-all card-hover scroll-reveal reveal-delay-${Math.min(index + 1, 5)}`}
+            >
+              <div class="w-20 h-20 bg-gradient-to-br from-sky-50 to-blue-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform overflow-hidden">
+                <ContentIllustration slug={guia.slug} category="Guias" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-leaf-700 transition-colors">
+                {guia.data.title.split(':')[0]}
+              </h3>
+              <p class="text-gray-500 mb-4 line-clamp-2">{guia.data.description}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-gray-400">{guia.data.readTime}</span>
+                <span class="flex items-center text-leaf-600 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                  Ver guia
+                  <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </a>
           ))}
         </div>
       ) : (
-        <div class="text-center py-16 bg-gray-50 rounded-xl">
-          <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-          </svg>
+        <div class="text-center py-16 bg-gray-50 rounded-3xl">
+          <Mascote mood="sleeping" size="lg" class="mx-auto mb-4" />
           <h3 class="text-lg font-semibold text-gray-900 mb-2">Guias em breve</h3>
-          <p class="text-gray-600">Estamos preparando guias incriveis para voce!</p>
+          <p class="text-gray-600">O Verdinho esta preparando guias incriveis para voce!</p>
         </div>
       )}
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-leaf-50 to-sky-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+      <div class="flex justify-center mb-6">
+        <Mascote mood="excited" size="lg" />
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+        Nao sabe por onde comecar?
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Faca nosso quiz rapido e descubra qual planta combina com voce!
+      </p>
+      <a href="/quiz" class="btn-primary">
+        Fazer o quiz
+        <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
     </div>
   </section>
 </Layout>
