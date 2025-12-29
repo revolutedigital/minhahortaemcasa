@@ -36,8 +36,8 @@ const sortedGuias = allGuias.sort((a, b) => b.data.pubDate.valueOf() - a.data.pu
               title={guia.data.title}
               description={guia.data.description}
               href={`/guias/${guia.slug}`}
-              image={guia.data.image}
-              category="Guia"
+              slug={guia.slug}
+              category="Guias"
               readTime={guia.data.readTime}
             />
           ))}
