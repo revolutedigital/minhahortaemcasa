@@ -1,18 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Mascote from '../components/illustrations/Mascote.astro';
 ---
 
-<Layout title="Quiz: Descubra Sua Planta Ideal | Horta em Casa" description="Responda 8 perguntas e descubra qual planta é perfeita para você, seu espaço e seu estilo de vida. Recomendação personalizada + guia exclusivo.">
+<Layout title="Quiz: Descubra Sua Planta Ideal | Horta em Casa" description="Responda 12 perguntas e descubra qual planta é perfeita para você, seu espaço e seu estilo de vida. Recomendação personalizada + guia exclusivo.">
 
   <!-- Hero do Quiz -->
-  <section class="relative min-h-[50vh] flex items-center overflow-hidden bg-gradient-to-br from-leaf-50 via-white to-earth-50">
+  <section class="relative min-h-[40vh] flex items-center overflow-hidden bg-gradient-to-br from-leaf-50 via-white to-earth-50">
     <div class="absolute top-20 left-10 w-72 h-72 bg-leaf-200/30 rounded-full blur-3xl"></div>
     <div class="absolute bottom-10 right-10 w-64 h-64 bg-sun-200/30 rounded-full blur-3xl"></div>
 
-    <div class="relative z-10 max-w-4xl mx-auto px-4 py-16 text-center">
+    <div class="relative z-10 max-w-4xl mx-auto px-4 py-12 text-center">
       <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-leaf-200 shadow-sm mb-6">
-        <span class="text-sm font-medium text-gray-700">🌱 Quiz Gratuito • 2 minutos</span>
+        <span class="text-sm font-medium text-gray-700">🌱 Quiz Gratuito • 3 minutos</span>
       </div>
 
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
@@ -20,7 +19,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
       </h1>
 
       <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-        Responda 8 perguntas rápidas e descubra exatamente por onde começar sua horta,
+        Responda 12 perguntas e descubra exatamente por onde começar sua horta,
         baseado no seu espaço, tempo e objetivos.
       </p>
 
@@ -29,13 +28,13 @@ import Mascote from '../components/illustrations/Mascote.astro';
           <svg class="w-5 h-5 text-leaf-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <span>2 minutos</span>
+          <span>3 minutos</span>
         </div>
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5 text-leaf-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <span>8 perguntas</span>
+          <span>12 perguntas</span>
         </div>
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5 text-leaf-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -55,20 +54,29 @@ import Mascote from '../components/illustrations/Mascote.astro';
       <div class="mb-8" id="progress-container">
         <div class="flex justify-between text-sm text-gray-500 mb-2">
           <span>Progresso</span>
-          <span id="progress-text">0 de 8</span>
+          <span id="progress-text">0 de 12</span>
         </div>
         <div class="h-3 bg-gray-100 rounded-full overflow-hidden">
           <div id="progress-bar" class="h-full bg-gradient-to-r from-leaf-500 to-leaf-600 rounded-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+        <!-- Mini steps -->
+        <div class="flex justify-between mt-2 text-xs text-gray-400">
+          <span class="step-label active" data-step="1">Perfil</span>
+          <span class="step-label" data-step="4">Espaço</span>
+          <span class="step-label" data-step="7">Objetivos</span>
+          <span class="step-label" data-step="10">Preferências</span>
         </div>
       </div>
 
       <!-- Quiz Questions -->
       <div id="quiz-container">
 
+        <!-- ============ BLOCO 1: PERFIL (1-3) ============ -->
+
         <!-- Pergunta 1: Experiência -->
         <div class="quiz-question active" data-question="1">
           <div class="text-center mb-8">
-            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 1 de 8</span>
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 1 de 12</span>
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
               Qual é sua experiência com plantas?
             </h2>
@@ -76,7 +84,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
           </div>
 
           <div class="grid gap-4">
-            <button class="quiz-option" data-value="iniciante" data-points="germinacao:2,iniciante:3,temperos:2">
+            <button class="quiz-option" data-value="iniciante" data-points="germinacao:3,iniciante:4,temperos:2">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl">🌱</div>
                 <div class="text-left">
@@ -86,7 +94,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="basico" data-points="pragas:1,propagacao:1,temperos:1">
+            <button class="quiz-option" data-value="basico" data-points="pragas:2,propagacao:1,temperos:2">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">🪴</div>
                 <div class="text-left">
@@ -106,7 +114,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="avancado" data-points="hidroponia:3,calendario:2,cucurbitaceas:2">
+            <button class="quiz-option" data-value="avancado" data-points="hidroponia:3,calendario:2,cucurbitaceas:3">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-2xl">🏡</div>
                 <div class="text-left">
@@ -118,10 +126,118 @@ import Mascote from '../components/illustrations/Mascote.astro';
           </div>
         </div>
 
-        <!-- Pergunta 2: Espaço -->
+        <!-- Pergunta 2: Tentativas Anteriores -->
         <div class="quiz-question" data-question="2">
           <div class="text-center mb-8">
-            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 2 de 8</span>
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 2 de 12</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              O que aconteceu nas tentativas anteriores?
+            </h2>
+            <p class="text-gray-600">Se nunca tentou, escolha a última opção</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="morreram" data-points="pragas:3,iniciante:2,germinacao:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-2xl">💀</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Morreram e não sei por quê</div>
+                  <div class="text-sm text-gray-500">Um dia estavam bem, depois murcharam</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="pragas" data-points="pragas:4,chas:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">🐛</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Pragas acabaram com tudo</div>
+                  <div class="text-sm text-gray-500">Pulgões, lagartas ou doenças</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="germinou" data-points="germinacao:3,propagacao:2">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">🌰</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Sementes não germinaram</div>
+                  <div class="text-sm text-gray-500">Plantei e nada nasceu</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="nunca" data-points="iniciante:3,temperos:2,germinacao:2">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">✨</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">É minha primeira vez</div>
+                  <div class="text-sm text-gray-500">Nunca tentei cultivar nada</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 3: Motivação -->
+        <div class="quiz-question" data-question="3">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 3 de 12</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              O que te motiva a ter uma horta?
+            </h2>
+            <p class="text-gray-600">Qual a principal razão?</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="economia" data-points="saladas:2,temperos:2,iniciante:2">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">💰</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Economizar dinheiro</div>
+                  <div class="text-sm text-gray-500">Gastar menos no supermercado</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="saude" data-points="saladas:3,chas:2,cucurbitaceas:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl">❤️</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Alimentação mais saudável</div>
+                  <div class="text-sm text-gray-500">Sem agrotóxicos, mais frescura</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="terapia" data-points="chas:2,sombra:1,temperos:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl">🧘</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Relaxar e desestressar</div>
+                  <div class="text-sm text-gray-500">Jardinagem como terapia</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="hobby" data-points="hidroponia:2,propagacao:2,cucurbitaceas:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">🎯</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Novo hobby/aprender</div>
+                  <div class="text-sm text-gray-500">Gosto de aprender coisas novas</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- ============ BLOCO 2: ESPAÇO (4-6) ============ -->
+
+        <!-- Pergunta 4: Tipo de Espaço -->
+        <div class="quiz-question" data-question="4">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 4 de 12</span>
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
               Onde você pretende cultivar?
             </h2>
@@ -129,7 +245,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
           </div>
 
           <div class="grid gap-4">
-            <button class="quiz-option" data-value="janela" data-points="sombra:3,temperos:2,chas:2">
+            <button class="quiz-option" data-value="janela" data-points="sombra:3,temperos:3,chas:2">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">🪟</div>
                 <div class="text-left">
@@ -139,7 +255,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="varanda" data-points="vertical:2,saladas:2,temperos:1">
+            <button class="quiz-option" data-value="varanda" data-points="vertical:3,saladas:2,temperos:2">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center text-2xl">🏢</div>
                 <div class="text-left">
@@ -149,7 +265,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="quintal-pequeno" data-points="iniciante:2,cucurbitaceas:1,pragas:1">
+            <button class="quiz-option" data-value="quintal-pequeno" data-points="iniciante:2,cucurbitaceas:2,pragas:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">🏠</div>
                 <div class="text-left">
@@ -159,7 +275,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="quintal-grande" data-points="cucurbitaceas:3,calendario:2,hidroponia:1">
+            <button class="quiz-option" data-value="quintal-grande" data-points="cucurbitaceas:4,calendario:3,hidroponia:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-2xl">🌳</div>
                 <div class="text-left">
@@ -171,18 +287,18 @@ import Mascote from '../components/illustrations/Mascote.astro';
           </div>
         </div>
 
-        <!-- Pergunta 3: Luz Solar -->
-        <div class="quiz-question" data-question="3">
+        <!-- Pergunta 5: Luz Solar -->
+        <div class="quiz-question" data-question="5">
           <div class="text-center mb-8">
-            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 3 de 8</span>
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 5 de 12</span>
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Quanto sol seu espaço recebe?
+              Quanto sol seu espaço recebe por dia?
             </h2>
             <p class="text-gray-600">A luz é o fator mais importante para o sucesso</p>
           </div>
 
           <div class="grid gap-4">
-            <button class="quiz-option" data-value="pouco" data-points="sombra:3,chas:1,temperos:1">
+            <button class="quiz-option" data-value="pouco" data-points="sombra:4,chas:2,temperos:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-2xl">🌥️</div>
                 <div class="text-left">
@@ -192,7 +308,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="medio" data-points="temperos:2,saladas:2,sombra:1">
+            <button class="quiz-option" data-value="medio" data-points="temperos:3,saladas:2,sombra:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">⛅</div>
                 <div class="text-left">
@@ -202,7 +318,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="muito" data-points="cucurbitaceas:2,hidroponia:2,calendario:1">
+            <button class="quiz-option" data-value="muito" data-points="cucurbitaceas:3,hidroponia:2,calendario:2">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">☀️</div>
                 <div class="text-left">
@@ -212,7 +328,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="nao-sei" data-points="sombra:1,iniciante:1,germinacao:1">
+            <button class="quiz-option" data-value="nao-sei" data-points="sombra:2,iniciante:1,germinacao:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl">🤔</div>
                 <div class="text-left">
@@ -224,28 +340,189 @@ import Mascote from '../components/illustrations/Mascote.astro';
           </div>
         </div>
 
-        <!-- Pergunta 4: Tempo Disponível -->
-        <div class="quiz-question" data-question="4">
+        <!-- Pergunta 6: Condições Especiais -->
+        <div class="quiz-question" data-question="6">
           <div class="text-center mb-8">
-            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 4 de 8</span>
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 6 de 12</span>
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Quanto tempo você pode dedicar?
+              Seu espaço tem alguma dessas condições?
+            </h2>
+            <p class="text-gray-600">Isso afeta quais plantas vão se adaptar melhor</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="vento" data-points="vertical:2,temperos:1,sombra:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">💨</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Muito vento</div>
+                  <div class="text-sm text-gray-500">Andar alto ou área aberta</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="quente" data-points="hidroponia:2,cucurbitaceas:2,calendario:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl">🌡️</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Muito calor</div>
+                  <div class="text-sm text-gray-500">Região quente ou varanda ao sol</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="umido" data-points="pragas:2,chas:1,sombra:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center text-2xl">💧</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Muito úmido</div>
+                  <div class="text-sm text-gray-500">Região úmida ou pouca ventilação</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="nenhuma" data-points="temperos:1,saladas:1,iniciante:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">✅</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Nenhuma dessas</div>
+                  <div class="text-sm text-gray-500">Condições normais</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- ============ BLOCO 3: OBJETIVOS (7-9) ============ -->
+
+        <!-- Pergunta 7: O que quer plantar -->
+        <div class="quiz-question" data-question="7">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 7 de 12</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              O que você mais quer cultivar?
+            </h2>
+            <p class="text-gray-600">Qual categoria te atrai mais?</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="temperos" data-points="temperos:4,germinacao:1,iniciante:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">🌿</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Temperos e ervas</div>
+                  <div class="text-sm text-gray-500">Manjericão, salsinha, cebolinha, alecrim...</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="saladas" data-points="saladas:4,calendario:1,hidroponia:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-2xl">🥗</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Saladas e folhosas</div>
+                  <div class="text-sm text-gray-500">Alface, rúcula, espinafre, couve...</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="legumes" data-points="cucurbitaceas:4,calendario:2,pragas:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">🍅</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Legumes e frutos</div>
+                  <div class="text-sm text-gray-500">Tomate, pimentão, pepino, abobrinha...</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="chas" data-points="chas:4,sombra:1,propagacao:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl">🍵</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Chás e medicinais</div>
+                  <div class="text-sm text-gray-500">Camomila, hortelã, erva-cidreira...</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 8: Objetivo de Produção -->
+        <div class="quiz-question" data-question="8">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 8 de 12</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Qual seu objetivo de produção?
+            </h2>
+            <p class="text-gray-600">Quanto você quer produzir?</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="tempero" data-points="temperos:3,iniciante:2,sombra:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">🌱</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Só um temperinho</div>
+                  <div class="text-sm text-gray-500">Uns vasinhos pra cozinha</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="complementar" data-points="saladas:2,temperos:2,vertical:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">🥬</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Complementar a compra</div>
+                  <div class="text-sm text-gray-500">Reduzir idas ao mercado</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="autossuficiente" data-points="calendario:3,cucurbitaceas:2,hidroponia:2">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">🏡</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Ser mais autossuficiente</div>
+                  <div class="text-sm text-gray-500">Produzir boa parte do que consumo</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="vender" data-points="hidroponia:3,calendario:3,propagacao:2">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">💼</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Talvez vender um dia</div>
+                  <div class="text-sm text-gray-500">Tenho interesse comercial</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 9: Tempo Disponível -->
+        <div class="quiz-question" data-question="9">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 9 de 12</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Quanto tempo pode dedicar à horta?
             </h2>
             <p class="text-gray-600">Seja realista - plantas precisam de cuidado regular</p>
           </div>
 
           <div class="grid gap-4">
-            <button class="quiz-option" data-value="pouco" data-points="temperos:2,chas:2,sombra:1">
+            <button class="quiz-option" data-value="pouco" data-points="temperos:3,chas:2,sombra:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl">⏰</div>
                 <div class="text-left">
                   <div class="font-semibold text-gray-900">Poucos minutos por dia</div>
-                  <div class="text-sm text-gray-500">Só o básico, vida corrida</div>
+                  <div class="text-sm text-gray-500">5-10 minutos, vida muito corrida</div>
                 </div>
               </div>
             </button>
 
-            <button class="quiz-option" data-value="medio" data-points="saladas:2,germinacao:1,pragas:1">
+            <button class="quiz-option" data-value="medio" data-points="saladas:2,germinacao:2,pragas:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">🕐</div>
                 <div class="text-left">
@@ -255,7 +532,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="bastante" data-points="hidroponia:2,cucurbitaceas:2,propagacao:2">
+            <button class="quiz-option" data-value="bastante" data-points="hidroponia:3,cucurbitaceas:2,propagacao:2">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">🌻</div>
                 <div class="text-left">
@@ -265,7 +542,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="fds" data-points="vertical:1,calendario:1,iniciante:1">
+            <button class="quiz-option" data-value="fds" data-points="vertical:2,calendario:1,iniciante:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">📅</div>
                 <div class="text-left">
@@ -277,71 +554,20 @@ import Mascote from '../components/illustrations/Mascote.astro';
           </div>
         </div>
 
-        <!-- Pergunta 5: Objetivo Principal -->
-        <div class="quiz-question" data-question="5">
+        <!-- ============ BLOCO 4: PREFERÊNCIAS (10-12) ============ -->
+
+        <!-- Pergunta 10: Maior Dificuldade -->
+        <div class="quiz-question" data-question="10">
           <div class="text-center mb-8">
-            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 5 de 8</span>
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 10 de 12</span>
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Qual seu objetivo principal?
-            </h2>
-            <p class="text-gray-600">O que te motiva a ter uma horta?</p>
-          </div>
-
-          <div class="grid gap-4">
-            <button class="quiz-option" data-value="temperos" data-points="temperos:3,germinacao:1,iniciante:1">
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">🌿</div>
-                <div class="text-left">
-                  <div class="font-semibold text-gray-900">Temperos frescos na cozinha</div>
-                  <div class="text-sm text-gray-500">Manjericão, salsinha, cebolinha...</div>
-                </div>
-              </div>
-            </button>
-
-            <button class="quiz-option" data-value="saladas" data-points="saladas:3,calendario:1,hidroponia:1">
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-2xl">🥗</div>
-                <div class="text-left">
-                  <div class="font-semibold text-gray-900">Saladas e folhosas</div>
-                  <div class="text-sm text-gray-500">Alface, rúcula, espinafre...</div>
-                </div>
-              </div>
-            </button>
-
-            <button class="quiz-option" data-value="legumes" data-points="cucurbitaceas:3,calendario:2,pragas:1">
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">🍅</div>
-                <div class="text-left">
-                  <div class="font-semibold text-gray-900">Legumes e frutos</div>
-                  <div class="text-sm text-gray-500">Tomate, pimentão, pepino...</div>
-                </div>
-              </div>
-            </button>
-
-            <button class="quiz-option" data-value="chas" data-points="chas:3,sombra:1,propagacao:1">
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl">🍵</div>
-                <div class="text-left">
-                  <div class="font-semibold text-gray-900">Chás e ervas medicinais</div>
-                  <div class="text-sm text-gray-500">Camomila, hortelã, erva-cidreira...</div>
-                </div>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <!-- Pergunta 6: Maior Dificuldade -->
-        <div class="quiz-question" data-question="6">
-          <div class="text-center mb-8">
-            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 6 de 8</span>
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Qual sua maior dificuldade ou medo?
+              Qual sua maior preocupação ou medo?
             </h2>
             <p class="text-gray-600">Todos temos desafios - vamos resolver o seu!</p>
           </div>
 
           <div class="grid gap-4">
-            <button class="quiz-option" data-value="matar" data-points="iniciante:2,germinacao:2,pragas:1">
+            <button class="quiz-option" data-value="matar" data-points="iniciante:3,germinacao:2,pragas:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl">💀</div>
                 <div class="text-left">
@@ -351,7 +577,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="pragas" data-points="pragas:3,chas:1,calendario:1">
+            <button class="quiz-option" data-value="pragas" data-points="pragas:4,chas:1,calendario:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">🐛</div>
                 <div class="text-left">
@@ -361,7 +587,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="espaco" data-points="vertical:2,sombra:2,hidroponia:1">
+            <button class="quiz-option" data-value="espaco" data-points="vertical:3,sombra:2,hidroponia:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">📦</div>
                 <div class="text-left">
@@ -371,7 +597,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="comecar" data-points="iniciante:3,germinacao:1,temperos:1">
+            <button class="quiz-option" data-value="comecar" data-points="iniciante:4,germinacao:2,temperos:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">🤷</div>
                 <div class="text-left">
@@ -383,10 +609,10 @@ import Mascote from '../components/illustrations/Mascote.astro';
           </div>
         </div>
 
-        <!-- Pergunta 7: Orçamento -->
-        <div class="quiz-question" data-question="7">
+        <!-- Pergunta 11: Orçamento -->
+        <div class="quiz-question" data-question="11">
           <div class="text-center mb-8">
-            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 7 de 8</span>
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 11 de 12</span>
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
               Quanto pretende investir inicialmente?
             </h2>
@@ -394,7 +620,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
           </div>
 
           <div class="grid gap-4">
-            <button class="quiz-option" data-value="minimo" data-points="iniciante:3,germinacao:1,propagacao:1">
+            <button class="quiz-option" data-value="minimo" data-points="iniciante:4,germinacao:2,propagacao:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">💰</div>
                 <div class="text-left">
@@ -404,7 +630,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="moderado" data-points="temperos:1,saladas:1,vertical:1">
+            <button class="quiz-option" data-value="moderado" data-points="temperos:2,saladas:2,vertical:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">💵</div>
                 <div class="text-left">
@@ -414,7 +640,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="confortavel" data-points="hidroponia:2,vertical:2,calendario:1">
+            <button class="quiz-option" data-value="confortavel" data-points="hidroponia:3,vertical:2,calendario:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">💳</div>
                 <div class="text-left">
@@ -424,22 +650,22 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="premium" data-points="hidroponia:3,calendario:2,cucurbitaceas:1">
+            <button class="quiz-option" data-value="premium" data-points="hidroponia:4,calendario:2,cucurbitaceas:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl">💎</div>
                 <div class="text-left">
                   <div class="font-semibold text-gray-900">Sem limite (R$300+)</div>
-                  <div class="text-sm text-gray-500">Quero o melhor setup</div>
+                  <div class="text-sm text-gray-500">Quero o melhor setup possível</div>
                 </div>
               </div>
             </button>
           </div>
         </div>
 
-        <!-- Pergunta 8: Prazo -->
-        <div class="quiz-question" data-question="8">
+        <!-- Pergunta 12: Prazo -->
+        <div class="quiz-question" data-question="12">
           <div class="text-center mb-8">
-            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 8 de 8 - Última!</span>
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 12 de 12 - Última!</span>
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
               Em quanto tempo quer ver resultados?
             </h2>
@@ -447,7 +673,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
           </div>
 
           <div class="grid gap-4">
-            <button class="quiz-option" data-value="rapido" data-points="temperos:2,saladas:2,germinacao:1">
+            <button class="quiz-option" data-value="rapido" data-points="temperos:3,saladas:3,germinacao:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl">🚀</div>
                 <div class="text-left">
@@ -457,7 +683,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="medio" data-points="saladas:1,pragas:1,calendario:1">
+            <button class="quiz-option" data-value="medio" data-points="saladas:2,pragas:1,calendario:1">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">📆</div>
                 <div class="text-left">
@@ -467,7 +693,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="longo" data-points="cucurbitaceas:2,hidroponia:1,propagacao:2">
+            <button class="quiz-option" data-value="longo" data-points="cucurbitaceas:3,hidroponia:2,propagacao:2">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">🌱</div>
                 <div class="text-left">
@@ -477,19 +703,20 @@ import Mascote from '../components/illustrations/Mascote.astro';
               </div>
             </button>
 
-            <button class="quiz-option" data-value="jornada" data-points="hidroponia:2,calendario:2,propagacao:1">
+            <button class="quiz-option" data-value="jornada" data-points="hidroponia:2,calendario:2,propagacao:2">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">🎯</div>
                 <div class="text-left">
                   <div class="font-semibold text-gray-900">É uma jornada, sem pressa</div>
-                  <div class="text-sm text-gray-500">Quero aprender e evoluir</div>
+                  <div class="text-sm text-gray-500">Quero aprender e evoluir aos poucos</div>
                 </div>
               </div>
             </button>
           </div>
         </div>
 
-        <!-- Tela de Captura de Email -->
+        <!-- ============ CAPTURA DE EMAIL ============ -->
+
         <div class="quiz-question" data-question="email" id="email-capture">
           <div class="text-center mb-8">
             <div class="w-20 h-20 bg-leaf-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -501,10 +728,10 @@ import Mascote from '../components/illustrations/Mascote.astro';
               Seu resultado está pronto! 🎉
             </h2>
             <p class="text-gray-600 mb-2">
-              Para onde enviamos sua recomendação personalizada?
+              Analisamos suas 12 respostas e encontramos o guia perfeito para você!
             </p>
             <p class="text-sm text-gray-500">
-              Você também receberá dicas exclusivas de cultivo
+              Para onde enviamos sua recomendação personalizada?
             </p>
           </div>
 
@@ -542,7 +769,8 @@ import Mascote from '../components/illustrations/Mascote.astro';
           </div>
         </div>
 
-        <!-- Tela de Resultado -->
+        <!-- ============ RESULTADO ============ -->
+
         <div class="quiz-question" data-question="result" id="quiz-result">
           <div class="text-center mb-8">
             <div class="inline-flex items-center gap-2 px-4 py-2 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">
@@ -560,7 +788,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
 
           <!-- Produtos Complementares -->
           <div class="mb-8">
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">Também recomendamos:</h3>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Também combinam com seu perfil:</h3>
             <div id="complementary-products" class="grid sm:grid-cols-2 gap-4">
               <!-- Conteúdo será inserido via JS -->
             </div>
@@ -616,6 +844,15 @@ import Mascote from '../components/illustrations/Mascote.astro';
   .quiz-option.selected {
     border-color: #22c55e;
     background: #dcfce7;
+  }
+
+  .step-label {
+    transition: all 0.3s;
+  }
+
+  .step-label.active {
+    color: #22c55e;
+    font-weight: 600;
   }
 </style>
 
@@ -733,6 +970,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
   };
 
   // Estado do quiz
+  const TOTAL_QUESTIONS = 12;
   let currentQuestion = 1;
   let scores = {};
   let userName = '';
@@ -747,12 +985,23 @@ import Mascote from '../components/illustrations/Mascote.astro';
   const progressText = document.getElementById('progress-text');
   const questions = document.querySelectorAll('.quiz-question');
   const options = document.querySelectorAll('.quiz-option');
+  const stepLabels = document.querySelectorAll('.step-label');
 
   // Atualizar progresso
   function updateProgress() {
-    const progress = ((currentQuestion - 1) / 8) * 100;
+    const progress = ((currentQuestion - 1) / TOTAL_QUESTIONS) * 100;
     progressBar.style.width = `${progress}%`;
-    progressText.textContent = `${currentQuestion - 1} de 8`;
+    progressText.textContent = `${currentQuestion - 1} de ${TOTAL_QUESTIONS}`;
+
+    // Atualizar step labels
+    stepLabels.forEach(label => {
+      const step = parseInt(label.dataset.step);
+      if (currentQuestion >= step) {
+        label.classList.add('active');
+      } else {
+        label.classList.remove('active');
+      }
+    });
   }
 
   // Mostrar pergunta
@@ -783,7 +1032,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
       setTimeout(() => {
         currentQuestion++;
 
-        if (currentQuestion <= 8) {
+        if (currentQuestion <= TOTAL_QUESTIONS) {
           showQuestion(currentQuestion);
           updateProgress();
         } else {

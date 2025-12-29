@@ -5,7 +5,6 @@ import { getCollection } from 'astro:content';
 import FloatingPlants from '../components/illustrations/FloatingPlants.astro';
 import HeroIllustration from '../components/illustrations/HeroIllustration.astro';
 import PlantCardIcons from '../components/illustrations/PlantCardIcons.astro';
-import QuizIcons from '../components/illustrations/QuizIcons.astro';
 import AvatarIcons from '../components/illustrations/AvatarIcons.astro';
 import ToolsIcon from '../components/illustrations/ToolsIcon.astro';
 import Mascote from '../components/illustrations/Mascote.astro';
@@ -197,159 +196,57 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
     </div>
   </section>
 
-  <!-- Quiz Section -->
+  <!-- Quiz CTA Section -->
   <section id="quiz" class="py-20 bg-gradient-to-br from-leaf-50 via-white to-earth-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 scroll-reveal">
-        <div class="flex justify-center mb-6">
-          <Mascote mood="thinking" size="lg" />
-        </div>
-        <span class="badge badge-leaf mb-4">Quiz Rapido</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-          Qual planta e ideal para voce?
-        </h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Responda 3 perguntas e descubra qual tempero combina com seu espaco e rotina.
-        </p>
-      </div>
-
-      <!-- Quiz Card -->
-      <div class="bg-white rounded-3xl shadow-xl shadow-leaf-500/5 p-8 sm:p-12 scroll-reveal-scale reveal-delay-2" id="quiz-container">
-        <!-- Progress Bar -->
-        <div class="mb-8" id="quiz-progress-container">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-sm font-medium text-gray-600">Progresso</span>
-            <span class="text-sm font-medium text-leaf-600" id="progress-text">1 de 3</span>
-          </div>
-          <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
-            <div class="h-full bg-gradient-to-r from-leaf-400 to-leaf-600 rounded-full transition-all duration-500 ease-out" id="progress-bar" style="width: 33.33%"></div>
-          </div>
-          <div class="flex justify-between mt-2">
-            <div class="flex items-center gap-1">
-              <div class="w-6 h-6 rounded-full bg-leaf-500 flex items-center justify-center" id="step-1-indicator">
-                <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span class="text-xs text-gray-500">Sol</span>
-            </div>
-            <div class="flex items-center gap-1">
-              <div class="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs font-medium text-gray-500" id="step-2-indicator">2</div>
-              <span class="text-xs text-gray-500">Rega</span>
-            </div>
-            <div class="flex items-center gap-1">
-              <div class="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs font-medium text-gray-500" id="step-3-indicator">3</div>
-              <span class="text-xs text-gray-500">Uso</span>
+      <div class="bg-white rounded-3xl shadow-xl shadow-leaf-500/10 p-8 sm:p-12 scroll-reveal-scale">
+        <div class="flex flex-col lg:flex-row items-center gap-8">
+          <!-- Ilustracao -->
+          <div class="flex-shrink-0">
+            <div class="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-leaf-100 to-leaf-200 rounded-3xl flex items-center justify-center">
+              <Mascote mood="thinking" size="lg" />
             </div>
           </div>
-        </div>
 
-        <!-- Pergunta 1 -->
-        <div class="quiz-step" data-step="1">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="w-10 h-10 bg-leaf-100 rounded-full flex items-center justify-center text-leaf-700 font-bold">1</span>
-            <span class="text-sm text-gray-500">de 3 perguntas</span>
-          </div>
-          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-8">
-            Quanto sol seu espaco recebe por dia?
-          </h3>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="pouco">
-              <div class="mb-3"><QuizIcons type="sun-low" size="w-12 h-12" /></div>
-              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Pouco sol</div>
-              <div class="text-sm text-gray-500">Menos de 3 horas</div>
-            </button>
-            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="medio">
-              <div class="mb-3"><QuizIcons type="sun-partial" size="w-12 h-12" /></div>
-              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Sol parcial</div>
-              <div class="text-sm text-gray-500">3 a 5 horas</div>
-            </button>
-            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="muito">
-              <div class="mb-3"><QuizIcons type="sun-full" size="w-12 h-12" /></div>
-              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Sol pleno</div>
-              <div class="text-sm text-gray-500">Mais de 5 horas</div>
-            </button>
-          </div>
-        </div>
-
-        <!-- Pergunta 2 -->
-        <div class="quiz-step hidden" data-step="2">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="w-10 h-10 bg-leaf-100 rounded-full flex items-center justify-center text-leaf-700 font-bold">2</span>
-            <span class="text-sm text-gray-500">de 3 perguntas</span>
-          </div>
-          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-8">
-            Com que frequencia voce pode regar?
-          </h3>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="pouco">
-              <div class="mb-3"><QuizIcons type="water-forget" size="w-12 h-12" /></div>
-              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Esqueco facil</div>
-              <div class="text-sm text-gray-500">1-2x por semana</div>
-            </button>
-            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="medio">
-              <div class="mb-3"><QuizIcons type="water-ok" size="w-12 h-12" /></div>
-              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Consigo lembrar</div>
-              <div class="text-sm text-gray-500">Dia sim, dia nao</div>
-            </button>
-            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="muito">
-              <div class="mb-3"><QuizIcons type="water-daily" size="w-12 h-12" /></div>
-              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Todo dia</div>
-              <div class="text-sm text-gray-500">Sem problemas</div>
-            </button>
-          </div>
-        </div>
-
-        <!-- Pergunta 3 -->
-        <div class="quiz-step hidden" data-step="3">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="w-10 h-10 bg-leaf-100 rounded-full flex items-center justify-center text-leaf-700 font-bold">3</span>
-            <span class="text-sm text-gray-500">de 3 perguntas</span>
-          </div>
-          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-8">
-            O que voce mais usa na cozinha?
-          </h3>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="italiano">
-              <div class="mb-3"><QuizIcons type="food-pasta" size="w-12 h-12" /></div>
-              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Massas e molhos</div>
-              <div class="text-sm text-gray-500">Italiano</div>
-            </button>
-            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="brasileiro">
-              <div class="mb-3"><QuizIcons type="food-rice" size="w-12 h-12" /></div>
-              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Arroz e feijao</div>
-              <div class="text-sm text-gray-500">Brasileiro</div>
-            </button>
-            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="chas">
-              <div class="mb-3"><QuizIcons type="food-tea" size="w-12 h-12" /></div>
-              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Chas e sucos</div>
-              <div class="text-sm text-gray-500">Bebidas</div>
-            </button>
-          </div>
-        </div>
-
-        <!-- Resultado -->
-        <div class="quiz-result hidden" role="region" aria-live="polite" aria-atomic="true">
-          <div class="text-center">
-            <div class="w-24 h-24 mx-auto mb-6 animate-grow">
-              <QuizIcons type="result" size="w-24 h-24" />
-            </div>
-            <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Sua planta ideal: <span class="text-gradient" id="result-plant">Manjericao</span>
-            </h3>
-            <p class="text-gray-600 mb-8 max-w-md mx-auto" id="result-description">
-              Perfeito para iniciantes! Cresce rapido, precisa de sol parcial e combina com seus pratos favoritos.
+          <!-- Conteudo -->
+          <div class="flex-1 text-center lg:text-left">
+            <span class="badge badge-leaf mb-4">Quiz Personalizado</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Descubra qual planta e ideal para voce
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Responda 12 perguntas rapidas sobre seu espaco, tempo e objetivos.
+              Receba uma recomendacao personalizada de guia + produtos que combinam com seu perfil.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/plantas/manjericao" id="result-link" class="btn-primary">
-                Ver guia completo
-                <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a href="/quiz" class="btn-primary text-lg px-8 py-4 group">
+                Fazer o quiz agora
+                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </a>
-              <button id="restart-quiz" class="btn-secondary">
-                Refazer quiz
-              </button>
+            </div>
+
+            <div class="flex items-center gap-6 mt-6 justify-center lg:justify-start text-sm text-gray-500">
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-leaf-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>3 minutos</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-leaf-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>12 perguntas</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-leaf-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>100% gratuito</span>
+              </div>
             </div>
           </div>
         </div>
@@ -659,165 +556,6 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
 </Layout>
 
 <script>
-  // Quiz Logic com Microinteracoes
-  const quizContainer = document.getElementById('quiz-container');
-  const steps = quizContainer?.querySelectorAll('.quiz-step');
-  const result = quizContainer?.querySelector('.quiz-result');
-  const restartBtn = document.getElementById('restart-quiz');
-  const progressBar = document.getElementById('progress-bar');
-  const progressText = document.getElementById('progress-text');
-  const progressContainer = document.getElementById('quiz-progress-container');
-
-  let currentStep = 1;
-  let answers: Record<string, string> = {};
-
-  const plantResults: Record<string, { name: string; description: string; link: string }> = {
-    'manjericao': {
-      name: 'Manjericao',
-      description: 'Perfeito para iniciantes! Cresce rapido, adapta-se bem a diferentes condicoes e combina com massas e molhos.',
-      link: '/plantas/manjericao'
-    },
-    'hortela': {
-      name: 'Hortela',
-      description: 'Ideal para chas e sucos! Muito resistente, tolera sombra parcial e se espalha facilmente.',
-      link: '/plantas/hortela'
-    },
-    'cebolinha': {
-      name: 'Cebolinha',
-      description: 'Classico brasileiro! Perfeita para arroz e feijao, facil de cuidar e colher continuamente.',
-      link: '/plantas/cebolinha'
-    },
-    'alecrim': {
-      name: 'Alecrim',
-      description: 'Para quem esquece de regar! Super resistente a seca, precisa de bastante sol.',
-      link: '/plantas/alecrim'
-    },
-    'salsinha': {
-      name: 'Salsinha',
-      description: 'Versatil e nutritiva! Vai bem em qualquer prato e tolera diferentes condicoes.',
-      link: '/plantas/salsinha'
-    }
-  };
-
-  // Atualizar progress bar e indicadores
-  function updateProgress(step: number, completed: boolean = false) {
-    const percentage = completed ? 100 : (step / 3) * 100;
-    if (progressBar) progressBar.style.width = `${percentage}%`;
-    if (progressText) progressText.textContent = completed ? 'Completo!' : `${step} de 3`;
-
-    // Atualizar indicadores de steps
-    for (let i = 1; i <= 3; i++) {
-      const indicator = document.getElementById(`step-${i}-indicator`);
-      if (indicator) {
-        if (i < step || completed) {
-          // Step completado
-          indicator.className = 'w-6 h-6 rounded-full bg-leaf-500 flex items-center justify-center';
-          indicator.innerHTML = '<svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>';
-        } else if (i === step && !completed) {
-          // Step atual
-          indicator.className = 'w-6 h-6 rounded-full bg-leaf-500 flex items-center justify-center text-xs font-bold text-white animate-pulse';
-          indicator.textContent = String(i);
-        } else {
-          // Step futuro
-          indicator.className = 'w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs font-medium text-gray-500';
-          indicator.textContent = String(i);
-        }
-      }
-    }
-  }
-
-  // Feedback visual ao selecionar opcao
-  function animateSelection(button: HTMLElement) {
-    button.classList.add('ring-2', 'ring-leaf-500', 'ring-offset-2', 'bg-leaf-50', 'border-leaf-400', 'scale-[1.02]');
-
-    // Adicionar checkmark temporario
-    const checkmark = document.createElement('div');
-    checkmark.className = 'absolute top-2 right-2 w-6 h-6 bg-leaf-500 rounded-full flex items-center justify-center animate-grow';
-    checkmark.innerHTML = '<svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>';
-    button.style.position = 'relative';
-    button.appendChild(checkmark);
-  }
-
-  function determineResult() {
-    if (answers.q3 === 'chas') return 'hortela';
-    if (answers.q3 === 'brasileiro') return 'cebolinha';
-    if (answers.q2 === 'pouco' && answers.q1 === 'muito') return 'alecrim';
-    if (answers.q1 === 'pouco') return 'hortela';
-    return 'manjericao';
-  }
-
-  function showResult() {
-    const plantKey = determineResult();
-    const plant = plantResults[plantKey];
-
-    const resultPlant = document.getElementById('result-plant');
-    const resultDesc = document.getElementById('result-description');
-    const resultLink = document.getElementById('result-link') as HTMLAnchorElement;
-
-    if (resultPlant) resultPlant.textContent = plant.name;
-    if (resultDesc) resultDesc.textContent = plant.description;
-    if (resultLink) resultLink.href = plant.link;
-
-    // Esconder progress bar no resultado
-    if (progressContainer) progressContainer.classList.add('hidden');
-
-    steps?.forEach(step => step.classList.add('hidden'));
-    result?.classList.remove('hidden');
-
-    // Atualizar progress para completo
-    updateProgress(3, true);
-  }
-
-  function nextStep(value: string, button: HTMLElement) {
-    answers[`q${currentStep}`] = value;
-
-    // Animar selecao
-    animateSelection(button);
-
-    // Delay para mostrar a animacao antes de trocar
-    setTimeout(() => {
-      if (currentStep < 3) {
-        steps?.forEach(step => step.classList.add('hidden'));
-        currentStep++;
-        updateProgress(currentStep);
-        const nextStepEl = quizContainer?.querySelector(`[data-step="${currentStep}"]`);
-        nextStepEl?.classList.remove('hidden');
-
-        // Animacao de entrada
-        nextStepEl?.classList.add('animate-slide-up');
-      } else {
-        showResult();
-      }
-    }, 400);
-  }
-
-  function restartQuiz() {
-    currentStep = 1;
-    answers = {};
-
-    // Resetar progress
-    updateProgress(1);
-    if (progressContainer) progressContainer.classList.remove('hidden');
-    result?.classList.add('hidden');
-    steps?.forEach(step => step.classList.add('hidden'));
-    const firstStep = quizContainer?.querySelector('[data-step="1"]');
-    firstStep?.classList.remove('hidden');
-  }
-
-  // Event listeners
-  quizContainer?.querySelectorAll('.quiz-option').forEach(option => {
-    option.addEventListener('click', (e) => {
-      const target = e.currentTarget as HTMLElement;
-      const value = target.dataset.value || '';
-      nextStep(value, target);
-    });
-  });
-
-  restartBtn?.addEventListener('click', restartQuiz);
-
-  // Inicializar progress bar
-  updateProgress(1);
-
   // FAQ Accordion Logic
   const faqItems = document.querySelectorAll('.faq-item');
 
