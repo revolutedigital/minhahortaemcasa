@@ -1,0 +1,443 @@
+---
+interface Props {
+  slug: string;
+  title?: string;
+  category?: 'Plantas' | 'Problemas' | 'Guias' | string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { slug, title = '', category = '', size = 'md' } = Astro.props;
+
+// Tamanhos
+const sizes = {
+  sm: 'w-12 h-12',
+  md: 'w-full h-full',
+  lg: 'w-32 h-32'
+};
+
+// Cores por categoria
+const categoryColors = {
+  'Plantas': { primary: '#22c55e', secondary: '#86efac', bg: '#f0fdf4' },
+  'Problemas': { primary: '#92400e', secondary: '#fcd34d', bg: '#fef3c7' },
+  'Guias': { primary: '#0ea5e9', secondary: '#7dd3fc', bg: '#e0f2fe' },
+  'default': { primary: '#22c55e', secondary: '#86efac', bg: '#f0fdf4' }
+};
+
+const colors = categoryColors[category as keyof typeof categoryColors] || categoryColors['default'];
+
+// Mapeamento de slugs para ilustrações
+const slugKey = slug.toLowerCase();
+---
+
+<div class={`${sizes[size]} flex items-center justify-center`}>
+  {/* === PLANTAS === */}
+  {slugKey.includes('manjericao') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill={colors.bg}/>
+      <path d="M60 100V55" stroke="#795548" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="60" cy="40" rx="25" ry="20" fill="#22c55e"/>
+      <ellipse cx="45" cy="50" rx="18" ry="15" fill="#16a34a"/>
+      <ellipse cx="75" cy="50" rx="18" ry="15" fill="#16a34a"/>
+      <ellipse cx="60" cy="55" rx="15" ry="12" fill="#15803d"/>
+      <circle cx="60" cy="35" r="3" fill="#86efac"/>
+    </svg>
+  )}
+
+  {slugKey.includes('alecrim') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill={colors.bg}/>
+      <path d="M60 100V40" stroke="#795548" stroke-width="3" stroke-linecap="round"/>
+      <path d="M60 40L45 25" stroke="#22c55e" stroke-width="2"/>
+      <path d="M60 50L40 35" stroke="#22c55e" stroke-width="2"/>
+      <path d="M60 60L35 45" stroke="#22c55e" stroke-width="2"/>
+      <path d="M60 40L75 25" stroke="#22c55e" stroke-width="2"/>
+      <path d="M60 50L80 35" stroke="#22c55e" stroke-width="2"/>
+      <path d="M60 60L85 45" stroke="#22c55e" stroke-width="2"/>
+      {[...Array(12)].map((_, i) => (
+        <ellipse cx={45 - (i % 2) * 5 + Math.floor(i / 2) * 2} cy={25 + Math.floor(i / 2) * 10} rx="3" ry="6" fill="#22c55e" transform={`rotate(-30 ${45 - (i % 2) * 5} ${25 + Math.floor(i / 2) * 10})`}/>
+      ))}
+    </svg>
+  )}
+
+  {slugKey.includes('hortela') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill={colors.bg}/>
+      <path d="M60 100V60" stroke="#795548" stroke-width="3" stroke-linecap="round"/>
+      <path d="M40 50C40 35 50 25 60 30C70 25 80 35 80 50C80 65 70 70 60 65C50 70 40 65 40 50Z" fill="#22c55e"/>
+      <path d="M35 60C35 48 45 40 55 45C55 45 45 55 35 60Z" fill="#16a34a"/>
+      <path d="M85 60C85 48 75 40 65 45C65 45 75 55 85 60Z" fill="#16a34a"/>
+      <path d="M60 30V65" stroke="#15803d" stroke-width="1.5"/>
+      <path d="M50 40L60 50L70 40" stroke="#15803d" stroke-width="1"/>
+    </svg>
+  )}
+
+  {slugKey.includes('cebolinha') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill={colors.bg}/>
+      <ellipse cx="60" cy="95" rx="15" ry="8" fill="#f5f5f4"/>
+      <path d="M50 95C50 95 48 50 52 25" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+      <path d="M55 95C55 95 54 55 56 30" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+      <path d="M60 95C60 95 60 60 60 35" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+      <path d="M65 95C65 95 66 55 64 30" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+      <path d="M70 95C70 95 72 50 68 25" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+  )}
+
+  {slugKey.includes('salsinha') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill={colors.bg}/>
+      <path d="M60 100V65" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+      <path d="M45 70V50" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+      <path d="M75 70V50" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+      <g fill="#22c55e">
+        <circle cx="60" cy="45" r="8"/>
+        <circle cx="50" cy="38" r="6"/>
+        <circle cx="70" cy="38" r="6"/>
+        <circle cx="55" cy="30" r="5"/>
+        <circle cx="65" cy="30" r="5"/>
+        <circle cx="40" cy="45" r="5"/>
+        <circle cx="80" cy="45" r="5"/>
+        <circle cx="35" cy="38" r="4"/>
+        <circle cx="85" cy="38" r="4"/>
+      </g>
+    </svg>
+  )}
+
+  {slugKey.includes('tomate') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill={colors.bg}/>
+      <circle cx="60" cy="65" r="30" fill="#ef4444"/>
+      <circle cx="50" cy="60" r="25" fill="#dc2626"/>
+      <ellipse cx="60" cy="38" rx="12" ry="5" fill="#22c55e"/>
+      <path d="M60 35V25" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="70" cy="55" rx="8" ry="12" fill="#fca5a5" fill-opacity="0.4"/>
+    </svg>
+  )}
+
+  {slugKey.includes('pepino') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill={colors.bg}/>
+      <ellipse cx="60" cy="60" rx="18" ry="40" fill="#22c55e" transform="rotate(-15 60 60)"/>
+      <ellipse cx="55" cy="55" rx="14" ry="35" fill="#16a34a" transform="rotate(-15 55 55)"/>
+      <ellipse cx="60" cy="28" rx="8" ry="4" fill="#15803d"/>
+      <circle cx="50" cy="45" r="2" fill="#15803d"/>
+      <circle cx="55" cy="60" r="2" fill="#15803d"/>
+      <circle cx="52" cy="75" r="2" fill="#15803d"/>
+    </svg>
+  )}
+
+  {slugKey.includes('abobrinha') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill={colors.bg}/>
+      <ellipse cx="60" cy="60" rx="20" ry="35" fill="#22c55e"/>
+      <ellipse cx="55" cy="58" rx="15" ry="30" fill="#16a34a"/>
+      <ellipse cx="60" cy="30" rx="10" ry="6" fill="#fbbf24"/>
+      <path d="M60 25V20" stroke="#22c55e" stroke-width="2"/>
+      <path d="M55 35L50 30" stroke="#22c55e" stroke-width="1.5"/>
+      <path d="M65 35L70 30" stroke="#22c55e" stroke-width="1.5"/>
+    </svg>
+  )}
+
+  {slugKey.includes('acafrao') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill={colors.bg}/>
+      <ellipse cx="60" cy="80" rx="25" ry="15" fill="#f59e0b"/>
+      <ellipse cx="55" cy="78" rx="20" ry="12" fill="#d97706"/>
+      <path d="M50 70V40" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+      <path d="M60 70V35" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+      <path d="M70 70V40" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="50" cy="35" rx="8" ry="15" fill="#22c55e"/>
+      <ellipse cx="60" cy="30" rx="8" ry="15" fill="#16a34a"/>
+      <ellipse cx="70" cy="35" rx="8" ry="15" fill="#22c55e"/>
+    </svg>
+  )}
+
+  {/* === PROBLEMAS === */}
+  {slugKey.includes('pulgoes') || slugKey.includes('pulgao') ? (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#fef3c7"/>
+      <path d="M30 90C30 90 40 50 60 40C80 50 90 90 90 90" stroke="#22c55e" stroke-width="4" fill="#dcfce7"/>
+      <circle cx="45" cy="55" r="4" fill="#15803d"/>
+      <circle cx="55" cy="50" r="3" fill="#15803d"/>
+      <circle cx="65" cy="52" r="4" fill="#15803d"/>
+      <circle cx="50" cy="65" r="3" fill="#15803d"/>
+      <circle cx="70" cy="60" r="3" fill="#15803d"/>
+      <circle cx="60" cy="70" r="4" fill="#15803d"/>
+      <path d="M45 55L42 52M45 55L48 52" stroke="#15803d" stroke-width="0.5"/>
+    </svg>
+  ) : null}
+
+  {slugKey.includes('folhas-amarelas') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#fef3c7"/>
+      <path d="M60 100V60" stroke="#795548" stroke-width="3"/>
+      <path d="M35 50C35 30 50 20 60 25C70 20 85 30 85 50C85 70 70 80 60 75C50 80 35 70 35 50Z" fill="#fbbf24"/>
+      <path d="M40 55C40 38 52 30 60 34C60 34 48 45 40 55Z" fill="#f59e0b"/>
+      <path d="M80 55C80 38 68 30 60 34C60 34 72 45 80 55Z" fill="#f59e0b"/>
+      <path d="M60 25V75" stroke="#d97706" stroke-width="1.5"/>
+      <path d="M45 40L60 55L75 40" stroke="#d97706" stroke-width="1" stroke-dasharray="2 2"/>
+    </svg>
+  )}
+
+  {slugKey.includes('oidio') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#fef3c7"/>
+      <ellipse cx="60" cy="55" rx="35" ry="25" fill="#22c55e"/>
+      <ellipse cx="55" cy="52" rx="30" ry="20" fill="#16a34a"/>
+      <circle cx="45" cy="45" r="8" fill="white" fill-opacity="0.7"/>
+      <circle cx="65" cy="50" r="10" fill="white" fill-opacity="0.6"/>
+      <circle cx="55" cy="60" r="6" fill="white" fill-opacity="0.5"/>
+      <circle cx="75" cy="55" r="5" fill="white" fill-opacity="0.4"/>
+      <path d="M60 80V100" stroke="#795548" stroke-width="3"/>
+    </svg>
+  )}
+
+  {slugKey.includes('podridao') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#fef3c7"/>
+      <rect x="35" y="70" width="50" height="30" rx="5" fill="#92400e"/>
+      <path d="M60 70V45" stroke="#22c55e" stroke-width="3"/>
+      <ellipse cx="60" cy="35" rx="20" ry="15" fill="#22c55e"/>
+      <path d="M45 85C45 85 50 90 60 90C70 90 75 85 75 85" stroke="#451a03" stroke-width="2"/>
+      <circle cx="50" cy="82" r="3" fill="#451a03"/>
+      <circle cx="70" cy="82" r="3" fill="#451a03"/>
+      <path d="M40 95L35 105M80 95L85 105M50 98L48 108M70 98L72 108" stroke="#451a03" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  )}
+
+  {slugKey.includes('lagarta') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#fef3c7"/>
+      <ellipse cx="60" cy="60" rx="35" ry="20" fill="#22c55e"/>
+      <path d="M30 60C30 60 35 55 45 58C55 61 55 65 65 62C75 59 80 63 90 60" stroke="#16a34a" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="25" cy="58" r="8" fill="#84cc16"/>
+      <circle cx="22" cy="55" r="2" fill="#1a1a1a"/>
+      <circle cx="28" cy="55" r="2" fill="#1a1a1a"/>
+      <path d="M20 50L18 45M30 50L32 45" stroke="#84cc16" stroke-width="2" stroke-linecap="round"/>
+      <path d="M60 45C60 45 55 40 60 35" stroke="#22c55e" stroke-width="2"/>
+      <path d="M70 48C70 48 72 42 78 40" stroke="#22c55e" stroke-width="2"/>
+    </svg>
+  )}
+
+  {slugKey.includes('lesma') || slugKey.includes('caracol') ? (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#fef3c7"/>
+      <ellipse cx="60" cy="80" rx="40" ry="15" fill="#a1a1aa"/>
+      <ellipse cx="55" cy="78" rx="35" ry="12" fill="#d4d4d8"/>
+      <circle cx="75" cy="55" r="20" fill="#92400e"/>
+      <circle cx="75" cy="55" r="15" fill="#78350f"/>
+      <path d="M75 55C75 55 80 50 82 55C84 60 80 62 75 60" stroke="#451a03" stroke-width="2"/>
+      <circle cx="40" cy="70" r="3" fill="#52525b"/>
+      <circle cx="50" cy="68" r="3" fill="#52525b"/>
+      <path d="M38 65L35 58M52 63L55 56" stroke="#52525b" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  ) : null}
+
+  {slugKey.includes('morrendo') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#fef3c7"/>
+      <rect x="40" y="75" width="40" height="25" rx="3" fill="#a16207"/>
+      <path d="M60 75V55" stroke="#78350f" stroke-width="3"/>
+      <path d="M45 60C45 60 50 40 60 45C70 40 75 60 75 60" stroke="#a16207" stroke-width="3" fill="none"/>
+      <path d="M50 55L45 65" stroke="#92400e" stroke-width="2"/>
+      <path d="M70 55L75 65" stroke="#92400e" stroke-width="2"/>
+      <text x="60" y="30" text-anchor="middle" font-size="20">😢</text>
+    </svg>
+  )}
+
+  {/* === GUIAS === */}
+  {slugKey.includes('apartamento') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#e0f2fe"/>
+      <rect x="20" y="30" width="80" height="70" fill="#f5f5f4" stroke="#d4d4d4" stroke-width="2"/>
+      <rect x="35" y="40" width="20" height="25" fill="#7dd3fc"/>
+      <rect x="65" y="40" width="20" height="25" fill="#7dd3fc"/>
+      <rect x="35" y="75" width="50" height="20" fill="#22c55e"/>
+      <circle cx="45" cy="82" r="5" fill="#16a34a"/>
+      <circle cx="60" cy="85" r="6" fill="#15803d"/>
+      <circle cx="75" cy="82" r="5" fill="#16a34a"/>
+      <path d="M40 78V70M60 78V68M80 78V70" stroke="#795548" stroke-width="2"/>
+    </svg>
+  )}
+
+  {slugKey.includes('germinar') || slugKey.includes('germinacao') ? (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#e0f2fe"/>
+      <ellipse cx="60" cy="85" rx="30" ry="10" fill="#92400e"/>
+      <ellipse cx="60" cy="82" rx="25" ry="8" fill="#78350f"/>
+      <path d="M60 75V55" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="50" cy="50" rx="8" ry="12" fill="#86efac" transform="rotate(-20 50 50)"/>
+      <ellipse cx="70" cy="50" rx="8" ry="12" fill="#86efac" transform="rotate(20 70 50)"/>
+      <circle cx="45" cy="90" r="4" fill="#fbbf24"/>
+      <circle cx="75" cy="88" r="3" fill="#fbbf24"/>
+      <path d="M40 95L38 100M80 93L82 98" stroke="#f59e0b" stroke-width="1"/>
+    </svg>
+  ) : null}
+
+  {slugKey.includes('sombra') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#e0f2fe"/>
+      <rect x="70" y="10" width="45" height="100" fill="#d4d4d8"/>
+      <path d="M45 95V60" stroke="#795548" stroke-width="3"/>
+      <ellipse cx="45" cy="50" rx="20" ry="18" fill="#22c55e"/>
+      <ellipse cx="40" cy="48" rx="15" ry="14" fill="#16a34a"/>
+      <circle cx="90" cy="30" r="12" fill="#fbbf24"/>
+      <path d="M90 15V10M90 50V45M75 30H70M110 30H105M78 18L74 14M102 18L106 14M78 42L74 46M102 42L106 46" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  )}
+
+  {slugKey.includes('ervas-medicinais') || slugKey.includes('medicinal') ? (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#e0f2fe"/>
+      <rect x="45" y="60" width="30" height="40" rx="3" fill="#f5f5f4" stroke="#d4d4d4"/>
+      <rect x="52" y="70" width="16" height="20" fill="#22c55e"/>
+      <path d="M60 65V40" stroke="#22c55e" stroke-width="2"/>
+      <ellipse cx="50" cy="35" rx="10" ry="8" fill="#86efac"/>
+      <ellipse cx="70" cy="35" rx="10" ry="8" fill="#86efac"/>
+      <ellipse cx="60" cy="28" rx="8" ry="10" fill="#22c55e"/>
+      <text x="60" y="55" text-anchor="middle" font-size="10" fill="#22c55e">+</text>
+    </svg>
+  ) : null}
+
+  {slugKey.includes('quanto-custa') || slugKey.includes('custo') ? (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#e0f2fe"/>
+      <circle cx="60" cy="60" r="35" fill="#fbbf24"/>
+      <circle cx="60" cy="60" r="28" fill="#f59e0b"/>
+      <text x="60" y="68" text-anchor="middle" font-size="28" font-weight="bold" fill="#78350f">R$</text>
+      <path d="M40 95V80" stroke="#795548" stroke-width="2"/>
+      <ellipse cx="40" cy="75" rx="8" ry="6" fill="#22c55e"/>
+      <path d="M80 95V85" stroke="#795548" stroke-width="2"/>
+      <ellipse cx="80" cy="80" rx="6" ry="5" fill="#22c55e"/>
+    </svg>
+  ) : null}
+
+  {slugKey.includes('tempo-colheita') || slugKey.includes('colheita') ? (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#e0f2fe"/>
+      <circle cx="60" cy="55" r="30" fill="white" stroke="#d4d4d4" stroke-width="3"/>
+      <circle cx="60" cy="55" r="25" fill="#f5f5f4"/>
+      <path d="M60 35V55L75 65" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="60" cy="55" r="3" fill="#22c55e"/>
+      <path d="M45 95V85" stroke="#795548" stroke-width="2"/>
+      <ellipse cx="45" cy="80" rx="8" ry="6" fill="#22c55e"/>
+      <path d="M75 95V88" stroke="#795548" stroke-width="2"/>
+      <ellipse cx="75" cy="83" rx="6" ry="5" fill="#16a34a"/>
+    </svg>
+  ) : null}
+
+  {slugKey.includes('fazer-mudas') || slugKey.includes('propagacao') ? (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#e0f2fe"/>
+      <rect x="25" y="70" width="25" height="25" rx="3" fill="#92400e"/>
+      <rect x="55" y="70" width="25" height="25" rx="3" fill="#92400e"/>
+      <path d="M37 70V55" stroke="#22c55e" stroke-width="2"/>
+      <ellipse cx="37" cy="48" rx="8" ry="10" fill="#86efac"/>
+      <path d="M67 70V60" stroke="#22c55e" stroke-width="2"/>
+      <ellipse cx="67" cy="55" rx="6" ry="8" fill="#86efac"/>
+      <path d="M90 50H100M95 45V55" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+      <path d="M85 25C85 25 90 35 95 30C100 25 95 20 90 25" stroke="#22c55e" stroke-width="2"/>
+    </svg>
+  ) : null}
+
+  {slugKey.includes('regar') || slugKey.includes('rega') ? (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#e0f2fe"/>
+      <path d="M30 60L50 40H90L75 60H30Z" fill="#a1a1aa"/>
+      <ellipse cx="52" cy="60" rx="22" ry="8" fill="#78716c"/>
+      <path d="M25 65C25 65 20 70 25 75C30 80 30 85 30 90" stroke="#7dd3fc" stroke-width="2" stroke-linecap="round"/>
+      <path d="M35 65C35 65 30 72 35 78" stroke="#7dd3fc" stroke-width="2" stroke-linecap="round"/>
+      <path d="M60 90V70" stroke="#795548" stroke-width="3"/>
+      <ellipse cx="60" cy="60" rx="15" ry="12" fill="#22c55e"/>
+    </svg>
+  ) : null}
+
+  {slugKey.includes('adubo') || slugKey.includes('composteira') ? (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#e0f2fe"/>
+      <rect x="30" y="50" width="60" height="45" rx="5" fill="#78350f"/>
+      <rect x="35" y="55" width="50" height="35" fill="#451a03"/>
+      <ellipse cx="45" cy="65" rx="5" ry="3" fill="#fbbf24"/>
+      <ellipse cx="60" cy="72" rx="6" ry="4" fill="#22c55e"/>
+      <ellipse cx="75" cy="65" rx="4" ry="3" fill="#f97316"/>
+      <ellipse cx="50" cy="80" rx="5" ry="3" fill="#84cc16"/>
+      <ellipse cx="70" cy="78" rx="4" ry="2" fill="#fbbf24"/>
+      <path d="M60 45V30" stroke="#22c55e" stroke-width="2"/>
+      <ellipse cx="55" cy="25" rx="8" ry="6" fill="#86efac"/>
+      <ellipse cx="65" cy="28" rx="6" ry="5" fill="#22c55e"/>
+    </svg>
+  ) : null}
+
+  {slugKey.includes('calendario') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#e0f2fe"/>
+      <rect x="20" y="30" width="80" height="70" rx="5" fill="white" stroke="#d4d4d4" stroke-width="2"/>
+      <rect x="20" y="30" width="80" height="20" rx="5" fill="#22c55e"/>
+      <path d="M35 25V35M55 25V35M75 25V35M85 25V35" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="40" cy="65" r="5" fill="#86efac"/>
+      <circle cx="60" cy="65" r="5" fill="#fbbf24"/>
+      <circle cx="80" cy="65" r="5" fill="#f87171"/>
+      <circle cx="40" cy="85" r="5" fill="#fbbf24"/>
+      <circle cx="60" cy="85" r="5" fill="#86efac"/>
+      <circle cx="80" cy="85" r="5" fill="#86efac"/>
+    </svg>
+  )}
+
+  {slugKey.includes('hidroponia') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill="#e0f2fe"/>
+      <rect x="25" y="60" width="70" height="35" rx="3" fill="#0ea5e9"/>
+      <rect x="30" y="65" width="60" height="25" fill="#7dd3fc"/>
+      <rect x="25" y="55" width="70" height="10" fill="#d4d4d4"/>
+      <circle cx="40" cy="60" r="5" fill="#22c55e"/>
+      <circle cx="60" cy="60" r="5" fill="#22c55e"/>
+      <circle cx="80" cy="60" r="5" fill="#22c55e"/>
+      <path d="M40 55V35" stroke="#22c55e" stroke-width="2"/>
+      <path d="M60 55V30" stroke="#22c55e" stroke-width="2"/>
+      <path d="M80 55V35" stroke="#22c55e" stroke-width="2"/>
+      <ellipse cx="40" cy="30" rx="8" ry="6" fill="#86efac"/>
+      <ellipse cx="60" cy="25" rx="10" ry="8" fill="#22c55e"/>
+      <ellipse cx="80" cy="30" rx="8" ry="6" fill="#86efac"/>
+    </svg>
+  )}
+
+  {/* === FALLBACK GENÉRICO === */}
+  {!slugKey.includes('manjericao') &&
+   !slugKey.includes('alecrim') &&
+   !slugKey.includes('hortela') &&
+   !slugKey.includes('cebolinha') &&
+   !slugKey.includes('salsinha') &&
+   !slugKey.includes('tomate') &&
+   !slugKey.includes('pepino') &&
+   !slugKey.includes('abobrinha') &&
+   !slugKey.includes('acafrao') &&
+   !slugKey.includes('pulgoes') && !slugKey.includes('pulgao') &&
+   !slugKey.includes('folhas-amarelas') &&
+   !slugKey.includes('oidio') &&
+   !slugKey.includes('podridao') &&
+   !slugKey.includes('lagarta') &&
+   !slugKey.includes('lesma') && !slugKey.includes('caracol') &&
+   !slugKey.includes('morrendo') &&
+   !slugKey.includes('apartamento') &&
+   !slugKey.includes('germinar') && !slugKey.includes('germinacao') &&
+   !slugKey.includes('sombra') &&
+   !slugKey.includes('ervas-medicinais') && !slugKey.includes('medicinal') &&
+   !slugKey.includes('quanto-custa') && !slugKey.includes('custo') &&
+   !slugKey.includes('tempo-colheita') && !slugKey.includes('colheita') &&
+   !slugKey.includes('fazer-mudas') && !slugKey.includes('propagacao') &&
+   !slugKey.includes('regar') && !slugKey.includes('rega') &&
+   !slugKey.includes('adubo') && !slugKey.includes('composteira') &&
+   !slugKey.includes('calendario') &&
+   !slugKey.includes('hidroponia') && (
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <rect width="120" height="120" fill={colors.bg}/>
+      <path d="M60 95V55" stroke="#795548" stroke-width="4" stroke-linecap="round"/>
+      <path d="M60 55C60 55 40 45 35 30C50 30 60 45 60 55Z" fill={colors.primary} stroke={colors.primary} stroke-width="2"/>
+      <path d="M60 55C60 55 80 45 85 30C70 30 60 45 60 55Z" fill={colors.secondary} stroke={colors.secondary} stroke-width="2"/>
+      <path d="M60 65C60 65 45 58 38 45" stroke={colors.primary} stroke-width="2" stroke-linecap="round"/>
+      <path d="M60 65C60 65 75 58 82 45" stroke={colors.secondary} stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="38" cy="42" rx="8" ry="10" fill={colors.primary} transform="rotate(-20 38 42)"/>
+      <ellipse cx="82" cy="42" rx="8" ry="10" fill={colors.secondary} transform="rotate(20 82 42)"/>
+    </svg>
+  )}
+</div>

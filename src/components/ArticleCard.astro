@@ -1,4 +1,6 @@
 ---
+import ContentIllustration from './illustrations/ContentIllustration.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -7,9 +9,13 @@ interface Props {
   category?: string;
   readTime?: string;
   variant?: 'default' | 'featured' | 'horizontal';
+  slug?: string;
 }
 
-const { title, description, href, image, category, readTime, variant = 'default' } = Astro.props;
+const { title, description, href, image, category, readTime, variant = 'default', slug } = Astro.props;
+
+// Extrair slug do href se não fornecido
+const extractedSlug = slug || href.split('/').filter(Boolean).pop() || '';
 
 // Cores por categoria
 const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
@@ -21,22 +27,26 @@ const categoryColors: Record<string, { bg: string; text: string; border: string 
 };
 
 const colors = categoryColors[category || 'default'] || categoryColors['default'];
+
+// Background gradients por categoria
+const bgGradients: Record<string, string> = {
+  'Plantas': 'from-leaf-50 to-leaf-100',
+  'Problemas': 'from-amber-50 to-orange-100',
+  'Guias': 'from-sky-50 to-blue-100',
+  'Dicas': 'from-cyan-50 to-teal-100',
+  'default': 'from-gray-50 to-gray-100'
+};
+
+const bgGradient = bgGradients[category || 'default'] || bgGradients['default'];
 ---
 
 {variant === 'horizontal' ? (
   <!-- Card Horizontal -->
   <article class="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:border-leaf-200 transition-all duration-300">
     <a href={href} class="flex flex-col sm:flex-row">
-      {image && (
-        <div class="sm:w-48 aspect-video sm:aspect-square overflow-hidden bg-gradient-to-br from-leaf-50 to-earth-50 flex-shrink-0">
-          <img
-            src={image}
-            alt={title}
-            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            loading="lazy"
-          />
-        </div>
-      )}
+      <div class={`sm:w-48 aspect-video sm:aspect-square overflow-hidden bg-gradient-to-br ${bgGradient} flex-shrink-0 flex items-center justify-center p-4`}>
+        <ContentIllustration slug={extractedSlug} title={title} category={category} />
+      </div>
       <div class="flex-1 p-5 flex flex-col justify-center">
         <div class="flex items-center gap-2 mb-2">
           {category && (
@@ -65,18 +75,13 @@ const colors = categoryColors[category || 'default'] || categoryColors['default'
   <!-- Card Featured (Grande) -->
   <article class="group relative bg-white rounded-3xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
     <a href={href} class="block">
-      {image && (
-        <div class="aspect-[16/10] overflow-hidden bg-gradient-to-br from-leaf-100 to-earth-100">
-          <img
-            src={image}
-            alt={title}
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            loading="lazy"
-          />
-          <!-- Overlay gradiente -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+      <div class={`aspect-[16/10] overflow-hidden bg-gradient-to-br ${bgGradient} flex items-center justify-center p-8 relative`}>
+        <div class="w-full max-w-[200px]">
+          <ContentIllustration slug={extractedSlug} title={title} category={category} />
         </div>
-      )}
+        <!-- Overlay gradiente -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+      </div>
       <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
         <div class="flex items-center gap-3 mb-3">
           {category && (
@@ -111,42 +116,20 @@ const colors = categoryColors[category || 'default'] || categoryColors['default'
   <!-- Card Default -->
   <article class="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:border-leaf-200 transition-all duration-300 card-hover">
     <a href={href} class="block">
-      {image ? (
-        <div class="aspect-[4/3] overflow-hidden bg-gradient-to-br from-leaf-50 to-earth-50 relative">
-          <img
-            src={image}
-            alt={title}
-            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            loading="lazy"
-          />
-          <!-- Badge categoria sobre a imagem -->
-          {category && (
-            <div class="absolute top-3 left-3">
-              <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/90 backdrop-blur-sm ${colors.text} text-xs font-semibold rounded-full shadow-sm`}>
-                <span class={`w-1.5 h-1.5 rounded-full bg-current`}></span>
-                {category}
-              </span>
-            </div>
-          )}
+      <div class={`aspect-[4/3] overflow-hidden bg-gradient-to-br ${bgGradient} relative flex items-center justify-center p-6`}>
+        <div class="w-full max-w-[140px] group-hover:scale-110 transition-transform duration-500">
+          <ContentIllustration slug={extractedSlug} title={title} category={category} />
         </div>
-      ) : (
-        <div class="aspect-[4/3] bg-gradient-to-br from-leaf-100 via-leaf-50 to-earth-50 flex items-center justify-center relative">
-          <!-- Icone placeholder -->
-          <svg class="w-16 h-16 text-leaf-300" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M32 56V28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-            <path d="M32 40C32 40 18 36 14 24C22 24 32 32 32 40Z" fill="currentColor" fill-opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M32 32C32 32 46 28 50 16C42 16 32 24 32 32Z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
-          {category && (
-            <div class="absolute top-3 left-3">
-              <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 ${colors.bg} ${colors.text} text-xs font-semibold rounded-full`}>
-                <span class="w-1.5 h-1.5 rounded-full bg-current opacity-60"></span>
-                {category}
-              </span>
-            </div>
-          )}
-        </div>
-      )}
+        <!-- Badge categoria sobre a imagem -->
+        {category && (
+          <div class="absolute top-3 left-3">
+            <span class={`inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/90 backdrop-blur-sm ${colors.text} text-xs font-semibold rounded-full shadow-sm`}>
+              <span class={`w-1.5 h-1.5 rounded-full bg-current`}></span>
+              {category}
+            </span>
+          </div>
+        )}
+      </div>
     </a>
     <div class="p-5">
       <div class="flex items-center gap-2 mb-3">
