@@ -4,6 +4,7 @@ import CTABox from '../components/CTABox.astro';
 import ReadingProgress from '../components/ReadingProgress.astro';
 import Mascote from '../components/illustrations/Mascote.astro';
 import PlantCardIcons from '../components/illustrations/PlantCardIcons.astro';
+import ContentIllustration from '../components/illustrations/ContentIllustration.astro';
 
 interface Props {
   frontmatter: {
@@ -16,9 +17,10 @@ interface Props {
     tags?: string[];
     readTime?: string;
   };
+  slug?: string;
 }
 
-const { frontmatter } = Astro.props;
+const { frontmatter, slug = '' } = Astro.props;
 
 const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString('pt-BR', {
   day: 'numeric',
@@ -113,13 +115,18 @@ const schemaMarkup = {
       </div>
     </header>
 
-    <!-- Featured Image -->
-    {frontmatter.image && (
-      <img
-        src={frontmatter.image}
-        alt={frontmatter.title}
-        class="w-full aspect-video object-cover rounded-xl mb-8"
-      />
+    <!-- Featured Illustration -->
+    {slug && (
+      <div class={`w-full aspect-video rounded-xl mb-8 flex items-center justify-center p-8 bg-gradient-to-br ${
+        frontmatter.category === 'Plantas' ? 'from-leaf-50 to-leaf-100' :
+        frontmatter.category === 'Problemas' ? 'from-amber-50 to-orange-100' :
+        frontmatter.category === 'Guias' ? 'from-sky-50 to-blue-100' :
+        'from-gray-50 to-gray-100'
+      }`}>
+        <div class="w-full max-w-xs">
+          <ContentIllustration slug={slug} category={frontmatter.category} size="lg" />
+        </div>
+      </div>
     )}
 
     <!-- Content -->

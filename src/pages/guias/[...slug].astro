@@ -16,6 +16,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<ArticleLayout frontmatter={{ ...entry.data, category: 'Guias' }}>
+<ArticleLayout frontmatter={{ ...entry.data, category: 'Guias' }} slug={entry.slug}>
   <Content />
 </ArticleLayout>
