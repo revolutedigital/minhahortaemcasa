@@ -1,0 +1,889 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Mascote from '../components/illustrations/Mascote.astro';
+---
+
+<Layout title="Quiz: Descubra Sua Planta Ideal | Horta em Casa" description="Responda 8 perguntas e descubra qual planta é perfeita para você, seu espaço e seu estilo de vida. Recomendação personalizada + guia exclusivo.">
+
+  <!-- Hero do Quiz -->
+  <section class="relative min-h-[50vh] flex items-center overflow-hidden bg-gradient-to-br from-leaf-50 via-white to-earth-50">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-leaf-200/30 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 w-64 h-64 bg-sun-200/30 rounded-full blur-3xl"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 py-16 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-leaf-200 shadow-sm mb-6">
+        <span class="text-sm font-medium text-gray-700">🌱 Quiz Gratuito • 2 minutos</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+        Qual é a <span class="text-gradient">planta ideal</span> para você?
+      </h1>
+
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        Responda 8 perguntas rápidas e descubra exatamente por onde começar sua horta,
+        baseado no seu espaço, tempo e objetivos.
+      </p>
+
+      <div class="flex items-center justify-center gap-8 text-sm text-gray-500 mb-8">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-leaf-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>2 minutos</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-leaf-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>8 perguntas</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-leaf-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>100% gratuito</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz Container -->
+  <section class="py-12 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+
+      <!-- Progress Bar -->
+      <div class="mb-8" id="progress-container">
+        <div class="flex justify-between text-sm text-gray-500 mb-2">
+          <span>Progresso</span>
+          <span id="progress-text">0 de 8</span>
+        </div>
+        <div class="h-3 bg-gray-100 rounded-full overflow-hidden">
+          <div id="progress-bar" class="h-full bg-gradient-to-r from-leaf-500 to-leaf-600 rounded-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Quiz Questions -->
+      <div id="quiz-container">
+
+        <!-- Pergunta 1: Experiência -->
+        <div class="quiz-question active" data-question="1">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 1 de 8</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Qual é sua experiência com plantas?
+            </h2>
+            <p class="text-gray-600">Seja honesto - isso nos ajuda a recomendar o melhor caminho!</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="iniciante" data-points="germinacao:2,iniciante:3,temperos:2">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl">🌱</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Totalmente iniciante</div>
+                  <div class="text-sm text-gray-500">Nunca cultivei nada, mas quero começar</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="basico" data-points="pragas:1,propagacao:1,temperos:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">🪴</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Já tentei algumas vezes</div>
+                  <div class="text-sm text-gray-500">Tive plantas mas algumas morreram</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="intermediario" data-points="hidroponia:2,cucurbitaceas:2,propagacao:2">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">🌿</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Tenho algumas plantas</div>
+                  <div class="text-sm text-gray-500">Mantenho vivas mas quero expandir</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="avancado" data-points="hidroponia:3,calendario:2,cucurbitaceas:2">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-2xl">🏡</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Já tenho uma horta</div>
+                  <div class="text-sm text-gray-500">Quero melhorar e diversificar</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 2: Espaço -->
+        <div class="quiz-question" data-question="2">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 2 de 8</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Onde você pretende cultivar?
+            </h2>
+            <p class="text-gray-600">O espaço disponível define muito do que você pode plantar</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="janela" data-points="sombra:3,temperos:2,chas:2">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">🪟</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Janela ou peitoril</div>
+                  <div class="text-sm text-gray-500">Espaço pequeno, dentro de casa</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="varanda" data-points="vertical:2,saladas:2,temperos:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center text-2xl">🏢</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Varanda de apartamento</div>
+                  <div class="text-sm text-gray-500">Espaço médio, geralmente com sol</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="quintal-pequeno" data-points="iniciante:2,cucurbitaceas:1,pragas:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">🏠</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Quintal pequeno</div>
+                  <div class="text-sm text-gray-500">Área externa limitada</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="quintal-grande" data-points="cucurbitaceas:3,calendario:2,hidroponia:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-2xl">🌳</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Quintal grande ou sítio</div>
+                  <div class="text-sm text-gray-500">Bastante espaço disponível</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 3: Luz Solar -->
+        <div class="quiz-question" data-question="3">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 3 de 8</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Quanto sol seu espaço recebe?
+            </h2>
+            <p class="text-gray-600">A luz é o fator mais importante para o sucesso</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="pouco" data-points="sombra:3,chas:1,temperos:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-2xl">🌥️</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Pouco sol (menos de 3h)</div>
+                  <div class="text-sm text-gray-500">Ambiente sombreado ou janela sul</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="medio" data-points="temperos:2,saladas:2,sombra:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">⛅</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Sol parcial (3-5h)</div>
+                  <div class="text-sm text-gray-500">Meia-sombra, sol da manhã</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="muito" data-points="cucurbitaceas:2,hidroponia:2,calendario:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">☀️</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Sol pleno (6h ou mais)</div>
+                  <div class="text-sm text-gray-500">Bastante sol direto</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="nao-sei" data-points="sombra:1,iniciante:1,germinacao:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl">🤔</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Não tenho certeza</div>
+                  <div class="text-sm text-gray-500">Preciso avaliar melhor</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 4: Tempo Disponível -->
+        <div class="quiz-question" data-question="4">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 4 de 8</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Quanto tempo você pode dedicar?
+            </h2>
+            <p class="text-gray-600">Seja realista - plantas precisam de cuidado regular</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="pouco" data-points="temperos:2,chas:2,sombra:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl">⏰</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Poucos minutos por dia</div>
+                  <div class="text-sm text-gray-500">Só o básico, vida corrida</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="medio" data-points="saladas:2,germinacao:1,pragas:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">🕐</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">15-30 minutos por dia</div>
+                  <div class="text-sm text-gray-500">Posso dar atenção regular</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="bastante" data-points="hidroponia:2,cucurbitaceas:2,propagacao:2">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">🌻</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">1 hora ou mais por dia</div>
+                  <div class="text-sm text-gray-500">Jardinagem é meu hobby</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="fds" data-points="vertical:1,calendario:1,iniciante:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">📅</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Só nos fins de semana</div>
+                  <div class="text-sm text-gray-500">Durante a semana é difícil</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 5: Objetivo Principal -->
+        <div class="quiz-question" data-question="5">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 5 de 8</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Qual seu objetivo principal?
+            </h2>
+            <p class="text-gray-600">O que te motiva a ter uma horta?</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="temperos" data-points="temperos:3,germinacao:1,iniciante:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">🌿</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Temperos frescos na cozinha</div>
+                  <div class="text-sm text-gray-500">Manjericão, salsinha, cebolinha...</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="saladas" data-points="saladas:3,calendario:1,hidroponia:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-2xl">🥗</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Saladas e folhosas</div>
+                  <div class="text-sm text-gray-500">Alface, rúcula, espinafre...</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="legumes" data-points="cucurbitaceas:3,calendario:2,pragas:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">🍅</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Legumes e frutos</div>
+                  <div class="text-sm text-gray-500">Tomate, pimentão, pepino...</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="chas" data-points="chas:3,sombra:1,propagacao:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl">🍵</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Chás e ervas medicinais</div>
+                  <div class="text-sm text-gray-500">Camomila, hortelã, erva-cidreira...</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 6: Maior Dificuldade -->
+        <div class="quiz-question" data-question="6">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 6 de 8</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Qual sua maior dificuldade ou medo?
+            </h2>
+            <p class="text-gray-600">Todos temos desafios - vamos resolver o seu!</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="matar" data-points="iniciante:2,germinacao:2,pragas:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl">💀</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Matar as plantas</div>
+                  <div class="text-sm text-gray-500">Já matei várias e tenho medo</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="pragas" data-points="pragas:3,chas:1,calendario:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-2xl">🐛</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Pragas e doenças</div>
+                  <div class="text-sm text-gray-500">Não sei identificar nem tratar</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="espaco" data-points="vertical:2,sombra:2,hidroponia:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">📦</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Falta de espaço</div>
+                  <div class="text-sm text-gray-500">Moro em apartamento pequeno</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="comecar" data-points="iniciante:3,germinacao:1,temperos:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">🤷</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Não sei por onde começar</div>
+                  <div class="text-sm text-gray-500">Muita informação, estou perdido</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 7: Orçamento -->
+        <div class="quiz-question" data-question="7">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 7 de 8</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Quanto pretende investir inicialmente?
+            </h2>
+            <p class="text-gray-600">Dá para começar com qualquer orçamento!</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="minimo" data-points="iniciante:3,germinacao:1,propagacao:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">💰</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">O mínimo possível (até R$50)</div>
+                  <div class="text-sm text-gray-500">Quero começar gastando pouco</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="moderado" data-points="temperos:1,saladas:1,vertical:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">💵</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Investimento moderado (R$50-150)</div>
+                  <div class="text-sm text-gray-500">Posso comprar o básico</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="confortavel" data-points="hidroponia:2,vertical:2,calendario:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">💳</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Confortável (R$150-300)</div>
+                  <div class="text-sm text-gray-500">Quero montar algo estruturado</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="premium" data-points="hidroponia:3,calendario:2,cucurbitaceas:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl">💎</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Sem limite (R$300+)</div>
+                  <div class="text-sm text-gray-500">Quero o melhor setup</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 8: Prazo -->
+        <div class="quiz-question" data-question="8">
+          <div class="text-center mb-8">
+            <span class="inline-block px-3 py-1 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">Pergunta 8 de 8 - Última!</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Em quanto tempo quer ver resultados?
+            </h2>
+            <p class="text-gray-600">Expectativas realistas = menos frustração</p>
+          </div>
+
+          <div class="grid gap-4">
+            <button class="quiz-option" data-value="rapido" data-points="temperos:2,saladas:2,germinacao:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl">🚀</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">O mais rápido possível</div>
+                  <div class="text-sm text-gray-500">Quero colher em semanas</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="medio" data-points="saladas:1,pragas:1,calendario:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">📆</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Em 1-2 meses está bom</div>
+                  <div class="text-sm text-gray-500">Tenho um pouco de paciência</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="longo" data-points="cucurbitaceas:2,hidroponia:1,propagacao:2">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">🌱</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">Posso esperar alguns meses</div>
+                  <div class="text-sm text-gray-500">Entendo que leva tempo</div>
+                </div>
+              </div>
+            </button>
+
+            <button class="quiz-option" data-value="jornada" data-points="hidroponia:2,calendario:2,propagacao:1">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">🎯</div>
+                <div class="text-left">
+                  <div class="font-semibold text-gray-900">É uma jornada, sem pressa</div>
+                  <div class="text-sm text-gray-500">Quero aprender e evoluir</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tela de Captura de Email -->
+        <div class="quiz-question" data-question="email" id="email-capture">
+          <div class="text-center mb-8">
+            <div class="w-20 h-20 bg-leaf-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-10 h-10 text-leaf-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Seu resultado está pronto! 🎉
+            </h2>
+            <p class="text-gray-600 mb-2">
+              Para onde enviamos sua recomendação personalizada?
+            </p>
+            <p class="text-sm text-gray-500">
+              Você também receberá dicas exclusivas de cultivo
+            </p>
+          </div>
+
+          <div class="max-w-md mx-auto">
+            <div class="space-y-4">
+              <div>
+                <input
+                  type="text"
+                  id="quiz-name"
+                  placeholder="Seu nome"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-leaf-500 focus:border-leaf-500 transition-all"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  id="quiz-email"
+                  placeholder="Seu melhor email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-leaf-500 focus:border-leaf-500 transition-all"
+                />
+              </div>
+              <button
+                id="show-result-btn"
+                class="w-full btn-primary text-lg py-4"
+              >
+                Ver minha recomendação
+                <svg class="w-5 h-5 ml-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </button>
+              <p class="text-xs text-gray-400 text-center">
+                🔒 Seus dados estão seguros. Não enviamos spam.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tela de Resultado -->
+        <div class="quiz-question" data-question="result" id="quiz-result">
+          <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-leaf-100 text-leaf-700 rounded-full text-sm font-medium mb-4">
+              ✨ Recomendação Personalizada
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+              <span id="result-name">Olá</span>, seu guia ideal é:
+            </h2>
+          </div>
+
+          <!-- Produto Recomendado -->
+          <div id="recommended-product" class="bg-gradient-to-br from-leaf-50 to-earth-50 rounded-2xl p-8 mb-8 border border-leaf-200">
+            <!-- Conteúdo será inserido via JS -->
+          </div>
+
+          <!-- Produtos Complementares -->
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Também recomendamos:</h3>
+            <div id="complementary-products" class="grid sm:grid-cols-2 gap-4">
+              <!-- Conteúdo será inserido via JS -->
+            </div>
+          </div>
+
+          <!-- CTA Final -->
+          <div class="text-center">
+            <a href="/produtos" class="text-leaf-600 hover:text-leaf-700 font-medium">
+              Ver todos os produtos →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .quiz-question {
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .quiz-question.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .quiz-option {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 1rem;
+    text-align: left;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .quiz-option:hover {
+    border-color: #22c55e;
+    background: #f0fdf4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+  }
+
+  .quiz-option.selected {
+    border-color: #22c55e;
+    background: #dcfce7;
+  }
+</style>
+
+<script>
+  // Produtos com seus dados
+  const products = {
+    iniciante: {
+      slug: 'kit-iniciante-economico',
+      title: 'Kit Iniciante Econômico',
+      description: 'O guia perfeito para começar sua horta gastando pouco. Inclui lista de materiais reciclados, substrato caseiro e plano de horta com R$50.',
+      price: 29,
+      originalPrice: 59,
+      icon: '🌱',
+      benefits: ['100 páginas de conteúdo', 'Planilha de custos', 'Lista de fornecedores baratos', 'Suporte por 30 dias']
+    },
+    germinacao: {
+      slug: 'kit-germinacao',
+      title: 'Kit Germinação Completo',
+      description: 'Domine a arte de germinar sementes com taxa de sucesso acima de 90%. Inclui tabela de germinação para 50+ plantas.',
+      price: 19,
+      originalPrice: 39,
+      icon: '🌱',
+      benefits: ['45 páginas + vídeos', 'Tabela de germinação', 'Troubleshooting completo', 'Checklist imprimível']
+    },
+    temperos: {
+      slug: 'guia-temperos',
+      title: 'Guia Temperos Essenciais',
+      description: 'Cultive os 5 temperos mais usados na cozinha brasileira. Manjericão, salsinha, cebolinha, hortelã e alecrim.',
+      price: 9,
+      originalPrice: 19,
+      icon: '🌿',
+      benefits: ['Guia de cada tempero', 'Dicas de colheita', 'Receitas bônus', 'Calendário de plantio']
+    },
+    pragas: {
+      slug: 'guia-pragas-completo',
+      title: 'Guia Pragas e Doenças',
+      description: 'Identifique e trate TODOS os problemas da sua horta. De pulgões a fungos, com soluções orgânicas.',
+      price: 19,
+      originalPrice: 39,
+      icon: '🐛',
+      benefits: ['80 páginas ilustradas', '20+ pragas cobertas', 'Receitas caseiras', 'Prevenção e tratamento']
+    },
+    sombra: {
+      slug: 'guia-horta-sombra',
+      title: 'Guia Horta na Sombra',
+      description: 'Cultive mesmo com pouca luz! 15 plantas que crescem em meia-sombra e técnicas para maximizar a luz disponível.',
+      price: 14,
+      originalPrice: 29,
+      icon: '🌥️',
+      benefits: ['15 plantas detalhadas', 'Mapa de luz', 'Técnicas de reflexão', 'Layout otimizado']
+    },
+    vertical: {
+      slug: 'kit-horta-vertical',
+      title: 'Kit Horta Vertical',
+      description: 'Maximize seu espaço com cultivo vertical. Projetos DIY com materiais baratos para varandas e paredes.',
+      price: 22,
+      originalPrice: 44,
+      icon: '📐',
+      benefits: ['5 projetos DIY', 'Lista de materiais', 'Passo a passo com fotos', 'Dicas de manutenção']
+    },
+    hidroponia: {
+      slug: 'guia-hidroponia',
+      title: 'Guia Hidroponia Caseira',
+      description: 'Cultive sem terra com sistemas simples e baratos. Do Kratky ao DWC, tudo explicado passo a passo.',
+      price: 24,
+      originalPrice: 49,
+      icon: '💧',
+      benefits: ['135 páginas completas', 'Sistema Kratky DIY', 'Solução nutritiva', 'Grupo de suporte']
+    },
+    calendario: {
+      slug: 'calendario-plantio',
+      title: 'Calendário de Plantio Anual',
+      description: 'Saiba exatamente o que plantar em cada mês do ano, adaptado para sua região do Brasil.',
+      price: 9,
+      originalPrice: 19,
+      icon: '📅',
+      benefits: ['Por região do Brasil', 'Infográfico de parede', 'Fases da lua', 'Alertas por email']
+    },
+    saladas: {
+      slug: 'kit-saladas-em-casa',
+      title: 'Kit Saladas em Casa',
+      description: 'Produza folhosas o ano todo. Alface, rúcula, espinafre e mais - da semente à mesa.',
+      price: 24,
+      originalPrice: 49,
+      icon: '🥗',
+      benefits: ['8 folhosas detalhadas', 'Escalonamento', 'Colheita contínua', 'Receitas bônus']
+    },
+    chas: {
+      slug: 'kit-chas-medicinais',
+      title: 'Kit Chás Medicinais',
+      description: 'Cultive suas próprias ervas medicinais. 12 plantas com propriedades terapêuticas e como usar.',
+      price: 24,
+      originalPrice: 49,
+      icon: '🍵',
+      benefits: ['12 ervas medicinais', 'Propriedades de cada', 'Receitas de chás', 'Cuidados e avisos']
+    },
+    propagacao: {
+      slug: 'pack-propagacao',
+      title: 'Pack Propagação de Plantas',
+      description: 'Multiplique suas plantas infinitamente. Estacas, divisão, sementes - todos os métodos.',
+      price: 19,
+      originalPrice: 39,
+      icon: '✂️',
+      benefits: ['5 métodos completos', 'Tabela de 50+ plantas', 'Hormônio caseiro', 'Calendário']
+    },
+    cucurbitaceas: {
+      slug: 'guia-cucurbitaceas',
+      title: 'Guia Cucurbitáceas em Vaso',
+      description: 'Pepino, abobrinha e abóbora mesmo em apartamento. Inclui técnica de polinização manual.',
+      price: 14,
+      originalPrice: 29,
+      icon: '🥒',
+      benefits: ['Polinização manual', 'Tutoramento vertical', 'Pragas específicas', 'Alta produtividade']
+    }
+  };
+
+  // Estado do quiz
+  let currentQuestion = 1;
+  let scores = {};
+  let userName = '';
+
+  // Inicializar scores
+  Object.keys(products).forEach(key => {
+    scores[key] = 0;
+  });
+
+  // Elementos do DOM
+  const progressBar = document.getElementById('progress-bar');
+  const progressText = document.getElementById('progress-text');
+  const questions = document.querySelectorAll('.quiz-question');
+  const options = document.querySelectorAll('.quiz-option');
+
+  // Atualizar progresso
+  function updateProgress() {
+    const progress = ((currentQuestion - 1) / 8) * 100;
+    progressBar.style.width = `${progress}%`;
+    progressText.textContent = `${currentQuestion - 1} de 8`;
+  }
+
+  // Mostrar pergunta
+  function showQuestion(num) {
+    questions.forEach(q => q.classList.remove('active'));
+    const target = document.querySelector(`[data-question="${num}"]`);
+    if (target) {
+      target.classList.add('active');
+    }
+  }
+
+  // Processar resposta
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      // Marcar como selecionado
+      option.classList.add('selected');
+
+      // Processar pontos
+      const points = option.dataset.points;
+      if (points) {
+        points.split(',').forEach(p => {
+          const [category, value] = p.split(':');
+          scores[category] = (scores[category] || 0) + parseInt(value);
+        });
+      }
+
+      // Avançar após pequeno delay
+      setTimeout(() => {
+        currentQuestion++;
+
+        if (currentQuestion <= 8) {
+          showQuestion(currentQuestion);
+          updateProgress();
+        } else {
+          // Mostrar captura de email
+          showQuestion('email');
+          document.getElementById('progress-container').style.display = 'none';
+        }
+      }, 300);
+    });
+  });
+
+  // Botão de resultado
+  document.getElementById('show-result-btn').addEventListener('click', () => {
+    const name = document.getElementById('quiz-name').value;
+    const email = document.getElementById('quiz-email').value;
+
+    if (!email || !email.includes('@')) {
+      alert('Por favor, insira um email válido');
+      return;
+    }
+
+    userName = name || 'Amigo(a)';
+
+    // Aqui você pode enviar o email para sua lista
+    // sendToMailingList(email, name, scores);
+
+    // Calcular resultado
+    calculateAndShowResult();
+  });
+
+  function calculateAndShowResult() {
+    // Ordenar por pontuação
+    const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    const topProduct = sorted[0][0];
+    const secondProduct = sorted[1][0];
+    const thirdProduct = sorted[2][0];
+
+    // Atualizar nome
+    document.getElementById('result-name').textContent = userName;
+
+    // Produto principal
+    const main = products[topProduct];
+    document.getElementById('recommended-product').innerHTML = `
+      <div class="flex flex-col md:flex-row gap-6 items-center">
+        <div class="w-24 h-24 bg-white rounded-2xl flex items-center justify-center text-5xl shadow-sm">
+          ${main.icon}
+        </div>
+        <div class="flex-1 text-center md:text-left">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">${main.title}</h3>
+          <p class="text-gray-600 mb-4">${main.description}</p>
+          <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-4">
+            ${main.benefits.map(b => `<span class="px-3 py-1 bg-white rounded-full text-sm text-gray-600">✓ ${b}</span>`).join('')}
+          </div>
+          <div class="flex items-center gap-4 justify-center md:justify-start">
+            <span class="text-3xl font-bold text-leaf-600">R$ ${main.price}</span>
+            <span class="text-lg text-gray-400 line-through">R$ ${main.originalPrice}</span>
+            <span class="px-2 py-1 bg-red-100 text-red-600 rounded text-sm font-medium">
+              -${Math.round((1 - main.price/main.originalPrice) * 100)}%
+            </span>
+          </div>
+        </div>
+      </div>
+      <a href="/produtos/${main.slug}" class="mt-6 btn-primary w-full text-center text-lg py-4 block">
+        Quero esse guia!
+        <svg class="w-5 h-5 ml-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+    `;
+
+    // Produtos complementares
+    const comp1 = products[secondProduct];
+    const comp2 = products[thirdProduct];
+    document.getElementById('complementary-products').innerHTML = `
+      <a href="/produtos/${comp1.slug}" class="block p-4 bg-white rounded-xl border border-gray-200 hover:border-leaf-300 hover:shadow-md transition-all">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="text-2xl">${comp1.icon}</span>
+          <span class="font-semibold text-gray-900">${comp1.title}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-leaf-600">R$ ${comp1.price}</span>
+          <span class="text-sm text-gray-400 line-through">R$ ${comp1.originalPrice}</span>
+        </div>
+      </a>
+      <a href="/produtos/${comp2.slug}" class="block p-4 bg-white rounded-xl border border-gray-200 hover:border-leaf-300 hover:shadow-md transition-all">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="text-2xl">${comp2.icon}</span>
+          <span class="font-semibold text-gray-900">${comp2.title}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-leaf-600">R$ ${comp2.price}</span>
+          <span class="text-sm text-gray-400 line-through">R$ ${comp2.originalPrice}</span>
+        </div>
+      </a>
+    `;
+
+    // Mostrar resultado
+    showQuestion('result');
+  }
+
+  // Inicializar
+  updateProgress();
+</script>
