@@ -1,0 +1,116 @@
+---
+interface Props {
+  type?: 'card' | 'article' | 'list' | 'hero';
+  count?: number;
+}
+
+const { type = 'card', count = 1 } = Astro.props;
+---
+
+{type === 'card' && (
+  <div class="space-y-4">
+    {Array.from({ length: count }).map(() => (
+      <div class="bg-white rounded-2xl overflow-hidden shadow-sm animate-pulse">
+        <div class="h-48 bg-gray-200"></div>
+        <div class="p-6 space-y-4">
+          <div class="flex gap-2">
+            <div class="h-6 w-16 bg-gray-200 rounded-full"></div>
+            <div class="h-6 w-20 bg-gray-200 rounded-full"></div>
+          </div>
+          <div class="h-6 bg-gray-200 rounded w-3/4"></div>
+          <div class="space-y-2">
+            <div class="h-4 bg-gray-200 rounded"></div>
+            <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+)}
+
+{type === 'article' && (
+  <div class="max-w-4xl mx-auto px-4 animate-pulse">
+    <!-- Breadcrumb skeleton -->
+    <div class="flex gap-2 mb-8">
+      <div class="h-4 w-16 bg-gray-200 rounded"></div>
+      <div class="h-4 w-4 bg-gray-200 rounded"></div>
+      <div class="h-4 w-24 bg-gray-200 rounded"></div>
+    </div>
+
+    <!-- Header skeleton -->
+    <div class="mb-8 space-y-4">
+      <div class="flex gap-3">
+        <div class="h-6 w-20 bg-gray-200 rounded-full"></div>
+        <div class="h-6 w-24 bg-gray-200 rounded-full"></div>
+      </div>
+      <div class="h-10 bg-gray-200 rounded w-3/4"></div>
+      <div class="h-6 bg-gray-200 rounded w-full"></div>
+      <div class="h-4 w-32 bg-gray-200 rounded"></div>
+    </div>
+
+    <!-- Image skeleton -->
+    <div class="w-full aspect-video bg-gray-200 rounded-xl mb-8"></div>
+
+    <!-- Content skeleton -->
+    <div class="space-y-4">
+      {Array.from({ length: 6 }).map(() => (
+        <div class="space-y-2">
+          <div class="h-4 bg-gray-200 rounded"></div>
+          <div class="h-4 bg-gray-200 rounded w-11/12"></div>
+          <div class="h-4 bg-gray-200 rounded w-4/5"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
+{type === 'list' && (
+  <div class="space-y-3">
+    {Array.from({ length: count }).map(() => (
+      <div class="flex items-center gap-4 p-4 bg-white rounded-xl animate-pulse">
+        <div class="w-16 h-16 bg-gray-200 rounded-xl flex-shrink-0"></div>
+        <div class="flex-1 space-y-2">
+          <div class="h-5 bg-gray-200 rounded w-3/4"></div>
+          <div class="h-4 bg-gray-200 rounded w-1/2"></div>
+        </div>
+      </div>
+    ))}
+  </div>
+)}
+
+{type === 'hero' && (
+  <div class="py-20 px-4 animate-pulse">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <div class="h-6 w-24 bg-gray-200 rounded-full mx-auto"></div>
+      <div class="h-12 bg-gray-200 rounded w-3/4 mx-auto"></div>
+      <div class="h-6 bg-gray-200 rounded w-2/3 mx-auto"></div>
+      <div class="flex justify-center gap-4 pt-4">
+        <div class="h-12 w-40 bg-gray-200 rounded-xl"></div>
+        <div class="h-12 w-32 bg-gray-200 rounded-xl"></div>
+      </div>
+    </div>
+  </div>
+)}
+
+<style>
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-pulse > div,
+  .animate-pulse .bg-gray-200 {
+    background: linear-gradient(
+      90deg,
+      #e5e7eb 0%,
+      #f3f4f6 50%,
+      #e5e7eb 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+</style>

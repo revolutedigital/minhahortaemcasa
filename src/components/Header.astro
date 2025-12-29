@@ -1,96 +1,140 @@
 ---
+import Logo from './Logo.astro';
+
 const navItems = [
-  { href: '/guias', label: 'Guias' },
-  { href: '/plantas', label: 'Plantas' },
-  { href: '/problemas', label: 'Problemas' },
-  { href: '/produtos', label: 'Produtos' },
+  { href: '/plantas', label: 'Plantas', icon: 'leaf' },
+  { href: '/problemas', label: 'Problemas', icon: 'help' },
+  { href: '/guias', label: 'Guias', icon: 'book' },
+  { href: '/sobre', label: 'Sobre', icon: 'info' },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="bg-white border-b border-gray-100 sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group">
-        <svg class="w-8 h-8 text-primary-600 group-hover:text-primary-700 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 2L12 6" stroke-linecap="round"/>
-          <path d="M12 6C12 6 8 8 8 12C8 16 12 22 12 22C12 22 16 16 16 12C16 8 12 6 12 6Z" fill="currentColor" opacity="0.2"/>
-          <path d="M12 6C12 6 8 8 8 12C8 16 12 22 12 22C12 22 16 16 16 12C16 8 12 6 12 6Z"/>
-          <path d="M8 10C6 9 4 10 4 12" stroke-linecap="round"/>
-          <path d="M16 10C18 9 20 10 20 12" stroke-linecap="round"/>
-        </svg>
-        <span class="font-bold text-xl text-gray-900">
-          Horta <span class="text-primary-600">em Casa</span>
-        </span>
-      </a>
+      <Logo size="md" variant="full" />
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8">
+      <nav class="hidden lg:flex items-center gap-2">
         {navItems.map((item) => (
           <a
             href={item.href}
             class:list={[
-              'text-sm font-medium transition-colors hover:text-primary-600',
-              currentPath.startsWith(item.href) ? 'text-primary-600' : 'text-gray-600'
+              'relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200',
+              currentPath.startsWith(item.href)
+                ? 'text-leaf-700 bg-leaf-50'
+                : 'text-gray-600 hover:text-leaf-700 hover:bg-leaf-50/50'
             ]}
           >
             {item.label}
+            {currentPath.startsWith(item.href) && (
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-leaf-500 rounded-full"></span>
+            )}
           </a>
         ))}
-        <a
-          href="#newsletter"
-          class="bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors"
-        >
-          Receber Dicas
-        </a>
       </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a
+          href="/produtos"
+          class="group relative px-6 py-2.5 bg-gradient-to-r from-leaf-500 to-leaf-600 text-white rounded-xl font-semibold text-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-leaf-500/30 hover:scale-105"
+        >
+          <span class="relative z-10 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            Guias Premium
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-leaf-600 to-leaf-700 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </a>
+      </div>
 
       <!-- Mobile Menu Button -->
       <button
         id="mobile-menu-button"
-        class="md:hidden p-2 text-gray-600 hover:text-gray-900"
+        class="lg:hidden p-2.5 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-colors"
         aria-label="Menu"
       >
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg class="w-6 h-6 menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg class="w-6 h-6 close-icon hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
+  </div>
 
-    <!-- Mobile Navigation -->
-    <nav id="mobile-menu" class="hidden md:hidden pb-4">
-      <div class="flex flex-col gap-2">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class:list={[
-              'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
-              currentPath.startsWith(item.href)
-                ? 'bg-primary-50 text-primary-600'
-                : 'text-gray-600 hover:bg-gray-50'
-            ]}
-          >
-            {item.label}
-          </a>
-        ))}
+  <!-- Mobile Navigation -->
+  <nav id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 py-4 space-y-2">
+      {navItems.map((item) => (
         <a
-          href="#newsletter"
-          class="bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors text-center mt-2"
+          href={item.href}
+          class:list={[
+            'flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all',
+            currentPath.startsWith(item.href)
+              ? 'bg-leaf-50 text-leaf-700'
+              : 'text-gray-600 hover:bg-gray-50'
+          ]}
         >
-          Receber Dicas
+          {item.label}
+        </a>
+      ))}
+      <div class="pt-2 border-t border-gray-100">
+        <a
+          href="/produtos"
+          class="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-leaf-500 to-leaf-600 text-white rounded-xl font-semibold"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+          Ver Guias Premium
         </a>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>
 
+<!-- Spacer para compensar header fixo -->
+<div class="h-20"></div>
+
 <script>
+  const header = document.getElementById('main-header');
   const button = document.getElementById('mobile-menu-button');
   const menu = document.getElementById('mobile-menu');
+  const menuIcon = button?.querySelector('.menu-icon');
+  const closeIcon = button?.querySelector('.close-icon');
 
+  // Toggle mobile menu
   button?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
     menu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+
+  // Header scroll effect
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > 50) {
+      header?.classList.add('bg-white/95', 'backdrop-blur-lg', 'shadow-sm');
+    } else {
+      header?.classList.remove('bg-white/95', 'backdrop-blur-lg', 'shadow-sm');
+    }
+
+    lastScroll = currentScroll;
   });
 </script>
+
+<style>
+  #main-header {
+    transition: all 0.3s ease;
+  }
+</style>

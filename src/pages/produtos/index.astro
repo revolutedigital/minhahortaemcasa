@@ -1,89 +1,296 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import Mascote from '../../components/illustrations/Mascote.astro';
+import PlantCardIcons from '../../components/illustrations/PlantCardIcons.astro';
 
 export const prerender = true;
 
 const allProdutos = await getCollection('produtos');
+
+// Separate featured (combos) and individual products
+const featuredProducts = allProdutos.filter(p => p.data.featured);
+const plantProducts = allProdutos.filter(p => p.data.category === 'plantas');
+const problemProducts = allProdutos.filter(p => p.data.category === 'problemas');
+
+// Map plant slugs to icons
+const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'generic'> = {
+  'guia-manjericao': 'manjericao',
+  'guia-alecrim': 'alecrim',
+  'guia-hortela': 'hortela',
+};
 ---
 
 <Layout
-  title="Produtos Digitais"
-  description="Ebooks, checklists e guias completos para acelerar seu sucesso com hortas em casa."
+  title="Guias e Ebooks"
+  description="Guias práticos e ebooks para cultivar sua horta em casa. Soluções específicas para cada planta e problema."
 >
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="text-center mb-12">
-        <nav class="text-sm text-gray-500 mb-4">
-          <a href="/" class="hover:text-primary-600">Inicio</a>
-          <span class="mx-2">/</span>
-          <span class="text-gray-900">Produtos</span>
-        </nav>
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">Produtos Digitais</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Ebooks, checklists e guias completos para acelerar seu sucesso com hortas.
-        </p>
-      </div>
+  <!-- Hero Section -->
+  <section class="relative py-20 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-sun-50 via-white to-leaf-50"></div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-sun-200/30 rounded-full blur-3xl blob-animate"></div>
+    <div class="absolute bottom-10 left-10 w-64 h-64 bg-leaf-200/20 rounded-full blur-3xl blob-animate" style="animation-delay: -3s;"></div>
 
-      <!-- Products Grid -->
-      {allProdutos.length > 0 ? (
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {allProdutos.map((produto) => (
-            <div class="bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
-              {produto.data.image && (
-                <img
-                  src={produto.data.image}
-                  alt={produto.data.title}
-                  class="w-full aspect-video object-cover"
-                />
-              )}
-              <div class="p-6">
-                <h3 class="font-bold text-xl text-gray-900 mb-2">{produto.data.title}</h3>
-                <p class="text-gray-600 text-sm mb-4">{produto.data.description}</p>
-                {produto.data.features && (
-                  <ul class="mb-4 space-y-1">
-                    {produto.data.features.slice(0, 3).map((feature) => (
-                      <li class="text-sm text-gray-600 flex items-center gap-2">
-                        <svg class="w-4 h-4 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                <div class="flex items-center justify-between">
-                  <div>
-                    {produto.data.originalPrice && (
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <!-- Content -->
+        <div class="flex-1 text-center lg:text-left">
+          <nav class="text-sm text-gray-500 mb-4">
+            <a href="/" class="hover:text-leaf-600 transition-colors">Inicio</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 font-medium">Produtos</span>
+          </nav>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            Guias <span class="text-gradient">Premium</span>
+          </h1>
+
+          <p class="text-xl text-gray-600 max-w-xl mb-8">
+            Ebooks praticos e completos para cultivar sua horta com sucesso. Entrega imediata por email.
+          </p>
+
+          <div class="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
+            <span class="badge badge-leaf">PDF Ilustrado</span>
+            <span class="badge badge-sun">Acesso Vitalicio</span>
+            <span class="badge badge-earth">Garantia 7 dias</span>
+          </div>
+
+          <a href="#produtos" class="btn-primary">
+            Ver todos os guias
+            <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mascote + floating elements -->
+        <div class="relative">
+          <Mascote mood="waving" size="xl" />
+
+          <!-- Floating book icon -->
+          <div class="absolute -top-4 -right-6 animate-float bg-white rounded-2xl shadow-lg p-4">
+            <svg class="w-10 h-10 text-leaf-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+
+          <!-- Floating plant icon -->
+          <div class="absolute -bottom-2 -left-6 animate-float bg-white rounded-2xl shadow-lg p-3" style="animation-delay: -2s;">
+            <PlantCardIcons type="manjericao" size="sm" />
+          </div>
+
+          <!-- Badge OFF -->
+          <div class="absolute top-1/3 -right-4 animate-float bg-sun-400 text-sun-900 font-bold text-sm px-3 py-1 rounded-full" style="animation-delay: -3s;">
+            ate 60% OFF
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="produtos" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Featured/Combo Products -->
+      {featuredProducts.length > 0 && (
+        <div class="mb-16 scroll-reveal">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-8 h-8 bg-sun-100 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-sun-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </span>
+            Kits em Destaque
+            <span class="text-sm font-normal text-leaf-600 bg-leaf-50 px-3 py-1 rounded-full">Melhor custo-beneficio</span>
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProducts.map((produto, index) => (
+              <a
+                href={`/produtos/${produto.slug}`}
+                class={`group bg-gradient-to-br from-leaf-50 to-white rounded-3xl border-2 border-leaf-200 overflow-hidden hover:shadow-xl hover:border-leaf-300 transition-all relative card-hover scroll-reveal reveal-delay-${index + 1}`}
+              >
+                <div class="absolute top-4 right-4 bg-sun-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                  {Math.round((1 - produto.data.price / produto.data.originalPrice) * 100)}% OFF
+                </div>
+                <div class="p-6">
+                  <span class="inline-flex items-center gap-1 text-xs font-medium text-leaf-600 uppercase tracking-wide">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                    </svg>
+                    Kit Completo
+                  </span>
+                  <h3 class="font-bold text-xl text-gray-900 mt-2 mb-2 group-hover:text-leaf-700 transition-colors">{produto.data.title}</h3>
+                  <p class="text-gray-600 text-sm mb-4">{produto.data.description}</p>
+                  <div class="flex items-center justify-between mt-6">
+                    <div>
                       <span class="text-sm text-gray-400 line-through mr-2">
                         R$ {produto.data.originalPrice}
                       </span>
-                    )}
-                    <span class="text-2xl font-bold text-primary-600">
-                      R$ {produto.data.price}
+                      <span class="text-2xl font-bold text-leaf-600">
+                        R$ {produto.data.price}
+                      </span>
+                    </div>
+                    <span class="flex items-center text-leaf-600 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                      Ver Detalhes
+                      <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
                     </span>
                   </div>
-                  <a
-                    href={produto.data.checkoutUrl || `/produtos/${produto.slug}`}
-                    class="px-4 py-2 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors"
-                  >
-                    Comprar
-                  </a>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div class="text-center py-16 bg-gray-50 rounded-xl">
-          <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-          </svg>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Produtos em breve</h3>
-          <p class="text-gray-600">Estamos preparando materiais incriveis para voce!</p>
+              </a>
+            ))}
+          </div>
         </div>
       )}
+
+      <!-- Plant Guides -->
+      {plantProducts.length > 0 && (
+        <div class="mb-16 scroll-reveal">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-8 h-8 bg-leaf-100 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-leaf-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </span>
+            Guias por Planta
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {plantProducts.map((produto, index) => (
+              <a
+                href={`/produtos/${produto.slug}`}
+                class={`group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-leaf-200 transition-all card-hover scroll-reveal reveal-delay-${Math.min(index + 1, 4)}`}
+              >
+                <div class="p-5">
+                  <div class="w-12 h-12 bg-leaf-50 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                    <PlantCardIcons type={plantIcons[produto.slug] || 'generic'} size="sm" />
+                  </div>
+                  <span class="text-xs font-medium text-leaf-600 uppercase tracking-wide">Guia Completo</span>
+                  <h3 class="font-bold text-lg text-gray-900 mt-1 mb-2 group-hover:text-leaf-700 transition-colors">{produto.data.title}</h3>
+                  <p class="text-gray-600 text-sm mb-4 line-clamp-2">{produto.data.description}</p>
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <span class="text-sm text-gray-400 line-through mr-1">
+                        R$ {produto.data.originalPrice}
+                      </span>
+                      <span class="text-xl font-bold text-gray-900">
+                        R$ {produto.data.price}
+                      </span>
+                    </div>
+                    <span class="flex items-center text-leaf-600 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                      Ver mais
+                      <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Problem Guides -->
+      {problemProducts.length > 0 && (
+        <div class="scroll-reveal">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <span class="w-8 h-8 bg-earth-100 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-earth-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </span>
+            Resolva Problemas
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {problemProducts.map((produto, index) => (
+              <a
+                href={`/produtos/${produto.slug}`}
+                class={`group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:border-earth-200 transition-all card-hover scroll-reveal reveal-delay-${Math.min(index + 1, 3)}`}
+              >
+                <div class="p-5">
+                  <span class="inline-flex items-center gap-1 text-xs font-medium text-earth-600 uppercase tracking-wide">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Solucao
+                  </span>
+                  <h3 class="font-bold text-lg text-gray-900 mt-1 mb-2 group-hover:text-earth-700 transition-colors">{produto.data.title}</h3>
+                  <p class="text-gray-600 text-sm mb-4 line-clamp-2">{produto.data.description}</p>
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <span class="text-sm text-gray-400 line-through mr-1">
+                        R$ {produto.data.originalPrice}
+                      </span>
+                      <span class="text-xl font-bold text-gray-900">
+                        R$ {produto.data.price}
+                      </span>
+                    </div>
+                    <span class="flex items-center text-earth-600 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                      Ver mais
+                      <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Trust badges -->
+      <div class="mt-16 pt-8 border-t border-gray-100 scroll-reveal">
+        <div class="flex flex-wrap justify-center gap-8 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-leaf-100 rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-leaf-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            Entrega imediata por email
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-leaf-100 rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-leaf-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            Pagamento 100% seguro
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-leaf-100 rounded-full flex items-center justify-center">
+              <svg class="w-4 h-4 text-leaf-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            Garantia de 7 dias
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-leaf-50 to-sun-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+      <div class="flex justify-center mb-6">
+        <Mascote mood="happy" size="lg" />
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+        Nao sabe por onde comecar?
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        O Kit Iniciante tem tudo que voce precisa para sua primeira horta!
+      </p>
+      <a href="/produtos/kit-iniciante" class="btn-primary">
+        Conhecer o Kit Iniciante
+        <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
     </div>
   </section>
 </Layout>

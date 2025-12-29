@@ -1,238 +1,901 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
-import CTABox from '../components/CTABox.astro';
-import LeadMagnetPopup from '../components/LeadMagnetPopup.astro';
 import { getCollection } from 'astro:content';
+import FloatingPlants from '../components/illustrations/FloatingPlants.astro';
+import HeroIllustration from '../components/illustrations/HeroIllustration.astro';
+import PlantCardIcons from '../components/illustrations/PlantCardIcons.astro';
+import QuizIcons from '../components/illustrations/QuizIcons.astro';
+import AvatarIcons from '../components/illustrations/AvatarIcons.astro';
+import ToolsIcon from '../components/illustrations/ToolsIcon.astro';
+import Mascote from '../components/illustrations/Mascote.astro';
 
 export const prerender = true;
 
-const allGuias = await getCollection('guias', ({ data }) => !data.draft);
 const allPlantas = await getCollection('plantas', ({ data }) => !data.draft);
 const allProblemas = await getCollection('problemas', ({ data }) => !data.draft);
+const allGuias = await getCollection('guias', ({ data }) => !data.draft);
 
-const recentArticles = [...allGuias, ...allPlantas, ...allProblemas]
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 6);
+const featuredPlantas = allPlantas.slice(0, 3);
+const featuredProblemas = allProblemas.slice(0, 2);
+
+// Mapear plantas para icones
+const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolinha' | 'salsinha' | 'generic'> = {
+  'manjericao': 'manjericao',
+  'alecrim': 'alecrim',
+  'hortela': 'hortela',
+  'cebolinha': 'cebolinha',
+  'salsinha': 'salsinha'
+};
 ---
 
-<Layout title="Horta em Casa" description="Aprenda a cultivar sua propria horta em casa, apartamento ou varanda. Guias praticos, dicas de cultivo e solucoes para problemas comuns.">
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-primary-50 via-white to-primary-50 py-16 sm:py-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 text-sm font-medium rounded-full mb-6">
-          Seu guia completo de cultivo
-        </span>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-          Cultive sua propria
-          <span class="text-primary-600"> horta em casa</span>
-        </h1>
-        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-          Mesmo morando em apartamento, voce pode ter ervas frescas e temperos organicos.
-          Guias praticos, passo a passo, para iniciantes e experientes.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/guias/horta-em-apartamento"
-            class="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors"
-          >
-            Comecar Agora
-            <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-          <a
-            href="#newsletter"
-            class="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-700 border border-gray-200 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
-          >
-            Receber Dicas Gratis
-          </a>
+<Layout title="Horta em Casa" description="Cultive temperos frescos mesmo em apartamento. Guias praticos, dicas de especialistas e solucoes para sua horta urbana.">
+
+  <!-- Hero Section - Impactante e moderno -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+    <!-- Background decorativo -->
+    <div class="absolute inset-0 bg-gradient-to-br from-leaf-50 via-white to-earth-50"></div>
+
+    <!-- Blobs decorativos -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-leaf-200/30 rounded-full blur-3xl blob-animate"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-earth-200/30 rounded-full blur-3xl blob-animate" style="animation-delay: -4s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sun-200/20 rounded-full blur-3xl"></div>
+
+    <!-- Plantas decorativas flutuantes SVG -->
+    <FloatingPlants />
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Conteudo -->
+        <div class="text-center lg:text-left">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-leaf-200 shadow-sm mb-6 animate-slide-up">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-leaf-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-leaf-500"></span>
+            </span>
+            <span class="text-sm font-medium text-gray-700">+2.500 hortas criadas com nossos guias</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-[1.1] animate-slide-up stagger-1">
+            Sua primeira
+            <span class="text-gradient"> horta em casa</span>
+            <br class="hidden sm:block" />
+            em 7 dias
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 animate-slide-up stagger-2">
+            Mesmo morando em apartamento, sem quintal e sem experiencia.
+            <strong class="text-gray-900">Guias passo a passo</strong> feitos para o clima brasileiro.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up stagger-3">
+            <a href="#quiz" class="btn-primary text-lg px-8 py-4 group">
+              Descobrir minha planta ideal
+              <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            <a href="/produtos" class="btn-secondary text-lg px-8 py-4">
+              Ver guias premium
+            </a>
+          </div>
+
+          <!-- Social proof mini -->
+          <div class="flex items-center gap-4 mt-8 justify-center lg:justify-start animate-slide-up stagger-4">
+            <div class="flex -space-x-3">
+              <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden"><AvatarIcons variant={1} size="md" /></div>
+              <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden"><AvatarIcons variant={2} size="md" /></div>
+              <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden"><AvatarIcons variant={3} size="md" /></div>
+              <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden"><AvatarIcons variant={4} size="md" /></div>
+            </div>
+            <div class="text-sm text-gray-600">
+              <div class="flex items-center gap-1 text-sun-500">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="font-medium">4.9/5</span> de 847 avaliacoes
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual / Ilustracao -->
+        <div class="relative hidden lg:block">
+          <div class="relative w-full aspect-square max-w-lg mx-auto">
+            <!-- Card principal com ilustracao SVG -->
+            <div class="absolute inset-0 bg-white rounded-3xl shadow-2xl shadow-leaf-500/10 p-6 animate-grow">
+              <div class="h-full flex flex-col">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+                <div class="flex-1 bg-gradient-to-br from-leaf-50 to-earth-50 rounded-2xl flex items-center justify-center p-4">
+                  <HeroIllustration />
+                </div>
+              </div>
+            </div>
+
+            <!-- Card flutuante 1 - Manjericao -->
+            <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 animate-float" style="animation-delay: -1s;">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-leaf-100 rounded-xl flex items-center justify-center">
+                  <PlantCardIcons type="manjericao" size="sm" />
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Manjericao</p>
+                  <p class="text-xs text-leaf-600">Pronto em 4 semanas</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card flutuante 2 - Rega -->
+            <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 animate-float" style="animation-delay: -2s;">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-water-100 rounded-xl flex items-center justify-center">
+                  <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 4C16 4 8 12 8 20C8 26 12 30 16 30C20 30 24 26 24 20C24 12 16 4 16 4Z" fill="#7dd3fc" stroke="#0ea5e9" stroke-width="2"/>
+                    <ellipse cx="12" cy="18" rx="2" ry="3" fill="white" fill-opacity="0.5"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Rega ideal</p>
+                  <p class="text-xs text-water-600">A cada 2 dias</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card flutuante 3 - Colheita -->
+            <div class="absolute top-1/2 -right-8 bg-gradient-to-r from-leaf-500 to-leaf-600 rounded-2xl shadow-xl p-4 animate-float text-white" style="animation-delay: -3s;">
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-sm font-medium">Colheita!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-12 bg-white border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center scroll-reveal group">
+          <div class="text-3xl sm:text-4xl font-bold text-leaf-600 mb-1 counter-stat" data-target="15" data-suffix="+">0</div>
+          <div class="text-sm text-gray-600 group-hover:text-leaf-600 transition-colors">Guias detalhados</div>
+        </div>
+        <div class="text-center scroll-reveal reveal-delay-1 group">
+          <div class="text-3xl sm:text-4xl font-bold text-earth-600 mb-1 counter-stat" data-target="2500" data-suffix="+" data-format="k">0</div>
+          <div class="text-sm text-gray-600 group-hover:text-earth-600 transition-colors">Hortas criadas</div>
+        </div>
+        <div class="text-center scroll-reveal reveal-delay-2 group">
+          <div class="text-3xl sm:text-4xl font-bold text-sun-600 mb-1 counter-stat" data-target="98" data-suffix="%">0</div>
+          <div class="text-sm text-gray-600 group-hover:text-sun-600 transition-colors">Taxa de sucesso</div>
+        </div>
+        <div class="text-center scroll-reveal reveal-delay-3 group">
+          <div class="text-3xl sm:text-4xl font-bold text-water-600 mb-1 counter-stat" data-target="4.9" data-decimal="true">0</div>
+          <div class="text-sm text-gray-600 group-hover:text-water-600 transition-colors">Avaliacao media</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center p-6">
-          <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </div>
-          <h3 class="font-bold text-lg text-gray-900 mb-2">Guias Completos</h3>
-          <p class="text-gray-600">Passo a passo detalhado para cada tipo de planta e espaco.</p>
-        </div>
-        <div class="text-center p-6">
-          <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
-          </div>
-          <h3 class="font-bold text-lg text-gray-900 mb-2">Dicas Praticas</h3>
-          <p class="text-gray-600">Solucoes testadas para os problemas mais comuns.</p>
-        </div>
-        <div class="text-center p-6">
-          <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-7 h-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-          </div>
-          <h3 class="font-bold text-lg text-gray-900 mb-2">Para Iniciantes</h3>
-          <p class="text-gray-600">Comece do zero, mesmo sem experiencia anterior.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Recent Articles -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Ultimos Artigos</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Guias praticos e dicas atualizadas para voce cultivar sua horta com sucesso.
-        </p>
-      </div>
-
-      {recentArticles.length > 0 ? (
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {recentArticles.map((article) => (
-            <ArticleCard
-              title={article.data.title}
-              description={article.data.description}
-              href={`/${article.collection}/${article.slug}`}
-              image={article.data.image}
-              category={article.data.category}
-              readTime={article.data.readTime}
-            />
-          ))}
-        </div>
-      ) : (
-        <div class="text-center py-12 bg-white rounded-xl border border-gray-100">
-          <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-          </svg>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Conteudo em breve</h3>
-          <p class="text-gray-600">Estamos preparando guias incriveis para voce!</p>
-        </div>
-      )}
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-16 bg-white">
+  <!-- Quiz Section -->
+  <section id="quiz" class="py-20 bg-gradient-to-br from-leaf-50 via-white to-earth-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <CTABox
-        title="Checklist Gratuito: 7 Erros que Matam sua Horta"
-        description="Descubra os erros mais comuns que iniciantes cometem e como evita-los. Baixe gratis!"
-        buttonText="Baixar Agora"
-        buttonHref="#newsletter"
-        variant="highlight"
-        icon="download"
-      />
+      <div class="text-center mb-12 scroll-reveal">
+        <div class="flex justify-center mb-6">
+          <Mascote mood="thinking" size="lg" />
+        </div>
+        <span class="badge badge-leaf mb-4">Quiz Rapido</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Qual planta e ideal para voce?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Responda 3 perguntas e descubra qual tempero combina com seu espaco e rotina.
+        </p>
+      </div>
+
+      <!-- Quiz Card -->
+      <div class="bg-white rounded-3xl shadow-xl shadow-leaf-500/5 p-8 sm:p-12 scroll-reveal-scale reveal-delay-2" id="quiz-container">
+        <!-- Progress Bar -->
+        <div class="mb-8" id="quiz-progress-container">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm font-medium text-gray-600">Progresso</span>
+            <span class="text-sm font-medium text-leaf-600" id="progress-text">1 de 3</span>
+          </div>
+          <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-leaf-400 to-leaf-600 rounded-full transition-all duration-500 ease-out" id="progress-bar" style="width: 33.33%"></div>
+          </div>
+          <div class="flex justify-between mt-2">
+            <div class="flex items-center gap-1">
+              <div class="w-6 h-6 rounded-full bg-leaf-500 flex items-center justify-center" id="step-1-indicator">
+                <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span class="text-xs text-gray-500">Sol</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <div class="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs font-medium text-gray-500" id="step-2-indicator">2</div>
+              <span class="text-xs text-gray-500">Rega</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <div class="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs font-medium text-gray-500" id="step-3-indicator">3</div>
+              <span class="text-xs text-gray-500">Uso</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pergunta 1 -->
+        <div class="quiz-step" data-step="1">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-10 h-10 bg-leaf-100 rounded-full flex items-center justify-center text-leaf-700 font-bold">1</span>
+            <span class="text-sm text-gray-500">de 3 perguntas</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-8">
+            Quanto sol seu espaco recebe por dia?
+          </h3>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="pouco">
+              <div class="mb-3"><QuizIcons type="sun-low" size="w-12 h-12" /></div>
+              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Pouco sol</div>
+              <div class="text-sm text-gray-500">Menos de 3 horas</div>
+            </button>
+            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="medio">
+              <div class="mb-3"><QuizIcons type="sun-partial" size="w-12 h-12" /></div>
+              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Sol parcial</div>
+              <div class="text-sm text-gray-500">3 a 5 horas</div>
+            </button>
+            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="muito">
+              <div class="mb-3"><QuizIcons type="sun-full" size="w-12 h-12" /></div>
+              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Sol pleno</div>
+              <div class="text-sm text-gray-500">Mais de 5 horas</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="quiz-step hidden" data-step="2">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-10 h-10 bg-leaf-100 rounded-full flex items-center justify-center text-leaf-700 font-bold">2</span>
+            <span class="text-sm text-gray-500">de 3 perguntas</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-8">
+            Com que frequencia voce pode regar?
+          </h3>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="pouco">
+              <div class="mb-3"><QuizIcons type="water-forget" size="w-12 h-12" /></div>
+              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Esqueco facil</div>
+              <div class="text-sm text-gray-500">1-2x por semana</div>
+            </button>
+            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="medio">
+              <div class="mb-3"><QuizIcons type="water-ok" size="w-12 h-12" /></div>
+              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Consigo lembrar</div>
+              <div class="text-sm text-gray-500">Dia sim, dia nao</div>
+            </button>
+            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="muito">
+              <div class="mb-3"><QuizIcons type="water-daily" size="w-12 h-12" /></div>
+              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Todo dia</div>
+              <div class="text-sm text-gray-500">Sem problemas</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="quiz-step hidden" data-step="3">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-10 h-10 bg-leaf-100 rounded-full flex items-center justify-center text-leaf-700 font-bold">3</span>
+            <span class="text-sm text-gray-500">de 3 perguntas</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-8">
+            O que voce mais usa na cozinha?
+          </h3>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="italiano">
+              <div class="mb-3"><QuizIcons type="food-pasta" size="w-12 h-12" /></div>
+              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Massas e molhos</div>
+              <div class="text-sm text-gray-500">Italiano</div>
+            </button>
+            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="brasileiro">
+              <div class="mb-3"><QuizIcons type="food-rice" size="w-12 h-12" /></div>
+              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Arroz e feijao</div>
+              <div class="text-sm text-gray-500">Brasileiro</div>
+            </button>
+            <button class="quiz-option group p-6 bg-gray-50 hover:bg-leaf-50 rounded-2xl border-2 border-transparent hover:border-leaf-300 transition-all text-left" data-value="chas">
+              <div class="mb-3"><QuizIcons type="food-tea" size="w-12 h-12" /></div>
+              <div class="font-semibold text-gray-900 group-hover:text-leaf-700">Chas e sucos</div>
+              <div class="text-sm text-gray-500">Bebidas</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Resultado -->
+        <div class="quiz-result hidden" role="region" aria-live="polite" aria-atomic="true">
+          <div class="text-center">
+            <div class="w-24 h-24 mx-auto mb-6 animate-grow">
+              <QuizIcons type="result" size="w-24 h-24" />
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Sua planta ideal: <span class="text-gradient" id="result-plant">Manjericao</span>
+            </h3>
+            <p class="text-gray-600 mb-8 max-w-md mx-auto" id="result-description">
+              Perfeito para iniciantes! Cresce rapido, precisa de sol parcial e combina com seus pratos favoritos.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/plantas/manjericao" id="result-link" class="btn-primary">
+                Ver guia completo
+                <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+              <button id="restart-quiz" class="btn-secondary">
+                Refazer quiz
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Categories Section -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Explore por Categoria</h2>
+  <!-- Bento Grid - Conteudo Principal -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 scroll-reveal">
+        <span class="badge badge-earth mb-4">Explore</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Tudo que voce precisa para comecar
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Guias praticos, solucoes para problemas e dicas de especialistas.
+        </p>
       </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <a href="/guias" class="group bg-white rounded-xl p-6 border border-gray-100 hover:border-primary-200 hover:shadow-lg transition-all">
-          <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors">
-            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
+
+      <!-- Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card Grande - Destaque -->
+        <div class="md:col-span-2 lg:row-span-2 group scroll-reveal-left">
+          <a href="/guias/horta-em-apartamento" class="block h-full bg-gradient-to-br from-leaf-500 to-leaf-700 rounded-3xl p-8 text-white relative overflow-hidden card-hover">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+            <div class="relative z-10 h-full flex flex-col">
+              <span class="inline-flex items-center gap-2 px-3 py-1 bg-white/20 rounded-full text-sm font-medium w-fit mb-6">
+                <span class="w-2 h-2 bg-sun-400 rounded-full"></span>
+                Mais popular
+              </span>
+              <div class="flex-1">
+                <h3 class="text-2xl sm:text-3xl font-bold mb-4">Horta em Apartamento: Guia Definitivo</h3>
+                <p class="text-leaf-100 mb-6">Como criar uma horta produtiva mesmo em espacos pequenos. Passo a passo completo.</p>
+              </div>
+              <div class="flex items-center gap-2 text-sm font-medium">
+                <span>Ler guia completo</span>
+                <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Cards de Plantas -->
+        {featuredPlantas.map((planta) => (
+          <a href={`/plantas/${planta.slug}`} class="group bg-white rounded-3xl border border-gray-100 p-6 hover:shadow-xl hover:border-leaf-200 transition-all card-hover">
+            <div class="w-14 h-14 bg-leaf-50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <PlantCardIcons type={plantIcons[planta.slug] || 'generic'} size="md" />
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2 group-hover:text-leaf-700 transition-colors">{planta.data.title.split(':')[0]}</h3>
+            <p class="text-sm text-gray-500 line-clamp-2">{planta.data.description.slice(0, 80)}...</p>
+            <div class="mt-4 flex items-center text-leaf-600 text-sm font-medium">
+              <span>Ver guia</span>
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+        ))}
+
+        <!-- Card de Problemas -->
+        <div class="md:col-span-2 group scroll-reveal reveal-delay-3">
+          <a href="/problemas" class="block bg-gradient-to-r from-earth-50 to-sun-50 rounded-3xl p-8 border border-earth-100 hover:shadow-xl transition-all card-hover">
+            <div class="flex items-start gap-6">
+              <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center flex-shrink-0">
+                <ToolsIcon size="w-12 h-12" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-earth-700 transition-colors">Problemas comuns e solucoes</h3>
+                <p class="text-gray-600 mb-4">Folhas amarelas? Pragas? Planta murchando? Temos a solucao.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="badge badge-earth">Folhas amarelas</span>
+                  <span class="badge badge-water">Rega</span>
+                  <span class="badge badge-sun">Pragas</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 scroll-reveal">
+        <span class="badge badge-sun mb-4">Depoimentos</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          O que dizem nossos leitores
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Depoimento 1 -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow scroll-reveal reveal-delay-1">
+          <div class="flex items-center gap-1 text-sun-500 mb-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            ))}
           </div>
-          <h3 class="font-bold text-lg text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">Guias</h3>
-          <p class="text-gray-600 text-sm">Tutoriais completos para montar e manter sua horta.</p>
-        </a>
-        <a href="/plantas" class="group bg-white rounded-xl p-6 border border-gray-100 hover:border-primary-200 hover:shadow-lg transition-all">
-          <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors">
-            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-            </svg>
+          <p class="text-gray-600 mb-6">
+            "Nunca imaginei que conseguiria ter uma horta no meu apartamento de 40m². Com o guia consegui colher manjericao em menos de 1 mes!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full overflow-hidden">
+              <AvatarIcons variant={1} size="lg" />
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Marina S.</div>
+              <div class="text-sm text-gray-500">Sao Paulo, SP</div>
+            </div>
           </div>
-          <h3 class="font-bold text-lg text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">Plantas</h3>
-          <p class="text-gray-600 text-sm">Guias especificos para cada tipo de erva e tempero.</p>
-        </a>
-        <a href="/problemas" class="group bg-white rounded-xl p-6 border border-gray-100 hover:border-primary-200 hover:shadow-lg transition-all">
-          <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors">
-            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
+        </div>
+
+        <!-- Depoimento 2 -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow scroll-reveal reveal-delay-2">
+          <div class="flex items-center gap-1 text-sun-500 mb-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            ))}
           </div>
-          <h3 class="font-bold text-lg text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">Problemas</h3>
-          <p class="text-gray-600 text-sm">Solucoes rapidas para pragas, doencas e outros problemas.</p>
+          <p class="text-gray-600 mb-6">
+            "Ja tinha tentado antes e sempre dava errado. Com as dicas de rega finalmente entendi o que estava fazendo de errado. Obrigado!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full overflow-hidden">
+              <AvatarIcons variant={2} size="lg" />
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Carlos R.</div>
+              <div class="text-sm text-gray-500">Curitiba, PR</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 3 -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow scroll-reveal reveal-delay-3">
+          <div class="flex items-center gap-1 text-sun-500 mb-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            ))}
+          </div>
+          <p class="text-gray-600 mb-6">
+            "O Kit Iniciante valeu cada centavo. Em uma semana ja tinha 5 vasinhos na sacada. Meus filhos adoraram acompanhar o crescimento!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full overflow-hidden">
+              <AvatarIcons variant={3} size="lg" />
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Ana Paula</div>
+              <div class="text-sm text-gray-500">Rio de Janeiro, RJ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 scroll-reveal">
+        <div class="flex justify-center mb-6">
+          <Mascote mood="waving" size="lg" />
+        </div>
+        <span class="badge badge-water mb-4">Duvidas Frequentes</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Perguntas frequentes
+        </h2>
+        <p class="text-lg text-gray-600">
+          Tudo que voce precisa saber para comecar sua horta
+        </p>
+      </div>
+
+      <div class="space-y-4 scroll-reveal-scale reveal-delay-2" id="faq-container">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden hover:border-leaf-300 transition-colors">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-left" data-faq="1">
+            <span class="font-semibold text-gray-900 pr-4">Preciso de muito espaco para ter uma horta?</span>
+            <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600">
+              Nao! Voce pode comecar com apenas uma janela ensolarada e alguns vasinhos. Muitas ervas como manjericao, cebolinha e hortela crescem muito bem em espacos pequenos. Ate uma varanda de apartamento e suficiente para ter uma mini horta produtiva.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden hover:border-leaf-300 transition-colors">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-left" data-faq="2">
+            <span class="font-semibold text-gray-900 pr-4">Quanto tempo leva para colher?</span>
+            <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600">
+              Depende da planta! Cebolinha e manjericao podem ser colhidos em 3-4 semanas. Alecrim e hortela levam um pouco mais, cerca de 6-8 semanas. O legal e que muitas ervas permitem colheitas continuas - quanto mais voce colhe, mais elas crescem!
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden hover:border-leaf-300 transition-colors">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-left" data-faq="3">
+            <span class="font-semibold text-gray-900 pr-4">Nunca plantei nada, consigo aprender?</span>
+            <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600">
+              Com certeza! Nossos guias foram feitos especialmente para iniciantes. Explicamos tudo passo a passo, desde escolher o vaso certo ate quando e como colher. Mais de 2.500 pessoas ja criaram suas hortas seguindo nossos guias, mesmo sem nenhuma experiencia anterior.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden hover:border-leaf-300 transition-colors">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-left" data-faq="4">
+            <span class="font-semibold text-gray-900 pr-4">Posso plantar em apartamento sem varanda?</span>
+            <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600">
+              Sim! Muitas ervas como hortela e salsinha toleram bem ambientes com menos luz. O segredo e escolher uma janela que receba pelo menos 3-4 horas de luz por dia. Nosso quiz te ajuda a descobrir quais plantas sao ideais para seu espaco especifico.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden hover:border-leaf-300 transition-colors">
+          <button class="faq-trigger w-full flex items-center justify-between p-6 text-left" data-faq="5">
+            <span class="font-semibold text-gray-900 pr-4">O que esta incluso nos guias premium?</span>
+            <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600">
+              Os guias premium incluem: passo a passo ilustrado, calendario de plantio e colheita, dicas de rega personalizadas, solucao de problemas comuns, receitas para usar seus temperos, e acesso a atualizacoes futuras. Tudo em PDF para consultar quando quiser!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA apos FAQ -->
+      <div class="mt-12 text-center">
+        <p class="text-gray-600 mb-4">Ainda tem duvidas?</p>
+        <a href="#quiz" class="btn-secondary">
+          Fazer o quiz e descobrir sua planta ideal
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Newsletter Section -->
-  <section id="newsletter" class="py-16 bg-primary-600">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">
-        Receba dicas exclusivas no seu email
+  <!-- CTA Final -->
+  <section class="py-20 bg-gradient-to-br from-leaf-600 via-leaf-700 to-leaf-800 relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-10 left-10 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-leaf-100 text-sm font-medium mb-6">
+        <span class="w-2 h-2 bg-sun-400 rounded-full animate-pulse"></span>
+        Oferta por tempo limitado
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Comece sua horta ainda hoje
       </h2>
-      <p class="text-primary-100 mb-8 max-w-2xl mx-auto">
-        Junte-se a milhares de pessoas que estao cultivando suas proprias hortas.
-        Receba dicas semanais, novos guias e ofertas exclusivas.
+
+      <p class="text-xl text-leaf-100 mb-8 max-w-2xl mx-auto">
+        Kit Iniciante com tudo que voce precisa. De <span class="line-through">R$ 47</span> por apenas <span class="text-sun-300 font-bold">R$ 19</span>.
       </p>
-      <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-        <input
-          type="email"
-          name="email"
-          placeholder="seu@email.com"
-          required
-          class="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-300"
-        />
-        <button
-          type="submit"
-          class="px-6 py-3 bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-        >
-          Inscrever-se
-        </button>
-      </form>
-      <p class="text-primary-200 text-sm mt-4">
-        Sem spam. Cancele quando quiser.
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/produtos/kit-iniciante" class="inline-flex items-center justify-center px-8 py-4 bg-white text-leaf-700 rounded-xl font-bold text-lg hover:bg-leaf-50 hover:shadow-2xl transition-all group">
+          Quero comecar agora
+          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+        <a href="/plantas" class="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white border-2 border-white/30 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">
+          Explorar guias gratuitos
+        </a>
+      </div>
+
+      <p class="mt-6 text-sm text-leaf-200">
+        Acesso imediato • Download em PDF • Garantia de 7 dias
       </p>
     </div>
   </section>
 
-  <LeadMagnetPopup />
 </Layout>
 
 <script>
-  const form = document.getElementById('newsletter-form') as HTMLFormElement;
+  // Quiz Logic com Microinteracoes
+  const quizContainer = document.getElementById('quiz-container');
+  const steps = quizContainer?.querySelectorAll('.quiz-step');
+  const result = quizContainer?.querySelector('.quiz-result');
+  const restartBtn = document.getElementById('restart-quiz');
+  const progressBar = document.getElementById('progress-bar');
+  const progressText = document.getElementById('progress-text');
+  const progressContainer = document.getElementById('quiz-progress-container');
 
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
+  let currentStep = 1;
+  let answers: Record<string, string> = {};
 
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        body: JSON.stringify({
-          email: formData.get('email'),
-          source: 'homepage',
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+  const plantResults: Record<string, { name: string; description: string; link: string }> = {
+    'manjericao': {
+      name: 'Manjericao',
+      description: 'Perfeito para iniciantes! Cresce rapido, adapta-se bem a diferentes condicoes e combina com massas e molhos.',
+      link: '/plantas/manjericao'
+    },
+    'hortela': {
+      name: 'Hortela',
+      description: 'Ideal para chas e sucos! Muito resistente, tolera sombra parcial e se espalha facilmente.',
+      link: '/plantas/hortela'
+    },
+    'cebolinha': {
+      name: 'Cebolinha',
+      description: 'Classico brasileiro! Perfeita para arroz e feijao, facil de cuidar e colher continuamente.',
+      link: '/plantas/cebolinha'
+    },
+    'alecrim': {
+      name: 'Alecrim',
+      description: 'Para quem esquece de regar! Super resistente a seca, precisa de bastante sol.',
+      link: '/plantas/alecrim'
+    },
+    'salsinha': {
+      name: 'Salsinha',
+      description: 'Versatil e nutritiva! Vai bem em qualquer prato e tolera diferentes condicoes.',
+      link: '/plantas/salsinha'
+    }
+  };
+
+  // Atualizar progress bar e indicadores
+  function updateProgress(step: number, completed: boolean = false) {
+    const percentage = completed ? 100 : (step / 3) * 100;
+    if (progressBar) progressBar.style.width = `${percentage}%`;
+    if (progressText) progressText.textContent = completed ? 'Completo!' : `${step} de 3`;
+
+    // Atualizar indicadores de steps
+    for (let i = 1; i <= 3; i++) {
+      const indicator = document.getElementById(`step-${i}-indicator`);
+      if (indicator) {
+        if (i < step || completed) {
+          // Step completado
+          indicator.className = 'w-6 h-6 rounded-full bg-leaf-500 flex items-center justify-center';
+          indicator.innerHTML = '<svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>';
+        } else if (i === step && !completed) {
+          // Step atual
+          indicator.className = 'w-6 h-6 rounded-full bg-leaf-500 flex items-center justify-center text-xs font-bold text-white animate-pulse';
+          indicator.textContent = String(i);
+        } else {
+          // Step futuro
+          indicator.className = 'w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs font-medium text-gray-500';
+          indicator.textContent = String(i);
+        }
+      }
+    }
+  }
+
+  // Feedback visual ao selecionar opcao
+  function animateSelection(button: HTMLElement) {
+    button.classList.add('ring-2', 'ring-leaf-500', 'ring-offset-2', 'bg-leaf-50', 'border-leaf-400', 'scale-[1.02]');
+
+    // Adicionar checkmark temporario
+    const checkmark = document.createElement('div');
+    checkmark.className = 'absolute top-2 right-2 w-6 h-6 bg-leaf-500 rounded-full flex items-center justify-center animate-grow';
+    checkmark.innerHTML = '<svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>';
+    button.style.position = 'relative';
+    button.appendChild(checkmark);
+  }
+
+  function determineResult() {
+    if (answers.q3 === 'chas') return 'hortela';
+    if (answers.q3 === 'brasileiro') return 'cebolinha';
+    if (answers.q2 === 'pouco' && answers.q1 === 'muito') return 'alecrim';
+    if (answers.q1 === 'pouco') return 'hortela';
+    return 'manjericao';
+  }
+
+  function showResult() {
+    const plantKey = determineResult();
+    const plant = plantResults[plantKey];
+
+    const resultPlant = document.getElementById('result-plant');
+    const resultDesc = document.getElementById('result-description');
+    const resultLink = document.getElementById('result-link') as HTMLAnchorElement;
+
+    if (resultPlant) resultPlant.textContent = plant.name;
+    if (resultDesc) resultDesc.textContent = plant.description;
+    if (resultLink) resultLink.href = plant.link;
+
+    // Esconder progress bar no resultado
+    if (progressContainer) progressContainer.classList.add('hidden');
+
+    steps?.forEach(step => step.classList.add('hidden'));
+    result?.classList.remove('hidden');
+
+    // Atualizar progress para completo
+    updateProgress(3, true);
+  }
+
+  function nextStep(value: string, button: HTMLElement) {
+    answers[`q${currentStep}`] = value;
+
+    // Animar selecao
+    animateSelection(button);
+
+    // Delay para mostrar a animacao antes de trocar
+    setTimeout(() => {
+      if (currentStep < 3) {
+        steps?.forEach(step => step.classList.add('hidden'));
+        currentStep++;
+        updateProgress(currentStep);
+        const nextStepEl = quizContainer?.querySelector(`[data-step="${currentStep}"]`);
+        nextStepEl?.classList.remove('hidden');
+
+        // Animacao de entrada
+        nextStepEl?.classList.add('animate-slide-up');
+      } else {
+        showResult();
+      }
+    }, 400);
+  }
+
+  function restartQuiz() {
+    currentStep = 1;
+    answers = {};
+
+    // Resetar progress
+    updateProgress(1);
+    if (progressContainer) progressContainer.classList.remove('hidden');
+    result?.classList.add('hidden');
+    steps?.forEach(step => step.classList.add('hidden'));
+    const firstStep = quizContainer?.querySelector('[data-step="1"]');
+    firstStep?.classList.remove('hidden');
+  }
+
+  // Event listeners
+  quizContainer?.querySelectorAll('.quiz-option').forEach(option => {
+    option.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLElement;
+      const value = target.dataset.value || '';
+      nextStep(value, target);
+    });
+  });
+
+  restartBtn?.addEventListener('click', restartQuiz);
+
+  // Inicializar progress bar
+  updateProgress(1);
+
+  // FAQ Accordion Logic
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const trigger = item.querySelector('.faq-trigger');
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+
+    trigger?.addEventListener('click', () => {
+      const isOpen = !content?.classList.contains('hidden');
+
+      // Fechar todos os outros
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.querySelector('.faq-content')?.classList.add('hidden');
+          otherItem.querySelector('.faq-icon')?.classList.remove('rotate-180');
+          otherItem.classList.remove('border-leaf-300', 'bg-leaf-50/50');
+        }
       });
 
-      if (response.ok) {
-        form.innerHTML = '<p class="text-white font-semibold">Obrigado! Verifique seu email.</p>';
+      // Toggle atual
+      if (isOpen) {
+        content?.classList.add('hidden');
+        icon?.classList.remove('rotate-180');
+        item.classList.remove('border-leaf-300', 'bg-leaf-50/50');
+      } else {
+        content?.classList.remove('hidden');
+        icon?.classList.add('rotate-180');
+        item.classList.add('border-leaf-300', 'bg-leaf-50/50');
       }
-    } catch (error) {
-      console.error('Subscription error:', error);
-    }
+    });
   });
+
+  // Counter Animation
+  const counterStats = document.querySelectorAll('.counter-stat');
+
+  const animateCounter = (el: Element) => {
+    const target = parseFloat(el.getAttribute('data-target') || '0');
+    const suffix = el.getAttribute('data-suffix') || '';
+    const format = el.getAttribute('data-format');
+    const isDecimal = el.getAttribute('data-decimal') === 'true';
+    const duration = 2000;
+    const startTime = performance.now();
+
+    const updateCounter = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const currentValue = target * easeOut;
+
+      let displayValue: string;
+      if (format === 'k') {
+        displayValue = (currentValue / 1000).toFixed(1) + 'k';
+      } else if (isDecimal) {
+        displayValue = currentValue.toFixed(1);
+      } else {
+        displayValue = Math.floor(currentValue).toString();
+      }
+
+      el.textContent = displayValue + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      }
+    };
+
+    requestAnimationFrame(updateCounter);
+  };
+
+  // Observe counters for animation trigger
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counterStats.forEach(stat => counterObserver.observe(stat));
 </script>

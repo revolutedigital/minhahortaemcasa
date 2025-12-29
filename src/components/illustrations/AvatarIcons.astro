@@ -1,0 +1,126 @@
+---
+// Avatares ilustrados para substituir emojis de pessoas
+interface Props {
+  variant: 1 | 2 | 3 | 4;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { variant, size = 'md' } = Astro.props;
+
+const sizes = {
+  sm: 'w-8 h-8',
+  md: 'w-10 h-10',
+  lg: 'w-12 h-12'
+};
+
+const bgColors = {
+  1: '#dcfce7', // leaf-100
+  2: '#fdeee0', // earth-100
+  3: '#fef9c3', // sun-100
+  4: '#e0f2fe'  // water-100
+};
+
+const skinTones = {
+  1: '#fcd5b8',
+  2: '#deb887',
+  3: '#c4a77d',
+  4: '#8d5524'
+};
+
+const hairColors = {
+  1: '#4a3728',
+  2: '#1a1a1a',
+  3: '#8b4513',
+  4: '#2c2c2c'
+};
+---
+
+<svg class={sizes[size]} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="20" cy="20" r="20" fill={bgColors[variant]}/>
+
+  {variant === 1 && (
+    <!-- Pessoa 1 - Mulher com cabelo curto -->
+    <g>
+      <!-- Cabelo -->
+      <path d="M12 18C12 12 15 8 20 8C25 8 28 12 28 18V22H12V18Z" fill={hairColors[1]}/>
+      <!-- Rosto -->
+      <circle cx="20" cy="20" r="8" fill={skinTones[1]}/>
+      <!-- Cabelo franja -->
+      <path d="M12 18C12 14 15 10 20 10C22 10 24 11 25 13C23 12 21 12 20 13C18 14 16 15 14 16C13 17 12 17 12 18Z" fill={hairColors[1]}/>
+      <!-- Olhos -->
+      <circle cx="17" cy="19" r="1.5" fill="#4a3728"/>
+      <circle cx="23" cy="19" r="1.5" fill="#4a3728"/>
+      <!-- Sorriso -->
+      <path d="M17 23C17 23 20 26 23 23" stroke="#4a3728" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Bochecha -->
+      <circle cx="15" cy="22" r="1.5" fill="#fca5a5" fill-opacity="0.5"/>
+      <circle cx="25" cy="22" r="1.5" fill="#fca5a5" fill-opacity="0.5"/>
+    </g>
+  )}
+
+  {variant === 2 && (
+    <!-- Pessoa 2 - Homem com barba -->
+    <g>
+      <!-- Cabelo -->
+      <path d="M13 16C13 11 16 8 20 8C24 8 27 11 27 16V18H13V16Z" fill={hairColors[2]}/>
+      <!-- Rosto -->
+      <circle cx="20" cy="20" r="8" fill={skinTones[2]}/>
+      <!-- Barba -->
+      <path d="M14 22C14 22 15 28 20 28C25 28 26 22 26 22C26 22 25 24 20 24C15 24 14 22 14 22Z" fill={hairColors[2]} fill-opacity="0.6"/>
+      <!-- Olhos -->
+      <circle cx="17" cy="19" r="1.5" fill="#1a1a1a"/>
+      <circle cx="23" cy="19" r="1.5" fill="#1a1a1a"/>
+      <!-- Sobrancelhas -->
+      <path d="M15 17L19 16" stroke="#1a1a1a" stroke-width="1" stroke-linecap="round"/>
+      <path d="M21 16L25 17" stroke="#1a1a1a" stroke-width="1" stroke-linecap="round"/>
+      <!-- Sorriso -->
+      <path d="M18 23C18 23 20 25 22 23" stroke="#4a3728" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  )}
+
+  {variant === 3 && (
+    <!-- Pessoa 3 - Mulher com cabelo longo -->
+    <g>
+      <!-- Cabelo longo -->
+      <path d="M10 20C10 12 14 6 20 6C26 6 30 12 30 20V32H28V24C28 24 26 22 20 22C14 22 12 24 12 24V32H10V20Z" fill={hairColors[3]}/>
+      <!-- Rosto -->
+      <ellipse cx="20" cy="20" rx="7" ry="8" fill={skinTones[3]}/>
+      <!-- Franja lateral -->
+      <path d="M12 16C12 12 14 10 18 10C16 12 14 14 13 18L12 16Z" fill={hairColors[3]}/>
+      <!-- Olhos -->
+      <ellipse cx="17" cy="19" rx="1.5" ry="2" fill="#4a3728"/>
+      <ellipse cx="23" cy="19" rx="1.5" ry="2" fill="#4a3728"/>
+      <!-- Cilios -->
+      <path d="M15 17L16 18M17 16.5L17 17.5M19 17L18 18" stroke="#4a3728" stroke-width="0.5"/>
+      <path d="M21 17L22 18M23 16.5L23 17.5M25 17L24 18" stroke="#4a3728" stroke-width="0.5"/>
+      <!-- Sorriso -->
+      <path d="M17 24C17 24 20 27 23 24" stroke="#8b4513" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Bochecha -->
+      <circle cx="14" cy="22" r="1.5" fill="#fca5a5" fill-opacity="0.4"/>
+      <circle cx="26" cy="22" r="1.5" fill="#fca5a5" fill-opacity="0.4"/>
+    </g>
+  )}
+
+  {variant === 4 && (
+    <!-- Pessoa 4 - Pessoa mais velha -->
+    <g>
+      <!-- Cabelo grisalho -->
+      <path d="M13 18C13 12 16 9 20 9C24 9 27 12 27 18V20H13V18Z" fill="#9ca3af"/>
+      <!-- Rosto -->
+      <circle cx="20" cy="20" r="7" fill={skinTones[4]}/>
+      <!-- Rugas/expressao -->
+      <path d="M14 18C14 18 15 17 16 18" stroke={skinTones[4]} stroke-opacity="0.5" stroke-width="0.5"/>
+      <path d="M24 18C24 18 25 17 26 18" stroke={skinTones[4]} stroke-opacity="0.5" stroke-width="0.5"/>
+      <!-- Olhos -->
+      <circle cx="17" cy="19" r="1.2" fill="#2c2c2c"/>
+      <circle cx="23" cy="19" r="1.2" fill="#2c2c2c"/>
+      <!-- Oculos -->
+      <circle cx="17" cy="19" r="3" stroke="#6b7280" stroke-width="1" fill="none"/>
+      <circle cx="23" cy="19" r="3" stroke="#6b7280" stroke-width="1" fill="none"/>
+      <path d="M20 19L20 19" stroke="#6b7280" stroke-width="1"/>
+      <!-- Sorriso gentil -->
+      <path d="M18 23C18 23 20 25 22 23" stroke="#2c2c2c" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  )}
+</svg>

@@ -1,0 +1,31 @@
+---
+// Icone de ferramentas para secao de problemas
+interface Props {
+  size?: string;
+}
+
+const { size = 'w-16 h-16' } = Astro.props;
+---
+
+<svg class={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Chave de fenda -->
+  <path d="M18 46L30 34" stroke="#ea7531" stroke-width="4" stroke-linecap="round"/>
+  <path d="M30 34L32 32C34 30 34 26 32 24L28 28L24 24L28 20C26 18 22 18 20 20L18 22L14 26C12 28 12 32 14 34L18 30L22 34L18 38C20 40 24 40 26 38L30 34Z" fill="#fad9bb" stroke="#ea7531" stroke-width="2"/>
+  <path d="M14 50L18 46" stroke="#ea7531" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Lupa -->
+  <circle cx="42" cy="24" r="10" stroke="#0ea5e9" stroke-width="3" fill="#e0f2fe"/>
+  <path d="M49 31L56 38" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round"/>
+  <!-- Brilho na lupa -->
+  <path d="M38 18C38 18 36 20 38 22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Regador pequeno -->
+  <path d="M44 44L52 44L50 54H46L44 44Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+  <path d="M52 44L56 40" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="57" cy="39" r="1.5" fill="#7dd3fc"/>
+  <circle cx="55" cy="41" r="1" fill="#7dd3fc"/>
+
+  <!-- Gotinhas -->
+  <circle cx="58" cy="43" r="1.5" fill="#7dd3fc" fill-opacity="0.7"/>
+  <circle cx="56" cy="46" r="1" fill="#7dd3fc" fill-opacity="0.5"/>
+</svg>

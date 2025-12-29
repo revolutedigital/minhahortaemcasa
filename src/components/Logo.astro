@@ -1,0 +1,128 @@
+---
+// Logo unico e proprietario - Horta em Casa
+// Conceito: Uma casa estilizada com uma planta brotando do telhado
+// Representa: lar + crescimento + natureza urbana
+
+interface Props {
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  variant?: 'full' | 'icon' | 'wordmark';
+  class?: string;
+}
+
+const { size = 'md', variant = 'full', class: className = '' } = Astro.props;
+
+const sizes = {
+  sm: { icon: 'w-8 h-8', text: 'text-lg', gap: 'gap-2' },
+  md: { icon: 'w-10 h-10', text: 'text-xl', gap: 'gap-2.5' },
+  lg: { icon: 'w-12 h-12', text: 'text-2xl', gap: 'gap-3' },
+  xl: { icon: 'w-16 h-16', text: 'text-3xl', gap: 'gap-4' }
+};
+
+const s = sizes[size];
+---
+
+{variant === 'full' && (
+  <a href="/" class={`flex items-center ${s.gap} group ${className}`}>
+    <!-- Icone do logo -->
+    <div class={`${s.icon} relative`}>
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <!-- Sombra sutil -->
+        <ellipse cx="24" cy="44" rx="14" ry="3" fill="#15803d" fill-opacity="0.1"/>
+
+        <!-- Casa base -->
+        <path d="M8 24L24 10L40 24V42H8V24Z" fill="url(#houseGrad)" stroke="#15803d" stroke-width="2" stroke-linejoin="round"/>
+
+        <!-- Telhado -->
+        <path d="M4 24L24 6L44 24" stroke="#15803d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Porta -->
+        <path d="M20 42V32C20 31 21 30 22 30H26C27 30 28 31 28 32V42" fill="#ea7531" stroke="#b5441c" stroke-width="1.5"/>
+        <circle cx="26.5" cy="36" r="1" fill="#b5441c"/>
+
+        <!-- Janela esquerda -->
+        <rect x="11" y="28" width="6" height="6" rx="1" fill="#7dd3fc" stroke="#0ea5e9" stroke-width="1"/>
+        <line x1="14" y1="28" x2="14" y2="34" stroke="#0ea5e9" stroke-width="0.5"/>
+        <line x1="11" y1="31" x2="17" y2="31" stroke="#0ea5e9" stroke-width="0.5"/>
+
+        <!-- Janela direita -->
+        <rect x="31" y="28" width="6" height="6" rx="1" fill="#7dd3fc" stroke="#0ea5e9" stroke-width="1"/>
+        <line x1="34" y1="28" x2="34" y2="34" stroke="#0ea5e9" stroke-width="0.5"/>
+        <line x1="31" y1="31" x2="37" y2="31" stroke="#0ea5e9" stroke-width="0.5"/>
+
+        <!-- Planta brotando do telhado -->
+        <g class="group-hover:animate-wiggle origin-bottom" style="transform-origin: 24px 16px;">
+          <!-- Caule -->
+          <path d="M24 16V4" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
+
+          <!-- Folha esquerda -->
+          <path d="M24 10C24 10 18 8 16 2C20 2 24 6 24 10Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5">
+            <animate attributeName="d" dur="3s" repeatCount="indefinite"
+              values="M24 10C24 10 18 8 16 2C20 2 24 6 24 10Z;
+                      M24 10C24 10 17 9 14 3C19 3 24 6 24 10Z;
+                      M24 10C24 10 18 8 16 2C20 2 24 6 24 10Z"/>
+          </path>
+
+          <!-- Folha direita -->
+          <path d="M24 8C24 8 30 6 32 0C28 0 24 4 24 8Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5">
+            <animate attributeName="d" dur="3s" repeatCount="indefinite" begin="0.5s"
+              values="M24 8C24 8 30 6 32 0C28 0 24 4 24 8Z;
+                      M24 8C24 8 31 5 34 -1C29 -1 24 4 24 8Z;
+                      M24 8C24 8 30 6 32 0C28 0 24 4 24 8Z"/>
+          </path>
+
+          <!-- Folhinha central -->
+          <ellipse cx="24" cy="3" rx="2" ry="3" fill="#86efac" stroke="#15803d" stroke-width="1"/>
+        </g>
+
+        <!-- Gradientes -->
+        <defs>
+          <linearGradient id="houseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#fef9c3"/>
+            <stop offset="100%" stop-color="#fef3c7"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Texto do logo -->
+    <div class="flex flex-col">
+      <span class={`font-bold ${s.text} text-gray-900 leading-tight tracking-tight`}>
+        Horta<span class="text-leaf-600">em</span>Casa
+      </span>
+      <span class="text-xs text-leaf-600 font-medium tracking-wider">CULTIVE. COLHA. SABOREIE.</span>
+    </div>
+  </a>
+)}
+
+{variant === 'icon' && (
+  <a href="/" class={`block ${s.icon} ${className}`}>
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <ellipse cx="24" cy="44" rx="14" ry="3" fill="#15803d" fill-opacity="0.1"/>
+      <path d="M8 24L24 10L40 24V42H8V24Z" fill="url(#houseGradIcon)" stroke="#15803d" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M4 24L24 6L44 24" stroke="#15803d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20 42V32C20 31 21 30 22 30H26C27 30 28 31 28 32V42" fill="#ea7531" stroke="#b5441c" stroke-width="1.5"/>
+      <circle cx="26.5" cy="36" r="1" fill="#b5441c"/>
+      <rect x="11" y="28" width="6" height="6" rx="1" fill="#7dd3fc" stroke="#0ea5e9" stroke-width="1"/>
+      <rect x="31" y="28" width="6" height="6" rx="1" fill="#7dd3fc" stroke="#0ea5e9" stroke-width="1"/>
+      <path d="M24 16V4" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
+      <path d="M24 10C24 10 18 8 16 2C20 2 24 6 24 10Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+      <path d="M24 8C24 8 30 6 32 0C28 0 24 4 24 8Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+      <ellipse cx="24" cy="3" rx="2" ry="3" fill="#86efac" stroke="#15803d" stroke-width="1"/>
+      <defs>
+        <linearGradient id="houseGradIcon" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#fef9c3"/>
+          <stop offset="100%" stop-color="#fef3c7"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </a>
+)}
+
+{variant === 'wordmark' && (
+  <a href="/" class={`flex flex-col ${className}`}>
+    <span class={`font-bold ${s.text} text-gray-900 leading-tight tracking-tight`}>
+      Horta<span class="text-leaf-600">em</span>Casa
+    </span>
+    <span class="text-xs text-leaf-600 font-medium tracking-wider">CULTIVE. COLHA. SABOREIE.</span>
+  </a>
+)}

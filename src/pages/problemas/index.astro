@@ -2,55 +2,142 @@
 import Layout from '../../layouts/Layout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 import { getCollection } from 'astro:content';
+import ToolsIcon from '../../components/illustrations/ToolsIcon.astro';
+import Mascote from '../../components/illustrations/Mascote.astro';
 
 export const prerender = true;
 
 const allProblemas = await getCollection('problemas', ({ data }) => !data.draft);
 const sortedProblemas = allProblemas.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Icons for common problems
+const problemIcons: Record<string, { icon: string; color: string }> = {
+  'folhas-amarelas': { icon: 'leaf', color: 'sun' },
+  'pulgoes': { icon: 'bug', color: 'earth' },
+  'como-regar': { icon: 'water', color: 'water' }
+};
 ---
 
 <Layout
   title="Problemas Comuns em Hortas"
   description="Solucoes rapidas para pragas, doencas, folhas amarelas e outros problemas comuns em hortas caseiras."
 >
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="text-center mb-12">
-        <nav class="text-sm text-gray-500 mb-4">
-          <a href="/" class="hover:text-primary-600">Inicio</a>
-          <span class="mx-2">/</span>
-          <span class="text-gray-900">Problemas</span>
-        </nav>
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">Solucao de Problemas</h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Diagnostico e solucoes rapidas para os problemas mais comuns em hortas caseiras.
-        </p>
-      </div>
+  <!-- Hero Section -->
+  <section class="relative py-20 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-earth-50 via-white to-sun-50"></div>
+    <div class="absolute top-20 right-10 w-72 h-72 bg-earth-200/30 rounded-full blur-3xl blob-animate"></div>
+    <div class="absolute bottom-10 left-10 w-64 h-64 bg-sun-200/20 rounded-full blur-3xl blob-animate" style="animation-delay: -3s;"></div>
 
-      <!-- Articles Grid -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <!-- Content -->
+        <div class="flex-1 text-center lg:text-left">
+          <nav class="text-sm text-gray-500 mb-4">
+            <a href="/" class="hover:text-earth-600 transition-colors">Inicio</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 font-medium">Problemas</span>
+          </nav>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            Solucao de <span class="text-gradient-warm">Problemas</span>
+          </h1>
+
+          <p class="text-xl text-gray-600 max-w-xl mb-8">
+            Diagnostico e solucoes rapidas para os problemas mais comuns em hortas caseiras.
+          </p>
+
+          <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+            <span class="badge badge-sun">Folhas amarelas</span>
+            <span class="badge badge-earth">Pragas</span>
+            <span class="badge badge-water">Rega</span>
+          </div>
+        </div>
+
+        <!-- Mascote + Tools Icon -->
+        <div class="relative">
+          <Mascote mood="thinking" size="xl" />
+
+          <!-- Tools floating -->
+          <div class="absolute -top-2 -right-8 animate-float bg-white rounded-2xl shadow-lg p-4">
+            <ToolsIcon size="w-10 h-10" />
+          </div>
+
+          <!-- Question marks floating -->
+          <div class="absolute -bottom-2 -left-6 animate-float bg-earth-100 rounded-full w-10 h-10 flex items-center justify-center text-earth-600 font-bold text-xl" style="animation-delay: -2s;">
+            ?
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problems Grid -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       {sortedProblemas.length > 0 ? (
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sortedProblemas.map((problema) => (
-            <ArticleCard
-              title={problema.data.title}
-              description={problema.data.description}
+          {sortedProblemas.map((problema, index) => (
+            <a
               href={`/problemas/${problema.slug}`}
-              image={problema.data.image}
-              category="Problema"
-              readTime={problema.data.readTime}
-            />
+              class={`group bg-white rounded-3xl border border-gray-100 p-6 hover:shadow-xl hover:border-earth-200 transition-all card-hover scroll-reveal reveal-delay-${Math.min(index + 1, 5)}`}
+            >
+              <div class="w-16 h-16 bg-earth-50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                {problema.slug === 'folhas-amarelas' ? (
+                  <svg class="w-8 h-8 text-sun-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                ) : problema.slug === 'pulgoes' ? (
+                  <svg class="w-8 h-8 text-earth-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                  </svg>
+                ) : (
+                  <svg class="w-8 h-8 text-water-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                )}
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-earth-700 transition-colors">
+                {problema.data.title.split(':')[0]}
+              </h3>
+              <p class="text-gray-500 mb-4 line-clamp-2">{problema.data.description}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-gray-400">{problema.data.readTime}</span>
+                <span class="flex items-center text-earth-600 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                  Ver solucao
+                  <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </a>
           ))}
         </div>
       ) : (
-        <div class="text-center py-16 bg-gray-50 rounded-xl">
-          <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-          </svg>
+        <div class="text-center py-16 bg-gray-50 rounded-3xl">
+          <Mascote mood="sleeping" size="lg" class="mx-auto mb-4" />
           <h3 class="text-lg font-semibold text-gray-900 mb-2">Solucoes em breve</h3>
           <p class="text-gray-600">Estamos preparando solucoes para os problemas mais comuns!</p>
         </div>
       )}
+    </div>
+  </section>
+
+  <!-- Help CTA -->
+  <section class="py-16 bg-gradient-to-r from-earth-50 to-sun-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+        Precisa de mais ajuda?
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Confira nosso kit completo de solucoes para problemas comuns!
+      </p>
+      <a href="/produtos/kit-problemas" class="btn-accent">
+        Ver Kit de Solucoes
+        <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
     </div>
   </section>
 </Layout>

@@ -1,7 +1,9 @@
 ---
 import Layout from './Layout.astro';
 import CTABox from '../components/CTABox.astro';
-import LeadMagnetPopup from '../components/LeadMagnetPopup.astro';
+import ReadingProgress from '../components/ReadingProgress.astro';
+import Mascote from '../components/illustrations/Mascote.astro';
+import PlantCardIcons from '../components/illustrations/PlantCardIcons.astro';
 
 interface Props {
   frontmatter: {
@@ -56,7 +58,18 @@ const schemaMarkup = {
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
-  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <!-- Reading Progress Indicator -->
+  <ReadingProgress />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
+    <!-- Decorative illustrations (hidden on mobile for performance) -->
+    <div class="hidden lg:block absolute -left-32 top-20 opacity-20 pointer-events-none">
+      <PlantCardIcons type="manjericao" size="lg" />
+    </div>
+    <div class="hidden lg:block absolute -right-32 top-96 opacity-20 pointer-events-none">
+      <PlantCardIcons type="hortela" size="lg" />
+    </div>
+
     <!-- Breadcrumb -->
     <nav class="text-sm text-gray-500 mb-8">
       <ol class="flex items-center gap-2">
@@ -117,12 +130,12 @@ const schemaMarkup = {
     <!-- CTA Box -->
     <div class="mt-12">
       <CTABox
-        title="Baixe o Checklist Gratuito"
-        description="7 Erros que Matam sua Horta (e Como Evitar) - Salve suas plantas hoje!"
-        buttonText="Baixar Checklist"
-        buttonHref="#newsletter"
+        title="Kit Iniciante: Sua Primeira Horta em 7 Dias"
+        description="Guia passo a passo completo para quem nunca plantou nada. De R$ 47 por apenas R$ 19."
+        buttonText="Quero Comecar"
+        buttonHref="/produtos/kit-iniciante"
         variant="highlight"
-        icon="download"
+        icon="cart"
       />
     </div>
 
@@ -138,7 +151,30 @@ const schemaMarkup = {
         </div>
       </div>
     )}
-  </article>
 
-  <LeadMagnetPopup />
+    <!-- Mascote feedback section -->
+    <div class="mt-12 bg-gradient-to-br from-leaf-50 to-earth-50 rounded-2xl p-6 sm:p-8">
+      <div class="flex flex-col sm:flex-row items-center gap-6">
+        <div class="flex-shrink-0">
+          <Mascote mood="happy" size="md" />
+        </div>
+        <div class="text-center sm:text-left">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">
+            Gostou do conteudo?
+          </h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Explore mais guias e dicas para sua horta em casa!
+          </p>
+          <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
+            <a href="/plantas" class="inline-flex items-center px-4 py-2 bg-leaf-600 text-white rounded-lg text-sm font-medium hover:bg-leaf-700 transition-colors">
+              Ver plantas
+            </a>
+            <a href="/problemas" class="inline-flex items-center px-4 py-2 bg-white text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors border border-gray-200">
+              Resolver problemas
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
 </Layout>
