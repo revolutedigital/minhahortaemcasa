@@ -9,17 +9,17 @@ export const prerender = true;
 const values = [
   {
     title: 'Simplicidade',
-    description: 'Guias praticos e diretos, sem termos tecnicos desnecessarios.',
+    description: 'Guias práticos e diretos, sem termos técnicos desnecessários.',
     icon: 'simple'
   },
   {
     title: 'Acessibilidade',
-    description: 'Horta em casa e para todos, independente do espaco disponivel.',
+    description: 'Horta em casa é para todos, independente do espaço disponível.',
     icon: 'access'
   },
   {
     title: 'Sustentabilidade',
-    description: 'Cultivar sua propria comida e um ato de amor ao planeta.',
+    description: 'Cultivar sua própria comida é um ato de amor ao planeta.',
     icon: 'sustain'
   },
   {
@@ -32,14 +32,14 @@ const values = [
 const stats = [
   { number: '2.500+', label: 'Hortas criadas' },
   { number: '15+', label: 'Guias publicados' },
-  { number: '4.9', label: 'Avaliacao media' },
+  { number: '4.9', label: 'Avaliação média' },
   { number: '98%', label: 'Taxa de sucesso' }
 ];
 ---
 
 <Layout
-  title="Sobre Nos"
-  description="Conheca a historia do Horta em Casa e nossa missao de ajudar brasileiros a cultivar sua propria comida em casa."
+  title="Sobre Nós"
+  description="Conheça a história do Horta em Casa e nossa missão de ajudar brasileiros a cultivar sua própria comida em casa."
 >
   <!-- Hero Section -->
   <section class="relative py-20 overflow-hidden">
@@ -53,17 +53,17 @@ const stats = [
         <!-- Content -->
         <div class="flex-1 text-center lg:text-left">
           <nav class="text-sm text-gray-500 mb-4">
-            <a href="/" class="hover:text-leaf-600 transition-colors">Inicio</a>
+            <a href="/" class="hover:text-leaf-600 transition-colors">Início</a>
             <span class="mx-2">/</span>
             <span class="text-gray-900 font-medium">Sobre</span>
           </nav>
 
           <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Nossa <span class="text-gradient">Historia</span>
+            Nossa <span class="text-gradient">História</span>
           </h1>
 
           <p class="text-xl text-gray-600 max-w-xl mb-8">
-            Nascemos da paixao por plantas e da vontade de ajudar mais brasileiros a cultivar sua propria comida em casa.
+            Nascemos da paixão por plantas e da vontade de ajudar mais brasileiros a cultivar sua própria comida em casa.
           </p>
 
           <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
@@ -93,7 +93,7 @@ const stats = [
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12 scroll-reveal">
-        <span class="badge badge-leaf mb-4">Nossa Missao</span>
+        <span class="badge badge-leaf mb-4">Nossa Missão</span>
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
           Democratizar o cultivo em casa
         </h2>
@@ -103,18 +103,18 @@ const stats = [
         <div class="prose prose-lg max-w-none text-center">
           <p class="text-gray-600 text-lg leading-relaxed mb-6">
             Acreditamos que todo brasileiro pode e deveria ter acesso a temperos e ervas frescos em casa.
-            Nao importa se voce mora em apartamento de 30m2 ou em casa com quintal - existe uma forma
-            de cultivar sua propria comida.
+            Não importa se você mora em apartamento de 30m² ou em casa com quintal - existe uma forma
+            de cultivar sua própria comida.
           </p>
           <p class="text-gray-600 text-lg leading-relaxed mb-6">
             O <strong class="text-leaf-700">Horta em Casa</strong> nasceu quando percebemos que muitas pessoas
-            queriam ter uma horta, mas nao sabiam por onde comecar. As informacoes na internet sao confusas,
-            tecnicas demais ou simplesmente nao funcionam para o clima brasileiro.
+            queriam ter uma horta, mas não sabiam por onde começar. As informações na internet são confusas,
+            técnicas demais ou simplesmente não funcionam para o clima brasileiro.
           </p>
           <p class="text-gray-600 text-lg leading-relaxed">
-            Por isso, criamos guias <strong class="text-leaf-700">praticos, simples e adaptados</strong> para
-            a realidade de quem mora em apartamento no Brasil. Nosso objetivo e que voce colha seus primeiros
-            temperos em ate 30 dias.
+            Por isso, criamos guias <strong class="text-leaf-700">práticos, simples e adaptados</strong> para
+            a realidade de quem mora em apartamento no Brasil. Nosso objetivo é que você colha seus primeiros
+            temperos em até 30 dias.
           </p>
         </div>
       </div>
@@ -137,45 +137,70 @@ const stats = [
 
   <!-- Verdinho Section -->
   <section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center gap-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 scroll-reveal">
+        <span class="badge badge-sun mb-4">Nosso Mascote</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Conheça o Verdinho
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          O Verdinho é muito mais que um mascote - ele é a cara do Horta em Casa.
+          Presente no logo, em todas as páginas e sempre pronto para te ajudar na jornada de cultivar em casa.
+        </p>
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-center gap-12">
         <div class="flex-shrink-0 scroll-reveal">
           <div class="relative">
-            <Mascote mood="happy" size="xl" />
+            <Mascote mood="waving" size="xl" />
             <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-leaf-100 px-4 py-2 rounded-full">
               <span class="text-leaf-700 font-semibold text-sm">Verdinho</span>
             </div>
           </div>
         </div>
 
-        <div class="flex-1 text-center md:text-left scroll-reveal reveal-delay-2">
-          <span class="badge badge-sun mb-4">Nosso Mascote</span>
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">
-            Conheca o Verdinho
-          </h2>
-          <p class="text-gray-600 mb-6">
-            O Verdinho e nosso mascote e guia. Ele representa a alegria de ver suas plantas
-            crescerem e a satisfacao de colher o que voce mesmo plantou.
-          </p>
-          <p class="text-gray-600 mb-6">
-            Voce vai encontra-lo em todo o site, sempre pronto para ajudar - seja pensando
-            em qual planta recomendar, animado com uma nova dica, ou ate mesmo dormindo
-            na pagina 404!
-          </p>
-          <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-            <div class="flex items-center gap-2 bg-leaf-50 px-3 py-2 rounded-lg">
+        <div class="flex-1 scroll-reveal reveal-delay-2">
+          <h3 class="text-xl font-bold text-gray-900 mb-4 text-center lg:text-left">
+            8 expressões para cada momento
+          </h3>
+          <div class="grid grid-cols-4 gap-4">
+            <div class="flex flex-col items-center gap-2 bg-leaf-50 p-3 rounded-xl hover:bg-leaf-100 transition-colors">
               <Mascote mood="happy" size="sm" />
-              <span class="text-sm text-leaf-700">Feliz</span>
+              <span class="text-xs text-leaf-700 font-medium">Feliz</span>
             </div>
-            <div class="flex items-center gap-2 bg-leaf-50 px-3 py-2 rounded-lg">
-              <Mascote mood="thinking" size="sm" />
-              <span class="text-sm text-leaf-700">Pensativo</span>
-            </div>
-            <div class="flex items-center gap-2 bg-leaf-50 px-3 py-2 rounded-lg">
+            <div class="flex flex-col items-center gap-2 bg-leaf-50 p-3 rounded-xl hover:bg-leaf-100 transition-colors">
               <Mascote mood="excited" size="sm" />
-              <span class="text-sm text-leaf-700">Animado</span>
+              <span class="text-xs text-leaf-700 font-medium">Animado</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 bg-leaf-50 p-3 rounded-xl hover:bg-leaf-100 transition-colors">
+              <Mascote mood="thinking" size="sm" />
+              <span class="text-xs text-leaf-700 font-medium">Pensativo</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 bg-leaf-50 p-3 rounded-xl hover:bg-leaf-100 transition-colors">
+              <Mascote mood="waving" size="sm" />
+              <span class="text-xs text-leaf-700 font-medium">Acenando</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 bg-leaf-50 p-3 rounded-xl hover:bg-leaf-100 transition-colors">
+              <Mascote mood="celebrating" size="sm" />
+              <span class="text-xs text-leaf-700 font-medium">Comemorando</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 bg-leaf-50 p-3 rounded-xl hover:bg-leaf-100 transition-colors">
+              <Mascote mood="watering" size="sm" />
+              <span class="text-xs text-leaf-700 font-medium">Regando</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 bg-leaf-50 p-3 rounded-xl hover:bg-leaf-100 transition-colors">
+              <Mascote mood="sad" size="sm" />
+              <span class="text-xs text-leaf-700 font-medium">Triste</span>
+            </div>
+            <div class="flex flex-col items-center gap-2 bg-leaf-50 p-3 rounded-xl hover:bg-leaf-100 transition-colors">
+              <Mascote mood="sleeping" size="sm" />
+              <span class="text-xs text-leaf-700 font-medium">Dormindo</span>
             </div>
           </div>
+          <p class="text-gray-500 text-sm mt-4 text-center lg:text-left">
+            Cada expressão aparece em contextos diferentes: feliz no logo, pensativo no quiz,
+            triste na página 404, regando nos guias, e assim por diante!
+          </p>
         </div>
       </div>
     </div>
@@ -236,10 +261,10 @@ const stats = [
         <Mascote mood="excited" size="lg" />
       </div>
       <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
-        Pronto para comecar sua horta?
+        Pronto para começar sua horta?
       </h2>
       <p class="text-xl text-leaf-100 mb-8 max-w-2xl mx-auto">
-        Junte-se a mais de 2.500 pessoas que ja estao cultivando temperos frescos em casa.
+        Junte-se a mais de 2.500 pessoas que já estão cultivando temperos frescos em casa.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/#quiz" class="inline-flex items-center justify-center px-8 py-4 bg-white text-leaf-700 rounded-xl font-bold text-lg hover:bg-leaf-50 hover:shadow-2xl transition-all group">

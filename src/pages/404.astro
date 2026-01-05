@@ -5,7 +5,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
 export const prerender = true;
 ---
 
-<Layout title="Pagina nao encontrada" description="A pagina que voce procura nao existe ou foi movida.">
+<Layout title="Página não encontrada" description="A página que você procura não existe ou foi movida.">
   <section class="min-h-[80vh] flex items-center justify-center relative overflow-hidden">
     <!-- Background decorativo -->
     <div class="absolute inset-0 bg-gradient-to-br from-leaf-50 via-white to-earth-50"></div>
@@ -15,9 +15,9 @@ export const prerender = true;
     <div class="absolute bottom-20 right-10 w-96 h-96 bg-earth-200/20 rounded-full blur-3xl blob-animate" style="animation-delay: -4s;"></div>
 
     <div class="relative z-10 max-w-2xl mx-auto px-4 text-center page-transition">
-      <!-- Mascote dormindo -->
+      <!-- Mascote triste -->
       <div class="mb-8 relative">
-        <Mascote mood="sleeping" size="xl" class="mx-auto" />
+        <Mascote mood="sad" size="xl" class="mx-auto" />
 
         <!-- 404 atras do mascote -->
         <div class="absolute inset-0 flex items-center justify-center -z-10">
@@ -27,11 +27,11 @@ export const prerender = true;
 
       <!-- Texto -->
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-        Ops! Pagina nao encontrada
+        Ops! Página não encontrada
       </h1>
 
       <p class="text-lg text-gray-600 mb-8 max-w-md mx-auto">
-        O Verdinho cochilou e nao encontrou essa pagina... Mas nao se preocupe, sua horta ainda esta la!
+        O Verdinho procurou por toda a horta mas não encontrou essa página... Vamos te ajudar a encontrar o caminho!
       </p>
 
       <!-- CTAs -->
@@ -40,7 +40,7 @@ export const prerender = true;
           <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
           </svg>
-          Voltar ao inicio
+          Voltar ao início
         </a>
         <a href="/plantas" class="btn-secondary group">
           <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -52,10 +52,10 @@ export const prerender = true;
 
       <!-- Links rapidos -->
       <div class="mt-12 pt-8 border-t border-gray-200">
-        <p class="text-sm text-gray-500 mb-4">Ou visite uma dessas paginas populares:</p>
+        <p class="text-sm text-gray-500 mb-4">Ou visite uma dessas páginas populares:</p>
         <div class="flex flex-wrap justify-center gap-3">
           <a href="/plantas/manjericao" class="text-sm px-4 py-2 bg-white rounded-full border border-gray-200 text-gray-700 hover:border-leaf-300 hover:text-leaf-600 hover:-translate-y-0.5 transition-all">
-            Manjericao
+            Manjericão
           </a>
           <a href="/problemas/folhas-amarelas" class="text-sm px-4 py-2 bg-white rounded-full border border-gray-200 text-gray-700 hover:border-earth-300 hover:text-earth-600 hover:-translate-y-0.5 transition-all">
             Folhas amarelas

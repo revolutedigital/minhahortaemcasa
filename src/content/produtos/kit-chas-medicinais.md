@@ -1,94 +1,94 @@
 ---
-title: "Kit Horta de Chas e Ervas Medicinais"
+title: "Kit Horta de Chás e Ervas Medicinais"
 price: 24
 originalPrice: 52
-description: "Cultive suas proprias ervas para chas e remedios naturais"
+description: "Cultive suas próprias ervas para chás e remédios naturais"
 category: "combo"
 featured: true
 ---
 
-# Kit Horta de Chas e Ervas Medicinais - R$ 24
+# Kit Horta de Chás e Ervas Medicinais - R$ 24
 
-## Sua farmacia natural em casa!
+## Sua farmácia natural em casa!
 
-Aprenda a cultivar, colher e usar ervas medicinais para chas, infusoes e remedios caseiros.
+Aprenda a cultivar, colher e usar ervas medicinais para chás, infusões e remédios caseiros.
 
 ### Inclui:
 
-**1. Guia Cultivo de Ervas Medicinais (55 paginas)** - valor R$ 17
+**1. Guia Cultivo de Ervas Medicinais (55 páginas)** - valor R$ 17
 - 20 ervas medicinais para cultivar em casa
 - Ficha completa de cada planta
-- Condicoes ideais de cultivo
-- Propagacao e multiplicacao
+- Condições ideais de cultivo
+- Propagação e multiplicação
 - Quando e como colher
 
-**2. Manual do Cha Perfeito (25 paginas)** - valor R$ 9
-- Tecnicas de preparo de infusoes
+**2. Manual do Chá Perfeito (25 páginas)** - valor R$ 9
+- Técnicas de preparo de infusões
 - Temperatura e tempo corretos
-- Combinacoes de sabores
-- Conservacao de ervas secas
+- Combinações de sabores
+- Conservação de ervas secas
 
-**3. Guia de Propriedades Medicinais (30 paginas)** - valor R$ 12
+**3. Guia de Propriedades Medicinais (30 páginas)** - valor R$ 12
 - Para que serve cada erva
-- Indicacoes e contraindicacoes
+- Indicações e contraindicações
 - Dosagens seguras
-- Interacoes importantes
+- Interações importantes
 
-**4. Calendario de Plantio e Colheita (15 paginas)** - valor R$ 7
-- Melhor epoca para cada erva
+**4. Calendário de Plantio e Colheita (15 páginas)** - valor R$ 7
+- Melhor época para cada erva
 - Lua e plantio
-- Quando colher para maximo efeito
+- Quando colher para máximo efeito
 
-### Plantas Que Voce Vai Cultivar:
+### Plantas Que Você Vai Cultivar:
 
 **Para Relaxamento:**
 - Camomila
 - Erva-cidreira
-- Maracuja
+- Maracujá
 
-**Para Digestao:**
-- Hortela
+**Para Digestão:**
+- Hortelã
 - Boldo
 - Erva-doce
 
 **Para Imunidade:**
 - Gengibre
-- Equinacea
+- Equinácea
 - Alecrim
 
-**Para Respiracao:**
+**Para Respiração:**
 - Eucalipto
 - Guaco
 - Tomilho
 
-### Bonus Exclusivos:
+### Bônus Exclusivos:
 
-**Receituario Natural:**
-- 30 receitas de chas terapeuticos
+**Receituário Natural:**
+- 30 receitas de chás terapêuticos
 - Xaropes caseiros
 - Compressas e banhos
-- Oleos aromaticos
+- Óleos aromáticos
 
 **Etiquetas para Imprimir:**
 - Identifique seus vasos
-- Organize sua colecao
+- Organize sua coleção
 - Visual charmoso
 
 **Economia:** De R$ 52 por apenas R$ 24 (54% OFF)
-**Formato:** 4 PDFs + bonus
-**Entrega:** Imediata apos pagamento
+**Formato:** 4 PDFs + bônus
+**Entrega:** Imediata após pagamento
 **Garantia:** 7 dias incondicional
 
 ---
 
-### Para Quem E Este Kit?
+### Para Quem É Este Kit?
 
 - Busca alternativas naturais
-- Quer chas frescos e aromaticos
+- Quer chás frescos e aromáticos
 - Gosta de fitoterapia
-- Quer economizar com remedios
-- Valoriza alimentacao saudavel
+- Quer economizar com remédios
+- Valoriza alimentação saudável
 
 ### Aviso Importante:
 
-Este material e educativo. Ervas medicinais nao substituem tratamento medico. Consulte um profissional de saude antes de usar ervas para fins terapeuticos, especialmente se estiver gravida, amamentando ou em tratamento.
+Este material é educativo. Ervas medicinais não substituem tratamento médico. Consulte um profissional de saúde antes de usar ervas para fins terapêuticos, especialmente se estiver grávida, amamentando ou em tratamento.

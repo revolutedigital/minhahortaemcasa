@@ -1,64 +1,64 @@
 ---
-title: "Guia Pragas e Doencas Completo"
+title: "Guia Pragas e Doenças Completo"
 price: 19
 originalPrice: 39
-description: "Identifique e elimine qualquer praga ou doenca da sua horta"
+description: "Identifique e elimine qualquer praga ou doença da sua horta"
 category: "guia"
 featured: true
 ---
 
-# Guia Pragas e Doencas Completo - R$ 19
+# Guia Pragas e Doenças Completo - R$ 19
 
 ## Nunca mais perca plantas para pragas!
 
-O manual mais completo para identificar, tratar e prevenir todas as pragas e doencas comuns em hortas caseiras.
+O manual mais completo para identificar, tratar e prevenir todas as pragas e doenças comuns em hortas caseiras.
 
-### O Que Voce Vai Aprender:
+### O Que Você Vai Aprender:
 
-**Modulo 1: Identificacao Visual (45 paginas)**
-- 25 pragas com fotos em alta resolucao
-- Sinais de cada infestacao
+**Módulo 1: Identificação Visual (45 páginas)**
+- 25 pragas com fotos em alta resolução
+- Sinais de cada infestação
 - Onde encontrar na planta
-- Nivel de gravidade
+- Nível de gravidade
 
-**Modulo 2: Pragas Sugadoras (30 paginas)**
-- Pulgoes - 5 metodos de controle
-- Cochonilhas - eliminacao definitiva
-- Mosca branca - estrategia completa
-- Acaros - como detectar e tratar
-- Trips - controle biologico
+**Módulo 2: Pragas Sugadoras (30 páginas)**
+- Pulgões - 5 métodos de controle
+- Cochonilhas - eliminação definitiva
+- Mosca branca - estratégia completa
+- Ácaros - como detectar e tratar
+- Trips - controle biológico
 
-**Modulo 3: Pragas Mastigadoras (25 paginas)**
-- Lagartas - identificacao por dano
-- Lesmas e caracois - barreiras eficazes
+**Módulo 3: Pragas Mastigadoras (25 páginas)**
+- Lagartas - identificação por dano
+- Lesmas e caracóis - barreiras eficazes
 - Besouros - manejo integrado
-- Gafanhotos - protecao da horta
+- Gafanhotos - proteção da horta
 
-**Modulo 4: Doencas Fungicas (35 paginas)**
-- Oidio - tratamento e prevencao
-- Ferrugem - como parar a propagacao
+**Módulo 4: Doenças Fúngicas (35 páginas)**
+- Oídio - tratamento e prevenção
+- Ferrugem - como parar a propagação
 - Mofo cinzento - ambiente controlado
-- Tombamento - protecao de mudas
-- Manchas foliares - diagnostico
+- Tombamento - proteção de mudas
+- Manchas foliares - diagnóstico
 
-**Modulo 5: Tratamentos Organicos (40 paginas)**
+**Módulo 5: Tratamentos Orgânicos (40 páginas)**
 - 15 receitas de defensivos caseiros
-- Oleo de neem - uso correto
+- Óleo de neem - uso correto
 - Calda bordalesa - preparo passo a passo
 - Armadilhas naturais
-- Controle biologico
+- Controle biológico
 
-**Modulo 6: Prevencao (20 paginas)**
+**Módulo 6: Prevenção (20 páginas)**
 - Manejo integrado de pragas
 - Plantas companheiras
-- Calendario de prevencao
-- Rotina de inspecao
+- Calendário de prevenção
+- Rotina de inspeção
 
-### Bonus Exclusivos:
+### Bônus Exclusivos:
 
-**Fluxograma de Diagnostico:**
+**Fluxograma de Diagnóstico:**
 - Identifique o problema em 2 minutos
-- Versao para imprimir e colar na horta
+- Versão para imprimir e colar na horta
 
 **Fichas de Campo:**
 - 25 fichas resumidas (1 por praga)
@@ -66,31 +66,31 @@ O manual mais completo para identificar, tratar e prevenir todas as pragas e doe
 
 **Tabela de Compatibilidade:**
 - Quais defensivos misturar
-- Intervalos de aplicacao
-- Carencia para colheita
+- Intervalos de aplicação
+- Carência para colheita
 
-### Especificacoes:
+### Especificações:
 
-**Total:** 195 paginas de conteudo
-**Formato:** PDF otimizado para celular e impressao
-**Entrega:** Imediata apos pagamento
-**Atualizacoes:** Gratuitas por 1 ano
+**Total:** 195 páginas de conteúdo
+**Formato:** PDF otimizado para celular e impressão
+**Entrega:** Imediata após pagamento
+**Atualizações:** Gratuitas por 1 ano
 **Garantia:** 7 dias incondicional
 
 ---
 
 ### Depoimentos:
 
-> "Salvei minha horta inteira de uma infestacao de pulgoes seguindo o guia. Valeu cada centavo!" - Maria S.
+> "Salvei minha horta inteira de uma infestação de pulgões seguindo o guia. Valeu cada centavo!" - Maria S.
 
-> "Finalmente entendi a diferenca entre pragas e doencas. O diagnostico visual e fantastico." - Carlos R.
+> "Finalmente entendi a diferença entre pragas e doenças. O diagnóstico visual é fantástico." - Carlos R.
 
-> "As receitas organicas funcionam de verdade. Nao uso mais nada quimico." - Ana P.
+> "As receitas orgânicas funcionam de verdade. Não uso mais nada químico." - Ana P.
 
-### Por Que Este Guia E Diferente?
+### Por Que Este Guia É Diferente?
 
-- Focado em hortas CASEIRAS (nao agricultura comercial)
-- Apenas tratamentos ORGANICOS e seguros
-- Fotos de ALTA QUALIDADE para identificacao
-- Linguagem SIMPLES, sem termos tecnicos
+- Focado em hortas CASEIRAS (não agricultura comercial)
+- Apenas tratamentos ORGÂNICOS e seguros
+- Fotos de ALTA QUALIDADE para identificação
+- Linguagem SIMPLES, sem termos técnicos
 - Testado por milhares de cultivadores

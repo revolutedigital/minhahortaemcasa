@@ -1,0 +1,7 @@
+# robots.txt para minhahortaemcasa.com.br
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://minhahortaemcasa.com.br/sitemap-index.xml

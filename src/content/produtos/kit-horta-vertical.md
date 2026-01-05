@@ -2,7 +2,7 @@
 title: "Kit Horta Vertical Completo"
 price: 29
 originalPrice: 67
-description: "Tudo para montar sua horta vertical em qualquer espaco"
+description: "Tudo para montar sua horta vertical em qualquer espaço"
 category: "combo"
 featured: true
 ---
@@ -11,65 +11,65 @@ featured: true
 
 ## Monte sua parede verde passo a passo!
 
-O guia definitivo para criar uma horta vertical funcional e bonita, mesmo em espacos minusculos.
+O guia definitivo para criar uma horta vertical funcional e bonita, mesmo em espaços minúsculos.
 
 ### Inclui:
 
-**1. Guia Horta Vertical Profissional (60 paginas)** - valor R$ 19
+**1. Guia Horta Vertical Profissional (60 páginas)** - valor R$ 19
 - 6 modelos de estrutura detalhados
 - Passo a passo com fotos
-- Lista de materiais com precos
+- Lista de materiais com preços
 - Plantas ideais para cada sistema
-- Solucao de problemas comuns
+- Solução de problemas comuns
 
-**2. Projeto Pallet Verde (25 paginas)** - valor R$ 12
+**2. Projeto Pallet Verde (25 páginas)** - valor R$ 12
 - Passo a passo completo do pallet
 - Como tratar a madeira
-- Impermeabilizacao correta
+- Impermeabilização correta
 - Montagem em 1 dia
 
-**3. Guia Irrigacao Vertical (20 paginas)** - valor R$ 9
+**3. Guia Irrigação Vertical (20 páginas)** - valor R$ 9
 - Sistema de gotejamento caseiro
-- Irrigacao automatizada
-- Como evitar que seque rapido
+- Irrigação automatizada
+- Como evitar que seque rápido
 
-**4. Kit Garrafa PET (18 paginas)** - valor R$ 7
+**4. Kit Garrafa PET (18 páginas)** - valor R$ 7
 - 5 modelos com garrafas
 - Torre vertical
-- Sistema auto-irrigavel
+- Sistema auto-irrigável
 - Custo quase zero!
 
-### Bonus Exclusivos:
+### Bônus Exclusivos:
 
-**Planilha de Orcamento:**
+**Planilha de Orçamento:**
 - Calcule exatamente quanto vai gastar
 - Comparativo de materiais
 - Onde comprar mais barato
 
 **Mapa de Plantio:**
-- Qual planta em cada posicao
+- Qual planta em cada posição
 - Baseado na luz solar
-- Combinacoes que funcionam
+- Combinações que funcionam
 
 **Economia:** De R$ 67 por apenas R$ 29 (57% OFF)
-**Formato:** 4 PDFs + bonus em planilha
-**Entrega:** Imediata apos pagamento
-**Garantia:** 7 dias - nao gostou, devolvemos!
+**Formato:** 4 PDFs + bônus em planilha
+**Entrega:** Imediata após pagamento
+**Garantia:** 7 dias - não gostou, devolvemos!
 
 ---
 
-### Para Quem E Este Kit?
+### Para Quem É Este Kit?
 
 - Mora em apartamento com varanda pequena
-- Quer maximizar espaco de cultivo
+- Quer maximizar espaço de cultivo
 - Gosta de projetos DIY
-- Quer economizar montando voce mesmo
+- Quer economizar montando você mesmo
 - Busca uma horta decorativa e funcional
 
-### Resultados que Voce Vai Ter:
+### Resultados que Você Vai Ter:
 
 - Horta vertical montada em 1 fim de semana
-- Ate 20 plantas em 1m² de parede
-- Temperos frescos sempre a mao
-- Economia de R$ 100+/mes em compras
-- Visual incrivel na sua varanda
+- Até 20 plantas em 1m² de parede
+- Temperos frescos sempre à mão
+- Economia de R$ 100+/mês em compras
+- Visual incrível na sua varanda

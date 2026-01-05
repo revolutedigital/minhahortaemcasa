@@ -18,7 +18,7 @@ const allGuias = await getCollection('guias', ({ data }) => !data.draft);
 const featuredPlantas = allPlantas.slice(0, 3);
 const featuredProblemas = allProblemas.slice(0, 2);
 
-// Mapear plantas para icones
+// Mapear plantas para ícones
 const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolinha' | 'salsinha' | 'generic'> = {
   'manjericao': 'manjericao',
   'alecrim': 'alecrim',
@@ -28,7 +28,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
 };
 ---
 
-<Layout title="Horta em Casa" description="Cultive temperos frescos mesmo em apartamento. Guias praticos, dicas de especialistas e solucoes para sua horta urbana.">
+<Layout title="Horta em Casa" description="Cultive temperos frescos mesmo em apartamento. Guias práticos, dicas de especialistas e soluções para sua horta urbana.">
 
   <!-- Hero Section - Impactante e moderno -->
   <section class="relative min-h-[90vh] flex items-center overflow-hidden">
@@ -45,7 +45,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Conteudo -->
+        <!-- Conteúdo -->
         <div class="text-center lg:text-left">
           <!-- Badge -->
           <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-leaf-200 shadow-sm mb-6 animate-slide-up">
@@ -53,7 +53,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-leaf-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-leaf-500"></span>
             </span>
-            <span class="text-sm font-medium text-gray-700">+2.500 hortas criadas com nossos guias</span>
+            <span class="text-sm font-medium text-gray-700">+2.500 hortas criadas com os nossos guias</span>
           </div>
 
           <!-- Headline -->
@@ -66,7 +66,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
 
           <!-- Subheadline -->
           <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 animate-slide-up stagger-2">
-            Mesmo morando em apartamento, sem quintal e sem experiencia.
+            Mesmo morando em apartamento, sem quintal e sem experiência.
             <strong class="text-gray-900">Guias passo a passo</strong> feitos para o clima brasileiro.
           </p>
 
@@ -99,15 +99,15 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </div>
-              <span class="font-medium">4.9/5</span> de 847 avaliacoes
+              <span class="font-medium">4.9/5</span> de 847 avaliações
             </div>
           </div>
         </div>
 
-        <!-- Visual / Ilustracao -->
+        <!-- Visual / Ilustração -->
         <div class="relative hidden lg:block">
           <div class="relative w-full aspect-square max-w-lg mx-auto">
-            <!-- Card principal com ilustracao SVG -->
+            <!-- Card principal com ilustração SVG -->
             <div class="absolute inset-0 bg-white rounded-3xl shadow-2xl shadow-leaf-500/10 p-6 animate-grow">
               <div class="h-full flex flex-col">
                 <div class="flex items-center gap-3 mb-4">
@@ -178,7 +178,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div class="text-center scroll-reveal group">
           <div class="text-3xl sm:text-4xl font-bold text-leaf-600 mb-1 counter-stat" data-target="15" data-suffix="+">0</div>
-          <div class="text-sm text-gray-600 group-hover:text-leaf-600 transition-colors">Guias detalhados</div>
+          <div class="text-sm text-gray-600 group-hover:text-leaf-600 transition-colors">Guias completos</div>
         </div>
         <div class="text-center scroll-reveal reveal-delay-1 group">
           <div class="text-3xl sm:text-4xl font-bold text-earth-600 mb-1 counter-stat" data-target="2500" data-suffix="+" data-format="k">0</div>
@@ -186,11 +186,11 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
         </div>
         <div class="text-center scroll-reveal reveal-delay-2 group">
           <div class="text-3xl sm:text-4xl font-bold text-sun-600 mb-1 counter-stat" data-target="98" data-suffix="%">0</div>
-          <div class="text-sm text-gray-600 group-hover:text-sun-600 transition-colors">Taxa de sucesso</div>
+          <div class="text-sm text-gray-600 group-hover:text-sun-600 transition-colors">De taxa de sucesso</div>
         </div>
         <div class="text-center scroll-reveal reveal-delay-3 group">
           <div class="text-3xl sm:text-4xl font-bold text-water-600 mb-1 counter-stat" data-target="4.9" data-decimal="true">0</div>
-          <div class="text-sm text-gray-600 group-hover:text-water-600 transition-colors">Avaliacao media</div>
+          <div class="text-sm text-gray-600 group-hover:text-water-600 transition-colors">Avaliação média</div>
         </div>
       </div>
     </div>
@@ -201,22 +201,22 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-white rounded-3xl shadow-xl shadow-leaf-500/10 p-8 sm:p-12 scroll-reveal-scale">
         <div class="flex flex-col lg:flex-row items-center gap-8">
-          <!-- Ilustracao -->
+          <!-- Ilustração -->
           <div class="flex-shrink-0">
             <div class="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-leaf-100 to-leaf-200 rounded-3xl flex items-center justify-center">
               <Mascote mood="thinking" size="lg" />
             </div>
           </div>
 
-          <!-- Conteudo -->
+          <!-- Conteúdo -->
           <div class="flex-1 text-center lg:text-left">
             <span class="badge badge-leaf mb-4">Quiz Personalizado</span>
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Descubra qual planta e ideal para voce
+              Descubra qual planta é ideal para você
             </h2>
             <p class="text-gray-600 mb-6">
-              Responda 12 perguntas rapidas sobre seu espaco, tempo e objetivos.
-              Receba uma recomendacao personalizada de guia + produtos que combinam com seu perfil.
+              Responda 12 perguntas rápidas sobre seu espaço, tempo e objetivos.
+              Receba uma recomendação personalizada de guia + produtos que combinam com seu perfil.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -260,10 +260,10 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
       <div class="text-center mb-12 scroll-reveal">
         <span class="badge badge-earth mb-4">Explore</span>
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-          Tudo que voce precisa para comecar
+          Tudo que você precisa para começar
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Guias praticos, solucoes para problemas e dicas de especialistas.
+          Guias práticos, soluções para problemas e dicas de especialistas.
         </p>
       </div>
 
@@ -281,7 +281,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
               </span>
               <div class="flex-1">
                 <h3 class="text-2xl sm:text-3xl font-bold mb-4">Horta em Apartamento: Guia Definitivo</h3>
-                <p class="text-leaf-100 mb-6">Como criar uma horta produtiva mesmo em espacos pequenos. Passo a passo completo.</p>
+                <p class="text-leaf-100 mb-6">Como criar uma horta produtiva mesmo em espaços pequenos. Passo a passo completo.</p>
               </div>
               <div class="flex items-center gap-2 text-sm font-medium">
                 <span>Ler guia completo</span>
@@ -318,8 +318,8 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
                 <ToolsIcon size="w-12 h-12" />
               </div>
               <div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-earth-700 transition-colors">Problemas comuns e solucoes</h3>
-                <p class="text-gray-600 mb-4">Folhas amarelas? Pragas? Planta murchando? Temos a solucao.</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-earth-700 transition-colors">Problemas comuns e soluções</h3>
+                <p class="text-gray-600 mb-4">Folhas amarelas? Pragas? Planta murchando? Temos a solução.</p>
                 <div class="flex flex-wrap gap-2">
                   <span class="badge badge-earth">Folhas amarelas</span>
                   <span class="badge badge-water">Rega</span>
@@ -352,7 +352,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
             ))}
           </div>
           <p class="text-gray-600 mb-6">
-            "Nunca imaginei que conseguiria ter uma horta no meu apartamento de 40m². Com o guia consegui colher manjericao em menos de 1 mes!"
+            "Nunca imaginei que conseguiria ter uma horta no meu apartamento de 40m². Com o guia consegui colher manjericão em menos de 1 mês!"
           </p>
           <div class="flex items-center gap-3">
             <div class="w-12 h-12 rounded-full overflow-hidden">
@@ -360,7 +360,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
             </div>
             <div>
               <div class="font-semibold text-gray-900">Marina S.</div>
-              <div class="text-sm text-gray-500">Sao Paulo, SP</div>
+              <div class="text-sm text-gray-500">São Paulo, SP</div>
             </div>
           </div>
         </div>
@@ -373,7 +373,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
             ))}
           </div>
           <p class="text-gray-600 mb-6">
-            "Ja tinha tentado antes e sempre dava errado. Com as dicas de rega finalmente entendi o que estava fazendo de errado. Obrigado!"
+            "Já tinha tentado antes e sempre dava errado. Com as dicas de rega finalmente entendi o que estava fazendo de errado. Obrigado!"
           </p>
           <div class="flex items-center gap-3">
             <div class="w-12 h-12 rounded-full overflow-hidden">
@@ -394,7 +394,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
             ))}
           </div>
           <p class="text-gray-600 mb-6">
-            "O Kit Iniciante valeu cada centavo. Em uma semana ja tinha 5 vasinhos na sacada. Meus filhos adoraram acompanhar o crescimento!"
+            "O Kit Iniciante valeu cada centavo. Em uma semana já tinha 5 vasinhos na sacada. Meus filhos adoraram acompanhar o crescimento!"
           </p>
           <div class="flex items-center gap-3">
             <div class="w-12 h-12 rounded-full overflow-hidden">
@@ -417,12 +417,12 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
         <div class="flex justify-center mb-6">
           <Mascote mood="waving" size="lg" />
         </div>
-        <span class="badge badge-water mb-4">Duvidas Frequentes</span>
+        <span class="badge badge-water mb-4">Dúvidas Frequentes</span>
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
           Perguntas frequentes
         </h2>
         <p class="text-lg text-gray-600">
-          Tudo que voce precisa saber para comecar sua horta
+          Tudo que você precisa saber para começar sua horta
         </p>
       </div>
 
@@ -430,14 +430,14 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
         <!-- FAQ Item 1 -->
         <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden hover:border-leaf-300 transition-colors">
           <button class="faq-trigger w-full flex items-center justify-between p-6 text-left" data-faq="1">
-            <span class="font-semibold text-gray-900 pr-4">Preciso de muito espaco para ter uma horta?</span>
+            <span class="font-semibold text-gray-900 pr-4">Preciso de muito espaço para ter uma horta?</span>
             <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           <div class="faq-content hidden px-6 pb-6">
             <p class="text-gray-600">
-              Nao! Voce pode comecar com apenas uma janela ensolarada e alguns vasinhos. Muitas ervas como manjericao, cebolinha e hortela crescem muito bem em espacos pequenos. Ate uma varanda de apartamento e suficiente para ter uma mini horta produtiva.
+              Não! Você pode começar com apenas uma janela ensolarada e alguns vasinhos. Muitas ervas como manjericão, cebolinha e hortelã crescem muito bem em espaços pequenos. Até uma varanda de apartamento é suficiente para ter uma mini horta produtiva.
             </p>
           </div>
         </div>
@@ -452,7 +452,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
           </button>
           <div class="faq-content hidden px-6 pb-6">
             <p class="text-gray-600">
-              Depende da planta! Cebolinha e manjericao podem ser colhidos em 3-4 semanas. Alecrim e hortela levam um pouco mais, cerca de 6-8 semanas. O legal e que muitas ervas permitem colheitas continuas - quanto mais voce colhe, mais elas crescem!
+              Depende da planta! Cebolinha e manjericão podem ser colhidos em 3-4 semanas. Alecrim e hortelã levam um pouco mais, cerca de 6-8 semanas. O legal é que muitas ervas permitem colheitas contínuas - quanto mais você colhe, mais elas crescem!
             </p>
           </div>
         </div>
@@ -467,7 +467,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
           </button>
           <div class="faq-content hidden px-6 pb-6">
             <p class="text-gray-600">
-              Com certeza! Nossos guias foram feitos especialmente para iniciantes. Explicamos tudo passo a passo, desde escolher o vaso certo ate quando e como colher. Mais de 2.500 pessoas ja criaram suas hortas seguindo nossos guias, mesmo sem nenhuma experiencia anterior.
+              Com certeza! Nossos guias foram feitos especialmente para iniciantes. Explicamos tudo passo a passo, desde escolher o vaso certo até quando e como colher. Mais de 2.500 pessoas já criaram suas hortas seguindo nossos guias, mesmo sem nenhuma experiência anterior.
             </p>
           </div>
         </div>
@@ -482,7 +482,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
           </button>
           <div class="faq-content hidden px-6 pb-6">
             <p class="text-gray-600">
-              Sim! Muitas ervas como hortela e salsinha toleram bem ambientes com menos luz. O segredo e escolher uma janela que receba pelo menos 3-4 horas de luz por dia. Nosso quiz te ajuda a descobrir quais plantas sao ideais para seu espaco especifico.
+              Sim! Muitas ervas como hortelã e salsinha toleram bem ambientes com menos luz. O segredo é escolher uma janela que receba pelo menos 3-4 horas de luz por dia. Nosso quiz te ajuda a descobrir quais plantas são ideais para seu espaço específico.
             </p>
           </div>
         </div>
@@ -490,14 +490,14 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
         <!-- FAQ Item 5 -->
         <div class="faq-item border border-gray-200 rounded-2xl overflow-hidden hover:border-leaf-300 transition-colors">
           <button class="faq-trigger w-full flex items-center justify-between p-6 text-left" data-faq="5">
-            <span class="font-semibold text-gray-900 pr-4">O que esta incluso nos guias premium?</span>
+            <span class="font-semibold text-gray-900 pr-4">O que está incluso nos guias premium?</span>
             <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transform transition-transform faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           <div class="faq-content hidden px-6 pb-6">
             <p class="text-gray-600">
-              Os guias premium incluem: passo a passo ilustrado, calendario de plantio e colheita, dicas de rega personalizadas, solucao de problemas comuns, receitas para usar seus temperos, e acesso a atualizacoes futuras. Tudo em PDF para consultar quando quiser!
+              Os guias premium incluem: passo a passo ilustrado, calendário de plantio e colheita, dicas de rega personalizadas, solução de problemas comuns, receitas para usar seus temperos, e acesso a atualizações futuras. Tudo em PDF para consultar quando quiser!
             </p>
           </div>
         </div>
@@ -505,7 +505,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
 
       <!-- CTA apos FAQ -->
       <div class="mt-12 text-center">
-        <p class="text-gray-600 mb-4">Ainda tem duvidas?</p>
+        <p class="text-gray-600 mb-4">Ainda tem dúvidas?</p>
         <a href="#quiz" class="btn-secondary">
           Fazer o quiz e descobrir sua planta ideal
         </a>
@@ -532,7 +532,7 @@ const plantIcons: Record<string, 'manjericao' | 'alecrim' | 'hortela' | 'cebolin
       </h2>
 
       <p class="text-xl text-leaf-100 mb-8 max-w-2xl mx-auto">
-        Kit Iniciante com tudo que voce precisa. De <span class="line-through">R$ 47</span> por apenas <span class="text-sun-300 font-bold">R$ 19</span>.
+        Kit Iniciante com tudo que você precisa. De <span class="line-through">R$ 47</span> por apenas <span class="text-sun-300 font-bold">R$ 19</span>.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">

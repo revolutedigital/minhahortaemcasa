@@ -1,7 +1,7 @@
 ---
 // Logo unico e proprietario - Horta em Casa
-// Conceito: Uma casa estilizada com uma planta brotando do telhado
-// Representa: lar + crescimento + natureza urbana
+// Conceito: Verdinho (mascote) como icone do logo
+// Representa: marca + personalidade + natureza
 
 interface Props {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -12,74 +12,83 @@ interface Props {
 const { size = 'md', variant = 'full', class: className = '' } = Astro.props;
 
 const sizes = {
-  sm: { icon: 'w-8 h-8', text: 'text-lg', gap: 'gap-2' },
-  md: { icon: 'w-10 h-10', text: 'text-xl', gap: 'gap-2.5' },
-  lg: { icon: 'w-12 h-12', text: 'text-2xl', gap: 'gap-3' },
-  xl: { icon: 'w-16 h-16', text: 'text-3xl', gap: 'gap-4' }
+  sm: { icon: 'w-8 h-10', text: 'text-lg', gap: 'gap-2' },
+  md: { icon: 'w-10 h-12', text: 'text-xl', gap: 'gap-2' },
+  lg: { icon: 'w-12 h-14', text: 'text-2xl', gap: 'gap-3' },
+  xl: { icon: 'w-16 h-20', text: 'text-3xl', gap: 'gap-4' }
 };
 
 const s = sizes[size];
 ---
 
 {variant === 'full' && (
-  <a href="/" class={`flex items-center ${s.gap} group ${className}`}>
-    <!-- Icone do logo -->
-    <div class={`${s.icon} relative`}>
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-        <!-- Sombra sutil -->
-        <ellipse cx="24" cy="44" rx="14" ry="3" fill="#15803d" fill-opacity="0.1"/>
+  <div class={`flex items-center ${s.gap} group ${className}`}>
+    <!-- Verdinho como icone do logo -->
+    <div class={`${s.icon} relative flex-shrink-0`}>
+      <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <!-- Sombra -->
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
 
-        <!-- Casa base -->
-        <path d="M8 24L24 10L40 24V42H8V24Z" fill="url(#houseGrad)" stroke="#15803d" stroke-width="2" stroke-linejoin="round"/>
+        <!-- Vaso de terracota -->
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGradLogo)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
 
-        <!-- Telhado -->
-        <path d="M4 24L24 6L44 24" stroke="#15803d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Terra -->
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
 
-        <!-- Porta -->
-        <path d="M20 42V32C20 31 21 30 22 30H26C27 30 28 31 28 32V42" fill="#ea7531" stroke="#b5441c" stroke-width="1.5"/>
-        <circle cx="26.5" cy="36" r="1" fill="#b5441c"/>
+        <!-- Corpo da planta (face) -->
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGradLogo)" stroke="#15803d" stroke-width="2.5"/>
 
-        <!-- Janela esquerda -->
-        <rect x="11" y="28" width="6" height="6" rx="1" fill="#7dd3fc" stroke="#0ea5e9" stroke-width="1"/>
-        <line x1="14" y1="28" x2="14" y2="34" stroke="#0ea5e9" stroke-width="0.5"/>
-        <line x1="11" y1="31" x2="17" y2="31" stroke="#0ea5e9" stroke-width="0.5"/>
+        <!-- Olhos felizes -->
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
 
-        <!-- Janela direita -->
-        <rect x="31" y="28" width="6" height="6" rx="1" fill="#7dd3fc" stroke="#0ea5e9" stroke-width="1"/>
-        <line x1="34" y1="28" x2="34" y2="34" stroke="#0ea5e9" stroke-width="0.5"/>
-        <line x1="31" y1="31" x2="37" y2="31" stroke="#0ea5e9" stroke-width="0.5"/>
+        <!-- Sorriso -->
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
 
-        <!-- Planta brotando do telhado -->
-        <g class="group-hover:animate-wiggle origin-bottom" style="transform-origin: 24px 16px;">
-          <!-- Caule -->
-          <path d="M24 16V4" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
+        <!-- Bochechas -->
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+
+        <!-- Folhas no topo (cabelo) -->
+        <g class="group-hover:scale-110 transition-transform" style="transform-origin: 50px 25px;">
+          <!-- Folha central -->
+          <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
 
           <!-- Folha esquerda -->
-          <path d="M24 10C24 10 18 8 16 2C20 2 24 6 24 10Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5">
-            <animate attributeName="d" dur="3s" repeatCount="indefinite"
-              values="M24 10C24 10 18 8 16 2C20 2 24 6 24 10Z;
-                      M24 10C24 10 17 9 14 3C19 3 24 6 24 10Z;
-                      M24 10C24 10 18 8 16 2C20 2 24 6 24 10Z"/>
+          <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5">
+            <animate attributeName="d" dur="4s" repeatCount="indefinite"
+              values="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z;
+                      M40 35C40 35 25 28 15 25C25 20 38 25 40 35Z;
+                      M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z"/>
           </path>
 
           <!-- Folha direita -->
-          <path d="M24 8C24 8 30 6 32 0C28 0 24 4 24 8Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5">
-            <animate attributeName="d" dur="3s" repeatCount="indefinite" begin="0.5s"
-              values="M24 8C24 8 30 6 32 0C28 0 24 4 24 8Z;
-                      M24 8C24 8 31 5 34 -1C29 -1 24 4 24 8Z;
-                      M24 8C24 8 30 6 32 0C28 0 24 4 24 8Z"/>
+          <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5">
+            <animate attributeName="d" dur="4s" repeatCount="indefinite" begin="0.5s"
+              values="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z;
+                      M60 35C60 35 75 28 85 25C75 20 62 25 60 35Z;
+                      M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z"/>
           </path>
 
-          <!-- Folhinha central -->
-          <ellipse cx="24" cy="3" rx="2" ry="3" fill="#86efac" stroke="#15803d" stroke-width="1"/>
+          <!-- Folhinha pequena -->
+          <ellipse cx="50" cy="8" rx="3" ry="5" fill="#86efac" stroke="#15803d" stroke-width="1"/>
         </g>
 
         <!-- Gradientes -->
         <defs>
-          <linearGradient id="houseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#fef9c3"/>
-            <stop offset="100%" stop-color="#fef3c7"/>
+          <linearGradient id="potGradLogo" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ea7531"/>
+            <stop offset="100%" stop-color="#b5441c"/>
           </linearGradient>
+          <radialGradient id="bodyGradLogo" cx="40%" cy="30%">
+            <stop offset="0%" stop-color="#86efac"/>
+            <stop offset="50%" stop-color="#4ade80"/>
+            <stop offset="100%" stop-color="#22c55e"/>
+          </radialGradient>
         </defs>
       </svg>
     </div>
@@ -91,38 +100,65 @@ const s = sizes[size];
       </span>
       <span class="text-xs text-leaf-600 font-medium tracking-wider">CULTIVE. COLHA. SABOREIE.</span>
     </div>
-  </a>
+  </div>
 )}
 
 {variant === 'icon' && (
-  <a href="/" class={`block ${s.icon} ${className}`}>
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-      <ellipse cx="24" cy="44" rx="14" ry="3" fill="#15803d" fill-opacity="0.1"/>
-      <path d="M8 24L24 10L40 24V42H8V24Z" fill="url(#houseGradIcon)" stroke="#15803d" stroke-width="2" stroke-linejoin="round"/>
-      <path d="M4 24L24 6L44 24" stroke="#15803d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M20 42V32C20 31 21 30 22 30H26C27 30 28 31 28 32V42" fill="#ea7531" stroke="#b5441c" stroke-width="1.5"/>
-      <circle cx="26.5" cy="36" r="1" fill="#b5441c"/>
-      <rect x="11" y="28" width="6" height="6" rx="1" fill="#7dd3fc" stroke="#0ea5e9" stroke-width="1"/>
-      <rect x="31" y="28" width="6" height="6" rx="1" fill="#7dd3fc" stroke="#0ea5e9" stroke-width="1"/>
-      <path d="M24 16V4" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
-      <path d="M24 10C24 10 18 8 16 2C20 2 24 6 24 10Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
-      <path d="M24 8C24 8 30 6 32 0C28 0 24 4 24 8Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
-      <ellipse cx="24" cy="3" rx="2" ry="3" fill="#86efac" stroke="#15803d" stroke-width="1"/>
+  <div class={`block ${s.icon} ${className}`}>
+    <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <!-- Sombra -->
+      <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+
+      <!-- Vaso -->
+      <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGradLogoIcon)" stroke="#b5441c" stroke-width="2"/>
+      <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+
+      <!-- Terra -->
+      <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+
+      <!-- Corpo -->
+      <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGradLogoIcon)" stroke="#15803d" stroke-width="2.5"/>
+
+      <!-- Olhos -->
+      <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+      <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+      <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+      <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+
+      <!-- Sorriso -->
+      <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+
+      <!-- Bochechas -->
+      <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+      <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+
+      <!-- Folhas -->
+      <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+      <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+      <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+      <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+      <ellipse cx="50" cy="8" rx="3" ry="5" fill="#86efac" stroke="#15803d" stroke-width="1"/>
+
       <defs>
-        <linearGradient id="houseGradIcon" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#fef9c3"/>
-          <stop offset="100%" stop-color="#fef3c7"/>
+        <linearGradient id="potGradLogoIcon" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ea7531"/>
+          <stop offset="100%" stop-color="#b5441c"/>
         </linearGradient>
+        <radialGradient id="bodyGradLogoIcon" cx="40%" cy="30%">
+          <stop offset="0%" stop-color="#86efac"/>
+          <stop offset="50%" stop-color="#4ade80"/>
+          <stop offset="100%" stop-color="#22c55e"/>
+        </radialGradient>
       </defs>
     </svg>
-  </a>
+  </div>
 )}
 
 {variant === 'wordmark' && (
-  <a href="/" class={`flex flex-col ${className}`}>
+  <div class={`flex flex-col ${className}`}>
     <span class={`font-bold ${s.text} text-gray-900 leading-tight tracking-tight`}>
       Horta<span class="text-leaf-600">em</span>Casa
     </span>
     <span class="text-xs text-leaf-600 font-medium tracking-wider">CULTIVE. COLHA. SABOREIE.</span>
-  </a>
+  </div>
 )}

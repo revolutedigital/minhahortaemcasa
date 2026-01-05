@@ -1,78 +1,78 @@
 ---
-title: "Calendario de Plantio Anual"
+title: "Calendário de Plantio Anual"
 price: 9
 originalPrice: 19
-description: "Saiba exatamente o que plantar em cada mes do ano"
+description: "Saiba exatamente o que plantar em cada mês do ano"
 category: "guia"
 featured: true
 ---
 
-# Calendario de Plantio Anual - R$ 9
+# Calendário de Plantio Anual - R$ 9
 
-## Nunca mais plante na epoca errada!
+## Nunca mais plante na época errada!
 
-Calendario completo e visual com tudo que voce pode plantar em cada mes, adaptado para cada regiao do Brasil.
+Calendário completo e visual com tudo que você pode plantar em cada mês, adaptado para cada região do Brasil.
 
-### O Que Voce Recebe:
+### O Que Você Recebe:
 
-**1. Calendario Mensal Ilustrado (24 paginas)**
-- O que plantar em cada mes
-- Separado por regiao (Sul, Sudeste, Centro-Oeste, Norte/Nordeste)
-- Icones visuais para cada planta
-- Versao para imprimir
+**1. Calendário Mensal Ilustrado (24 páginas)**
+- O que plantar em cada mês
+- Separado por região (Sul, Sudeste, Centro-Oeste, Norte/Nordeste)
+- Ícones visuais para cada planta
+- Versão para imprimir
 
-**2. Tabela de Plantio por Planta (15 paginas)**
-- 50+ plantas com epoca ideal
-- Tempo ate colheita
+**2. Tabela de Plantio por Planta (15 páginas)**
+- 50+ plantas com época ideal
+- Tempo até colheita
 - Dificuldade
-- Necessidades basicas
+- Necessidades básicas
 
-**3. Guia de Fases da Lua (8 paginas)**
+**3. Guia de Fases da Lua (8 páginas)**
 - O que plantar em cada fase
 - Lua crescente vs minguante
-- Calendario lunar do ano
+- Calendário lunar do ano
 
-**4. Planejador de Horta (10 paginas)**
-- Planilha para planejar sua producao
-- Calculo de escalonamento
-- Espaco para anotacoes
+**4. Planejador de Horta (10 páginas)**
+- Planilha para planejar sua produção
+- Cálculo de escalonamento
+- Espaço para anotações
 
-### Bonus Exclusivo:
+### Bônus Exclusivo:
 
-**Infografico de Parede**
-- Calendario visual para imprimir em A3
+**Infográfico de Parede**
+- Calendário visual para imprimir em A3
 - Cole na parede da varanda ou cozinha
-- Consulta rapida o ano todo
+- Consulta rápida o ano todo
 
 **Alertas Mensais por Email**
 - Cadastre-se e receba lembretes
-- "Este mes e hora de plantar..."
+- "Este mês é hora de plantar..."
 - Dicas sazonais
 
-### Especificacoes:
+### Especificações:
 
-**Total:** 57 paginas + bonus
+**Total:** 57 páginas + bônus
 **Formato:** PDF de alta qualidade
-**Impressao:** Otimizado para imprimir em casa
-**Entrega:** Imediata apos pagamento
+**Impressão:** Otimizado para imprimir em casa
+**Entrega:** Imediata após pagamento
 **Garantia:** 7 dias
 
 ---
 
-### Por Que Este Calendario?
+### Por Que Este Calendário?
 
-Plantar na epoca errada e um dos maiores erros de iniciantes:
+Plantar na época errada é um dos maiores erros de iniciantes:
 
-- Alface no verao = pendoa e fica amarga
-- Tomate no inverno = nao produz
+- Alface no verão = pendoa e fica amarga
+- Tomate no inverno = não produz
 - Folhosas no calor = fracasso garantido
 
-Com este calendario, voce sabe EXATAMENTE quando plantar cada coisa para ter sucesso.
+Com este calendário, você sabe EXATAMENTE quando plantar cada coisa para ter sucesso.
 
 ### Depoimentos:
 
-> "Finalmente entendi porque minhas alfaces nao davam certo no verao!" - Mariana
+> "Finalmente entendi porque minhas alfaces não davam certo no verão!" - Mariana
 
-> "O infografico de parede e genial. Consulto toda semana." - Roberto
+> "O infográfico de parede é genial. Consulto toda semana." - Roberto
 
 > "Economizei muito em mudas que morriam por plantar errado." - Ana

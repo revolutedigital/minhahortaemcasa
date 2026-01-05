@@ -14,7 +14,7 @@ const sortedProblemas = allProblemas.sort((a, b) => b.data.pubDate.valueOf() - a
 
 <Layout
   title="Problemas Comuns em Hortas"
-  description="Solucoes rapidas para pragas, doencas, folhas amarelas e outros problemas comuns em hortas caseiras."
+  description="Soluções rápidas para pragas, doenças, folhas amarelas e outros problemas comuns em hortas caseiras."
 >
   <!-- Hero Section -->
   <section class="relative py-20 overflow-hidden">
@@ -28,17 +28,17 @@ const sortedProblemas = allProblemas.sort((a, b) => b.data.pubDate.valueOf() - a
         <!-- Content -->
         <div class="flex-1 text-center lg:text-left">
           <nav class="text-sm text-gray-500 mb-4">
-            <a href="/" class="hover:text-earth-600 transition-colors">Inicio</a>
+            <a href="/" class="hover:text-earth-600 transition-colors">Início</a>
             <span class="mx-2">/</span>
             <span class="text-gray-900 font-medium">Problemas</span>
           </nav>
 
           <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Solucao de <span class="text-gradient-warm">Problemas</span>
+            Solução de <span class="text-gradient-warm">Problemas</span>
           </h1>
 
           <p class="text-xl text-gray-600 max-w-xl mb-8">
-            Diagnostico e solucoes rapidas para os problemas mais comuns em hortas caseiras.
+            Diagnóstico e soluções rápidas para os problemas mais comuns em hortas caseiras.
           </p>
 
           <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
@@ -50,16 +50,16 @@ const sortedProblemas = allProblemas.sort((a, b) => b.data.pubDate.valueOf() - a
 
         <!-- Mascote + Tools Icon -->
         <div class="relative">
-          <Mascote mood="thinking" size="xl" />
+          <Mascote mood="sad" size="xl" />
 
-          <!-- Tools floating -->
+          <!-- Tools floating (solução) -->
           <div class="absolute -top-2 -right-8 animate-float bg-white rounded-2xl shadow-lg p-4">
             <ToolsIcon size="w-10 h-10" />
           </div>
 
-          <!-- Question marks floating -->
-          <div class="absolute -bottom-2 -left-6 animate-float bg-earth-100 rounded-full w-10 h-10 flex items-center justify-center text-earth-600 font-bold text-xl" style="animation-delay: -2s;">
-            ?
+          <!-- Bandaid floating -->
+          <div class="absolute -bottom-2 -left-6 animate-float bg-leaf-100 rounded-full w-10 h-10 flex items-center justify-center text-xl" style="animation-delay: -2s;">
+            🩹
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@ const sortedProblemas = allProblemas.sort((a, b) => b.data.pubDate.valueOf() - a
               <div class="flex items-center justify-between">
                 <span class="text-sm text-gray-400">{problema.data.readTime}</span>
                 <span class="flex items-center text-earth-600 text-sm font-medium group-hover:translate-x-1 transition-transform">
-                  Ver solucao
+                  Ver solução
                   <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>
@@ -98,8 +98,8 @@ const sortedProblemas = allProblemas.sort((a, b) => b.data.pubDate.valueOf() - a
       ) : (
         <div class="text-center py-16 bg-gray-50 rounded-3xl">
           <Mascote mood="sleeping" size="lg" class="mx-auto mb-4" />
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Solucoes em breve</h3>
-          <p class="text-gray-600">Estamos preparando solucoes para os problemas mais comuns!</p>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Soluções em breve</h3>
+          <p class="text-gray-600">Estamos preparando soluções para os problemas mais comuns!</p>
         </div>
       )}
     </div>
@@ -112,10 +112,10 @@ const sortedProblemas = allProblemas.sort((a, b) => b.data.pubDate.valueOf() - a
         Precisa de mais ajuda?
       </h2>
       <p class="text-lg text-gray-600 mb-8">
-        Confira nosso kit completo de solucoes para problemas comuns!
+        Confira nosso kit completo de soluções para problemas comuns!
       </p>
       <a href="/produtos/kit-problemas" class="btn-accent">
-        Ver Kit de Solucoes
+        Ver Kit de Soluções
         <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
         </svg>
