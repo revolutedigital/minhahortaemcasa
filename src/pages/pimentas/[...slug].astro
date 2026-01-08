@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const pimentas = await getCollection('pimentas');
+  return pimentas.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<ArticleLayout frontmatter={{ ...entry.data, category: 'Pimentas' }} slug={entry.slug}>
+  <Content />
+</ArticleLayout>

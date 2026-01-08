@@ -5,6 +5,7 @@ originalPrice: 19
 description: "Tudo sobre cultivo de manjericão: do plantio à colheita perfeita"
 category: "plantas"
 relatedPlant: "manjericao"
+checkoutUrl: "https://checkout.pagtrust.com.br/ck4336970f?funnel=fn364d8ad6"
 ---
 
 # Guia Completo do Manjericão - R$ 9

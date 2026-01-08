@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guia Definitivo de Rega - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.7; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 44px; font-weight: 800; color: #1d4ed8; margin-bottom: 20px; }
+    .cover .subtitle { font-size: 22px; color: #1e40af; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #1d4ed8; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #3b82f6; }
+    h1 { font-size: 32px; color: #1d4ed8; margin-bottom: 20px; border-bottom: 3px solid #3b82f6; padding-bottom: 10px; }
+    h2 { font-size: 26px; color: #1e40af; margin: 25px 0 15px; }
+    h3 { font-size: 20px; color: #1d4ed8; margin: 20px 0 10px; }
+    h4 { font-size: 18px; color: #1e40af; margin: 15px 0 8px; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin: 12px 0 15px 25px; }
+    li { margin-bottom: 6px; }
+    .intro-box { background: linear-gradient(135deg, #eff6ff, #dbeafe); border-radius: 12px; padding: 25px; margin: 20px 0; }
+    .technique-card { background: #fff; border: 2px solid #3b82f6; border-radius: 12px; padding: 25px; margin: 25px 0; }
+    .technique-card h3 { color: #1d4ed8; border-bottom: 2px solid #dbeafe; padding-bottom: 8px; margin-bottom: 15px; }
+    .water-card { background: #eff6ff; border: 2px solid #3b82f6; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .water-card h3 { color: #1d4ed8; }
+    .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .danger-box { background: #fef2f2; border-left: 4px solid #dc2626; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .tip-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .success-box { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    .comparison-table th { background: #1d4ed8; color: white; padding: 12px 8px; text-align: left; }
+    .comparison-table td { padding: 10px 8px; border-bottom: 1px solid #e5e7eb; }
+    .comparison-table tr:nth-child(even) { background: #eff6ff; }
+    .symptom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+    .symptom-card { background: #fff; border-radius: 8px; padding: 15px; border: 1px solid #e5e7eb; }
+    .symptom-card.over { border-left: 4px solid #3b82f6; }
+    .symptom-card.under { border-left: 4px solid #f59e0b; }
+    .step-box { background: #f8fafc; border-radius: 8px; padding: 15px; margin: 15px 0; }
+    .step-number { display: inline-block; width: 30px; height: 30px; background: #1d4ed8; color: white; border-radius: 50%; text-align: center; line-height: 30px; font-weight: bold; margin-right: 10px; }
+    .diy-box { background: linear-gradient(135deg, #dbeafe, #bfdbfe); border: 2px dashed #3b82f6; padding: 20px; border-radius: 12px; margin: 20px 0; }
+    .chapter-intro { font-size: 18px; color: #374151; margin-bottom: 20px; font-style: italic; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+    .toc { background: #f8fafc; padding: 30px; border-radius: 12px; margin: 20px 0; }
+    .toc h2 { border-bottom: none; margin-top: 0; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dotted #d1d5db; }
+    .rescue-box { background: #fef2f2; border: 2px solid #dc2626; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .rescue-box h3 { color: #dc2626; }
+    .plant-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+    .plant-table th { background: #1d4ed8; color: white; padding: 10px 6px; text-align: left; }
+    .plant-table td { padding: 8px 6px; border-bottom: 1px solid #e5e7eb; }
+    .plant-table tr:nth-child(even) { background: #eff6ff; }
+    .flowchart { background: #f8fafc; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .flowchart-step { background: white; border: 2px solid #3b82f6; border-radius: 8px; padding: 15px; margin: 10px 0; text-align: center; }
+    .flowchart-arrow { text-align: center; font-size: 24px; color: #3b82f6; }
+    .flowchart-decision { background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 15px; margin: 10px 0; }
+    .flowchart-result { display: inline-block; padding: 10px 15px; border-radius: 20px; margin: 5px; font-weight: 600; }
+    .result-green { background: #dcfce7; color: #166534; }
+    .result-red { background: #fef2f2; color: #dc2626; }
+    .result-yellow { background: #fef3c7; color: #92400e; }
+    .water-quality-card { background: linear-gradient(135deg, #ecfeff, #cffafe); border: 2px solid #06b6d4; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .water-quality-card h3 { color: #0891b2; }
+    .tech-card { background: linear-gradient(135deg, #fdf4ff, #fae8ff); border: 2px solid #a855f7; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .tech-card h3 { color: #7c3aed; }
+    .phase-card { background: #fff; border: 2px solid #10b981; border-radius: 12px; padding: 20px; margin: 15px 0; }
+    .phase-card h4 { color: #059669; margin-top: 0; }
+    .phase-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 10px; }
+    .badge-germination { background: #fef3c7; color: #92400e; }
+    .badge-growth { background: #dcfce7; color: #166534; }
+    .badge-flowering { background: #fce7f3; color: #9d174d; }
+    .badge-fruiting { background: #fee2e2; color: #991b1b; }
+    .season-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    .season-card { background: #fff; border-radius: 8px; padding: 15px; border: 2px solid #e5e7eb; }
+    .season-card.summer { border-color: #f59e0b; background: linear-gradient(135deg, #fffbeb, #fef3c7); }
+    .season-card.winter { border-color: #3b82f6; background: linear-gradient(135deg, #eff6ff, #dbeafe); }
+    .season-card.spring { border-color: #22c55e; background: linear-gradient(135deg, #f0fdf4, #dcfce7); }
+    .season-card.fall { border-color: #f97316; background: linear-gradient(135deg, #fff7ed, #ffedd5); }
+    .region-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 13px; }
+    .region-table th { background: #1d4ed8; color: white; padding: 8px; text-align: left; }
+    .region-table td { padding: 8px; border-bottom: 1px solid #e5e7eb; }
+    .icon-badge { display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px; background: #eff6ff; border-radius: 20px; font-size: 12px; margin: 2px; }
+    .highlight-stat { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: white; padding: 20px; border-radius: 12px; text-align: center; margin: 20px 0; }
+    .highlight-stat .number { font-size: 48px; font-weight: 800; }
+    .highlight-stat .label { font-size: 16px; opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="160" height="200" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sombra -->
+        <ellipse cx="55" cy="145" rx="30" ry="5" fill="#1d4ed8" fill-opacity="0.15"/>
+        <!-- Vaso -->
+        <path d="M30 105H80L74 135H36L30 105Z" fill="url(#pg14)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 98H83V108H27V98Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="55" cy="105" rx="22" ry="5" fill="#5c4033"/>
+        <!-- Corpo (folha verde) -->
+        <ellipse cx="55" cy="70" rx="32" ry="35" fill="url(#bg14)" stroke="#15803d" stroke-width="2.5"/>
+        <!-- Olhos -->
+        <ellipse cx="44" cy="64" rx="5" ry="6" fill="#15803d"/>
+        <ellipse cx="66" cy="64" rx="5" ry="6" fill="#15803d"/>
+        <ellipse cx="45" cy="62" rx="2" ry="2.5" fill="white"/>
+        <ellipse cx="67" cy="62" rx="2" ry="2.5" fill="white"/>
+        <!-- Sorriso -->
+        <path d="M42 78C42 78 55 90 68 78" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Bochechas -->
+        <ellipse cx="35" cy="74" rx="5" ry="4" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="75" cy="74" rx="5" ry="4" fill="#fca5a5" fill-opacity="0.5"/>
+        <!-- Folhas no topo -->
+        <path d="M55 40C55 40 48 22 44 10C52 10 58 22 55 40Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M55 40C55 40 62 22 66 10C58 10 52 22 55 40Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M43 48C43 48 28 36 18 30C28 27 42 36 43 48Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M67 48C67 48 82 36 92 30C82 27 68 36 67 48Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <!-- Regador na mão -->
+        <g transform="translate(78, 55) rotate(15)">
+          <ellipse cx="15" cy="20" rx="12" ry="8" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"/>
+          <path d="M5 15 L-5 8" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/>
+          <path d="M25 18 L35 12 L38 14 L40 12 L42 14 L44 12" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="15" cy="16" rx="6" ry="3" fill="#60a5fa"/>
+          <!-- Gotas caindo -->
+          <ellipse cx="38" cy="20" rx="2" ry="3" fill="#60a5fa"/>
+          <ellipse cx="42" cy="24" rx="1.5" ry="2.5" fill="#60a5fa"/>
+          <ellipse cx="40" cy="30" rx="1.5" ry="2.5" fill="#60a5fa"/>
+        </g>
+        <defs>
+          <linearGradient id="pg14" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ea7531"/>
+            <stop offset="100%" stop-color="#b5441c"/>
+          </linearGradient>
+          <radialGradient id="bg14" cx="40%" cy="30%">
+            <stop offset="0%" stop-color="#86efac"/>
+            <stop offset="50%" stop-color="#4ade80"/>
+            <stop offset="100%" stop-color="#22c55e"/>
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Guia Definitivo de Rega</h1>
+    <p class="subtitle">Nunca mais mate plantas por excesso ou falta de água</p>
+    <p style="font-size: 16px; color: #1e40af; margin-top: 20px;">Técnicas profissionais, diagnósticos visuais e sistemas DIY</p>
+    <div style="display: flex; gap: 15px; margin-top: 25px; flex-wrap: wrap; justify-content: center;">
+      <span class="icon-badge">💧 Qualidade da Água</span>
+      <span class="icon-badge">🌡️ Sensores Smart</span>
+      <span class="icon-badge">📊 70+ Plantas</span>
+      <span class="icon-badge">🔄 Auto-Irrigação</span>
+    </div>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>📚 Sumário Completo</h2>
+      <ul>
+        <li><strong>Módulo 1:</strong> Por que a Rega é Tão Difícil de Acertar</li>
+        <li><strong>Módulo 2:</strong> O Teste do Dedo e Outras Técnicas de Diagnóstico</li>
+        <li><strong>Módulo 3:</strong> Sinais de Excesso vs Falta de Água (Fluxograma Visual)</li>
+        <li><strong>Módulo 4:</strong> Fatores que Afetam a Necessidade de Água</li>
+        <li><strong>Módulo 5:</strong> Qualidade da Água - pH, Cloro e Alternativas</li>
+        <li><strong>Módulo 6:</strong> Técnicas de Rega (Por Cima, Por Baixo, Imersão)</li>
+        <li><strong>Módulo 7:</strong> Rega por Fase de Cultivo</li>
+        <li><strong>Módulo 8:</strong> Drenagem Perfeita para Vasos</li>
+        <li><strong>Módulo 9:</strong> Como Salvar Planta Afogada</li>
+        <li><strong>Módulo 10:</strong> Como Recuperar Planta Desidratada</li>
+        <li><strong>Módulo 11:</strong> Sensores e Medidores de Umidade 2025</li>
+        <li><strong>Módulo 12:</strong> Sistemas de Auto-Irrigação (DIY e Smart)</li>
+        <li><strong>Módulo 13:</strong> Calendário Sazonal por Região do Brasil</li>
+        <li><strong>Bônus:</strong> Tabela de Rega para 70+ Plantas</li>
+      </ul>
+    </div>
+    <div class="highlight-stat">
+      <div class="number">80%</div>
+      <div class="label">das plantas morrem por problemas de rega<br/>(maioria por EXCESSO, não falta!)</div>
+    </div>
+    <div class="page-number">Guia Definitivo de Rega - Página 1</div>
+  </div>
+
+  <!-- MÓDULO 1 -->
+  <div class="page">
+    <h1>Módulo 1: Por que a Rega é Tão Difícil de Acertar</h1>
+    <p class="chapter-intro">Entenda a ciência por trás do problema antes de dominar a solução.</p>
+
+    <div class="intro-box">
+      <h3>💡 A Verdade Incômoda</h3>
+      <p>A maioria dos iniciantes mata mais plantas <strong>regando demais</strong> do que regando de menos. O instinto de "cuidar" nos leva a regar quando a planta não precisa.</p>
+    </div>
+
+    <h2>Os 5 Erros Mais Comuns</h2>
+    <ol>
+      <li><strong>Regar por calendário:</strong> "Toda segunda eu rego" - plantas não seguem agenda humana</li>
+      <li><strong>Confundir sintomas:</strong> Planta murcha pode significar EXCESSO ou falta de água</li>
+      <li><strong>Ignorar o ambiente:</strong> Clima, estação, localização - tudo muda a necessidade</li>
+      <li><strong>Regar pouco e frequente:</strong> Só molha a superfície, raízes não desenvolvem</li>
+      <li><strong>Não verificar drenagem:</strong> Água acumulada no fundo = raízes podres</li>
+    </ol>
+
+    <h2>O Ciclo Fatal da Rega Excessiva</h2>
+    <div class="flowchart">
+      <div class="flowchart-step"><strong>1. Você rega demais</strong><br/>Por medo de que a planta seque</div>
+      <div class="flowchart-arrow">↓</div>
+      <div class="flowchart-step"><strong>2. Raízes ficam sem oxigênio</strong><br/>Solo encharcado = sem ar para respirar</div>
+      <div class="flowchart-arrow">↓</div>
+      <div class="flowchart-step"><strong>3. Raízes começam a apodrecer</strong><br/>Fungos atacam raízes debilitadas</div>
+      <div class="flowchart-arrow">↓</div>
+      <div class="flowchart-step"><strong>4. Planta murcha</strong><br/>Raízes mortas não absorvem água</div>
+      <div class="flowchart-arrow">↓</div>
+      <div class="flowchart-step"><strong>5. Você rega AINDA MAIS</strong><br/>"Está murcha, deve estar com sede!"</div>
+      <div class="flowchart-arrow">↓</div>
+      <div class="flowchart-step" style="background: #fef2f2; border-color: #dc2626;"><strong>6. Planta morre</strong><br/>Afogada em boa intenção</div>
+    </div>
+
+    <div class="danger-box">
+      <h4>⚠️ O Erro Fatal</h4>
+      <p>Uma planta com raízes podres MURCHA - exatamente como uma planta seca. Se você regar mais, acelera a morte. <strong>Sempre verifique o substrato antes de regar!</strong></p>
+    </div>
+
+    <div class="tip-box">
+      <h4>🌱 Regra de Ouro</h4>
+      <p><strong>Na dúvida, NÃO regue.</strong> É muito mais fácil recuperar uma planta seca do que uma afogada. A seca reverte em horas; raízes podres podem levar semanas para regenerar (se regenerarem).</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 2</div>
+  </div>
+
+  <!-- MÓDULO 2 -->
+  <div class="page">
+    <h1>Módulo 2: Técnicas de Diagnóstico</h1>
+    <p class="chapter-intro">Aprenda 4 métodos para saber EXATAMENTE quando sua planta precisa de água.</p>
+
+    <div class="technique-card">
+      <h3>1️⃣ O Teste do Dedo (Clássico e Infalível)</h3>
+      <div class="step-box">
+        <p><span class="step-number">1</span><strong>Enfie o dedo no substrato</strong> - Até a segunda falange (3-5cm de profundidade)</p>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">2</span><strong>Sinta a umidade</strong> - O substrato está úmido, levemente úmido ou seco?</p>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">3</span><strong>Retire e observe o dedo</strong> - Tem terra grudada? Está úmido? Sai limpo?</p>
+      </div>
+
+      <table class="comparison-table">
+        <tr>
+          <th>O que você sente</th>
+          <th>O que fazer</th>
+        </tr>
+        <tr>
+          <td>Dedo sai limpo, terra seca e solta</td>
+          <td><span class="flowchart-result result-green">REGUE!</span></td>
+        </tr>
+        <tr>
+          <td>Dedo sai com terra úmida grudada</td>
+          <td><span class="flowchart-result result-yellow">ESPERE 1-2 dias</span></td>
+        </tr>
+        <tr>
+          <td>Dedo sai molhado, enlameado</td>
+          <td><span class="flowchart-result result-red">NÃO REGUE!</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="technique-card">
+      <h3>2️⃣ O Teste do Palito (Para Vasos Profundos)</h3>
+      <p>Funciona como o teste do bolo!</p>
+      <ol>
+        <li>Enfie um palito de churrasco ou espeto de madeira até o fundo do vaso</li>
+        <li>Deixe por 5-10 segundos</li>
+        <li>Retire e observe</li>
+      </ol>
+      <ul>
+        <li><strong>Palito sai limpo e seco:</strong> Hora de regar</li>
+        <li><strong>Palito sai com terra úmida grudada:</strong> Ainda tem água</li>
+        <li><strong>Palito sai molhado/escuro:</strong> Muito úmido, não regue</li>
+      </ul>
+    </div>
+
+    <div class="technique-card">
+      <h3>3️⃣ O Teste do Peso (Com Prática)</h3>
+      <p>Depois de algumas semanas cuidando de uma planta, você desenvolve essa intuição:</p>
+      <ul>
+        <li><strong>Vaso leve:</strong> Solo seco, precisa de água</li>
+        <li><strong>Vaso pesado:</strong> Solo úmido, não precisa</li>
+      </ul>
+      <p><em>Dica:</em> Levante o vaso logo após regar para "calibrar" seu senso de peso.</p>
+    </div>
+
+    <div class="technique-card">
+      <h3>4️⃣ O Teste Visual do Substrato</h3>
+      <ul>
+        <li><strong>Substrato mais claro:</strong> Geralmente está seco</li>
+        <li><strong>Substrato mais escuro:</strong> Geralmente está úmido</li>
+        <li><strong>Substrato se afastou das bordas do vaso:</strong> Muito seco!</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 3</div>
+  </div>
+
+  <!-- MÓDULO 2 CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Profundidade do Teste por Tipo de Planta</h2>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Tipo de Planta</th>
+        <th>Profundidade</th>
+        <th>Quando Regar</th>
+      </tr>
+      <tr>
+        <td>Suculentas e cactos</td>
+        <td>Até o fundo</td>
+        <td>Terra 100% seca</td>
+      </tr>
+      <tr>
+        <td>Ervas mediterrâneas (alecrim, lavanda, sálvia)</td>
+        <td>5-7cm</td>
+        <td>2/3 do vaso seco</td>
+      </tr>
+      <tr>
+        <td>Ervas aromáticas (manjericão, hortelã)</td>
+        <td>3-4cm</td>
+        <td>Superfície seca</td>
+      </tr>
+      <tr>
+        <td>Folhosas (alface, rúcula, espinafre)</td>
+        <td>2-3cm</td>
+        <td>Nunca deixar secar completamente</td>
+      </tr>
+      <tr>
+        <td>Frutíferas (tomate, pimentão)</td>
+        <td>3-5cm</td>
+        <td>Levemente seca na superfície</td>
+      </tr>
+      <tr>
+        <td>Raízes (cenoura, rabanete, beterraba)</td>
+        <td>3-4cm</td>
+        <td>Umidade constante</td>
+      </tr>
+      <tr>
+        <td>Tropicais (gengibre, açafrão)</td>
+        <td>3-4cm</td>
+        <td>Úmido mas não encharcado</td>
+      </tr>
+    </table>
+
+    <h2>Plantas que "Avisam" Quando Precisam de Água</h2>
+    <p>Algumas plantas são excelentes indicadoras - murcham visivelmente quando precisam de água e se recuperam rapidamente:</p>
+
+    <div class="tip-box">
+      <h4>🌿 Plantas Indicadoras</h4>
+      <ul style="margin: 0;">
+        <li><strong>Manjericão:</strong> Murcha dramaticamente, recupera em 1 hora</li>
+        <li><strong>Espatifilo (lírio-da-paz):</strong> Tomba as folhas quando seco</li>
+        <li><strong>Coleus:</strong> Murcha rápido, recupera rápido</li>
+        <li><strong>Impatiens:</strong> Murcha visível quando seca</li>
+        <li><strong>Fittonia:</strong> "Desmaia" dramaticamente</li>
+      </ul>
+      <p style="margin-top: 10px;"><em>Coloque uma dessas perto de outras plantas - quando ela murchar, provavelmente as outras também precisam de água.</em></p>
+    </div>
+
+    <h2>Quando NÃO Confiar Apenas nos Sintomas Visuais</h2>
+    <div class="warning-box">
+      <h4>⚠️ Atenção</h4>
+      <ul style="margin: 0;">
+        <li><strong>Folhas murchas podem significar:</strong> Falta de água, excesso de água, raízes doentes, calor extremo, ou transplante recente</li>
+        <li><strong>Sempre combine observação visual com o teste do substrato</strong></li>
+        <li>Se a planta murcha de dia e se recupera à noite, pode ser estresse térmico, não sede</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 4</div>
+  </div>
+
+  <!-- MÓDULO 3 -->
+  <div class="page">
+    <h1>Módulo 3: Excesso vs Falta de Água</h1>
+    <p class="chapter-intro">O diagnóstico correto é a diferença entre salvar ou matar sua planta.</p>
+
+    <div class="symptom-grid">
+      <div class="symptom-card over">
+        <h3 style="color: #1d4ed8;">💧 Excesso de Água</h3>
+        <ul>
+          <li>Folhas amarelas (começando pelas mais velhas/baixas)</li>
+          <li>Folhas <strong>moles</strong> e murchas</li>
+          <li>Pontas marrons e <strong>moles</strong></li>
+          <li>Base do caule amolecida/escurecendo</li>
+          <li>Mofo branco ou verde no substrato</li>
+          <li>Cheiro de podridão</li>
+          <li>Mosquinhas pretas (fungus gnats)</li>
+          <li>Substrato constantemente úmido</li>
+          <li>Raízes marrons/pretas e moles</li>
+        </ul>
+      </div>
+      <div class="symptom-card under">
+        <h3 style="color: #d97706;">🏜️ Falta de Água</h3>
+        <ul>
+          <li>Folhas murchas mas <strong>firmes ao toque</strong></li>
+          <li>Pontas e bordas secas e <strong>crocantes</strong></li>
+          <li>Folhas caem (começando pelas mais velhas)</li>
+          <li>Solo se afasta das bordas do vaso</li>
+          <li>Crescimento lento ou parado</li>
+          <li>Flores e botões caem antes de abrir</li>
+          <li>Folhas enrolam para dentro</li>
+          <li>Substrato muito leve e seco</li>
+          <li>Raízes secas mas firmes e claras</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>🔍 Fluxograma de Diagnóstico</h2>
+    <div class="flowchart">
+      <div class="flowchart-step"><strong>Sua planta está murcha?</strong></div>
+      <div class="flowchart-arrow">↓</div>
+      <div class="flowchart-decision">
+        <strong>Verifique o substrato (teste do dedo)</strong>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+        <div>
+          <div class="flowchart-arrow">↓ SECO</div>
+          <div class="flowchart-step" style="background: #fef3c7; border-color: #f59e0b;">
+            <strong>Toque na folha murcha</strong>
+          </div>
+          <div class="flowchart-arrow">↓</div>
+          <div style="text-align: center;">
+            <span class="flowchart-result result-yellow">Seca/crocante = Falta de água</span>
+            <p style="font-size: 12px; margin-top: 5px;">→ Regue por imersão</p>
+          </div>
+        </div>
+        <div>
+          <div class="flowchart-arrow">↓ ÚMIDO/MOLHADO</div>
+          <div class="flowchart-step" style="background: #fef2f2; border-color: #dc2626;">
+            <strong>Cheiro de podre? Base mole?</strong>
+          </div>
+          <div class="flowchart-arrow">↓</div>
+          <div style="text-align: center;">
+            <span class="flowchart-result result-red">Excesso de água!</span>
+            <p style="font-size: 12px; margin-top: 5px;">→ NÃO regue! Veja Módulo 9</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="danger-box">
+      <h4>⚠️ O Teste Decisivo: Textura da Folha</h4>
+      <p><strong>Folha murcha por FALTA de água:</strong> Seca, fina, crocante, "papel"</p>
+      <p><strong>Folha murcha por EXCESSO de água:</strong> Mole, flácida, "aquosa", translúcida</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 5</div>
+  </div>
+
+  <!-- MÓDULO 4 -->
+  <div class="page">
+    <h1>Módulo 4: Fatores que Afetam a Rega</h1>
+    <p class="chapter-intro">Por que não existe uma "receita universal" de rega.</p>
+
+    <h2>1. Clima e Estação do Ano</h2>
+    <div class="season-grid">
+      <div class="season-card summer">
+        <h4 style="color: #92400e;">☀️ Verão</h4>
+        <ul style="margin: 0; font-size: 14px;">
+          <li>Evaporação alta</li>
+          <li>Plantas em crescimento ativo</li>
+          <li>Pode precisar regar 1-2x/dia</li>
+          <li>Regue de manhã cedo</li>
+        </ul>
+      </div>
+      <div class="season-card winter">
+        <h4 style="color: #1e40af;">❄️ Inverno</h4>
+        <ul style="margin: 0; font-size: 14px;">
+          <li>Evaporação baixa</li>
+          <li>Plantas em dormência</li>
+          <li>Reduza para 1-2x/semana</li>
+          <li>Regue ao meio-dia (mais quente)</li>
+        </ul>
+      </div>
+      <div class="season-card spring">
+        <h4 style="color: #166534;">🌸 Primavera</h4>
+        <ul style="margin: 0; font-size: 14px;">
+          <li>Aumento gradual</li>
+          <li>Crescimento retomando</li>
+          <li>Ajuste conforme temperatura</li>
+          <li>Atenção às chuvas</li>
+        </ul>
+      </div>
+      <div class="season-card fall">
+        <h4 style="color: #c2410c;">🍂 Outono</h4>
+        <ul style="margin: 0; font-size: 14px;">
+          <li>Redução gradual</li>
+          <li>Preparação para dormência</li>
+          <li>Menos frequente</li>
+          <li>Cuidado com fungos</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>2. Tipo e Material do Vaso</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Material</th>
+        <th>Característica</th>
+        <th>Impacto na Rega</th>
+      </tr>
+      <tr>
+        <td>Barro/Terracota</td>
+        <td>Poroso, "respira"</td>
+        <td>Seca 2-3x mais rápido</td>
+      </tr>
+      <tr>
+        <td>Plástico</td>
+        <td>Impermeável</td>
+        <td>Retém umidade mais tempo</td>
+      </tr>
+      <tr>
+        <td>Cerâmica esmaltada</td>
+        <td>Impermeável</td>
+        <td>Similar ao plástico</td>
+      </tr>
+      <tr>
+        <td>Fibra de coco</td>
+        <td>Muito poroso</td>
+        <td>Seca muito rápido</td>
+      </tr>
+      <tr>
+        <td>Metal</td>
+        <td>Esquenta ao sol</td>
+        <td>Acelera evaporação + pode queimar raízes</td>
+      </tr>
+    </table>
+
+    <h2>3. Tamanho do Vaso</h2>
+    <ul>
+      <li><strong>Vaso pequeno (até 15cm):</strong> Seca em 1-2 dias no verão</li>
+      <li><strong>Vaso médio (15-30cm):</strong> Seca em 3-5 dias</li>
+      <li><strong>Vaso grande (30cm+):</strong> Pode demorar 1 semana ou mais</li>
+    </ul>
+
+    <div class="warning-box">
+      <h4>⚠️ Vaso Grande Demais</h4>
+      <p>Planta pequena em vaso muito grande = solo demora demais para secar = risco de apodrecimento. O vaso deve ser apenas 2-3cm maior que o torrão da planta.</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 6</div>
+  </div>
+
+  <!-- MÓDULO 4 CONTINUAÇÃO -->
+  <div class="page">
+    <h2>4. Tipo de Substrato</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Substrato</th>
+        <th>Retenção de Água</th>
+        <th>Observação</th>
+      </tr>
+      <tr>
+        <td>Terra preta pura</td>
+        <td>ALTA (compacta)</td>
+        <td>Não recomendada para vasos - encharca</td>
+      </tr>
+      <tr>
+        <td>Substrato comercial</td>
+        <td>Média-Alta</td>
+        <td>Geralmente equilibrado</td>
+      </tr>
+      <tr>
+        <td>Substrato + perlita</td>
+        <td>Média</td>
+        <td>Boa drenagem, ideal</td>
+      </tr>
+      <tr>
+        <td>Substrato + areia grossa</td>
+        <td>Média-Baixa</td>
+        <td>Drena bem, seca mais rápido</td>
+      </tr>
+      <tr>
+        <td>Casca de pinus</td>
+        <td>Muito Baixa</td>
+        <td>Seca rápido - orquídeas</td>
+      </tr>
+      <tr>
+        <td>Fibra de coco</td>
+        <td>Média</td>
+        <td>Retém umidade mas drena bem</td>
+      </tr>
+    </table>
+
+    <h2>5. Localização da Planta</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Local</th>
+        <th>Efeito</th>
+        <th>Ajuste na Rega</th>
+      </tr>
+      <tr>
+        <td>Sol pleno</td>
+        <td>Alta evaporação</td>
+        <td>Regue mais frequente</td>
+      </tr>
+      <tr>
+        <td>Meia-sombra</td>
+        <td>Evaporação moderada</td>
+        <td>Rega padrão</td>
+      </tr>
+      <tr>
+        <td>Sombra total</td>
+        <td>Baixa evaporação</td>
+        <td>Regue menos</td>
+      </tr>
+      <tr>
+        <td>Próximo ao ar-condicionado</td>
+        <td>Ar seco, resseca</td>
+        <td>Regue mais + borrife folhas</td>
+      </tr>
+      <tr>
+        <td>Área ventilada</td>
+        <td>Vento acelera evaporação</td>
+        <td>Regue mais frequente</td>
+      </tr>
+      <tr>
+        <td>Banheiro (umidade alta)</td>
+        <td>Pouca evaporação</td>
+        <td>Regue bem menos</td>
+      </tr>
+    </table>
+
+    <h2>6. Fase de Desenvolvimento</h2>
+    <div class="phase-card">
+      <span class="phase-badge badge-germination">🌱 GERMINAÇÃO</span>
+      <h4>Sementes e Mudas Recém-Germinadas</h4>
+      <p>Solo precisa estar <strong>constantemente úmido</strong> (nunca encharcado). Raízes são mínimas e superficiais. Use borrifador para não deslocar sementes.</p>
+    </div>
+    <div class="phase-card">
+      <span class="phase-badge badge-growth">🌿 CRESCIMENTO VEGETATIVO</span>
+      <h4>Plantas Estabelecidas em Crescimento</h4>
+      <p>Rega regular conforme tipo da planta. Deixe secar levemente entre regas para estimular raízes profundas.</p>
+    </div>
+    <div class="phase-card">
+      <span class="phase-badge badge-flowering">🌸 FLORAÇÃO</span>
+      <h4>Durante a Produção de Flores</h4>
+      <p>Aumente levemente a rega. Stress hídrico pode causar queda de flores e botões.</p>
+    </div>
+    <div class="phase-card">
+      <span class="phase-badge badge-fruiting">🍅 FRUTIFICAÇÃO</span>
+      <h4>Produção de Frutos</h4>
+      <p>Rega <strong>constante e abundante</strong> para frutos suculentos. Oscilações causam rachaduras (ex: tomates).</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 7</div>
+  </div>
+
+  <!-- MÓDULO 5: QUALIDADE DA ÁGUA -->
+  <div class="page">
+    <h1>Módulo 5: Qualidade da Água</h1>
+    <p class="chapter-intro">Nem toda água é igual - conheça as melhores opções para suas plantas.</p>
+
+    <div class="water-quality-card">
+      <h3>💧 Por que a Qualidade Importa?</h3>
+      <p>A água da torneira contém cloro, flúor e minerais que podem se acumular no solo ao longo do tempo, afetando o pH e a disponibilidade de nutrientes. Algumas plantas são mais sensíveis que outras.</p>
+    </div>
+
+    <h2>Tipos de Água para Rega</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Tipo</th>
+        <th>Qualidade</th>
+        <th>Observação</th>
+      </tr>
+      <tr>
+        <td>Água da chuva</td>
+        <td>⭐⭐⭐⭐⭐ Excelente</td>
+        <td>pH neutro, sem cloro, gratuita</td>
+      </tr>
+      <tr>
+        <td>Água de poço/mina</td>
+        <td>⭐⭐⭐⭐ Muito Boa</td>
+        <td>Verifique pH se possível</td>
+      </tr>
+      <tr>
+        <td>Água filtrada</td>
+        <td>⭐⭐⭐⭐ Muito Boa</td>
+        <td>Remove cloro, boa opção</td>
+      </tr>
+      <tr>
+        <td>Água de torneira (descansada)</td>
+        <td>⭐⭐⭐ Boa</td>
+        <td>Deixe 24h para evaporar cloro</td>
+      </tr>
+      <tr>
+        <td>Água de ar-condicionado</td>
+        <td>⭐⭐⭐ Boa</td>
+        <td>Destilada, adicione fertilizante</td>
+      </tr>
+      <tr>
+        <td>Água de torneira (direta)</td>
+        <td>⭐⭐ Regular</td>
+        <td>Contém cloro, aceitável para maioria</td>
+      </tr>
+      <tr>
+        <td>Água com amaciante</td>
+        <td>⭐ Ruim</td>
+        <td>Muito sódio - EVITE</td>
+      </tr>
+    </table>
+
+    <h2>O Problema do Cloro</h2>
+    <div class="technique-card">
+      <h3>Como Remover o Cloro da Água</h3>
+      <div class="step-box">
+        <p><span class="step-number">1</span><strong>Método do Descanso:</strong> Deixe a água em recipiente aberto por 24-48 horas. O cloro evapora naturalmente.</p>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">2</span><strong>Método da Fervura:</strong> Ferva por 15 minutos e deixe esfriar. Remove cloro e cloraminas.</p>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">3</span><strong>Filtro de Carvão:</strong> Filtros comuns de cozinha já removem grande parte do cloro.</p>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">4</span><strong>Vitamina C:</strong> 1 grama de ácido ascórbico neutraliza cloro de 400L de água (uso profissional).</p>
+      </div>
+    </div>
+
+    <h2>pH da Água - O Básico</h2>
+    <ul>
+      <li><strong>pH ideal para maioria das hortaliças:</strong> 6.0 a 7.0</li>
+      <li><strong>Água da torneira típica:</strong> 7.0 a 8.0</li>
+      <li><strong>Água da chuva:</strong> 5.5 a 6.5 (levemente ácida - ótima!)</li>
+    </ul>
+
+    <div class="tip-box">
+      <h4>🌿 Dica Prática</h4>
+      <p>Para a maioria das hortas caseiras, água da torneira descansada funciona bem. Só se preocupe com pH se notar problemas persistentes de nutrientes.</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 8</div>
+  </div>
+
+  <!-- MÓDULO 5 CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Coletando Água da Chuva</h2>
+    <div class="diy-box">
+      <h3>🌧️ Sistema Simples de Coleta</h3>
+      <ol>
+        <li><strong>Recipiente:</strong> Baldes, tambores ou caixas d'água (plástico alimentício)</li>
+        <li><strong>Captação:</strong> Calha do telhado direcionada para o recipiente</li>
+        <li><strong>Filtro:</strong> Tela fina na entrada para folhas e detritos</li>
+        <li><strong>Tampa:</strong> Cubra para evitar mosquitos (dengue!)</li>
+        <li><strong>Uso:</strong> Use em até 1 semana ou adicione tampa hermética</li>
+      </ol>
+      <p style="margin-top: 15px;"><strong>Cuidado:</strong> Descarte os primeiros minutos de chuva que lavam a poeira do telhado.</p>
+    </div>
+
+    <h2>Reaproveitando Água</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Fonte</th>
+        <th>Pode Usar?</th>
+        <th>Observação</th>
+      </tr>
+      <tr>
+        <td>Água de cozinhar vegetais (sem sal)</td>
+        <td>✅ SIM</td>
+        <td>Rica em nutrientes - deixe esfriar</td>
+      </tr>
+      <tr>
+        <td>Água de lavar frutas/verduras</td>
+        <td>✅ SIM</td>
+        <td>Se não tiver sabão</td>
+      </tr>
+      <tr>
+        <td>Água de aquário</td>
+        <td>✅ SIM</td>
+        <td>Excelente fertilizante natural!</td>
+      </tr>
+      <tr>
+        <td>Água de ar-condicionado</td>
+        <td>✅ SIM</td>
+        <td>Destilada - sem minerais</td>
+      </tr>
+      <tr>
+        <td>Água de máquina de lavar</td>
+        <td>❌ NÃO</td>
+        <td>Sabão e amaciante prejudicam</td>
+      </tr>
+      <tr>
+        <td>Água com sal</td>
+        <td>❌ NÃO</td>
+        <td>Sal mata plantas</td>
+      </tr>
+      <tr>
+        <td>Água com cloro de piscina</td>
+        <td>❌ NÃO</td>
+        <td>Muito cloro</td>
+      </tr>
+    </table>
+
+    <h2>Temperatura da Água</h2>
+    <div class="warning-box">
+      <h4>⚠️ Choque Térmico</h4>
+      <p>Água muito fria ou muito quente pode estressar as raízes. O ideal é <strong>água em temperatura ambiente</strong>.</p>
+      <ul style="margin: 10px 0 0 20px;">
+        <li>Não regue com água gelada da geladeira</li>
+        <li>Não use água quente que ficou ao sol em mangueira preta</li>
+        <li>No inverno, deixe a água esquentar um pouco antes de regar</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 9</div>
+  </div>
+
+  <!-- MÓDULO 6: TÉCNICAS DE REGA -->
+  <div class="page">
+    <h1>Módulo 6: Técnicas de Rega</h1>
+    <p class="chapter-intro">Três métodos principais e quando usar cada um.</p>
+
+    <div class="technique-card">
+      <h3>1️⃣ Rega por Cima (Tradicional)</h3>
+      <p><strong>Como fazer:</strong> Regue diretamente no substrato até a água sair pelo furo de drenagem.</p>
+
+      <h4>✅ Vantagens:</h4>
+      <ul>
+        <li>Simples e rápida</li>
+        <li>"Lava" o substrato, removendo excesso de sais minerais</li>
+        <li>Boa para a maioria das plantas</li>
+      </ul>
+
+      <h4>❌ Desvantagens:</h4>
+      <ul>
+        <li>Pode compactar o substrato com o tempo</li>
+        <li>Pode não penetrar uniformemente em solo muito seco</li>
+      </ul>
+
+      <h4>💡 Técnica Correta:</h4>
+      <ol>
+        <li>Regue lentamente em círculos ao redor da planta</li>
+        <li>Evite molhar diretamente o caule</li>
+        <li>Continue até água sair pelo furo</li>
+        <li>Espere absorver e repita se necessário</li>
+        <li>Descarte a água do prato após 30 minutos</li>
+      </ol>
+    </div>
+
+    <div class="technique-card">
+      <h3>2️⃣ Rega por Baixo (Sub-irrigação)</h3>
+      <p><strong>Como fazer:</strong> Coloque água no prato e deixe a planta absorver por capilaridade por 15-30 minutos. Descarte a água restante.</p>
+
+      <h4>✅ Vantagens:</h4>
+      <ul>
+        <li>Não molha a base do caule (previne podridão)</li>
+        <li>Estimula raízes a crescerem para baixo</li>
+        <li>Ideal para plantas sensíveis (violetas, ciclâmen, begônias)</li>
+        <li>Distribui umidade uniformemente de baixo para cima</li>
+      </ul>
+
+      <h4>❌ Desvantagens:</h4>
+      <ul>
+        <li>Acumula sais no topo do substrato (faça rega por cima 1x/mês)</li>
+        <li>Não funciona bem em vasos muito grandes</li>
+        <li>Demora mais tempo</li>
+      </ul>
+
+      <h4>💡 Ideal para:</h4>
+      <p>Violetas africanas, ciclamens, begônias, suculentas, qualquer planta propensa a apodrecimento do colo.</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 10</div>
+  </div>
+
+  <!-- MÓDULO 6 CONTINUAÇÃO -->
+  <div class="page">
+    <div class="technique-card">
+      <h3>3️⃣ Rega por Imersão Total</h3>
+      <p><strong>Como fazer:</strong> Mergulhe o vaso inteiro em um balde ou bacia com água até parar de borbulhar (5-15 minutos). Deixe escorrer muito bem.</p>
+
+      <h4>✅ Quando usar:</h4>
+      <ul>
+        <li>Substrato muito seco que repele água</li>
+        <li>Plantas muito desidratadas (emergência)</li>
+        <li>Kokedamas e plantas sem vaso</li>
+        <li>Orquídeas em substrato de casca</li>
+        <li>Quando o substrato se afastou das bordas do vaso</li>
+      </ul>
+
+      <h4>💡 Técnica:</h4>
+      <ol>
+        <li>Mergulhe o vaso até cobrir todo o substrato</li>
+        <li>Observe as bolhas de ar saindo</li>
+        <li>Quando parar de borbulhar, está saturado</li>
+        <li>Retire e deixe escorrer por vários minutos</li>
+        <li>Nunca deixe água no prato depois</li>
+      </ol>
+    </div>
+
+    <h2>Quando Regar - Melhor Horário</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Estação</th>
+        <th>Melhor Horário</th>
+        <th>Motivo</th>
+      </tr>
+      <tr>
+        <td>Verão</td>
+        <td>Manhã cedo (6h-8h)</td>
+        <td>Planta absorve antes do calor forte</td>
+      </tr>
+      <tr>
+        <td>Inverno</td>
+        <td>Meio-dia (10h-14h)</td>
+        <td>Horário mais quente, evita fungos</td>
+      </tr>
+      <tr>
+        <td>Primavera/Outono</td>
+        <td>Manhã</td>
+        <td>Flexível, evite fim de tarde</td>
+      </tr>
+    </table>
+
+    <div class="danger-box">
+      <h4>❌ NUNCA Faça Isso!</h4>
+      <ul style="margin: 0;">
+        <li><strong>Deixar água parada no prato:</strong> = raízes podres garantidas</li>
+        <li><strong>Regar as folhas sob sol forte:</strong> = queimaduras (efeito lupa)</li>
+        <li><strong>Regar à noite no frio:</strong> = fungos e doenças</li>
+        <li><strong>Regar pouco e frequente:</strong> = só molha superfície, raízes fracas</li>
+        <li><strong>Usar água gelada:</strong> = choque térmico nas raízes</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h4>🌱 Regra de Ouro da Rega</h4>
+      <p><strong>Regue profundamente, mas menos frequentemente.</strong> Isso força as raízes a crescerem para baixo em busca de água, tornando a planta mais resistente à seca.</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 11</div>
+  </div>
+
+  <!-- MÓDULO 7: REGA POR FASE -->
+  <div class="page">
+    <h1>Módulo 7: Rega por Fase de Cultivo</h1>
+    <p class="chapter-intro">A mesma planta precisa de quantidades diferentes de água em cada fase da vida.</p>
+
+    <div class="phase-card">
+      <span class="phase-badge badge-germination">🌱 FASE 1: GERMINAÇÃO</span>
+      <h4>Sementes e Mudas Recém-Germinadas (0-2 semanas)</h4>
+      <table class="comparison-table" style="margin: 10px 0;">
+        <tr><td><strong>Umidade:</strong></td><td>Constantemente úmido (nunca encharcado)</td></tr>
+        <tr><td><strong>Método:</strong></td><td>Borrifador ou rega por baixo</td></tr>
+        <tr><td><strong>Frequência:</strong></td><td>2-3x ao dia se necessário</td></tr>
+        <tr><td><strong>Profundidade:</strong></td><td>Apenas superfície (sementes são rasas)</td></tr>
+      </table>
+      <p><strong>Dica:</strong> Cubra com plástico transparente para manter umidade. Retire quando germinar.</p>
+    </div>
+
+    <div class="phase-card">
+      <span class="phase-badge badge-growth">🌿 FASE 2: DESENVOLVIMENTO DE MUDAS</span>
+      <h4>Mudas com Folhas Verdadeiras (2-6 semanas)</h4>
+      <table class="comparison-table" style="margin: 10px 0;">
+        <tr><td><strong>Umidade:</strong></td><td>Úmido, permitindo secar levemente entre regas</td></tr>
+        <tr><td><strong>Método:</strong></td><td>Rega suave por cima ou por baixo</td></tr>
+        <tr><td><strong>Frequência:</strong></td><td>Quando 1-2cm superiores secarem</td></tr>
+        <tr><td><strong>Profundidade:</strong></td><td>Molhar todo o torrão</td></tr>
+      </table>
+      <p><strong>Dica:</strong> Comece a deixar secar um pouco para fortalecer raízes.</p>
+    </div>
+
+    <div class="phase-card">
+      <span class="phase-badge badge-growth">🌿 FASE 3: CRESCIMENTO VEGETATIVO</span>
+      <h4>Plantas Estabelecidas (6+ semanas)</h4>
+      <table class="comparison-table" style="margin: 10px 0;">
+        <tr><td><strong>Umidade:</strong></td><td>Conforme necessidade da espécie</td></tr>
+        <tr><td><strong>Método:</strong></td><td>Rega profunda por cima</td></tr>
+        <tr><td><strong>Frequência:</strong></td><td>Use teste do dedo - varia por planta</td></tr>
+        <tr><td><strong>Profundidade:</strong></td><td>Até sair pelo furo de drenagem</td></tr>
+      </table>
+      <p><strong>Dica:</strong> Regas profundas e espaçadas = raízes fortes e profundas.</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 12</div>
+  </div>
+
+  <!-- MÓDULO 7 CONTINUAÇÃO -->
+  <div class="page">
+    <div class="phase-card">
+      <span class="phase-badge badge-flowering">🌸 FASE 4: FLORAÇÃO</span>
+      <h4>Produção de Flores</h4>
+      <table class="comparison-table" style="margin: 10px 0;">
+        <tr><td><strong>Umidade:</strong></td><td>Consistente - evite oscilações</td></tr>
+        <tr><td><strong>Método:</strong></td><td>Por cima, evitando molhar flores</td></tr>
+        <tr><td><strong>Frequência:</strong></td><td>Ligeiramente mais frequente que vegetativo</td></tr>
+        <tr><td><strong>Cuidado:</strong></td><td>Stress hídrico = queda de flores e botões</td></tr>
+      </table>
+      <p><strong>Importante:</strong> Não deixe faltar água nesta fase - flores abortam com seca.</p>
+    </div>
+
+    <div class="phase-card">
+      <span class="phase-badge badge-fruiting">🍅 FASE 5: FRUTIFICAÇÃO</span>
+      <h4>Produção e Desenvolvimento de Frutos</h4>
+      <table class="comparison-table" style="margin: 10px 0;">
+        <tr><td><strong>Umidade:</strong></td><td>Alta e constante</td></tr>
+        <tr><td><strong>Método:</strong></td><td>Rega abundante pela manhã</td></tr>
+        <tr><td><strong>Frequência:</strong></td><td>Diária no verão para frutíferas</td></tr>
+        <tr><td><strong>Cuidado:</strong></td><td>Oscilações = rachaduras nos frutos</td></tr>
+      </table>
+      <p><strong>Exemplos:</strong> Tomate, pimentão, pepino, abobrinha, melancia.</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>⚠️ Problema Comum: Tomates Rachados</h4>
+      <p>Se você deixa o tomate secar e depois rega muito, a casca não acompanha a expansão rápida da polpa = rachaduras. Mantenha rega <strong>constante</strong> durante a frutificação.</p>
+    </div>
+
+    <h2>Resumo Visual das Fases</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Fase</th>
+        <th>Água</th>
+        <th>Frequência</th>
+      </tr>
+      <tr>
+        <td>🌱 Germinação</td>
+        <td>Sempre úmido</td>
+        <td>2-3x/dia (borrifar)</td>
+      </tr>
+      <tr>
+        <td>🌿 Muda</td>
+        <td>Úmido</td>
+        <td>Quando superfície secar</td>
+      </tr>
+      <tr>
+        <td>🌿 Crescimento</td>
+        <td>Conforme espécie</td>
+        <td>Teste do dedo</td>
+      </tr>
+      <tr>
+        <td>🌸 Floração</td>
+        <td>Consistente</td>
+        <td>Sem deixar secar muito</td>
+      </tr>
+      <tr>
+        <td>🍅 Frutificação</td>
+        <td>Abundante</td>
+        <td>Diária ou a cada 2 dias</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 13</div>
+  </div>
+
+  <!-- MÓDULO 8: DRENAGEM -->
+  <div class="page">
+    <h1>Módulo 8: Drenagem Perfeita</h1>
+    <p class="chapter-intro">Sem boa drenagem, toda sua técnica de rega é inútil.</p>
+
+    <div class="danger-box">
+      <h4>⚠️ Lei Número 1 do Cultivo em Vasos</h4>
+      <p><strong>Todo vaso PRECISA de furo de drenagem.</strong> Sem exceção. Aquele cachepô bonito? Use como capa decorativa, não como vaso direto.</p>
+    </div>
+
+    <h2>Montagem do Vaso Perfeito</h2>
+    <div class="flowchart">
+      <div class="step-box">
+        <p><span class="step-number">1</span><strong>FURO DE DRENAGEM</strong><br/>Se não tiver, faça com furadeira (cerâmica/barro) ou ferro quente (plástico)</p>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">2</span><strong>TELA OU MANTA</strong><br/>Coloque sobre o furo para não entupir. Use tela de mosquiteiro, TNT ou manta bidim.</p>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">3</span><strong>CAMADA DRENANTE (2-3cm)</strong><br/>Argila expandida, cacos de telha, brita #0 ou isopor picado.</p>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">4</span><strong>MANTA SEPARADORA</strong><br/>Bidim ou TNT para separar drenagem do substrato. Evita que a terra "escorra" para baixo.</p>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">5</span><strong>SUBSTRATO ADEQUADO</strong><br/>Mistura leve e bem drenante, nunca terra de jardim pura.</p>
+      </div>
+    </div>
+
+    <h2>Receita de Substrato Bem Drenante</h2>
+    <div class="diy-box">
+      <h3>🌱 Mistura Universal</h3>
+      <ul>
+        <li><strong>2 partes</strong> de terra vegetal ou substrato comercial</li>
+        <li><strong>1 parte</strong> de húmus de minhoca ou composto</li>
+        <li><strong>1 parte</strong> de material drenante (escolha um):</li>
+      </ul>
+      <p style="margin-left: 20px;">→ Perlita (ideal)<br/>→ Areia grossa lavada<br/>→ Casca de arroz carbonizada<br/>→ Vermiculita</p>
+      <p style="margin-top: 15px;"><strong>Para suculentas:</strong> Aumente drenante para 50%</p>
+      <p><strong>Para folhosas:</strong> Pode reduzir drenante e aumentar húmus</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 14</div>
+  </div>
+
+  <!-- MÓDULO 8 CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Sinais de Má Drenagem</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Sinal</th>
+        <th>O que indica</th>
+      </tr>
+      <tr>
+        <td>Água demora para escorrer pelo furo</td>
+        <td>Substrato compactado ou furo entupido</td>
+      </tr>
+      <tr>
+        <td>Substrato encharcado por dias</td>
+        <td>Mistura muito densa ou sem drenagem</td>
+      </tr>
+      <tr>
+        <td>Mofo branco ou verde na superfície</td>
+        <td>Umidade excessiva constante</td>
+      </tr>
+      <tr>
+        <td>Algas verdes no substrato</td>
+        <td>Muito úmido + luz</td>
+      </tr>
+      <tr>
+        <td>Cheiro de podridão</td>
+        <td>Raízes apodrecendo</td>
+      </tr>
+      <tr>
+        <td>Mosquinhas pretas (fungus gnats)</td>
+        <td>Solo constantemente úmido</td>
+      </tr>
+    </table>
+
+    <h2>O Mito das "Pedras no Fundo"</h2>
+    <div class="warning-box">
+      <h4>⚠️ Atenção - Pode Piorar!</h4>
+      <p>Colocar pedras no fundo SEM manta separadora pode <strong>piorar</strong> a drenagem! A água fica "presa" na transição entre substrato fino e pedras grossas (fenômeno chamado "perched water table").</p>
+      <p style="margin-top: 10px;"><strong>Solução:</strong> Sempre use bidim ou TNT entre a camada de pedras e o substrato.</p>
+    </div>
+
+    <h2>Checklist de Drenagem</h2>
+    <div class="tip-box">
+      <p style="margin: 0;">✅ Vaso tem furo de drenagem?</p>
+      <p>✅ Furo está desobstruído?</p>
+      <p>✅ Tem camada drenante no fundo?</p>
+      <p>✅ Tem manta separadora?</p>
+      <p>✅ Substrato é leve e aerado?</p>
+      <p>✅ Água escoa em menos de 1 minuto?</p>
+      <p>✅ Prato é esvaziado após 30 min?</p>
+      <p style="margin-top: 15px;"><strong>Se respondeu SIM para tudo, sua drenagem está perfeita!</strong></p>
+    </div>
+
+    <h2>Vasos Autoirrigáveis</h2>
+    <p>Vasos com reservatório de água no fundo são excelentes para quem viaja ou esquece de regar:</p>
+    <ul>
+      <li>A planta absorve água conforme precisa</li>
+      <li>Reservatório separado evita encharcamento</li>
+      <li>Ideal para hortaliças e ervas</li>
+      <li>Pode durar 1-3 semanas sem reabastecimento</li>
+    </ul>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 15</div>
+  </div>
+
+  <!-- MÓDULO 9: SALVAR PLANTA AFOGADA -->
+  <div class="page">
+    <h1>Módulo 9: Como Salvar Planta Afogada</h1>
+    <p class="chapter-intro">Ação rápida pode salvar sua planta do afogamento!</p>
+
+    <div class="rescue-box">
+      <h3>🚨 Sinais de Emergência - Planta Afogada</h3>
+      <ul style="margin: 0;">
+        <li>Folhas amarelas e <strong>moles</strong> (não crocantes)</li>
+        <li>Base do caule escurecendo ou amolecendo</li>
+        <li>Cheiro de podridão vindo do solo</li>
+        <li>Substrato permanentemente úmido/encharcado</li>
+        <li>Mosquinhas pretas voando ao redor (fungus gnats)</li>
+        <li>Mofo branco no substrato</li>
+      </ul>
+    </div>
+
+    <h2>Protocolo de Resgate - Passo a Passo</h2>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span><strong>PARE DE REGAR IMEDIATAMENTE!</strong><br/>Parece óbvio, mas muita gente continua regando "para ajudar".</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span><strong>REMOVA DO CACHEPÔ</strong><br/>Se estiver em cachepô sem furo, retire agora. A planta precisa de ventilação.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span><strong>AVALIE AS RAÍZES</strong><br/>Retire do vaso com cuidado e examine:
+        <br/>• Raízes saudáveis = brancas/claras e firmes
+        <br/>• Raízes podres = marrons/pretas e moles, fáceis de arrancar</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span><strong>CORTE AS RAÍZES PODRES</strong><br/>Com tesoura limpa e esterilizada, corte TUDO que estiver podre. Não tenha pena - elas já estão mortas.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">5</span><strong>DEIXE AS RAÍZES SECAREM</strong><br/>Deixe expostas ao ar por 2-4 horas em local sombreado. Isso permite cicatrização.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">6</span><strong>APLIQUE TRATAMENTO (OPCIONAL)</strong><br/>Polvilhe canela em pó nas raízes cortadas - é antifúngico natural.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">7</span><strong>REPLANTE EM SUBSTRATO NOVO E SECO</strong><br/>Nunca reuse o substrato encharcado! Use mistura nova e bem drenante.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">8</span><strong>NÃO REGUE!</strong><br/>Espere 3-5 dias antes da primeira rega leve. Deixe as raízes se recuperarem.</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 16</div>
+  </div>
+
+  <!-- MÓDULO 9 CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Tratamentos Antifúngicos Naturais</h2>
+    <div class="diy-box">
+      <h3>🌿 Opções Caseiras</h3>
+      <table class="comparison-table">
+        <tr>
+          <th>Tratamento</th>
+          <th>Como usar</th>
+        </tr>
+        <tr>
+          <td><strong>Canela em pó</strong></td>
+          <td>Polvilhe nas raízes cortadas e no substrato novo</td>
+        </tr>
+        <tr>
+          <td><strong>Água oxigenada</strong></td>
+          <td>1 parte H₂O₂ 10vol + 4 partes água. Borrife nas raízes.</td>
+        </tr>
+        <tr>
+          <td><strong>Chá de camomila</strong></td>
+          <td>Deixe esfriar e borrife nas raízes. Antifúngico suave.</td>
+        </tr>
+        <tr>
+          <td><strong>Carvão vegetal moído</strong></td>
+          <td>Adicione ao substrato novo. Absorve umidade e fungos.</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>Pós-Resgate - Cuidados Essenciais</h2>
+    <ul>
+      <li><strong>Luz:</strong> Mantenha em luz indireta (não sol direto) por 1-2 semanas</li>
+      <li><strong>Poda:</strong> Se cortou muitas raízes, pode a parte aérea proporcionalmente</li>
+      <li><strong>Adubação:</strong> NÃO adube - raízes estressadas não absorvem bem</li>
+      <li><strong>Paciência:</strong> Espere 2-4 semanas para sinais de recuperação</li>
+      <li><strong>Rega:</strong> Só regue quando o substrato estiver seco (teste do dedo!)</li>
+    </ul>
+
+    <div class="warning-box">
+      <h4>⚠️ Quando Não Dá Mais Para Salvar</h4>
+      <p>Se o caule principal está mole, escuro e com cheiro de podre até a base, pode ser tarde demais para essa planta. Mas você ainda pode:</p>
+      <ul style="margin: 10px 0 0 20px;">
+        <li>Cortar estacas saudáveis do topo para propagar</li>
+        <li>Aprender com o erro para as próximas plantas</li>
+      </ul>
+    </div>
+
+    <h2>Prevenção - Nunca Mais Afogue Suas Plantas</h2>
+    <div class="tip-box">
+      <ul style="margin: 0;">
+        <li>✅ Sempre use vasos com furo de drenagem</li>
+        <li>✅ Use substrato com boa drenagem</li>
+        <li>✅ Esvazie o prato após 30 minutos</li>
+        <li>✅ Faça o teste do dedo ANTES de regar</li>
+        <li>✅ Na dúvida, NÃO regue</li>
+        <li>✅ Reduza rega no inverno</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 17</div>
+  </div>
+
+  <!-- MÓDULO 10: PLANTA DESIDRATADA -->
+  <div class="page">
+    <h1>Módulo 10: Recuperar Planta Desidratada</h1>
+    <p class="chapter-intro">Boa notícia: plantas secas são MUITO mais fáceis de salvar!</p>
+
+    <div class="success-box">
+      <h4>💪 Por que É Mais Fácil</h4>
+      <p>Raízes desidratadas geralmente ainda estão <strong>vivas</strong> - só precisam de água para reviver. Já raízes podres estão <strong>mortas</strong> e não regeneram. Uma planta seca pode se recuperar em horas!</p>
+    </div>
+
+    <h2>Protocolo de Reidratação</h2>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span><strong>AVALIE A SITUAÇÃO</strong><br/>O substrato está completamente seco? Se afastou das bordas do vaso? Quanto tempo ficou sem água?</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span><strong>NÃO DESPEJE ÁGUA DE UMA VEZ!</strong><br/>Substrato muito seco fica hidrofóbico - repele água. A água escorre pelas laterais sem molhar o centro.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span><strong>USE A TÉCNICA DE IMERSÃO</strong><br/>
+        • Coloque o vaso em um balde com água até cobrir o substrato<br/>
+        • Observe as bolhas de ar saindo<br/>
+        • Espere parar de borbulhar (5-15 minutos)<br/>
+        • Retire e deixe escorrer bem</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span><strong>COLOQUE EM LOCAL ADEQUADO</strong><br/>Luz indireta, sem sol direto. Ambiente fresco.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">5</span><strong>OBSERVE A RECUPERAÇÃO</strong><br/>Folhas devem começar a se recuperar em 2-24 horas dependendo do grau de desidratação.</p>
+    </div>
+
+    <h2>Técnica Alternativa: Rega Gradual</h2>
+    <p>Se não puder imergir o vaso:</p>
+    <ol>
+      <li>Regue um pouco e espere 15 minutos</li>
+      <li>Regue novamente e espere</li>
+      <li>Repita 4-5 vezes até o substrato absorver uniformemente</li>
+      <li>Continue até água sair pelo furo</li>
+    </ol>
+    <p><em>Isso permite que o substrato "reative" sua capacidade de absorção.</em></p>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 18</div>
+  </div>
+
+  <!-- MÓDULO 10 CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Poda de Emergência</h2>
+    <div class="tip-box">
+      <h4>✂️ Quando Podar</h4>
+      <p>Se a planta está muito murcha e você cortou no resgate:</p>
+      <ul style="margin: 10px 0 0 20px;">
+        <li><strong>Corte algumas folhas</strong> para reduzir a demanda de água</li>
+        <li>Menos folhas = menos transpiração = recuperação mais rápida</li>
+        <li>Priorize remover folhas danificadas e mais velhas</li>
+        <li>Mantenha as folhas novas e saudáveis</li>
+      </ul>
+    </div>
+
+    <h2>O Que Esperar na Recuperação</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Sintoma</th>
+        <th>Recuperação</th>
+      </tr>
+      <tr>
+        <td>Folhas murchas mas verdes</td>
+        <td>✅ Recuperam em 2-12 horas</td>
+      </tr>
+      <tr>
+        <td>Folhas amareladas</td>
+        <td>❌ Não voltam ao verde (novas serão verdes)</td>
+      </tr>
+      <tr>
+        <td>Pontas e bordas secas</td>
+        <td>❌ Corte - não recuperam. Novas folhas virão saudáveis.</td>
+      </tr>
+      <tr>
+        <td>Flores e botões caídos</td>
+        <td>❌ Perdidos, mas a planta produzirá novos</td>
+      </tr>
+      <tr>
+        <td>Caule murcho mas firme</td>
+        <td>✅ Recupera em 12-24 horas</td>
+      </tr>
+    </table>
+
+    <h2>Comparativo: Afogada vs Desidratada</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Aspecto</th>
+        <th>Afogada</th>
+        <th>Desidratada</th>
+      </tr>
+      <tr>
+        <td>Dificuldade de recuperação</td>
+        <td>ALTA - pode não salvar</td>
+        <td>BAIXA - quase sempre salva</td>
+      </tr>
+      <tr>
+        <td>Tempo de recuperação</td>
+        <td>2-4 semanas (se recuperar)</td>
+        <td>2-24 horas</td>
+      </tr>
+      <tr>
+        <td>Raízes</td>
+        <td>Podem estar mortas</td>
+        <td>Geralmente vivas</td>
+      </tr>
+      <tr>
+        <td>Ação necessária</td>
+        <td>Complexa: retirar, cortar, secar, replantar</td>
+        <td>Simples: imergir em água</td>
+      </tr>
+    </table>
+
+    <div class="intro-box">
+      <h4>💡 Moral da História</h4>
+      <p><strong>Na dúvida, não regue!</strong> É muito mais fácil (e rápido) recuperar uma planta seca do que uma planta afogada. Errar para menos é sempre melhor que errar para mais.</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 19</div>
+  </div>
+
+  <!-- MÓDULO 11: SENSORES E MEDIDORES -->
+  <div class="page">
+    <h1>Módulo 11: Sensores e Medidores 2025</h1>
+    <p class="chapter-intro">Tecnologia para acabar com as dúvidas sobre quando regar.</p>
+
+    <div class="tech-card">
+      <h3>🔬 Por que Usar Medidores?</h3>
+      <p>O teste do dedo funciona, mas medidores são mais precisos e ideais para:</p>
+      <ul style="margin: 0;">
+        <li>Vasos profundos onde o dedo não alcança</li>
+        <li>Plantas sensíveis que não toleram erros</li>
+        <li>Quem está aprendendo e quer mais segurança</li>
+        <li>Monitoramento automatizado</li>
+      </ul>
+    </div>
+
+    <h2>Tipos de Medidores</h2>
+
+    <div class="technique-card">
+      <h3>1️⃣ Medidor Analógico (R$ 15-40)</h3>
+      <p><strong>Como funciona:</strong> Haste metálica que mede condutividade elétrica do solo.</p>
+      <h4>Prós:</h4>
+      <ul>
+        <li>Barato e sem bateria</li>
+        <li>Fácil de usar</li>
+        <li>Muitos modelos medem também pH e luz</li>
+      </ul>
+      <h4>Contras:</h4>
+      <ul>
+        <li>Precisa limpar e secar entre usos</li>
+        <li>Pode oxidar com o tempo</li>
+        <li>Precisão moderada</li>
+      </ul>
+      <p><strong>Marcas populares:</strong> Medidor 3 em 1 genérico, disponível em lojas de jardinagem e online.</p>
+    </div>
+
+    <div class="technique-card">
+      <h3>2️⃣ Medidor Digital (R$ 40-150)</h3>
+      <p><strong>Como funciona:</strong> Sensor eletrônico com display digital.</p>
+      <h4>Prós:</h4>
+      <ul>
+        <li>Leitura precisa em números</li>
+        <li>Alguns armazenam histórico</li>
+        <li>Calibração ajustável</li>
+      </ul>
+      <h4>Contras:</h4>
+      <ul>
+        <li>Precisa de bateria</li>
+        <li>Mais caro</li>
+      </ul>
+      <p><strong>Marcas:</strong> XLUX, Dr.Meter, Sonkir</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 20</div>
+  </div>
+
+  <!-- MÓDULO 11 CONTINUAÇÃO -->
+  <div class="page">
+    <div class="technique-card">
+      <h3>3️⃣ Sensores Smart/WiFi (R$ 100-400)</h3>
+      <p><strong>Como funciona:</strong> Sensor conectado ao celular via Bluetooth ou WiFi.</p>
+      <h4>Prós:</h4>
+      <ul>
+        <li>Monitoramento contínuo em tempo real</li>
+        <li>Alertas no celular quando precisa regar</li>
+        <li>Histórico de umidade, luz e temperatura</li>
+        <li>Recomendações baseadas na planta específica</li>
+      </ul>
+      <h4>Contras:</h4>
+      <ul>
+        <li>Mais caro</li>
+        <li>Precisa de bateria e app</li>
+        <li>Um sensor por vaso</li>
+      </ul>
+      <p><strong>Marcas:</strong> Xiaomi Flora, HHCC Plant Monitor, Parrot Flower Power</p>
+    </div>
+
+    <div class="technique-card">
+      <h3>4️⃣ Sistemas de Automação Completos</h3>
+      <p><strong>Para quem quer automatizar tudo:</strong></p>
+      <ul>
+        <li><strong>Blumat:</strong> Sistema de gotejamento automático cerâmico (R$ 30-80/unidade)</li>
+        <li><strong>Arduino/ESP32 DIY:</strong> Para makers - sensor + bomba + código</li>
+        <li><strong>Gardena Smart:</strong> Sistema profissional de irrigação (R$ 500+)</li>
+        <li><strong>Rachio:</strong> Controlador smart para jardins externos (R$ 800+)</li>
+      </ul>
+    </div>
+
+    <h2>Como Interpretar as Leituras</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Leitura</th>
+        <th>Nível</th>
+        <th>Ação</th>
+      </tr>
+      <tr>
+        <td>1-3</td>
+        <td>Seco</td>
+        <td>Regue (maioria das plantas)</td>
+      </tr>
+      <tr>
+        <td>4-7</td>
+        <td>Úmido</td>
+        <td>Espere (ideal para maioria)</td>
+      </tr>
+      <tr>
+        <td>8-10</td>
+        <td>Molhado</td>
+        <td>Não regue (risco de afogamento)</td>
+      </tr>
+    </table>
+    <p style="font-size: 12px; color: #6b7280;">*Escala típica de medidores 1-10. Verifique o manual do seu modelo.</p>
+
+    <div class="warning-box">
+      <h4>⚠️ Cuidado com Medidores Baratos</h4>
+      <p>Medidores muito baratos podem dar leituras inconsistentes. Sempre calibre/teste comparando com o teste do dedo nas primeiras semanas de uso.</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 21</div>
+  </div>
+
+  <!-- MÓDULO 12: AUTO-IRRIGAÇÃO -->
+  <div class="page">
+    <h1>Módulo 12: Sistemas de Auto-Irrigação</h1>
+    <p class="chapter-intro">Para viagens, rotinas agitadas ou quem simplesmente esquece de regar.</p>
+
+    <div class="diy-box">
+      <h3>🍶 Sistema 1: Garrafa Pet Invertida</h3>
+      <p><strong>Duração:</strong> 3-7 dias | <strong>Custo:</strong> R$ 0</p>
+      <ol>
+        <li>Faça 2-3 pequenos furos na tampa com agulha aquecida</li>
+        <li>Encha a garrafa com água</li>
+        <li>Enterre a tampa no substrato (garrafa para cima)</li>
+        <li>A água goteja lentamente por gravidade</li>
+      </ol>
+      <p><strong>Dica:</strong> Teste antes da viagem para calibrar o tamanho dos furos!</p>
+    </div>
+
+    <div class="diy-box">
+      <h3>🧵 Sistema 2: Barbante/Cordão de Algodão</h3>
+      <p><strong>Duração:</strong> 5-14 dias | <strong>Custo:</strong> R$ 5</p>
+      <ol>
+        <li>Coloque um balde com água ao lado do vaso (mais alto que o vaso)</li>
+        <li>Use barbante de algodão grosso (não sintético!)</li>
+        <li>Molhe todo o barbante para ativar a capilaridade</li>
+        <li>Coloque uma ponta no fundo do balde (use peso)</li>
+        <li>Enterre a outra ponta 5cm no substrato</li>
+        <li>A capilaridade puxa água continuamente</li>
+      </ol>
+      <p><strong>Dica:</strong> Use 2-3 barbantes para plantas que bebem mais.</p>
+    </div>
+
+    <div class="diy-box">
+      <h3>🔄 Sistema 3: Garrafa com Pavio (Vaso Autoirrigável DIY)</h3>
+      <p><strong>Duração:</strong> 7-21 dias | <strong>Custo:</strong> R$ 5</p>
+      <ol>
+        <li>Corte uma garrafa PET de 2L ao meio</li>
+        <li>Faça um furo na tampa</li>
+        <li>Passe um pavio de algodão ou feltro pela tampa (15-20cm)</li>
+        <li>Coloque a parte de cima invertida (gargalo para baixo) sobre a parte de baixo</li>
+        <li>Encha a base com água</li>
+        <li>Plante na parte superior - o pavio puxa água do reservatório</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 22</div>
+  </div>
+
+  <!-- MÓDULO 12 CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Produtos Comerciais para Auto-Irrigação</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Produto</th>
+        <th>Custo</th>
+        <th>Duração</th>
+        <th>Ideal para</th>
+      </tr>
+      <tr>
+        <td>Globos de vidro</td>
+        <td>R$ 15-30</td>
+        <td>7-14 dias</td>
+        <td>Decorativo, vasos pequenos</td>
+      </tr>
+      <tr>
+        <td>Cones cerâmicos + garrafa</td>
+        <td>R$ 10-25</td>
+        <td>7-14 dias</td>
+        <td>Vasos médios</td>
+      </tr>
+      <tr>
+        <td>Blumat (gotejador cerâmico)</td>
+        <td>R$ 30-80</td>
+        <td>Indefinido*</td>
+        <td>Sistema profissional</td>
+      </tr>
+      <tr>
+        <td>Vaso autoirrigável comercial</td>
+        <td>R$ 30-150</td>
+        <td>7-21 dias</td>
+        <td>Ervas e hortaliças</td>
+      </tr>
+      <tr>
+        <td>Timer de irrigação</td>
+        <td>R$ 50-150</td>
+        <td>Indefinido</td>
+        <td>Jardins e varandas</td>
+      </tr>
+      <tr>
+        <td>Sistema smart (Gardena)</td>
+        <td>R$ 300-800</td>
+        <td>Indefinido</td>
+        <td>Automação completa</td>
+      </tr>
+    </table>
+    <p style="font-size: 12px;">*Conectado a reservatório de água maior</p>
+
+    <h2>Preparação para Viagem - Checklist</h2>
+    <div class="tip-box">
+      <h4>✈️ Antes de Viajar</h4>
+      <ol style="margin: 0;">
+        <li><strong>1 semana antes:</strong> Teste o sistema escolhido para calibrar</li>
+        <li><strong>1 dia antes:</strong> Regue profundamente todas as plantas</li>
+        <li><strong>Dia da viagem:</strong>
+          <ul>
+            <li>Instale os sistemas de auto-irrigação</li>
+            <li>Tire as plantas do sol direto (menos evaporação)</li>
+            <li>Agrupe as plantas juntas (microclima úmido)</li>
+            <li>Feche cortinas para reduzir calor</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <h2>Smart Gardens - Hortas Automatizadas</h2>
+    <p>Para quem quer zero preocupação com rega:</p>
+    <ul>
+      <li><strong>Click & Grow:</strong> Sistema completo com luz LED (R$ 400-800)</li>
+      <li><strong>AeroGarden:</strong> Hidroponia automática (R$ 500-1500)</li>
+      <li><strong>Plantui:</strong> Design nórdico, 6 plantas (R$ 600-900)</li>
+    </ul>
+    <p><em>Estes sistemas cuidam de luz, água e nutrientes automaticamente.</em></p>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 23</div>
+  </div>
+
+  <!-- MÓDULO 13: CALENDÁRIO SAZONAL -->
+  <div class="page">
+    <h1>Módulo 13: Calendário por Região do Brasil</h1>
+    <p class="chapter-intro">O Brasil é continental - a rega varia muito conforme sua região.</p>
+
+    <h2>Características por Região</h2>
+    <table class="region-table">
+      <tr>
+        <th>Região</th>
+        <th>Clima</th>
+        <th>Ajuste de Rega</th>
+      </tr>
+      <tr>
+        <td><strong>Norte</strong></td>
+        <td>Equatorial - quente e úmido o ano todo</td>
+        <td>Menos rega que outras regiões. Alta umidade do ar reduz evaporação. Cuidado com encharcamento.</td>
+      </tr>
+      <tr>
+        <td><strong>Nordeste (litoral)</strong></td>
+        <td>Tropical - quente, chuvas de abril-julho</td>
+        <td>Rega moderada. Reduza muito na estação chuvosa.</td>
+      </tr>
+      <tr>
+        <td><strong>Nordeste (sertão)</strong></td>
+        <td>Semiárido - quente e seco</td>
+        <td>Rega frequente é essencial. Mulching para reter umidade.</td>
+      </tr>
+      <tr>
+        <td><strong>Centro-Oeste</strong></td>
+        <td>Tropical com estação seca (mai-set)</td>
+        <td>Rega intensa na seca. Normal nas chuvas (out-abr).</td>
+      </tr>
+      <tr>
+        <td><strong>Sudeste</strong></td>
+        <td>Subtropical - 4 estações definidas</td>
+        <td>Ajuste sazonal completo. Verão: 2x/dia. Inverno: 2x/semana.</td>
+      </tr>
+      <tr>
+        <td><strong>Sul</strong></td>
+        <td>Temperado - invernos frios</td>
+        <td>Reduza muito no inverno. Plantas entram em dormência.</td>
+      </tr>
+    </table>
+
+    <h2>Calendário Sazonal Geral</h2>
+    <div class="season-grid">
+      <div class="season-card summer">
+        <h4 style="color: #92400e;">☀️ VERÃO (Dez-Mar)</h4>
+        <p><strong>Frequência:</strong> Diária ou 2x/dia</p>
+        <p><strong>Horário:</strong> Manhã cedo (6h-8h)</p>
+        <p><strong>Quantidade:</strong> Abundante até escorrer</p>
+        <p><strong>Dicas:</strong></p>
+        <ul style="margin: 5px 0 0 15px; font-size: 13px;">
+          <li>Use mulching para reter umidade</li>
+          <li>Verifique vasos pequenos 2x/dia</li>
+          <li>Plantas em sol pleno = mais água</li>
+        </ul>
+      </div>
+      <div class="season-card fall">
+        <h4 style="color: #c2410c;">🍂 OUTONO (Mar-Jun)</h4>
+        <p><strong>Frequência:</strong> A cada 2-3 dias</p>
+        <p><strong>Horário:</strong> Manhã</p>
+        <p><strong>Quantidade:</strong> Moderada</p>
+        <p><strong>Dicas:</strong></p>
+        <ul style="margin: 5px 0 0 15px; font-size: 13px;">
+          <li>Reduza gradualmente</li>
+          <li>Atenção a fungos com umidade</li>
+          <li>Prepare para dormência</li>
+        </ul>
+      </div>
+      <div class="season-card winter">
+        <h4 style="color: #1e40af;">❄️ INVERNO (Jun-Set)</h4>
+        <p><strong>Frequência:</strong> 1-2x por semana</p>
+        <p><strong>Horário:</strong> Meio-dia (10h-14h)</p>
+        <p><strong>Quantidade:</strong> Reduzida</p>
+        <p><strong>Dicas:</strong></p>
+        <ul style="margin: 5px 0 0 15px; font-size: 13px;">
+          <li>Teste do dedo rigoroso!</li>
+          <li>Evite molhar folhas</li>
+          <li>Não adube plantas dormentes</li>
+        </ul>
+      </div>
+      <div class="season-card spring">
+        <h4 style="color: #166534;">🌸 PRIMAVERA (Set-Dez)</h4>
+        <p><strong>Frequência:</strong> A cada 2-3 dias → diária</p>
+        <p><strong>Horário:</strong> Manhã</p>
+        <p><strong>Quantidade:</strong> Aumentando gradualmente</p>
+        <p><strong>Dicas:</strong></p>
+        <ul style="margin: 5px 0 0 15px; font-size: 13px;">
+          <li>Plantas retomam crescimento</li>
+          <li>Aumente rega com temperatura</li>
+          <li>Hora de adubar!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 24</div>
+  </div>
+
+  <!-- BÔNUS: TABELA DE REGA 70+ PLANTAS - PARTE 1 -->
+  <div class="page">
+    <h1>Bônus: Tabela de Rega - 70+ Plantas</h1>
+    <p class="chapter-intro">Use como referência, mas sempre faça o teste do dedo!</p>
+
+    <h2>Ervas Aromáticas e Temperos</h2>
+    <table class="plant-table">
+      <tr>
+        <th>Planta</th>
+        <th>Frequência (Verão)</th>
+        <th>Observação</th>
+      </tr>
+      <tr><td>Alecrim</td><td>1-2x/semana</td><td>Prefere solo seco - mediterrânea</td></tr>
+      <tr><td>Manjericão</td><td>Diária</td><td>Solo úmido, não encharcado</td></tr>
+      <tr><td>Hortelã</td><td>Diária</td><td>Adora água - muito sedenta</td></tr>
+      <tr><td>Salsinha</td><td>3-4x/semana</td><td>Não deixar secar muito</td></tr>
+      <tr><td>Cebolinha</td><td>3-4x/semana</td><td>Moderada</td></tr>
+      <tr><td>Coentro</td><td>Diária</td><td>Não tolera seca - pendoa rápido</td></tr>
+      <tr><td>Orégano</td><td>1-2x/semana</td><td>Tolera seca - mediterrânea</td></tr>
+      <tr><td>Tomilho</td><td>1-2x/semana</td><td>Prefere solo seco</td></tr>
+      <tr><td>Sálvia</td><td>1-2x/semana</td><td>Tolera seca bem</td></tr>
+      <tr><td>Lavanda</td><td>1x/semana</td><td>Muito sensível a excesso!</td></tr>
+      <tr><td>Erva-cidreira</td><td>2-3x/semana</td><td>Moderada</td></tr>
+      <tr><td>Capim-santo</td><td>3-4x/semana</td><td>Gosta de umidade</td></tr>
+      <tr><td>Boldo</td><td>1-2x/semana</td><td>Tolera seca</td></tr>
+      <tr><td>Arruda</td><td>1-2x/semana</td><td>Rústica, tolera seca</td></tr>
+      <tr><td>Camomila</td><td>2-3x/semana</td><td>Solo úmido</td></tr>
+    </table>
+
+    <h2>Folhosas e Verduras</h2>
+    <table class="plant-table">
+      <tr>
+        <th>Planta</th>
+        <th>Frequência (Verão)</th>
+        <th>Observação</th>
+      </tr>
+      <tr><td>Alface</td><td>Diária (2x se calor)</td><td>Nunca deixar secar!</td></tr>
+      <tr><td>Rúcula</td><td>Diária</td><td>Solo úmido sempre</td></tr>
+      <tr><td>Espinafre</td><td>Diária</td><td>Não tolera seca</td></tr>
+      <tr><td>Couve</td><td>3-4x/semana</td><td>Rega regular</td></tr>
+      <tr><td>Acelga</td><td>Diária</td><td>Solo sempre úmido</td></tr>
+      <tr><td>Repolho</td><td>3-4x/semana</td><td>Consistente</td></tr>
+      <tr><td>Brócolis</td><td>3-4x/semana</td><td>Não deixar secar</td></tr>
+      <tr><td>Couve-flor</td><td>3-4x/semana</td><td>Rega regular</td></tr>
+      <tr><td>Agrião</td><td>Diária</td><td>Solo sempre úmido/alagado</td></tr>
+      <tr><td>Mostarda</td><td>Diária</td><td>Solo úmido</td></tr>
+      <tr><td>Chicória</td><td>3-4x/semana</td><td>Moderada a alta</td></tr>
+      <tr><td>Almeirão</td><td>3-4x/semana</td><td>Consistente</td></tr>
+    </table>
+
+    <p style="font-size: 12px; color: #6b7280; margin-top: 10px;">*Frequências para verão. Reduza 50% no inverno. Sempre use o teste do dedo!</p>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 25</div>
+  </div>
+
+  <!-- TABELA PARTE 2 -->
+  <div class="page">
+    <h2>Frutíferas e Legumes</h2>
+    <table class="plant-table">
+      <tr>
+        <th>Planta</th>
+        <th>Frequência (Verão)</th>
+        <th>Observação</th>
+      </tr>
+      <tr><td>Tomate</td><td>Diária</td><td>Regular! Oscilação = rachadura</td></tr>
+      <tr><td>Pimentão</td><td>3-4x/semana</td><td>Regular, sem encharcar</td></tr>
+      <tr><td>Pimenta</td><td>2-3x/semana</td><td>Menos água = mais ardido</td></tr>
+      <tr><td>Berinjela</td><td>3-4x/semana</td><td>Mais na frutificação</td></tr>
+      <tr><td>Abobrinha</td><td>Diária</td><td>Muita água na frutificação</td></tr>
+      <tr><td>Abóbora</td><td>3-4x/semana</td><td>Mais na frutificação</td></tr>
+      <tr><td>Pepino</td><td>Diária</td><td>Muita água</td></tr>
+      <tr><td>Melancia</td><td>Diária</td><td>Abundante = frutos suculentos</td></tr>
+      <tr><td>Melão</td><td>Diária</td><td>Reduzir perto da colheita</td></tr>
+      <tr><td>Morango</td><td>Diária</td><td>Não molhar folhas</td></tr>
+      <tr><td>Quiabo</td><td>2-3x/semana</td><td>Tolera seca moderada</td></tr>
+      <tr><td>Jiló</td><td>2-3x/semana</td><td>Tolera seca</td></tr>
+      <tr><td>Maxixe</td><td>Diária</td><td>Solo úmido</td></tr>
+      <tr><td>Chuchu</td><td>3-4x/semana</td><td>Solo úmido</td></tr>
+      <tr><td>Feijão-vagem</td><td>3-4x/semana</td><td>Mais água na floração</td></tr>
+    </table>
+
+    <h2>Raízes, Tubérculos e Bulbos</h2>
+    <table class="plant-table">
+      <tr>
+        <th>Planta</th>
+        <th>Frequência (Verão)</th>
+        <th>Observação</th>
+      </tr>
+      <tr><td>Cenoura</td><td>Diária</td><td>Constante = raiz lisa</td></tr>
+      <tr><td>Beterraba</td><td>3-4x/semana</td><td>Regular</td></tr>
+      <tr><td>Rabanete</td><td>Diária</td><td>Seca = rachado e picante</td></tr>
+      <tr><td>Nabo</td><td>3-4x/semana</td><td>Moderada</td></tr>
+      <tr><td>Batata</td><td>2-3x/semana</td><td>Não encharcar</td></tr>
+      <tr><td>Batata-doce</td><td>2-3x/semana</td><td>Moderada</td></tr>
+      <tr><td>Mandioca</td><td>1-2x/semana</td><td>Tolera seca após estabelecida</td></tr>
+      <tr><td>Inhame</td><td>3-4x/semana</td><td>Solo úmido</td></tr>
+      <tr><td>Gengibre</td><td>3-4x/semana</td><td>Úmido, bem drenado</td></tr>
+      <tr><td>Açafrão-da-terra</td><td>3-4x/semana</td><td>Similar ao gengibre</td></tr>
+      <tr><td>Cebola</td><td>2-3x/semana</td><td>Reduzir antes da colheita</td></tr>
+      <tr><td>Alho</td><td>2x/semana</td><td>Não encharcar</td></tr>
+      <tr><td>Alho-poró</td><td>3-4x/semana</td><td>Solo úmido</td></tr>
+    </table>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 26</div>
+  </div>
+
+  <!-- TABELA PARTE 3 -->
+  <div class="page">
+    <h2>Grãos e Leguminosas</h2>
+    <table class="plant-table">
+      <tr>
+        <th>Planta</th>
+        <th>Frequência (Verão)</th>
+        <th>Observação</th>
+      </tr>
+      <tr><td>Feijão</td><td>3-4x/semana</td><td>Mais água na floração</td></tr>
+      <tr><td>Ervilha</td><td>3-4x/semana</td><td>Solo úmido, fresco</td></tr>
+      <tr><td>Grão-de-bico</td><td>2-3x/semana</td><td>Moderada</td></tr>
+      <tr><td>Lentilha</td><td>2-3x/semana</td><td>Moderada</td></tr>
+      <tr><td>Amendoim</td><td>2-3x/semana</td><td>Reduzir na maturação</td></tr>
+      <tr><td>Soja</td><td>3-4x/semana</td><td>Mais na floração</td></tr>
+      <tr><td>Milho</td><td>Diária</td><td>Muita água no pendoamento</td></tr>
+    </table>
+
+    <h2>Suculentas e Cactos</h2>
+    <table class="plant-table">
+      <tr>
+        <th>Planta</th>
+        <th>Frequência (Verão)</th>
+        <th>Observação</th>
+      </tr>
+      <tr><td>Babosa/Aloe</td><td>2x/mês</td><td>Deixar secar completamente</td></tr>
+      <tr><td>Cactos em geral</td><td>1-2x/mês</td><td>Solo 100% seco antes</td></tr>
+      <tr><td>Echeveria</td><td>2x/mês</td><td>Nunca molhar roseta</td></tr>
+      <tr><td>Sedum</td><td>2-3x/mês</td><td>Tolera seca</td></tr>
+      <tr><td>Ora-pro-nóbis</td><td>1x/semana</td><td>Mais tolerante que outras</td></tr>
+    </table>
+
+    <h2>Plantas de Interior Comuns</h2>
+    <table class="plant-table">
+      <tr>
+        <th>Planta</th>
+        <th>Frequência</th>
+        <th>Observação</th>
+      </tr>
+      <tr><td>Jiboia</td><td>1x/semana</td><td>Deixe secar entre regas</td></tr>
+      <tr><td>Espada-de-São-Jorge</td><td>2x/mês</td><td>Muito tolerante à seca</td></tr>
+      <tr><td>Costela-de-adão</td><td>1x/semana</td><td>Solo úmido, não encharcado</td></tr>
+      <tr><td>Zamioculca</td><td>2x/mês</td><td>Muito tolerante à seca</td></tr>
+      <tr><td>Lírio-da-paz</td><td>1-2x/semana</td><td>Avisa quando precisa (murcha)</td></tr>
+      <tr><td>Samambaia</td><td>2-3x/semana</td><td>Adora umidade</td></tr>
+      <tr><td>Avenca</td><td>Diária (borrifar)</td><td>Alta umidade constante</td></tr>
+      <tr><td>Peperômia</td><td>1x/semana</td><td>Deixe secar levemente</td></tr>
+      <tr><td>Filodendro</td><td>1x/semana</td><td>Solo úmido, não molhado</td></tr>
+      <tr><td>Ficus</td><td>1x/semana</td><td>Solo secar levemente</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <p><strong>Lembre-se:</strong> Estas são médias! Ajuste conforme seu clima, estação, vaso e substrato. O teste do dedo é sempre o melhor guia.</p>
+    </div>
+
+    <div class="page-number">Guia Definitivo de Rega - Página 27</div>
+  </div>
+
+  <!-- PÁGINA FINAL -->
+  <div class="page">
+    <div style="text-align: center; padding: 40px 20px;">
+      <div class="mascote" style="margin-bottom: 30px;">
+        <svg width="140" height="175" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="55" cy="145" rx="30" ry="5" fill="#1d4ed8" fill-opacity="0.15"/>
+          <path d="M30 105H80L74 135H36L30 105Z" fill="url(#pgf14)" stroke="#b5441c" stroke-width="2"/>
+          <path d="M27 98H83V108H27V98Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+          <ellipse cx="55" cy="105" rx="22" ry="5" fill="#5c4033"/>
+          <ellipse cx="55" cy="70" rx="32" ry="35" fill="url(#bgf14)" stroke="#15803d" stroke-width="2.5"/>
+          <ellipse cx="44" cy="64" rx="5" ry="6" fill="#15803d"/>
+          <ellipse cx="66" cy="64" rx="5" ry="6" fill="#15803d"/>
+          <ellipse cx="45" cy="62" rx="2" ry="2.5" fill="white"/>
+          <ellipse cx="67" cy="62" rx="2" ry="2.5" fill="white"/>
+          <path d="M42 78C42 78 55 90 68 78" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="35" cy="74" rx="5" ry="4" fill="#fca5a5" fill-opacity="0.5"/>
+          <ellipse cx="75" cy="74" rx="5" ry="4" fill="#fca5a5" fill-opacity="0.5"/>
+          <path d="M55 40C55 40 48 22 44 10C52 10 58 22 55 40Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M55 40C55 40 62 22 66 10C58 10 52 22 55 40Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M43 48C43 48 28 36 18 30C28 27 42 36 43 48Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M67 48C67 48 82 36 92 30C82 27 68 36 67 48Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+          <!-- Polegar para cima -->
+          <g transform="translate(82, 58)">
+            <circle cx="12" cy="12" r="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+            <path d="M8 18 L8 10 L10 6 L12 6 L12 10 L18 10 L18 18 Z" fill="#f59e0b"/>
+          </g>
+          <defs>
+            <linearGradient id="pgf14" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ea7531"/>
+              <stop offset="100%" stop-color="#b5441c"/>
+            </linearGradient>
+            <radialGradient id="bgf14" cx="40%" cy="30%">
+              <stop offset="0%" stop-color="#86efac"/>
+              <stop offset="50%" stop-color="#4ade80"/>
+              <stop offset="100%" stop-color="#22c55e"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <h1 style="border: none; font-size: 32px; color: #1d4ed8;">Parabéns!</h1>
+      <p style="font-size: 18px; margin: 20px 0; color: #374151;">Você agora domina a arte da rega perfeita!</p>
+
+      <div style="background: linear-gradient(135deg, #eff6ff, #dbeafe); padding: 30px; border-radius: 12px; margin: 30px 0;">
+        <h3 style="color: #1d4ed8; margin-bottom: 15px;">💧 As 3 Regras de Ouro</h3>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>1.</strong> Sempre faça o teste do dedo antes de regar</p>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>2.</strong> Na dúvida, NÃO regue</p>
+        <p style="font-size: 18px; margin: 10px 0;"><strong>3.</strong> Regue profundamente, não frequentemente</p>
+      </div>
+
+      <div class="highlight-stat" style="margin: 30px 0;">
+        <div class="number">70+</div>
+        <div class="label">plantas com guia de rega específico</div>
+      </div>
+
+      <div style="background: #f8fafc; padding: 25px; border-radius: 12px; margin: 30px 0; text-align: left;">
+        <h4 style="color: #1e40af; margin-bottom: 15px;">📚 O que você aprendeu:</h4>
+        <ul style="margin: 0; columns: 2; column-gap: 30px;">
+          <li>Diagnóstico de rega</li>
+          <li>Teste do dedo e palito</li>
+          <li>Excesso vs falta de água</li>
+          <li>Qualidade da água</li>
+          <li>Técnicas de rega</li>
+          <li>Rega por fase de cultivo</li>
+          <li>Drenagem perfeita</li>
+          <li>Resgate de plantas</li>
+          <li>Sensores e medidores</li>
+          <li>Auto-irrigação DIY</li>
+          <li>Calendário sazonal</li>
+          <li>Tabela de 70+ plantas</li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 40px;">
+        <p style="color: #1d4ed8; font-weight: 700; font-size: 20px;">Minha Horta em Casa</p>
+        <p style="color: #3b82f6;">minhahortaemcasa.com.br</p>
+      </div>
+
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+        <p style="font-size: 12px; color: #9ca3af;">Guia Definitivo de Rega - 28 páginas de conteúdo profissional</p>
+        <p style="font-size: 12px; color: #9ca3af;">Atualizado para 2025 com sensores smart e sistemas de auto-irrigação</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

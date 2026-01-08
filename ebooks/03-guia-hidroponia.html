@@ -1,0 +1,3174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Hidroponia Caseira - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.7; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 44px; font-weight: 800; color: #15803d; margin-bottom: 20px; line-height: 1.2; }
+    .cover .subtitle { font-size: 22px; color: #166534; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #15803d; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #22c55e; }
+    h1 { font-size: 32px; color: #15803d; margin-bottom: 20px; border-bottom: 3px solid #22c55e; padding-bottom: 10px; }
+    h2 { font-size: 26px; color: #166534; margin: 30px 0 15px; }
+    h3 { font-size: 20px; color: #15803d; margin: 25px 0 12px; }
+    h4 { font-size: 17px; color: #166534; margin: 15px 0 10px; }
+    p { margin-bottom: 15px; font-size: 15px; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; font-size: 15px; }
+    .highlight-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid #22c55e; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .danger-box { background: linear-gradient(135deg, #fee2e2, #fecaca); border-left: 4px solid #ef4444; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .step-box { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .step-box h4 { color: #15803d; font-size: 17px; margin-bottom: 10px; }
+    .step-number { display: inline-block; width: 30px; height: 30px; background: #22c55e; color: white; border-radius: 50%; text-align: center; line-height: 30px; font-weight: bold; margin-right: 10px; }
+    .project-box { background: linear-gradient(135deg, #eff6ff, #dbeafe); border: 2px solid #3b82f6; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .project-box h4 { color: #1d4ed8; margin-bottom: 10px; }
+    .materials-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin: 15px 0; }
+    .plant-card { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 15px; margin: 15px 0; }
+    .plant-card h4 { color: #15803d; border-bottom: 1px solid #bbf7d0; padding-bottom: 8px; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    th, td { border: 1px solid #d1d5db; padding: 10px; text-align: left; }
+    th { background: #15803d; color: white; font-weight: 600; }
+    tr:nth-child(even) { background: #f0fdf4; }
+    .toc { background: #f8fafc; padding: 25px; border-radius: 12px; margin: 20px 0; }
+    .toc h3 { color: #15803d; margin-bottom: 15px; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dashed #e2e8f0; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+    @media print { .page { page-break-after: always; } }
+  </style>
+</head>
+<body>
+
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGrad3)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGrad3)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/><ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/><ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs>
+          <linearGradient id="potGrad3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bodyGrad3" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Guia Hidroponia Caseira</h1>
+    <p class="subtitle">Cultive sem terra, com mais produção e menos problemas!</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <h1>Sumário</h1>
+    <div class="toc">
+      <ul>
+        <li><strong>Módulo 1: Fundamentos da Hidroponia</strong> .................. 3</li>
+        <li>• O que é hidroponia e como funciona</li>
+        <li>• Vantagens e desvantagens</li>
+        <li>• Tipos de sistemas hidropônicos</li>
+        <li><strong>Módulo 2: Sistema Kratky (Passivo)</strong> .................. 8</li>
+        <li>• O sistema mais simples e barato</li>
+        <li>• 5 projetos DIY completos</li>
+        <li>• Passo a passo detalhado</li>
+        <li><strong>Módulo 3: Sistema DWC (Cultura em Água Profunda)</strong> .................. 16</li>
+        <li>• Montagem completa</li>
+        <li>• Aeração e oxigenação</li>
+        <li>• Projetos para iniciantes</li>
+        <li><strong>Módulo 4: Solução Nutritiva</strong> .................. 22</li>
+        <li>• Entendendo os nutrientes</li>
+        <li>• Receitas prontas e caseiras</li>
+        <li>• Ajuste de pH e EC</li>
+        <li><strong>Módulo 5: Plantas para Hidroponia</strong> .................. 28</li>
+        <li>• Melhores plantas para iniciantes</li>
+        <li>• Fichas completas de cultivo</li>
+        <li><strong>Módulo 6: Problemas e Soluções</strong> .................. 34</li>
+        <li>• Diagnóstico de problemas</li>
+        <li>• Tratamentos e correções</li>
+        <li><strong>Módulo 7: Sistema NFT e Outros Avançados</strong> .................. 36</li>
+        <li>• Montagem do sistema NFT</li>
+        <li>• Sistemas verticais e aeroponia</li>
+        <li><strong>Módulo 8: Iluminação Artificial</strong> .................. 44</li>
+        <li>• LEDs para cultivo indoor</li>
+        <li>• Fotoperíodo e intensidade</li>
+        <li><strong>Módulo 9: Automação Caseira</strong> .................. 50</li>
+        <li>• Timers e controles</li>
+        <li>• Dosadores automáticos</li>
+        <li><strong>Bônus 1: 30 Perguntas Frequentes</strong> .................. 56</li>
+        <li><strong>Bônus 2: Calendário e Planejamento</strong> .................. 62</li>
+      </ul>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 2</div>
+  </div>
+
+  <!-- MÓDULO 1: FUNDAMENTOS -->
+  <div class="page">
+    <h1>Módulo 1: Fundamentos da Hidroponia</h1>
+
+    <h2>O Que é Hidroponia?</h2>
+    <p>Hidroponia é a técnica de cultivar plantas sem solo, usando apenas água e nutrientes. As raízes ficam submersas ou em contato com uma solução nutritiva que fornece tudo que a planta precisa para crescer.</p>
+
+    <p>O termo vem do grego: <strong>hydro</strong> (água) + <strong>ponos</strong> (trabalho). Literalmente, "trabalho na água".</p>
+
+    <div class="highlight-box">
+      <h4>Como a Planta Absorve Nutrientes:</h4>
+      <p>No solo, a planta precisa "buscar" os nutrientes dissolvidos na água do solo. Na hidroponia, os nutrientes já estão dissolvidos e disponíveis diretamente para as raízes, o que acelera o crescimento em até 50%!</p>
+    </div>
+
+    <h2>Vantagens da Hidroponia</h2>
+    <table>
+      <tr>
+        <th>Vantagem</th>
+        <th>Explicação</th>
+      </tr>
+      <tr>
+        <td><strong>Crescimento 30-50% mais rápido</strong></td>
+        <td>Nutrientes sempre disponíveis = menos esforço para a planta</td>
+      </tr>
+      <tr>
+        <td><strong>Economia de água (até 90%)</strong></td>
+        <td>A água circula e não é perdida por evaporação no solo</td>
+      </tr>
+      <tr>
+        <td><strong>Sem pragas do solo</strong></td>
+        <td>Elimina fungos, nematoides e larvas que vivem na terra</td>
+      </tr>
+      <tr>
+        <td><strong>Cultivo em qualquer espaço</strong></td>
+        <td>Apartamentos, varandas, áreas sem solo</td>
+      </tr>
+      <tr>
+        <td><strong>Maior produção por m²</strong></td>
+        <td>Plantas crescem mais juntas, sistemas verticais</td>
+      </tr>
+      <tr>
+        <td><strong>Colheita limpa</strong></td>
+        <td>Sem terra nas folhas, menos lavagem</td>
+      </tr>
+    </table>
+
+    <h2>Desvantagens (E Como Contornar)</h2>
+    <table>
+      <tr>
+        <th>Desvantagem</th>
+        <th>Solução</th>
+      </tr>
+      <tr>
+        <td>Custo inicial</td>
+        <td>Sistema Kratky custa menos de R$ 50</td>
+      </tr>
+      <tr>
+        <td>Dependência de eletricidade (alguns sistemas)</td>
+        <td>Sistema Kratky não usa eletricidade</td>
+      </tr>
+      <tr>
+        <td>Curva de aprendizado</td>
+        <td>Este guia simplifica tudo!</td>
+      </tr>
+      <tr>
+        <td>Necessidade de monitoramento</td>
+        <td>Kratky: olhar a cada 2-3 dias</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 3</div>
+  </div>
+
+  <div class="page">
+    <h2>Tipos de Sistemas Hidropônicos</h2>
+
+    <h3>1. Sistema Kratky (Passivo)</h3>
+    <div class="step-box">
+      <p><strong>Como funciona:</strong> Planta suspensa sobre água parada. Conforme consome, forma uma câmara de ar para as raízes respirarem.</p>
+      <p><strong>Complexidade:</strong> ⭐ (Muito Fácil)</p>
+      <p><strong>Custo inicial:</strong> R$ 30-80</p>
+      <p><strong>Eletricidade:</strong> Não precisa</p>
+      <p><strong>Ideal para:</strong> Iniciantes absolutos, alfaces, ervas</p>
+    </div>
+
+    <h3>2. Sistema DWC (Deep Water Culture)</h3>
+    <div class="step-box">
+      <p><strong>Como funciona:</strong> Raízes submersas em água oxigenada por bomba de aquário (aerador).</p>
+      <p><strong>Complexidade:</strong> ⭐⭐ (Fácil)</p>
+      <p><strong>Custo inicial:</strong> R$ 100-200</p>
+      <p><strong>Eletricidade:</strong> Sim (bomba de ar)</p>
+      <p><strong>Ideal para:</strong> Maior produção, tomates, pimentas</p>
+    </div>
+
+    <h3>3. Sistema NFT (Nutrient Film Technique)</h3>
+    <div class="step-box">
+      <p><strong>Como funciona:</strong> Filme fino de água nutritiva circula por canos inclinados.</p>
+      <p><strong>Complexidade:</strong> ⭐⭐⭐ (Intermediário)</p>
+      <p><strong>Custo inicial:</strong> R$ 300-600</p>
+      <p><strong>Eletricidade:</strong> Sim (bomba d'água)</p>
+      <p><strong>Ideal para:</strong> Produção comercial, muitas plantas</p>
+    </div>
+
+    <h3>4. Sistema de Pavio (Wick System)</h3>
+    <div class="step-box">
+      <p><strong>Como funciona:</strong> Pavio de algodão puxa água do reservatório para o substrato.</p>
+      <p><strong>Complexidade:</strong> ⭐ (Muito Fácil)</p>
+      <p><strong>Custo inicial:</strong> R$ 20-50</p>
+      <p><strong>Eletricidade:</strong> Não precisa</p>
+      <p><strong>Ideal para:</strong> Plantas pequenas, ervas</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Recomendação para Iniciantes:</h4>
+      <p>Comece pelo <strong>Sistema Kratky</strong>. É o mais simples, barato e perdoa erros. Depois de dominar, evolua para DWC se quiser mais produção.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 4</div>
+  </div>
+
+  <div class="page">
+    <h2>Comparativo de Sistemas</h2>
+
+    <table>
+      <tr>
+        <th>Sistema</th>
+        <th>Custo</th>
+        <th>Dificuldade</th>
+        <th>Manutenção</th>
+        <th>Produção</th>
+      </tr>
+      <tr>
+        <td>Kratky</td>
+        <td>R$ 30-80</td>
+        <td>Muito Fácil</td>
+        <td>Baixa</td>
+        <td>Média</td>
+      </tr>
+      <tr>
+        <td>Pavio</td>
+        <td>R$ 20-50</td>
+        <td>Muito Fácil</td>
+        <td>Baixa</td>
+        <td>Baixa</td>
+      </tr>
+      <tr>
+        <td>DWC</td>
+        <td>R$ 100-200</td>
+        <td>Fácil</td>
+        <td>Média</td>
+        <td>Alta</td>
+      </tr>
+      <tr>
+        <td>NFT</td>
+        <td>R$ 300-600</td>
+        <td>Média</td>
+        <td>Alta</td>
+        <td>Muito Alta</td>
+      </tr>
+    </table>
+
+    <h2>Componentes Básicos de Todo Sistema</h2>
+
+    <h3>1. Reservatório</h3>
+    <p>Recipiente que armazena a solução nutritiva. Pode ser:</p>
+    <ul>
+      <li>Pote plástico (Kratky simples)</li>
+      <li>Balde de 10-20 litros</li>
+      <li>Caixa organizadora</li>
+      <li>Caixa d'água (sistemas maiores)</li>
+    </ul>
+    <div class="warning-box">
+      <strong>Importante:</strong> O reservatório deve ser OPACO (não transparente) para evitar algas. Se for transparente, pinte de preto ou envolva com papel alumínio.
+    </div>
+
+    <h3>2. Suporte para Planta (Net Pot)</h3>
+    <p>Cestinho vazado que segura a planta e permite que as raízes saiam pelos furos. Tamanhos comuns:</p>
+    <ul>
+      <li><strong>5 cm:</strong> Ervas, alface baby</li>
+      <li><strong>7,5 cm:</strong> Alfaces, rúcula</li>
+      <li><strong>10 cm:</strong> Tomates, pimentas</li>
+    </ul>
+
+    <h3>3. Substrato</h3>
+    <p>Material inerte que segura a planta no net pot:</p>
+    <ul>
+      <li><strong>Argila expandida:</strong> Mais comum, reutilizável, ótima drenagem</li>
+      <li><strong>Perlita:</strong> Leve, boa aeração</li>
+      <li><strong>Espuma fenólica:</strong> Para germinação</li>
+      <li><strong>Lã de rocha:</strong> Profissional, excelente retenção</li>
+    </ul>
+
+    <h3>4. Solução Nutritiva</h3>
+    <p>Água + nutrientes dissolvidos. Pode ser comprada pronta ou feita em casa.</p>
+
+    <div class="page-number">Minha Horta em Casa - Página 5</div>
+  </div>
+
+  <div class="page">
+    <h2>Onde Posicionar Seu Sistema</h2>
+
+    <h3>Requisitos de Luz</h3>
+    <p>A maioria das plantas precisa de <strong>6-8 horas de luz direta</strong> por dia. Posicione seu sistema em:</p>
+    <ul>
+      <li>Varanda voltada para norte (mais sol no Brasil)</li>
+      <li>Janela com boa incidência solar</li>
+      <li>Área externa com sol da manhã</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>Sol Insuficiente? Use Iluminação Artificial</h4>
+      <p>Lâmpadas de LED para cultivo (grow lights) funcionam muito bem. Uma lâmpada de 15W já atende 2-4 plantas pequenas. Deixe ligada por 12-16 horas/dia.</p>
+    </div>
+
+    <h3>Temperatura Ideal</h3>
+    <table>
+      <tr>
+        <th>Elemento</th>
+        <th>Temperatura Ideal</th>
+        <th>Tolerável</th>
+      </tr>
+      <tr>
+        <td>Ambiente</td>
+        <td>18-28°C</td>
+        <td>15-35°C</td>
+      </tr>
+      <tr>
+        <td>Solução nutritiva</td>
+        <td>18-22°C</td>
+        <td>15-26°C</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <strong>Cuidado com o Calor:</strong> Solução acima de 26°C perde oxigênio e favorece doenças nas raízes. Em dias muito quentes, adicione gelo em garrafas pet (sem diluir a solução).
+    </div>
+
+    <h2>Lista de Compras para Começar (Sistema Kratky)</h2>
+
+    <div class="materials-box">
+      <h4>Materiais Essenciais:</h4>
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Quantidade</th>
+          <th>Preço Médio</th>
+        </tr>
+        <tr>
+          <td>Pote plástico opaco 1L</td>
+          <td>4 unidades</td>
+          <td>R$ 8</td>
+        </tr>
+        <tr>
+          <td>Net pot 5cm</td>
+          <td>4 unidades</td>
+          <td>R$ 10</td>
+        </tr>
+        <tr>
+          <td>Argila expandida 2L</td>
+          <td>1 pacote</td>
+          <td>R$ 12</td>
+        </tr>
+        <tr>
+          <td>Solução nutritiva (concentrada)</td>
+          <td>500ml</td>
+          <td>R$ 25</td>
+        </tr>
+        <tr>
+          <td>Medidor de pH (opcional)</td>
+          <td>1</td>
+          <td>R$ 35</td>
+        </tr>
+        <tr>
+          <td><strong>TOTAL</strong></td>
+          <td></td>
+          <td><strong>R$ 55-90</strong></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 6</div>
+  </div>
+
+  <div class="page">
+    <h2>Onde Comprar Materiais</h2>
+
+    <h3>Net Pots e Argila Expandida</h3>
+    <ul>
+      <li><strong>Lojas de aquarismo:</strong> Argila expandida é vendida como substrato para aquários</li>
+      <li><strong>Garden centers:</strong> Lojas de jardinagem têm net pots</li>
+      <li><strong>Mercado Livre / Shopee:</strong> Busque "net pot hidroponia" ou "copo rede"</li>
+      <li><strong>AliExpress:</strong> Mais barato, mas demora 30-60 dias</li>
+    </ul>
+
+    <h3>Solução Nutritiva</h3>
+    <ul>
+      <li><strong>Hidrogood, Forth, General Hydroponics:</strong> Marcas confiáveis</li>
+      <li><strong>Lojas de hidroponia online</strong></li>
+      <li><strong>Amazon Brasil</strong></li>
+    </ul>
+
+    <h3>Alternativas Caseiras (Economia)</h3>
+    <table>
+      <tr>
+        <th>Item Original</th>
+        <th>Alternativa Caseira</th>
+      </tr>
+      <tr>
+        <td>Net pot</td>
+        <td>Copinho de café furado</td>
+      </tr>
+      <tr>
+        <td>Reservatório</td>
+        <td>Pote de sorvete, garrafa PET</td>
+      </tr>
+      <tr>
+        <td>Argila expandida</td>
+        <td>Pedrinhas de aquário, isopor picado</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Dica de Economia:</h4>
+      <p>A argila expandida é reutilizável infinitamente! Após cada ciclo, lave bem com água e deixe secar ao sol. Pode usar por anos.</p>
+    </div>
+
+    <h2>Teste Seu Conhecimento</h2>
+    <p>Antes de começar a parte prática, verifique se entendeu os fundamentos:</p>
+    <ol>
+      <li>Qual sistema é ideal para iniciantes? <em>(R: Kratky)</em></li>
+      <li>Por que o reservatório deve ser opaco? <em>(R: Evitar algas)</em></li>
+      <li>Quantas horas de luz a maioria das plantas precisa? <em>(R: 6-8 horas)</em></li>
+      <li>Qual a temperatura ideal da solução? <em>(R: 18-22°C)</em></li>
+    </ol>
+
+    <p>Se acertou todas, está pronto para o próximo módulo!</p>
+
+    <div class="page-number">Minha Horta em Casa - Página 7</div>
+  </div>
+
+  <!-- MÓDULO 2: SISTEMA KRATKY -->
+  <div class="page">
+    <h1>Módulo 2: Sistema Kratky (Passivo)</h1>
+
+    <h2>Por Que o Kratky é Perfeito para Iniciantes</h2>
+
+    <p>O método Kratky foi desenvolvido pelo professor Bernard Kratky, da Universidade do Havaí. É o sistema hidropônico mais simples que existe:</p>
+
+    <ul>
+      <li>✅ <strong>Sem eletricidade</strong> - nada de bombas ou aeradores</li>
+      <li>✅ <strong>Sem partes móveis</strong> - nada que possa quebrar</li>
+      <li>✅ <strong>Manutenção mínima</strong> - olhe a cada 2-3 dias</li>
+      <li>✅ <strong>Muito barato</strong> - menos de R$ 50 para começar</li>
+      <li>✅ <strong>Perdoa erros</strong> - difícil matar a planta</li>
+    </ul>
+
+    <h2>Como o Sistema Kratky Funciona</h2>
+
+    <div class="step-box">
+      <h4>O Princípio do "Air Gap" (Câmara de Ar)</h4>
+      <p>As raízes da planta ficam parcialmente submersas na solução nutritiva. Conforme a planta consome a água, o nível baixa e forma uma câmara de ar.</p>
+      <p>As raízes que ficam expostas ao ar se especializam em absorver oxigênio (raízes aéreas), enquanto as submersas absorvem água e nutrientes.</p>
+      <p><strong>Por isso não precisa de aerador!</strong> A natureza faz o trabalho.</p>
+    </div>
+
+    <h3>Anatomia do Sistema Kratky</h3>
+    <ol>
+      <li><strong>Reservatório:</strong> Qualquer recipiente opaco (pote, balde, garrafa)</li>
+      <li><strong>Tampa com furo:</strong> Segura o net pot</li>
+      <li><strong>Net pot:</strong> Cestinho vazado que segura a planta</li>
+      <li><strong>Substrato:</strong> Argila expandida ou similar</li>
+      <li><strong>Muda:</strong> Planta já germinada, com raízes</li>
+      <li><strong>Solução nutritiva:</strong> Água + nutrientes</li>
+    </ol>
+
+    <div class="warning-box">
+      <h4>Regra de Ouro do Kratky:</h4>
+      <p>Inicie com o nível da solução tocando a base do net pot. <strong>NUNCA complete a água depois que as raízes cresceram!</strong> Você afogaria as raízes aéreas. A planta vai consumir até o fim e então você faz uma nova "rodada".</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 8</div>
+  </div>
+
+  <div class="page">
+    <h2>Projeto 1: Kratky no Pote de Sorvete</h2>
+    <p><strong>Dificuldade:</strong> ⭐ | <strong>Custo:</strong> R$ 15-25 | <strong>Tempo:</strong> 20 minutos</p>
+
+    <div class="project-box">
+      <h4>Materiais Necessários:</h4>
+      <ul>
+        <li>1 pote de sorvete 2L (opaco ou pintado)</li>
+        <li>1 net pot de 5-7cm (ou copinho de café furado)</li>
+        <li>Argila expandida (1 xícara)</li>
+        <li>Solução nutritiva</li>
+        <li>1 muda de alface ou erva</li>
+      </ul>
+    </div>
+
+    <h3>Passo a Passo:</h3>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Prepare o reservatório</strong></p>
+      <p>Se o pote for transparente, pinte o exterior com tinta spray preta ou envolva com papel alumínio. Isso evita que a luz entre e forme algas.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Faça o furo na tampa</strong></p>
+      <p>Marque o centro da tampa e faça um furo do tamanho do net pot. Use estilete aquecido ou furadeira com serra copo. O net pot deve encaixar firme, sem cair.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Prepare a muda</strong></p>
+      <p>Retire a muda do solo com cuidado. Lave TODA a terra das raízes em água corrente. Qualquer terra restante pode apodrecer e contaminar a solução.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Monte o net pot</strong></p>
+      <p>Coloque uma camada de argila expandida no fundo do net pot. Posicione a muda no centro. Preencha ao redor com mais argila, segurando a planta firme.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">5</span> <strong>Prepare a solução nutritiva</strong></p>
+      <p>Siga as instruções do fabricante. Geralmente 2-5ml por litro de água. Encha o reservatório deixando 2-3cm de espaço no topo.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">6</span> <strong>Monte o sistema</strong></p>
+      <p>Encaixe o net pot na tampa. Verifique se a base do net pot toca a solução (as raízes precisam ter acesso à água). Posicione em local com 6+ horas de luz.</p>
+    </div>
+
+    <div class="highlight-box">
+      <p><strong>Pronto!</strong> Sua primeira hidroponia está funcionando. Agora é só esperar a planta crescer e colher em 30-45 dias (alface).</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 9</div>
+  </div>
+
+  <div class="page">
+    <h2>Projeto 2: Kratky na Garrafa PET (Mais Barato)</h2>
+    <p><strong>Dificuldade:</strong> ⭐ | <strong>Custo:</strong> R$ 5-10 | <strong>Tempo:</strong> 15 minutos</p>
+
+    <div class="project-box">
+      <h4>Materiais Necessários:</h4>
+      <ul>
+        <li>1 garrafa PET 2L</li>
+        <li>Papel alumínio ou tinta preta</li>
+        <li>Argila expandida ou isopor picado</li>
+        <li>Solução nutritiva</li>
+        <li>1 muda pequena</li>
+      </ul>
+    </div>
+
+    <h3>Passo a Passo:</h3>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Corte a garrafa</strong></p>
+      <p>Corte a garrafa ao meio, um pouco acima da metade (a parte de cima deve ser menor). A parte de cima vira o "net pot", a de baixo vira o reservatório.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Bloqueie a luz</strong></p>
+      <p>Envolva a parte de baixo (reservatório) com papel alumínio. Pode também usar fita isolante preta ou pintar.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Faça furos no "net pot"</strong></p>
+      <p>Na parte de cima (invertida), faça vários furos com prego ou agulha aquecida para as raízes saírem. Quanto mais furos, melhor.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Monte o sistema</strong></p>
+      <p>Coloque a muda com substrato na parte de cima (invertida, gargalo para baixo). Encaixe no reservatório com solução nutritiva.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Vantagem da Garrafa PET:</h4>
+      <p>Você consegue fazer múltiplas unidades praticamente de graça! Ideal para testar antes de investir em materiais mais "profissionais".</p>
+    </div>
+
+    <h2>Projeto 3: Kratky no Balde (Plantas Maiores)</h2>
+    <p><strong>Dificuldade:</strong> ⭐⭐ | <strong>Custo:</strong> R$ 30-50 | <strong>Tempo:</strong> 30 minutos</p>
+
+    <p>Para plantas maiores como tomate e pimentão, use baldes de 10-20 litros.</p>
+
+    <div class="project-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>1 balde com tampa (10-20L)</li>
+        <li>1 net pot de 10cm</li>
+        <li>Argila expandida (2-3L)</li>
+        <li>Solução nutritiva para o volume do balde</li>
+      </ul>
+    </div>
+
+    <p>O processo é igual ao Projeto 1, mas em escala maior. O balde grande permite que tomates e pimentões completem todo o ciclo sem reposição de água.</p>
+
+    <div class="page-number">Minha Horta em Casa - Página 10</div>
+  </div>
+
+  <div class="page">
+    <h2>Projeto 4: Sistema Kratky Múltiplo (Caixa Organizadora)</h2>
+    <p><strong>Dificuldade:</strong> ⭐⭐ | <strong>Custo:</strong> R$ 50-80 | <strong>Tempo:</strong> 45 minutos</p>
+
+    <p>Cultive várias plantas em um único reservatório!</p>
+
+    <div class="project-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>1 caixa organizadora opaca com tampa (30-50L)</li>
+        <li>6-12 net pots de 5cm</li>
+        <li>Argila expandida (3-5L)</li>
+        <li>Serra copo (para os furos)</li>
+        <li>Solução nutritiva</li>
+      </ul>
+    </div>
+
+    <h3>Passo a Passo:</h3>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Planeje os furos</strong></p>
+      <p>Marque na tampa a posição dos furos. Deixe 10-15cm entre eles. Para alface, 10cm é suficiente. Para plantas maiores, 15cm.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Faça os furos</strong></p>
+      <p>Use serra copo do tamanho do net pot. Se não tiver, faça um furo menor e aumente com estilete até o net pot encaixar.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Bloqueie a luz</strong></p>
+      <p>Se a caixa for transparente, pinte ou envolva com plástico preto. A tampa já bloqueia a luz de cima.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Calcule a solução</strong></p>
+      <p>Para 40L de água, use 80-200ml de solução nutritiva concentrada (veja instruções do fabricante).</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Produção Esperada:</h4>
+      <p>Com 6 alfaces em uma caixa de 40L, você colhe 6 pés a cada 35-45 dias. São ~4-5 colheitas por mês se fizer rodízio (plantando novas mudas toda semana).</p>
+    </div>
+
+    <h2>Projeto 5: Kratky Vertical (Paredes)</h2>
+    <p><strong>Dificuldade:</strong> ⭐⭐⭐ | <strong>Custo:</strong> R$ 60-120 | <strong>Tempo:</strong> 2 horas</p>
+
+    <p>Monte garrafas PET em uma estrutura vertical na parede!</p>
+
+    <div class="project-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>6-10 garrafas PET 2L</li>
+        <li>1 ripas de madeira ou cano PVC para estrutura</li>
+        <li>Braçadeiras ou arame</li>
+        <li>Substrato e solução nutritiva</li>
+      </ul>
+      <p><strong>Ideal para:</strong> Varandas de apartamento, muros com sol.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 11</div>
+  </div>
+
+  <div class="page">
+    <h2>Manutenção do Sistema Kratky</h2>
+
+    <h3>Checklist Diário (30 segundos)</h3>
+    <ul>
+      <li>☐ Plantas estão verdes e firmes?</li>
+      <li>☐ Folhas não estão murchas ou amareladas?</li>
+    </ul>
+
+    <h3>Checklist a Cada 3 Dias</h3>
+    <ul>
+      <li>☐ Verificar nível da solução (visual)</li>
+      <li>☐ Checar se há algas (mancha verde)</li>
+      <li>☐ Observar as raízes (se possível)</li>
+    </ul>
+
+    <h3>A Cada Ciclo (Após Colheita)</h3>
+    <ul>
+      <li>☐ Descartar a solução usada (pode regar plantas de solo)</li>
+      <li>☐ Lavar o reservatório com água e vinagre</li>
+      <li>☐ Lavar argila expandida e secar ao sol</li>
+      <li>☐ Preparar nova solução para próximo plantio</li>
+    </ul>
+
+    <div class="warning-box">
+      <h4>Nunca Complete a Água!</h4>
+      <p>No sistema Kratky, você NÃO repõe água enquanto a planta está crescendo. As raízes se adaptaram à câmara de ar. Se completar, vai afogar as raízes aéreas e a planta morre.</p>
+      <p><strong>Exceção:</strong> Se a planta ainda está pequena (primeiras 2 semanas) e as raízes mal saíram do net pot, pode completar UMA vez até a base do net pot.</p>
+    </div>
+
+    <h2>Problemas Comuns no Kratky</h2>
+
+    <table>
+      <tr>
+        <th>Problema</th>
+        <th>Causa Provável</th>
+        <th>Solução</th>
+      </tr>
+      <tr>
+        <td>Algas verdes na água</td>
+        <td>Luz entrando no reservatório</td>
+        <td>Cobrir melhor, verificar frestas</td>
+      </tr>
+      <tr>
+        <td>Raízes marrons/podres</td>
+        <td>Solução muito quente ou sem oxigênio</td>
+        <td>Local mais fresco, verificar se tem câmara de ar</td>
+      </tr>
+      <tr>
+        <td>Planta murcha com água disponível</td>
+        <td>Raízes aéreas foram afogadas</td>
+        <td>Escorrer água até formar câmara de ar</td>
+      </tr>
+      <tr>
+        <td>Crescimento lento</td>
+        <td>Pouca luz ou solução fraca</td>
+        <td>Mudar de local ou ajustar concentração</td>
+      </tr>
+      <tr>
+        <td>Folhas amareladas</td>
+        <td>Deficiência nutricional ou pH errado</td>
+        <td>Verificar pH e concentração</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 12</div>
+  </div>
+
+  <div class="page">
+    <h2>Cronograma de Cultivo Kratky</h2>
+
+    <h3>Exemplo: Alface do Plantio à Colheita</h3>
+
+    <table>
+      <tr>
+        <th>Semana</th>
+        <th>O Que Acontece</th>
+        <th>O Que Fazer</th>
+      </tr>
+      <tr>
+        <td>Semana 1</td>
+        <td>Muda se adaptando, raízes começam a sair do net pot</td>
+        <td>Verificar se raízes alcançam a água</td>
+      </tr>
+      <tr>
+        <td>Semana 2</td>
+        <td>Raízes crescendo rapidamente, folhas novas</td>
+        <td>Não mexer! Apenas observar</td>
+      </tr>
+      <tr>
+        <td>Semana 3</td>
+        <td>Câmara de ar formando, crescimento acelerado</td>
+        <td>Verificar nível e saúde das raízes</td>
+      </tr>
+      <tr>
+        <td>Semana 4</td>
+        <td>Planta com tamanho bom, folhas expandindo</td>
+        <td>Pode colher folhas externas</td>
+      </tr>
+      <tr>
+        <td>Semana 5</td>
+        <td>Ponto ideal de colheita</td>
+        <td>Colher inteira ou continuar colhendo folhas</td>
+      </tr>
+    </table>
+
+    <h2>Dimensionamento: Quanto de Solução por Planta?</h2>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Volume Mínimo</th>
+        <th>Ideal</th>
+        <th>Duração do Ciclo</th>
+      </tr>
+      <tr>
+        <td>Alface</td>
+        <td>1 litro</td>
+        <td>2-3 litros</td>
+        <td>35-45 dias</td>
+      </tr>
+      <tr>
+        <td>Rúcula</td>
+        <td>0,5 litro</td>
+        <td>1-2 litros</td>
+        <td>25-35 dias</td>
+      </tr>
+      <tr>
+        <td>Manjericão</td>
+        <td>1 litro</td>
+        <td>2-3 litros</td>
+        <td>Contínuo</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>1 litro</td>
+        <td>2-3 litros</td>
+        <td>Contínuo</td>
+      </tr>
+      <tr>
+        <td>Tomate cereja</td>
+        <td>10 litros</td>
+        <td>15-20 litros</td>
+        <td>90-120 dias</td>
+      </tr>
+      <tr>
+        <td>Pimentão</td>
+        <td>10 litros</td>
+        <td>15-20 litros</td>
+        <td>90-120 dias</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Dica de Ouro:</h4>
+      <p>Para plantas de ciclo longo (tomate, pimenta), use baldes grandes. Se a água acabar antes do fim do ciclo, você PODE completar desde que a planta esteja saudável e já tenha raízes bem desenvolvidas (mínimo 40 dias de cultivo).</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 13</div>
+  </div>
+
+  <div class="page">
+    <h2>Germinando Mudas para Kratky</h2>
+
+    <p>Você pode usar mudas compradas ou germinar suas próprias sementes. Veja as opções:</p>
+
+    <h3>Opção 1: Germinar em Espuma Fenólica</h3>
+    <div class="step-box">
+      <p>A espuma fenólica é o método profissional. São cubos de espuma que retêm umidade.</p>
+      <ol>
+        <li>Lave bem a espuma (é ácida de fábrica)</li>
+        <li>Faça um furinho no centro de cada cubo</li>
+        <li>Coloque 1-2 sementes por cubo</li>
+        <li>Mantenha úmido (borrifar 2x/dia)</li>
+        <li>Em 5-10 dias as mudas brotam</li>
+        <li>Quando tiverem 4+ folhas, transfira para o net pot com argila</li>
+      </ol>
+    </div>
+
+    <h3>Opção 2: Germinar em Algodão</h3>
+    <div class="step-box">
+      <ol>
+        <li>Coloque algodão úmido no fundo de um copinho</li>
+        <li>Espalhe as sementes sobre o algodão</li>
+        <li>Cubra com filme plástico (tampa de umidade)</li>
+        <li>Mantenha em local quente e com luz indireta</li>
+        <li>Quando brotarem, remova o plástico</li>
+        <li>Com 4+ folhas, transfira para o net pot</li>
+      </ol>
+      <p><strong>Importante:</strong> Ao transferir, remova o máximo de algodão possível das raízes.</p>
+    </div>
+
+    <h3>Opção 3: Comprar Mudas Prontas</h3>
+    <div class="step-box">
+      <p>A opção mais fácil! Compre mudas em feiras, garden centers ou supermercados.</p>
+      <ol>
+        <li>Retire a muda do solo com cuidado</li>
+        <li>Lave TODA a terra das raízes</li>
+        <li>Deixe de molho em água por 1 hora</li>
+        <li>Transfira para o net pot com argila</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4>Cuidado com Terra nas Raízes!</h4>
+      <p>Qualquer terra que ficar nas raízes vai apodrecer na água e pode matar a planta. Lave muito bem, use escova de dentes velha se necessário.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 14</div>
+  </div>
+
+  <div class="page">
+    <h2>Resumo do Módulo Kratky</h2>
+
+    <div class="highlight-box">
+      <h3>Checklist de Sucesso no Kratky</h3>
+      <ul>
+        <li>✅ Reservatório opaco (sem luz)</li>
+        <li>✅ Net pot encaixado na tampa</li>
+        <li>✅ Nível inicial tocando base do net pot</li>
+        <li>✅ Muda com raízes limpas (sem terra)</li>
+        <li>✅ Solução nutritiva na concentração correta</li>
+        <li>✅ Local com 6+ horas de luz</li>
+        <li>✅ Não completar água durante o ciclo</li>
+      </ul>
+    </div>
+
+    <h3>Erros Mais Comuns de Iniciantes</h3>
+
+    <table>
+      <tr>
+        <th>Erro</th>
+        <th>Consequência</th>
+        <th>Como Evitar</th>
+      </tr>
+      <tr>
+        <td>Reservatório transparente</td>
+        <td>Algas crescem e competem por nutrientes</td>
+        <td>Sempre cobrir ou pintar</td>
+      </tr>
+      <tr>
+        <td>Completar água</td>
+        <td>Afoga raízes aéreas, planta morre</td>
+        <td>Nunca completar (exceto casos específicos)</td>
+      </tr>
+      <tr>
+        <td>Deixar terra nas raízes</td>
+        <td>Apodrecimento, contamina solução</td>
+        <td>Lavar muito bem antes de plantar</td>
+      </tr>
+      <tr>
+        <td>Pouca luz</td>
+        <td>Crescimento lento, planta estiolada</td>
+        <td>Mínimo 6h de luz direta ou grow light</td>
+      </tr>
+      <tr>
+        <td>Solução muito forte</td>
+        <td>Queima as raízes</td>
+        <td>Seguir dosagem do fabricante</td>
+      </tr>
+    </table>
+
+    <h3>Próximo Passo</h3>
+    <p>Agora que você domina o Kratky, está pronto para avançar para sistemas mais produtivos como o DWC no próximo módulo. Mas lembre-se: não há vergonha em ficar no Kratky! Muitos cultivadores experientes usam apenas esse sistema pela simplicidade.</p>
+
+    <div class="page-number">Minha Horta em Casa - Página 15</div>
+  </div>
+
+  <!-- MÓDULO 3: SISTEMA DWC -->
+  <div class="page">
+    <h1>Módulo 3: Sistema DWC (Deep Water Culture)</h1>
+
+    <h2>O Que é DWC?</h2>
+    <p>DWC (Cultura em Água Profunda) é um sistema onde as raízes ficam totalmente submersas em água oxigenada por uma bomba de ar (aerador de aquário).</p>
+
+    <h3>Diferença entre Kratky e DWC</h3>
+    <table>
+      <tr>
+        <th>Característica</th>
+        <th>Kratky</th>
+        <th>DWC</th>
+      </tr>
+      <tr>
+        <td>Oxigenação</td>
+        <td>Câmara de ar natural</td>
+        <td>Bomba de ar (bolhas)</td>
+      </tr>
+      <tr>
+        <td>Eletricidade</td>
+        <td>Não precisa</td>
+        <td>Precisa (bomba)</td>
+      </tr>
+      <tr>
+        <td>Nível da água</td>
+        <td>Vai baixando</td>
+        <td>Mantido constante</td>
+      </tr>
+      <tr>
+        <td>Manutenção</td>
+        <td>Menor</td>
+        <td>Maior</td>
+      </tr>
+      <tr>
+        <td>Crescimento</td>
+        <td>Rápido</td>
+        <td>Muito rápido</td>
+      </tr>
+      <tr>
+        <td>Custo</td>
+        <td>R$ 30-80</td>
+        <td>R$ 100-200</td>
+      </tr>
+    </table>
+
+    <h2>Vantagens do DWC</h2>
+    <ul>
+      <li><strong>Crescimento mais rápido:</strong> Oxigenação constante acelera absorção de nutrientes</li>
+      <li><strong>Maior produção:</strong> Plantas crescem maiores e mais vigorosas</li>
+      <li><strong>Pode reabastecer:</strong> Diferente do Kratky, você pode completar água</li>
+      <li><strong>Ideal para plantas grandes:</strong> Tomates, pepinos, pimentões</li>
+    </ul>
+
+    <h2>Componentes do Sistema DWC</h2>
+    <ol>
+      <li><strong>Reservatório:</strong> Balde ou caixa (5-20L por planta)</li>
+      <li><strong>Tampa com furo:</strong> Para o net pot</li>
+      <li><strong>Net pot:</strong> 7,5-10cm</li>
+      <li><strong>Bomba de ar:</strong> Aerador de aquário</li>
+      <li><strong>Mangueira de ar:</strong> Conecta bomba à pedra</li>
+      <li><strong>Pedra porosa:</strong> Distribui as bolhas</li>
+      <li><strong>Substrato:</strong> Argila expandida</li>
+      <li><strong>Solução nutritiva</strong></li>
+    </ol>
+
+    <div class="page-number">Minha Horta em Casa - Página 16</div>
+  </div>
+
+  <div class="page">
+    <h2>Projeto: Montando um Sistema DWC</h2>
+    <p><strong>Dificuldade:</strong> ⭐⭐ | <strong>Custo:</strong> R$ 80-150 | <strong>Tempo:</strong> 1 hora</p>
+
+    <div class="project-box">
+      <h4>Lista de Materiais:</h4>
+      <ul>
+        <li>1 balde com tampa (10-20L)</li>
+        <li>1 net pot 7,5-10cm</li>
+        <li>1 bomba de ar para aquário (mínimo 2W)</li>
+        <li>1 metro de mangueira de silicone</li>
+        <li>1 pedra porosa (difusor)</li>
+        <li>Argila expandida</li>
+        <li>Solução nutritiva</li>
+      </ul>
+    </div>
+
+    <h3>Passo a Passo:</h3>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Prepare o balde</strong></p>
+      <p>Se não for opaco, pinte ou envolva. Faça um furo na tampa do tamanho do net pot. Faça também um pequeno furo para passar a mangueira de ar.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Monte o sistema de ar</strong></p>
+      <p>Conecte a mangueira na bomba de ar. Passe pelo furo pequeno da tampa. Conecte a pedra porosa na ponta que fica dentro do balde. A pedra deve ficar no fundo.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Teste o aerador</strong></p>
+      <p>Encha com água e ligue a bomba. Deve fazer muitas bolhas pequenas. Quanto menores e mais numerosas, melhor a oxigenação.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Prepare a solução</strong></p>
+      <p>Encha o balde com água. Adicione solução nutritiva conforme instruções. Meça o pH (ideal 5.5-6.5). O nível deve ficar 2-3cm abaixo da base do net pot.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">5</span> <strong>Plante a muda</strong></p>
+      <p>Monte a muda no net pot com argila expandida (igual ao Kratky). Encaixe na tampa.</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Atenção com o Nível da Água!</h4>
+      <p>No DWC, a água NÃO deve tocar o net pot depois que as raízes cresceram. Mantenha 2-3cm de espaço de ar. As bolhas espirram solução nas raízes superiores.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 17</div>
+  </div>
+
+  <div class="page">
+    <h2>Escolhendo a Bomba de Ar</h2>
+
+    <table>
+      <tr>
+        <th>Volume do Sistema</th>
+        <th>Potência da Bomba</th>
+        <th>Preço Médio</th>
+      </tr>
+      <tr>
+        <td>5-10 litros</td>
+        <td>2W (1-2 L/min)</td>
+        <td>R$ 25-40</td>
+      </tr>
+      <tr>
+        <td>10-20 litros</td>
+        <td>3-4W (3-4 L/min)</td>
+        <td>R$ 35-60</td>
+      </tr>
+      <tr>
+        <td>20-50 litros</td>
+        <td>5-8W (5+ L/min)</td>
+        <td>R$ 50-100</td>
+      </tr>
+      <tr>
+        <td>Múltiplos baldes</td>
+        <td>10W+ (divisor)</td>
+        <td>R$ 80-150</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Dica de Economia:</h4>
+      <p>Uma bomba de 5W com divisor pode aerar 3-4 baldes ao mesmo tempo! Compre uma bomba maior e conecte múltiplas pedras porosas.</p>
+    </div>
+
+    <h2>Manutenção do Sistema DWC</h2>
+
+    <h3>Diariamente</h3>
+    <ul>
+      <li>✅ Verificar se bomba está funcionando (bolhas)</li>
+      <li>✅ Checar saúde das plantas</li>
+    </ul>
+
+    <h3>A Cada 3-5 Dias</h3>
+    <ul>
+      <li>✅ Verificar nível da solução</li>
+      <li>✅ Completar se necessário (com solução, não água pura)</li>
+      <li>✅ Medir pH se tiver medidor</li>
+    </ul>
+
+    <h3>Semanalmente</h3>
+    <ul>
+      <li>✅ Verificar raízes (devem ser brancas)</li>
+      <li>✅ Checar temperatura da solução</li>
+      <li>✅ Limpar a pedra porosa se entupir</li>
+    </ul>
+
+    <h3>A Cada 2-3 Semanas</h3>
+    <ul>
+      <li>✅ Trocar toda a solução</li>
+      <li>✅ Limpar o reservatório</li>
+    </ul>
+
+    <div class="danger-box">
+      <h4>Se a Bomba Parar:</h4>
+      <p>Você tem 24-48 horas antes das raízes começarem a sofrer. Se não conseguir resolver, escorra água para criar câmara de ar (vira um Kratky emergencial).</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 18</div>
+  </div>
+
+  <div class="page">
+    <h2>Sistema DWC Múltiplo (Vários Baldes)</h2>
+
+    <p>Para produção maior, conecte vários baldes a uma única bomba de ar.</p>
+
+    <div class="project-box">
+      <h4>Materiais para 4 Baldes:</h4>
+      <ul>
+        <li>4 baldes com tampa (10L cada)</li>
+        <li>1 bomba de ar 8-10W</li>
+        <li>1 divisor de ar (4 saídas)</li>
+        <li>4 metros de mangueira</li>
+        <li>4 pedras porosas</li>
+        <li>4 net pots</li>
+        <li>Argila expandida</li>
+      </ul>
+    </div>
+
+    <h3>Montagem:</h3>
+    <ol>
+      <li>Prepare os 4 baldes (pintar, furar tampa)</li>
+      <li>Conecte a bomba ao divisor</li>
+      <li>Conecte uma mangueira em cada saída do divisor</li>
+      <li>Coloque uma pedra porosa em cada balde</li>
+      <li>Verifique se todos os baldes têm bolhas equivalentes</li>
+    </ol>
+
+    <div class="warning-box">
+      <h4>Ajuste as Válvulas:</h4>
+      <p>Se um balde tiver menos bolhas que outros, o divisor com válvulas permite equilibrar o fluxo. Baldes mais longe da bomba tendem a receber menos ar.</p>
+    </div>
+
+    <h2>DWC vs RDWC (Recirculante)</h2>
+
+    <p>O RDWC conecta todos os baldes entre si, permitindo que a solução circule. Vantagens:</p>
+    <ul>
+      <li>Nutrientes sempre equilibrados entre plantas</li>
+      <li>Uma única medição de pH/EC serve para todos</li>
+      <li>Um reservatório central facilita manutenção</li>
+    </ul>
+
+    <p><strong>Para iniciantes:</strong> Comece com DWC simples (baldes independentes). RDWC é mais avançado e exige mais equipamentos.</p>
+
+    <h3>Comparativo DWC Individual vs RDWC</h3>
+    <table>
+      <tr>
+        <th>Aspecto</th>
+        <th>DWC Individual</th>
+        <th>RDWC</th>
+      </tr>
+      <tr>
+        <td>Complexidade</td>
+        <td>Baixa</td>
+        <td>Alta</td>
+      </tr>
+      <tr>
+        <td>Custo</td>
+        <td>Médio</td>
+        <td>Alto</td>
+      </tr>
+      <tr>
+        <td>Manutenção</td>
+        <td>Cada balde separado</td>
+        <td>Centralizada</td>
+      </tr>
+      <tr>
+        <td>Risco de contaminação</td>
+        <td>Isolado por balde</td>
+        <td>Se espalha para todos</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 19</div>
+  </div>
+
+  <div class="page">
+    <h2>Problemas Comuns no DWC</h2>
+
+    <table>
+      <tr>
+        <th>Problema</th>
+        <th>Causa</th>
+        <th>Solução</th>
+      </tr>
+      <tr>
+        <td>Raízes marrons</td>
+        <td>Pouca oxigenação ou temperatura alta</td>
+        <td>Verificar bomba, resfriar solução</td>
+      </tr>
+      <tr>
+        <td>Raízes viscosas</td>
+        <td>Podridão radicular (pythium)</td>
+        <td>Trocar solução, adicionar H2O2 (ver abaixo)</td>
+      </tr>
+      <tr>
+        <td>Algas</td>
+        <td>Luz no reservatório</td>
+        <td>Vedar todas as entradas de luz</td>
+      </tr>
+      <tr>
+        <td>Bomba parou</td>
+        <td>Queimou ou entupiu</td>
+        <td>Substituir; emergência: escorrer água</td>
+      </tr>
+      <tr>
+        <td>Bolhas grandes demais</td>
+        <td>Pedra entupida ou errada</td>
+        <td>Limpar ou trocar pedra porosa</td>
+      </tr>
+    </table>
+
+    <h3>Tratamento de Emergência: Peróxido de Hidrogênio (H2O2)</h3>
+
+    <div class="step-box">
+      <p>Se as raízes ficarem marrons e viscosas, pode ser podridão. Tratamento:</p>
+      <ol>
+        <li>Remova a planta do sistema</li>
+        <li>Corte as raízes podres (marrons) com tesoura limpa</li>
+        <li>Descarte toda a solução</li>
+        <li>Limpe o reservatório com água sanitária diluída</li>
+        <li>Prepare nova solução</li>
+        <li>Adicione 3ml de água oxigenada 10 volumes por litro</li>
+        <li>Replante a muda</li>
+      </ol>
+      <p><strong>Obs:</strong> A água oxigenada mata patógenos mas evapora em 24h. É um tratamento pontual.</p>
+    </div>
+
+    <h2>Resumo: Kratky ou DWC?</h2>
+
+    <div class="highlight-box">
+      <p><strong>Escolha Kratky se:</strong></p>
+      <ul>
+        <li>É seu primeiro sistema hidropônico</li>
+        <li>Quer simplicidade máxima</li>
+        <li>Não quer depender de eletricidade</li>
+        <li>Vai cultivar alfaces e ervas</li>
+      </ul>
+      <p><strong>Escolha DWC se:</strong></p>
+      <ul>
+        <li>Já dominou o Kratky</li>
+        <li>Quer maior produção</li>
+        <li>Vai cultivar plantas grandes (tomate, pimenta)</li>
+        <li>Tem disponibilidade para manutenção mais frequente</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 20</div>
+  </div>
+
+  <!-- MÓDULO 4: SOLUÇÃO NUTRITIVA -->
+  <div class="page">
+    <h1>Módulo 4: Solução Nutritiva</h1>
+
+    <h2>Entendendo os Nutrientes</h2>
+    <p>As plantas precisam de 17 elementos químicos para sobreviver. Na hidroponia, você fornece todos eles através da solução nutritiva.</p>
+
+    <h3>Macronutrientes (Grandes Quantidades)</h3>
+    <table>
+      <tr>
+        <th>Nutriente</th>
+        <th>Símbolo</th>
+        <th>Função na Planta</th>
+      </tr>
+      <tr>
+        <td>Nitrogênio</td>
+        <td>N</td>
+        <td>Crescimento de folhas, verde intenso</td>
+      </tr>
+      <tr>
+        <td>Fósforo</td>
+        <td>P</td>
+        <td>Raízes, flores, frutos</td>
+      </tr>
+      <tr>
+        <td>Potássio</td>
+        <td>K</td>
+        <td>Resistência a doenças, sabor</td>
+      </tr>
+      <tr>
+        <td>Cálcio</td>
+        <td>Ca</td>
+        <td>Estrutura celular, raízes</td>
+      </tr>
+      <tr>
+        <td>Magnésio</td>
+        <td>Mg</td>
+        <td>Clorofila (fotossíntese)</td>
+      </tr>
+      <tr>
+        <td>Enxofre</td>
+        <td>S</td>
+        <td>Proteínas, enzimas</td>
+      </tr>
+    </table>
+
+    <h3>Micronutrientes (Pequenas Quantidades)</h3>
+    <p>Ferro (Fe), Manganês (Mn), Zinco (Zn), Cobre (Cu), Boro (B), Molibdênio (Mo), Cloro (Cl).</p>
+
+    <div class="warning-box">
+      <h4>NPK: O Que Significa</h4>
+      <p>O famoso "NPK" dos fertilizantes indica a proporção de Nitrogênio, Fósforo e Potássio. Ex: NPK 10-5-10 tem 10% N, 5% P, 10% K.</p>
+      <p><strong>Para folhosas (alface):</strong> Mais N (nitrogênio)</p>
+      <p><strong>Para frutíferas (tomate):</strong> Mais P e K</p>
+    </div>
+
+    <h2>Soluções Nutritivas Prontas</h2>
+
+    <p>A forma mais fácil de começar é com soluções concentradas já formuladas:</p>
+
+    <h3>Marcas Recomendadas</h3>
+    <ul>
+      <li><strong>General Hydroponics Flora Series:</strong> 3 partes (Grow, Micro, Bloom). Muito versátil.</li>
+      <li><strong>Hidrogood:</strong> Marca brasileira, bom custo-benefício</li>
+      <li><strong>Forth Hidroponia:</strong> Fácil de encontrar em garden centers</li>
+      <li><strong>MaxiGrow/MaxiBloom:</strong> Em pó, mais econômico</li>
+    </ul>
+
+    <div class="page-number">Minha Horta em Casa - Página 21</div>
+  </div>
+
+  <div class="page">
+    <h2>Como Preparar a Solução</h2>
+
+    <h3>Passo a Passo Geral</h3>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Use água de qualidade</strong></p>
+      <p>Água filtrada ou de poço é melhor que água da torneira (cloro). Se usar da torneira, deixe descansar 24h descoberta para o cloro evaporar.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Meça o volume</strong></p>
+      <p>Saiba quantos litros vai preparar. Marque o nível nos baldes para facilitar próximas vezes.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Adicione o concentrado</strong></p>
+      <p>Siga EXATAMENTE as instruções do fabricante. Geralmente 2-5ml por litro. Mais não é melhor!</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Misture bem</strong></p>
+      <p>Mexa por 30 segundos para dissolver completamente.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">5</span> <strong>Meça o pH (se tiver medidor)</strong></p>
+      <p>O ideal é pH entre 5.5 e 6.5. Ajuste se necessário.</p>
+    </div>
+
+    <h2>Tabela de Dosagem (Referência Geral)</h2>
+
+    <table>
+      <tr>
+        <th>Estágio da Planta</th>
+        <th>EC (mS/cm)</th>
+        <th>Dosagem Aproximada</th>
+      </tr>
+      <tr>
+        <td>Mudas (1-2 semanas)</td>
+        <td>0.8-1.0</td>
+        <td>1-2 ml/L</td>
+      </tr>
+      <tr>
+        <td>Crescimento vegetativo</td>
+        <td>1.2-1.8</td>
+        <td>2-3 ml/L</td>
+      </tr>
+      <tr>
+        <td>Floração/Frutificação</td>
+        <td>1.8-2.4</td>
+        <td>3-4 ml/L</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>O Que é EC?</h4>
+      <p>EC (Condutividade Elétrica) mede a concentração de nutrientes na água. Quanto mais nutrientes, mais eletricidade a água conduz. Medidores de EC custam R$ 50-100.</p>
+      <p><strong>Sem medidor?</strong> Use metade da dose recomendada e observe a planta. Folhas queimadas nas pontas = muito forte. Crescimento lento = muito fraco.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 22</div>
+  </div>
+
+  <div class="page">
+    <h2>Ajuste de pH</h2>
+
+    <h3>Por Que o pH é Importante?</h3>
+    <p>O pH determina quais nutrientes a planta consegue absorver. Em pH errado, mesmo com todos nutrientes presentes, a planta passa fome!</p>
+
+    <table>
+      <tr>
+        <th>pH</th>
+        <th>Classificação</th>
+        <th>Efeito</th>
+      </tr>
+      <tr>
+        <td>Abaixo de 5.0</td>
+        <td>Muito ácido</td>
+        <td>Toxidez de alguns nutrientes</td>
+      </tr>
+      <tr>
+        <td>5.5 - 6.5</td>
+        <td>Ideal</td>
+        <td>Todos nutrientes disponíveis</td>
+      </tr>
+      <tr>
+        <td>Acima de 7.0</td>
+        <td>Muito alcalino</td>
+        <td>Ferro e outros ficam indisponíveis</td>
+      </tr>
+    </table>
+
+    <h3>Como Medir o pH</h3>
+    <ul>
+      <li><strong>Medidor digital:</strong> Mais preciso (R$ 35-100)</li>
+      <li><strong>Fitas/gotas de pH:</strong> Mais barato, menos preciso (R$ 15-30)</li>
+    </ul>
+
+    <h3>Como Ajustar o pH</h3>
+
+    <div class="step-box">
+      <h4>pH muito ALTO (alcalino) - Precisa baixar</h4>
+      <p><strong>Opção comercial:</strong> pH Down (ácido fosfórico)</p>
+      <p><strong>Opção caseira:</strong> Vinagre branco ou suco de limão (2-5ml por litro, ir ajustando)</p>
+    </div>
+
+    <div class="step-box">
+      <h4>pH muito BAIXO (ácido) - Precisa subir</h4>
+      <p><strong>Opção comercial:</strong> pH Up (hidróxido de potássio)</p>
+      <p><strong>Opção caseira:</strong> Bicarbonato de sódio (1/4 colher de chá por litro, ir ajustando)</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Cuidado com Ajustes Caseiros!</h4>
+      <p>Vinagre e bicarbonato são temporários - o pH pode voltar. Prefira soluções comerciais para estabilidade. Use caseiros apenas em emergência.</p>
+    </div>
+
+    <h3>pH para Diferentes Plantas</h3>
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>pH Ideal</th>
+      </tr>
+      <tr><td>Alface, Rúcula</td><td>5.5-6.0</td></tr>
+      <tr><td>Tomate</td><td>5.5-6.5</td></tr>
+      <tr><td>Pimentão</td><td>5.5-6.0</td></tr>
+      <tr><td>Manjericão</td><td>5.5-6.5</td></tr>
+      <tr><td>Morango</td><td>5.5-6.2</td></tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 23</div>
+  </div>
+
+  <div class="page">
+    <h2>Receitas de Solução Nutritiva Caseira</h2>
+
+    <div class="warning-box">
+      <h4>Aviso Importante:</h4>
+      <p>Soluções caseiras são menos equilibradas que as comerciais. Recomendo usar apenas se não conseguir comprar solução pronta, ou para experimentos.</p>
+    </div>
+
+    <h3>Receita 1: Solução Básica para Folhosas</h3>
+    <div class="step-box">
+      <p><strong>Para 10 litros de água:</strong></p>
+      <ul>
+        <li>10g de fertilizante NPK 20-20-20 solúvel</li>
+        <li>5g de sulfato de magnésio (sal amargo/epsom)</li>
+        <li>2g de quelato de ferro (encontra em agropecuárias)</li>
+      </ul>
+      <p>Dissolva cada um separadamente em água morna, depois misture.</p>
+    </div>
+
+    <h3>Receita 2: Solução Econômica</h3>
+    <div class="step-box">
+      <p><strong>Para 10 litros de água:</strong></p>
+      <ul>
+        <li>1 colher de sopa de fertilizante para samambaias</li>
+        <li>1 colher de chá de sal amargo</li>
+      </ul>
+      <p>Funciona para folhosas, mas não é ideal para longo prazo (faltam micronutrientes).</p>
+    </div>
+
+    <h2>Quando Trocar a Solução</h2>
+
+    <h3>Sistema Kratky</h3>
+    <p>A planta consome tudo até o fim do ciclo. Não precisa trocar - faz nova solução para próximo plantio.</p>
+
+    <h3>Sistema DWC</h3>
+    <table>
+      <tr>
+        <th>Situação</th>
+        <th>Ação</th>
+      </tr>
+      <tr>
+        <td>Nível baixou 20-30%</td>
+        <td>Complete com solução fresca</td>
+      </tr>
+      <tr>
+        <td>A cada 2-3 semanas</td>
+        <td>Troque toda solução</td>
+      </tr>
+      <tr>
+        <td>Solução com cheiro ruim</td>
+        <td>Troque imediatamente</td>
+      </tr>
+      <tr>
+        <td>Algas visíveis</td>
+        <td>Troque e tape entradas de luz</td>
+      </tr>
+      <tr>
+        <td>pH muito desajustado</td>
+        <td>Troque toda solução</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>O Que Fazer com Solução Usada?</h4>
+      <p>Não jogue fora! Use para regar plantas em vasos com terra. Os nutrientes restantes serão aproveitados.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 24</div>
+  </div>
+
+  <div class="page">
+    <h2>Problemas com Nutrientes</h2>
+
+    <h3>Sinais de Deficiência</h3>
+    <table>
+      <tr>
+        <th>Sintoma</th>
+        <th>Deficiência Provável</th>
+        <th>Solução</th>
+      </tr>
+      <tr>
+        <td>Folhas velhas amarelando</td>
+        <td>Nitrogênio (N)</td>
+        <td>Aumentar dose de solução</td>
+      </tr>
+      <tr>
+        <td>Folhas roxas/arroxeadas</td>
+        <td>Fósforo (P)</td>
+        <td>Verificar pH (P trava em pH alto)</td>
+      </tr>
+      <tr>
+        <td>Bordas das folhas secas</td>
+        <td>Potássio (K)</td>
+        <td>Trocar solução, verificar EC</td>
+      </tr>
+      <tr>
+        <td>Folhas novas deformadas</td>
+        <td>Cálcio (Ca)</td>
+        <td>Verificar pH, adicionar cálcio</td>
+      </tr>
+      <tr>
+        <td>Amarelamento entre nervuras</td>
+        <td>Magnésio (Mg) ou Ferro (Fe)</td>
+        <td>Verificar pH, adicionar sal amargo</td>
+      </tr>
+    </table>
+
+    <h3>Sinais de Excesso</h3>
+    <table>
+      <tr>
+        <th>Sintoma</th>
+        <th>Excesso Provável</th>
+        <th>Solução</th>
+      </tr>
+      <tr>
+        <td>Pontas das folhas queimadas</td>
+        <td>Solução muito concentrada</td>
+        <td>Diluir ou trocar por mais fraca</td>
+      </tr>
+      <tr>
+        <td>Folhas muito verde escuro, crescimento lento</td>
+        <td>Nitrogênio (N)</td>
+        <td>Reduzir concentração</td>
+      </tr>
+      <tr>
+        <td>Manchas marrons nas folhas</td>
+        <td>Vários nutrientes em excesso</td>
+        <td>Trocar toda solução, diluir mais</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Regra de Ouro:</h4>
+      <p>"Na dúvida, dilua". É mais fácil corrigir falta do que excesso. Comece com 50% da dose recomendada e aumente gradualmente.</p>
+    </div>
+
+    <h2>Temperatura da Solução</h2>
+
+    <p>A temperatura ideal da solução é <strong>18-22°C</strong>. Água muito quente perde oxigênio e favorece doenças.</p>
+
+    <h3>Soluções para Dias Quentes</h3>
+    <ul>
+      <li>Adicione garrafas PET congeladas (não dilui a solução)</li>
+      <li>Pinte reservatórios de branco (reflete luz/calor)</li>
+      <li>Posicione em local sombreado</li>
+      <li>Use reservatórios maiores (mais volume = mais estável)</li>
+    </ul>
+
+    <div class="page-number">Minha Horta em Casa - Página 25</div>
+  </div>
+
+  <!-- MÓDULO 5: PLANTAS PARA HIDROPONIA -->
+  <div class="page">
+    <h1>Módulo 5: Plantas para Hidroponia</h1>
+
+    <h2>Melhores Plantas para Iniciantes</h2>
+    <p>Comece com plantas fáceis e de ciclo curto para ganhar confiança:</p>
+
+    <div class="plant-card">
+      <h4>Alface (Lactuca sativa)</h4>
+      <table>
+        <tr><td><strong>Dificuldade:</strong></td><td>⭐ Muito Fácil</td></tr>
+        <tr><td><strong>Ciclo:</strong></td><td>35-45 dias</td></tr>
+        <tr><td><strong>Sistema:</strong></td><td>Kratky ou DWC</td></tr>
+        <tr><td><strong>pH ideal:</strong></td><td>5.5-6.0</td></tr>
+        <tr><td><strong>EC:</strong></td><td>1.0-1.4</td></tr>
+        <tr><td><strong>Espaçamento:</strong></td><td>15-20cm</td></tr>
+        <tr><td><strong>Luz:</strong></td><td>6-8h (tolera menos)</td></tr>
+      </table>
+      <p><strong>Variedades recomendadas:</strong> Crespa, Lisa, Americana, Roxa</p>
+      <p><strong>Dica:</strong> Plante a cada semana para colheita contínua.</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>Rúcula (Eruca sativa)</h4>
+      <table>
+        <tr><td><strong>Dificuldade:</strong></td><td>⭐ Muito Fácil</td></tr>
+        <tr><td><strong>Ciclo:</strong></td><td>25-35 dias</td></tr>
+        <tr><td><strong>Sistema:</strong></td><td>Kratky</td></tr>
+        <tr><td><strong>pH ideal:</strong></td><td>6.0-6.5</td></tr>
+        <tr><td><strong>EC:</strong></td><td>0.8-1.2</td></tr>
+        <tr><td><strong>Espaçamento:</strong></td><td>10-15cm</td></tr>
+        <tr><td><strong>Luz:</strong></td><td>4-6h</td></tr>
+      </table>
+      <p><strong>Dica:</strong> Colha folhas externas para prolongar produção.</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>Manjericão (Ocimum basilicum)</h4>
+      <table>
+        <tr><td><strong>Dificuldade:</strong></td><td>⭐ Muito Fácil</td></tr>
+        <tr><td><strong>Ciclo:</strong></td><td>Contínuo (colheita em 30 dias)</td></tr>
+        <tr><td><strong>Sistema:</strong></td><td>Kratky ou DWC</td></tr>
+        <tr><td><strong>pH ideal:</strong></td><td>5.5-6.5</td></tr>
+        <tr><td><strong>EC:</strong></td><td>1.0-1.6</td></tr>
+        <tr><td><strong>Espaçamento:</strong></td><td>15-20cm</td></tr>
+        <tr><td><strong>Luz:</strong></td><td>6-8h</td></tr>
+      </table>
+      <p><strong>Dica:</strong> Pode as pontas para estimular ramificação.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 26</div>
+  </div>
+
+  <div class="page">
+    <div class="plant-card">
+      <h4>Hortelã (Mentha)</h4>
+      <table>
+        <tr><td><strong>Dificuldade:</strong></td><td>⭐ Muito Fácil</td></tr>
+        <tr><td><strong>Ciclo:</strong></td><td>Perene (colheita em 25 dias)</td></tr>
+        <tr><td><strong>Sistema:</strong></td><td>Kratky, DWC ou Pavio</td></tr>
+        <tr><td><strong>pH ideal:</strong></td><td>6.0-7.0</td></tr>
+        <tr><td><strong>EC:</strong></td><td>1.6-2.4</td></tr>
+        <tr><td><strong>Espaçamento:</strong></td><td>20cm</td></tr>
+        <tr><td><strong>Luz:</strong></td><td>4-6h (tolera sombra)</td></tr>
+      </table>
+      <p><strong>Dica:</strong> Cresce muito rápido! Uma planta fornece folhas por meses.</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>Couve (Brassica oleracea)</h4>
+      <table>
+        <tr><td><strong>Dificuldade:</strong></td><td>⭐⭐ Fácil</td></tr>
+        <tr><td><strong>Ciclo:</strong></td><td>60-70 dias (colheita contínua)</td></tr>
+        <tr><td><strong>Sistema:</strong></td><td>DWC (precisa mais espaço)</td></tr>
+        <tr><td><strong>pH ideal:</strong></td><td>6.0-6.5</td></tr>
+        <tr><td><strong>EC:</strong></td><td>1.2-1.8</td></tr>
+        <tr><td><strong>Espaçamento:</strong></td><td>30-40cm</td></tr>
+        <tr><td><strong>Luz:</strong></td><td>6-8h</td></tr>
+      </table>
+      <p><strong>Dica:</strong> Colha folhas de baixo para cima, o talo continua produzindo.</p>
+    </div>
+
+    <h2>Plantas Intermediárias</h2>
+
+    <div class="plant-card">
+      <h4>Tomate Cereja (Solanum lycopersicum)</h4>
+      <table>
+        <tr><td><strong>Dificuldade:</strong></td><td>⭐⭐⭐ Intermediário</td></tr>
+        <tr><td><strong>Ciclo:</strong></td><td>70-90 dias até primeira colheita</td></tr>
+        <tr><td><strong>Sistema:</strong></td><td>DWC (balde 15-20L)</td></tr>
+        <tr><td><strong>pH ideal:</strong></td><td>5.5-6.5</td></tr>
+        <tr><td><strong>EC:</strong></td><td>2.0-3.5</td></tr>
+        <tr><td><strong>Espaçamento:</strong></td><td>40-50cm</td></tr>
+        <tr><td><strong>Luz:</strong></td><td>8-10h</td></tr>
+      </table>
+      <p><strong>Requisitos extras:</strong> Tutoragem (a planta precisa de suporte), polinização manual em ambientes fechados.</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>Pimentão (Capsicum annuum)</h4>
+      <table>
+        <tr><td><strong>Dificuldade:</strong></td><td>⭐⭐⭐ Intermediário</td></tr>
+        <tr><td><strong>Ciclo:</strong></td><td>80-100 dias</td></tr>
+        <tr><td><strong>Sistema:</strong></td><td>DWC (balde 15-20L)</td></tr>
+        <tr><td><strong>pH ideal:</strong></td><td>5.5-6.0</td></tr>
+        <tr><td><strong>EC:</strong></td><td>1.8-2.5</td></tr>
+      </table>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 27</div>
+  </div>
+
+  <div class="page">
+    <h2>Tabela Resumo: Plantas para Hidroponia</h2>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Ciclo</th>
+        <th>pH</th>
+        <th>EC</th>
+        <th>Sistema</th>
+      </tr>
+      <tr>
+        <td>Alface</td>
+        <td>35-45 dias</td>
+        <td>5.5-6.0</td>
+        <td>1.0-1.4</td>
+        <td>Kratky/DWC</td>
+      </tr>
+      <tr>
+        <td>Rúcula</td>
+        <td>25-35 dias</td>
+        <td>6.0-6.5</td>
+        <td>0.8-1.2</td>
+        <td>Kratky</td>
+      </tr>
+      <tr>
+        <td>Manjericão</td>
+        <td>30+ dias</td>
+        <td>5.5-6.5</td>
+        <td>1.0-1.6</td>
+        <td>Kratky/DWC</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>25+ dias</td>
+        <td>6.0-7.0</td>
+        <td>1.6-2.4</td>
+        <td>Qualquer</td>
+      </tr>
+      <tr>
+        <td>Coentro</td>
+        <td>40-50 dias</td>
+        <td>6.5-6.7</td>
+        <td>1.2-1.8</td>
+        <td>Kratky</td>
+      </tr>
+      <tr>
+        <td>Cebolinha</td>
+        <td>45-60 dias</td>
+        <td>6.0-6.5</td>
+        <td>1.4-1.8</td>
+        <td>Kratky/DWC</td>
+      </tr>
+      <tr>
+        <td>Salsa</td>
+        <td>50-70 dias</td>
+        <td>5.5-6.5</td>
+        <td>0.8-1.8</td>
+        <td>Kratky</td>
+      </tr>
+      <tr>
+        <td>Couve</td>
+        <td>60-70 dias</td>
+        <td>6.0-6.5</td>
+        <td>1.2-1.8</td>
+        <td>DWC</td>
+      </tr>
+      <tr>
+        <td>Espinafre</td>
+        <td>40-50 dias</td>
+        <td>6.0-7.0</td>
+        <td>1.8-2.3</td>
+        <td>Kratky/DWC</td>
+      </tr>
+      <tr>
+        <td>Tomate cereja</td>
+        <td>70-90 dias</td>
+        <td>5.5-6.5</td>
+        <td>2.0-3.5</td>
+        <td>DWC</td>
+      </tr>
+      <tr>
+        <td>Pimentão</td>
+        <td>80-100 dias</td>
+        <td>5.5-6.0</td>
+        <td>1.8-2.5</td>
+        <td>DWC</td>
+      </tr>
+      <tr>
+        <td>Morango</td>
+        <td>60+ dias</td>
+        <td>5.5-6.2</td>
+        <td>1.0-1.4</td>
+        <td>DWC/NFT</td>
+      </tr>
+    </table>
+
+    <h2>Plantas que NÃO São Ideais para Hidroponia</h2>
+    <ul>
+      <li><strong>Raízes/tubérculos:</strong> Cenoura, batata, beterraba (precisam de substrato)</li>
+      <li><strong>Plantas muito grandes:</strong> Abóbora, melancia (sistema muito complexo)</li>
+      <li><strong>Milho:</strong> Cresce demais, polinização é problemática</li>
+    </ul>
+
+    <div class="page-number">Minha Horta em Casa - Página 28</div>
+  </div>
+
+  <!-- MÓDULO 6: PROBLEMAS E SOLUÇÕES -->
+  <div class="page">
+    <h1>Módulo 6: Problemas e Soluções</h1>
+
+    <h2>Diagnóstico Rápido de Problemas</h2>
+
+    <p>Use esta tabela para identificar rapidamente o que está acontecendo com suas plantas:</p>
+
+    <table>
+      <tr>
+        <th>Sintoma</th>
+        <th>Causa Provável</th>
+        <th>Ação</th>
+      </tr>
+      <tr>
+        <td>Folhas murchas com água disponível</td>
+        <td>Raízes afogadas ou podres</td>
+        <td>Verificar câmara de ar, checar raízes</td>
+      </tr>
+      <tr>
+        <td>Folhas amarelando (velhas primeiro)</td>
+        <td>Falta de nitrogênio</td>
+        <td>Verificar concentração da solução</td>
+      </tr>
+      <tr>
+        <td>Folhas amarelando (novas primeiro)</td>
+        <td>Falta de ferro ou pH alto</td>
+        <td>Verificar e ajustar pH</td>
+      </tr>
+      <tr>
+        <td>Pontas queimadas</td>
+        <td>Solução muito concentrada</td>
+        <td>Diluir a solução</td>
+      </tr>
+      <tr>
+        <td>Crescimento muito lento</td>
+        <td>Pouca luz ou solução fraca</td>
+        <td>Mais luz, verificar concentração</td>
+      </tr>
+      <tr>
+        <td>Planta "esticada" (estiolada)</td>
+        <td>Luz insuficiente</td>
+        <td>Mais horas de luz ou luz mais forte</td>
+      </tr>
+      <tr>
+        <td>Raízes marrons</td>
+        <td>Podridão, pouco oxigênio</td>
+        <td>Verificar aeração, trocar solução</td>
+      </tr>
+      <tr>
+        <td>Raízes viscosas</td>
+        <td>Infecção fúngica</td>
+        <td>Tratamento com H2O2, trocar solução</td>
+      </tr>
+      <tr>
+        <td>Algas verdes</td>
+        <td>Luz no reservatório</td>
+        <td>Vedar entradas de luz</td>
+      </tr>
+      <tr>
+        <td>Manchas nas folhas</td>
+        <td>Várias causas possíveis</td>
+        <td>Ver detalhes abaixo</td>
+      </tr>
+    </table>
+
+    <h2>Problemas de Raízes</h2>
+
+    <h3>Raízes Saudáveis vs Doentes</h3>
+    <table>
+      <tr>
+        <th>Raízes Saudáveis</th>
+        <th>Raízes Doentes</th>
+      </tr>
+      <tr>
+        <td>Brancas ou levemente creme</td>
+        <td>Marrons ou pretas</td>
+      </tr>
+      <tr>
+        <td>Firmes ao toque</td>
+        <td>Moles, se desfazem</td>
+      </tr>
+      <tr>
+        <td>Sem cheiro forte</td>
+        <td>Cheiro de podre</td>
+      </tr>
+      <tr>
+        <td>Muitas ramificações</td>
+        <td>Poucas raízes, sem pelos</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 29</div>
+  </div>
+
+  <div class="page">
+    <h2>Tratamento de Podridão Radicular</h2>
+
+    <p>A podridão radicular (causada por fungos como Pythium) é o problema mais grave em hidroponia. Prevenção é melhor que tratamento!</p>
+
+    <h3>Prevenção</h3>
+    <ul>
+      <li>Mantenha a solução entre 18-22°C</li>
+      <li>Garanta boa oxigenação (bolhas no DWC)</li>
+      <li>Não deixe luz entrar no reservatório</li>
+      <li>Use água limpa e equipamentos esterilizados</li>
+    </ul>
+
+    <h3>Tratamento</h3>
+    <div class="step-box">
+      <ol>
+        <li>Remova a planta do sistema</li>
+        <li>Corte todas as raízes marrons/podres</li>
+        <li>Mergulhe raízes restantes em solução de água oxigenada (10ml/L) por 5 minutos</li>
+        <li>Descarte toda a solução do reservatório</li>
+        <li>Limpe o reservatório com água sanitária diluída</li>
+        <li>Enxágue muito bem</li>
+        <li>Prepare nova solução e replante</li>
+        <li>Adicione 3ml de H2O2 por litro na primeira semana</li>
+      </ol>
+    </div>
+
+    <h2>Problemas com Algas</h2>
+
+    <p>Algas competem por nutrientes e oxigênio. Aparecem quando há luz no reservatório.</p>
+
+    <h3>Como Eliminar</h3>
+    <ol>
+      <li>Identifique por onde a luz está entrando</li>
+      <li>Vede com fita preta, papel alumínio ou tinta</li>
+      <li>Troque a solução (as algas mortas apodrecem)</li>
+      <li>Limpe o reservatório antes de reabastecer</li>
+    </ol>
+
+    <h3>Prevenção</h3>
+    <ul>
+      <li>Reservatório 100% opaco</li>
+      <li>Tampa sem frestas</li>
+      <li>Net pot deve vedar bem o furo</li>
+      <li>Substrato cobrindo toda superfície exposta</li>
+    </ul>
+
+    <div class="warning-box">
+      <h4>Algas Não São Sempre Ruins</h4>
+      <p>Um pouco de alga no interior do reservatório (fora de vista) não é problema grave. Só precisa agir se estiver competindo visivelmente com as raízes ou deixando a água verde.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 30</div>
+  </div>
+
+  <div class="page">
+    <h2>Problemas de pH</h2>
+
+    <p>O pH da solução tende a mudar com o tempo. Isso é normal!</p>
+
+    <h3>Por Que o pH Muda?</h3>
+    <ul>
+      <li>Absorção de nutrientes pela planta</li>
+      <li>Evaporação da água</li>
+      <li>Temperatura</li>
+      <li>Qualidade da água original</li>
+    </ul>
+
+    <h3>O Que Fazer</h3>
+    <table>
+      <tr>
+        <th>Situação</th>
+        <th>Ação</th>
+      </tr>
+      <tr>
+        <td>pH subiu levemente (até 7.0)</td>
+        <td>Ajustar com pH Down ou vinagre</td>
+      </tr>
+      <tr>
+        <td>pH caiu levemente (até 5.0)</td>
+        <td>Ajustar com pH Up ou bicarbonato</td>
+      </tr>
+      <tr>
+        <td>pH muito instável</td>
+        <td>Trocar toda a solução</td>
+      </tr>
+      <tr>
+        <td>pH sempre alto desde o início</td>
+        <td>Água da torneira muito dura. Use filtrada.</td>
+      </tr>
+    </table>
+
+    <h2>Pragas em Hidroponia</h2>
+
+    <p>A boa notícia: sem solo, muitas pragas não aparecem! Mas algumas podem surgir:</p>
+
+    <h3>Pulgões</h3>
+    <ul>
+      <li><strong>Sintoma:</strong> Insetos pequenos nas folhas, folhas enrolando</li>
+      <li><strong>Tratamento:</strong> Jato de água forte, óleo de neem, sabão de potássio</li>
+    </ul>
+
+    <h3>Mosca Branca</h3>
+    <ul>
+      <li><strong>Sintoma:</strong> Mosquinhas brancas voando quando mexe na planta</li>
+      <li><strong>Tratamento:</strong> Armadilhas amarelas adesivas, óleo de neem</li>
+    </ul>
+
+    <h3>Fungus Gnats (Mosquinhas do Substrato)</h3>
+    <ul>
+      <li><strong>Sintoma:</strong> Mosquinhas pretas perto do substrato</li>
+      <li><strong>Tratamento:</strong> Deixar substrato secar superficialmente, areia no topo</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>Prevenção de Pragas</h4>
+      <ul>
+        <li>Inspecione mudas antes de usar</li>
+        <li>Não traga plantas de fora sem quarentena</li>
+        <li>Mantenha a área limpa</li>
+        <li>Boa ventilação dificulta pragas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 31</div>
+  </div>
+
+  <div class="page">
+    <h2>Checklist de Manutenção</h2>
+
+    <h3>Diário (30 segundos)</h3>
+    <ul>
+      <li>☐ Plantas parecem saudáveis?</li>
+      <li>☐ Bomba de ar funcionando? (DWC)</li>
+    </ul>
+
+    <h3>A Cada 3 Dias</h3>
+    <ul>
+      <li>☐ Verificar nível da solução</li>
+      <li>☐ Procurar sinais de pragas</li>
+      <li>☐ Checar se há algas</li>
+    </ul>
+
+    <h3>Semanalmente</h3>
+    <ul>
+      <li>☐ Medir pH (se tiver medidor)</li>
+      <li>☐ Verificar raízes (cor, cheiro)</li>
+      <li>☐ Limpar pedra porosa (DWC)</li>
+    </ul>
+
+    <h3>A Cada 2-3 Semanas (DWC)</h3>
+    <ul>
+      <li>☐ Trocar toda a solução</li>
+      <li>☐ Limpar reservatório</li>
+      <li>☐ Verificar mangueiras</li>
+    </ul>
+
+    <h3>Após Cada Colheita</h3>
+    <ul>
+      <li>☐ Descartar solução usada</li>
+      <li>☐ Lavar reservatório</li>
+      <li>☐ Lavar e secar argila expandida</li>
+      <li>☐ Verificar net pots (rachaduras)</li>
+    </ul>
+
+    <h2>Quando Pedir Ajuda</h2>
+
+    <p>Você não precisa resolver tudo sozinho! Busque ajuda se:</p>
+    <ul>
+      <li>Plantas morrendo sem causa aparente</li>
+      <li>Sintomas que não consegue identificar</li>
+      <li>Problemas recorrentes mesmo seguindo as orientações</li>
+    </ul>
+
+    <h3>Onde Buscar Ajuda</h3>
+    <ul>
+      <li>Grupos de Facebook sobre hidroponia</li>
+      <li>Fóruns especializados</li>
+      <li>Canal do YouTube "Horta em Casa"</li>
+      <li>Nosso suporte por email</li>
+    </ul>
+
+    <div class="page-number">Minha Horta em Casa - Página 32</div>
+  </div>
+
+  <!-- MÓDULO 7: SISTEMA NFT E AVANÇADOS -->
+  <div class="page">
+    <h1>Módulo 7: Sistema NFT e Outros Avançados</h1>
+
+    <h2>O Que é Sistema NFT?</h2>
+    <p>NFT (Nutrient Film Technique) é uma técnica onde um filme fino de solução nutritiva flui continuamente por canais inclinados, banhando as raízes das plantas.</p>
+
+    <div class="highlight-box">
+      <h4>Vantagens do NFT</h4>
+      <ul>
+        <li><strong>Alta produtividade:</strong> Ideal para produção em escala</li>
+        <li><strong>Economia de água:</strong> A solução recircula constantemente</li>
+        <li><strong>Raízes bem oxigenadas:</strong> Filme fino permite contato com ar</li>
+        <li><strong>Escalável:</strong> Fácil adicionar mais canais</li>
+      </ul>
+    </div>
+
+    <h2>Componentes do Sistema NFT</h2>
+    <ol>
+      <li><strong>Reservatório:</strong> Armazena a solução nutritiva (30-100L)</li>
+      <li><strong>Bomba d'água:</strong> Envia solução para os canais</li>
+      <li><strong>Canais/Canaletas:</strong> Onde as plantas ficam (tubos PVC ou perfis)</li>
+      <li><strong>Tubulação:</strong> Conecta bomba aos canais</li>
+      <li><strong>Timer:</strong> Controla os ciclos de funcionamento</li>
+      <li><strong>Net pots:</strong> Seguram as plantas nos canais</li>
+    </ol>
+
+    <div class="project-box">
+      <h4>Lista de Materiais para NFT de 6 Plantas</h4>
+      <ul>
+        <li>1 caixa d'água 50L (reservatório)</li>
+        <li>1 bomba submersa 800L/h</li>
+        <li>2 tubos PVC 75mm x 1m ou 1 perfil hidropônico</li>
+        <li>Conexões e cotovelos PVC</li>
+        <li>6 net pots 5cm</li>
+        <li>Mangueira para retorno</li>
+        <li>Timer (opcional)</li>
+      </ul>
+      <p><strong>Custo estimado:</strong> R$ 200-400</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 36</div>
+  </div>
+
+  <div class="page">
+    <h2>Montando um Sistema NFT Caseiro</h2>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Prepare os canais</strong></p>
+      <p>Use tubos PVC de 75mm ou 100mm. Faça furos do tamanho do net pot com serra copo. Espaçamento: 15-20cm para folhosas.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Monte a estrutura</strong></p>
+      <p>Os canais devem ficar INCLINADOS (2-3% de declive). O lado mais alto recebe a solução, o mais baixo retorna ao reservatório.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Instale a bomba</strong></p>
+      <p>Coloque a bomba submersa no reservatório. Conecte mangueira até a entrada do canal (lado alto).</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Configure o retorno</strong></p>
+      <p>A saída do canal (lado baixo) deve drenar de volta para o reservatório por gravidade.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">5</span> <strong>Teste o sistema</strong></p>
+      <p>Ligue a bomba e verifique se a água flui uniformemente por todo o canal. O filme deve ter 2-3mm de profundidade.</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Inclinação Correta é Crucial!</h4>
+      <p><strong>Pouca inclinação:</strong> Água empoça, raízes afogam</p>
+      <p><strong>Muita inclinação:</strong> Água corre rápido demais, não molha as raízes</p>
+      <p><strong>Ideal:</strong> 2-3cm de queda por metro de canal</p>
+    </div>
+
+    <h3>Vazão da Bomba</h3>
+    <table>
+      <tr>
+        <th>Número de Canais</th>
+        <th>Vazão Mínima</th>
+        <th>Bomba Recomendada</th>
+      </tr>
+      <tr><td>1-2 canais</td><td>300 L/h</td><td>Bomba 500L/h</td></tr>
+      <tr><td>3-4 canais</td><td>600 L/h</td><td>Bomba 800L/h</td></tr>
+      <tr><td>5-8 canais</td><td>1000 L/h</td><td>Bomba 1500L/h</td></tr>
+    </table>
+    <div class="page-number">Minha Horta em Casa - Página 37</div>
+  </div>
+
+  <div class="page">
+    <h2>NFT: Manutenção e Cuidados</h2>
+
+    <h3>Verificações Diárias</h3>
+    <ul>
+      <li>☐ Bomba funcionando?</li>
+      <li>☐ Água fluindo em todos os canais?</li>
+      <li>☐ Nível do reservatório adequado?</li>
+    </ul>
+
+    <h3>Verificações Semanais</h3>
+    <ul>
+      <li>☐ pH da solução</li>
+      <li>☐ EC/concentração</li>
+      <li>☐ Raízes saudáveis (brancas)?</li>
+      <li>☐ Limpar filtro da bomba</li>
+    </ul>
+
+    <div class="danger-box">
+      <h4>Risco do NFT: Falha da Bomba</h4>
+      <p>Se a bomba parar, as raízes secam em HORAS! Diferente do DWC (onde ficam na água) ou Kratky, no NFT as plantas dependem totalmente do fluxo contínuo.</p>
+      <p><strong>Soluções:</strong></p>
+      <ul>
+        <li>Tenha uma bomba reserva</li>
+        <li>Use nobreak em regiões com quedas de energia</li>
+        <li>Configure alarme no celular para verificar</li>
+      </ul>
+    </div>
+
+    <h2>Sistema de Torres Verticais</h2>
+    <p>As torres verticais são sistemas NFT ou aeropônicos empilhados verticalmente, maximizando o espaço.</p>
+
+    <div class="project-box">
+      <h4>Tipos de Torres</h4>
+      <table>
+        <tr>
+          <th>Tipo</th>
+          <th>Como Funciona</th>
+          <th>Custo</th>
+        </tr>
+        <tr>
+          <td>Torre de Canos PVC</td>
+          <td>Solução goteja do topo e escorre pela coluna</td>
+          <td>R$ 100-200</td>
+        </tr>
+        <tr>
+          <td>Tower Garden (comercial)</td>
+          <td>Sistema aeropônico vertical pronto</td>
+          <td>R$ 1500-3000</td>
+        </tr>
+        <tr>
+          <td>Torres modulares</td>
+          <td>Vasos empilhados com recirculação</td>
+          <td>R$ 200-500</td>
+        </tr>
+      </table>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 38</div>
+  </div>
+
+  <div class="page">
+    <h2>Projeto: Torre Vertical com Cano PVC</h2>
+    <p><strong>Dificuldade:</strong> ⭐⭐⭐ | <strong>Custo:</strong> R$ 150-250 | <strong>Plantas:</strong> 8-12</p>
+
+    <div class="project-box">
+      <h4>Materiais</h4>
+      <ul>
+        <li>1 tubo PVC 100mm x 1,5m</li>
+        <li>1 tubo PVC 50mm x 2m (coluna central)</li>
+        <li>1 bomba submersa 300L/h</li>
+        <li>1 balde 20L (reservatório)</li>
+        <li>8-12 net pots 5cm</li>
+        <li>Conexões e caps</li>
+      </ul>
+    </div>
+
+    <h3>Montagem</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> No tubo de 100mm, faça furos alternados em espiral para os net pots</p>
+      <p><span class="step-number">2</span> Coloque o tubo de 50mm no centro (para distribuir água)</p>
+      <p><span class="step-number">3</span> Faça furos no tubo central para a água sair</p>
+      <p><span class="step-number">4</span> Monte sobre o balde/reservatório</p>
+      <p><span class="step-number">5</span> Conecte a bomba ao tubo central</p>
+      <p><span class="step-number">6</span> A água sobe, escorre pelo tubo externo e retorna ao balde</p>
+    </div>
+
+    <h2>Aeroponia: O Sistema Mais Avançado</h2>
+    <p>Na aeroponia, as raízes ficam suspensas no ar e recebem nutrientes através de névoa (spray).</p>
+
+    <div class="highlight-box">
+      <h4>Vantagens da Aeroponia</h4>
+      <ul>
+        <li>Crescimento até 3x mais rápido que solo</li>
+        <li>Máxima oxigenação das raízes</li>
+        <li>Economia extrema de água</li>
+      </ul>
+      <h4>Desvantagens</h4>
+      <ul>
+        <li>Custo alto (nebulizadores especiais)</li>
+        <li>Manutenção frequente (entupimentos)</li>
+        <li>Risco alto se sistema falhar</li>
+      </ul>
+    </div>
+
+    <p><strong>Recomendação:</strong> Aeroponia é para cultivadores experientes. Domine Kratky, DWC e NFT antes de tentar.</p>
+    <div class="page-number">Minha Horta em Casa - Página 39</div>
+  </div>
+
+  <div class="page">
+    <h2>Comparativo: Qual Sistema Escolher?</h2>
+
+    <table>
+      <tr>
+        <th>Sistema</th>
+        <th>Complexidade</th>
+        <th>Custo</th>
+        <th>Produção</th>
+        <th>Ideal Para</th>
+      </tr>
+      <tr>
+        <td>Kratky</td>
+        <td>⭐</td>
+        <td>R$ 30-80</td>
+        <td>Média</td>
+        <td>Iniciantes</td>
+      </tr>
+      <tr>
+        <td>DWC</td>
+        <td>⭐⭐</td>
+        <td>R$ 100-200</td>
+        <td>Alta</td>
+        <td>Plantas grandes</td>
+      </tr>
+      <tr>
+        <td>NFT</td>
+        <td>⭐⭐⭐</td>
+        <td>R$ 200-500</td>
+        <td>Muito Alta</td>
+        <td>Produção em escala</td>
+      </tr>
+      <tr>
+        <td>Torres</td>
+        <td>⭐⭐⭐</td>
+        <td>R$ 150-400</td>
+        <td>Alta</td>
+        <td>Espaços pequenos</td>
+      </tr>
+      <tr>
+        <td>Aeroponia</td>
+        <td>⭐⭐⭐⭐⭐</td>
+        <td>R$ 500+</td>
+        <td>Máxima</td>
+        <td>Profissionais</td>
+      </tr>
+    </table>
+
+    <h2>Sistemas Híbridos</h2>
+    <p>Você pode combinar características de diferentes sistemas:</p>
+
+    <div class="step-box">
+      <h4>Kratky + DWC</h4>
+      <p>Use Kratky como base, mas adicione um aerador pequeno para aumentar oxigenação sem precisar trocar toda a estrutura.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>DWC + Recirculação</h4>
+      <p>Conecte múltiplos baldes DWC a um reservatório central. Simplifica a manutenção da solução.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>NFT + Backup Kratky</h4>
+      <p>Projete os canais NFT com reserva de água no fundo. Se a bomba falhar, as plantas sobrevivem em modo Kratky por algumas horas.</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 40</div>
+  </div>
+
+  <!-- MÓDULO 8: ILUMINAÇÃO ARTIFICIAL -->
+  <div class="page">
+    <h1>Módulo 8: Iluminação Artificial</h1>
+
+    <h2>Quando Usar Iluminação Artificial?</h2>
+    <ul>
+      <li>Apartamentos com pouca luz natural</li>
+      <li>Cultivo indoor (dentro de casa/garagem)</li>
+      <li>Complementar luz em dias nublados</li>
+      <li>Cultivo durante o inverno</li>
+      <li>Produção noturna (restaurantes, chefs)</li>
+    </ul>
+
+    <h2>Tipos de Lâmpadas para Cultivo</h2>
+
+    <h3>LED (Recomendado)</h3>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>Eficiência:</strong> Melhor conversão de energia em luz</li>
+        <li><strong>Calor:</strong> Pouco aquecimento</li>
+        <li><strong>Durabilidade:</strong> 50.000+ horas</li>
+        <li><strong>Espectro:</strong> Pode ser específico para plantas</li>
+        <li><strong>Custo inicial:</strong> Médio-alto, mas economia a longo prazo</li>
+      </ul>
+    </div>
+
+    <h3>Fluorescente (T5/T8)</h3>
+    <ul>
+      <li>Baixo custo inicial</li>
+      <li>Bom para mudas e folhosas</li>
+      <li>Pouco calor</li>
+      <li>Menos eficiente que LED</li>
+    </ul>
+
+    <h3>HPS/MH (Sódio/Metálica)</h3>
+    <ul>
+      <li>Alta intensidade</li>
+      <li>Muito calor (precisa ventilação)</li>
+      <li>Alto consumo de energia</li>
+      <li>Usado em cultivos comerciais antigos</li>
+    </ul>
+
+    <div class="warning-box">
+      <h4>Lâmpadas Comuns NÃO Funcionam!</h4>
+      <p>Lâmpadas incandescentes ou LED de casa não são adequadas. Elas não emitem o espectro correto para fotossíntese. Use sempre lâmpadas específicas para cultivo (grow lights).</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 44</div>
+  </div>
+
+  <div class="page">
+    <h2>Entendendo o Espectro de Luz</h2>
+
+    <p>Plantas usam principalmente luz azul e vermelha para fotossíntese:</p>
+
+    <table>
+      <tr>
+        <th>Cor/Espectro</th>
+        <th>Comprimento</th>
+        <th>Função na Planta</th>
+      </tr>
+      <tr>
+        <td style="background:#3b82f6;color:white">Azul</td>
+        <td>400-500nm</td>
+        <td>Crescimento vegetativo, folhas compactas</td>
+      </tr>
+      <tr>
+        <td style="background:#22c55e;color:white">Verde</td>
+        <td>500-600nm</td>
+        <td>Penetra mais no dossel</td>
+      </tr>
+      <tr>
+        <td style="background:#ef4444;color:white">Vermelho</td>
+        <td>600-700nm</td>
+        <td>Floração, frutificação</td>
+      </tr>
+      <tr>
+        <td style="background:#7c2d12;color:white">Infravermelho</td>
+        <td>700-800nm</td>
+        <td>Sinalização de sombra</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Luz "Full Spectrum" vs "Blurple"</h4>
+      <p><strong>Full Spectrum:</strong> Luz branca com todos os espectros. Mais agradável aos olhos, bom para todas as fases.</p>
+      <p><strong>Blurple:</strong> Luz roxa (azul + vermelho). Mais eficiente mas desconfortável visualmente.</p>
+      <p><strong>Recomendação:</strong> Full spectrum para uso doméstico.</p>
+    </div>
+
+    <h2>Quanto de Luz as Plantas Precisam?</h2>
+
+    <h3>Unidades de Medida</h3>
+    <ul>
+      <li><strong>Watts (W):</strong> Consumo de energia (não indica eficiência)</li>
+      <li><strong>Lumens:</strong> Brilho percebido (não é para plantas)</li>
+      <li><strong>PPFD (μmol/m²/s):</strong> Luz útil para fotossíntese (ideal)</li>
+      <li><strong>DLI (mol/m²/dia):</strong> Total de luz diária</li>
+    </ul>
+
+    <h3>PPFD Recomendado por Tipo de Planta</h3>
+    <table>
+      <tr><th>Tipo</th><th>PPFD Mínimo</th><th>Ideal</th></tr>
+      <tr><td>Mudas/Clones</td><td>100-200</td><td>150-200</td></tr>
+      <tr><td>Folhosas (alface)</td><td>200-400</td><td>250-350</td></tr>
+      <tr><td>Ervas aromáticas</td><td>300-500</td><td>400</td></tr>
+      <tr><td>Frutíferas (tomate)</td><td>400-600</td><td>500-600</td></tr>
+    </table>
+    <div class="page-number">Minha Horta em Casa - Página 45</div>
+  </div>
+
+  <div class="page">
+    <h2>Escolhendo a Lâmpada Certa</h2>
+
+    <h3>Regra Prática (sem medidor PPFD)</h3>
+    <table>
+      <tr>
+        <th>Área de Cultivo</th>
+        <th>Potência LED</th>
+        <th>Preço Médio</th>
+      </tr>
+      <tr><td>30x30cm (1-2 plantas)</td><td>20-30W</td><td>R$ 50-100</td></tr>
+      <tr><td>60x60cm (4-6 plantas)</td><td>50-100W</td><td>R$ 150-300</td></tr>
+      <tr><td>90x90cm (9-12 plantas)</td><td>150-200W</td><td>R$ 300-600</td></tr>
+      <tr><td>120x120cm (16+ plantas)</td><td>250-400W</td><td>R$ 500-1200</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica de Economia:</strong> Muitas lâmpadas "1000W" na verdade consomem apenas 100W reais. O que importa é o consumo real (watts reais), não a potência equivalente de marketing.
+    </div>
+
+    <h2>Distância da Lâmpada</h2>
+
+    <table>
+      <tr>
+        <th>Estágio</th>
+        <th>Distância LED</th>
+        <th>Sinal de Problema</th>
+      </tr>
+      <tr><td>Mudas</td><td>40-60cm</td><td>Folhas queimando = muito perto</td></tr>
+      <tr><td>Vegetativo</td><td>30-45cm</td><td>Estiolamento = muito longe</td></tr>
+      <tr><td>Floração</td><td>20-40cm</td><td>Branqueamento = muito intenso</td></tr>
+    </table>
+
+    <h2>Fotoperíodo (Horas de Luz)</h2>
+
+    <table>
+      <tr>
+        <th>Tipo de Planta</th>
+        <th>Horas de Luz</th>
+        <th>Horas de Escuro</th>
+      </tr>
+      <tr><td>Folhosas (alface, rúcula)</td><td>14-18h</td><td>6-10h</td></tr>
+      <tr><td>Ervas (manjericão)</td><td>14-16h</td><td>8-10h</td></tr>
+      <tr><td>Frutíferas vegetativas</td><td>16-18h</td><td>6-8h</td></tr>
+      <tr><td>Frutíferas em floração</td><td>12h</td><td>12h</td></tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>Plantas Precisam de Escuro!</h4>
+      <p>O período de escuro é essencial. Plantas "respiram" e processam energia à noite. Luz 24h estressa e pode matar.</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 46</div>
+  </div>
+
+  <div class="page">
+    <h2>Montando um Setup de Iluminação</h2>
+
+    <div class="project-box">
+      <h4>Setup Básico para 4 Alfaces</h4>
+      <ul>
+        <li>1 painel LED 50W full spectrum</li>
+        <li>1 timer mecânico ou digital</li>
+        <li>Ganchos ou suporte ajustável</li>
+        <li>Área: 40x40cm</li>
+      </ul>
+      <p><strong>Custo total:</strong> R$ 150-250</p>
+      <p><strong>Consumo:</strong> ~R$ 15-25/mês de energia</p>
+    </div>
+
+    <h3>Passo a Passo</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> Escolha o local (garagem, armário, prateleira)</p>
+      <p><span class="step-number">2</span> Instale o painel LED a 40cm de altura</p>
+      <p><span class="step-number">3</span> Configure o timer para 16h ligado, 8h desligado</p>
+      <p><span class="step-number">4</span> Posicione suas plantas embaixo</p>
+      <p><span class="step-number">5</span> Ajuste altura conforme crescimento</p>
+    </div>
+
+    <h2>Marcas e Onde Comprar</h2>
+
+    <h3>Marcas Recomendadas (Brasil)</h3>
+    <ul>
+      <li><strong>Mars Hydro:</strong> Bom custo-benefício, fácil encontrar</li>
+      <li><strong>Quantum Board:</strong> Alta eficiência, mais caro</li>
+      <li><strong>King LED:</strong> Entrada, preço baixo</li>
+      <li><strong>Spider Farmer:</strong> Premium, excelente qualidade</li>
+    </ul>
+
+    <h3>Onde Comprar</h3>
+    <ul>
+      <li>Mercado Livre (verificar vendedores confiáveis)</li>
+      <li>Lojas especializadas em grow</li>
+      <li>AliExpress (mais barato, demora entrega)</li>
+      <li>Amazon Brasil</li>
+    </ul>
+
+    <div class="tip-box">
+      <strong>Cuidado com Falsificações:</strong> Lâmpadas LED muito baratas podem ser falsificadas ou de baixa qualidade. Prefira vendedores com boas avaliações.
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 47</div>
+  </div>
+
+  <!-- MÓDULO 9: AUTOMAÇÃO -->
+  <div class="page">
+    <h1>Módulo 9: Automação Caseira</h1>
+
+    <h2>Por Que Automatizar?</h2>
+    <ul>
+      <li><strong>Consistência:</strong> Máquinas não esquecem</li>
+      <li><strong>Férias:</strong> Sistema funciona sozinho</li>
+      <li><strong>Otimização:</strong> Controle preciso de variáveis</li>
+      <li><strong>Economia:</strong> Menos desperdício de recursos</li>
+    </ul>
+
+    <h2>Níveis de Automação</h2>
+
+    <h3>Nível 1: Básico (R$ 30-100)</h3>
+    <div class="step-box">
+      <ul>
+        <li>Timer mecânico para luzes</li>
+        <li>Timer para bomba (NFT)</li>
+        <li>Boia de nível manual</li>
+      </ul>
+    </div>
+
+    <h3>Nível 2: Intermediário (R$ 100-300)</h3>
+    <div class="step-box">
+      <ul>
+        <li>Timer digital programável</li>
+        <li>Dosador automático de nutrientes</li>
+        <li>Sensor de nível com alarme</li>
+        <li>Termômetro/higrômetro digital</li>
+      </ul>
+    </div>
+
+    <h3>Nível 3: Avançado (R$ 300-1000+)</h3>
+    <div class="step-box">
+      <ul>
+        <li>Controlador de pH automático</li>
+        <li>Dosador peristáltico</li>
+        <li>Sensores conectados via WiFi</li>
+        <li>Arduino/ESP32 com automação customizada</li>
+        <li>Monitoramento remoto por app</li>
+      </ul>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 50</div>
+  </div>
+
+  <div class="page">
+    <h2>Timer: O Básico da Automação</h2>
+
+    <h3>Tipos de Timer</h3>
+    <table>
+      <tr>
+        <th>Tipo</th>
+        <th>Precisão</th>
+        <th>Preço</th>
+        <th>Ideal Para</th>
+      </tr>
+      <tr>
+        <td>Mecânico</td>
+        <td>15 min</td>
+        <td>R$ 20-40</td>
+        <td>Luzes, bombas simples</td>
+      </tr>
+      <tr>
+        <td>Digital simples</td>
+        <td>1 min</td>
+        <td>R$ 40-80</td>
+        <td>Ciclos precisos</td>
+      </tr>
+      <tr>
+        <td>Digital programável</td>
+        <td>1 seg</td>
+        <td>R$ 80-150</td>
+        <td>Múltiplos ciclos/dia</td>
+      </tr>
+      <tr>
+        <td>Smart (WiFi)</td>
+        <td>1 seg</td>
+        <td>R$ 50-150</td>
+        <td>Controle remoto</td>
+      </tr>
+    </table>
+
+    <h3>Configurações Comuns de Timer</h3>
+
+    <div class="step-box">
+      <h4>Para Iluminação (Folhosas)</h4>
+      <p>Liga: 06:00 | Desliga: 22:00 (16h de luz)</p>
+    </div>
+
+    <div class="step-box">
+      <h4>Para Bomba NFT</h4>
+      <p>Ciclo: 15 min ligado, 15 min desligado (durante o dia)</p>
+      <p>Noite: Pode desligar ou reduzir ciclos</p>
+    </div>
+
+    <div class="step-box">
+      <h4>Para Aerador DWC</h4>
+      <p>Recomendação: 24h ligado (baixo consumo)</p>
+      <p>Ou: 30 min ligado, 30 min desligado</p>
+    </div>
+
+    <h2>Sensor de Nível Automático</h2>
+    <p>Evita que o reservatório seque. Tipos:</p>
+    <ul>
+      <li><strong>Boia mecânica:</strong> Abre/fecha válvula (R$ 20-50)</li>
+      <li><strong>Sensor ultrassônico:</strong> Mede distância até água (R$ 30-80)</li>
+      <li><strong>Sensor de condutividade:</strong> Detecta presença de água (R$ 20-40)</li>
+    </ul>
+    <div class="page-number">Minha Horta em Casa - Página 51</div>
+  </div>
+
+  <div class="page">
+    <h2>Dosadores Automáticos</h2>
+
+    <h3>Bomba Peristáltica</h3>
+    <p>Doseia líquidos com precisão. Ideal para adicionar nutrientes ou ajustar pH automaticamente.</p>
+
+    <div class="project-box">
+      <h4>Projeto: Dosador de Nutrientes DIY</h4>
+      <ul>
+        <li>1 bomba peristáltica 12V (R$ 40-80)</li>
+        <li>1 relé 12V</li>
+        <li>1 fonte 12V</li>
+        <li>1 timer ou Arduino</li>
+        <li>Mangueira de silicone</li>
+      </ul>
+      <p><strong>Funcionamento:</strong> O timer aciona a bomba por X segundos por dia, dosando quantidade precisa de solução concentrada.</p>
+    </div>
+
+    <h2>Monitoramento Remoto</h2>
+
+    <h3>Opções Simples</h3>
+    <ul>
+      <li><strong>Câmera WiFi:</strong> Visualizar plantas remotamente (R$ 80-200)</li>
+      <li><strong>Tomada smart:</strong> Ligar/desligar equipamentos pelo celular</li>
+      <li><strong>Sensor de temperatura WiFi:</strong> Alertas de temperatura extrema</li>
+    </ul>
+
+    <h3>Opções Avançadas</h3>
+    <ul>
+      <li><strong>Arduino + ESP32:</strong> Sistema customizado de sensores</li>
+      <li><strong>Raspberry Pi:</strong> Servidor completo de monitoramento</li>
+      <li><strong>Blynk/Tuya:</strong> Plataformas de automação</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>Projeto Iniciante: Alerta de Nível Baixo</h4>
+      <p>Use um sensor de nível conectado a uma tomada smart. Configure para enviar notificação quando o nível cair. Custo: ~R$ 100</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 52</div>
+  </div>
+
+  <div class="page">
+    <h2>Automação com Arduino (Para os Curiosos)</h2>
+
+    <p>O Arduino é uma plataforma de eletrônica acessível que permite criar sistemas personalizados.</p>
+
+    <h3>O Que Você Pode Automatizar</h3>
+    <ul>
+      <li>Medição contínua de pH, EC, temperatura</li>
+      <li>Ajuste automático de pH</li>
+      <li>Dosagem de nutrientes baseada em EC</li>
+      <li>Controle de luzes por horário e intensidade</li>
+      <li>Alertas por SMS ou push notification</li>
+      <li>Data logging (histórico de medições)</li>
+    </ul>
+
+    <h3>Kit Básico Arduino para Hidroponia</h3>
+    <div class="project-box">
+      <ul>
+        <li>1 Arduino Uno ou ESP32 (R$ 40-80)</li>
+        <li>1 Módulo relé 4 canais (R$ 20-30)</li>
+        <li>1 Sensor de temperatura DS18B20 (R$ 15)</li>
+        <li>1 Sensor de nível (R$ 10)</li>
+        <li>Display LCD ou OLED (R$ 25-40)</li>
+        <li>Fonte 5V (R$ 15)</li>
+      </ul>
+      <p><strong>Custo total:</strong> R$ 130-200</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Aviso para Iniciantes</h4>
+      <p>Automação com Arduino requer conhecimentos de programação e eletrônica. Se nunca mexeu com isso, comece com timers e sensores prontos. Evolua para Arduino depois de dominar a hidroponia básica.</p>
+    </div>
+
+    <h2>Checklist de Automação por Nível</h2>
+    <table>
+      <tr>
+        <th>Equipamento</th>
+        <th>Iniciante</th>
+        <th>Intermediário</th>
+        <th>Avançado</th>
+      </tr>
+      <tr><td>Timer para luz</td><td>✅</td><td>✅</td><td>✅</td></tr>
+      <tr><td>Timer para bomba</td><td>-</td><td>✅</td><td>✅</td></tr>
+      <tr><td>Sensor nível</td><td>-</td><td>✅</td><td>✅</td></tr>
+      <tr><td>Dosador automático</td><td>-</td><td>-</td><td>✅</td></tr>
+      <tr><td>pH automático</td><td>-</td><td>-</td><td>✅</td></tr>
+      <tr><td>Monitoramento WiFi</td><td>-</td><td>Opcional</td><td>✅</td></tr>
+    </table>
+    <div class="page-number">Minha Horta em Casa - Página 53</div>
+  </div>
+
+  <!-- BÔNUS 1: FAQ -->
+  <div class="page">
+    <h1>Bônus 1: 30 Perguntas Frequentes</h1>
+
+    <div class="step-box">
+      <h4>1. Preciso usar solução nutritiva especial ou posso usar adubo comum?</h4>
+      <p>Soluções especiais para hidroponia são recomendadas. Adubos comuns podem entupir sistemas e não têm todos os micronutrientes. Se não encontrar, use fertilizante solúvel de boa qualidade.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>2. A água da torneira serve?</h4>
+      <p>Pode usar, mas deixe descansar 24h para o cloro evaporar. Água filtrada ou de chuva é melhor. Se sua água for muito dura (calcária), considere filtrar.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>3. Quanto tempo até colher a primeira alface?</h4>
+      <p>Em hidroponia, 30-40 dias da muda ao ponto de colheita. Se germinar da semente, adicione 2-3 semanas.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>4. Posso deixar a bomba ligada 24 horas?</h4>
+      <p>No DWC (aerador): Sim, pode e é recomendado. No NFT (bomba d'água): Pode, mas ciclos de 15/15 minutos economizam energia e funcionam bem.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>5. Minha alface ficou amarga. Por quê?</h4>
+      <p>Geralmente por estresse: muito calor, pouca água, floração precoce ou solução muito concentrada. Colha mais cedo e proteja do calor intenso.</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 56</div>
+  </div>
+
+  <div class="page">
+    <div class="step-box">
+      <h4>6. Posso usar mudas compradas em supermercado?</h4>
+      <p>Sim! Retire do solo, lave muito bem as raízes e transfira para a hidroponia. Funciona perfeitamente.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>7. As raízes estão marrons. A planta vai morrer?</h4>
+      <p>Raízes levemente amarronzadas podem ser manchadas pelo nutriente (normal). Se estiverem viscosas e com cheiro ruim, é podridão - trate urgentemente.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>8. Preciso medir pH todo dia?</h4>
+      <p>Não. No início, meça a cada 2-3 dias para aprender o padrão. Depois, uma vez por semana é suficiente para sistemas estáveis.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>9. Posso misturar plantas diferentes no mesmo sistema?</h4>
+      <p>Sim, desde que tenham necessidades similares de pH e EC. Folhosas juntas, frutíferas juntas. Não misture alface (EC 1.0) com tomate (EC 2.5).</p>
+    </div>
+
+    <div class="step-box">
+      <h4>10. A hidroponia funciona no inverno?</h4>
+      <p>Sim! É até mais fácil (menos calor = menos problemas). Algumas plantas crescem mais devagar, mas funciona bem.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>11. Posso usar adubo orgânico na hidroponia?</h4>
+      <p>Tecnicamente sim (chamado "bioponia"), mas é muito mais complexo. Os nutrientes orgânicos precisam ser decompostos por bactérias primeiro. Não recomendado para iniciantes.</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 57</div>
+  </div>
+
+  <div class="page">
+    <div class="step-box">
+      <h4>12. A garrafa PET é segura para cultivar alimentos?</h4>
+      <p>PET (nº 1) é seguro se não for exposto a calor extremo. Evite garrafas amassadas ou reutilizadas muitas vezes. PP (nº 5) é ainda mais seguro.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>13. Quanto gasto de energia elétrica?</h4>
+      <p>Kratky: Zero (sem bomba). DWC com aerador: ~R$ 5-10/mês. NFT com bomba: ~R$ 15-30/mês. LED 50W 16h/dia: ~R$ 20-30/mês.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>14. Posso viajar e deixar o sistema sozinho?</h4>
+      <p>Kratky: Até 2 semanas sem problemas. DWC/NFT: Precisa de alguém para verificar a cada 2-3 dias ou automação.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>15. Mosquitos aparecem na hidroponia?</h4>
+      <p>Não os mosquitos comuns (precisam de água parada com matéria orgânica). Podem aparecer mosquinhas de fungo se tiver substrato úmido.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>16. O que fazer se faltar luz por algumas horas?</h4>
+      <p>Luz natural: Sem problema. Luz artificial: Até 6h sem luz não causa danos. Mais que isso, as plantas crescem mais devagar.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>17. Posso cultivar tomate no sistema Kratky?</h4>
+      <p>Possível, mas não ideal. Tomate precisa de muito volume (15-20L) e pode não haver água suficiente para completar o ciclo. DWC é melhor.</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 58</div>
+  </div>
+
+  <div class="page">
+    <div class="step-box">
+      <h4>18. Como saber se a solução está forte demais?</h4>
+      <p>Sinais: pontas das folhas queimadas, crescimento lento, folhas escurecendo. Se não tem medidor de EC, dilua a solução pela metade.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>19. A água evaporou e ficou só um pouco. Completo?</h4>
+      <p>Kratky: Não complete (as raízes aéreas vão afogar). DWC: Pode completar com solução fresca.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>20. Preciso de estufa para hidroponia?</h4>
+      <p>Não necessariamente. Uma área coberta com boa luz é suficiente. Estufa ajuda no inverno ou locais muito chuvosos.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>21. A argila expandida pode ser reutilizada?</h4>
+      <p>Sim! Lave bem, deixe de molho em água com um pouco de vinagre por 1h, enxágue e seque ao sol. Dura anos.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>22. Posso usar pedras de aquário no lugar de argila?</h4>
+      <p>Sim, desde que sejam inertes (não alterem pH). Cascalho de rio ou seixos funcionam. Evite calcário.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>23. A alface da hidroponia tem menos nutrientes?</h4>
+      <p>Não! Estudos mostram que tem igual ou mais nutrientes que a convencional. Você controla exatamente o que a planta recebe.</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 59</div>
+  </div>
+
+  <div class="page">
+    <div class="step-box">
+      <h4>24. Posso usar água de ar condicionado?</h4>
+      <p>Sim! É água destilada, muito pura. Ideal para hidroponia. Só garanta que não tenha contaminação do equipamento.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>25. Quanto custa iniciar uma hidroponia?</h4>
+      <p>Sistema Kratky básico: R$ 30-80. DWC: R$ 100-200. NFT caseiro: R$ 200-400. Você pode começar com garrafa PET por R$ 10!</p>
+    </div>
+
+    <div class="step-box">
+      <h4>26. Crianças podem ajudar no cultivo?</h4>
+      <p>Sim! É um excelente projeto educacional. Supervisione o manuseio da solução nutritiva e equipamentos elétricos.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>27. Posso vender o que produzo?</h4>
+      <p>Para venda formal, precisa de licença sanitária e seguir normas. Para vizinhos e feiras informais, geralmente não há problema.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>28. Qual o melhor horário para colher?</h4>
+      <p>De manhã cedo, quando as plantas estão mais hidratadas e o açúcar está alto (fotossíntese do dia anterior).</p>
+    </div>
+
+    <div class="step-box">
+      <h4>29. Posso usar o mesmo sistema para plantas diferentes em sequência?</h4>
+      <p>Sim! Troque a solução entre cultivos e lave o sistema. Não precisa trocar equipamentos.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>30. Por onde devo começar?</h4>
+      <p>Um Kratky com alface no pote de sorvete! É simples, barato e perdoa erros. Depois de uma colheita bem sucedida, expanda.</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 60</div>
+  </div>
+
+  <!-- BÔNUS 2: CALENDÁRIO -->
+  <div class="page">
+    <h1>Bônus 2: Calendário e Planejamento</h1>
+
+    <h2>Calendário de Plantio Hidropônico</h2>
+    <p>A hidroponia permite cultivo o ano todo, mas algumas plantas preferem certas épocas:</p>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Melhor Época</th>
+        <th>Evitar</th>
+      </tr>
+      <tr><td>Alface</td><td>Ano todo (preferência outono/inverno)</td><td>Calor extremo >30°C</td></tr>
+      <tr><td>Rúcula</td><td>Outono, inverno, primavera</td><td>Verão intenso</td></tr>
+      <tr><td>Manjericão</td><td>Primavera, verão</td><td>Frio <15°C</td></tr>
+      <tr><td>Tomate</td><td>Primavera, verão</td><td>Inverno (sem aquecimento)</td></tr>
+      <tr><td>Hortelã</td><td>Ano todo</td><td>-</td></tr>
+      <tr><td>Couve</td><td>Ano todo (preferência frio)</td><td>-</td></tr>
+      <tr><td>Morango</td><td>Outono, inverno, primavera</td><td>Verão intenso</td></tr>
+    </table>
+
+    <h2>Planejamento de Produção Contínua</h2>
+
+    <div class="highlight-box">
+      <h4>Sistema de Escalonamento</h4>
+      <p>Para ter alface toda semana, plante novas mudas a cada 7-10 dias:</p>
+      <ul>
+        <li><strong>Semana 1:</strong> Plante 2 mudas</li>
+        <li><strong>Semana 2:</strong> Plante mais 2 mudas</li>
+        <li><strong>Semana 3:</strong> Plante mais 2 mudas</li>
+        <li><strong>Semana 4:</strong> Plante mais 2 mudas</li>
+        <li><strong>Semana 5:</strong> Colha as primeiras, plante novas no lugar</li>
+      </ul>
+      <p>Resultado: Colheita contínua toda semana!</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 62</div>
+  </div>
+
+  <div class="page">
+    <h2>Planilha de Controle (Modelo)</h2>
+
+    <table>
+      <tr>
+        <th>Data</th>
+        <th>Planta</th>
+        <th>pH</th>
+        <th>EC</th>
+        <th>Nível Água</th>
+        <th>Observações</th>
+      </tr>
+      <tr><td>__/__</td><td>_____</td><td>___</td><td>___</td><td>___</td><td>_________</td></tr>
+      <tr><td>__/__</td><td>_____</td><td>___</td><td>___</td><td>___</td><td>_________</td></tr>
+      <tr><td>__/__</td><td>_____</td><td>___</td><td>___</td><td>___</td><td>_________</td></tr>
+      <tr><td>__/__</td><td>_____</td><td>___</td><td>___</td><td>___</td><td>_________</td></tr>
+    </table>
+
+    <h2>Custos e Retorno do Investimento</h2>
+
+    <h3>Sistema Kratky (4 plantas)</h3>
+    <table>
+      <tr><th>Item</th><th>Custo Inicial</th><th>Custo Mensal</th></tr>
+      <tr><td>Estrutura</td><td>R$ 50</td><td>-</td></tr>
+      <tr><td>Solução nutritiva</td><td>R$ 30</td><td>R$ 10</td></tr>
+      <tr><td>Mudas</td><td>-</td><td>R$ 8</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>R$ 80</strong></td><td><strong>R$ 18</strong></td></tr>
+    </table>
+
+    <h3>Produção Esperada</h3>
+    <p>4 alfaces/mês = R$ 24-36 (valor de mercado)</p>
+    <p><strong>Economia mensal:</strong> R$ 6-18</p>
+    <p><strong>Retorno do investimento:</strong> 4-5 meses</p>
+
+    <div class="highlight-box">
+      <h4>Quanto Maior a Escala, Maior a Economia</h4>
+      <p>Com 12 plantas (caixa organizadora): investimento R$ 150, economia R$ 50+/mês. Payback em 3 meses!</p>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 63</div>
+  </div>
+
+  <div class="page">
+    <h2>Checklist do Iniciante em Hidroponia</h2>
+
+    <h3>Antes de Começar</h3>
+    <ul>
+      <li>☐ Li todo este guia (ou pelo menos módulos 1-2)</li>
+      <li>☐ Escolhi o sistema (Kratky para iniciante)</li>
+      <li>☐ Defini onde vou montar (local com 6h+ de luz)</li>
+      <li>☐ Comprei ou separei os materiais</li>
+    </ul>
+
+    <h3>Montagem</h3>
+    <ul>
+      <li>☐ Reservatório preparado (opaco)</li>
+      <li>☐ Net pot encaixa na tampa</li>
+      <li>☐ Argila expandida lavada</li>
+      <li>☐ Solução nutritiva preparada</li>
+      <li>☐ Muda pronta (raízes limpas)</li>
+    </ul>
+
+    <h3>Primeiro Mês</h3>
+    <ul>
+      <li>☐ Verificar plantas diariamente (visual)</li>
+      <li>☐ Anotar observações</li>
+      <li>☐ Não mexer demais! Deixe as plantas em paz</li>
+      <li>☐ Fotografar semanalmente para comparar</li>
+    </ul>
+
+    <h3>Após Primeira Colheita</h3>
+    <ul>
+      <li>☐ Celebrar a conquista!</li>
+      <li>☐ Anotar o que funcionou e o que não funcionou</li>
+      <li>☐ Planejar próximo ciclo (mais plantas? Sistema maior?)</li>
+      <li>☐ Considerar expandir para DWC</li>
+    </ul>
+
+    <div class="tip-box">
+      <strong>Lembre-se:</strong> Todo especialista já foi iniciante. Seus erros são aprendizado. Continue tentando!
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 64</div>
+  </div>
+
+  <!-- CONCLUSÃO -->
+  <div class="page">
+    <h1>Conclusão: Seu Próximo Passo</h1>
+
+    <h2>Resumo do Que Você Aprendeu</h2>
+    <ul>
+      <li>✅ Fundamentos da hidroponia e tipos de sistemas</li>
+      <li>✅ Como montar um sistema Kratky passo a passo</li>
+      <li>✅ Como montar um sistema DWC</li>
+      <li>✅ Preparar e manter solução nutritiva</li>
+      <li>✅ Quais plantas cultivar e suas necessidades</li>
+      <li>✅ Diagnosticar e resolver problemas comuns</li>
+    </ul>
+
+    <h2>Plano de Ação Recomendado</h2>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Esta semana</strong></p>
+      <p>Monte seu primeiro Kratky com alface ou erva. Use materiais que já tem em casa (garrafa PET, pote de sorvete).</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span></p>
+      <p>Documente o progresso. Tire fotos semanais. Anote o que funciona e o que não funciona.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span></p>
+      <p>Após primeira colheita bem sucedida, expanda: mais unidades Kratky ou evolua para DWC.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span></p>
+      <p>Experimente plantas diferentes. Cada planta ensina algo novo.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h3>Você Vai Errar - E Tudo Bem!</h3>
+      <p>Todo cultivador experiente já perdeu plantas. Cada erro é uma lição. O importante é começar, observar e ajustar. Com o tempo, você desenvolve intuição e suas plantas prosperam.</p>
+    </div>
+
+    <h2>Economia Estimada</h2>
+    <p>Com um sistema Kratky de 6 alfaces (custo ~R$ 60), você colhe R$ 30-40 em alface por mês. Em 2 meses o sistema se paga e daí em diante é economia pura!</p>
+
+    <p><strong>Bom cultivo!</strong></p>
+    <p>Equipe Minha Horta em Casa</p>
+
+    <div class="page-number">Minha Horta em Casa - Página 65</div>
+  </div>
+
+</body>
+</html>

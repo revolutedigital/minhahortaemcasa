@@ -1,0 +1,2639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit Horta Vertical Completo - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.6; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 42px; font-weight: 800; color: #15803d; margin-bottom: 20px; line-height: 1.2; }
+    .cover .subtitle { font-size: 22px; color: #166534; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #15803d; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #22c55e; }
+    h1 { font-size: 36px; color: #15803d; margin-bottom: 20px; border-bottom: 3px solid #22c55e; padding-bottom: 10px; }
+    h2 { font-size: 28px; color: #166534; margin: 30px 0 15px; }
+    h3 { font-size: 22px; color: #15803d; margin: 25px 0 12px; }
+    h4 { font-size: 18px; color: #166534; margin: 15px 0 10px; }
+    p { margin-bottom: 15px; font-size: 16px; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid #22c55e; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .danger-box { background: linear-gradient(135deg, #fee2e2, #fecaca); border-left: 4px solid #ef4444; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .step-box { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .step-box h4 { color: #15803d; margin-bottom: 10px; border-bottom: 1px solid #bbf7d0; padding-bottom: 8px; }
+    .project-box { background: linear-gradient(135deg, #eff6ff, #dbeafe); border: 2px solid #3b82f6; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .project-box h4 { color: #1d4ed8; margin-bottom: 10px; }
+    .materials-box { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border: 2px solid #a855f7; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .materials-box h4 { color: #7c3aed; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #d1d5db; padding: 10px; text-align: left; }
+    th { background: #15803d; color: white; }
+    tr:nth-child(even) { background: #f0fdf4; }
+    .toc { background: #f8fafc; padding: 30px; border-radius: 12px; margin: 30px 0; }
+    .toc h2 { border-bottom: none; margin-top: 0; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dashed #d1d5db; }
+    .module-header { background: linear-gradient(135deg, #15803d, #22c55e); color: white; padding: 30px; border-radius: 12px; margin: 40px 0 30px; text-align: center; }
+    .module-header h2 { color: white; border-bottom: none; margin: 0; }
+    .module-header p { color: #bbf7d0; margin: 10px 0 0; }
+    .checklist { background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    .checklist li { list-style: none; padding-left: 30px; position: relative; }
+    .checklist li:before { content: "☐"; position: absolute; left: 0; color: #22c55e; font-size: 18px; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; }
+    @media print { .page { page-break-after: always; } }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGrad5)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGrad5)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/><ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/><ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs>
+          <linearGradient id="potGrad5" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bodyGrad5" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Kit Horta Vertical Completo</h1>
+    <p class="subtitle">Monte sua parede verde passo a passo!</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <h1>Sumário do Kit</h1>
+    <p>Este kit contém 4 guias completos para você montar sua horta vertical do zero, independente do seu espaço ou orçamento.</p>
+
+    <div class="toc">
+      <h2>Conteúdo do Kit</h2>
+      <ul>
+        <li><strong>Guia 1:</strong> Horta Vertical Profissional (Páginas 3-15)</li>
+        <li><strong>Guia 2:</strong> Projeto Pallet Verde (Páginas 16-21)</li>
+        <li><strong>Guia 3:</strong> Irrigação para Verticais (Páginas 22-25)</li>
+        <li><strong>Guia 4:</strong> Kit Garrafa PET (Páginas 26-29)</li>
+        <li><strong>Bônus 1:</strong> Mapa de Plantio Vertical (Páginas 30-32)</li>
+        <li><strong>Bônus 2:</strong> Guia de Manutenção Sazonal (Páginas 33-34)</li>
+        <li><strong>Bônus 3:</strong> Guia Completo de 30 Plantas (Páginas 35-37)</li>
+        <li><strong>Bônus 4:</strong> Troubleshooting - 20 Problemas Resolvidos (Páginas 38-40)</li>
+      </ul>
+    </div>
+
+    <h3>Por que Horta Vertical?</h3>
+    <ul>
+      <li><strong>Espaço mínimo:</strong> Até 20 plantas em 1m² de parede</li>
+      <li><strong>Estética:</strong> Transforma qualquer ambiente</li>
+      <li><strong>Praticidade:</strong> Temperos na altura das mãos</li>
+      <li><strong>Economia:</strong> Menos gasto com supermercado</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>O que você vai conseguir:</h4>
+      <ul>
+        <li>Montar sua horta vertical em 1 fim de semana</li>
+        <li>Escolher o modelo ideal para seu espaço</li>
+        <li>Irrigar corretamente sem desperdiçar água</li>
+        <li>Cultivar ervas frescas o ano todo</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Kit Horta Vertical - Página 2</div>
+  </div>
+
+  <!-- ==================== GUIA 1: HORTA VERTICAL PROFISSIONAL ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 1: Horta Vertical Profissional</h2>
+      <p>Tudo sobre sistemas verticais - do básico ao avançado</p>
+    </div>
+
+    <h2>Capítulo 1: Fundamentos da Horta Vertical</h2>
+
+    <h3>1.1 O que é uma Horta Vertical?</h3>
+    <p>Uma horta vertical é um sistema de cultivo que aproveita o espaço vertical (paredes, grades, estruturas) em vez do horizontal. É a solução perfeita para apartamentos, varandas pequenas e áreas urbanas.</p>
+
+    <h3>1.2 Vantagens do Cultivo Vertical</h3>
+    <table>
+      <tr>
+        <th>Vantagem</th>
+        <th>Benefício Prático</th>
+      </tr>
+      <tr>
+        <td>Economia de espaço</td>
+        <td>Até 10x mais plantas por m²</td>
+      </tr>
+      <tr>
+        <td>Menos pragas</td>
+        <td>Plantas elevadas = menos acesso para insetos rasteiros</td>
+      </tr>
+      <tr>
+        <td>Ergonomia</td>
+        <td>Colheita sem se abaixar</td>
+      </tr>
+      <tr>
+        <td>Decoração</td>
+        <td>Parede verde = ambiente mais bonito</td>
+      </tr>
+      <tr>
+        <td>Drenagem natural</td>
+        <td>Água escorre por gravidade</td>
+      </tr>
+    </table>
+
+    <h3>1.3 Avaliando seu Espaço</h3>
+    <p>Antes de escolher o modelo, avalie:</p>
+
+    <div class="checklist">
+      <h4>Checklist de Avaliação:</h4>
+      <ul>
+        <li>Quantas horas de sol direto o local recebe?</li>
+        <li>A parede/estrutura suporta peso?</li>
+        <li>Há ponto de água próximo?</li>
+        <li>O local é protegido de vento forte?</li>
+        <li>Qual o tamanho disponível (altura x largura)?</li>
+        <li>É área externa ou interna?</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 3</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 2: Os 6 Modelos de Estrutura</h2>
+
+    <h3>Modelo 1: Treliça com Vasos Pendurados</h3>
+    <div class="step-box">
+      <h4>Características</h4>
+      <ul>
+        <li><strong>Dificuldade:</strong> Fácil</li>
+        <li><strong>Custo:</strong> R$ 50-150</li>
+        <li><strong>Capacidade:</strong> 8-15 vasos</li>
+        <li><strong>Melhor para:</strong> Iniciantes, locatários (não fura parede)</li>
+      </ul>
+      <h4>Materiais:</h4>
+      <ul>
+        <li>1 treliça de madeira ou metal (100x150cm)</li>
+        <li>10-15 ganchos em S</li>
+        <li>10-15 vasos com alça ou furos laterais</li>
+        <li>Fita de fixação ou parafusos</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Fixe a treliça na parede com buchas e parafusos (ou apoie em estrutura)</li>
+        <li>Distribua os ganchos S nas intersecções da treliça</li>
+        <li>Pendure os vasos nos ganchos</li>
+        <li>Organize por necessidade de luz (sol em cima, sombra embaixo)</li>
+      </ol>
+    </div>
+
+    <h3>Modelo 2: Prateleiras Escalonadas</h3>
+    <div class="step-box">
+      <h4>Características</h4>
+      <ul>
+        <li><strong>Dificuldade:</strong> Fácil</li>
+        <li><strong>Custo:</strong> R$ 80-200</li>
+        <li><strong>Capacidade:</strong> 12-20 vasos</li>
+        <li><strong>Melhor para:</strong> Varandas, sacadas</li>
+      </ul>
+      <h4>Materiais:</h4>
+      <ul>
+        <li>Estante escada de madeira ou metal</li>
+        <li>Vasos de diversos tamanhos</li>
+        <li>Pratinhos coletores</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Posicione a estante no local com melhor luz</li>
+        <li>Coloque vasos maiores nas prateleiras inferiores</li>
+        <li>Vasos menores nas superiores</li>
+        <li>Use pratinhos para evitar gotejamento</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 4</div>
+  </div>
+
+  <div class="page">
+    <h3>Modelo 3: Jardim de Bolsos (Feltro)</h3>
+    <div class="step-box">
+      <h4>Características</h4>
+      <ul>
+        <li><strong>Dificuldade:</strong> Médio</li>
+        <li><strong>Custo:</strong> R$ 100-300</li>
+        <li><strong>Capacidade:</strong> 15-36 plantas</li>
+        <li><strong>Melhor para:</strong> Paredes externas, grandes produções</li>
+      </ul>
+      <h4>Materiais:</h4>
+      <ul>
+        <li>Painel de bolsos de feltro (comprado ou DIY)</li>
+        <li>Estrutura de madeira ou PVC para fixação</li>
+        <li>Substrato leve</li>
+        <li>Manta de impermeabilização</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Fixe a estrutura base na parede</li>
+        <li>Coloque a manta impermeável entre parede e painel</li>
+        <li>Prenda o painel de bolsos na estrutura</li>
+        <li>Preencha cada bolso com substrato leve</li>
+        <li>Plante mudas pequenas em cada bolso</li>
+      </ol>
+      <h4>DIY - Fazendo seus bolsos:</h4>
+      <ol>
+        <li>Corte feltro grosso em retângulos de 20x15cm</li>
+        <li>Costure 3 lados, deixando a parte de cima aberta</li>
+        <li>Costure os bolsos em uma base de lona</li>
+        <li>Adicione ilhós para fixação</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4>Atenção!</h4>
+      <p>Bolsos de feltro secam mais rápido. Em dias quentes, pode ser necessário regar 2x ao dia. Considere irrigação por gotejamento para esse modelo.</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 5</div>
+  </div>
+
+  <div class="page">
+    <h3>Modelo 4: Calhas/Canos PVC</h3>
+    <div class="step-box">
+      <h4>Características</h4>
+      <ul>
+        <li><strong>Dificuldade:</strong> Médio</li>
+        <li><strong>Custo:</strong> R$ 60-150</li>
+        <li><strong>Capacidade:</strong> 15-25 plantas</li>
+        <li><strong>Melhor para:</strong> Folhosas, temperos</li>
+      </ul>
+      <h4>Materiais:</h4>
+      <ul>
+        <li>3-5 calhas de 100mm x 2m (ou canos PVC 100mm cortados ao meio)</li>
+        <li>Tampas para calha</li>
+        <li>Suportes L para fixação</li>
+        <li>Furadeira com serra copo de 50mm</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Corte os canos ao meio no sentido longitudinal (se usar PVC)</li>
+        <li>Faça furos de drenagem a cada 15cm no fundo</li>
+        <li>Tampe as extremidades</li>
+        <li>Fixe os suportes L na parede em níveis escalonados (30cm entre níveis)</li>
+        <li>Apoie as calhas nos suportes</li>
+        <li>Preencha com substrato e plante</li>
+      </ol>
+    </div>
+
+    <h3>Modelo 5: Torre Vertical (Empilhados)</h3>
+    <div class="step-box">
+      <h4>Características</h4>
+      <ul>
+        <li><strong>Dificuldade:</strong> Fácil</li>
+        <li><strong>Custo:</strong> R$ 40-100</li>
+        <li><strong>Capacidade:</strong> 8-15 plantas</li>
+        <li><strong>Melhor para:</strong> Morangos, temperos pequenos</li>
+      </ul>
+      <h4>Materiais:</h4>
+      <ul>
+        <li>Vasos empilháveis OU baldes furados</li>
+        <li>Tubo central de PVC para irrigação</li>
+        <li>Substrato</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Faça furos laterais nos baldes/vasos (4-6 por nível)</li>
+        <li>Empilhe os recipientes</li>
+        <li>Insira tubo de PVC furado no centro</li>
+        <li>Preencha com substrato</li>
+        <li>Plante nas aberturas laterais</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 6</div>
+  </div>
+
+  <div class="page">
+    <h3>Modelo 6: Palete Reciclado</h3>
+    <div class="step-box">
+      <h4>Características</h4>
+      <ul>
+        <li><strong>Dificuldade:</strong> Médio</li>
+        <li><strong>Custo:</strong> R$ 30-80</li>
+        <li><strong>Capacidade:</strong> 6-12 plantas</li>
+        <li><strong>Melhor para:</strong> Estilo rústico, temperos</li>
+      </ul>
+      <p><em>Detalhado completamente no Guia 2 - Projeto Pallet Verde</em></p>
+    </div>
+
+    <h2>Capítulo 3: Comparativo dos Modelos</h2>
+    <table>
+      <tr>
+        <th>Modelo</th>
+        <th>Custo</th>
+        <th>Dificuldade</th>
+        <th>Manutenção</th>
+        <th>Ideal Para</th>
+      </tr>
+      <tr>
+        <td>Treliça</td>
+        <td>$</td>
+        <td>Fácil</td>
+        <td>Baixa</td>
+        <td>Iniciantes</td>
+      </tr>
+      <tr>
+        <td>Prateleiras</td>
+        <td>$$</td>
+        <td>Fácil</td>
+        <td>Baixa</td>
+        <td>Varandas</td>
+      </tr>
+      <tr>
+        <td>Bolsos Feltro</td>
+        <td>$$</td>
+        <td>Médio</td>
+        <td>Alta</td>
+        <td>Muitas plantas</td>
+      </tr>
+      <tr>
+        <td>Calhas PVC</td>
+        <td>$</td>
+        <td>Médio</td>
+        <td>Média</td>
+        <td>Folhosas</td>
+      </tr>
+      <tr>
+        <td>Torre</td>
+        <td>$</td>
+        <td>Fácil</td>
+        <td>Média</td>
+        <td>Pouco espaço</td>
+      </tr>
+      <tr>
+        <td>Palete</td>
+        <td>$</td>
+        <td>Médio</td>
+        <td>Média</td>
+        <td>Decorativo</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Qual escolher?</h4>
+      <ul>
+        <li><strong>Orçamento apertado:</strong> Torre ou Palete</li>
+        <li><strong>Primeira horta:</strong> Treliça ou Prateleiras</li>
+        <li><strong>Máxima produção:</strong> Bolsos de Feltro</li>
+        <li><strong>Folhosas/alfaces:</strong> Calhas PVC</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 7</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 4: Plantas Ideais para Vertical</h2>
+
+    <h3>4.1 Plantas Perfeitas para Vertical</h3>
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Luz</th>
+        <th>Rega</th>
+        <th>Melhor Posição</th>
+      </tr>
+      <tr>
+        <td>Manjericão</td>
+        <td>Sol pleno</td>
+        <td>Moderada</td>
+        <td>Parte superior</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>Meia-sombra</td>
+        <td>Frequente</td>
+        <td>Parte inferior</td>
+      </tr>
+      <tr>
+        <td>Cebolinha</td>
+        <td>Sol pleno</td>
+        <td>Moderada</td>
+        <td>Qualquer</td>
+      </tr>
+      <tr>
+        <td>Salsinha</td>
+        <td>Meia-sombra</td>
+        <td>Moderada</td>
+        <td>Parte inferior</td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>Sol pleno</td>
+        <td>Pouca</td>
+        <td>Parte superior</td>
+      </tr>
+      <tr>
+        <td>Tomilho</td>
+        <td>Sol pleno</td>
+        <td>Pouca</td>
+        <td>Parte superior</td>
+      </tr>
+      <tr>
+        <td>Coentro</td>
+        <td>Meia-sombra</td>
+        <td>Frequente</td>
+        <td>Parte inferior</td>
+      </tr>
+      <tr>
+        <td>Alface</td>
+        <td>Meia-sombra</td>
+        <td>Frequente</td>
+        <td>Parte inferior</td>
+      </tr>
+      <tr>
+        <td>Rúcula</td>
+        <td>Meia-sombra</td>
+        <td>Frequente</td>
+        <td>Parte inferior</td>
+      </tr>
+      <tr>
+        <td>Morango</td>
+        <td>Sol pleno</td>
+        <td>Moderada</td>
+        <td>Qualquer</td>
+      </tr>
+    </table>
+
+    <h3>4.2 Plantas para Evitar</h3>
+    <div class="danger-box">
+      <h4>Não plante verticalmente:</h4>
+      <ul>
+        <li><strong>Tomate:</strong> Raízes profundas, peso dos frutos</li>
+        <li><strong>Pimentão:</strong> Precisa de vaso grande</li>
+        <li><strong>Abobrinha/Pepino:</strong> Plantas muito grandes</li>
+        <li><strong>Cenoura/Beterraba:</strong> Raízes profundas</li>
+        <li><strong>Batata:</strong> Precisa de muito substrato</li>
+      </ul>
+    </div>
+
+    <h3>4.3 Regra de Ouro do Posicionamento</h3>
+    <div class="highlight-box">
+      <p><strong>Parte Superior (mais sol):</strong> Alecrim, manjericão, tomilho, orégano</p>
+      <p><strong>Parte Média:</strong> Cebolinha, morango, pimenta dedo-de-moça</p>
+      <p><strong>Parte Inferior (mais sombra):</strong> Hortelã, salsinha, coentro, alface</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 8</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 5: Substrato para Vertical</h2>
+
+    <h3>5.1 Por que o Substrato é Diferente?</h3>
+    <p>Em hortas verticais, o substrato precisa ser:</p>
+    <ul>
+      <li><strong>Leve:</strong> Para não sobrecarregar a estrutura</li>
+      <li><strong>Drenante:</strong> A água escorre rápido por gravidade</li>
+      <li><strong>Retentor:</strong> Mas não pode secar demais</li>
+    </ul>
+
+    <h3>5.2 Receita de Substrato Leve</h3>
+    <div class="step-box">
+      <h4>Mistura Ideal para Vertical:</h4>
+      <ul>
+        <li>40% - Substrato vegetal ou terra preta</li>
+        <li>30% - Fibra de coco ou vermiculita</li>
+        <li>20% - Perlita ou casca de arroz carbonizada</li>
+        <li>10% - Húmus de minhoca</li>
+      </ul>
+      <h4>Preparo:</h4>
+      <ol>
+        <li>Misture todos os ingredientes em um balde grande</li>
+        <li>Umedeça levemente (não encharcado)</li>
+        <li>A mistura deve ficar solta e fofa</li>
+        <li>Teste: aperte na mão - deve formar torrão que se desfaz fácil</li>
+      </ol>
+    </div>
+
+    <h3>5.3 Alternativa Econômica</h3>
+    <div class="step-box">
+      <h4>Substrato Econômico:</h4>
+      <ul>
+        <li>50% - Terra de jardim peneirada</li>
+        <li>30% - Areia grossa lavada</li>
+        <li>20% - Composto orgânico ou esterco curtido</li>
+      </ul>
+      <p><em>Custo aproximado: R$ 15-20 para encher 10 vasos médios</em></p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Evite:</h4>
+      <ul>
+        <li>Terra pura de jardim (muito pesada)</li>
+        <li>Areia fina (compacta demais)</li>
+        <li>Substrato só de fibra de coco (seca muito rápido)</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 9</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 6: Problemas Comuns em Verticais</h2>
+
+    <h3>Problema 1: Plantas Secando Rápido</h3>
+    <div class="step-box">
+      <h4>Causas:</h4>
+      <ul>
+        <li>Substrato muito drenante</li>
+        <li>Vento excessivo</li>
+        <li>Vasos pequenos demais</li>
+      </ul>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Adicione mais fibra de coco ao substrato</li>
+        <li>Use mulching (cobertura morta) nos vasos</li>
+        <li>Instale irrigação por gotejamento</li>
+        <li>Regue 2x ao dia em dias quentes</li>
+      </ul>
+    </div>
+
+    <h3>Problema 2: Plantas Amarelando</h3>
+    <div class="step-box">
+      <h4>Causas:</h4>
+      <ul>
+        <li>Falta de nutrientes (substrato leve = menos nutrientes)</li>
+        <li>Excesso de água nas plantas de baixo</li>
+        <li>Pouca luz nas partes inferiores</li>
+      </ul>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Adube quinzenalmente com fertilizante líquido</li>
+        <li>Verifique drenagem de cada vaso</li>
+        <li>Coloque plantas de sombra nas partes baixas</li>
+      </ul>
+    </div>
+
+    <h3>Problema 3: Estrutura Cedendo</h3>
+    <div class="step-box">
+      <h4>Causas:</h4>
+      <ul>
+        <li>Peso excessivo quando molhado</li>
+        <li>Fixação inadequada</li>
+        <li>Parede fraca</li>
+      </ul>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Use substrato mais leve</li>
+        <li>Reforce fixação com buchas de expansão</li>
+        <li>Distribua peso uniformemente</li>
+        <li>Não exceda a capacidade da estrutura</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 10</div>
+  </div>
+
+  <div class="page">
+    <h3>Problema 4: Pragas e Doenças</h3>
+    <div class="step-box">
+      <h4>Vantagens da Vertical (menos pragas):</h4>
+      <ul>
+        <li>Lesmas e caracóis têm dificuldade de subir</li>
+        <li>Melhor circulação de ar = menos fungos</li>
+        <li>Mais fácil de inspecionar</li>
+      </ul>
+      <h4>Ainda assim, monitore:</h4>
+      <ul>
+        <li>Pulgões (principalmente na parte de cima)</li>
+        <li>Ácaros (em ambientes secos)</li>
+        <li>Oídio (se houver pouca circulação)</li>
+      </ul>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Inspecione semanalmente</li>
+        <li>Borrife óleo de neem preventivo</li>
+        <li>Remova folhas doentes imediatamente</li>
+      </ul>
+    </div>
+
+    <h3>Problema 5: Gotejamento Indesejado</h3>
+    <div class="step-box">
+      <h4>Causas:</h4>
+      <ul>
+        <li>Água escorrendo de vasos superiores para inferiores</li>
+        <li>Molhando o chão abaixo</li>
+      </ul>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Instale calha coletora na base</li>
+        <li>Use pratinhos em cada vaso</li>
+        <li>Regue menos quantidade, mais vezes</li>
+        <li>Sistema de irrigação por gotejamento = menos desperdício</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Manutenção Semanal Recomendada:</h4>
+      <ul>
+        <li>Segunda: Verificar rega e umidade</li>
+        <li>Quarta: Inspecionar pragas/doenças</li>
+        <li>Sexta: Colheita e poda</li>
+        <li>Mensal: Adubar com fertilizante líquido</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 11</div>
+  </div>
+
+  <!-- CAPÍTULO 7: ADUBAÇÃO PARA VERTICAIS -->
+  <div class="page">
+    <h2>Capítulo 7: Adubação Especializada para Verticais</h2>
+
+    <h3>7.1 Por que Verticais Precisam de Mais Adubo?</h3>
+    <p>Hortas verticais têm substrato limitado e água lava nutrientes mais rápido. Por isso:</p>
+    <ul>
+      <li>Adube com <strong>mais frequência</strong> e <strong>menos concentração</strong></li>
+      <li>Prefira <strong>adubos líquidos</strong> (absorção rápida)</li>
+      <li>Complete substrato a cada 2-3 meses</li>
+    </ul>
+
+    <h3>7.2 Calendário de Adubação</h3>
+    <table>
+      <tr>
+        <th>Frequência</th>
+        <th>Tipo</th>
+        <th>Diluição</th>
+        <th>Aplicação</th>
+      </tr>
+      <tr>
+        <td>Semanal</td>
+        <td>Biofertilizante líquido</td>
+        <td>1:20 em água</td>
+        <td>Na rega</td>
+      </tr>
+      <tr>
+        <td>Quinzenal</td>
+        <td>Fertilizante NPK 10-10-10</td>
+        <td>Metade da dose</td>
+        <td>Foliar ou solo</td>
+      </tr>
+      <tr>
+        <td>Mensal</td>
+        <td>Húmus de minhoca</td>
+        <td>1 colher/vaso</td>
+        <td>Superfície</td>
+      </tr>
+      <tr>
+        <td>Trimestral</td>
+        <td>Bokashi</td>
+        <td>1 punhado/vaso</td>
+        <td>Misturar leve</td>
+      </tr>
+    </table>
+
+    <h3>7.3 Adubos Caseiros para Verticais</h3>
+    <div class="step-box">
+      <h4>Adubo de Casca de Banana</h4>
+      <ul>
+        <li><strong>Rico em:</strong> Potássio (floração e frutificação)</li>
+        <li><strong>Preparo:</strong> Ferva 5 cascas em 1L água por 15 min</li>
+        <li><strong>Uso:</strong> Dilua 1:5 e regue semanalmente</li>
+        <li><strong>Ideal para:</strong> Tomate, morango, pimenta</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Adubo de Borra de Café</h4>
+      <ul>
+        <li><strong>Rico em:</strong> Nitrogênio (folhagem verde)</li>
+        <li><strong>Preparo:</strong> Seque a borra ao sol</li>
+        <li><strong>Uso:</strong> 1 colher sopa/vaso, misture na superfície</li>
+        <li><strong>Ideal para:</strong> Folhosas, ervas aromáticas</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Água de Cozimento</h4>
+      <ul>
+        <li><strong>Rica em:</strong> Amido e minerais</li>
+        <li><strong>Preparo:</strong> Guarde água do arroz, batata, vegetais (sem sal!)</li>
+        <li><strong>Uso:</strong> Deixe esfriar e regue diretamente</li>
+        <li><strong>Ideal para:</strong> Todas as plantas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 12</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 8: Projetos Especiais de Estruturas</h2>
+
+    <h3>8.1 Escada Vertical</h3>
+    <div class="project-box">
+      <h4>Transforme uma escada velha em horta</h4>
+      <ul>
+        <li><strong>Dificuldade:</strong> Fácil</li>
+        <li><strong>Custo:</strong> R$ 0-50 (escada reciclada)</li>
+        <li><strong>Capacidade:</strong> 10-20 vasos</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Lixe e pinte a escada (opcional)</li>
+        <li>Apoie contra parede em ângulo de 70°</li>
+        <li>Coloque tábuas nos degraus para apoiar vasos</li>
+        <li>Distribua vasos do maior (base) ao menor (topo)</li>
+      </ol>
+    </div>
+
+    <h3>8.2 Grade de Ferro Reciclada</h3>
+    <div class="project-box">
+      <h4>Use grades de portão, janela ou cerca</h4>
+      <ul>
+        <li><strong>Dificuldade:</strong> Fácil</li>
+        <li><strong>Custo:</strong> R$ 0-30</li>
+        <li><strong>Capacidade:</strong> 15-25 vasos</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Trate ferrugem com removedor ou lixe</li>
+        <li>Pinte com tinta antiferrugem</li>
+        <li>Fixe na parede com buchas</li>
+        <li>Use ganchos S para pendurar vasos</li>
+        <li>Vasos de feltro funcionam bem nesse sistema</li>
+      </ol>
+    </div>
+
+    <h3>8.3 Sapateira de Tecido</h3>
+    <div class="project-box">
+      <h4>Organizador de sapatos vira horta!</h4>
+      <ul>
+        <li><strong>Dificuldade:</strong> Muito fácil</li>
+        <li><strong>Custo:</strong> R$ 30-60</li>
+        <li><strong>Capacidade:</strong> 12-24 plantas</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Compre sapateira de tecido (tipo bolsos)</li>
+        <li>Faça furos de drenagem em cada bolso</li>
+        <li>Coloque plástico entre sapateira e parede</li>
+        <li>Preencha com substrato leve</li>
+        <li>Plante ervas pequenas em cada bolso</li>
+      </ol>
+      <p><em>Dica: Ideal para aluguéis - não fura parede se usar ganchos de porta!</em></p>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 13</div>
+  </div>
+
+  <div class="page">
+    <h3>8.4 Caixote de Feira Vertical</h3>
+    <div class="project-box">
+      <h4>Empilhe caixotes para criar módulos</h4>
+      <ul>
+        <li><strong>Dificuldade:</strong> Fácil</li>
+        <li><strong>Custo:</strong> R$ 0-20</li>
+        <li><strong>Capacidade:</strong> 6-12 plantas</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Consiga 3-5 caixotes de feira (grátis em feiras)</li>
+        <li>Lixe e pinte se desejar</li>
+        <li>Forre o fundo com manta geotêxtil</li>
+        <li>Empilhe intercalando (tipo escada)</li>
+        <li>Fixe uns aos outros com parafusos</li>
+        <li>Preencha com substrato</li>
+      </ol>
+    </div>
+
+    <h3>8.5 Jardim de Canos (Sistema Modular)</h3>
+    <div class="project-box">
+      <h4>Canos PVC como estrutura profissional</h4>
+      <ul>
+        <li><strong>Dificuldade:</strong> Médio</li>
+        <li><strong>Custo:</strong> R$ 100-200</li>
+        <li><strong>Capacidade:</strong> 20-40 plantas</li>
+      </ul>
+      <h4>Materiais:</h4>
+      <ul>
+        <li>4 canos PVC 100mm x 2m</li>
+        <li>Serra copo 50mm</li>
+        <li>Joelhos e conexões</li>
+        <li>Tampas</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Faça furos com serra copo a cada 15cm (intercalados)</li>
+        <li>Conecte os canos com joelhos formando "Z"</li>
+        <li>Tampe extremidades</li>
+        <li>Fixe na parede em ângulo de 15° (drenagem)</li>
+        <li>Preencha com substrato leve</li>
+        <li>Plante nas aberturas</li>
+      </ol>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Comparativo de Custos</h4>
+      <table>
+        <tr><th>Projeto</th><th>Custo</th><th>Plantas</th><th>R$/Planta</th></tr>
+        <tr><td>Escada reciclada</td><td>R$ 0-50</td><td>15</td><td>R$ 0-3</td></tr>
+        <tr><td>Grade de ferro</td><td>R$ 0-30</td><td>20</td><td>R$ 0-1,50</td></tr>
+        <tr><td>Sapateira</td><td>R$ 30-60</td><td>18</td><td>R$ 1,70-3,30</td></tr>
+        <tr><td>Caixotes</td><td>R$ 0-20</td><td>9</td><td>R$ 0-2,20</td></tr>
+        <tr><td>Canos PVC</td><td>R$ 100-200</td><td>30</td><td>R$ 3,30-6,70</td></tr>
+      </table>
+    </div>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 14</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 9: Iluminação Artificial para Verticais Internas</h2>
+
+    <h3>9.1 Quando Usar Luz Artificial?</h3>
+    <p>Se seu espaço recebe menos de 4 horas de sol direto, considere iluminação suplementar:</p>
+    <ul>
+      <li>Apartamentos com janelas para sul</li>
+      <li>Corredores e halls internos</li>
+      <li>Garagens ou áreas cobertas</li>
+      <li>Inverno com dias muito curtos</li>
+    </ul>
+
+    <h3>9.2 Tipos de Lâmpadas para Plantas</h3>
+    <table>
+      <tr>
+        <th>Tipo</th>
+        <th>Custo Inicial</th>
+        <th>Consumo</th>
+        <th>Eficiência</th>
+      </tr>
+      <tr>
+        <td>LED Full Spectrum</td>
+        <td>R$ 50-150</td>
+        <td>Baixo</td>
+        <td>Excelente</td>
+      </tr>
+      <tr>
+        <td>Fluorescente T5</td>
+        <td>R$ 30-80</td>
+        <td>Médio</td>
+        <td>Boa</td>
+      </tr>
+      <tr>
+        <td>LED Grow</td>
+        <td>R$ 80-300</td>
+        <td>Baixo</td>
+        <td>Excelente</td>
+      </tr>
+      <tr>
+        <td>Incandescente</td>
+        <td>R$ 10</td>
+        <td>Alto</td>
+        <td>Ruim (não use)</td>
+      </tr>
+    </table>
+
+    <h3>9.3 Instalação Básica</h3>
+    <div class="step-box">
+      <h4>Sistema Econômico com LED</h4>
+      <ul>
+        <li><strong>Materiais:</strong> Fita LED 5050 branca fria (5m) + fonte</li>
+        <li><strong>Custo:</strong> R$ 40-80</li>
+        <li><strong>Instalação:</strong> Cole a fita em canaleta acima da horta</li>
+        <li><strong>Timer:</strong> Programar 12-14h de luz/dia</li>
+        <li><strong>Distância:</strong> 15-30cm das plantas</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Importante!</h4>
+      <p>Plantas precisam de período escuro. Nunca deixe luz 24h. O ideal é 12-16h de luz e 8-12h de escuro.</p>
+    </div>
+
+    <h3>9.4 Quanto de Luz por Planta?</h3>
+    <table>
+      <tr>
+        <th>Tipo de Planta</th>
+        <th>Lux Mínimo</th>
+        <th>Horas/Dia</th>
+      </tr>
+      <tr>
+        <td>Folhosas (alface, rúcula)</td>
+        <td>2.000-5.000</td>
+        <td>10-12h</td>
+      </tr>
+      <tr>
+        <td>Ervas (manjericão, hortelã)</td>
+        <td>5.000-10.000</td>
+        <td>12-14h</td>
+      </tr>
+      <tr>
+        <td>Frutíferas (tomate, pimenta)</td>
+        <td>10.000-20.000</td>
+        <td>14-16h</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia 1 - Horta Vertical Profissional - Página 15</div>
+  </div>
+
+  <!-- ==================== GUIA 2: PROJETO PALLET VERDE ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 2: Projeto Pallet Verde</h2>
+      <p>Transforme um palete em horta vertical em 1 dia</p>
+    </div>
+
+    <h2>Capítulo 1: Escolhendo o Palete Certo</h2>
+
+    <h3>1.1 Tipos de Palete</h3>
+    <table>
+      <tr>
+        <th>Tipo</th>
+        <th>Características</th>
+        <th>Uso</th>
+      </tr>
+      <tr>
+        <td>PBR (vermelho)</td>
+        <td>Padronizado, resistente</td>
+        <td>Ideal</td>
+      </tr>
+      <tr>
+        <td>Descartável</td>
+        <td>Madeira clara, mais leve</td>
+        <td>Bom</td>
+      </tr>
+      <tr>
+        <td>Tratado (HT)</td>
+        <td>Tratamento térmico</td>
+        <td>Seguro</td>
+      </tr>
+      <tr>
+        <td>Tratado (MB)</td>
+        <td>Brometo de metila</td>
+        <td>EVITAR!</td>
+      </tr>
+    </table>
+
+    <div class="danger-box">
+      <h4>NUNCA use paletes com carimbo MB!</h4>
+      <p>O brometo de metila é tóxico e pode contaminar suas plantas. Procure paletes com carimbo HT (heat treated) ou DB (debarked), que são seguros.</p>
+    </div>
+
+    <h3>1.2 Onde Conseguir Paletes Grátis</h3>
+    <ul>
+      <li>Supermercados (pergunte no depósito)</li>
+      <li>Lojas de materiais de construção</li>
+      <li>Indústrias locais</li>
+      <li>Grupos de doação no Facebook</li>
+      <li>OLX/Marketplace (muitos doam)</li>
+    </ul>
+
+    <h3>1.3 Inspecionando o Palete</h3>
+    <div class="checklist">
+      <h4>Checklist de Qualidade:</h4>
+      <ul>
+        <li>Madeira sem rachaduras grandes</li>
+        <li>Sem sinais de cupim ou brocas</li>
+        <li>Pregos firmes, não enferrujados</li>
+        <li>Sem manchas de produtos químicos</li>
+        <li>Estrutura firme ao pressionar</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 2 - Projeto Pallet Verde - Página 12</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 2: Preparando o Palete</h2>
+
+    <h3>2.1 Limpeza</h3>
+    <div class="step-box">
+      <h4>Passo a Passo:</h4>
+      <ol>
+        <li>Escove toda a madeira com escova de cerdas duras</li>
+        <li>Lave com água e sabão neutro</li>
+        <li>Se houver manchas, use água sanitária diluída (1:10)</li>
+        <li>Enxague bem</li>
+        <li>Deixe secar ao sol por pelo menos 2 dias</li>
+      </ol>
+    </div>
+
+    <h3>2.2 Lixamento</h3>
+    <div class="step-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>Lixa grossa (80) para farpas grandes</li>
+        <li>Lixa média (120) para acabamento</li>
+        <li>Luvas de proteção</li>
+      </ul>
+      <h4>Processo:</h4>
+      <ol>
+        <li>Lixe toda a superfície, especialmente bordas</li>
+        <li>Remova todas as farpas</li>
+        <li>Dê atenção especial à frente (parte visível)</li>
+        <li>Aspire ou sopre o pó da madeira</li>
+      </ol>
+    </div>
+
+    <h3>2.3 Tratamento da Madeira</h3>
+    <div class="step-box">
+      <h4>Opção 1 - Stain/Verniz:</h4>
+      <ul>
+        <li>Aplique stain para madeira externa</li>
+        <li>2-3 demãos, secando entre elas</li>
+        <li>Protege contra sol e chuva</li>
+      </ul>
+      <h4>Opção 2 - Queima (Shou Sugi Ban):</h4>
+      <ul>
+        <li>Queime superficialmente com maçarico</li>
+        <li>Escove o carvite</li>
+        <li>Proteção natural e visual rústico</li>
+      </ul>
+      <h4>Opção 3 - Óleo de Linhaça:</h4>
+      <ul>
+        <li>Opção natural e ecológica</li>
+        <li>Aplique 2-3 demãos com pincel</li>
+        <li>Renove a cada 6 meses</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 2 - Projeto Pallet Verde - Página 13</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 3: Montagem do Pallet Verde</h2>
+
+    <div class="materials-box">
+      <h4>Lista de Materiais Completa:</h4>
+      <ul>
+        <li>1 palete tratado (80x120cm padrão)</li>
+        <li>2m² de manta geotêxtil (bidim)</li>
+        <li>Grampeador de tapeceiro + grampos</li>
+        <li>1m² de plástico preto (lona ou saco de lixo)</li>
+        <li>Substrato leve (30 litros)</li>
+        <li>10-12 mudas de temperos</li>
+        <li>2 mãos-francesas para fixação (opcional)</li>
+      </ul>
+      <h4>Custo estimado: R$ 30-80</h4>
+    </div>
+
+    <h3>3.1 Criando os Bolsos de Plantio</h3>
+    <div class="step-box">
+      <h4>Passo 1: Forrar o Fundo</h4>
+      <ol>
+        <li>Vire o palete com a parte de trás para cima</li>
+        <li>Corte a manta geotêxtil do tamanho do palete</li>
+        <li>Grampeie a manta cobrindo toda a parte de trás</li>
+        <li>Grampeie também os lados e a parte de baixo</li>
+        <li>A manta deve criar "bolsos" entre as ripas</li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 2: Impermeabilizar (opcional mas recomendado)</h4>
+      <ol>
+        <li>Corte o plástico preto do tamanho do palete</li>
+        <li>Coloque entre a madeira e a manta na parte de trás</li>
+        <li>Isso protege a parede de umidade</li>
+        <li>Faça pequenos furos para drenagem</li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 3: Reforçar os Bolsos</h4>
+      <ol>
+        <li>Dobre a manta para dentro em cada "prateleira"</li>
+        <li>Grampeie bem as dobras</li>
+        <li>Cada espaço entre ripas = 1 bolso de plantio</li>
+        <li>Teste pressionando - não pode ceder</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Guia 2 - Projeto Pallet Verde - Página 14</div>
+  </div>
+
+  <div class="page">
+    <h3>3.2 Plantio no Pallet</h3>
+    <div class="step-box">
+      <h4>Passo 4: Adicionar Substrato</h4>
+      <ol>
+        <li>Mantenha o palete DEITADO (não vertical ainda!)</li>
+        <li>Preencha cada bolso com substrato leve</li>
+        <li>Pressione levemente para compactar</li>
+        <li>Complete até 2cm abaixo da borda</li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 5: Plantar as Mudas</h4>
+      <ol>
+        <li>Faça buracos no substrato com os dedos</li>
+        <li>Retire as mudas dos vasinhos com cuidado</li>
+        <li>Plante firme, apertando o substrato ao redor</li>
+        <li>Distribua: 2-3 mudas por bolso dependendo do tamanho</li>
+        <li>Regue bem após plantar</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4>Importante!</h4>
+      <p>Deixe o palete DEITADO por 2-3 semanas após plantar. Isso permite que as raízes se estabeleçam antes de verticalizar. Regue normalmente durante esse período.</p>
+    </div>
+
+    <h3>3.3 Verticalizando o Pallet</h3>
+    <div class="step-box">
+      <h4>Passo 6: Levantar e Fixar</h4>
+      <ol>
+        <li>Após 2-3 semanas, levante o palete devagar</li>
+        <li>Verifique se as plantas estão firmes</li>
+        <li>Fixe na parede com mãos-francesas ou ganchos</li>
+        <li>Use buchas de expansão para paredes de alvenaria</li>
+        <li>Certifique-se de que está nivelado</li>
+      </ol>
+      <h4>Dica de Fixação:</h4>
+      <p>O palete cheio pode pesar 20-30kg. Fixe em pelo menos 4 pontos, usando buchas adequadas para o peso.</p>
+    </div>
+
+    <div class="page-number">Guia 2 - Projeto Pallet Verde - Página 15</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 4: Cuidados com o Pallet Verde</h2>
+
+    <h3>4.1 Rega</h3>
+    <div class="step-box">
+      <h4>Frequência:</h4>
+      <ul>
+        <li><strong>Verão:</strong> 1-2x por dia</li>
+        <li><strong>Inverno:</strong> Dia sim, dia não</li>
+        <li><strong>Meia-estação:</strong> 1x por dia</li>
+      </ul>
+      <h4>Como regar:</h4>
+      <ol>
+        <li>Use regador de bico fino</li>
+        <li>Regue de cima para baixo</li>
+        <li>A água deve escorrer pelos bolsos inferiores</li>
+        <li>Coloque pratinho/calha na base para coletar excesso</li>
+      </ol>
+    </div>
+
+    <h3>4.2 Adubação</h3>
+    <div class="step-box">
+      <h4>Rotina de Adubação:</h4>
+      <ul>
+        <li><strong>Semanal:</strong> Fertilizante líquido diluído na água de rega</li>
+        <li><strong>Mensal:</strong> Adicione 1 colher de húmus por bolso</li>
+        <li><strong>A cada 3 meses:</strong> Complete substrato que afundou</li>
+      </ul>
+    </div>
+
+    <h3>4.3 Manutenção da Estrutura</h3>
+    <div class="checklist">
+      <h4>Checklist Mensal:</h4>
+      <ul>
+        <li>Verificar fixação na parede</li>
+        <li>Inspecionar madeira por sinais de deterioração</li>
+        <li>Reapertar grampos soltos</li>
+        <li>Verificar se manta não está rasgando</li>
+        <li>Limpar musgos ou fungos da madeira</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Vida Útil:</h4>
+      <p>Com manutenção adequada, um pallet verde dura de 3 a 5 anos. Reaplique verniz/óleo anualmente para prolongar.</p>
+    </div>
+
+    <div class="page-number">Guia 2 - Projeto Pallet Verde - Página 16</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 5: Layouts de Plantio para Pallet</h2>
+
+    <h3>Layout 1: Temperos Básicos</h3>
+    <div class="project-box">
+      <h4>Distribuição (de cima para baixo):</h4>
+      <ul>
+        <li><strong>Bolso 1 (topo):</strong> Alecrim + Tomilho</li>
+        <li><strong>Bolso 2:</strong> Manjericão (2-3 mudas)</li>
+        <li><strong>Bolso 3:</strong> Cebolinha + Salsinha</li>
+        <li><strong>Bolso 4 (base):</strong> Hortelã</li>
+      </ul>
+      <p><em>Hortelã na base porque tolera mais sombra e gosta de umidade</em></p>
+    </div>
+
+    <h3>Layout 2: Saladas</h3>
+    <div class="project-box">
+      <h4>Distribuição:</h4>
+      <ul>
+        <li><strong>Bolso 1:</strong> Rúcula (3 mudas)</li>
+        <li><strong>Bolso 2:</strong> Alface crespa (2 mudas)</li>
+        <li><strong>Bolso 3:</strong> Alface lisa (2 mudas)</li>
+        <li><strong>Bolso 4:</strong> Agrião (3 mudas)</li>
+      </ul>
+      <p><em>Ideal para pallets em meia-sombra</em></p>
+    </div>
+
+    <h3>Layout 3: Chás e Medicinais</h3>
+    <div class="project-box">
+      <h4>Distribuição:</h4>
+      <ul>
+        <li><strong>Bolso 1:</strong> Camomila</li>
+        <li><strong>Bolso 2:</strong> Erva-cidreira</li>
+        <li><strong>Bolso 3:</strong> Hortelã-pimenta</li>
+        <li><strong>Bolso 4:</strong> Capim-limão (variedade compacta)</li>
+      </ul>
+    </div>
+
+    <h3>Layout 4: Decorativo</h3>
+    <div class="project-box">
+      <h4>Distribuição:</h4>
+      <ul>
+        <li><strong>Bolso 1:</strong> Manjericão roxo</li>
+        <li><strong>Bolso 2:</strong> Sálvia ornamental</li>
+        <li><strong>Bolso 3:</strong> Cebolinha com flor</li>
+        <li><strong>Bolso 4:</strong> Orégano dourado</li>
+      </ul>
+      <p><em>Combinação de cores e texturas</em></p>
+    </div>
+
+    <div class="page-number">Guia 2 - Projeto Pallet Verde - Página 17</div>
+  </div>
+
+  <!-- ==================== GUIA 3: IRRIGAÇÃO VERTICAL ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 3: Irrigação para Verticais</h2>
+      <p>Sistemas manuais e automatizados para nunca mais perder plantas</p>
+    </div>
+
+    <h2>Capítulo 1: Desafios da Irrigação Vertical</h2>
+
+    <h3>1.1 Por que é Diferente?</h3>
+    <p>Em hortas verticais, a irrigação apresenta desafios únicos:</p>
+    <ul>
+      <li><strong>Gravidade:</strong> Água escorre rápido para baixo</li>
+      <li><strong>Secagem rápida:</strong> Vasos elevados perdem umidade mais rápido</li>
+      <li><strong>Distribuição desigual:</strong> Parte de cima seca primeiro</li>
+      <li><strong>Gotejamento:</strong> Água pode escorrer e molhar onde não deve</li>
+    </ul>
+
+    <h3>1.2 Frequência de Rega por Estação</h3>
+    <table>
+      <tr>
+        <th>Estação</th>
+        <th>Frequência</th>
+        <th>Melhor Horário</th>
+      </tr>
+      <tr>
+        <td>Verão</td>
+        <td>2x ao dia</td>
+        <td>7h e 18h</td>
+      </tr>
+      <tr>
+        <td>Outono</td>
+        <td>1x ao dia</td>
+        <td>Manhã</td>
+      </tr>
+      <tr>
+        <td>Inverno</td>
+        <td>Dia sim, dia não</td>
+        <td>Meio da manhã</td>
+      </tr>
+      <tr>
+        <td>Primavera</td>
+        <td>1x ao dia</td>
+        <td>Manhã</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Teste do Dedo:</h4>
+      <p>Enfie o dedo 2cm no substrato. Se estiver seco, regue. Se ainda úmido, espere. Simples assim!</p>
+    </div>
+
+    <div class="page-number">Guia 3 - Irrigação Vertical - Página 18</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 2: Sistema de Gotejamento Caseiro</h2>
+
+    <h3>2.1 Sistema com Garrafa PET (Gravitacional)</h3>
+    <div class="materials-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>1 garrafa PET 2L por módulo</li>
+        <li>Mangueirinha de soro (farmácia) - R$ 3</li>
+        <li>Fita veda-rosca</li>
+        <li>Estilete ou furador</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Faça um furo na tampa da garrafa (mesmo diâmetro da mangueira)</li>
+        <li>Passe a mangueira pelo furo (3-4cm para dentro)</li>
+        <li>Vede com fita ou cola quente</li>
+        <li>Faça um pequeno furo no fundo da garrafa (entrada de ar)</li>
+        <li>Pendure a garrafa de cabeça para baixo acima das plantas</li>
+        <li>Ajuste o gotejamento com o regulador do equipo</li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <h4>Regulagem:</h4>
+      <ul>
+        <li><strong>Gotejamento lento:</strong> 1 gota a cada 3-5 segundos</li>
+        <li><strong>Duração:</strong> Uma garrafa 2L dura 1-3 dias</li>
+        <li><strong>Distribuição:</strong> Use conectores Y para dividir em várias saídas</li>
+      </ul>
+    </div>
+
+    <h3>2.2 Sistema com Barbante (Capilaridade)</h3>
+    <div class="materials-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>Barbante de algodão grosso</li>
+        <li>Recipiente com água (balde, garrafa)</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Corte pedaços de barbante de 40-50cm</li>
+        <li>Coloque uma ponta no fundo do recipiente com água</li>
+        <li>Enterre a outra ponta 5cm no substrato</li>
+        <li>A água sobe por capilaridade e irriga a planta</li>
+      </ol>
+      <p><em>Ideal para ausências de 3-7 dias</em></p>
+    </div>
+
+    <div class="page-number">Guia 3 - Irrigação Vertical - Página 19</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 3: Irrigação Automatizada</h2>
+
+    <h3>3.1 Kit de Gotejamento Automático</h3>
+    <div class="materials-box">
+      <h4>Componentes:</h4>
+      <ul>
+        <li>Timer digital para torneira (R$ 50-150)</li>
+        <li>Mangueira de 4mm (10m) - R$ 15</li>
+        <li>Gotejadores ajustáveis (10 un) - R$ 20</li>
+        <li>Conectores T e cotovelos - R$ 10</li>
+        <li>Adaptador para torneira - R$ 15</li>
+      </ul>
+      <h4>Investimento total: R$ 110-210</h4>
+    </div>
+
+    <div class="step-box">
+      <h4>Instalação:</h4>
+      <ol>
+        <li>Conecte o timer na torneira</li>
+        <li>Conecte a mangueira principal no timer</li>
+        <li>Passe a mangueira pela parte superior da horta</li>
+        <li>Faça furos na mangueira onde quer gotejadores</li>
+        <li>Insira os gotejadores nos furos</li>
+        <li>Posicione cada gotejador em um vaso</li>
+        <li>Programe o timer (ex: 5 min às 7h e 18h)</li>
+      </ol>
+    </div>
+
+    <h3>3.2 Programação Recomendada</h3>
+    <table>
+      <tr>
+        <th>Estação</th>
+        <th>Frequência</th>
+        <th>Duração</th>
+      </tr>
+      <tr>
+        <td>Verão</td>
+        <td>2x ao dia</td>
+        <td>5-8 min cada</td>
+      </tr>
+      <tr>
+        <td>Inverno</td>
+        <td>1x ao dia</td>
+        <td>3-5 min</td>
+      </tr>
+      <tr>
+        <td>Meia-estação</td>
+        <td>1x ao dia</td>
+        <td>5 min</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>Dica:</h4>
+      <p>Comece com menos tempo e aumente gradualmente. É mais fácil corrigir falta de água do que excesso!</p>
+    </div>
+
+    <div class="page-number">Guia 3 - Irrigação Vertical - Página 20</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 4: Soluções para Problemas de Irrigação</h2>
+
+    <h3>Problema: Água escorrendo demais</h3>
+    <div class="step-box">
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Adicione mais fibra de coco ao substrato</li>
+        <li>Regue em menor quantidade, mais vezes</li>
+        <li>Instale calha coletora na base</li>
+        <li>Use pratinhos em cada vaso</li>
+      </ul>
+    </div>
+
+    <h3>Problema: Parte de cima sempre seca</h3>
+    <div class="step-box">
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Instale gotejador extra na parte superior</li>
+        <li>Use vasos maiores em cima</li>
+        <li>Aplique mulching (cobertura morta)</li>
+        <li>Plantas de pouca água em cima (alecrim, tomilho)</li>
+      </ul>
+    </div>
+
+    <h3>Problema: Parte de baixo sempre encharcada</h3>
+    <div class="step-box">
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Melhore a drenagem dos vasos inferiores</li>
+        <li>Plante espécies que gostam de umidade (hortelã)</li>
+        <li>Reduza a rega geral</li>
+        <li>Verifique se há obstrução na drenagem</li>
+      </ul>
+    </div>
+
+    <h3>DIY: Calha Coletora</h3>
+    <div class="step-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>Calha de PVC 100mm</li>
+        <li>2 tampas</li>
+        <li>Suportes</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Corte a calha no tamanho da horta</li>
+        <li>Tampe uma extremidade</li>
+        <li>Incline levemente para o outro lado</li>
+        <li>Deixe a água escorrer para um balde</li>
+        <li>Reutilize a água coletada!</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Guia 3 - Irrigação Vertical - Página 21</div>
+  </div>
+
+  <!-- ==================== GUIA 4: KIT GARRAFA PET ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 4: Kit Garrafa PET</h2>
+      <p>5 projetos incríveis com custo quase zero</p>
+    </div>
+
+    <h2>Por que Usar Garrafas PET?</h2>
+    <ul>
+      <li><strong>Custo zero:</strong> Material que iria para o lixo</li>
+      <li><strong>Sustentabilidade:</strong> Reciclagem criativa</li>
+      <li><strong>Versatilidade:</strong> Vários modelos possíveis</li>
+      <li><strong>Durabilidade:</strong> PET resiste anos ao sol</li>
+    </ul>
+
+    <div class="warning-box">
+      <h4>Preparação das Garrafas:</h4>
+      <ul>
+        <li>Use apenas garrafas de água/refrigerante (não de produtos químicos)</li>
+        <li>Lave bem com água e sabão</li>
+        <li>Deixe secar completamente</li>
+        <li>Remova rótulos para melhor estética</li>
+      </ul>
+    </div>
+
+    <h2>Projeto 1: Vaso Horizontal Simples</h2>
+    <div class="project-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>1 garrafa PET 2L</li>
+        <li>Estilete ou tesoura</li>
+        <li>Arame ou barbante para pendurar</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Deite a garrafa na horizontal</li>
+        <li>Corte um retângulo na parte de cima (10x20cm)</li>
+        <li>Faça 5-6 furos no fundo para drenagem</li>
+        <li>Faça 2 furos nas laterais para passar o arame</li>
+        <li>Preencha com substrato e plante</li>
+      </ol>
+      <h4>Ideal para:</h4> Temperos pequenos, alface baby, rúcula
+    </div>
+
+    <div class="page-number">Guia 4 - Kit Garrafa PET - Página 22</div>
+  </div>
+
+  <div class="page">
+    <h2>Projeto 2: Vaso Auto-Irrigável</h2>
+    <div class="project-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>2 garrafas PET 2L</li>
+        <li>1 pedaço de tecido de algodão (15x5cm)</li>
+        <li>Estilete</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Corte a primeira garrafa ao meio</li>
+        <li>Na parte de cima (com tampa), faça furo na tampa</li>
+        <li>Passe o tecido pelo furo (pavio)</li>
+        <li>Deixe 5cm para dentro e 10cm para fora</li>
+        <li>Encaixe a parte de cima invertida na parte de baixo</li>
+        <li>Coloque água na parte inferior</li>
+        <li>Preencha a parte superior com substrato</li>
+        <li>O pavio puxa água conforme a planta precisa</li>
+      </ol>
+      <h4>Vantagens:</h4>
+      <ul>
+        <li>Rega automática por capilaridade</li>
+        <li>Dura 5-7 dias sem regar</li>
+        <li>Impossível encharcar</li>
+      </ul>
+    </div>
+
+    <h2>Projeto 3: Torre Vertical de Garrafas</h2>
+    <div class="project-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>5-8 garrafas PET 2L</li>
+        <li>1 estaca de madeira ou cano PVC (1,5m)</li>
+        <li>Arame</li>
+        <li>Estilete</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Corte retângulo lateral em cada garrafa</li>
+        <li>Faça 2 furos no fundo de cada (para passar a estaca)</li>
+        <li>Empilhe as garrafas na estaca, intercalando os lados</li>
+        <li>Fixe com arame se necessário</li>
+        <li>Finque a estaca no chão ou em um vaso base</li>
+        <li>Preencha com substrato e plante</li>
+      </ol>
+      <h4>Capacidade:</h4> 5-8 plantas em 30cm² de chão
+    </div>
+
+    <div class="page-number">Guia 4 - Kit Garrafa PET - Página 23</div>
+  </div>
+
+  <div class="page">
+    <h2>Projeto 4: Painel de Garrafas na Parede</h2>
+    <div class="project-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>10-15 garrafas PET 2L</li>
+        <li>Parafusos e buchas</li>
+        <li>Arruelas largas</li>
+        <li>Estilete</li>
+      </ul>
+      <h4>Montagem:</h4>
+      <ol>
+        <li>Corte cada garrafa na horizontal (retângulo para plantio)</li>
+        <li>Faça 2 furos na parte de trás de cada garrafa</li>
+        <li>Furos de drenagem no fundo</li>
+        <li>Marque a posição na parede (grade 3x5)</li>
+        <li>Fixe cada garrafa com 2 parafusos e arruelas</li>
+        <li>Preencha e plante</li>
+      </ol>
+      <h4>Dica:</h4>
+      <p>Intercale garrafas verdes e transparentes para efeito visual. Ou pinte com tinta spray antes de montar.</p>
+    </div>
+
+    <h2>Projeto 5: Sistema NFT Caseiro com PET</h2>
+    <div class="project-box">
+      <h4>Materiais:</h4>
+      <ul>
+        <li>6-8 garrafas PET 2L</li>
+        <li>1 caixa plástica (reservatório)</li>
+        <li>Bomba de aquário pequena</li>
+        <li>Mangueira fina</li>
+        <li>Timer</li>
+      </ul>
+      <h4>Conceito:</h4>
+      <p>As garrafas são conectadas em série. Água com nutrientes circula da caixa, passa pelas garrafas e retorna. Sistema hidropônico simplificado!</p>
+      <h4>Montagem Básica:</h4>
+      <ol>
+        <li>Corte garrafas na horizontal</li>
+        <li>Conecte com mangueira (entrada em cima, saída embaixo)</li>
+        <li>Última garrafa retorna para a caixa</li>
+        <li>Bomba puxa água da caixa para primeira garrafa</li>
+        <li>Timer liga bomba 15min a cada 2h</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Guia 4 - Kit Garrafa PET - Página 24</div>
+  </div>
+
+  <div class="page">
+    <h2>Tabela: Qual Projeto Escolher?</h2>
+    <table>
+      <tr>
+        <th>Projeto</th>
+        <th>Dificuldade</th>
+        <th>Custo</th>
+        <th>Plantas</th>
+        <th>Manutenção</th>
+      </tr>
+      <tr>
+        <td>Vaso Horizontal</td>
+        <td>Muito fácil</td>
+        <td>R$ 0</td>
+        <td>1-2</td>
+        <td>Rega diária</td>
+      </tr>
+      <tr>
+        <td>Auto-Irrigável</td>
+        <td>Fácil</td>
+        <td>R$ 0</td>
+        <td>1</td>
+        <td>Semanal</td>
+      </tr>
+      <tr>
+        <td>Torre</td>
+        <td>Fácil</td>
+        <td>R$ 5-10</td>
+        <td>5-8</td>
+        <td>Rega diária</td>
+      </tr>
+      <tr>
+        <td>Painel Parede</td>
+        <td>Médio</td>
+        <td>R$ 20-30</td>
+        <td>10-15</td>
+        <td>Rega diária</td>
+      </tr>
+      <tr>
+        <td>NFT Caseiro</td>
+        <td>Avançado</td>
+        <td>R$ 80-120</td>
+        <td>6-8</td>
+        <td>Semanal</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Recomendação para Iniciantes:</h4>
+      <p>Comece com o <strong>Vaso Auto-Irrigável</strong>. É simples, funciona bem e te dá confiança para projetos maiores. Depois evolua para a Torre ou Painel.</p>
+    </div>
+
+    <h2>Cuidados com Vasos PET</h2>
+    <ul>
+      <li><strong>Drenagem:</strong> Sempre faça furos suficientes</li>
+      <li><strong>Sol:</strong> PET transparente pode aquecer raízes - pinte ou cubra</li>
+      <li><strong>Substituição:</strong> Troque garrafas danificadas ou deformadas</li>
+      <li><strong>Limpeza:</strong> Limpe algas verdes que se formam com pano</li>
+    </ul>
+
+    <div class="page-number">Guia 4 - Kit Garrafa PET - Página 25</div>
+  </div>
+
+  <!-- ==================== BÔNUS: MAPA DE PLANTIO ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>BÔNUS: Mapa de Plantio Vertical</h2>
+      <p>Qual planta em cada posição para máximo resultado</p>
+    </div>
+
+    <h2>Princípio do Posicionamento</h2>
+    <p>Em uma horta vertical, as condições mudam conforme a altura:</p>
+
+    <table>
+      <tr>
+        <th>Posição</th>
+        <th>Luz</th>
+        <th>Umidade</th>
+        <th>Temperatura</th>
+      </tr>
+      <tr>
+        <td>Topo</td>
+        <td>Máxima</td>
+        <td>Seca rápido</td>
+        <td>Mais quente</td>
+      </tr>
+      <tr>
+        <td>Meio</td>
+        <td>Moderada</td>
+        <td>Equilibrada</td>
+        <td>Amena</td>
+      </tr>
+      <tr>
+        <td>Base</td>
+        <td>Sombra parcial</td>
+        <td>Mais úmida</td>
+        <td>Mais fresca</td>
+      </tr>
+    </table>
+
+    <h2>Mapa por Tipo de Planta</h2>
+
+    <h3>Posição Superior (Sol Pleno)</h3>
+    <div class="step-box">
+      <h4>Plantas recomendadas:</h4>
+      <ul>
+        <li>Alecrim</li>
+        <li>Tomilho</li>
+        <li>Orégano</li>
+        <li>Manjericão</li>
+        <li>Sálvia</li>
+        <li>Lavanda</li>
+      </ul>
+      <h4>Características em comum:</h4>
+      <p>Origem mediterrânea, toleram seca, precisam de muito sol</p>
+    </div>
+
+    <h3>Posição Central (Sol Parcial)</h3>
+    <div class="step-box">
+      <h4>Plantas recomendadas:</h4>
+      <ul>
+        <li>Cebolinha</li>
+        <li>Morango</li>
+        <li>Pimenta</li>
+        <li>Tomate-cereja (com suporte)</li>
+        <li>Flores comestíveis</li>
+      </ul>
+      <h4>Características em comum:</h4>
+      <p>Precisam de sol mas toleram sombra parcial</p>
+    </div>
+
+    <div class="page-number">Bônus - Mapa de Plantio - Página 26</div>
+  </div>
+
+  <div class="page">
+    <h3>Posição Inferior (Meia-Sombra)</h3>
+    <div class="step-box">
+      <h4>Plantas recomendadas:</h4>
+      <ul>
+        <li>Hortelã</li>
+        <li>Salsinha</li>
+        <li>Coentro</li>
+        <li>Alface</li>
+        <li>Rúcula</li>
+        <li>Agrião</li>
+        <li>Espinafre</li>
+      </ul>
+      <h4>Características em comum:</h4>
+      <p>Toleram sombra, gostam de umidade, origem de climas amenos</p>
+    </div>
+
+    <h2>Combinações que Funcionam</h2>
+
+    <div class="project-box">
+      <h4>Combo Pizza:</h4>
+      <ul>
+        <li><strong>Topo:</strong> Orégano + Manjericão</li>
+        <li><strong>Meio:</strong> Tomate-cereja + Pimenta</li>
+        <li><strong>Base:</strong> Salsinha</li>
+      </ul>
+    </div>
+
+    <div class="project-box">
+      <h4>Combo Churrasco:</h4>
+      <ul>
+        <li><strong>Topo:</strong> Alecrim + Tomilho</li>
+        <li><strong>Meio:</strong> Cebolinha</li>
+        <li><strong>Base:</strong> Salsinha + Coentro</li>
+      </ul>
+    </div>
+
+    <div class="project-box">
+      <h4>Combo Chás:</h4>
+      <ul>
+        <li><strong>Topo:</strong> Camomila</li>
+        <li><strong>Meio:</strong> Erva-cidreira</li>
+        <li><strong>Base:</strong> Hortelã</li>
+      </ul>
+    </div>
+
+    <div class="project-box">
+      <h4>Combo Salada:</h4>
+      <ul>
+        <li><strong>Topo:</strong> Rúcula</li>
+        <li><strong>Meio:</strong> Alface crespa</li>
+        <li><strong>Base:</strong> Agrião</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Bônus - Mapa de Plantio - Página 27</div>
+  </div>
+
+  <div class="page">
+    <h2>Plantas Companheiras em Vertical</h2>
+    <p>Algumas plantas se beneficiam quando cultivadas próximas:</p>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Boas Vizinhas</th>
+        <th>Evitar Próximo</th>
+      </tr>
+      <tr>
+        <td>Manjericão</td>
+        <td>Tomate, pimenta</td>
+        <td>Sálvia</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>Repolho, tomate</td>
+        <td>Salsinha (compete)</td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>Sálvia, tomilho</td>
+        <td>Pepino</td>
+      </tr>
+      <tr>
+        <td>Cebolinha</td>
+        <td>Cenoura, morango</td>
+        <td>Feijão</td>
+      </tr>
+      <tr>
+        <td>Alface</td>
+        <td>Morango, rabanete</td>
+        <td>Salsinha</td>
+      </tr>
+      <tr>
+        <td>Tomate</td>
+        <td>Manjericão, cenoura</td>
+        <td>Couve</td>
+      </tr>
+    </table>
+
+    <h2>Checklist de Planejamento</h2>
+    <div class="checklist">
+      <h4>Antes de Plantar:</h4>
+      <ul>
+        <li>Observei quantas horas de sol o local recebe</li>
+        <li>Identifiquei quais posições têm mais/menos luz</li>
+        <li>Escolhi plantas adequadas para cada nível</li>
+        <li>Verifiquei compatibilidade entre vizinhas</li>
+        <li>Considerei a frequência de rega de cada espécie</li>
+        <li>Planejei a colheita (plantas que colho mais = mais acessíveis)</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Dica Final:</h4>
+      <p>Coloque as plantas que você mais usa na altura dos olhos/mãos. Isso facilita a colheita diária e você não esquece de cuidar delas!</p>
+    </div>
+
+    <div class="page-number">Bônus - Mapa de Plantio - Página 28</div>
+  </div>
+
+  <!-- BÔNUS 2: GUIA DE MANUTENÇÃO SAZONAL -->
+  <div class="page">
+    <div class="module-header">
+      <h2>BÔNUS 2: Guia de Manutenção Sazonal</h2>
+      <p>Cuidados específicos para cada estação do ano</p>
+    </div>
+
+    <h2>Primavera (Setembro-Novembro)</h2>
+    <div class="step-box">
+      <h4>Tarefas Principais:</h4>
+      <ul>
+        <li>Renovar substrato que compactou durante o inverno</li>
+        <li>Iniciar adubação mais intensa (plantas acordando)</li>
+        <li>Aumentar gradualmente a frequência de rega</li>
+        <li>Época ideal para novas mudas e transplantes</li>
+        <li>Podar plantas que estagnaram no inverno</li>
+      </ul>
+      <h4>Plantios Recomendados:</h4>
+      <p>Manjericão, tomate cereja, pimenta, pepino (nas posições superiores)</p>
+    </div>
+
+    <h2>Verão (Dezembro-Fevereiro)</h2>
+    <div class="step-box">
+      <h4>Tarefas Principais:</h4>
+      <ul>
+        <li>Rega 2x ao dia (manhã cedo e fim de tarde)</li>
+        <li>Monitorar pragas (pulgões adoram calor)</li>
+        <li>Aplicar mulching para reter umidade</li>
+        <li>Colher frequentemente para estimular produção</li>
+        <li>Sombreamento se sol muito intenso (tela 50%)</li>
+      </ul>
+      <h4>Cuidados Especiais:</h4>
+      <p>Folhosas (alface, rúcula) podem tombar - prefira variedades de verão ou proteja do sol das 11h-15h</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Alerta de Verão!</h4>
+      <p>Substratos em vasos verticais podem atingir 50°C no sol direto. Isso mata raízes! Use vasos claros ou proteja com tela.</p>
+    </div>
+
+    <div class="page-number">Bônus 2 - Manutenção Sazonal - Página 29</div>
+  </div>
+
+  <div class="page">
+    <h2>Outono (Março-Maio)</h2>
+    <div class="step-box">
+      <h4>Tarefas Principais:</h4>
+      <ul>
+        <li>Reduzir gradualmente a rega</li>
+        <li>Diminuir adubação (plantas desacelerando)</li>
+        <li>Colher e secar ervas para estoque de inverno</li>
+        <li>Fazer estacas antes do frio (taxa de sucesso maior)</li>
+        <li>Limpar e preparar estruturas para o inverno</li>
+      </ul>
+      <h4>Plantios Recomendados:</h4>
+      <p>Alface, rúcula, espinafre, coentro, salsinha (preferem clima ameno)</p>
+    </div>
+
+    <h2>Inverno (Junho-Agosto)</h2>
+    <div class="step-box">
+      <h4>Tarefas Principais:</h4>
+      <ul>
+        <li>Regar apenas quando substrato estiver seco</li>
+        <li>Suspender adubação ou aplicar dose mínima</li>
+        <li>Proteger do frio intenso (cobrir à noite se < 5°C)</li>
+        <li>Plantas perenes podem ser podadas</li>
+        <li>Época de planejar mudanças para primavera</li>
+      </ul>
+      <h4>Cuidados Especiais:</h4>
+      <p>Ervas mediterrâneas (alecrim, tomilho) adoram inverno. Tropicais (manjericão) podem morrer - traga para dentro ou aceite o ciclo.</p>
+    </div>
+
+    <h2>Calendário Anual de Manutenção</h2>
+    <table>
+      <tr>
+        <th>Tarefa</th>
+        <th>Jan-Mar</th>
+        <th>Abr-Jun</th>
+        <th>Jul-Set</th>
+        <th>Out-Dez</th>
+      </tr>
+      <tr>
+        <td>Adubação intensa</td>
+        <td>✓</td>
+        <td>-</td>
+        <td>-</td>
+        <td>✓</td>
+      </tr>
+      <tr>
+        <td>Renovar substrato</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>✓</td>
+      </tr>
+      <tr>
+        <td>Poda geral</td>
+        <td>-</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Verificar estrutura</td>
+        <td>✓</td>
+        <td>-</td>
+        <td>-</td>
+        <td>✓</td>
+      </tr>
+      <tr>
+        <td>Fazer estacas</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>-</td>
+        <td>✓</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Bônus 2 - Manutenção Sazonal - Página 30</div>
+  </div>
+
+  <!-- BÔNUS 3: 30 PLANTAS PARA VERTICAL -->
+  <div class="page">
+    <div class="module-header">
+      <h2>BÔNUS 3: Guia Completo de 30 Plantas para Vertical</h2>
+      <p>Tudo que você precisa saber sobre cada espécie</p>
+    </div>
+
+    <h3>Ervas Mediterrâneas (Sol Pleno - Topo)</h3>
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Vaso Mínimo</th>
+        <th>Rega</th>
+        <th>Colheita</th>
+      </tr>
+      <tr>
+        <td>1. Alecrim</td>
+        <td>15cm</td>
+        <td>Pouca</td>
+        <td>Após 3 meses</td>
+      </tr>
+      <tr>
+        <td>2. Tomilho</td>
+        <td>12cm</td>
+        <td>Pouca</td>
+        <td>Após 2 meses</td>
+      </tr>
+      <tr>
+        <td>3. Orégano</td>
+        <td>12cm</td>
+        <td>Pouca</td>
+        <td>Após 2 meses</td>
+      </tr>
+      <tr>
+        <td>4. Sálvia</td>
+        <td>15cm</td>
+        <td>Pouca</td>
+        <td>Após 3 meses</td>
+      </tr>
+      <tr>
+        <td>5. Lavanda</td>
+        <td>20cm</td>
+        <td>Pouca</td>
+        <td>Flores em 6 meses</td>
+      </tr>
+    </table>
+
+    <h3>Ervas Tropicais (Sol - Meio/Topo)</h3>
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Vaso Mínimo</th>
+        <th>Rega</th>
+        <th>Colheita</th>
+      </tr>
+      <tr>
+        <td>6. Manjericão</td>
+        <td>15cm</td>
+        <td>Moderada</td>
+        <td>Após 40 dias</td>
+      </tr>
+      <tr>
+        <td>7. Manjericão roxo</td>
+        <td>15cm</td>
+        <td>Moderada</td>
+        <td>Após 40 dias</td>
+      </tr>
+      <tr>
+        <td>8. Pimenta dedo-de-moça</td>
+        <td>20cm</td>
+        <td>Moderada</td>
+        <td>Após 90 dias</td>
+      </tr>
+      <tr>
+        <td>9. Pimenta biquinho</td>
+        <td>18cm</td>
+        <td>Moderada</td>
+        <td>Após 90 dias</td>
+      </tr>
+      <tr>
+        <td>10. Tomate cereja</td>
+        <td>25cm+</td>
+        <td>Frequente</td>
+        <td>Após 70 dias</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Bônus 3 - 30 Plantas - Página 31</div>
+  </div>
+
+  <div class="page">
+    <h3>Ervas de Sombra Parcial (Meio/Base)</h3>
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Vaso Mínimo</th>
+        <th>Rega</th>
+        <th>Colheita</th>
+      </tr>
+      <tr>
+        <td>11. Salsinha</td>
+        <td>12cm</td>
+        <td>Moderada</td>
+        <td>Após 60 dias</td>
+      </tr>
+      <tr>
+        <td>12. Cebolinha</td>
+        <td>12cm</td>
+        <td>Moderada</td>
+        <td>Após 30 dias</td>
+      </tr>
+      <tr>
+        <td>13. Coentro</td>
+        <td>12cm</td>
+        <td>Frequente</td>
+        <td>Após 40 dias</td>
+      </tr>
+      <tr>
+        <td>14. Cerefólio</td>
+        <td>12cm</td>
+        <td>Frequente</td>
+        <td>Após 50 dias</td>
+      </tr>
+      <tr>
+        <td>15. Estragão</td>
+        <td>15cm</td>
+        <td>Moderada</td>
+        <td>Após 60 dias</td>
+      </tr>
+    </table>
+
+    <h3>Mentas e Similares (Base - Toleram Sombra)</h3>
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Vaso Mínimo</th>
+        <th>Rega</th>
+        <th>Colheita</th>
+      </tr>
+      <tr>
+        <td>16. Hortelã comum</td>
+        <td>15cm</td>
+        <td>Frequente</td>
+        <td>Após 30 dias</td>
+      </tr>
+      <tr>
+        <td>17. Hortelã-pimenta</td>
+        <td>15cm</td>
+        <td>Frequente</td>
+        <td>Após 30 dias</td>
+      </tr>
+      <tr>
+        <td>18. Menta chocolate</td>
+        <td>15cm</td>
+        <td>Frequente</td>
+        <td>Após 30 dias</td>
+      </tr>
+      <tr>
+        <td>19. Erva-cidreira</td>
+        <td>18cm</td>
+        <td>Frequente</td>
+        <td>Após 45 dias</td>
+      </tr>
+      <tr>
+        <td>20. Melissa</td>
+        <td>15cm</td>
+        <td>Frequente</td>
+        <td>Após 45 dias</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>Atenção com Mentas!</h4>
+      <p>NUNCA plante mentas no mesmo vaso que outras plantas. Elas são invasivas e dominam o espaço. Cada menta em seu vaso individual!</p>
+    </div>
+
+    <div class="page-number">Bônus 3 - 30 Plantas - Página 32</div>
+  </div>
+
+  <div class="page">
+    <h3>Folhosas para Vertical (Meia-Sombra - Base)</h3>
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Vaso Mínimo</th>
+        <th>Rega</th>
+        <th>Colheita</th>
+      </tr>
+      <tr>
+        <td>21. Alface crespa</td>
+        <td>15cm</td>
+        <td>Frequente</td>
+        <td>Após 45 dias</td>
+      </tr>
+      <tr>
+        <td>22. Alface americana</td>
+        <td>18cm</td>
+        <td>Frequente</td>
+        <td>Após 50 dias</td>
+      </tr>
+      <tr>
+        <td>23. Rúcula</td>
+        <td>12cm</td>
+        <td>Frequente</td>
+        <td>Após 30 dias</td>
+      </tr>
+      <tr>
+        <td>24. Agrião</td>
+        <td>15cm</td>
+        <td>Muito freq.</td>
+        <td>Após 35 dias</td>
+      </tr>
+      <tr>
+        <td>25. Espinafre</td>
+        <td>15cm</td>
+        <td>Frequente</td>
+        <td>Após 45 dias</td>
+      </tr>
+    </table>
+
+    <h3>Plantas Especiais para Vertical</h3>
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Vaso Mínimo</th>
+        <th>Rega</th>
+        <th>Posição</th>
+      </tr>
+      <tr>
+        <td>26. Morango</td>
+        <td>18cm</td>
+        <td>Moderada</td>
+        <td>Meio (sol parcial)</td>
+      </tr>
+      <tr>
+        <td>27. Physalis</td>
+        <td>25cm</td>
+        <td>Moderada</td>
+        <td>Topo (sol pleno)</td>
+      </tr>
+      <tr>
+        <td>28. Capuchinha</td>
+        <td>15cm</td>
+        <td>Moderada</td>
+        <td>Qualquer (pendente)</td>
+      </tr>
+      <tr>
+        <td>29. Amor-perfeito</td>
+        <td>12cm</td>
+        <td>Moderada</td>
+        <td>Meio (decorativo)</td>
+      </tr>
+      <tr>
+        <td>30. Camomila</td>
+        <td>15cm</td>
+        <td>Moderada</td>
+        <td>Topo (sol pleno)</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Dica de Ouro:</h4>
+      <p>Monte sua vertical com pelo menos 3 categorias: ervas de sol (topo), ervas de sombra (meio) e folhosas ou mentas (base). Assim você aproveita 100% do espaço e cada planta recebe a luz adequada!</p>
+    </div>
+
+    <div class="page-number">Bônus 3 - 30 Plantas - Página 33</div>
+  </div>
+
+  <!-- BÔNUS 4: TROUBLESHOOTING COMPLETO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>BÔNUS 4: Troubleshooting Completo</h2>
+      <p>Soluções para os 20 problemas mais comuns</p>
+    </div>
+
+    <h3>1. Plantas murchando mesmo com rega</h3>
+    <div class="step-box">
+      <h4>Causas:</h4>
+      <ul>
+        <li>Raízes apodrecendo por excesso de água</li>
+        <li>Substrato compactado (água não penetra)</li>
+        <li>Sol muito intenso + vaso pequeno</li>
+      </ul>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Verifique drenagem - furos desobstruídos?</li>
+        <li>Solte o substrato com garfo</li>
+        <li>Transplante para vaso maior se raízes enroladas</li>
+      </ul>
+    </div>
+
+    <h3>2. Folhas amarelando por baixo</h3>
+    <div class="step-box">
+      <h4>Causas:</h4>
+      <ul>
+        <li>Falta de nitrogênio</li>
+        <li>Natural em folhas velhas</li>
+        <li>Excesso de água</li>
+      </ul>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Adube com fertilizante rico em N (borra de café)</li>
+        <li>Se apenas folhas velhas, é normal - remova</li>
+        <li>Reduza rega e verifique drenagem</li>
+      </ul>
+    </div>
+
+    <h3>3. Plantas "esticando" (estiolamento)</h3>
+    <div class="step-box">
+      <h4>Causa:</h4> Falta de luz - planta busca o sol
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Mova para posição mais ensolarada</li>
+        <li>Instale iluminação suplementar</li>
+        <li>Pode a parte esticada para engrossar</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Bônus 4 - Troubleshooting - Página 34</div>
+  </div>
+
+  <div class="page">
+    <h3>4. Pulgões (insetos verdes/pretos nas folhas)</h3>
+    <div class="step-box">
+      <h4>Soluções em ordem:</h4>
+      <ol>
+        <li>Jato forte de água (derruba 70%)</li>
+        <li>Calda de sabão de coco (2 colheres em 1L água)</li>
+        <li>Óleo de neem (5ml em 1L água)</li>
+        <li>Se persistir: podar partes afetadas</li>
+      </ol>
+      <h4>Prevenção:</h4>
+      <p>Plante tagetes (cravo-de-defunto) ou hortelã próximo - repelem pulgões</p>
+    </div>
+
+    <h3>5. Cochonilhas (insetos tipo algodão)</h3>
+    <div class="step-box">
+      <h4>Soluções:</h4>
+      <ol>
+        <li>Remova manualmente com cotonete + álcool</li>
+        <li>Calda de fumo (100g fumo em 1L água - 24h)</li>
+        <li>Óleo mineral (óleo de cozinha 50ml + 1 gota detergente em 1L)</li>
+        <li>Casos graves: isole a planta para não contaminar</li>
+      </ol>
+    </div>
+
+    <h3>6. Oídio (pó branco nas folhas)</h3>
+    <div class="step-box">
+      <h4>Causas:</h4> Umidade alta + pouca circulação de ar
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Remova folhas afetadas</li>
+        <li>Bicarbonato (1 colher sopa em 1L água) - borrife</li>
+        <li>Leite diluído (1:9 em água) - borrife de manhã</li>
+        <li>Melhore ventilação do espaço</li>
+      </ul>
+    </div>
+
+    <h3>7. Manchas marrons nas folhas</h3>
+    <div class="step-box">
+      <h4>Causas possíveis:</h4>
+      <ul>
+        <li>Queimadura de sol</li>
+        <li>Fungos</li>
+        <li>Queimadura por adubo concentrado</li>
+      </ul>
+      <h4>Diagnóstico:</h4>
+      <ul>
+        <li>Manchas secas + sol forte = queimadura solar → sombreie</li>
+        <li>Manchas com halo amarelo = fungo → remova e trate</li>
+        <li>Bordas queimadas = excesso de adubo → lave substrato</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Bônus 4 - Troubleshooting - Página 35</div>
+  </div>
+
+  <div class="page">
+    <h3>8. Planta não cresce (estagnada)</h3>
+    <div class="step-box">
+      <h4>Causas:</h4>
+      <ul>
+        <li>Raízes enoveladas (vaso apertado)</li>
+        <li>Falta de nutrientes</li>
+        <li>Substrato muito ácido ou alcalino</li>
+      </ul>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Transplante para vaso maior</li>
+        <li>Adube regularmente</li>
+        <li>Renove substrato se muito velho</li>
+      </ul>
+    </div>
+
+    <h3>9. Estrutura balançando/cedendo</h3>
+    <div class="step-box">
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Verifique e reaperte parafusos</li>
+        <li>Adicione pontos de fixação extras</li>
+        <li>Use buchas maiores (expansão para alvenaria)</li>
+        <li>Reduza peso removendo vasos grandes</li>
+      </ul>
+    </div>
+
+    <h3>10. Água escorrendo e manchando parede</h3>
+    <div class="step-box">
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Instale manta impermeável entre estrutura e parede</li>
+        <li>Adicione calha coletora na base</li>
+        <li>Regue menos quantidade, mais vezes</li>
+        <li>Use sistema de gotejamento controlado</li>
+      </ul>
+    </div>
+
+    <h3>11-20: Problemas Rápidos</h3>
+    <table>
+      <tr>
+        <th>Problema</th>
+        <th>Causa</th>
+        <th>Solução</th>
+      </tr>
+      <tr>
+        <td>11. Sementes não germinam</td>
+        <td>Muito fundo/seco</td>
+        <td>Plante raso, mantenha úmido</td>
+      </tr>
+      <tr>
+        <td>12. Flores caindo</td>
+        <td>Estresse hídrico</td>
+        <td>Regularize rega</td>
+      </tr>
+      <tr>
+        <td>13. Manjericão florindo</td>
+        <td>Natural</td>
+        <td>Pode flores para prolongar</td>
+      </tr>
+      <tr>
+        <td>14. Hortelã invadindo</td>
+        <td>Característica</td>
+        <td>Isole em vaso próprio</td>
+      </tr>
+      <tr>
+        <td>15. Alecrim lenhoso</td>
+        <td>Idade/pouca poda</td>
+        <td>Pode regularmente</td>
+      </tr>
+      <tr>
+        <td>16. Mosca branca</td>
+        <td>Praga comum</td>
+        <td>Armadilha amarela + neem</td>
+      </tr>
+      <tr>
+        <td>17. Formigas</td>
+        <td>Pulgões (elas "criam")</td>
+        <td>Elimine pulgões primeiro</td>
+      </tr>
+      <tr>
+        <td>18. Substrato com fungo branco</td>
+        <td>Excesso umidade</td>
+        <td>Reduza rega, remova fungo</td>
+      </tr>
+      <tr>
+        <td>19. Folhas enrolando</td>
+        <td>Ácaros ou calor</td>
+        <td>Borrife água + verifique ácaros</td>
+      </tr>
+      <tr>
+        <td>20. Plantas pendendo</td>
+        <td>Crescimento natural</td>
+        <td>Use tutores ou deixe pendente</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Bônus 4 - Troubleshooting - Página 36</div>
+  </div>
+
+  <!-- CHECKLIST FINAL -->
+  <div class="page">
+    <h2>Checklist Final: Sua Horta Vertical Perfeita</h2>
+
+    <div class="checklist">
+      <h4>Antes de Começar</h4>
+      <ul>
+        <li>Avaliei a quantidade de sol do local</li>
+        <li>Verifiquei se a parede/estrutura suporta peso</li>
+        <li>Tenho acesso a água próximo</li>
+        <li>Escolhi o modelo ideal para meu espaço</li>
+        <li>Reuni todos os materiais necessários</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Durante a Montagem</h4>
+      <ul>
+        <li>Estrutura está nivelada e firme</li>
+        <li>Fixação adequada (buchas corretas)</li>
+        <li>Impermeabilização entre estrutura e parede</li>
+        <li>Furos de drenagem em todos os vasos</li>
+        <li>Substrato adequado (leve e drenante)</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Plantio</h4>
+      <ul>
+        <li>Plantas de sol no topo</li>
+        <li>Plantas de sombra na base</li>
+        <li>Plantas mais usadas na altura dos olhos</li>
+        <li>Evitei plantas incompatíveis próximas</li>
+        <li>Deixei espaço para crescimento</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Manutenção Semanal</h4>
+      <ul>
+        <li>Verificar umidade do substrato</li>
+        <li>Inspecionar pragas/doenças</li>
+        <li>Colher e podar quando necessário</li>
+        <li>Adubar conforme calendário</li>
+        <li>Verificar estrutura e fixação</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Economia Estimada:</h4>
+      <p>Uma horta vertical com 15-20 plantas produzindo:</p>
+      <ul>
+        <li><strong>Temperos:</strong> R$ 50-80/mês economizados</li>
+        <li><strong>Folhosas:</strong> R$ 40-60/mês economizados</li>
+        <li><strong>Total anual:</strong> R$ 1.000-1.500 de economia!</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Kit Horta Vertical - Página 37</div>
+  </div>
+
+  <!-- PÁGINA FINAL -->
+  <div class="page">
+    <h1>Parabéns!</h1>
+    <p>Você completou o <strong>Kit Horta Vertical Completo</strong>!</p>
+
+    <h2>O que você aprendeu:</h2>
+    <ul>
+      <li>6 modelos diferentes de estruturas verticais</li>
+      <li>Como montar um pallet verde do zero</li>
+      <li>Sistemas de irrigação manuais e automáticos</li>
+      <li>5 projetos com garrafas PET</li>
+      <li>Onde posicionar cada tipo de planta</li>
+    </ul>
+
+    <h2>Próximos Passos:</h2>
+    <ol>
+      <li>Escolha o modelo mais adequado ao seu espaço</li>
+      <li>Reúna os materiais necessários</li>
+      <li>Monte sua estrutura seguindo o guia</li>
+      <li>Plante seguindo o mapa de posicionamento</li>
+      <li>Configure a irrigação</li>
+      <li>Colha temperos frescos em poucas semanas!</li>
+    </ol>
+
+    <div class="highlight-box">
+      <h4>Lembre-se:</h4>
+      <p>A melhor horta vertical é aquela que você consegue manter. Comece pequeno, aprenda com os erros, e expanda gradualmente. Em poucos meses você terá uma parede verde produtiva e linda!</p>
+    </div>
+
+    <div class="step-box">
+      <h4>Suporte</h4>
+      <p>Tem dúvidas? Entre em contato conosco!</p>
+      <ul>
+        <li>Email: contato@minhahortaemcasa.com.br</li>
+        <li>Site: minhahortaemcasa.com.br</li>
+      </ul>
+      <p><strong>Garantia de 7 dias</strong> - Se não ficar satisfeito, devolvemos seu dinheiro.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <div class="mascote">
+        <svg width="100" height="120" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+          <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGradF)" stroke="#b5441c" stroke-width="2"/>
+          <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+          <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+          <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGradF)" stroke="#15803d" stroke-width="2.5"/>
+          <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/><ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+          <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/><ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+          <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="potGradF" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+            <radialGradient id="bodyGradF" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient>
+          </defs>
+        </svg>
+      </div>
+      <p><strong>Minha Horta em Casa</strong></p>
+      <p>minhahortaemcasa.com.br</p>
+    </div>
+
+    <div class="page-number">Kit Horta Vertical Completo - Página Final</div>
+  </div>
+
+</body>
+</html>

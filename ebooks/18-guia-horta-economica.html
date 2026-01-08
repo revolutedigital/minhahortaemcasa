@@ -1,0 +1,2753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guia Horta Econômica - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.7; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; min-height: 100vh; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fbbf24 100%); padding: 60px 40px; }
+    .cover h1 { font-size: 42px; font-weight: 800; color: #92400e; margin-bottom: 20px; }
+    .cover .subtitle { font-size: 20px; color: #78350f; margin-bottom: 40px; }
+    h1 { font-size: 28px; color: #92400e; margin-bottom: 20px; border-bottom: 3px solid #f59e0b; padding-bottom: 10px; }
+    h2 { font-size: 22px; color: #b45309; margin: 25px 0 15px; }
+    h3 { font-size: 18px; color: #92400e; margin: 20px 0 12px; }
+    p { margin-bottom: 15px; text-align: justify; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; }
+    .toc { background: #fffbeb; padding: 30px; border-radius: 12px; border: 2px solid #f59e0b; }
+    .toc h2 { border: none; margin-top: 0; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dashed #fcd34d; }
+    .money-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #f59e0b; border-radius: 12px; padding: 25px; margin: 20px 0; }
+    .money-box h3 { color: #92400e; margin-top: 0; }
+    .tip-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 4px solid #22c55e; padding: 20px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 20px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .diy-card { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 15px 0; }
+    .diy-card h4 { color: #15803d; margin: 0 0 10px 0; }
+    .free-tag { background: #22c55e; color: white; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+    .cheap-tag { background: #f59e0b; color: white; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+    .saving-box { background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 25px; border-radius: 12px; margin: 20px 0; text-align: center; }
+    .saving-box h3 { color: white; margin: 0 0 10px 0; font-size: 32px; }
+    .cost-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    .cost-table th { background: #92400e; color: white; padding: 12px 8px; text-align: left; }
+    .cost-table td { padding: 10px 8px; border-bottom: 1px solid #e5e7eb; }
+    .cost-table tr:nth-child(even) { background: #fffbeb; }
+    .roi-card { background: linear-gradient(135deg, #dbeafe, #bfdbfe); border: 2px solid #3b82f6; border-radius: 12px; padding: 20px; margin: 15px 0; }
+    .roi-card h4 { color: #1d4ed8; margin: 0 0 10px 0; }
+    .recipe-card { background: #fff; border: 2px dashed #22c55e; border-radius: 12px; padding: 20px; margin: 15px 0; }
+    .step-box { background: #fff; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 10px 0; }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+    .compare-bad { background: #fee2e2; border: 2px solid #ef4444; border-radius: 12px; padding: 20px; }
+    .compare-good { background: #dcfce7; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  </style>
+</head>
+<body>
+
+  <!-- CAPA -->
+  <div class="cover">
+    <svg width="160" height="180" viewBox="0 0 120 140">
+      <defs>
+        <linearGradient id="vaso18" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ea7531"/>
+          <stop offset="100%" stop-color="#b5441c"/>
+        </linearGradient>
+        <radialGradient id="corpo18" cx="40%" cy="30%">
+          <stop offset="0%" stop-color="#86efac"/>
+          <stop offset="50%" stop-color="#4ade80"/>
+          <stop offset="100%" stop-color="#22c55e"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="60" cy="135" rx="30" ry="5" fill="#92400e" fill-opacity="0.2"/>
+      <path d="M35 100H85L80 130H40L35 100Z" fill="url(#vaso18)" stroke="#b5441c" stroke-width="2"/>
+      <ellipse cx="60" cy="100" rx="25" ry="6" fill="#5c4033"/>
+      <ellipse cx="60" cy="65" rx="30" ry="35" fill="url(#corpo18)" stroke="#15803d" stroke-width="2"/>
+      <!-- Moedas na cabeça -->
+      <circle cx="50" cy="25" r="10" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <text x="50" y="29" text-anchor="middle" fill="#92400e" font-size="12" font-weight="bold">$</text>
+      <circle cx="70" cy="28" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <text x="70" y="32" text-anchor="middle" fill="#92400e" font-size="10" font-weight="bold">$</text>
+      <!-- Olhos felizes -->
+      <ellipse cx="48" cy="60" rx="4" ry="5" fill="#15803d"/>
+      <ellipse cx="72" cy="60" rx="4" ry="5" fill="#15803d"/>
+      <circle cx="49" cy="58" r="1.5" fill="white"/>
+      <circle cx="73" cy="58" r="1.5" fill="white"/>
+      <!-- Sorriso -->
+      <path d="M45 75 Q60 90 75 75" stroke="#15803d" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <!-- Bochechas -->
+      <ellipse cx="38" cy="70" rx="5" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+      <ellipse cx="82" cy="70" rx="5" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+      <!-- Cofrinho na mão -->
+      <g transform="translate(88, 55)">
+        <ellipse cx="12" cy="15" rx="12" ry="10" fill="#fbbf24" stroke="#f59e0b" stroke-width="1.5"/>
+        <rect x="8" y="8" width="8" height="3" fill="#f59e0b"/>
+        <circle cx="8" cy="18" r="2" fill="#92400e"/>
+      </g>
+    </svg>
+    <h1>Guia Horta Econômica</h1>
+    <p class="subtitle">Monte sua horta com menos de R$ 50 e economize mais de R$ 500/ano!</p>
+    <p style="background: #fff; padding: 15px 30px; border-radius: 30px; color: #92400e; font-weight: 700;">60+ páginas de economia real</p>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>Sumário Completo</h2>
+      <ul>
+        <li><strong>Módulo 1:</strong> A Mentalidade Econômica</li>
+        <li><strong>Módulo 2:</strong> Materiais 100% Gratuitos</li>
+        <li><strong>Módulo 3:</strong> Vasos e Recipientes DIY</li>
+        <li><strong>Módulo 4:</strong> Substrato Caseiro Premium</li>
+        <li><strong>Módulo 5:</strong> Adubos Gratuitos da Cozinha</li>
+        <li><strong>Módulo 6:</strong> Sementes e Mudas Grátis</li>
+        <li><strong>Módulo 7:</strong> Irrigação Econômica</li>
+        <li><strong>Módulo 8:</strong> Ferramentas DIY</li>
+        <li><strong>Módulo 9:</strong> 20 Plantas com Maior ROI</li>
+        <li><strong>Módulo 10:</strong> Plano R$ 50 Completo</li>
+        <li><strong>Módulo 11:</strong> Economia Circular</li>
+        <li><strong>Módulo 12:</strong> Troca e Comunidade</li>
+        <li><strong>Bônus:</strong> Calculadora de Economia</li>
+        <li><strong>Bônus:</strong> 30 Receitas Econômicas</li>
+      </ul>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 2</div>
+  </div>
+
+  <!-- MÓDULO 1 -->
+  <div class="page">
+    <h1>Módulo 1: A Mentalidade Econômica</h1>
+
+    <div class="money-box">
+      <h3>O Maior Mito da Horticultura</h3>
+      <p>"Horta caseira é cara de montar." <strong>MENTIRA!</strong> Este guia vai provar que você pode ter uma horta produtiva gastando quase nada.</p>
+    </div>
+
+    <h2>A Matemática que Ninguém Conta</h2>
+
+    <div class="compare-grid">
+      <div class="compare-bad">
+        <h4 style="color: #991b1b; margin-top: 0;">Horta "Instagram"</h4>
+        <ul style="margin-left: 15px; font-size: 14px;">
+          <li>Vasos decorativos: R$ 200</li>
+          <li>Substrato premium: R$ 100</li>
+          <li>Mudas de viveiro: R$ 80</li>
+          <li>Ferramentas novas: R$ 100</li>
+          <li>Decoração: R$ 50</li>
+        </ul>
+        <p style="font-weight: 700; color: #991b1b; margin: 0;">Total: R$ 530</p>
+      </div>
+      <div class="compare-good">
+        <h4 style="color: #15803d; margin-top: 0;">Horta Econômica</h4>
+        <ul style="margin-left: 15px; font-size: 14px;">
+          <li>Recipientes reciclados: R$ 0</li>
+          <li>Substrato caseiro: R$ 15</li>
+          <li>Sementes básicas: R$ 15</li>
+          <li>Ferramentas improvisadas: R$ 10</li>
+          <li>Criatividade: R$ 0</li>
+        </ul>
+        <p style="font-weight: 700; color: #15803d; margin: 0;">Total: R$ 40</p>
+      </div>
+    </div>
+
+    <div class="saving-box">
+      <h3>Economia: R$ 490!</h3>
+      <p>E a produção? EXATAMENTE A MESMA. A planta não liga se o vaso é bonito.</p>
+    </div>
+
+    <h2>Os 5 Princípios da Horta Econômica</h2>
+
+    <div class="step-box">
+      <h4>1. Antes de comprar, pergunte:</h4>
+      <p>"Isso pode ser substituído por algo que eu já tenho ou posso conseguir de graça?"</p>
+    </div>
+
+    <div class="step-box">
+      <h4>2. Lixo de um é tesouro de outro</h4>
+      <p>Restaurantes, construções e vizinhos descartam materiais perfeitos para hortas.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>3. Propague, não compre</h4>
+      <p>Uma planta pode virar 10, 50, 100... Aprenda a multiplicar.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>4. Feche o ciclo</h4>
+      <p>Restos de comida viram adubo. Nada se perde, tudo se transforma.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>5. Comunidade é riqueza</h4>
+      <p>Troque sementes, mudas e conhecimento. Todos ganham.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 3</div>
+  </div>
+
+  <!-- MÓDULO 2 -->
+  <div class="page">
+    <h1>Módulo 2: Materiais 100% Gratuitos</h1>
+
+    <p>Antes de gastar um centavo, olhe ao seu redor. Tudo que você precisa pode estar a uma conversa de distância.</p>
+
+    <h2>Onde Encontrar Materiais Grátis</h2>
+
+    <div class="diy-card">
+      <h4>Padarias e Restaurantes <span class="free-tag">GRÁTIS</span></h4>
+      <ul>
+        <li><strong>Baldes de margarina:</strong> 3L a 20L - perfeitos para vasos</li>
+        <li><strong>Latas de azeite:</strong> 3L a 18L - ótimas para ervas</li>
+        <li><strong>Caixas de frutas:</strong> Para canteiros e composteiras</li>
+        <li><strong>Borra de café:</strong> Adubo rico em nitrogênio</li>
+      </ul>
+      <p><em>Dica: Vá no final do expediente e peça educadamente.</em></p>
+    </div>
+
+    <div class="diy-card">
+      <h4>Feiras e Verdurões <span class="free-tag">GRÁTIS</span></h4>
+      <ul>
+        <li><strong>Caixotes de madeira:</strong> Canteiros elevados perfeitos</li>
+        <li><strong>Engradados plásticos:</strong> Duráveis e furados naturalmente</li>
+        <li><strong>Restos de verduras:</strong> Para compostagem</li>
+        <li><strong>Palha e folhas:</strong> Cobertura morta</li>
+      </ul>
+      <p><em>Dica: Final de feira (sábado tarde) é o melhor momento.</em></p>
+    </div>
+
+    <div class="diy-card">
+      <h4>Construções e Reformas <span class="free-tag">GRÁTIS</span></h4>
+      <ul>
+        <li><strong>Baldes de tinta vazios:</strong> 3,6L a 18L</li>
+        <li><strong>Sobras de canos PVC:</strong> Horta vertical</li>
+        <li><strong>Pedaços de madeira:</strong> Canteiros e suportes</li>
+        <li><strong>Tijolos quebrados:</strong> Drenagem</li>
+        <li><strong>Areia:</strong> Para substrato</li>
+      </ul>
+    </div>
+
+    <div class="diy-card">
+      <h4>Sua Própria Casa <span class="free-tag">GRÁTIS</span></h4>
+      <ul>
+        <li><strong>Garrafas PET:</strong> Vasos auto-irrigáveis</li>
+        <li><strong>Potes de sorvete/margarina:</strong> Sementeiras</li>
+        <li><strong>Cascas de ovos:</strong> Cálcio para plantas</li>
+        <li><strong>Borra de café:</strong> Nitrogênio</li>
+        <li><strong>Cascas de banana:</strong> Potássio</li>
+        <li><strong>Água de cozimento:</strong> Minerais</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 4</div>
+  </div>
+
+  <!-- MÓDULO 2 CONT -->
+  <div class="page">
+    <h2>Mais Fontes de Materiais Gratuitos</h2>
+
+    <div class="diy-card">
+      <h4>Vizinhos e Comunidade <span class="free-tag">GRÁTIS</span></h4>
+      <ul>
+        <li><strong>Vasos que não usam:</strong> Muita gente tem sobrando</li>
+        <li><strong>Mudas de podas:</strong> Quem tem jardim sempre poda</li>
+        <li><strong>Folhas secas:</strong> Vizinhos que varrem quintal</li>
+        <li><strong>Grama cortada:</strong> Jardineiros descartam</li>
+        <li><strong>Esterco:</strong> Quem tem animais (galinhas, cavalos)</li>
+      </ul>
+    </div>
+
+    <div class="diy-card">
+      <h4>Comércios Diversos <span class="free-tag">GRÁTIS</span></h4>
+      <ul>
+        <li><strong>Supermercados:</strong> Caixas de papelão (compostagem)</li>
+        <li><strong>Floricultura:</strong> Vasos quebrados, substrato velho</li>
+        <li><strong>Pet shops:</strong> Sacos de ração vazios (ráfia)</li>
+        <li><strong>Borracharias:</strong> Pneus usados (canteiros)</li>
+        <li><strong>Marcenarias:</strong> Serragem (substrato)</li>
+      </ul>
+    </div>
+
+    <h2>Tabela de Materiais vs. Custo</h2>
+
+    <table class="cost-table">
+      <tr>
+        <th>Material</th>
+        <th>Opção Cara</th>
+        <th>Opção Gratuita</th>
+        <th>Economia</th>
+      </tr>
+      <tr>
+        <td>Vaso 20L</td>
+        <td>R$ 30-50</td>
+        <td>Balde de margarina</td>
+        <td>R$ 30-50</td>
+      </tr>
+      <tr>
+        <td>Substrato 20L</td>
+        <td>R$ 30-50</td>
+        <td>Caseiro</td>
+        <td>R$ 25-45</td>
+      </tr>
+      <tr>
+        <td>Drenagem</td>
+        <td>R$ 15-25</td>
+        <td>Pedras/isopor</td>
+        <td>R$ 15-25</td>
+      </tr>
+      <tr>
+        <td>Adubo (kg)</td>
+        <td>R$ 20-40</td>
+        <td>Resíduos orgânicos</td>
+        <td>R$ 20-40</td>
+      </tr>
+      <tr>
+        <td>Regador</td>
+        <td>R$ 20-40</td>
+        <td>Garrafa PET furada</td>
+        <td>R$ 20-40</td>
+      </tr>
+      <tr>
+        <td>Pá pequena</td>
+        <td>R$ 15-30</td>
+        <td>Garrafa cortada</td>
+        <td>R$ 15-30</td>
+      </tr>
+    </table>
+
+    <div class="saving-box">
+      <h3>Economia Total Possível: R$ 125-230</h3>
+      <p>Apenas em materiais básicos!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 5</div>
+  </div>
+
+  <!-- MÓDULO 3 -->
+  <div class="page">
+    <h1>Módulo 3: Vasos e Recipientes DIY</h1>
+
+    <p>Qualquer recipiente que segure terra e tenha furos de drenagem pode ser um vaso. Veja as melhores opções gratuitas.</p>
+
+    <h2>Baldes de Margarina/Tinta</h2>
+    <div class="diy-card">
+      <h4>O Vaso Perfeito e Gratuito <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Capacidade:</strong> 3L a 20L (ideal!)</p>
+      <p><strong>Onde:</strong> Padarias, restaurantes, construções</p>
+      <p><strong>Preparo:</strong></p>
+      <ol>
+        <li>Lave bem com água e sabão</li>
+        <li>Faça 5-8 furos no fundo (prego quente)</li>
+        <li>Opcional: pinte com tinta spray</li>
+      </ol>
+      <p><strong>Ideal para:</strong> Tomate, pimentão, couve, ervas grandes</p>
+    </div>
+
+    <h2>Garrafas PET</h2>
+    <div class="diy-card">
+      <h4>Versáteis e Abundantes <span class="free-tag">GRÁTIS</span></h4>
+
+      <p><strong>Vaso Simples (2L-5L):</strong></p>
+      <ol>
+        <li>Corte a parte superior</li>
+        <li>Faça furos no fundo</li>
+        <li>Pronto para plantar!</li>
+      </ol>
+
+      <p><strong>Vaso Auto-Irrigável:</strong></p>
+      <ol>
+        <li>Corte a garrafa ao meio</li>
+        <li>Inverta a parte de cima (com tampa furada)</li>
+        <li>Encaixe na parte de baixo (reservatório)</li>
+        <li>Passe pavio de tecido pela tampa</li>
+      </ol>
+      <p><strong>Ideal para:</strong> Mudas, ervas, alface, temperos</p>
+    </div>
+
+    <h2>Caixotes de Feira</h2>
+    <div class="diy-card">
+      <h4>Canteiros Instantâneos <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Capacidade:</strong> 20-40L</p>
+      <p><strong>Preparo:</strong></p>
+      <ol>
+        <li>Forre com saco de lixo preto</li>
+        <li>Faça furos no plástico para drenagem</li>
+        <li>Adicione camada de drenagem (5cm)</li>
+        <li>Complete com substrato</li>
+      </ol>
+      <p><strong>Ideal para:</strong> Folhosas, cenoura, beterraba</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 6</div>
+  </div>
+
+  <!-- MÓDULO 3 CONT -->
+  <div class="page">
+    <h2>Mais Recipientes Gratuitos</h2>
+
+    <div class="diy-card">
+      <h4>Pneus Usados <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Onde:</strong> Borracharias (doam de graça)</p>
+      <p><strong>Capacidade:</strong> 30-50L por pneu</p>
+      <p><strong>Preparo:</strong></p>
+      <ol>
+        <li>Lave bem com água e sabão</li>
+        <li>Empilhe 2-3 para mais profundidade</li>
+        <li>Forre o fundo com lona ou deixe no chão</li>
+        <li>Pinte se quiser decorar</li>
+      </ol>
+      <p><strong>Ideal para:</strong> Batata, cenoura, abóbora, melancia</p>
+    </div>
+
+    <div class="diy-card">
+      <h4>Canos PVC - Horta Vertical <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Onde:</strong> Sobras de construção, ferros-velhos</p>
+      <p><strong>Preparo:</strong></p>
+      <ol>
+        <li>Use cano de 100mm ou 150mm</li>
+        <li>Corte aberturas de 8-10cm a cada 20cm</li>
+        <li>Tampe a parte inferior (com drenagem)</li>
+        <li>Apoie verticalmente ou pendure</li>
+      </ol>
+      <p><strong>Ideal para:</strong> Morango, ervas, folhosas pequenas</p>
+    </div>
+
+    <div class="diy-card">
+      <h4>Sacos de Ráfia <span class="cheap-tag">R$ 2-5</span></h4>
+      <p><strong>Onde:</strong> Lojas de construção, fazendas</p>
+      <p><strong>Vantagens:</strong></p>
+      <ul>
+        <li>Drenagem natural excelente</li>
+        <li>Raízes respiram melhor</li>
+        <li>Fácil de mover</li>
+        <li>Duram 2-3 safras</li>
+      </ul>
+      <p><strong>Ideal para:</strong> Batata, gengibre, açafrão</p>
+    </div>
+
+    <h2>Tabela de Capacidade</h2>
+    <table class="cost-table">
+      <tr>
+        <th>Capacidade</th>
+        <th>Recipiente</th>
+        <th>Plantas</th>
+      </tr>
+      <tr>
+        <td>1-3L</td>
+        <td>Garrafa PET, pote</td>
+        <td>Mudas, ervas pequenas</td>
+      </tr>
+      <tr>
+        <td>5-10L</td>
+        <td>Balde pequeno, lata</td>
+        <td>Alface, rúcula, temperos</td>
+      </tr>
+      <tr>
+        <td>15-20L</td>
+        <td>Balde grande</td>
+        <td>Tomate, pimentão, couve</td>
+      </tr>
+      <tr>
+        <td>30-50L</td>
+        <td>Pneu, caixote</td>
+        <td>Abóbora, batata, melancia</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 7</div>
+  </div>
+
+  <!-- MÓDULO 4 -->
+  <div class="page">
+    <h1>Módulo 4: Substrato Caseiro Premium</h1>
+
+    <p>Substrato comercial custa R$ 2-4 por litro. Substrato caseiro custa R$ 0,30-0,50 por litro e é TÃO BOM quanto!</p>
+
+    <h2>Os 3 Componentes Básicos</h2>
+
+    <div class="diy-card">
+      <h4>1. Terra Base (50%) <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Função:</strong> Estrutura e retenção de água</p>
+      <p><strong>Onde conseguir:</strong></p>
+      <ul>
+        <li>Seu próprio quintal</li>
+        <li>Terrenos baldios (com permissão)</li>
+        <li>Vizinhos fazendo obra</li>
+        <li>Mato/floresta próxima</li>
+      </ul>
+      <p><strong>Evite:</strong> Terra muito argilosa (gruda quando molhada)</p>
+    </div>
+
+    <div class="diy-card">
+      <h4>2. Matéria Orgânica (30%) <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Função:</strong> Nutrientes e vida microbiana</p>
+      <p><strong>Opções gratuitas:</strong></p>
+      <ul>
+        <li><strong>Composto caseiro:</strong> Da sua composteira</li>
+        <li><strong>Esterco curtido:</strong> De haras, sítios, galinheiros</li>
+        <li><strong>Folhas decompostas:</strong> Embaixo de árvores</li>
+      </ul>
+      <p><strong>Opção barata:</strong> Húmus de minhoca (R$ 10-15/5kg)</p>
+    </div>
+
+    <div class="diy-card">
+      <h4>3. Material Aerador (20%) <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Função:</strong> Drenagem e aeração</p>
+      <p><strong>Opções gratuitas:</strong></p>
+      <ul>
+        <li><strong>Areia grossa:</strong> Construções</li>
+        <li><strong>Casca de arroz:</strong> Beneficiadoras</li>
+        <li><strong>Serragem velha:</strong> Marcenarias</li>
+        <li><strong>Fibra de coco:</strong> Algumas frutarias</li>
+      </ul>
+    </div>
+
+    <h2>Receita Universal</h2>
+    <div class="recipe-card">
+      <h4>Substrato Caseiro Básico</h4>
+      <ul>
+        <li>5 partes de terra de jardim</li>
+        <li>3 partes de composto/húmus</li>
+        <li>2 partes de areia grossa</li>
+      </ul>
+      <p><strong>Custo:</strong> ~R$ 0,40/litro vs R$ 3,00 comercial</p>
+      <p><strong>Economia:</strong> R$ 52 a cada 20L!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 8</div>
+  </div>
+
+  <!-- MÓDULO 4 CONT -->
+  <div class="page">
+    <h2>Receitas Específicas</h2>
+
+    <div class="recipe-card">
+      <h4>Substrato para Plantas Gulosas (Tomate, Abóbora)</h4>
+      <ul>
+        <li>4 partes de terra</li>
+        <li>3 partes de composto bem curtido</li>
+        <li>2 partes de esterco curtido</li>
+        <li>1 parte de areia</li>
+        <li>1 punhado de cinza por balde</li>
+      </ul>
+    </div>
+
+    <div class="recipe-card">
+      <h4>Substrato para Germinação (Sementes)</h4>
+      <ul>
+        <li>2 partes de terra peneirada fina</li>
+        <li>2 partes de húmus peneirado</li>
+        <li>1 parte de areia fina</li>
+      </ul>
+      <p><em>Mais leve e fino para sementes pequenas.</em></p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>Substrato para Cactos/Suculentas</h4>
+      <ul>
+        <li>2 partes de terra</li>
+        <li>2 partes de areia grossa</li>
+        <li>1 parte de pedrisco fino</li>
+      </ul>
+      <p><em>Drenagem máxima, pouca retenção de água.</em></p>
+    </div>
+
+    <h2>Compostagem: Adubo Grátis Para Sempre</h2>
+
+    <div class="step-box">
+      <h4>Passo 1: Monte a Composteira</h4>
+      <p>Use baldes furados empilhados, caixa de madeira, ou canto do quintal.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 2: Alterne Camadas</h4>
+      <p><strong>Verde (N):</strong> Restos de frutas, legumes, borra de café</p>
+      <p><strong>Marrom (C):</strong> Folhas secas, papelão, serragem</p>
+      <p>Proporção: 2 marrom : 1 verde</p>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 3: Mantenha</h4>
+      <p>Umidade de esponja úmida. Mexa a cada 1-2 semanas.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 4: Colha (2-4 meses)</h4>
+      <p>Pronto quando: escuro, cheiro de terra, não identifica materiais.</p>
+    </div>
+
+    <div class="saving-box">
+      <h3>Economia em Substrato: R$ 50+/ano</h3>
+      <p>20L comercial = R$ 50-60 | 20L caseiro = R$ 8-10</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 9</div>
+  </div>
+
+  <!-- MÓDULO 5 -->
+  <div class="page">
+    <h1>Módulo 5: Adubos Gratuitos da Cozinha</h1>
+
+    <p>Você joga adubo no lixo todo dia! Resíduos domésticos são riquíssimos em nutrientes.</p>
+
+    <h2>Adubos da Sua Cozinha</h2>
+
+    <div class="diy-card">
+      <h4>Casca de Ovo = Cálcio <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Benefícios:</strong> Previne podridão apical (fundo preto em tomates), fortalece células.</p>
+      <p><strong>Como usar:</strong></p>
+      <ul>
+        <li>Lave, seque e triture até virar pó</li>
+        <li>2 colheres de sopa por vaso de 20L</li>
+        <li>Ou ferva cascas, coe e regue</li>
+      </ul>
+    </div>
+
+    <div class="diy-card">
+      <h4>Borra de Café = Nitrogênio <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Benefícios:</strong> Rico em N, melhora estrutura, afasta lesmas.</p>
+      <p><strong>Como usar:</strong></p>
+      <ul>
+        <li>Seque ao sol para evitar mofo</li>
+        <li>Máximo 10% do volume do substrato</li>
+        <li>Ou chá: 100g em 1L água por 24h</li>
+      </ul>
+      <p><strong>Cuidado:</strong> Acidifica o solo. Use com moderação.</p>
+    </div>
+
+    <div class="diy-card">
+      <h4>Casca de Banana = Potássio <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Benefícios:</strong> Estimula floração e frutificação.</p>
+      <p><strong>Como usar:</strong></p>
+      <ul>
+        <li><strong>Seca:</strong> Seque, triture, polvilhe no solo</li>
+        <li><strong>Chá:</strong> Ferva 3-4 cascas em 1L, dilua 1:5</li>
+        <li><strong>Direto:</strong> Corte e enterre no solo</li>
+      </ul>
+    </div>
+
+    <div class="diy-card">
+      <h4>Água de Cozimento = Minerais <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Fontes:</strong> Água de legumes, ovos, batata, macarrão (SEM SAL!)</p>
+      <p><strong>Como usar:</strong> Deixe esfriar e regue diretamente.</p>
+    </div>
+
+    <div class="diy-card">
+      <h4>Cinza de Madeira = Potássio + pH <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Fonte:</strong> Churrasqueira, lareira, fogão a lenha</p>
+      <p><strong>Como usar:</strong> 1 colher de sopa por vaso, 1x/mês</p>
+      <p><strong>Cuidado:</strong> Apenas cinza de madeira limpa!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 10</div>
+  </div>
+
+  <!-- MÓDULO 5 CONT -->
+  <div class="page">
+    <h2>Super Receita: Biofertilizante Caseiro</h2>
+
+    <div class="recipe-card">
+      <h4>Adubo Líquido Completo <span class="free-tag">GRÁTIS</span></h4>
+      <p><strong>Ingredientes:</strong></p>
+      <ul>
+        <li>5 cascas de banana picadas</li>
+        <li>3 colheres de borra de café seca</li>
+        <li>Cascas de 5 ovos trituradas</li>
+        <li>1 colher de cinza de madeira</li>
+        <li>5 litros de água</li>
+      </ul>
+      <p><strong>Preparo:</strong></p>
+      <ol>
+        <li>Coloque tudo em um balde com tampa</li>
+        <li>Deixe fermentar 7-10 dias (não vede)</li>
+        <li>Mexa diariamente</li>
+        <li>Coe e dilua 1:10 antes de usar</li>
+      </ol>
+      <p><strong>Uso:</strong> Regue 1x/semana durante crescimento/floração</p>
+    </div>
+
+    <h2>Tabela de Nutrientes Caseiros</h2>
+
+    <table class="cost-table">
+      <tr>
+        <th>Nutriente</th>
+        <th>Fonte Gratuita</th>
+        <th>Frequência</th>
+      </tr>
+      <tr>
+        <td>Nitrogênio (N)</td>
+        <td>Borra de café, húmus, urina diluída</td>
+        <td>Quinzenal</td>
+      </tr>
+      <tr>
+        <td>Fósforo (P)</td>
+        <td>Farinha de osso, casca de banana</td>
+        <td>Mensal</td>
+      </tr>
+      <tr>
+        <td>Potássio (K)</td>
+        <td>Casca de banana, cinza</td>
+        <td>Quinzenal (floração)</td>
+      </tr>
+      <tr>
+        <td>Cálcio (Ca)</td>
+        <td>Casca de ovo</td>
+        <td>No plantio + mensal</td>
+      </tr>
+      <tr>
+        <td>Magnésio (Mg)</td>
+        <td>Sal amargo (farmácia R$ 5)</td>
+        <td>Mensal se deficiente</td>
+      </tr>
+      <tr>
+        <td>Ferro (Fe)</td>
+        <td>Água de pregos enferrujados</td>
+        <td>Semanal se deficiente</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>NÃO coloque na composteira/adubo:</h4>
+      <ul>
+        <li>Carnes, ossos, laticínios (atraem pragas)</li>
+        <li>Fezes de cães/gatos (patógenos)</li>
+        <li>Plantas doentes</li>
+        <li>Cítricos em excesso (muito ácido)</li>
+      </ul>
+    </div>
+
+    <div class="saving-box">
+      <h3>Economia em Adubos: R$ 100+/ano</h3>
+      <p>Adubo comercial vs resíduos que você já tem!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 11</div>
+  </div>
+
+  <!-- MÓDULO 6: SEMENTES E MUDAS GRÁTIS -->
+  <div class="page">
+    <h2>Módulo 6: Sementes e Mudas 100% Grátis</h2>
+
+    <div class="intro-box">
+      <p>Nunca mais compre sementes! A natureza é generosa - aprenda a multiplicar suas plantas infinitamente.</p>
+    </div>
+
+    <h3>🍅 Sementes de Frutas e Legumes</h3>
+
+    <div class="card-grid">
+      <div class="diy-card">
+        <h4>Tomate</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ol>
+          <li>Escolha tomate bem maduro</li>
+          <li>Retire sementes com gel</li>
+          <li>Deixe fermentar 3 dias</li>
+          <li>Lave e seque na sombra</li>
+          <li>Guarde em envelope</li>
+        </ol>
+        <p class="tip">✓ Guarda por 4 anos</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Pimentão</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ol>
+          <li>Use pimentão maduro (vermelho)</li>
+          <li>Retire sementes do miolo</li>
+          <li>Seque por 1 semana</li>
+          <li>Armazene em local seco</li>
+        </ol>
+        <p class="tip">✓ Germina em 10-14 dias</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Abóbora/Moranga</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ol>
+          <li>Retire sementes ao cozinhar</li>
+          <li>Lave bem</li>
+          <li>Seque ao sol por 3 dias</li>
+          <li>Plante direto ou guarde</li>
+        </ol>
+        <p class="tip">✓ Dura 5+ anos</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Pepino/Melão</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ol>
+          <li>Deixe fruto amadurecer demais</li>
+          <li>Corte e extraia sementes</li>
+          <li>Lave em água corrente</li>
+          <li>Seque completamente</li>
+        </ol>
+        <p class="tip">✓ Alta taxa germinação</p>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 12</div>
+  </div>
+
+  <!-- PÁGINA 13 -->
+  <div class="page">
+    <h3>🌿 Rebrote de Talos - Nunca Mais Compre!</h3>
+
+    <p>Muitas hortaliças rebrotam infinitamente a partir do talo que você jogaria fora:</p>
+
+    <div class="card-grid">
+      <div class="roi-card">
+        <h4>🧅 Cebolinha</h4>
+        <span class="free-tag">INFINITO</span>
+        <p><strong>Como:</strong> Plante a raiz (2cm) em vaso</p>
+        <p><strong>Tempo:</strong> Colheita em 2 semanas</p>
+        <p><strong>ROI:</strong> 1 maço = colheitas infinitas</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>🥬 Alface</h4>
+        <span class="free-tag">INFINITO</span>
+        <p><strong>Como:</strong> Coloque base em água, transplante</p>
+        <p><strong>Tempo:</strong> Nova cabeça em 3-4 semanas</p>
+        <p><strong>ROI:</strong> R$ 5 economizados/mês</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>🧄 Alho</h4>
+        <span class="free-tag">INFINITO</span>
+        <p><strong>Como:</strong> Plante dentes com casca</p>
+        <p><strong>Tempo:</strong> Cabeça nova em 6 meses</p>
+        <p><strong>ROI:</strong> 1 dente = 1 cabeça inteira</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>🥕 Cenoura (folhas)</h4>
+        <span class="free-tag">INFINITO</span>
+        <p><strong>Como:</strong> Coloque topo em água</p>
+        <p><strong>Tempo:</strong> Folhas em 1 semana</p>
+        <p><strong>ROI:</strong> Folhas comestíveis grátis</p>
+      </div>
+    </div>
+
+    <h3>🌱 Mais Talos que Rebrotam</h3>
+
+    <table>
+      <tr>
+        <th>Hortaliça</th>
+        <th>Parte Usada</th>
+        <th>Tempo até Colheita</th>
+      </tr>
+      <tr>
+        <td>Salsão/Aipo</td>
+        <td>Base (5cm)</td>
+        <td>3-4 semanas</td>
+      </tr>
+      <tr>
+        <td>Repolho</td>
+        <td>Tronco central</td>
+        <td>4-6 semanas (mini repolhos)</td>
+      </tr>
+      <tr>
+        <td>Alho-poró</td>
+        <td>Base com raízes</td>
+        <td>2-3 semanas</td>
+      </tr>
+      <tr>
+        <td>Gengibre</td>
+        <td>Pedaço com "olhos"</td>
+        <td>8-10 meses</td>
+      </tr>
+      <tr>
+        <td>Batata-doce</td>
+        <td>Batata inteira em água</td>
+        <td>Ramas em 2 semanas</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 13</div>
+  </div>
+
+  <!-- PÁGINA 14 -->
+  <div class="page">
+    <h3>✂️ Estaquia - Multiplique Ervas Infinitamente</h3>
+
+    <div class="intro-box">
+      <p>Uma única planta-mãe pode gerar dezenas de mudas por estaquia. Técnica 100% gratuita!</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="diy-card">
+        <h4>Hortelã</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ol>
+          <li>Corte ramo de 10-15cm</li>
+          <li>Remova folhas inferiores</li>
+          <li>Coloque em água</li>
+          <li>Raízes em 5-7 dias</li>
+          <li>Plante quando raízes = 3cm</li>
+        </ol>
+        <p class="success">Taxa de sucesso: 95%</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Manjericão</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ol>
+          <li>Corte abaixo de um nó</li>
+          <li>Deixe 2-3 pares de folhas</li>
+          <li>Água ou substrato úmido</li>
+          <li>Raízes em 7-10 dias</li>
+          <li>Sol indireto até enraizar</li>
+        </ol>
+        <p class="success">Taxa de sucesso: 90%</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Alecrim</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ol>
+          <li>Ramo semi-lenhoso 10cm</li>
+          <li>Remova folhas da base</li>
+          <li>Substrato arenoso</li>
+          <li>Raízes em 3-4 semanas</li>
+          <li>Mantenha úmido, não encharcado</li>
+        </ol>
+        <p class="success">Taxa de sucesso: 70%</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Ora-pro-nóbis</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ol>
+          <li>Corte galho de 20cm</li>
+          <li>Deixe secar 1 dia</li>
+          <li>Plante direto na terra</li>
+          <li>Raízes em 2 semanas</li>
+          <li>Extremamente fácil!</li>
+        </ol>
+        <p class="success">Taxa de sucesso: 99%</p>
+      </div>
+    </div>
+
+    <div class="saving-box">
+      <h3>💰 Economia com Estaquia</h3>
+      <p>1 muda de manjericão = R$ 8-15</p>
+      <p>10 estacas da mesma planta = R$ 80-150 economizados!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 14</div>
+  </div>
+
+  <!-- PÁGINA 15 -->
+  <div class="page">
+    <h3>🏪 Onde Conseguir Sementes Grátis</h3>
+
+    <div class="card-grid">
+      <div class="diy-card">
+        <h4>🏛️ Feiras de Troca</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ul>
+          <li>Feiras de agricultura familiar</li>
+          <li>Eventos de permacultura</li>
+          <li>Encontros de horticultores</li>
+          <li>Grupos de Facebook locais</li>
+        </ul>
+        <p class="tip">Leve suas sementes para trocar!</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>🌐 Online Grátis</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ul>
+          <li>Grupos WhatsApp de jardinagem</li>
+          <li>Fóruns de permacultura</li>
+          <li>Comunidades do Reddit</li>
+          <li>Marketplaces (só frete)</li>
+        </ul>
+        <p class="tip">Muitos doam excedentes!</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>🏫 Instituições</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ul>
+          <li>Embrapa (algumas variedades)</li>
+          <li>EMATER estadual</li>
+          <li>Prefeituras (programas)</li>
+          <li>Universidades (excedentes)</li>
+        </ul>
+        <p class="tip">Pesquise na sua cidade!</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>👵 Vizinhos e Família</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ul>
+          <li>Avós guardam sementes antigas</li>
+          <li>Vizinhos com hortas</li>
+          <li>Sítios e chácaras</li>
+          <li>Colegas de trabalho</li>
+        </ul>
+        <p class="tip">Variedades tradicionais = tesouro!</p>
+      </div>
+    </div>
+
+    <div class="money-box">
+      <h3>📊 Banco de Sementes Caseiro</h3>
+      <table>
+        <tr>
+          <th>Material</th>
+          <th>Custo</th>
+          <th>Função</th>
+        </tr>
+        <tr>
+          <td>Envelopes de papel</td>
+          <td>R$ 0 (faça com folha A4)</td>
+          <td>Armazenar sementes</td>
+        </tr>
+        <tr>
+          <td>Pote de vidro</td>
+          <td>R$ 0 (reaproveite)</td>
+          <td>Proteção da umidade</td>
+        </tr>
+        <tr>
+          <td>Sílica gel</td>
+          <td>R$ 0 (de caixas de sapato)</td>
+          <td>Absorver umidade</td>
+        </tr>
+        <tr>
+          <td>Caixa organizadora</td>
+          <td>R$ 0 (caixa de sapato)</td>
+          <td>Organização</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 15</div>
+  </div>
+
+  <!-- MÓDULO 7: IRRIGAÇÃO ECONÔMICA -->
+  <div class="page">
+    <h2>Módulo 7: Irrigação Econômica</h2>
+
+    <div class="intro-box">
+      <p>Água é recurso precioso. Aprenda sistemas de irrigação que economizam água E dinheiro!</p>
+    </div>
+
+    <h3>💧 Sistema de Gotejamento Caseiro</h3>
+
+    <div class="diy-card" style="max-width: 100%;">
+      <h4>Garrafa PET Gotejadora</h4>
+      <span class="free-tag">GRÁTIS</span>
+
+      <div class="card-grid">
+        <div>
+          <h5>Materiais:</h5>
+          <ul>
+            <li>Garrafa PET 2L</li>
+            <li>Agulha ou prego fino</li>
+            <li>Barbante de algodão (opcional)</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Passo a Passo:</h5>
+          <ol>
+            <li>Faça 2-4 furos pequenos na tampa</li>
+            <li>Corte o fundo da garrafa</li>
+            <li>Enterre de cabeça para baixo</li>
+            <li>Encha com água</li>
+          </ol>
+        </div>
+      </div>
+
+      <p class="tip">✓ Irriga por 3-5 dias automaticamente!</p>
+    </div>
+
+    <h3>🏺 Irrigação por Ollas (Potes de Barro)</h3>
+
+    <div class="compare-grid">
+      <div class="compare-good">
+        <h4>✅ Vantagens</h4>
+        <ul>
+          <li>Economiza 50-70% de água</li>
+          <li>Raízes buscam a umidade</li>
+          <li>Irriga por até 7 dias</li>
+          <li>Zero desperdício</li>
+          <li>Não molha folhas</li>
+        </ul>
+      </div>
+      <div>
+        <h4>📝 Como Fazer</h4>
+        <ol>
+          <li>Use vaso de barro sem verniz</li>
+          <li>Tampe o furo com rolha/pedra</li>
+          <li>Enterre até o pescoço</li>
+          <li>Encha com água</li>
+          <li>Tampe para não evaporar</li>
+        </ol>
+        <p><strong>Custo:</strong> R$ 5-15 (vaso usado)</p>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 16</div>
+  </div>
+
+  <!-- PÁGINA 17 -->
+  <div class="page">
+    <h3>🌧️ Captação de Água da Chuva</h3>
+
+    <div class="saving-box">
+      <h3>💰 Economia Anual com Água da Chuva</h3>
+      <p>Telhado 50m² × 1000mm chuva/ano = 50.000 litros GRÁTIS!</p>
+      <p>Economia: R$ 400-600/ano em água tratada</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="diy-card">
+        <h4>Sistema Básico</h4>
+        <span class="cheap-tag">R$ 50-100</span>
+        <ul>
+          <li>Calha direcionada</li>
+          <li>Tambor 200L (doado/usado)</li>
+          <li>Tela anti-mosquito</li>
+          <li>Torneira na base</li>
+        </ul>
+        <p class="tip">Suficiente para horta pequena</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Sistema Intermediário</h4>
+        <span class="cheap-tag">R$ 150-300</span>
+        <ul>
+          <li>Caixa d'água 500L</li>
+          <li>Filtro de folhas</li>
+          <li>Descarte primeira chuva</li>
+          <li>Conexão com mangueira</li>
+        </ul>
+        <p class="tip">Autonomia de 2-4 semanas</p>
+      </div>
+    </div>
+
+    <h3>♻️ Reuso de Água Cinza</h3>
+
+    <table>
+      <tr>
+        <th>Fonte</th>
+        <th>Pode Usar?</th>
+        <th>Observação</th>
+      </tr>
+      <tr>
+        <td>Água do banho (inicial)</td>
+        <td>✅ SIM</td>
+        <td>Enquanto esquenta (balde)</td>
+      </tr>
+      <tr>
+        <td>Água de lavar legumes</td>
+        <td>✅ SIM</td>
+        <td>Ideal para horta</td>
+      </tr>
+      <tr>
+        <td>Água do ar-condicionado</td>
+        <td>✅ SIM</td>
+        <td>Pura, sem cloro</td>
+      </tr>
+      <tr>
+        <td>Água de cozimento (sem sal)</td>
+        <td>✅ SIM</td>
+        <td>Nutritiva para plantas</td>
+      </tr>
+      <tr>
+        <td>Água de aquário</td>
+        <td>✅ SIM</td>
+        <td>Rica em nutrientes!</td>
+      </tr>
+      <tr>
+        <td>Água com detergente</td>
+        <td>❌ NÃO</td>
+        <td>Prejudica plantas</td>
+      </tr>
+      <tr>
+        <td>Água sanitária</td>
+        <td>❌ NÃO</td>
+        <td>Tóxico para solo</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 17</div>
+  </div>
+
+  <!-- PÁGINA 18 -->
+  <div class="page">
+    <h3>⏰ Horários Econômicos de Rega</h3>
+
+    <div class="compare-grid">
+      <div class="compare-good">
+        <h4>✅ Horários IDEAIS</h4>
+        <ul>
+          <li><strong>Manhã (6h-9h):</strong> Melhor horário! Água absorvida antes do calor</li>
+          <li><strong>Final da tarde (17h-18h):</strong> Segunda opção, folhas secam antes da noite</li>
+        </ul>
+        <p><strong>Economia:</strong> 30-50% menos água</p>
+      </div>
+      <div class="compare-bad">
+        <h4>❌ Horários RUINS</h4>
+        <ul>
+          <li><strong>Meio-dia:</strong> 70% evapora antes de absorver!</li>
+          <li><strong>Noite:</strong> Folhas molhadas = fungos</li>
+        </ul>
+        <p><strong>Desperdício:</strong> Até 70% da água</p>
+      </div>
+    </div>
+
+    <h3>🎯 Mulching - Reduza Rega em 50%</h3>
+
+    <div class="intro-box">
+      <p>Cobertura do solo é o segredo para economizar água. O sol não atinge a terra diretamente!</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="diy-card">
+        <h4>Palha Seca</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <p>Camada de 5-10cm</p>
+        <p>Dura 2-3 meses</p>
+        <p>Vira adubo depois</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Folhas Secas</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <p>Recolha do quintal</p>
+        <p>Pique se possível</p>
+        <p>Excelente isolante</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Papelão</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <p>Caixas sem tinta</p>
+        <p>Mata ervas daninhas</p>
+        <p>Dura 4-6 meses</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Serragem</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <p>Marcenarias doam</p>
+        <p>Misture com nitrogênio</p>
+        <p>Ótimo isolante</p>
+      </div>
+    </div>
+
+    <div class="saving-box">
+      <h3>💧 Economia com Mulching</h3>
+      <p>Sem cobertura: Rega diária | Com mulching: Rega a cada 2-3 dias</p>
+      <p>Economia: 50% de água + menos trabalho!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 18</div>
+  </div>
+
+  <!-- MÓDULO 8: FERRAMENTAS DIY -->
+  <div class="page">
+    <h2>Módulo 8: Ferramentas DIY</h2>
+
+    <div class="intro-box">
+      <p>Ferramentas profissionais custam caro. Faça as suas com materiais gratuitos ou muito baratos!</p>
+    </div>
+
+    <h3>🔧 Ferramentas Essenciais Caseiras</h3>
+
+    <div class="card-grid">
+      <div class="diy-card">
+        <h4>Pá de Transplante</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <p><strong>Material:</strong> Garrafa de amaciante</p>
+        <ol>
+          <li>Corte diagonal na garrafa</li>
+          <li>Mantenha a alça</li>
+          <li>Lixe bordas cortantes</li>
+        </ol>
+        <p class="tip">Perfeita para vasos!</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Regador</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <p><strong>Material:</strong> Galão de leite/água</p>
+        <ol>
+          <li>Faça furos na tampa</li>
+          <li>Use prego aquecido</li>
+          <li>Furos pequenos = jato fino</li>
+        </ol>
+        <p class="tip">Economia: R$ 25-50</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Marcadores de Plantas</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <p><strong>Material:</strong> Palitos de sorvete, colheres plásticas</p>
+        <ol>
+          <li>Limpe bem</li>
+          <li>Escreva com caneta permanente</li>
+          <li>Passe verniz se quiser</li>
+        </ol>
+        <p class="tip">Economia: R$ 15-30</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>Borrifador</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <p><strong>Material:</strong> Frasco de limpador vazio</p>
+        <ol>
+          <li>Lave muito bem (3x)</li>
+          <li>Enxágue com vinagre</li>
+          <li>Use para água ou defensivos</li>
+        </ol>
+        <p class="tip">Economia: R$ 10-20</p>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 19</div>
+  </div>
+
+  <!-- PÁGINA 20 -->
+  <div class="page">
+    <h3>🛠️ Mais Ferramentas DIY</h3>
+
+    <div class="card-grid">
+      <div class="diy-card">
+        <h4>Peneira para Substrato</h4>
+        <span class="cheap-tag">R$ 5-10</span>
+        <p><strong>Material:</strong> Caixote de feira + tela</p>
+        <ol>
+          <li>Pregue tela no fundo</li>
+          <li>Use malha fina ou grossa</li>
+          <li>Peneira terra e composto</li>
+        </ol>
+      </div>
+
+      <div class="diy-card">
+        <h4>Tutor para Plantas</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <p><strong>Material:</strong> Galhos secos, bambu</p>
+        <ol>
+          <li>Colete galhos retos</li>
+          <li>Seque ao sol</li>
+          <li>Amarre com barbante</li>
+        </ol>
+      </div>
+
+      <div class="diy-card">
+        <h4>Mini Estufa</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <p><strong>Material:</strong> Garrafa PET cortada</p>
+        <ol>
+          <li>Corte ao meio</li>
+          <li>Cubra mudas/sementes</li>
+          <li>Cria efeito estufa</li>
+        </ol>
+      </div>
+
+      <div class="diy-card">
+        <h4>Ancinho Mini</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <p><strong>Material:</strong> Garfo velho</p>
+        <ol>
+          <li>Entorte os dentes</li>
+          <li>Fixe cabo de madeira</li>
+          <li>Ideal para vasos</li>
+        </ol>
+      </div>
+    </div>
+
+    <h3>📦 Kit Ferramentas Completo</h3>
+
+    <div class="compare-grid">
+      <div class="compare-bad">
+        <h4>❌ Comprando Tudo Novo</h4>
+        <ul>
+          <li>Pá de transplante: R$ 25</li>
+          <li>Regador 5L: R$ 35</li>
+          <li>Borrifador: R$ 15</li>
+          <li>Marcadores (10): R$ 20</li>
+          <li>Peneira: R$ 30</li>
+          <li>Tutores (10): R$ 25</li>
+        </ul>
+        <p><strong>TOTAL: R$ 150</strong></p>
+      </div>
+      <div class="compare-good">
+        <h4>✅ Fazendo em Casa</h4>
+        <ul>
+          <li>Pá (garrafa): R$ 0</li>
+          <li>Regador (galão): R$ 0</li>
+          <li>Borrifador (frasco): R$ 0</li>
+          <li>Marcadores (palitos): R$ 0</li>
+          <li>Peneira (caixote): R$ 5</li>
+          <li>Tutores (galhos): R$ 0</li>
+        </ul>
+        <p><strong>TOTAL: R$ 5</strong></p>
+      </div>
+    </div>
+
+    <div class="saving-box">
+      <h3>💰 Economia em Ferramentas: R$ 145</h3>
+      <p>E ainda ajuda o meio ambiente reciclando!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 20</div>
+  </div>
+
+  <!-- MÓDULO 9: 20 PLANTAS COM MAIOR ROI -->
+  <div class="page">
+    <h2>Módulo 9: As 20 Plantas com Maior ROI</h2>
+
+    <div class="intro-box">
+      <p>ROI = Retorno sobre Investimento. Estas plantas dão o maior retorno em economia considerando custo, facilidade e produtividade!</p>
+    </div>
+
+    <h3>🏆 TOP 10 - Retorno Extraordinário</h3>
+
+    <div class="card-grid">
+      <div class="roi-card">
+        <h4>🥇 1. Cebolinha</h4>
+        <span class="free-tag">ROI: ∞</span>
+        <p><strong>Investimento:</strong> R$ 3 (1 maço)</p>
+        <p><strong>Retorno:</strong> Colheitas infinitas</p>
+        <p><strong>Economia anual:</strong> R$ 150+</p>
+        <p class="tip">Plante raiz, colha sempre!</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>🥈 2. Hortelã</h4>
+        <span class="free-tag">ROI: ∞</span>
+        <p><strong>Investimento:</strong> R$ 5 (1 muda)</p>
+        <p><strong>Retorno:</strong> Multiplica sozinha</p>
+        <p><strong>Economia anual:</strong> R$ 200+</p>
+        <p class="tip">Cuidado: muito invasiva!</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>🥉 3. Couve</h4>
+        <span class="free-tag">ROI: 5000%</span>
+        <p><strong>Investimento:</strong> R$ 4 (1 muda)</p>
+        <p><strong>Retorno:</strong> 2 anos de colheita</p>
+        <p><strong>Economia anual:</strong> R$ 200+</p>
+        <p class="tip">Colha folhas externas</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>4. Manjericão</h4>
+        <span class="cheap-tag">ROI: 2000%</span>
+        <p><strong>Investimento:</strong> R$ 6 (1 muda)</p>
+        <p><strong>Retorno:</strong> Estacas infinitas</p>
+        <p><strong>Economia anual:</strong> R$ 120+</p>
+        <p class="tip">Pode sempre para ramificar</p>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 21</div>
+  </div>
+
+  <!-- PÁGINA 22 -->
+  <div class="page">
+    <div class="card-grid">
+      <div class="roi-card">
+        <h4>5. Alface</h4>
+        <span class="cheap-tag">ROI: 1500%</span>
+        <p><strong>Investimento:</strong> R$ 3 (sementes)</p>
+        <p><strong>Retorno:</strong> 30+ pés/ano</p>
+        <p><strong>Economia anual:</strong> R$ 180+</p>
+        <p class="tip">Plante escalonado</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>6. Salsinha</h4>
+        <span class="cheap-tag">ROI: 1200%</span>
+        <p><strong>Investimento:</strong> R$ 3 (sementes)</p>
+        <p><strong>Retorno:</strong> 8 meses de colheita</p>
+        <p><strong>Economia anual:</strong> R$ 100+</p>
+        <p class="tip">Demora para germinar</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>7. Tomate Cereja</h4>
+        <span class="cheap-tag">ROI: 1000%</span>
+        <p><strong>Investimento:</strong> R$ 0 (sementes do fruto)</p>
+        <p><strong>Retorno:</strong> 5-10kg/planta</p>
+        <p><strong>Economia anual:</strong> R$ 150+</p>
+        <p class="tip">Precisa de sol pleno</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>8. Rúcula</h4>
+        <span class="cheap-tag">ROI: 900%</span>
+        <p><strong>Investimento:</strong> R$ 3 (sementes)</p>
+        <p><strong>Retorno:</strong> Colheita em 30 dias</p>
+        <p><strong>Economia anual:</strong> R$ 120+</p>
+        <p class="tip">Ciclo rápido, plante muito</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>9. Ora-pro-nóbis</h4>
+        <span class="free-tag">ROI: ∞</span>
+        <p><strong>Investimento:</strong> R$ 0 (galho de vizinho)</p>
+        <p><strong>Retorno:</strong> Proteína vegetal eterna</p>
+        <p><strong>Economia anual:</strong> R$ 200+</p>
+        <p class="tip">Cerca viva comestível!</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>10. Pimenta</h4>
+        <span class="cheap-tag">ROI: 800%</span>
+        <p><strong>Investimento:</strong> R$ 0 (sementes)</p>
+        <p><strong>Retorno:</strong> Anos de colheita</p>
+        <p><strong>Economia anual:</strong> R$ 80+</p>
+        <p class="tip">Vive 5+ anos</p>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 22</div>
+  </div>
+
+  <!-- PÁGINA 23 -->
+  <div class="page">
+    <h3>🌟 TOP 11-20 - Excelente Retorno</h3>
+
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Planta</th>
+        <th>Investimento</th>
+        <th>Economia/Ano</th>
+        <th>Dica</th>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Alho</td>
+        <td>R$ 0 (dente)</td>
+        <td>R$ 60+</td>
+        <td>1 dente = 1 cabeça</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Gengibre</td>
+        <td>R$ 5 (pedaço)</td>
+        <td>R$ 80+</td>
+        <td>Sombra parcial</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Açafrão/Cúrcuma</td>
+        <td>R$ 8 (rizoma)</td>
+        <td>R$ 100+</td>
+        <td>Medicinal poderoso</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Alecrim</td>
+        <td>R$ 6 (muda)</td>
+        <td>R$ 70+</td>
+        <td>Vive 10+ anos</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Capim-limão</td>
+        <td>R$ 4 (muda)</td>
+        <td>R$ 50+</td>
+        <td>Repelente natural</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Espinafre</td>
+        <td>R$ 3 (sementes)</td>
+        <td>R$ 90+</td>
+        <td>Prefere clima ameno</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Agrião</td>
+        <td>R$ 2 (talos)</td>
+        <td>R$ 80+</td>
+        <td>Adora água</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Mostarda</td>
+        <td>R$ 3 (sementes)</td>
+        <td>R$ 60+</td>
+        <td>Cresce rápido</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Tomilho</td>
+        <td>R$ 6 (muda)</td>
+        <td>R$ 50+</td>
+        <td>Seca bem</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Cebolinha Francesa</td>
+        <td>R$ 5 (muda)</td>
+        <td>R$ 70+</td>
+        <td>Flores comestíveis</td>
+      </tr>
+    </table>
+
+    <div class="saving-box">
+      <h3>💰 Economia Total TOP 20</h3>
+      <p><strong>Investimento inicial:</strong> ~R$ 50</p>
+      <p><strong>Economia anual:</strong> R$ 2.000+</p>
+      <p><strong>ROI médio:</strong> 4.000%</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>⚠️ Plantas que NÃO Compensam para Iniciantes</h4>
+      <ul>
+        <li><strong>Morango:</strong> Muito trabalhoso, baixa produção caseira</li>
+        <li><strong>Melancia:</strong> Ocupa muito espaço, 1 fruto/planta</li>
+        <li><strong>Milho:</strong> Precisa de área grande para polinização</li>
+        <li><strong>Batata inglesa:</strong> Pragas e doenças frequentes</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 23</div>
+  </div>
+
+  <!-- MÓDULO 10: PLANO HORTA COM R$ 50 -->
+  <div class="page">
+    <h2>Módulo 10: Monte Sua Horta com R$ 50</h2>
+
+    <div class="intro-box">
+      <p>Sim, é possível! Um plano completo e realista para montar uma horta produtiva investindo apenas R$ 50.</p>
+    </div>
+
+    <h3>📋 Lista de Compras - R$ 50</h3>
+
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Quantidade</th>
+        <th>Custo</th>
+        <th>Onde Encontrar</th>
+      </tr>
+      <tr>
+        <td>Terra vegetal</td>
+        <td>20kg</td>
+        <td>R$ 12</td>
+        <td>Loja agrícola</td>
+      </tr>
+      <tr>
+        <td>Sementes mistas</td>
+        <td>5 pacotes</td>
+        <td>R$ 15</td>
+        <td>R$ 3 cada (básicas)</td>
+      </tr>
+      <tr>
+        <td>Muda de couve</td>
+        <td>2 unid</td>
+        <td>R$ 6</td>
+        <td>Feira ou mercado</td>
+      </tr>
+      <tr>
+        <td>Muda de cebolinha</td>
+        <td>2 maços</td>
+        <td>R$ 6</td>
+        <td>Plante as raízes</td>
+      </tr>
+      <tr>
+        <td>Esterco curtido</td>
+        <td>5kg</td>
+        <td>R$ 8</td>
+        <td>Loja agrícola</td>
+      </tr>
+      <tr>
+        <td>Barbante</td>
+        <td>1 rolo</td>
+        <td>R$ 3</td>
+        <td>Qualquer loja</td>
+      </tr>
+      <tr>
+        <th colspan="2">TOTAL</th>
+        <th>R$ 50</th>
+        <th></th>
+      </tr>
+    </table>
+
+    <h3>🆓 Itens Gratuitos Necessários</h3>
+
+    <div class="card-grid">
+      <div class="diy-card">
+        <h4>Vasos</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ul>
+          <li>Garrafas PET cortadas</li>
+          <li>Baldes velhos furados</li>
+          <li>Latas de tinta</li>
+          <li>Caixotes de feira</li>
+        </ul>
+      </div>
+
+      <div class="diy-card">
+        <h4>Drenagem</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ul>
+          <li>Isopor picado</li>
+          <li>Cacos de telha</li>
+          <li>Pedras do quintal</li>
+          <li>Tampinhas plásticas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 24</div>
+  </div>
+
+  <!-- PÁGINA 25 -->
+  <div class="page">
+    <h3>📅 Cronograma de Plantio</h3>
+
+    <div class="money-box">
+      <h4>Semana 1: Preparação</h4>
+      <ul>
+        <li>Colete vasos gratuitos (mínimo 10)</li>
+        <li>Faça furos de drenagem</li>
+        <li>Prepare substrato (terra + esterco)</li>
+        <li>Monte sistema de irrigação (garrafas PET)</li>
+      </ul>
+    </div>
+
+    <div class="money-box">
+      <h4>Semana 2: Plantio Direto</h4>
+      <ul>
+        <li>Plante mudas de couve (2 vasos grandes)</li>
+        <li>Plante raízes de cebolinha (4 vasos)</li>
+        <li>Semeie alface e rúcula (6 vasos)</li>
+        <li>Semeie coentro e salsinha (4 vasos)</li>
+      </ul>
+    </div>
+
+    <div class="money-box">
+      <h4>Semanas 3-4: Cuidados</h4>
+      <ul>
+        <li>Rega diária pela manhã</li>
+        <li>Desbaste mudas que nasceram</li>
+        <li>Inicie compostagem com restos</li>
+        <li>Prepare mais vasos para expansão</li>
+      </ul>
+    </div>
+
+    <h3>🌱 Sua Horta de R$ 50 em 30 Dias</h3>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Qtd Vasos</th>
+        <th>Primeira Colheita</th>
+        <th>Economia Mensal</th>
+      </tr>
+      <tr>
+        <td>Couve</td>
+        <td>2</td>
+        <td>30 dias (folhas)</td>
+        <td>R$ 20</td>
+      </tr>
+      <tr>
+        <td>Cebolinha</td>
+        <td>4</td>
+        <td>15 dias</td>
+        <td>R$ 15</td>
+      </tr>
+      <tr>
+        <td>Alface</td>
+        <td>4</td>
+        <td>30-45 dias</td>
+        <td>R$ 25</td>
+      </tr>
+      <tr>
+        <td>Rúcula</td>
+        <td>2</td>
+        <td>25-30 dias</td>
+        <td>R$ 15</td>
+      </tr>
+      <tr>
+        <td>Coentro</td>
+        <td>2</td>
+        <td>30-40 dias</td>
+        <td>R$ 10</td>
+      </tr>
+      <tr>
+        <td>Salsinha</td>
+        <td>2</td>
+        <td>60-90 dias</td>
+        <td>R$ 10</td>
+      </tr>
+      <tr>
+        <th>TOTAL</th>
+        <th>16</th>
+        <th></th>
+        <th>R$ 95/mês</th>
+      </tr>
+    </table>
+
+    <div class="saving-box">
+      <h3>💰 ROI do Investimento de R$ 50</h3>
+      <p>Mês 1: R$ 50 economizados (recuperou investimento!)</p>
+      <p>Ano 1: R$ 1.140 economizados</p>
+      <p><strong>ROI: 2.280%</strong></p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 25</div>
+  </div>
+
+  <!-- MÓDULO 11: ECONOMIA CIRCULAR -->
+  <div class="page">
+    <h2>Módulo 11: Economia Circular na Horta</h2>
+
+    <div class="intro-box">
+      <p>Na natureza não existe lixo. Aprenda a transformar todos os resíduos em recursos para sua horta!</p>
+    </div>
+
+    <h3>🔄 Ciclo Fechado da Horta</h3>
+
+    <div class="card-grid">
+      <div class="diy-card">
+        <h4>1. Restos de Cozinha</h4>
+        <span class="free-tag">→ Composteira</span>
+        <p>Cascas, talos, borra de café</p>
+        <p>↓</p>
+        <p>Composto em 60-90 dias</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>2. Composto Pronto</h4>
+        <span class="free-tag">→ Adubo</span>
+        <p>Aplique nas plantas</p>
+        <p>↓</p>
+        <p>Plantas saudáveis</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>3. Colheita</h4>
+        <span class="free-tag">→ Alimentos</span>
+        <p>Consuma o que plantou</p>
+        <p>↓</p>
+        <p>Sobras voltam para etapa 1</p>
+      </div>
+
+      <div class="diy-card">
+        <h4>4. Sementes</h4>
+        <span class="free-tag">→ Novas Plantas</span>
+        <p>Guarde sementes da colheita</p>
+        <p>↓</p>
+        <p>Ciclo infinito!</p>
+      </div>
+    </div>
+
+    <h3>🗑️ Transforme Lixo em Recurso</h3>
+
+    <table>
+      <tr>
+        <th>"Lixo"</th>
+        <th>Transformação</th>
+        <th>Uso na Horta</th>
+      </tr>
+      <tr>
+        <td>Cascas de ovos</td>
+        <td>Triturar</td>
+        <td>Cálcio para tomates</td>
+      </tr>
+      <tr>
+        <td>Borra de café</td>
+        <td>Secar</td>
+        <td>Adubo ácido + repelente</td>
+      </tr>
+      <tr>
+        <td>Cascas de banana</td>
+        <td>Fermentar em água</td>
+        <td>Adubo potássio</td>
+      </tr>
+      <tr>
+        <td>Cinzas de madeira</td>
+        <td>Peneirar</td>
+        <td>Potássio + corretor pH</td>
+      </tr>
+      <tr>
+        <td>Papel e papelão</td>
+        <td>Picar</td>
+        <td>Carbono p/ composteira</td>
+      </tr>
+      <tr>
+        <td>Folhas secas</td>
+        <td>Empilhar</td>
+        <td>Mulching + composteira</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 26</div>
+  </div>
+
+  <!-- PÁGINA 27 -->
+  <div class="page">
+    <h3>🪱 Composteira Econômica</h3>
+
+    <div class="compare-grid">
+      <div class="compare-bad">
+        <h4>❌ Composteira Comprada</h4>
+        <ul>
+          <li>Kit 3 caixas: R$ 150-300</li>
+          <li>Minhocas: R$ 30-50</li>
+          <li>Torneira: incluída</li>
+        </ul>
+        <p><strong>Total: R$ 180-350</strong></p>
+      </div>
+      <div class="compare-good">
+        <h4>✅ Composteira DIY</h4>
+        <ul>
+          <li>3 baldes usados: R$ 0-15</li>
+          <li>Minhocas: R$ 0 (peça/colete)</li>
+          <li>Furadeira: emprestada</li>
+        </ul>
+        <p><strong>Total: R$ 0-15</strong></p>
+      </div>
+    </div>
+
+    <h4>Passo a Passo Composteira Caseira:</h4>
+    <ol>
+      <li>Consiga 3 baldes de 20L iguais (padarias doam)</li>
+      <li>Faça furos no fundo de 2 baldes</li>
+      <li>Empilhe: liso embaixo (coleta chorume)</li>
+      <li>Coloque minhocas no do meio</li>
+      <li>Tampa no de cima (depósito)</li>
+      <li>Adicione restos + folhas secas</li>
+    </ol>
+
+    <h3>💧 Biofertilizante Grátis</h3>
+
+    <div class="diy-card" style="max-width: 100%;">
+      <h4>Chorume da Composteira</h4>
+      <span class="free-tag">100% GRÁTIS</span>
+      <p><strong>O que é:</strong> Líquido rico em nutrientes que escorre da composteira</p>
+      <p><strong>Como usar:</strong></p>
+      <ul>
+        <li>Dilua 1:10 em água (1 parte chorume, 10 água)</li>
+        <li>Regue as plantas semanalmente</li>
+        <li>Adubo completo e gratuito!</li>
+      </ul>
+      <p class="tip">Equivale a R$ 30/mês em fertilizante líquido!</p>
+    </div>
+
+    <div class="saving-box">
+      <h3>📊 Economia com Economia Circular</h3>
+      <p>Composto próprio: R$ 20/mês economizado</p>
+      <p>Biofertilizante: R$ 30/mês economizado</p>
+      <p>Sementes próprias: R$ 10/mês economizado</p>
+      <p><strong>Total: R$ 60/mês = R$ 720/ano</strong></p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 27</div>
+  </div>
+
+  <!-- MÓDULO 12: TROCA E COMUNIDADE -->
+  <div class="page">
+    <h2>Módulo 12: Troca e Comunidade</h2>
+
+    <div class="intro-box">
+      <p>Você não está sozinho! Conecte-se com outros horticultores e multiplique suas possibilidades sem gastar nada.</p>
+    </div>
+
+    <h3>🤝 Formas de Trocar</h3>
+
+    <div class="card-grid">
+      <div class="diy-card">
+        <h4>Troca de Sementes</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ul>
+          <li>Guarde sementes excedentes</li>
+          <li>Ofereça em grupos online</li>
+          <li>Troque por variedades diferentes</li>
+          <li>Aumente sua diversidade</li>
+        </ul>
+      </div>
+
+      <div class="diy-card">
+        <h4>Troca de Mudas</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ul>
+          <li>Faça estacas extras</li>
+          <li>Troque com vizinhos</li>
+          <li>Presenteie iniciantes</li>
+          <li>Receba novas espécies</li>
+        </ul>
+      </div>
+
+      <div class="diy-card">
+        <h4>Troca de Colheita</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ul>
+          <li>Excesso de alface? Troque!</li>
+          <li>Vizinho tem tomate? Troque!</li>
+          <li>Variedade na mesa</li>
+          <li>Nada é desperdiçado</li>
+        </ul>
+      </div>
+
+      <div class="diy-card">
+        <h4>Troca de Conhecimento</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ul>
+          <li>Ensine o que sabe</li>
+          <li>Aprenda com experientes</li>
+          <li>Participe de encontros</li>
+          <li>Workshops gratuitos</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>📱 Onde Encontrar Comunidades</h3>
+
+    <table>
+      <tr>
+        <th>Plataforma</th>
+        <th>O Que Procurar</th>
+        <th>Dica</th>
+      </tr>
+      <tr>
+        <td>Facebook</td>
+        <td>"Horta [sua cidade]", "Permacultura"</td>
+        <td>Grupos mais ativos</td>
+      </tr>
+      <tr>
+        <td>WhatsApp</td>
+        <td>Peça link nos grupos do FB</td>
+        <td>Trocas rápidas</td>
+      </tr>
+      <tr>
+        <td>Instagram</td>
+        <td>#hortaurbana #hortacaseira</td>
+        <td>Inspiração visual</td>
+      </tr>
+      <tr>
+        <td>Presencial</td>
+        <td>Feiras orgânicas, EMATER</td>
+        <td>Contato humano</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 28</div>
+  </div>
+
+  <!-- PÁGINA 29 -->
+  <div class="page">
+    <h3>🏘️ Horta Comunitária</h3>
+
+    <div class="intro-box">
+      <p>Não tem espaço? Hortas comunitárias são a solução perfeita e gratuita!</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="diy-card">
+        <h4>Vantagens</h4>
+        <span class="free-tag">GRÁTIS</span>
+        <ul>
+          <li>Espaço maior</li>
+          <li>Ferramentas compartilhadas</li>
+          <li>Água incluída</li>
+          <li>Aprendizado constante</li>
+          <li>Amizades novas</li>
+        </ul>
+      </div>
+
+      <div class="diy-card">
+        <h4>Como Participar</h4>
+        <ol>
+          <li>Pesquise na prefeitura</li>
+          <li>Busque em praças/escolas</li>
+          <li>Pergunte em feiras</li>
+          <li>Crie uma se não existir!</li>
+        </ol>
+      </div>
+    </div>
+
+    <h3>💡 Criando uma Horta Comunitária</h3>
+
+    <div class="money-box">
+      <h4>Passo a Passo:</h4>
+      <ol>
+        <li><strong>Local:</strong> Negocie terreno baldio, praça, escola</li>
+        <li><strong>Grupo:</strong> Reúna 5-10 pessoas interessadas</li>
+        <li><strong>Regras:</strong> Defina responsabilidades claras</li>
+        <li><strong>Recursos:</strong> Cada um contribui com algo</li>
+        <li><strong>Agenda:</strong> Marque mutirões semanais</li>
+        <li><strong>Divisão:</strong> Cada família cuida de um canteiro</li>
+      </ol>
+    </div>
+
+    <div class="saving-box">
+      <h3>📊 Economia na Comunidade</h3>
+      <p><strong>Comprando sozinho:</strong> 10 pacotes semente = R$ 30</p>
+      <p><strong>Comprando em grupo (10 pessoas):</strong> 100 pacotes = R$ 150 ÷ 10 = R$ 15 cada</p>
+      <p><strong>Economia:</strong> 50% em tudo que comprar junto!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 29</div>
+  </div>
+
+  <!-- BÔNUS 1: CALCULADORA -->
+  <div class="page">
+    <h2>BÔNUS: Calculadora de Economia</h2>
+
+    <div class="intro-box">
+      <p>Use esta calculadora para calcular exatamente quanto você economiza com sua horta!</p>
+    </div>
+
+    <h3>📊 Planilha de Economia Mensal</h3>
+
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Preço Mercado</th>
+        <th>Consumo/Mês</th>
+        <th>Gasto Antes</th>
+        <th>Produz em Casa?</th>
+        <th>Economia</th>
+      </tr>
+      <tr>
+        <td>Alface</td>
+        <td>R$ 4/pé</td>
+        <td>8 pés</td>
+        <td>R$ 32</td>
+        <td>☐ Sim</td>
+        <td>R$ ___</td>
+      </tr>
+      <tr>
+        <td>Couve</td>
+        <td>R$ 5/maço</td>
+        <td>4 maços</td>
+        <td>R$ 20</td>
+        <td>☐ Sim</td>
+        <td>R$ ___</td>
+      </tr>
+      <tr>
+        <td>Cebolinha</td>
+        <td>R$ 4/maço</td>
+        <td>4 maços</td>
+        <td>R$ 16</td>
+        <td>☐ Sim</td>
+        <td>R$ ___</td>
+      </tr>
+      <tr>
+        <td>Salsinha</td>
+        <td>R$ 3/maço</td>
+        <td>4 maços</td>
+        <td>R$ 12</td>
+        <td>☐ Sim</td>
+        <td>R$ ___</td>
+      </tr>
+      <tr>
+        <td>Manjericão</td>
+        <td>R$ 5/maço</td>
+        <td>2 maços</td>
+        <td>R$ 10</td>
+        <td>☐ Sim</td>
+        <td>R$ ___</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>R$ 4/maço</td>
+        <td>2 maços</td>
+        <td>R$ 8</td>
+        <td>☐ Sim</td>
+        <td>R$ ___</td>
+      </tr>
+      <tr>
+        <td>Rúcula</td>
+        <td>R$ 5/maço</td>
+        <td>4 maços</td>
+        <td>R$ 20</td>
+        <td>☐ Sim</td>
+        <td>R$ ___</td>
+      </tr>
+      <tr>
+        <td>Tomate</td>
+        <td>R$ 8/kg</td>
+        <td>2 kg</td>
+        <td>R$ 16</td>
+        <td>☐ Sim</td>
+        <td>R$ ___</td>
+      </tr>
+      <tr>
+        <th colspan="3">TOTAL MENSAL</th>
+        <th>R$ 134</th>
+        <th></th>
+        <th>R$ ___</th>
+      </tr>
+    </table>
+
+    <div class="saving-box">
+      <h3>📈 Projeção Anual</h3>
+      <p>Economia mensal × 12 = Economia anual</p>
+      <p>R$ ___ × 12 = <strong>R$ ___ por ano!</strong></p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 30</div>
+  </div>
+
+  <!-- PÁGINA 31 -->
+  <div class="page">
+    <h3>💰 Calculadora de Investimento vs Retorno</h3>
+
+    <div class="money-box">
+      <h4>Seus Gastos com a Horta</h4>
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Gasto Único</th>
+          <th>Gasto Mensal</th>
+        </tr>
+        <tr>
+          <td>Vasos/Recipientes</td>
+          <td>R$ ___</td>
+          <td>R$ 0</td>
+        </tr>
+        <tr>
+          <td>Substrato inicial</td>
+          <td>R$ ___</td>
+          <td>R$ ___</td>
+        </tr>
+        <tr>
+          <td>Sementes</td>
+          <td>R$ ___</td>
+          <td>R$ ___</td>
+        </tr>
+        <tr>
+          <td>Mudas</td>
+          <td>R$ ___</td>
+          <td>R$ ___</td>
+        </tr>
+        <tr>
+          <td>Ferramentas</td>
+          <td>R$ ___</td>
+          <td>R$ 0</td>
+        </tr>
+        <tr>
+          <td>Água extra</td>
+          <td>R$ 0</td>
+          <td>R$ ___</td>
+        </tr>
+        <tr>
+          <th>TOTAL</th>
+          <th>R$ ___</th>
+          <th>R$ ___</th>
+        </tr>
+      </table>
+    </div>
+
+    <h3>📊 Seu ROI Pessoal</h3>
+
+    <div class="card-grid">
+      <div class="roi-card">
+        <h4>Fórmula do ROI</h4>
+        <p><strong>Economia Anual - Gastos Anuais</strong></p>
+        <p>÷</p>
+        <p><strong>Investimento Inicial</strong></p>
+        <p>× 100 = ROI %</p>
+      </div>
+
+      <div class="roi-card">
+        <h4>Exemplo Prático</h4>
+        <p>Economia: R$ 1.200/ano</p>
+        <p>Gastos: R$ 200/ano</p>
+        <p>Investimento: R$ 100</p>
+        <p><strong>ROI = 1.000%</strong></p>
+      </div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-bad">
+        <h4>Poupança Tradicional</h4>
+        <p>Rendimento: 6-8% ao ano</p>
+        <p>R$ 100 → R$ 108 em 1 ano</p>
+      </div>
+      <div class="compare-good">
+        <h4>Investir na Horta</h4>
+        <p>Retorno: 500-2000% ao ano</p>
+        <p>R$ 100 → R$ 600-2.100 em economia</p>
+      </div>
+    </div>
+
+    <div class="saving-box">
+      <h3>🏆 A Horta é o Melhor Investimento!</h3>
+      <p>Nenhuma aplicação financeira rende tanto quanto uma horta bem cuidada.</p>
+      <p>E ainda ganha saúde, qualidade de vida e satisfação pessoal!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 31</div>
+  </div>
+
+  <!-- BÔNUS 2: 30 RECEITAS ECONÔMICAS -->
+  <div class="page">
+    <h2>BÔNUS: 30 Receitas Econômicas da Horta</h2>
+
+    <div class="intro-box">
+      <p>Aproveite 100% da sua colheita! Receitas simples, deliciosas e que valorizam seus ingredientes caseiros.</p>
+    </div>
+
+    <h3>🥗 Saladas Simples (1-5)</h3>
+
+    <div class="recipe-card">
+      <h4>1. Salada Verde Básica</h4>
+      <p><strong>Ingredientes:</strong> Alface, rúcula, cebolinha (tudo da horta)</p>
+      <p><strong>Tempero:</strong> Azeite, limão, sal</p>
+      <p class="tip">Custo: R$ 0 | No mercado: R$ 12</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>2. Salada de Couve Massageada</h4>
+      <p><strong>Ingredientes:</strong> Couve fatiada fina, limão, azeite, sal</p>
+      <p><strong>Modo:</strong> Massageie a couve com limão e sal por 2 min</p>
+      <p class="tip">Custo: R$ 0 | No mercado: R$ 10</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>3. Tabule de Salsinha</h4>
+      <p><strong>Ingredientes:</strong> 2 maços salsinha, tomate, cebola, trigo</p>
+      <p><strong>Modo:</strong> Pique tudo fino, misture com azeite e limão</p>
+      <p class="tip">Custo: R$ 3 (trigo) | No mercado: R$ 18</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>4. Salada Caprese Caseira</h4>
+      <p><strong>Ingredientes:</strong> Tomate cereja, manjericão, muçarela</p>
+      <p><strong>Modo:</strong> Intercale fatias, regue com azeite</p>
+      <p class="tip">Custo: R$ 8 | No mercado: R$ 25</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>5. Mix de Folhas Premium</h4>
+      <p><strong>Ingredientes:</strong> Alface, rúcula, agrião, mostarda</p>
+      <p><strong>Modo:</strong> Misture variedades diferentes</p>
+      <p class="tip">Custo: R$ 0 | No mercado: R$ 15</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 32</div>
+  </div>
+
+  <!-- PÁGINA 33 -->
+  <div class="page">
+    <h3>🍵 Chás e Infusões (6-10)</h3>
+
+    <div class="recipe-card">
+      <h4>6. Chá de Hortelã</h4>
+      <p><strong>Ingredientes:</strong> 10 folhas de hortelã frescas</p>
+      <p><strong>Modo:</strong> Água quente, abafe 5 min</p>
+      <p class="tip">Custo: R$ 0 | Caixa de chá: R$ 8</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>7. Chá de Capim-Limão</h4>
+      <p><strong>Ingredientes:</strong> 2 folhas de capim-limão</p>
+      <p><strong>Modo:</strong> Ferva por 5 min, coe</p>
+      <p class="tip">Custo: R$ 0 | Relaxante natural</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>8. Água Aromatizada</h4>
+      <p><strong>Ingredientes:</strong> Hortelã + limão + pepino</p>
+      <p><strong>Modo:</strong> Deixe na geladeira por 2h</p>
+      <p class="tip">Custo: R$ 1 | Garrafa pronta: R$ 10</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>9. Chá Digestivo</h4>
+      <p><strong>Ingredientes:</strong> Hortelã + gengibre + limão</p>
+      <p><strong>Modo:</strong> Ferva gengibre, adicione hortelã, limão</p>
+      <p class="tip">Custo: R$ 0,50 | Ajuda na digestão</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>10. Chá de Alecrim</h4>
+      <p><strong>Ingredientes:</strong> 1 ramo de alecrim fresco</p>
+      <p><strong>Modo:</strong> Água quente, abafe 10 min</p>
+      <p class="tip">Custo: R$ 0 | Estimulante natural</p>
+    </div>
+
+    <h3>🥣 Sopas Econômicas (11-15)</h3>
+
+    <div class="recipe-card">
+      <h4>11. Caldo Verde</h4>
+      <p><strong>Ingredientes:</strong> Couve, batata, cebola, alho</p>
+      <p><strong>Modo:</strong> Cozinhe batatas, bata, adicione couve fatiada</p>
+      <p class="tip">Custo: R$ 4 | No restaurante: R$ 18</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>12. Sopa de Legumes da Horta</h4>
+      <p><strong>Ingredientes:</strong> O que tiver: couve, cenoura, chuchu</p>
+      <p><strong>Modo:</strong> Cozinhe tudo, tempere com salsinha</p>
+      <p class="tip">Custo: R$ 5 | Anti-desperdício</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 33</div>
+  </div>
+
+  <!-- PÁGINA 34 -->
+  <div class="page">
+    <div class="recipe-card">
+      <h4>13. Creme de Abóbora</h4>
+      <p><strong>Ingredientes:</strong> Abóbora, cebola, gengibre</p>
+      <p><strong>Modo:</strong> Asse a abóbora, bata com caldo</p>
+      <p class="tip">Custo: R$ 3 | Cremoso sem creme!</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>14. Sopa de Agrião</h4>
+      <p><strong>Ingredientes:</strong> Agrião, batata, cebola</p>
+      <p><strong>Modo:</strong> Cozinhe batata, adicione agrião no final</p>
+      <p class="tip">Custo: R$ 4 | Rico em ferro</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>15. Caldo de Legumes (base)</h4>
+      <p><strong>Ingredientes:</strong> Talos, cascas, folhas externas</p>
+      <p><strong>Modo:</strong> Ferva por 1h, coe e congele</p>
+      <p class="tip">Custo: R$ 0 | Substitui caldo industrializado</p>
+    </div>
+
+    <h3>🍝 Molhos e Temperos (16-20)</h3>
+
+    <div class="recipe-card">
+      <h4>16. Pesto de Manjericão</h4>
+      <p><strong>Ingredientes:</strong> Manjericão, alho, azeite, castanha</p>
+      <p><strong>Modo:</strong> Bata tudo no processador</p>
+      <p class="tip">Custo: R$ 8 | Pote pronto: R$ 35</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>17. Chimichurri</h4>
+      <p><strong>Ingredientes:</strong> Salsinha, orégano, alho, azeite, vinagre</p>
+      <p><strong>Modo:</strong> Pique tudo fino, misture</p>
+      <p class="tip">Custo: R$ 2 | Perfeito para carnes</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>18. Molho de Ervas</h4>
+      <p><strong>Ingredientes:</strong> Salsinha, cebolinha, iogurte</p>
+      <p><strong>Modo:</strong> Bata as ervas com iogurte</p>
+      <p class="tip">Custo: R$ 3 | Para saladas e batatas</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>19. Sal de Ervas</h4>
+      <p><strong>Ingredientes:</strong> Sal grosso + alecrim + orégano + manjericão</p>
+      <p><strong>Modo:</strong> Seque ervas, triture com sal</p>
+      <p class="tip">Custo: R$ 1 | Presente criativo!</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>20. Azeite Aromatizado</h4>
+      <p><strong>Ingredientes:</strong> Azeite + alecrim + alho + pimenta</p>
+      <p><strong>Modo:</strong> Aqueça levemente, deixe em vidro</p>
+      <p class="tip">Custo: R$ 10 | Vende por: R$ 40</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 34</div>
+  </div>
+
+  <!-- PÁGINA 35 -->
+  <div class="page">
+    <h3>🥘 Pratos Principais (21-25)</h3>
+
+    <div class="recipe-card">
+      <h4>21. Omelete de Ervas</h4>
+      <p><strong>Ingredientes:</strong> Ovos, cebolinha, salsinha, queijo</p>
+      <p><strong>Modo:</strong> Bata ovos com ervas picadas, frite</p>
+      <p class="tip">Custo: R$ 4 | Proteína rápida</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>22. Refogado de Couve</h4>
+      <p><strong>Ingredientes:</strong> Couve, alho, bacon (opcional)</p>
+      <p><strong>Modo:</strong> Refogue alho, adicione couve</p>
+      <p class="tip">Custo: R$ 2 | Clássico brasileiro</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>23. Macarrão ao Pesto</h4>
+      <p><strong>Ingredientes:</strong> Macarrão, pesto caseiro, tomate cereja</p>
+      <p><strong>Modo:</strong> Cozinhe massa, misture pesto</p>
+      <p class="tip">Custo: R$ 12 | No restaurante: R$ 45</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>24. Wrap de Alface</h4>
+      <p><strong>Ingredientes:</strong> Folha de alface grande + recheio</p>
+      <p><strong>Modo:</strong> Use alface no lugar da tortilha</p>
+      <p class="tip">Custo: R$ 0 | Low carb e saudável</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>25. Risoto de Ervas</h4>
+      <p><strong>Ingredientes:</strong> Arroz arbóreo, caldo, manjericão, salsinha</p>
+      <p><strong>Modo:</strong> Cozinhe risoto, finalize com ervas</p>
+      <p class="tip">Custo: R$ 10 | Sofisticado e fácil</p>
+    </div>
+
+    <h3>🍪 Conservas e Extras (26-30)</h3>
+
+    <div class="recipe-card">
+      <h4>26. Pimentas em Conserva</h4>
+      <p><strong>Ingredientes:</strong> Pimentas, vinagre, sal, açúcar</p>
+      <p><strong>Modo:</strong> Ferva vinagre temperado, cubra pimentas</p>
+      <p class="tip">Custo: R$ 3 | Dura 1 ano!</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>27. Ervas Secas</h4>
+      <p><strong>Ingredientes:</strong> Qualquer erva da horta</p>
+      <p><strong>Modo:</strong> Pendure de cabeça para baixo, seque</p>
+      <p class="tip">Custo: R$ 0 | Conserva por 1 ano</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 35</div>
+  </div>
+
+  <!-- PÁGINA 36 -->
+  <div class="page">
+    <div class="recipe-card">
+      <h4>28. Manteiga de Ervas</h4>
+      <p><strong>Ingredientes:</strong> Manteiga, alho, salsinha, cebolinha</p>
+      <p><strong>Modo:</strong> Amasse manteiga com ervas, enrole em filme</p>
+      <p class="tip">Custo: R$ 5 | Para pães e carnes</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>29. Cubos de Ervas Congeladas</h4>
+      <p><strong>Ingredientes:</strong> Ervas picadas + azeite</p>
+      <p><strong>Modo:</strong> Coloque em forminhas de gelo, congele</p>
+      <p class="tip">Custo: R$ 0 | Praticidade no dia a dia</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>30. Vinagre Aromatizado</h4>
+      <p><strong>Ingredientes:</strong> Vinagre branco + ervas + alho</p>
+      <p><strong>Modo:</strong> Deixe macerar por 2 semanas</p>
+      <p class="tip">Custo: R$ 4 | Presente gourmet!</p>
+    </div>
+
+    <div class="saving-box">
+      <h3>📊 Economia com as Receitas</h3>
+      <table>
+        <tr>
+          <th>Categoria</th>
+          <th>Economia Média</th>
+          <th>Por Mês (2x semana)</th>
+        </tr>
+        <tr>
+          <td>Saladas</td>
+          <td>R$ 12/porção</td>
+          <td>R$ 96</td>
+        </tr>
+        <tr>
+          <td>Chás</td>
+          <td>R$ 0,80/xícara</td>
+          <td>R$ 48</td>
+        </tr>
+        <tr>
+          <td>Sopas</td>
+          <td>R$ 10/porção</td>
+          <td>R$ 40</td>
+        </tr>
+        <tr>
+          <td>Molhos</td>
+          <td>R$ 25/pote</td>
+          <td>R$ 50</td>
+        </tr>
+        <tr>
+          <th colspan="2">TOTAL MENSAL</th>
+          <th>R$ 234</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 36</div>
+  </div>
+
+  <!-- RESUMO FINAL -->
+  <div class="page">
+    <h2>Resumo: Sua Economia Total</h2>
+
+    <div class="intro-box">
+      <p>Veja quanto você pode economizar aplicando tudo que aprendeu neste guia!</p>
+    </div>
+
+    <h3>💰 Economia Anual Estimada</h3>
+
+    <table>
+      <tr>
+        <th>Área</th>
+        <th>Economia Mensal</th>
+        <th>Economia Anual</th>
+      </tr>
+      <tr>
+        <td>Colheita da horta</td>
+        <td>R$ 150</td>
+        <td>R$ 1.800</td>
+      </tr>
+      <tr>
+        <td>Compostagem (adubo)</td>
+        <td>R$ 30</td>
+        <td>R$ 360</td>
+      </tr>
+      <tr>
+        <td>Sementes próprias</td>
+        <td>R$ 15</td>
+        <td>R$ 180</td>
+      </tr>
+      <tr>
+        <td>Água da chuva</td>
+        <td>R$ 40</td>
+        <td>R$ 480</td>
+      </tr>
+      <tr>
+        <td>Ferramentas DIY</td>
+        <td>-</td>
+        <td>R$ 145</td>
+      </tr>
+      <tr>
+        <td>Receitas caseiras</td>
+        <td>R$ 100</td>
+        <td>R$ 1.200</td>
+      </tr>
+      <tr>
+        <th>TOTAL</th>
+        <th>R$ 335/mês</th>
+        <th>R$ 4.165/ano</th>
+      </tr>
+    </table>
+
+    <div class="compare-grid">
+      <div class="compare-bad">
+        <h4>❌ Sem Horta</h4>
+        <p>Gasto anual em hortaliças: R$ 3.600</p>
+        <p>Nenhuma produção própria</p>
+        <p>Dependência total do mercado</p>
+      </div>
+      <div class="compare-good">
+        <h4>✅ Com Horta Econômica</h4>
+        <p>Investimento: R$ 50-100</p>
+        <p>Economia: R$ 4.165/ano</p>
+        <p><strong>ROI: 4.165%!</strong></p>
+      </div>
+    </div>
+
+    <div class="saving-box">
+      <h3>🏆 Em 5 Anos de Horta</h3>
+      <p>Economia total: <strong>R$ 20.825</strong></p>
+      <p>Isso paga: Uma viagem, eletrodomésticos, ou um carro usado!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 37</div>
+  </div>
+
+  <!-- CHECKLIST FINAL -->
+  <div class="page">
+    <h2>Checklist: Comece Hoje!</h2>
+
+    <div class="intro-box">
+      <p>Marque cada item conforme você implementa. Sua jornada para a economia começa agora!</p>
+    </div>
+
+    <h3>📋 Primeiros Passos (Esta Semana)</h3>
+    <ul class="checklist">
+      <li>☐ Coletar 5 garrafas PET para vasos</li>
+      <li>☐ Separar resíduos orgânicos da cozinha</li>
+      <li>☐ Guardar sementes de tomate/pimentão</li>
+      <li>☐ Comprar 1 maço de cebolinha (plantar raiz)</li>
+      <li>☐ Identificar local com 4h+ de sol</li>
+    </ul>
+
+    <h3>📋 Primeira Semana</h3>
+    <ul class="checklist">
+      <li>☐ Montar 3 vasos de garrafa PET</li>
+      <li>☐ Preparar substrato básico</li>
+      <li>☐ Plantar cebolinha e salsinha</li>
+      <li>☐ Iniciar composteira simples</li>
+      <li>☐ Entrar em grupo de horta no Facebook</li>
+    </ul>
+
+    <h3>📋 Primeiro Mês</h3>
+    <ul class="checklist">
+      <li>☐ Expandir para 10+ vasos</li>
+      <li>☐ Primeira colheita de cebolinha</li>
+      <li>☐ Fazer primeira estaquia</li>
+      <li>☐ Instalar gotejamento de garrafa</li>
+      <li>☐ Trocar sementes/mudas com alguém</li>
+    </ul>
+
+    <h3>📋 Três Meses</h3>
+    <ul class="checklist">
+      <li>☐ Horta com 15+ variedades</li>
+      <li>☐ Composto pronto para usar</li>
+      <li>☐ Economia visível nas compras</li>
+      <li>☐ Fazer primeiro pesto caseiro</li>
+      <li>☐ Calcular economia real (use a planilha!)</li>
+    </ul>
+
+    <div class="page-number">Minha Horta em Casa - Página 38</div>
+  </div>
+
+  <!-- PÁGINA FINAL -->
+  <div class="page">
+    <div class="final-message" style="text-align: center; padding: 40px 20px;">
+
+      <svg width="120" height="120" viewBox="0 0 100 100" style="margin: 20px auto;">
+        <defs>
+          <linearGradient id="potFinal" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#fbbf24"/>
+            <stop offset="100%" style="stop-color:#f59e0b"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="50" cy="85" rx="30" ry="8" fill="#92400e"/>
+        <path d="M25 85 L30 55 L70 55 L75 85 Z" fill="url(#potFinal)"/>
+        <ellipse cx="50" cy="55" rx="20" ry="5" fill="#fde68a"/>
+        <path d="M50 50 Q45 35 50 25 Q55 35 50 50" fill="#22c55e" stroke="#16a34a" stroke-width="1"/>
+        <path d="M42 45 Q35 35 40 28" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+        <path d="M58 45 Q65 35 60 28" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="50" cy="20" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+        <text x="50" y="24" text-anchor="middle" fill="#92400e" font-size="10" font-weight="bold">$</text>
+      </svg>
+
+      <h2 style="color: #16a34a; font-size: 28px; margin: 20px 0;">Parabéns!</h2>
+
+      <p style="font-size: 18px; color: #374151; max-width: 500px; margin: 0 auto 30px;">
+        Você agora tem todas as ferramentas para criar uma horta próspera gastando quase nada!
+      </p>
+
+      <div class="saving-box" style="max-width: 400px; margin: 0 auto 30px;">
+        <h3>💰 Lembre-se</h3>
+        <p><strong>Investimento:</strong> R$ 50</p>
+        <p><strong>Retorno anual:</strong> R$ 4.000+</p>
+        <p><strong>+ Saúde + Satisfação + Sustentabilidade</strong></p>
+      </div>
+
+      <p style="font-size: 16px; color: #6b7280; margin-bottom: 30px;">
+        A melhor hora para plantar uma árvore foi há 20 anos.<br>
+        <strong>A segunda melhor hora é agora.</strong>
+      </p>
+
+      <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 20px; border-radius: 15px; margin-top: 30px;">
+        <p style="font-size: 14px; color: #92400e; margin: 0;">
+          <strong>Minha Horta em Casa</strong><br>
+          Guia Completo de Horta Econômica<br>
+          www.minhahortaemcasa.com
+        </p>
+      </div>
+
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 39</div>
+  </div>
+
+</body>
+</html>

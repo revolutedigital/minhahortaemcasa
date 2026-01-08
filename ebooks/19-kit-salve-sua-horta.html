@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Kit Salve Sua Horta - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.7; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 50px 40px; min-height: 100vh; page-break-after: always; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 50%, #fecaca 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 48px; font-weight: 800; color: #dc2626; margin-bottom: 20px; }
+    .cover .subtitle { font-size: 22px; color: #991b1b; margin-bottom: 40px; max-width: 500px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #dc2626; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #ef4444; }
+    h1 { font-size: 36px; color: #dc2626; margin-bottom: 25px; border-bottom: 3px solid #ef4444; padding-bottom: 15px; }
+    h2 { font-size: 28px; color: #991b1b; margin: 35px 0 20px; }
+    h3 { font-size: 22px; color: #dc2626; margin: 25px 0 15px; }
+    h4 { font-size: 18px; color: #991b1b; margin: 20px 0 12px; }
+    p { margin-bottom: 15px; text-align: justify; }
+    ul, ol { margin: 15px 0 25px 30px; }
+    li { margin-bottom: 12px; }
+
+    .toc { background: #fef2f2; padding: 30px; border-radius: 16px; border: 2px solid #fecaca; }
+    .toc h2 { margin-top: 0; text-align: center; border: none; color: #dc2626; }
+    .toc-section { margin: 20px 0; }
+    .toc-section h4 { color: #991b1b; font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #fecaca; padding-bottom: 5px; }
+    .toc-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dotted #fca5a5; }
+
+    .emergency-card { background: linear-gradient(135deg, #fee2e2, #fecaca); border: 3px solid #ef4444; border-radius: 16px; padding: 25px; margin: 25px 0; }
+    .emergency-card h3 { color: #dc2626; margin-top: 0; display: flex; align-items: center; gap: 10px; }
+
+    .diagnosis-box { background: #fff; border: 2px solid #f87171; border-radius: 16px; padding: 25px; margin: 25px 0; }
+    .diagnosis-box h3 { color: #dc2626; margin-top: 0; }
+
+    .tip-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 4px solid #22c55e; padding: 20px 25px; border-radius: 0 12px 12px 0; margin: 25px 0; }
+    .tip-box strong { color: #15803d; }
+
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 20px 25px; border-radius: 0 12px 12px 0; margin: 25px 0; }
+    .warning-box strong { color: #92400e; }
+
+    .danger-box { background: linear-gradient(135deg, #fee2e2, #fecaca); border-left: 4px solid #ef4444; padding: 20px 25px; border-radius: 0 12px 12px 0; margin: 25px 0; }
+    .danger-box strong { color: #dc2626; }
+
+    .success-box { background: linear-gradient(135deg, #d1fae5, #a7f3d0); border-left: 4px solid #10b981; padding: 20px 25px; border-radius: 0 12px 12px 0; margin: 25px 0; }
+    .success-box strong { color: #059669; }
+
+    .symptom-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 14px; }
+    .symptom-table th { background: #dc2626; color: #fff; padding: 12px 15px; text-align: left; }
+    .symptom-table td { padding: 12px 15px; border-bottom: 1px solid #fecaca; }
+    .symptom-table tr:nth-child(even) { background: #fef2f2; }
+    .symptom-table tr:hover { background: #fee2e2; }
+
+    .flowchart { background: #fff; border: 2px solid #ef4444; border-radius: 16px; padding: 25px; margin: 25px 0; }
+    .flow-step { background: #fef2f2; padding: 15px; border-radius: 10px; margin: 10px 0; text-align: center; position: relative; }
+    .flow-step::after { content: "↓"; display: block; font-size: 24px; color: #ef4444; margin-top: 5px; }
+    .flow-step:last-child::after { display: none; }
+    .flow-question { font-weight: 700; color: #dc2626; font-size: 16px; }
+    .flow-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .flow-yes { background: #d1fae5; padding: 10px; border-radius: 8px; font-size: 13px; }
+    .flow-no { background: #fef3c7; padding: 10px; border-radius: 8px; font-size: 13px; }
+
+    .recipe-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid #22c55e; border-radius: 16px; padding: 25px; margin: 25px 0; }
+    .recipe-card h4 { color: #15803d; margin-top: 0; }
+
+    .problem-card { background: #fff; border-left: 4px solid #ef4444; border-radius: 0 12px 12px 0; padding: 20px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .problem-card h4 { color: #dc2626; margin-top: 0; margin-bottom: 10px; }
+    .solution { background: #d1fae5; padding: 15px; border-radius: 8px; margin-top: 12px; }
+    .solution strong { color: #059669; }
+
+    .severity-indicator { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-left: 10px; }
+    .severity-low { background: #fef3c7; color: #92400e; }
+    .severity-medium { background: #fed7aa; color: #9a3412; }
+    .severity-high { background: #fecaca; color: #991b1b; }
+    .severity-critical { background: #dc2626; color: #fff; }
+
+    .timeline { display: flex; flex-direction: column; gap: 15px; margin: 25px 0; }
+    .timeline-item { display: flex; gap: 15px; }
+    .timeline-marker { width: 40px; height: 40px; background: #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; flex-shrink: 0; }
+    .timeline-content { background: #fef2f2; padding: 15px; border-radius: 10px; flex-grow: 1; }
+    .timeline-content h5 { color: #dc2626; margin: 0 0 8px 0; }
+
+    .checklist { background: #fff; border: 2px solid #ef4444; border-radius: 12px; padding: 25px; margin: 25px 0; }
+    .checklist h4 { color: #dc2626; margin-top: 0; }
+    .checklist-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #fecaca; }
+    .checklist-item:last-child { border-bottom: none; }
+    .check-box { width: 22px; height: 22px; border: 2px solid #ef4444; border-radius: 4px; flex-shrink: 0; }
+
+    .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 25px 0; }
+    .comparison-item { padding: 20px; border-radius: 12px; }
+    .comparison-bad { background: #fee2e2; border: 2px solid #ef4444; }
+    .comparison-good { background: #d1fae5; border: 2px solid #22c55e; }
+    .comparison-bad h4 { color: #dc2626; }
+    .comparison-good h4 { color: #15803d; }
+
+    .quick-action { background: linear-gradient(135deg, #fef2f2, #fee2e2); border: 2px dashed #ef4444; border-radius: 16px; padding: 25px; margin: 25px 0; text-align: center; }
+    .quick-action h3 { color: #dc2626; margin-top: 0; }
+
+    .treatment-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .treatment-table th { background: #15803d; color: #fff; padding: 12px; }
+    .treatment-table td { padding: 12px; border: 1px solid #d1d5db; }
+    .treatment-table tr:nth-child(even) { background: #f0fdf4; }
+
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; }
+    .info-item { background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 15px; text-align: center; }
+    .info-item .number { font-size: 32px; font-weight: 800; color: #dc2626; }
+    .info-item .label { font-size: 13px; color: #6b7280; }
+
+    .page-footer { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #fecaca; }
+
+    .closing { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%); padding: 60px 40px; }
+    .closing h2 { font-size: 36px; color: #15803d; margin-bottom: 20px; }
+    .closing p { font-size: 18px; color: #166534; max-width: 500px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#dc2626" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pg19)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bg19)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M42 64C42 64 50 58 58 64" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 25C50 25 48 18 47 10" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round"/>
+        <path d="M45 32C45 32 40 28 35 25" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round"/>
+        <path d="M55 32C55 32 60 28 65 25" stroke="#a3a3a3" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="75" cy="35" r="12" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+        <text x="75" y="40" text-anchor="middle" fill="white" font-weight="bold" font-size="14">SOS</text>
+        <defs>
+          <linearGradient id="pg19" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bg19" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Kit Salve Sua Horta</h1>
+    <p class="subtitle">Manual completo de primeiros socorros para plantas - Diagnóstico rápido e tratamento de emergência</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>Sumário</h2>
+
+      <div class="toc-section">
+        <h4>MÓDULO 1 - Primeiros Socorros Vegetais</h4>
+        <div class="toc-item"><span>O que é uma emergência botânica</span><span>3</span></div>
+        <div class="toc-item"><span>Os 5 sinais de alerta crítico</span><span>4</span></div>
+        <div class="toc-item"><span>Protocolo de triagem - ABCD das plantas</span><span>5</span></div>
+      </div>
+
+      <div class="toc-section">
+        <h4>MÓDULO 2 - Diagnóstico Rápido</h4>
+        <div class="toc-item"><span>Fluxograma mestre de diagnóstico</span><span>6-7</span></div>
+        <div class="toc-item"><span>Tabela de sintomas x causas</span><span>8</span></div>
+        <div class="toc-item"><span>Diferenciando problemas similares</span><span>9</span></div>
+      </div>
+
+      <div class="toc-section">
+        <h4>MÓDULO 3 - Tratamentos de Emergência</h4>
+        <div class="toc-item"><span>Planta afogada - Resgate em 6 passos</span><span>10-11</span></div>
+        <div class="toc-item"><span>Planta desidratada - Reidratação segura</span><span>12</span></div>
+        <div class="toc-item"><span>Infestação severa - Contenção imediata</span><span>13-14</span></div>
+        <div class="toc-item"><span>Queimadura solar - Recuperação</span><span>15</span></div>
+        <div class="toc-item"><span>Choque térmico - Frio e calor extremo</span><span>16</span></div>
+      </div>
+
+      <div class="toc-section">
+        <h4>MÓDULO 4 - Kit de Emergência</h4>
+        <div class="toc-item"><span>Os 10 itens essenciais</span><span>17</span></div>
+        <div class="toc-item"><span>5 receitas de pronto-socorro</span><span>18-19</span></div>
+        <div class="toc-item"><span>Checklist de diagnóstico para imprimir</span><span>20</span></div>
+      </div>
+
+      <div class="toc-section">
+        <h4>MÓDULO 5 - Prevenção e Monitoramento</h4>
+        <div class="toc-item"><span>Calendário semanal de inspeção</span><span>21</span></div>
+        <div class="toc-item"><span>Sinais precoces - Antes da crise</span><span>22</span></div>
+        <div class="toc-item"><span>Sistema de alerta por níveis</span><span>23</span></div>
+      </div>
+    </div>
+
+    <div class="page-footer">Kit Salve Sua Horta - Minha Horta em Casa</div>
+  </div>
+
+  <!-- PÁGINA 3: EMERGÊNCIA BOTÂNICA -->
+  <div class="page">
+    <h1>Módulo 1: Primeiros Socorros Vegetais</h1>
+
+    <h2>O Que é Uma Emergência Botânica?</h2>
+
+    <p>Uma emergência botânica é qualquer situação em que a planta está em risco iminente de morte ou dano irreversível. Diferente de problemas crônicos (que se desenvolvem ao longo de semanas), emergências exigem ação IMEDIATA - às vezes em questão de horas.</p>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="number">48h</div>
+        <div class="label">Tempo médio para uma planta afogada morrer</div>
+      </div>
+      <div class="info-item">
+        <div class="number">72h</div>
+        <div class="label">Para desidratação severa causar dano permanente</div>
+      </div>
+      <div class="info-item">
+        <div class="number">85%</div>
+        <div class="label">Taxa de salvamento com ação nas primeiras 24h</div>
+      </div>
+    </div>
+
+    <h2>Quando Considerar Emergência?</h2>
+
+    <div class="emergency-card">
+      <h3>SITUAÇÕES DE EMERGÊNCIA:</h3>
+      <ul>
+        <li><strong>Murcha súbita generalizada</strong> - Toda a planta murcha em menos de 24 horas</li>
+        <li><strong>Solo completamente encharcado há 3+ dias</strong> - Alto risco de apodrecimento</li>
+        <li><strong>Desidratação extrema</strong> - Folhas crocantes, caule mole</li>
+        <li><strong>Infestação explosiva</strong> - Pragas cobrindo mais de 50% da planta</li>
+        <li><strong>Exposição a temperaturas extremas</strong> - Geada ou calor acima de 45°C</li>
+        <li><strong>Queimadura química</strong> - Excesso de fertilizante ou produto tóxico</li>
+        <li><strong>Transplante mal-sucedido</strong> - Planta em choque há mais de 5 dias</li>
+      </ul>
+    </div>
+
+    <div class="comparison-grid">
+      <div class="comparison-item comparison-bad">
+        <h4>NÃO É Emergência</h4>
+        <ul>
+          <li>Algumas folhas amarelando aos poucos</li>
+          <li>Crescimento lento</li>
+          <li>Poucos pulgões isolados</li>
+          <li>Folhas velhas secando</li>
+        </ul>
+        <p><strong>Ação:</strong> Diagnóstico calmo, correção gradual</p>
+      </div>
+      <div class="comparison-item comparison-good">
+        <h4>É Emergência</h4>
+        <ul>
+          <li>Murcha repentina de toda planta</li>
+          <li>Folhas caindo em massa</li>
+          <li>Raízes pretas com mau cheiro</li>
+          <li>Caule amolecendo na base</li>
+        </ul>
+        <p><strong>Ação:</strong> Intervenção imediata!</p>
+      </div>
+    </div>
+
+    <div class="page-footer">Página 3 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 4: 5 SINAIS DE ALERTA -->
+  <div class="page">
+    <h2>Os 5 Sinais de Alerta Crítico</h2>
+
+    <p>Aprenda a reconhecer estes sinais que indicam que sua planta precisa de ajuda URGENTE:</p>
+
+    <div class="problem-card">
+      <h4>1. Murcha Súbita Generalizada <span class="severity-indicator severity-critical">CRÍTICO</span></h4>
+      <p><strong>O que é:</strong> Toda a planta murcha de uma vez, mesmo com o solo aparentemente úmido.</p>
+      <p><strong>Causas possíveis:</strong></p>
+      <ul>
+        <li>Raízes apodrecidas (não conseguem absorver água)</li>
+        <li>Desidratação extrema</li>
+        <li>Dano no caule (interrupção do fluxo de água)</li>
+        <li>Choque de transplante severo</li>
+      </ul>
+      <div class="solution">
+        <strong>Ação imediata:</strong> Verifique as raízes! Se brancas/bege = problema de água. Se pretas/podres = afogamento. Veja página 10.
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <h4>2. Caule Amolecendo na Base <span class="severity-indicator severity-critical">CRÍTICO</span></h4>
+      <p><strong>O que é:</strong> A base do caule fica mole, escura, às vezes com mau cheiro.</p>
+      <p><strong>Causa:</strong> Podridão por excesso de água ou fungo (tombamento/damping-off).</p>
+      <div class="solution">
+        <strong>Ação imediata:</strong> Se a podridão não atingiu o caule todo, corte acima da parte podre e tente enraizar como estaca. Senão, a planta é irrecuperável.
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <h4>3. Folhas Caindo em Massa <span class="severity-indicator severity-high">ALTO</span></h4>
+      <p><strong>O que é:</strong> Mais de 50% das folhas caem em poucos dias (não confundir com queda sazonal normal).</p>
+      <p><strong>Causas:</strong> Choque ambiental, mudança brusca de temperatura, transplante traumático, toxicidade.</p>
+      <div class="solution">
+        <strong>Ação imediata:</strong> Estabilize o ambiente (sem sol direto, temperatura amena, umidade moderada). NÃO adube. NÃO mude de lugar novamente.
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <h4>4. Manchas Escuras Espalhando Rapidamente <span class="severity-indicator severity-high">ALTO</span></h4>
+      <p><strong>O que é:</strong> Manchas pretas ou marrons que aumentam de tamanho diariamente.</p>
+      <p><strong>Causa:</strong> Infecção fúngica ou bacteriana agressiva.</p>
+      <div class="solution">
+        <strong>Ação imediata:</strong> Isole a planta! Remova todas as partes afetadas com tesoura esterilizada. Aplique fungicida cúprico ou calda bordalesa.
+      </div>
+    </div>
+
+    <div class="problem-card">
+      <h4>5. Descoloração Total e Rápida <span class="severity-indicator severity-medium">MÉDIO</span></h4>
+      <p><strong>O que é:</strong> Toda a planta muda de cor (amarela, marrom ou pálida) em poucos dias.</p>
+      <p><strong>Causas:</strong> Queimadura de fertilizante, intoxicação, exposição a produto químico.</p>
+      <div class="solution">
+        <strong>Ação imediata:</strong> Lave o substrato com água abundante (lixivie os sais). Transplante para substrato limpo se necessário.
+      </div>
+    </div>
+
+    <div class="page-footer">Página 4 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 5: PROTOCOLO ABCD -->
+  <div class="page">
+    <h2>Protocolo de Triagem - ABCD das Plantas</h2>
+
+    <p>Assim como médicos usam protocolos para avaliar pacientes, use o ABCD para avaliar suas plantas em emergência:</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">A</div>
+        <div class="timeline-content">
+          <h5>ÁGUA - Verifique o Solo</h5>
+          <p><strong>Faça:</strong> Enfie o dedo 5cm no substrato. Está encharcado? Completamente seco? Cheire - há mau cheiro?</p>
+          <p><strong>Indica:</strong> Problemas de rega são a causa #1 de emergências. 60% dos casos se resolvem ajustando a água.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">B</div>
+        <div class="timeline-content">
+          <h5>BASE - Examine o Caule</h5>
+          <p><strong>Faça:</strong> Aperte levemente a base do caule. Está firme ou mole? Há manchas escuras?</p>
+          <p><strong>Indica:</strong> Caule mole = podridão avançada (prognóstico ruim). Caule firme = planta ainda viável.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">C</div>
+        <div class="timeline-content">
+          <h5>COPA - Analise as Folhas</h5>
+          <p><strong>Faça:</strong> Observe todas as folhas. Qual porcentagem está danificada? As novas ou velhas? Há pragas visíveis?</p>
+          <p><strong>Indica:</strong> Padrão de dano indica a causa. Folhas novas = micronutrientes. Folhas velhas = macronutrientes ou água.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">D</div>
+        <div class="timeline-content">
+          <h5>DEBAIXO - Cheque as Raízes</h5>
+          <p><strong>Faça:</strong> Se possível, retire a planta do vaso e examine as raízes. Cor? Textura? Cheiro?</p>
+          <p><strong>Indica:</strong> Raízes brancas/bege = saudáveis. Raízes marrons/pretas/moles = apodrecidas. Sem raízes = dano severo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-action">
+      <h3>Resultado da Triagem ABCD</h3>
+      <table class="symptom-table">
+        <tr>
+          <th>Resultado</th>
+          <th>Prognóstico</th>
+          <th>Ação</th>
+        </tr>
+        <tr>
+          <td>A, B, C, D normais</td>
+          <td>Excelente</td>
+          <td>Não é emergência, observe</td>
+        </tr>
+        <tr>
+          <td>Apenas A alterado</td>
+          <td>Bom</td>
+          <td>Ajuste rega, página 10-12</td>
+        </tr>
+        <tr>
+          <td>A e C alterados</td>
+          <td>Moderado</td>
+          <td>Problema de rega com dano foliar</td>
+        </tr>
+        <tr>
+          <td>B alterado (mole)</td>
+          <td>Reservado</td>
+          <td>Tente salvar por estacas</td>
+        </tr>
+        <tr>
+          <td>D alterado (raízes podres)</td>
+          <td>Reservado</td>
+          <td>Transplante de emergência</td>
+        </tr>
+        <tr>
+          <td>B e D alterados</td>
+          <td>Grave</td>
+          <td>Última chance: estacas das partes sãs</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="page-footer">Página 5 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 6: FLUXOGRAMA MESTRE 1 -->
+  <div class="page">
+    <h1>Módulo 2: Diagnóstico Rápido</h1>
+
+    <h2>Fluxograma Mestre de Diagnóstico</h2>
+
+    <p>Siga este fluxograma para identificar rapidamente o problema da sua planta:</p>
+
+    <div class="flowchart">
+      <h3>INÍCIO: Qual o principal sintoma?</h3>
+
+      <div class="flow-step">
+        <p class="flow-question">A planta está MURCHA?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>SIM</strong> → Vá para MURCHA abaixo</div>
+          <div class="flow-no"><strong>NÃO</strong> → Continue</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <p class="flow-question">As folhas estão AMARELANDO?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>SIM</strong> → Vá para AMARELAMENTO (pág 8)</div>
+          <div class="flow-no"><strong>NÃO</strong> → Continue</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <p class="flow-question">Há MANCHAS ou FUROS nas folhas?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>SIM</strong> → Vá para DANOS FOLIARES (pág 9)</div>
+          <div class="flow-no"><strong>NÃO</strong> → Continue</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <p class="flow-question">Há BICHOS visíveis?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>SIM</strong> → Vá para PRAGAS (pág 13)</div>
+          <div class="flow-no"><strong>NÃO</strong> → Problema pode ser ambiental ou nutricional</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Sub-fluxo: MURCHA</h3>
+
+    <div class="flowchart">
+      <div class="flow-step">
+        <p class="flow-question">O solo está ENCHARCADO?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>SIM</strong> → AFOGAMENTO! Página 10</div>
+          <div class="flow-no"><strong>NÃO</strong> → Continue</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <p class="flow-question">O solo está completamente SECO?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>SIM</strong> → DESIDRATAÇÃO! Página 12</div>
+          <div class="flow-no"><strong>NÃO</strong> → Continue</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <p class="flow-question">O caule está MOLE na base?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>SIM</strong> → PODRIDÃO DE CAULE - grave!</div>
+          <div class="flow-no"><strong>NÃO</strong> → Pode ser choque de transplante ou calor</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">Página 6 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 7: FLUXOGRAMA MESTRE 2 -->
+  <div class="page">
+    <h3>Sub-fluxo: AMARELAMENTO</h3>
+
+    <div class="flowchart">
+      <div class="flow-step">
+        <p class="flow-question">QUAIS folhas estão amarelas?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>VELHAS (baixo)</strong> → Falta de N, Mg ou excesso de água</div>
+          <div class="flow-no"><strong>NOVAS (topo)</strong> → Falta de Fe ou pH alto</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <p class="flow-question">As NERVURAS também amarelaram?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>SIM</strong> → Falta de Nitrogênio</div>
+          <div class="flow-no"><strong>NÃO (nervuras verdes)</strong> → Clorose férrica ou falta de Mg</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <p class="flow-question">O amarelamento é em PADRÃO?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>Entre nervuras</strong> → Falta de Magnésio (Mg)</div>
+          <div class="flow-no"><strong>Uniforme</strong> → Nitrogênio, luz ou água</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Sub-fluxo: MANCHAS E DANOS FOLIARES</h3>
+
+    <div class="flowchart">
+      <div class="flow-step">
+        <p class="flow-question">As manchas são REDONDAS com bordas definidas?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>SIM</strong> → Doença fúngica (ex: septoria, antracnose)</div>
+          <div class="flow-no"><strong>NÃO</strong> → Continue</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <p class="flow-question">Há PÓ branco ou cinza sobre as folhas?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>Branco</strong> → Oídio (fungo)</div>
+          <div class="flow-no"><strong>Cinza/peludo</strong> → Mofo cinzento (Botrytis)</div>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <p class="flow-question">Os FUROS são irregulares?</p>
+        <div class="flow-options">
+          <div class="flow-yes"><strong>SIM + rastro prateado</strong> → Lesmas/caracóis</div>
+          <div class="flow-no"><strong>SIM + fezes escuras</strong> → Lagartas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <strong>Dica de diagnóstico:</strong> Tire fotos da planta ao longo dos dias. Comparar a evolução ajuda a identificar se o problema está piorando (urgente) ou estabilizado (pode diagnosticar com calma).
+    </div>
+
+    <div class="page-footer">Página 7 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 8: TABELA SINTOMAS X CAUSAS -->
+  <div class="page">
+    <h2>Tabela Completa: Sintomas x Causas x Soluções</h2>
+
+    <p>Consulte esta tabela para diagnóstico rápido. Imprima e deixe perto da sua horta!</p>
+
+    <table class="symptom-table">
+      <tr>
+        <th>Sintoma</th>
+        <th>Causa Provável</th>
+        <th>Solução Rápida</th>
+        <th>Urgência</th>
+      </tr>
+      <tr>
+        <td>Murcha + solo molhado</td>
+        <td>Afogamento / raiz podre</td>
+        <td>Parar rega, transplante</td>
+        <td><span class="severity-indicator severity-critical">CRÍTICO</span></td>
+      </tr>
+      <tr>
+        <td>Murcha + solo seco</td>
+        <td>Desidratação</td>
+        <td>Imersão + borrifar folhas</td>
+        <td><span class="severity-indicator severity-high">ALTO</span></td>
+      </tr>
+      <tr>
+        <td>Caule mole na base</td>
+        <td>Podridão / damping-off</td>
+        <td>Cortar acima, fazer estaca</td>
+        <td><span class="severity-indicator severity-critical">CRÍTICO</span></td>
+      </tr>
+      <tr>
+        <td>Folhas velhas amarelas (uniforme)</td>
+        <td>Falta de Nitrogênio</td>
+        <td>Húmus líquido 1:10</td>
+        <td><span class="severity-indicator severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>Folhas novas amarelas (nervuras verdes)</td>
+        <td>Falta de Ferro / pH alto</td>
+        <td>Quelato de ferro, corrigir pH</td>
+        <td><span class="severity-indicator severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>Amarelo entre nervuras (folhas velhas)</td>
+        <td>Falta de Magnésio</td>
+        <td>Sal Epsom 1 col/L</td>
+        <td><span class="severity-indicator severity-low">BAIXO</span></td>
+      </tr>
+      <tr>
+        <td>Pontas das folhas secas/marrons</td>
+        <td>Baixa umidade ou sal no solo</td>
+        <td>Borrifar, lavar substrato</td>
+        <td><span class="severity-indicator severity-low">BAIXO</span></td>
+      </tr>
+      <tr>
+        <td>Manchas marrons secas</td>
+        <td>Queimadura solar</td>
+        <td>Mover para sombra parcial</td>
+        <td><span class="severity-indicator severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>Pó branco nas folhas</td>
+        <td>Oídio (fungo)</td>
+        <td>Leite 10% ao sol</td>
+        <td><span class="severity-indicator severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>Manchas pretas crescendo</td>
+        <td>Fungo/bactéria</td>
+        <td>Remover, calda bordalesa</td>
+        <td><span class="severity-indicator severity-high">ALTO</span></td>
+      </tr>
+      <tr>
+        <td>Bichinhos em colônias</td>
+        <td>Pulgões</td>
+        <td>Jato de água + neem</td>
+        <td><span class="severity-indicator severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>Algodão branco nos caules</td>
+        <td>Cochonilha</td>
+        <td>Álcool + cotonete, neem</td>
+        <td><span class="severity-indicator severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>Furos + rastro prateado</td>
+        <td>Lesmas/caracóis</td>
+        <td>Armadilha cerveja, cinza</td>
+        <td><span class="severity-indicator severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>Furos grandes + fezes escuras</td>
+        <td>Lagartas</td>
+        <td>Catação, Bt</td>
+        <td><span class="severity-indicator severity-high">ALTO</span></td>
+      </tr>
+      <tr>
+        <td>Planta esticada e pálida</td>
+        <td>Falta de luz (estiolamento)</td>
+        <td>Mais luz ou grow light</td>
+        <td><span class="severity-indicator severity-low">BAIXO</span></td>
+      </tr>
+    </table>
+
+    <div class="page-footer">Página 8 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 9: DIFERENCIANDO PROBLEMAS -->
+  <div class="page">
+    <h2>Diferenciando Problemas Similares</h2>
+
+    <p>Alguns sintomas parecem iguais mas têm causas diferentes. Aprenda a distingui-los:</p>
+
+    <h3>Murcha: Excesso ou Falta de Água?</h3>
+
+    <div class="comparison-grid">
+      <div class="comparison-item comparison-bad">
+        <h4>EXCESSO de Água</h4>
+        <ul>
+          <li>Folhas murchas E moles</li>
+          <li>Solo encharcado</li>
+          <li>Possível mau cheiro</li>
+          <li>Folhas amarelando junto</li>
+          <li>Base do caule pode escurecer</li>
+          <li>Recuperação LENTA</li>
+        </ul>
+      </div>
+      <div class="comparison-item comparison-good">
+        <h4>FALTA de Água</h4>
+        <ul>
+          <li>Folhas murchas E secas/quebradiças</li>
+          <li>Solo seco, afastado do vaso</li>
+          <li>Sem cheiro</li>
+          <li>Pontas secando primeiro</li>
+          <li>Caule ainda firme</li>
+          <li>Recuperação RÁPIDA (horas)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Amarelamento: Nitrogênio ou Magnésio?</h3>
+
+    <div class="comparison-grid">
+      <div class="comparison-item comparison-bad">
+        <h4>Falta de NITROGÊNIO</h4>
+        <ul>
+          <li>Amarelamento UNIFORME</li>
+          <li>Toda a folha amarela (nervuras também)</li>
+          <li>Começa pelas folhas VELHAS</li>
+          <li>Planta fica "pálida" no geral</li>
+          <li>Crescimento muito lento</li>
+        </ul>
+        <p><strong>Solução:</strong> Húmus, composto, ureia diluída</p>
+      </div>
+      <div class="comparison-item comparison-good">
+        <h4>Falta de MAGNÉSIO</h4>
+        <ul>
+          <li>Amarelamento EM PADRÃO</li>
+          <li>Nervuras continuam VERDES</li>
+          <li>Começa pelas folhas VELHAS</li>
+          <li>Padrão "espinha de peixe"</li>
+          <li>Bordas podem secar depois</li>
+        </ul>
+        <p><strong>Solução:</strong> Sal de Epsom (sulfato de magnésio)</p>
+      </div>
+    </div>
+
+    <h3>Manchas: Fungo, Bactéria ou Queimadura?</h3>
+
+    <table class="treatment-table">
+      <tr>
+        <th>Característica</th>
+        <th>Fungo</th>
+        <th>Bactéria</th>
+        <th>Queimadura Solar</th>
+      </tr>
+      <tr>
+        <td>Forma da mancha</td>
+        <td>Redonda, bordas definidas</td>
+        <td>Irregular, bordas "molhadas"</td>
+        <td>Área exposta ao sol</td>
+      </tr>
+      <tr>
+        <td>Cor</td>
+        <td>Marrom com halo amarelo</td>
+        <td>Marrom escuro/preto, úmido</td>
+        <td>Marrom claro, seco</td>
+      </tr>
+      <tr>
+        <td>Textura</td>
+        <td>Seca, pode ter pó</td>
+        <td>Úmida, pode ter odor</td>
+        <td>Seca, como papel</td>
+      </tr>
+      <tr>
+        <td>Progressão</td>
+        <td>Gradual, dias</td>
+        <td>Rápida, horas</td>
+        <td>Imediata após exposição</td>
+      </tr>
+      <tr>
+        <td>Tratamento</td>
+        <td>Fungicida cúprico</td>
+        <td>Remover, isolar, cobre</td>
+        <td>Mover para sombra</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Teste do cheiro:</strong> Problemas bacterianos frequentemente têm mau cheiro (podridão). Fungos e queimaduras geralmente não têm odor.
+    </div>
+
+    <div class="page-footer">Página 9 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 10: RESGATE PLANTA AFOGADA -->
+  <div class="page">
+    <h1>Módulo 3: Tratamentos de Emergência</h1>
+
+    <h2>Planta Afogada - Resgate em 6 Passos</h2>
+
+    <div class="emergency-card">
+      <h3>SINTOMAS DE AFOGAMENTO:</h3>
+      <ul>
+        <li>Planta murcha APESAR do solo estar molhado</li>
+        <li>Solo encharcado há mais de 3 dias</li>
+        <li>Folhas amarelando e caindo</li>
+        <li>Possível mau cheiro no substrato</li>
+        <li>Caule pode estar amolecendo na base</li>
+      </ul>
+    </div>
+
+    <p>O afogamento mata as raízes por falta de oxigênio. Raízes mortas não absorvem água, então a planta murcha mesmo com excesso de água no solo. É uma das emergências mais comuns e perigosas.</p>
+
+    <h3>Protocolo de Resgate</h3>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">1</div>
+        <div class="timeline-content">
+          <h5>PARE de Regar Imediatamente</h5>
+          <p>Parece óbvio, mas muitas pessoas continuam regando achando que a planta precisa de água. NÃO! Ela precisa é de OXIGÊNIO nas raízes.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">2</div>
+        <div class="timeline-content">
+          <h5>Retire do Pratinho</h5>
+          <p>Se houver água acumulada no pratinho, remova imediatamente. Incline o vaso para escorrer o excesso.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">3</div>
+        <div class="timeline-content">
+          <h5>Avalie a Gravidade</h5>
+          <p>Retire a planta do vaso com cuidado e examine as raízes:</p>
+          <ul>
+            <li><strong>Raízes brancas/bege:</strong> Ainda saudáveis - prognóstico bom</li>
+            <li><strong>Raízes marrons mas firmes:</strong> Início de dano - prognóstico moderado</li>
+            <li><strong>Raízes pretas, moles, com cheiro:</strong> Apodrecidas - prognóstico reservado</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">4</div>
+        <div class="timeline-content">
+          <h5>Remova Partes Danificadas</h5>
+          <p>Com tesoura esterilizada (álcool 70%), corte:</p>
+          <ul>
+            <li>Todas as raízes podres (pretas, moles)</li>
+            <li>Folhas amareladas ou muito danificadas</li>
+            <li>Até 1/3 da parte aérea (reduz demanda)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">5</div>
+        <div class="timeline-content">
+          <h5>Transplante para Substrato Seco</h5>
+          <p>Prepare um vaso NOVO (ou lave bem o antigo) com:</p>
+          <ul>
+            <li>Camada generosa de drenagem (3-5 cm)</li>
+            <li>Substrato novo, levemente úmido (não molhado!)</li>
+            <li>Mais areia/perlita que o normal (melhor drenagem)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">6</div>
+        <div class="timeline-content">
+          <h5>Ambiente de Recuperação</h5>
+          <p>Por 2 semanas:</p>
+          <ul>
+            <li>Luz indireta (não sol forte)</li>
+            <li>NÃO adube (raízes fragilizadas)</li>
+            <li>Regue só quando o substrato secar completamente</li>
+            <li>Pode borrifar folhas para umidade</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">Página 10 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 11: CONTINUAÇÃO AFOGAMENTO -->
+  <div class="page">
+    <h3>Tratamento Adicional para Afogamento Severo</h3>
+
+    <div class="recipe-card">
+      <h4>Banho de Canela (Antifúngico Natural)</h4>
+      <p>A canela tem propriedades antifúngicas que ajudam a prevenir infecções nas raízes cortadas.</p>
+      <p><strong>Preparo:</strong></p>
+      <ul>
+        <li>1 colher de sopa de canela em pó</li>
+        <li>1 litro de água</li>
+      </ul>
+      <p><strong>Uso:</strong> Após cortar as raízes podres, mergulhe as raízes restantes nesta solução por 15 minutos antes de replantar. Deixe secar ao ar por 30 minutos antes de colocar no substrato novo.</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>Pó de Canela nas Raízes</h4>
+      <p><strong>Alternativa mais rápida:</strong> Polvilhe canela em pó diretamente nas raízes cortadas antes de replantar. Funciona como "curativo" antifúngico.</p>
+    </div>
+
+    <h3>Cronograma de Recuperação</h3>
+
+    <table class="treatment-table">
+      <tr>
+        <th>Dia</th>
+        <th>O que fazer</th>
+        <th>O que observar</th>
+      </tr>
+      <tr>
+        <td>1-3</td>
+        <td>Não regar. Manter em luz indireta.</td>
+        <td>Planta pode continuar murcha - é normal</td>
+      </tr>
+      <tr>
+        <td>4-7</td>
+        <td>Verificar substrato. Se seco, regar levemente.</td>
+        <td>Folhas devem começar a firmar</td>
+      </tr>
+      <tr>
+        <td>8-14</td>
+        <td>Retomar rega normal (quando solo secar)</td>
+        <td>Novos brotos = recuperação!</td>
+      </tr>
+      <tr>
+        <td>15-21</td>
+        <td>Pode começar adubação leve</td>
+        <td>Crescimento ativo indica sucesso</td>
+      </tr>
+      <tr>
+        <td>30+</td>
+        <td>Voltar à rotina normal</td>
+        <td>Planta recuperada</td>
+      </tr>
+    </table>
+
+    <div class="danger-box">
+      <strong>Sinais de que não vai recuperar:</strong>
+      <ul>
+        <li>Caule continua amolecendo após transplante</li>
+        <li>Novas folhas nascem já amarelas</li>
+        <li>Mau cheiro persiste no novo substrato</li>
+        <li>Nenhum sinal de melhora após 2 semanas</li>
+      </ul>
+      <p>Neste caso, tente fazer estacas das partes ainda saudáveis antes que seja tarde.</p>
+    </div>
+
+    <div class="success-box">
+      <strong>Taxa de sucesso:</strong> Com ação nas primeiras 48 horas de sintomas, a taxa de recuperação é de aproximadamente 70-80%. Após 5 dias de afogamento, cai para menos de 30%.
+    </div>
+
+    <div class="page-footer">Página 11 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 12: DESIDRATAÇÃO -->
+  <div class="page">
+    <h2>Planta Desidratada - Reidratação Segura</h2>
+
+    <div class="emergency-card">
+      <h3>SINTOMAS DE DESIDRATAÇÃO:</h3>
+      <ul>
+        <li>Folhas murchas E secas/quebradiças</li>
+        <li>Solo completamente seco, afastado das paredes do vaso</li>
+        <li>Folhas pendentes, sem turgor</li>
+        <li>Pontas das folhas secas e marrons</li>
+        <li>Vaso muito leve ao levantar</li>
+      </ul>
+    </div>
+
+    <p>A boa notícia: desidratação é mais fácil de reverter que afogamento! Plantas têm mecanismos de sobrevivência à seca e podem se recuperar completamente em 24-48 horas se tratadas corretamente.</p>
+
+    <h3>Protocolo de Reidratação</h3>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">1</div>
+        <div class="timeline-content">
+          <h5>NÃO Regue por Cima Imediatamente</h5>
+          <p>Quando o substrato está muito seco, ele se torna hidrofóbico (repele água). Se você regar por cima, a água escorre pelas laterais sem ser absorvida.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">2</div>
+        <div class="timeline-content">
+          <h5>Use o Método de Imersão</h5>
+          <p>Coloque o vaso (com furos) em uma bacia com água até a metade da altura do vaso. Deixe a água ser absorvida pelo fundo por 30-60 minutos, até o topo do substrato ficar úmido.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">3</div>
+        <div class="timeline-content">
+          <h5>Escorra o Excesso</h5>
+          <p>Retire da bacia e deixe escorrer completamente. O objetivo é hidratar, não encharcar.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">4</div>
+        <div class="timeline-content">
+          <h5>Borrife as Folhas</h5>
+          <p>Plantas absorvem um pouco de água pelas folhas. Borrifar ajuda na recuperação mais rápida. Use água em temperatura ambiente.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">5</div>
+        <div class="timeline-content">
+          <h5>Ambiente de Recuperação</h5>
+          <p>Por 24-48 horas: sombra parcial (não sol forte), evite vento, mantenha umidade alta (pode cobrir com saco plástico com furos).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>Recuperação esperada:</strong> Plantas herbáceas (manjericão, alface) devem mostrar melhora em 2-6 horas. Plantas lenhosas (alecrim, lavanda) podem levar 24-48 horas. Se não houver melhora em 72 horas, o dano pode ser permanente.
+    </div>
+
+    <div class="warning-box">
+      <strong>Cuidado com "rebote":</strong> Após desidratação severa, algumas folhas podem não se recuperar mesmo que a planta sobreviva. Elas ficarão secas e cairão - é normal. Não remova imediatamente; deixe a planta absorver os nutrientes restantes antes de podar.
+    </div>
+
+    <div class="page-footer">Página 12 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 13: INFESTAÇÃO SEVERA -->
+  <div class="page">
+    <h2>Infestação Severa - Contenção Imediata</h2>
+
+    <div class="emergency-card">
+      <h3>QUANDO CONSIDERAR EMERGÊNCIA:</h3>
+      <ul>
+        <li>Pragas cobrindo mais de 30% da planta</li>
+        <li>Multiplicação visível dia após dia</li>
+        <li>Planta visivelmente enfraquecida</li>
+        <li>Risco de contaminar outras plantas</li>
+        <li>Presença de formigas "cuidando" dos pulgões</li>
+      </ul>
+    </div>
+
+    <h3>Protocolo de Contenção</h3>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">1</div>
+        <div class="timeline-content">
+          <h5>ISOLE Imediatamente</h5>
+          <p>Afaste a planta de todas as outras. Pragas se espalham rapidamente. Coloque em quarentena a pelo menos 2 metros de outras plantas.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">2</div>
+        <div class="timeline-content">
+          <h5>Remoção Mecânica</h5>
+          <p>Remova o máximo de pragas possível manualmente:</p>
+          <ul>
+            <li><strong>Pulgões/cochonilhas:</strong> Jato de água forte + algodão com álcool</li>
+            <li><strong>Lagartas:</strong> Catação manual com luva</li>
+            <li><strong>Lesmas:</strong> Coleta noturna com lanterna</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">3</div>
+        <div class="timeline-content">
+          <h5>Poda de Emergência</h5>
+          <p>Se partes da planta estão muito infestadas, pode ser necessário podar drasticamente. Melhor perder algumas folhas que toda a planta.</p>
+          <p><strong>Descarte as partes podadas no LIXO (não composte!) para não espalhar pragas.</strong></p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">4</div>
+        <div class="timeline-content">
+          <h5>Tratamento Intensivo</h5>
+          <p>Aplique controle orgânico em dose de choque:</p>
+          <ul>
+            <li>Óleo de neem: 10ml por litro (dose forte)</li>
+            <li>Aplique 3 vezes em 5 dias (dias 1, 3, 5)</li>
+            <li>Aplique no fim da tarde (evite sol)</li>
+            <li>Cubra toda a planta, inclusive embaixo das folhas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">5</div>
+        <div class="timeline-content">
+          <h5>Inspecione Vizinhas</h5>
+          <p>Examine todas as plantas que estavam próximas. Pragas podem ter migrado antes de você perceber. Trate preventivamente com neem diluído (5ml/L).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">Página 13 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 14: RECEITAS ANTI-PRAGAS EMERGÊNCIA -->
+  <div class="page">
+    <h3>Receitas de Emergência Anti-Pragas</h3>
+
+    <div class="recipe-card">
+      <h4>Calda de Neem Concentrada (Dose de Choque)</h4>
+      <ul>
+        <li>10ml de óleo de neem</li>
+        <li>5ml de detergente neutro (emulsificante)</li>
+        <li>1 litro de água morna</li>
+      </ul>
+      <p><strong>Preparo:</strong> Misture o neem com o detergente primeiro, depois adicione a água morna aos poucos, mexendo bem.</p>
+      <p><strong>Aplicação:</strong> Borrife generosamente, cobrindo toda a planta, especialmente a parte de baixo das folhas. Aplique ao entardecer. Repetir a cada 2 dias por 1 semana.</p>
+      <p><strong>Funciona contra:</strong> Pulgões, cochonilhas, mosca-branca, ácaros, trips.</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>Calda de Pimenta + Alho (Repelente Poderoso)</h4>
+      <ul>
+        <li>5 pimentas malagueta</li>
+        <li>5 dentes de alho</li>
+        <li>1 litro de água</li>
+        <li>1 colher de sabão neutro</li>
+      </ul>
+      <p><strong>Preparo:</strong> Bata tudo no liquidificador. Deixe descansar 24h. Coe em pano fino. Dilua 1 parte para 3 de água antes de usar.</p>
+      <p><strong>Aplicação:</strong> Borrife nas plantas. CUIDADO: use luvas e não aplique em dias de vento. Evite contato com olhos.</p>
+      <p><strong>Funciona contra:</strong> Maioria das pragas sugadoras e mastigadoras.</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>Armadilha de Cerveja para Lesmas (Emergência Noturna)</h4>
+      <ul>
+        <li>Cerveja (qualquer tipo, pode ser resto)</li>
+        <li>Recipiente raso (tampa de pote, pratinho)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Enterre o recipiente até a borda ficar nivelada com o solo. Encha com cerveja.</p>
+      <p><strong>Funciona:</strong> Lesmas são atraídas pelo cheiro da levedura, caem e se afogam. Verifique e esvazie toda manhã.</p>
+    </div>
+
+    <div class="danger-box">
+      <strong>Controle biológico de emergência:</strong> Em casos severos de lagartas, considere <strong>Bacillus thuringiensis (Bt)</strong> - um inseticida biológico que afeta apenas lagartas. É seguro para humanos, pets e insetos benéficos. Encontrado em lojas agrícolas como "Dipel" ou "Agree".
+    </div>
+
+    <div class="tip-box">
+      <strong>Formigas "cuidando" de pulgões:</strong> Formigas "criam" pulgões pela substância doce que eles produzem. Se há formigas subindo na planta, trate os pulgões E crie uma barreira para formigas (fita adesiva no caule ou graxa ao redor do vaso).
+    </div>
+
+    <div class="page-footer">Página 14 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 15: QUEIMADURA SOLAR -->
+  <div class="page">
+    <h2>Queimadura Solar - Recuperação</h2>
+
+    <div class="emergency-card">
+      <h3>SINTOMAS DE QUEIMADURA SOLAR:</h3>
+      <ul>
+        <li>Manchas marrons ou esbranquiçadas secas</li>
+        <li>Dano concentrado no lado exposto ao sol</li>
+        <li>Folhas com aspecto de "papel queimado"</li>
+        <li>Aparecimento súbito após exposição</li>
+        <li>Bordas das folhas secando e enrolando</li>
+      </ul>
+    </div>
+
+    <h3>Por que acontece?</h3>
+
+    <p>Queimadura solar ocorre quando plantas não adaptadas ao sol forte são expostas subitamente, ou quando plantas são movidas de ambientes internos para externos sem aclimatação. Também pode ocorrer após rega no sol forte (gotículas funcionam como lentes).</p>
+
+    <h3>Tratamento</h3>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">1</div>
+        <div class="timeline-content">
+          <h5>Mova para Sombra</h5>
+          <p>Imediatamente após detectar queimadura, mova para local com luz indireta ou sombra parcial.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">2</div>
+        <div class="timeline-content">
+          <h5>Hidrate a Planta</h5>
+          <p>Queimadura causa desidratação. Regue o substrato (se necessário) e borrife as folhas com água.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">3</div>
+        <div class="timeline-content">
+          <h5>NÃO Remova Folhas Queimadas Imediatamente</h5>
+          <p>Folhas danificadas ainda fazem fotossíntese parcial e protegem as folhas abaixo. Espere 1-2 semanas antes de podar.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">4</div>
+        <div class="timeline-content">
+          <h5>Aclimatação Gradual</h5>
+          <p>Se quiser devolver ao sol, faça gradualmente: 1-2 horas de sol manhã na primeira semana, aumentando 1 hora por semana.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <strong>Prevenção de queimaduras:</strong>
+      <ul>
+        <li>Nunca mova plantas de dentro para sol pleno de uma vez</li>
+        <li>Evite regar nas horas mais quentes (10h-16h)</li>
+        <li>Plantas recém-transplantadas precisam de sombra por 1 semana</li>
+        <li>No verão extremo, forneça sombra à tarde (sombrite 30-50%)</li>
+      </ul>
+    </div>
+
+    <div class="success-box">
+      <strong>Prognóstico:</strong> Folhas queimadas não se recuperam, mas a planta geralmente sobrevive e produz folhas novas saudáveis. Dano permanente só ocorre se o caule/meristema for atingido.
+    </div>
+
+    <div class="page-footer">Página 15 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 16: CHOQUE TÉRMICO -->
+  <div class="page">
+    <h2>Choque Térmico - Frio e Calor Extremo</h2>
+
+    <h3>Dano por FRIO (Geada)</h3>
+
+    <div class="emergency-card">
+      <h3>SINTOMAS:</h3>
+      <ul>
+        <li>Folhas escurecidas, "cozidas"</li>
+        <li>Tecidos aquosos que depois secam</li>
+        <li>Caules moles e escurecidos</li>
+        <li>Aparecimento súbito após noite fria</li>
+      </ul>
+    </div>
+
+    <div class="problem-card">
+      <h4>Tratamento - Dano por Frio</h4>
+      <ol>
+        <li><strong>NÃO PODE imediatamente!</strong> Espere ver a extensão total do dano (1-2 semanas)</li>
+        <li>Mova para local protegido e mais quente</li>
+        <li>Evite regar em excesso (raízes frias + água = apodrecimento)</li>
+        <li>Após 2 semanas, pode as partes mortas até tecido saudável</li>
+        <li>Adube levemente para estimular recuperação</li>
+      </ol>
+      <div class="solution">
+        <strong>Prognóstico:</strong> Se o ponto de crescimento (meristema) sobreviveu, a planta pode rebrotar. Plantas tropicais (manjericão, pimenta) raramente sobrevivem à geada. Plantas mediterrâneas (alecrim, lavanda) são mais resistentes.
+      </div>
+    </div>
+
+    <h3>Dano por CALOR Extremo</h3>
+
+    <div class="emergency-card">
+      <h3>SINTOMAS:</h3>
+      <ul>
+        <li>Murcha severa mesmo com solo úmido</li>
+        <li>Bordas das folhas secando rapidamente</li>
+        <li>Folhas pendendo, sem recuperação à noite</li>
+        <li>Flores e frutos caindo prematuramente</li>
+      </ul>
+    </div>
+
+    <div class="problem-card">
+      <h4>Tratamento - Dano por Calor</h4>
+      <ol>
+        <li>Mova para sombra IMEDIATAMENTE</li>
+        <li>Borrife água nas folhas para resfriar</li>
+        <li>Coloque o vaso sobre superfície fresca (evite concreto quente)</li>
+        <li>Regue o substrato se estiver seco</li>
+        <li>Aumente umidade ao redor (bacia com água, borrifar)</li>
+        <li>Pode fornecer sombrite 50% até onda de calor passar</li>
+      </ol>
+      <div class="solution">
+        <strong>Prognóstico:</strong> Geralmente bom se tratado rapidamente. Plantas se recuperam em 24-48 horas após normalização da temperatura.
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>Prevenção - Frio:</strong> Monitore previsão do tempo. Cubra plantas com TNT na véspera de noites geladas. Mova vasos para perto de paredes (irradiam calor).<br><br>
+      <strong>Prevenção - Calor:</strong> Mulching no solo (mantém raízes frescas). Sombrite nas horas mais quentes. Rega pela manhã bem cedo.
+    </div>
+
+    <div class="page-footer">Página 16 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 17: KIT DE EMERGÊNCIA -->
+  <div class="page">
+    <h1>Módulo 4: Kit de Emergência</h1>
+
+    <h2>Os 10 Itens Essenciais</h2>
+
+    <p>Monte seu kit de primeiros socorros para plantas. Tenha sempre à mão:</p>
+
+    <div class="checklist">
+      <h4>Kit Básico de Emergência</h4>
+
+      <div class="checklist-item">
+        <div class="check-box"></div>
+        <div>
+          <strong>1. Óleo de Neem (100ml)</strong><br>
+          <span style="font-size: 14px; color: #666;">Inseticida/fungicida universal. Válido por 2 anos fechado.</span>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="check-box"></div>
+        <div>
+          <strong>2. Canela em Pó</strong><br>
+          <span style="font-size: 14px; color: #666;">Antifúngico natural para raízes e cortes. Qualquer marca serve.</span>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="check-box"></div>
+        <div>
+          <strong>3. Sal de Epsom (Sulfato de Magnésio)</strong><br>
+          <span style="font-size: 14px; color: #666;">Corrige deficiência de magnésio. Encontrado em farmácias.</span>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="check-box"></div>
+        <div>
+          <strong>4. Sabão Neutro ou de Coco</strong><br>
+          <span style="font-size: 14px; color: #666;">Base para caldas inseticidas. Evite sabões com perfume.</span>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="check-box"></div>
+        <div>
+          <strong>5. Borrifador (500ml-1L)</strong><br>
+          <span style="font-size: 14px; color: #666;">Para aplicação de caldas. Tenha um exclusivo para plantas.</span>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="check-box"></div>
+        <div>
+          <strong>6. Tesoura de Poda</strong><br>
+          <span style="font-size: 14px; color: #666;">Para remover partes doentes. Mantenha limpa e afiada.</span>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="check-box"></div>
+        <div>
+          <strong>7. Álcool 70%</strong><br>
+          <span style="font-size: 14px; color: #666;">Para esterilizar ferramentas e remover cochonilhas.</span>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="check-box"></div>
+        <div>
+          <strong>8. Substrato Extra (5L)</strong><br>
+          <span style="font-size: 14px; color: #666;">Para transplantes de emergência. Guarde em local seco.</span>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="check-box"></div>
+        <div>
+          <strong>9. Vaso Reserva com Drenagem</strong><br>
+          <span style="font-size: 14px; color: #666;">Pelo menos um vaso limpo disponível para emergências.</span>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="check-box"></div>
+        <div>
+          <strong>10. Húmus de Minhoca (1L)</strong><br>
+          <span style="font-size: 14px; color: #666;">Adubo orgânico suave para recuperação. Use diluído.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>Custo estimado do kit:</strong> R$ 60-80. Dura aproximadamente 1 ano para uma horta de 10-20 plantas. O óleo de neem é o item mais caro mas mais versátil.
+    </div>
+
+    <div class="page-footer">Página 17 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 18: RECEITAS PRONTO-SOCORRO -->
+  <div class="page">
+    <h2>5 Receitas de Pronto-Socorro</h2>
+
+    <div class="recipe-card">
+      <h4>1. Calda de Sabão Universal</h4>
+      <p><strong>Para:</strong> Pulgões, cochonilhas, mosca-branca, ácaros</p>
+      <ul>
+        <li>10g de sabão neutro ralado (ou 1 col. sopa de sabão líquido)</li>
+        <li>1 litro de água morna</li>
+      </ul>
+      <p><strong>Preparo:</strong> Dissolva o sabão na água morna. Deixe esfriar. Use imediatamente.</p>
+      <p><strong>Aplicação:</strong> Borrife nas pragas e embaixo das folhas. Lave as folhas com água limpa após 2 horas para não obstruir estômatos.</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>2. Solução de Leite para Oídio</h4>
+      <p><strong>Para:</strong> Oídio (pó branco nas folhas)</p>
+      <ul>
+        <li>100ml de leite (integral funciona melhor)</li>
+        <li>900ml de água</li>
+      </ul>
+      <p><strong>Preparo:</strong> Misture bem.</p>
+      <p><strong>Aplicação:</strong> Borrife NAS HORAS DE SOL (a luz ativa o efeito). Aplique 2x por semana até desaparecer. Funciona como preventivo também.</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>3. Água de Canela Antifúngica</h4>
+      <p><strong>Para:</strong> Fungos de solo, damping-off, podridão de raiz</p>
+      <ul>
+        <li>2 colheres de sopa de canela em pó</li>
+        <li>1 litro de água quente</li>
+      </ul>
+      <p><strong>Preparo:</strong> Misture e deixe esfriar completamente.</p>
+      <p><strong>Aplicação:</strong> Regue o solo com esta água (não nas folhas). Pode usar preventivamente em mudas novas.</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>4. Fertilizante de Emergência (Casca de Banana)</h4>
+      <p><strong>Para:</strong> Deficiência de potássio, floração fraca, plantas estressadas</p>
+      <ul>
+        <li>3 cascas de banana</li>
+        <li>1 litro de água</li>
+      </ul>
+      <p><strong>Preparo:</strong> Pique as cascas e deixe de molho por 48 horas. Coe.</p>
+      <p><strong>Aplicação:</strong> Dilua 1:1 com água e regue. Rico em potássio - ajuda na recuperação de stress.</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>5. Calda Bordalesa Simplificada</h4>
+      <p><strong>Para:</strong> Fungos diversos, manchas foliares, prevenção</p>
+      <ul>
+        <li>10g de sulfato de cobre</li>
+        <li>10g de cal virgem ou hidratada</li>
+        <li>1 litro de água</li>
+      </ul>
+      <p><strong>Preparo:</strong> Dissolva o cobre em 500ml de água. Separadamente, dissolva a cal em 500ml de água. Despeje a solução de cobre SOBRE a de cal (nunca ao contrário), mexendo.</p>
+      <p><strong>Aplicação:</strong> Borrife nas folhas. Use em dias nublados. Reaplicar a cada 10-15 dias.</p>
+    </div>
+
+    <div class="page-footer">Página 18 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 19: MAIS RECEITAS -->
+  <div class="page">
+    <h3>Receitas Bônus</h3>
+
+    <div class="recipe-card">
+      <h4>Tônico de Recuperação (Água de Arroz)</h4>
+      <p><strong>Para:</strong> Plantas debilitadas, pós-transplante, recuperação geral</p>
+      <ul>
+        <li>Água da lavagem do arroz (antes de cozinhar)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Guarde a água branca da primeira lavagem do arroz.</p>
+      <p><strong>Aplicação:</strong> Use para regar. Contém amidos e vitaminas B que estimulam micro-organismos benéficos do solo.</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>Enraizador Natural (Água de Salgueiro)</h4>
+      <p><strong>Para:</strong> Estacas, plantas com raízes danificadas</p>
+      <ul>
+        <li>Ramos novos de salgueiro (qualquer espécie)</li>
+        <li>Água</li>
+      </ul>
+      <p><strong>Preparo:</strong> Corte ramos em pedaços de 3cm. Cubra com água. Deixe 48 horas.</p>
+      <p><strong>Aplicação:</strong> Use esta água para enraizar estacas ou regar plantas com raízes danificadas. O salgueiro contém ácido salicílico e auxinas naturais.</p>
+    </div>
+
+    <h3>Tabela de Diluições Rápidas</h3>
+
+    <table class="treatment-table">
+      <tr>
+        <th>Produto</th>
+        <th>Dose Preventiva</th>
+        <th>Dose Tratamento</th>
+        <th>Frequência</th>
+      </tr>
+      <tr>
+        <td>Óleo de Neem</td>
+        <td>3-5ml/L</td>
+        <td>8-10ml/L</td>
+        <td>Semanal / a cada 3 dias</td>
+      </tr>
+      <tr>
+        <td>Calda de Sabão</td>
+        <td>5g/L</td>
+        <td>10g/L</td>
+        <td>Semanal / a cada 2 dias</td>
+      </tr>
+      <tr>
+        <td>Leite (oídio)</td>
+        <td>5%</td>
+        <td>10%</td>
+        <td>Semanal / 2x semana</td>
+      </tr>
+      <tr>
+        <td>Sal Epsom</td>
+        <td>1/2 col. chá/L</td>
+        <td>1 col. sopa/L</td>
+        <td>Mensal / semanal</td>
+      </tr>
+      <tr>
+        <td>Calda Bordalesa</td>
+        <td>5g+5g/L</td>
+        <td>10g+10g/L</td>
+        <td>Quinzenal / semanal</td>
+      </tr>
+      <tr>
+        <td>Húmus líquido</td>
+        <td>1:20</td>
+        <td>1:10</td>
+        <td>Quinzenal / semanal</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <strong>Atenção:</strong> Nunca misture produtos diferentes sem saber se são compatíveis. Aplique um de cada vez, com intervalo de 24-48 horas entre tratamentos diferentes.
+    </div>
+
+    <div class="page-footer">Página 19 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 20: CHECKLIST PARA IMPRIMIR -->
+  <div class="page">
+    <h2>Checklist de Diagnóstico - Para Imprimir</h2>
+
+    <p style="text-align: center; margin-bottom: 20px;"><em>Recorte e plastifique para usar quando precisar!</em></p>
+
+    <div class="checklist" style="background: #fff; border: 2px dashed #dc2626;">
+      <h4 style="text-align: center;">DIAGNÓSTICO RÁPIDO - ABCD</h4>
+
+      <p><strong>A - ÁGUA (Solo)</strong></p>
+      <div class="checklist-item"><div class="check-box"></div><span>Solo encharcado? → Afogamento (pág 10)</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Solo completamente seco? → Desidratação (pág 12)</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Mau cheiro no substrato? → Podridão de raiz</span></div>
+
+      <p><strong>B - BASE (Caule)</strong></p>
+      <div class="checklist-item"><div class="check-box"></div><span>Caule mole na base? → CRÍTICO! Estaquear partes sãs</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Caule firme? → Planta ainda viável</span></div>
+
+      <p><strong>C - COPA (Folhas)</strong></p>
+      <div class="checklist-item"><div class="check-box"></div><span>Amarelas embaixo (nervuras também)? → Falta Nitrogênio</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Amarelas em cima (nervuras verdes)? → Falta Ferro</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Bichos visíveis? → Pragas (pág 13)</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Manchas espalhando? → Fungo/bactéria</span></div>
+
+      <p><strong>D - DEBAIXO (Raízes)</strong></p>
+      <div class="checklist-item"><div class="check-box"></div><span>Raízes brancas/bege? → Saudáveis</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Raízes pretas/moles? → Apodrecidas - Transplante urgente</span></div>
+    </div>
+
+    <div class="quick-action" style="border: 2px dashed #ef4444; background: #fff;">
+      <h3>RECEITAS DE EMERGÊNCIA - RESUMO</h3>
+      <table class="symptom-table" style="font-size: 13px;">
+        <tr>
+          <th>Problema</th>
+          <th>Receita Rápida</th>
+        </tr>
+        <tr>
+          <td>Pulgões/cochonilhas</td>
+          <td>10g sabão + 1L água + jato forte</td>
+        </tr>
+        <tr>
+          <td>Oídio (pó branco)</td>
+          <td>100ml leite + 900ml água (ao sol)</td>
+        </tr>
+        <tr>
+          <td>Fungos no solo</td>
+          <td>2 col canela + 1L água (regar solo)</td>
+        </tr>
+        <tr>
+          <td>Defic. Magnésio</td>
+          <td>1 col Sal Epsom + 1L água</td>
+        </tr>
+        <tr>
+          <td>Lesmas</td>
+          <td>Cerveja em prato enterrado</td>
+        </tr>
+        <tr>
+          <td>Universal</td>
+          <td>Neem 10ml + 1L água + det neutro</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="page-footer">Página 20 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 21: CALENDÁRIO DE INSPEÇÃO -->
+  <div class="page">
+    <h1>Módulo 5: Prevenção e Monitoramento</h1>
+
+    <h2>Calendário Semanal de Inspeção</h2>
+
+    <p>A melhor forma de evitar emergências é detectar problemas ANTES que virem crises. Reserve 10 minutos por semana para esta rotina:</p>
+
+    <div class="diagnosis-box">
+      <h3>Rotina de Segunda-feira (5 min)</h3>
+      <p><strong>Tema: ÁGUA</strong></p>
+      <ul>
+        <li>Verificar umidade do solo de todos os vasos (teste do dedo)</li>
+        <li>Checar se há água parada em pratinhos</li>
+        <li>Observar se alguma planta está murcha</li>
+        <li>Planejar regas da semana baseado no clima previsto</li>
+      </ul>
+    </div>
+
+    <div class="diagnosis-box">
+      <h3>Rotina de Quarta-feira (3 min)</h3>
+      <p><strong>Tema: PRAGAS</strong></p>
+      <ul>
+        <li>Examinar a parte de baixo das folhas (onde pragas se escondem)</li>
+        <li>Procurar por teias, furos, manchas novas</li>
+        <li>Verificar presença de formigas subindo nas plantas</li>
+        <li>Checar plantas novas ou recém-chegadas com mais atenção</li>
+      </ul>
+    </div>
+
+    <div class="diagnosis-box">
+      <h3>Rotina de Sexta-feira (2 min)</h3>
+      <p><strong>Tema: NUTRIÇÃO</strong></p>
+      <ul>
+        <li>Observar coloração das folhas (amarelamento?)</li>
+        <li>Verificar crescimento (está estagnado?)</li>
+        <li>Planejar adubação se necessário</li>
+        <li>Remover folhas secas ou mortas</li>
+      </ul>
+    </div>
+
+    <h3>Checklist Mensal (15 min)</h3>
+
+    <div class="checklist">
+      <div class="checklist-item"><div class="check-box"></div><span>Verificar drenagem de todos os vasos (furos desobstruídos?)</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Avaliar necessidade de transplante (raízes saindo pelos furos?)</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Aplicar neem preventivo em todas as plantas</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Adubação orgânica regular</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Limpar área ao redor (remover folhas caídas, detritos)</span></div>
+      <div class="checklist-item"><div class="check-box"></div><span>Verificar estoque do kit de emergência</span></div>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica:</strong> Use o celular para tirar fotos semanais das plantas. Comparar fotos ajuda a detectar mudanças sutis que passariam despercebidas no dia a dia.
+    </div>
+
+    <div class="page-footer">Página 21 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 22: SINAIS PRECOCES -->
+  <div class="page">
+    <h2>Sinais Precoces - Antes da Crise</h2>
+
+    <p>Aprenda a identificar problemas no estágio inicial, quando ainda são fáceis de resolver:</p>
+
+    <table class="symptom-table">
+      <tr>
+        <th>Sinal Precoce</th>
+        <th>O que pode virar</th>
+        <th>Ação Preventiva</th>
+      </tr>
+      <tr>
+        <td>Folhas levemente pálidas</td>
+        <td>Deficiência nutricional severa</td>
+        <td>Adube agora com húmus diluído</td>
+      </tr>
+      <tr>
+        <td>1-2 pulgões isolados</td>
+        <td>Infestação em 1-2 semanas</td>
+        <td>Remova e aplique neem preventivo</td>
+      </tr>
+      <tr>
+        <td>Solo demorando a secar</td>
+        <td>Afogamento/apodrecimento</td>
+        <td>Reduza rega, melhore drenagem</td>
+      </tr>
+      <tr>
+        <td>Folhas enrolando para dentro</td>
+        <td>Desidratação ou calor extremo</td>
+        <td>Ajuste rega, forneça sombra</td>
+      </tr>
+      <tr>
+        <td>Crescimento "esticado"</td>
+        <td>Estiolamento severo</td>
+        <td>Mova para local com mais luz</td>
+      </tr>
+      <tr>
+        <td>Pequenas manchas nas folhas</td>
+        <td>Doença fúngica espalhada</td>
+        <td>Remova folhas afetadas, aplique leite</td>
+      </tr>
+      <tr>
+        <td>Pontas das folhas secando</td>
+        <td>Deficiência ou sal acumulado</td>
+        <td>Lave substrato, ajuste adubação</td>
+      </tr>
+      <tr>
+        <td>Raízes saindo pelos furos</td>
+        <td>Planta "presa", crescimento parado</td>
+        <td>Transplante para vaso maior</td>
+      </tr>
+      <tr>
+        <td>Formigas subindo na planta</td>
+        <td>Infestação de pulgões iminente</td>
+        <td>Inspecione, crie barreira para formigas</td>
+      </tr>
+      <tr>
+        <td>Botões florais caindo</td>
+        <td>Stress que pode piorar</td>
+        <td>Estabilize rega, temperatura, nutrição</td>
+      </tr>
+    </table>
+
+    <div class="success-box">
+      <strong>Regra de ouro:</strong> Um problema detectado no estágio 1 leva 5 minutos para resolver. O mesmo problema no estágio 3 pode levar semanas ou ser irreversível. INSPECIONE REGULARMENTE!
+    </div>
+
+    <h3>O Que NÃO é Motivo de Preocupação</h3>
+
+    <ul>
+      <li><strong>Folhas velhas (de baixo) amarelando aos poucos</strong> - É natural, a planta está redirecionando nutrientes</li>
+      <li><strong>Queda de algumas folhas no inverno</strong> - Plantas reduzem metabolismo</li>
+      <li><strong>Crescimento lento no inverno</strong> - Normal para a maioria das espécies</li>
+      <li><strong>Flores murchando após alguns dias</strong> - Ciclo natural</li>
+      <li><strong>Raízes visíveis na superfície</strong> - Não é problema se a planta está saudável</li>
+    </ul>
+
+    <div class="page-footer">Página 22 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA 23: SISTEMA DE ALERTA -->
+  <div class="page">
+    <h2>Sistema de Alerta por Níveis</h2>
+
+    <p>Use este sistema para classificar a urgência de problemas e priorizar suas ações:</p>
+
+    <div class="problem-card" style="border-color: #22c55e;">
+      <h4 style="color: #15803d;">NÍVEL VERDE - Observação</h4>
+      <span class="severity-indicator severity-low">BAIXO</span>
+      <p><strong>Sintomas:</strong> Pequenas alterações estéticas, algumas folhas velhas amarelando, crescimento levemente lento.</p>
+      <p><strong>Ação:</strong> Monitore por 1 semana. Anote mudanças. Ajuste cuidados básicos se necessário.</p>
+      <p><strong>Prazo:</strong> Resolver em até 2 semanas.</p>
+    </div>
+
+    <div class="problem-card" style="border-color: #f59e0b;">
+      <h4 style="color: #92400e;">NÍVEL AMARELO - Atenção</h4>
+      <span class="severity-indicator severity-medium">MÉDIO</span>
+      <p><strong>Sintomas:</strong> Amarelamento progressivo, algumas pragas, manchas foliares localizadas, murcha leve.</p>
+      <p><strong>Ação:</strong> Diagnóstico imediato (use ABCD). Inicie tratamento apropriado. Isole se houver pragas.</p>
+      <p><strong>Prazo:</strong> Agir em até 3-5 dias.</p>
+    </div>
+
+    <div class="problem-card" style="border-color: #f97316;">
+      <h4 style="color: #c2410c;">NÍVEL LARANJA - Urgência</h4>
+      <span class="severity-indicator severity-high">ALTO</span>
+      <p><strong>Sintomas:</strong> Murcha significativa, infestação em expansão, manchas espalhando rapidamente, folhas caindo.</p>
+      <p><strong>Ação:</strong> Tratamento imediato. Use protocolos de emergência. Considere poda drástica.</p>
+      <p><strong>Prazo:</strong> Agir HOJE.</p>
+    </div>
+
+    <div class="problem-card" style="border-color: #dc2626;">
+      <h4 style="color: #dc2626;">NÍVEL VERMELHO - Emergência</h4>
+      <span class="severity-indicator severity-critical">CRÍTICO</span>
+      <p><strong>Sintomas:</strong> Murcha total, caule amolecendo, raízes podres, mais de 50% da planta comprometida.</p>
+      <p><strong>Ação:</strong> Intervenção IMEDIATA. Transplante de emergência. Tente salvar por estacas. Considere perda.</p>
+      <p><strong>Prazo:</strong> Agir AGORA - cada hora conta.</p>
+    </div>
+
+    <div class="quick-action">
+      <h3>Quando Chamar Reforços</h3>
+      <p>Se após 2 semanas de tratamento correto a planta não melhorar, considere:</p>
+      <ul style="text-align: left; max-width: 400px; margin: 15px auto;">
+        <li>Consultar grupos de jardinagem online (com fotos)</li>
+        <li>Levar amostra a um agrônomo ou viveiro</li>
+        <li>Aceitar a perda e aprender para próxima vez</li>
+      </ul>
+    </div>
+
+    <div class="page-footer">Página 23 - Kit Salve Sua Horta</div>
+  </div>
+
+  <!-- PÁGINA DE ENCERRAMENTO -->
+  <div class="closing">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pgf19)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bgf19)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs>
+          <linearGradient id="pgf19" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bgf19" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <h2>Você Está Preparado!</h2>
+
+    <p>Com este guia, você tem todas as ferramentas para identificar, diagnosticar e tratar qualquer emergência na sua horta.</p>
+
+    <p>Lembre-se: a prevenção é sempre melhor que o tratamento. Use o calendário de inspeção semanal e detecte problemas antes que virem crises.</p>
+
+    <div class="tip-box" style="max-width: 500px; margin: 30px auto; text-align: left;">
+      <strong>Próximos passos:</strong>
+      <ol>
+        <li>Monte seu kit de emergência (página 17)</li>
+        <li>Imprima o checklist de diagnóstico (página 20)</li>
+        <li>Comece a rotina semanal de inspeção</li>
+        <li>Salve este PDF no celular para consulta rápida</li>
+      </ol>
+    </div>
+
+    <p><strong>Nunca mais perca uma planta por falta de conhecimento!</strong></p>
+
+    <div class="brand" style="margin-top: 40px;">
+      Minha Horta em Casa
+      <div class="brand-url">minhahortaemcasa.com.br</div>
+    </div>
+  </div>
+
+</body>
+</html>

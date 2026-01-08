@@ -5,6 +5,7 @@ originalPrice: 29
 description: "Identificação e controle orgânico de pragas na horta"
 category: "problemas"
 relatedProblem: "pulgoes"
+checkoutUrl: "https://checkout.pagtrust.com.br/ckd46cdeb8?funnel=fn38ae6f89"
 ---
 
 # Manual Anti-Pragas - R$ 14

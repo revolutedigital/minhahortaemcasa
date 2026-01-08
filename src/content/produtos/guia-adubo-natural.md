@@ -5,6 +5,7 @@ originalPrice: 29
 description: "Faça seu próprio adubo e economize muito dinheiro"
 category: "guia"
 featured: false
+checkoutUrl: "https://checkout.pagtrust.com.br/ckc06ea510?funnel=fn38b226f1"
 ---
 
 # Guia Adubo Natural e Compostagem - R$ 14

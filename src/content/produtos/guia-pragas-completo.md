@@ -5,6 +5,7 @@ originalPrice: 39
 description: "Identifique e elimine qualquer praga ou doença da sua horta"
 category: "guia"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ck6ae4711c?funnel=fna3ca4b54"
 ---
 
 # Guia Pragas e Doenças Completo - R$ 19

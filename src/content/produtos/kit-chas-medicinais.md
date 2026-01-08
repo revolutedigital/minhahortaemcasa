@@ -5,6 +5,7 @@ originalPrice: 52
 description: "Cultive suas próprias ervas para chás e remédios naturais"
 category: "combo"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ck27db8768?funnel=fn629e2828"
 ---
 
 # Kit Horta de Chás e Ervas Medicinais - R$ 24

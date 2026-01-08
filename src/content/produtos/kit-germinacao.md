@@ -5,6 +5,7 @@ originalPrice: 39
 description: "Domine a arte de germinar sementes. Técnicas, tabelas e troubleshooting para nunca mais perder uma semente."
 category: "kit"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ck5f02a5c5?funnel=fn198d887b"
 ---
 
 # Kit Germinação Completo - R$ 19

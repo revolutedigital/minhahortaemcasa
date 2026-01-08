@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>SOS Folhas Amarelas - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.7; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fbbf24 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 48px; font-weight: 800; color: #92400e; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+    .cover .subtitle { font-size: 20px; color: #a16207; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #92400e; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #b45309; }
+    h1 { font-size: 32px; color: #92400e; margin-bottom: 20px; border-bottom: 3px solid #f59e0b; padding-bottom: 10px; }
+    h2 { font-size: 24px; color: #a16207; margin: 25px 0 15px; }
+    h3 { font-size: 20px; color: #92400e; margin: 20px 0 10px; }
+    h4 { font-size: 17px; color: #a16207; margin: 15px 0 10px; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin: 12px 0 15px 25px; }
+    li { margin-bottom: 6px; }
+    .intro-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 5px solid #f59e0b; }
+    .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .danger-box { background: #fef2f2; border-left: 4px solid #ef4444; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .success-box { background: #ecfdf5; border-left: 4px solid #22c55e; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .tip-box { background: #e0f2fe; border-left: 4px solid #0284c7; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .diagnosis-card { background: #fff; border: 2px solid #f59e0b; border-radius: 12px; padding: 20px; margin: 15px 0; box-shadow: 0 2px 8px rgba(245,158,11,0.15); }
+    .diagnosis-card h4 { color: #92400e; margin-top: 0; }
+    .diagnosis-card .symptom { background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 12px; border-radius: 8px; margin: 10px 0; }
+    .nutrient-card { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 15px 0; }
+    .nutrient-card h4 { color: #15803d; margin-top: 0; border-bottom: 2px solid #dcfce7; padding-bottom: 8px; }
+    .nutrient-card.nitrogen { border-color: #3b82f6; }
+    .nutrient-card.nitrogen h4 { color: #1d4ed8; border-color: #dbeafe; }
+    .nutrient-card.iron { border-color: #ef4444; }
+    .nutrient-card.iron h4 { color: #dc2626; border-color: #fecaca; }
+    .nutrient-card.magnesium { border-color: #a855f7; }
+    .nutrient-card.magnesium h4 { color: #7c3aed; border-color: #e9d5ff; }
+    .nutrient-card.potassium { border-color: #f97316; }
+    .nutrient-card.potassium h4 { color: #ea580c; border-color: #fed7aa; }
+    .step-box { background: #f8fafc; border-radius: 8px; padding: 20px; margin: 15px 0; border-left: 4px solid #22c55e; }
+    .step-number { display: inline-block; width: 28px; height: 28px; background: #22c55e; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: bold; margin-right: 10px; }
+    .flowchart { background: linear-gradient(135deg, #f8fafc, #f1f5f9); padding: 25px; border-radius: 16px; margin: 20px 0; border: 2px solid #e2e8f0; }
+    .flowchart-step { background: white; border: 2px solid #f59e0b; border-radius: 12px; padding: 15px; margin: 10px 0; }
+    .flowchart-step.start { background: linear-gradient(135deg, #fef3c7, #fde68a); border-color: #f59e0b; }
+    .flowchart-step.yes { background: linear-gradient(135deg, #fef2f2, #fecaca); border-color: #ef4444; }
+    .flowchart-step.result { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-color: #22c55e; }
+    .flowchart-arrow { text-align: center; font-size: 24px; color: #f59e0b; font-weight: bold; }
+    .recipe-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 15px 0; }
+    .recipe-box h4 { color: #15803d; margin-top: 0; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    .comparison-table th { background: #92400e; color: white; padding: 12px 8px; text-align: left; }
+    .comparison-table td { padding: 10px 8px; border-bottom: 1px solid #e5e7eb; }
+    .comparison-table tr:nth-child(even) { background: #fef3c7; }
+    .visual-symptom { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    .symptom-box { background: #fff; border: 2px solid #e5e7eb; border-radius: 12px; padding: 15px; text-align: center; }
+    .symptom-box.problem { border-color: #ef4444; background: linear-gradient(135deg, #fef2f2, #fecaca); }
+    .symptom-box.solution { border-color: #22c55e; background: linear-gradient(135deg, #ecfdf5, #d1fae5); }
+    .symptom-icon { font-size: 40px; margin-bottom: 10px; }
+    .leaf-diagram { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #f59e0b; border-radius: 16px; padding: 20px; margin: 20px 0; text-align: center; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
+    .stat-box { background: #fff; border: 2px solid #f59e0b; border-radius: 12px; padding: 15px; text-align: center; }
+    .stat-number { font-size: 32px; font-weight: 800; color: #92400e; }
+    .stat-label { font-size: 12px; color: #a16207; }
+    .checklist { background: #f8fafc; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .checklist-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
+    .checklist-item:last-child { border-bottom: none; }
+    .checkbox { width: 20px; height: 20px; border: 2px solid #f59e0b; border-radius: 4px; flex-shrink: 0; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+    .toc { background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 30px; border-radius: 12px; margin: 20px 0; border: 2px solid #f59e0b; }
+    .toc h2 { border-bottom: none; margin-top: 0; text-align: center; color: #92400e; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dotted #d97706; }
+    .module-header { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; padding: 25px; border-radius: 12px; margin: 25px 0 20px 0; text-align: center; }
+    .module-header h2 { color: white; border: none; margin: 0; font-size: 28px; }
+    .module-header p { color: #fef3c7; margin: 10px 0 0 0; font-size: 16px; }
+    .emergency-protocol { background: linear-gradient(135deg, #fef2f2, #fecaca); border: 3px solid #ef4444; border-radius: 16px; padding: 25px; margin: 20px 0; }
+    .emergency-protocol h3 { color: #dc2626; margin-top: 0; }
+    .severity-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-right: 8px; }
+    .severity-critical { background: #dc2626; color: white; }
+    .severity-high { background: #f97316; color: white; }
+    .severity-medium { background: #fbbf24; color: #78350f; }
+    .severity-low { background: #22c55e; color: white; }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#92400e" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pg12)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bg12)" stroke="#15803d" stroke-width="2.5"/>
+        <!-- Olhos preocupados -->
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <!-- Boca preocupada -->
+        <path d="M42 65C42 65 50 60 58 65" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Bochechas -->
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <!-- Folhas - algumas amareladas -->
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <!-- Lupa na mão -->
+        <circle cx="80" cy="70" r="10" fill="none" stroke="#374151" stroke-width="3"/>
+        <circle cx="80" cy="70" r="7" fill="#e0f2fe" fill-opacity="0.5"/>
+        <line x1="87" y1="77" x2="95" y2="85" stroke="#374151" stroke-width="3" stroke-linecap="round"/>
+        <defs>
+          <linearGradient id="pg12" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ea7531"/>
+            <stop offset="100%" stop-color="#b5441c"/>
+          </linearGradient>
+          <radialGradient id="bg12" cx="40%" cy="30%">
+            <stop offset="0%" stop-color="#86efac"/>
+            <stop offset="50%" stop-color="#4ade80"/>
+            <stop offset="100%" stop-color="#22c55e"/>
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>SOS Folhas Amarelas</h1>
+    <p class="subtitle">Guia Completo de Diagnóstico e Tratamento<br>12 Causas + Soluções + Receitas Caseiras</p>
+    <p style="font-size: 16px; color: #92400e; margin-top: 20px; background: rgba(255,255,255,0.5); padding: 10px 20px; border-radius: 20px;">Descubra a causa em 2 minutos!</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>Sumário Completo</h2>
+      <ul>
+        <li><strong>Módulo 1:</strong> Entendendo o Amarelamento (pág. 2-3)</li>
+        <li><strong>Módulo 2:</strong> Fluxograma de Diagnóstico Rápido (pág. 4)</li>
+        <li><strong>Módulo 3:</strong> Excesso de Água - Causa #1 (pág. 5)</li>
+        <li><strong>Módulo 4:</strong> Falta de Água (pág. 6)</li>
+        <li><strong>Módulo 5:</strong> Deficiência de Nitrogênio (pág. 7)</li>
+        <li><strong>Módulo 6:</strong> Deficiência de Ferro - Clorose Férrica (pág. 8)</li>
+        <li><strong>Módulo 7:</strong> Deficiência de Magnésio (pág. 9)</li>
+        <li><strong>Módulo 8:</strong> Deficiência de Potássio (pág. 10)</li>
+        <li><strong>Módulo 9:</strong> Problemas de pH (pág. 11)</li>
+        <li><strong>Módulo 10:</strong> Problemas de Luz (pág. 12)</li>
+        <li><strong>Módulo 11:</strong> Pragas e Doenças (pág. 13-14)</li>
+        <li><strong>Módulo 12:</strong> Envelhecimento Natural (pág. 15)</li>
+        <li><strong>Módulo 13:</strong> Receitas de Fertilizantes Caseiros (pág. 16-17)</li>
+        <li><strong>Bônus:</strong> Tabela de Diagnóstico Rápido para Imprimir (pág. 18)</li>
+      </ul>
+    </div>
+
+    <div class="intro-box">
+      <h3>Pare de Perder Plantas!</h3>
+      <p>Folhas amarelando são o pedido de socorro das suas plantas. Este guia ensina a identificar a causa EXATA em menos de 2 minutos e aplicar o tratamento correto antes que seja tarde demais.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-number">12</div>
+        <div class="stat-label">Causas Explicadas</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">18</div>
+        <div class="stat-label">Páginas de Conteúdo</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">8</div>
+        <div class="stat-label">Receitas Caseiras</div>
+      </div>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 1</div>
+  </div>
+
+  <!-- MÓDULO 1: ENTENDENDO O AMARELAMENTO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 1</h2>
+      <p>Entendendo o Amarelamento</p>
+    </div>
+
+    <h3>Por que as Folhas Ficam Amarelas?</h3>
+    <p>O verde das folhas vem da <strong>clorofila</strong>, o pigmento que faz a fotossíntese. Quando a planta não consegue produzir ou manter a clorofila, as folhas perdem a cor verde e amarelam. Isso é chamado de <strong>clorose</strong>.</p>
+    <p>O amarelamento é como uma "febre" - indica que algo está errado, mas não diz exatamente o quê. Por isso, precisamos analisar o <strong>PADRÃO</strong> do amarelamento para descobrir a causa.</p>
+
+    <h3>As 12 Causas Principais de Folhas Amarelas</h3>
+    <table class="comparison-table">
+      <tr>
+        <th>#</th>
+        <th>Causa</th>
+        <th>Frequência</th>
+        <th>Urgência</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Excesso de água</td>
+        <td>40%</td>
+        <td><span class="severity-badge severity-critical">CRÍTICO</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Falta de água</td>
+        <td>12%</td>
+        <td><span class="severity-badge severity-high">ALTO</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Deficiência de Nitrogênio</td>
+        <td>12%</td>
+        <td><span class="severity-badge severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Deficiência de Ferro</td>
+        <td>8%</td>
+        <td><span class="severity-badge severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Deficiência de Magnésio</td>
+        <td>6%</td>
+        <td><span class="severity-badge severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Deficiência de Potássio</td>
+        <td>5%</td>
+        <td><span class="severity-badge severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Problemas de pH</td>
+        <td>5%</td>
+        <td><span class="severity-badge severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Falta de luz</td>
+        <td>4%</td>
+        <td><span class="severity-badge severity-low">BAIXO</span></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Excesso de luz/queimadura</td>
+        <td>3%</td>
+        <td><span class="severity-badge severity-medium">MÉDIO</span></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Pragas</td>
+        <td>2%</td>
+        <td><span class="severity-badge severity-high">ALTO</span></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Doenças fúngicas</td>
+        <td>2%</td>
+        <td><span class="severity-badge severity-critical">CRÍTICO</span></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Envelhecimento natural</td>
+        <td>1%</td>
+        <td><span class="severity-badge severity-low">NORMAL</span></td>
+      </tr>
+    </table>
+
+    <div class="danger-box">
+      <h4>A Causa #1 é Excesso de Água!</h4>
+      <p>Surpreendentemente, a maioria das plantas morre por EXCESSO de água, não por falta. Se suas folhas estão amarelando e você rega frequentemente, provavelmente está "afogando" sua planta!</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 2</div>
+  </div>
+
+  <!-- MÓDULO 1 CONTINUAÇÃO: PADRÕES VISUAIS -->
+  <div class="page">
+    <h1>Padrões Visuais de Amarelamento</h1>
+    <p class="chapter-intro">A LOCALIZAÇÃO do amarelamento é a chave do diagnóstico.</p>
+
+    <h2>Mapa de Diagnóstico por Localização</h2>
+
+    <div class="leaf-diagram">
+      <h3>Onde as Folhas Amarelam?</h3>
+      <div class="visual-symptom">
+        <div class="symptom-box problem">
+          <div class="symptom-icon">🍂</div>
+          <h4>Folhas INFERIORES (velhas)</h4>
+          <p><strong>Causas:</strong></p>
+          <ul style="text-align: left; margin-left: 20px;">
+            <li>Falta de Nitrogênio</li>
+            <li>Excesso de água</li>
+            <li>Envelhecimento natural</li>
+          </ul>
+        </div>
+        <div class="symptom-box problem">
+          <div class="symptom-icon">🌱</div>
+          <h4>Folhas SUPERIORES (novas)</h4>
+          <p><strong>Causas:</strong></p>
+          <ul style="text-align: left; margin-left: 20px;">
+            <li>Falta de Ferro</li>
+            <li>Problemas de pH</li>
+            <li>Falta de Cálcio</li>
+          </ul>
+        </div>
+        <div class="symptom-box problem">
+          <div class="symptom-icon">🍃</div>
+          <h4>ENTRE as nervuras</h4>
+          <p><strong>Causas:</strong></p>
+          <ul style="text-align: left; margin-left: 20px;">
+            <li>Falta de Ferro (novas)</li>
+            <li>Falta de Magnésio (velhas)</li>
+            <li>Falta de Manganês</li>
+          </ul>
+        </div>
+        <div class="symptom-box problem">
+          <div class="symptom-icon">☀️</div>
+          <h4>BORDAS das folhas</h4>
+          <p><strong>Causas:</strong></p>
+          <ul style="text-align: left; margin-left: 20px;">
+            <li>Falta de Potássio</li>
+            <li>Falta de água</li>
+            <li>Queimadura solar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2>Nutrientes Móveis vs Imóveis</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Tipo</th>
+        <th>Nutrientes</th>
+        <th>Onde aparece deficiência</th>
+        <th>Por quê?</th>
+      </tr>
+      <tr>
+        <td><strong>MÓVEIS</strong></td>
+        <td>N, P, K, Mg</td>
+        <td>Folhas VELHAS primeiro</td>
+        <td>A planta "rouba" das velhas para as novas</td>
+      </tr>
+      <tr>
+        <td><strong>IMÓVEIS</strong></td>
+        <td>Fe, Ca, Mn, B, Cu</td>
+        <td>Folhas NOVAS primeiro</td>
+        <td>Não podem ser redistribuídos</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>Regra Prática de Diagnóstico</h4>
+      <ul>
+        <li><strong>Problema nas folhas VELHAS (baixo)?</strong> → Nutriente MÓVEL (N, P, K, Mg) ou água</li>
+        <li><strong>Problema nas folhas NOVAS (topo)?</strong> → Nutriente IMÓVEL (Fe, Ca) ou pH</li>
+        <li><strong>Problema em TODA a planta?</strong> → Água, luz ou raízes danificadas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 3</div>
+  </div>
+
+  <!-- MÓDULO 2: FLUXOGRAMA -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 2</h2>
+      <p>Fluxograma de Diagnóstico Rápido</p>
+    </div>
+
+    <p>Use este fluxograma para identificar a causa em menos de 2 minutos!</p>
+
+    <div class="flowchart">
+      <div class="flowchart-step start"><strong>INÍCIO:</strong> Folhas amarelando?</div>
+      <div class="flowchart-arrow">↓</div>
+
+      <div class="flowchart-step"><strong>1.</strong> O solo está molhado/úmido há vários dias?</div>
+      <div class="flowchart-step yes">SIM → <strong>EXCESSO DE ÁGUA</strong> (Módulo 3)</div>
+      <div class="flowchart-arrow">↓ NÃO</div>
+
+      <div class="flowchart-step"><strong>2.</strong> O solo está muito seco e a planta murcha?</div>
+      <div class="flowchart-step yes">SIM → <strong>FALTA DE ÁGUA</strong> (Módulo 4)</div>
+      <div class="flowchart-arrow">↓ NÃO</div>
+
+      <div class="flowchart-step"><strong>3.</strong> Amarelamento nas folhas INFERIORES (velhas), folha toda amarela?</div>
+      <div class="flowchart-step yes">SIM → <strong>FALTA DE NITROGÊNIO</strong> (Módulo 5)</div>
+      <div class="flowchart-arrow">↓ NÃO</div>
+
+      <div class="flowchart-step"><strong>4.</strong> Folhas NOVAS (topo) amareladas, mas nervuras VERDES?</div>
+      <div class="flowchart-step yes">SIM → <strong>FALTA DE FERRO</strong> (Módulo 6)</div>
+      <div class="flowchart-arrow">↓ NÃO</div>
+
+      <div class="flowchart-step"><strong>5.</strong> Folhas VELHAS amareladas entre nervuras, nervuras verdes?</div>
+      <div class="flowchart-step yes">SIM → <strong>FALTA DE MAGNÉSIO</strong> (Módulo 7)</div>
+      <div class="flowchart-arrow">↓ NÃO</div>
+
+      <div class="flowchart-step"><strong>6.</strong> Bordas das folhas amarelando/secando?</div>
+      <div class="flowchart-step yes">SIM → <strong>FALTA DE POTÁSSIO</strong> (Módulo 8)</div>
+      <div class="flowchart-arrow">↓ NÃO</div>
+
+      <div class="flowchart-step"><strong>7.</strong> Vê pontos, manchas ou bichinhos?</div>
+      <div class="flowchart-step yes">SIM → <strong>PRAGAS/DOENÇAS</strong> (Módulo 11)</div>
+      <div class="flowchart-arrow">↓ NÃO</div>
+
+      <div class="flowchart-step"><strong>8.</strong> Só folhas velhas da base estão caindo aos poucos?</div>
+      <div class="flowchart-step result">SIM → <strong>NORMAL!</strong> Envelhecimento natural (Módulo 12)</div>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 4</div>
+  </div>
+
+  <!-- MÓDULO 3: EXCESSO DE ÁGUA -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 3</h2>
+      <p>Causa #1 - Excesso de Água</p>
+    </div>
+
+    <div class="emergency-protocol">
+      <h3>ALERTA: Erro #1 de Iniciantes!</h3>
+      <p><strong>40% dos casos</strong> de folhas amarelas são causados por excesso de água. Com boa intenção, horticultores iniciantes "afogam" suas plantas regando demais.</p>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Como Identificar</h4>
+      <div class="symptom">
+        <p><strong>Sintomas típicos:</strong></p>
+        <ul>
+          <li>Folhas amarelam de forma uniforme (toda a folha, não só partes)</li>
+          <li>Amarelamento pode começar de baixo ou ser generalizado</li>
+          <li>Folhas ficam <strong>MOLES</strong> e caem facilmente ao toque</li>
+          <li>Solo constantemente úmido/molhado</li>
+          <li>Possível cheiro de mofo/podridão no substrato</li>
+          <li>Raízes escuras, pretas ou moles (se examinar)</li>
+          <li>Mosquitinhos de fungo voando ao redor do vaso</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Por que Isso Acontece?</h3>
+    <p>As raízes precisam de <strong>OXIGÊNIO</strong> para funcionar. Quando o solo fica encharcado:</p>
+    <ol>
+      <li>O oxigênio é expulso do solo pela água</li>
+      <li>As raízes "sufocam" e começam a apodrecer</li>
+      <li>Raízes podres não absorvem água nem nutrientes</li>
+      <li>Paradoxalmente, a planta DESIDRATA mesmo com excesso de água</li>
+      <li>Fungos de solo se proliferam, piorando tudo</li>
+    </ol>
+
+    <h3>Tratamento de Emergência</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>PARE de regar imediatamente</strong></p>
+      <p><span class="step-number">2</span> <strong>Melhore a ventilação:</strong> Coloque em local arejado</p>
+      <p><span class="step-number">3</span> <strong>Verifique drenagem:</strong> Furos do vaso desobstruídos?</p>
+      <p><span class="step-number">4</span> <strong>Casos graves:</strong> Retire do vaso, examine raízes</p>
+      <p><span class="step-number">5</span> <strong>Corte raízes podres</strong> (escuras/moles) com tesoura limpa</p>
+      <p><span class="step-number">6</span> <strong>Replante em substrato novo</strong> e bem drenado</p>
+      <p><span class="step-number">7</span> <strong>Não regue por 5-7 dias</strong> após replantar</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>Prevenção: O Teste do Dedo</h4>
+      <p>Enfie o dedo 2-3cm no solo. Só regue quando estiver SECO nessa profundidade. Na dúvida, espere mais um dia!</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 5</div>
+  </div>
+
+  <!-- MÓDULO 4: FALTA DE ÁGUA -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 4</h2>
+      <p>Causa #2 - Falta de Água</p>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Como Identificar</h4>
+      <div class="symptom">
+        <p><strong>Sintomas típicos:</strong></p>
+        <ul>
+          <li>Folhas <strong>MURCHAM ANTES</strong> de amarelar</li>
+          <li>Amarelamento começa pelas <strong>BORDAS e PONTAS</strong></li>
+          <li>Folhas ficam <strong>SECAS e CROCANTES</strong> (não moles!)</li>
+          <li>Solo visivelmente seco, se afastando das bordas do vaso</li>
+          <li>Planta toda parece "caída" ou murcha</li>
+          <li><strong>Recupera RAPIDAMENTE</strong> após regar</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Diferença Visual: Falta vs Excesso</h3>
+    <div class="visual-symptom">
+      <div class="symptom-box problem">
+        <h4>FALTA de Água</h4>
+        <ul style="text-align: left;">
+          <li>Folhas SECAS e CROCANTES</li>
+          <li>Bordas queimadas/marrons</li>
+          <li>Planta murcha mas FIRME</li>
+          <li>Solo SECO e rachado</li>
+          <li>Recupera RÁPIDO após regar</li>
+        </ul>
+      </div>
+      <div class="symptom-box problem">
+        <h4>EXCESSO de Água</h4>
+        <ul style="text-align: left;">
+          <li>Folhas MOLES e caídas</li>
+          <li>Amarelamento uniforme</li>
+          <li>Planta FLÁCIDA</li>
+          <li>Solo ÚMIDO constantemente</li>
+          <li>NÃO melhora imediatamente</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Tratamento</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Regue profundamente:</strong> Até água sair pelos furos</p>
+      <p><span class="step-number">2</span> <strong>Solo muito seco:</strong> Rega por imersão - vaso em balde com água por 15-30 min</p>
+      <p><span class="step-number">3</span> <strong>Proteja do sol forte:</strong> Sombra por algumas horas</p>
+      <p><span class="step-number">4</span> <strong>Borrife as folhas:</strong> Reduz estresse</p>
+      <p><span class="step-number">5</span> <strong>Aguarde:</strong> Em 2-6 horas deve voltar ao normal</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Danos Permanentes</h4>
+      <p>Se ficou desidratada muito tempo, algumas folhas não vão se recuperar e secarão. Remova-as - a planta produzirá novas.</p>
+    </div>
+
+    <h3>Prevenção</h3>
+    <ul>
+      <li>Verificação diária do solo (teste do dedo)</li>
+      <li>Vasos maiores secam mais devagar</li>
+      <li>Adicione matéria orgânica ao substrato (retém umidade)</li>
+      <li>Considere vasos autoirrigáveis</li>
+      <li>Agrupe plantas com necessidades similares</li>
+    </ul>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 6</div>
+  </div>
+
+  <!-- MÓDULO 5: NITROGÊNIO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 5</h2>
+      <p>Deficiência de Nitrogênio (N)</p>
+    </div>
+
+    <div class="nutrient-card nitrogen">
+      <h4>Nitrogênio - O Nutriente do Crescimento</h4>
+      <p><strong>Função:</strong> Essencial para folhas, caules e cor verde. É o nutriente mais consumido pelas plantas.</p>
+      <p><strong>Símbolo:</strong> N (primeiro número do NPK)</p>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Como Identificar</h4>
+      <div class="symptom">
+        <p><strong>Padrão característico:</strong></p>
+        <ul>
+          <li>Amarelamento começa pelas folhas <strong>INFERIORES (mais velhas)</strong></li>
+          <li>A folha <strong>INTEIRA</strong> amarela uniformemente (não só partes)</li>
+          <li>Folhas velhas caem após amarelar</li>
+          <li>Crescimento <strong>LENTO ou PARADO</strong></li>
+          <li>Folhas novas menores que o normal</li>
+          <li>Cor geral verde-clara (não vibrante)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Por que Isso Acontece?</h3>
+    <p>O nitrogênio é <strong>MÓVEL</strong> na planta. Quando falta, ela "rouba" das folhas velhas para alimentar as novas. Por isso o amarelamento começa de baixo para cima.</p>
+
+    <h3>Causas Comuns</h3>
+    <ul>
+      <li>Substrato pobre ou esgotado</li>
+      <li>Planta no mesmo vaso há muito tempo sem adubar</li>
+      <li>Rega excessiva lavando os nutrientes</li>
+      <li>Substrato muito arenoso (não retém nutrientes)</li>
+      <li>Crescimento rápido que esgota reservas</li>
+    </ul>
+
+    <h3>Tratamento</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Emergência:</strong> Aplique húmus de minhoca na superfície</p>
+      <p><span class="step-number">2</span> <strong>Adubo líquido:</strong> NPK diluído (dose menor que recomendada)</p>
+      <p><span class="step-number">3</span> <strong>Remova folhas amarelas:</strong> Não vão se recuperar</p>
+      <p><span class="step-number">4</span> <strong>Aguarde:</strong> Melhora visível em 1-2 semanas</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Fontes Naturais de Nitrogênio</h4>
+      <ul>
+        <li><strong>Húmus de minhoca:</strong> Melhor opção, equilibrado</li>
+        <li><strong>Borra de café seca:</strong> 1 colher de sopa por vaso</li>
+        <li><strong>Água de aquário:</strong> Rica em nitrogênio</li>
+        <li><strong>Ureia diluída:</strong> 1g por litro (cuidado, é forte!)</li>
+      </ul>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 7</div>
+  </div>
+
+  <!-- MÓDULO 6: FERRO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 6</h2>
+      <p>Deficiência de Ferro - Clorose Férrica</p>
+    </div>
+
+    <div class="nutrient-card iron">
+      <h4>Ferro (Fe) - Essencial para a Clorofila</h4>
+      <p><strong>Função:</strong> Necessário para produzir clorofila e fotossíntese.</p>
+      <p><strong>Característica:</strong> IMÓVEL na planta - não pode ser redistribuído.</p>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Como Identificar - MUITO Característico!</h4>
+      <div class="symptom">
+        <p><strong>Padrão inconfundível:</strong></p>
+        <ul>
+          <li>Amarelamento nas folhas <strong>NOVAS (topo)</strong></li>
+          <li>As <strong>NERVURAS permanecem VERDES</strong> enquanto o resto amarela</li>
+          <li>Cria padrão de "espinha de peixe" ou "mapa" verde</li>
+          <li>Folhas velhas geralmente normais</li>
+          <li>Em casos graves, folhas novas ficam quase brancas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="leaf-diagram">
+      <h4>Comparação Visual Crucial</h4>
+      <div class="visual-symptom">
+        <div class="symptom-box problem">
+          <h4>Falta de NITROGÊNIO</h4>
+          <p>Folhas <strong>VELHAS</strong> (baixo)</p>
+          <p>Amarela por <strong>INTEIRO</strong></p>
+        </div>
+        <div class="symptom-box problem">
+          <h4>Falta de FERRO</h4>
+          <p>Folhas <strong>NOVAS</strong> (topo)</p>
+          <p>Nervuras ficam <strong>VERDES</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Por que Isso Acontece?</h3>
+    <p>O ferro é <strong>IMÓVEL</strong> - não pode ser transportado das folhas velhas para as novas. Por isso a deficiência aparece primeiro nos brotos.</p>
+    <p><strong>Causas comuns:</strong></p>
+    <ul>
+      <li><strong>pH alto (alcalino):</strong> O ferro existe mas está "travado"</li>
+      <li>Solo calcário ou água muito dura</li>
+      <li>Excesso de cálcio ou manganês (competem com ferro)</li>
+      <li>Solo encharcado (dificulta absorção)</li>
+    </ul>
+
+    <h3>Tratamento</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Verifique pH:</strong> Ideal entre 6,0 e 6,5</p>
+      <p><span class="step-number">2</span> <strong>pH alto?</strong> Acidifique com vinagre diluído (1 colher/litro)</p>
+      <p><span class="step-number">3</span> <strong>Ferro quelatado:</strong> Produto específico de garden centers</p>
+      <p><span class="step-number">4</span> <strong>Caseiro:</strong> Pregos enferrujados enterrados no substrato</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Água de Pregos (Solução Caseira)</h4>
+      <p>Coloque pregos enferrujados em 1L de água + gotas de vinagre. Deixe 1 semana. Use para regar 1x/semana.</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 8</div>
+  </div>
+
+  <!-- MÓDULO 7: MAGNÉSIO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 7</h2>
+      <p>Deficiência de Magnésio (Mg)</p>
+    </div>
+
+    <div class="nutrient-card magnesium">
+      <h4>Magnésio (Mg) - O Centro da Clorofila</h4>
+      <p><strong>Função:</strong> O magnésio é literalmente o átomo central da molécula de clorofila. Sem ele, não há verde!</p>
+      <p><strong>Característica:</strong> MÓVEL na planta - deficiência aparece nas folhas velhas.</p>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Como Identificar</h4>
+      <div class="symptom">
+        <p><strong>Padrão característico - CONFUNDE com Ferro!</strong></p>
+        <ul>
+          <li>Amarelamento <strong>ENTRE as nervuras</strong> (nervuras ficam verdes)</li>
+          <li>MAS acontece nas folhas <strong>VELHAS/MÉDIAS</strong> (não nas novas!)</li>
+          <li>Começa pelas bordas, avança para o centro</li>
+          <li>Folhas podem ficar roxas ou avermelhadas depois</li>
+          <li>Em casos graves, folhas secam e caem</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="leaf-diagram">
+      <h4>Magnésio vs Ferro - A Diferença Crucial</h4>
+      <div class="visual-symptom">
+        <div class="symptom-box problem">
+          <h4>Falta de MAGNÉSIO</h4>
+          <p>Folhas <strong>VELHAS</strong></p>
+          <p>Nervuras verdes, entre amarela</p>
+          <p>Começa pelas bordas</p>
+        </div>
+        <div class="symptom-box problem">
+          <h4>Falta de FERRO</h4>
+          <p>Folhas <strong>NOVAS</strong></p>
+          <p>Nervuras verdes, entre amarela</p>
+          <p>Padrão uniforme</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Causas Comuns</h3>
+    <ul>
+      <li>Substrato pobre em magnésio</li>
+      <li>Excesso de potássio (compete com magnésio)</li>
+      <li>Solo muito ácido (pH abaixo de 5,5)</li>
+      <li>Rega excessiva lavando nutrientes</li>
+    </ul>
+
+    <h3>Tratamento</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Sal amargo (sulfato de magnésio):</strong> 1 colher de sopa em 1L de água</p>
+      <p><span class="step-number">2</span> <strong>Aplique via rega:</strong> 1x por semana durante 3 semanas</p>
+      <p><span class="step-number">3</span> <strong>Calcário dolomítico:</strong> Para correção de longo prazo (tem magnésio)</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Solução de Sal Amargo</h4>
+      <p><strong>Ingredientes:</strong> 1 colher de sopa de sal amargo (sulfato de magnésio) + 1L água</p>
+      <p><strong>Aplicação:</strong> Regue normalmente. Pode borrifar nas folhas também (absorção rápida).</p>
+      <p><strong>Frequência:</strong> 1x por semana por 3 semanas.</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 9</div>
+  </div>
+
+  <!-- MÓDULO 8: POTÁSSIO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 8</h2>
+      <p>Deficiência de Potássio (K)</p>
+    </div>
+
+    <div class="nutrient-card potassium">
+      <h4>Potássio (K) - O Nutriente da Resistência</h4>
+      <p><strong>Função:</strong> Regula água na planta, floração, frutificação e resistência a doenças.</p>
+      <p><strong>Símbolo:</strong> K (terceiro número do NPK)</p>
+      <p><strong>Característica:</strong> MÓVEL - deficiência nas folhas velhas.</p>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Como Identificar</h4>
+      <div class="symptom">
+        <p><strong>Padrão característico:</strong></p>
+        <ul>
+          <li>Amarelamento/secura nas <strong>BORDAS das folhas</strong></li>
+          <li>Bordas ficam marrons e "queimadas"</li>
+          <li>Acontece nas folhas <strong>VELHAS primeiro</strong></li>
+          <li>Folhas podem enrolar para cima</li>
+          <li>Caules fracos, planta "mole"</li>
+          <li>Floração/frutificação prejudicada</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <h4>Confusão Comum: Potássio vs Falta de Água</h4>
+      <p>Bordas secas podem ser tanto falta de potássio quanto falta de água. <strong>Diferença:</strong> Na falta de água, a planta murcha e o solo está seco. Na falta de potássio, a planta não murcha e o solo pode estar úmido.</p>
+    </div>
+
+    <h3>Causas Comuns</h3>
+    <ul>
+      <li>Substrato pobre ou esgotado</li>
+      <li>Excesso de nitrogênio (dificulta absorção de K)</li>
+      <li>Floração/frutificação intensa (consome muito K)</li>
+      <li>Solo muito arenoso</li>
+    </ul>
+
+    <h3>Tratamento</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Cinzas de madeira:</strong> 1 colher de sopa por vaso (muito ricas em K)</p>
+      <p><span class="step-number">2</span> <strong>Água de casca de banana:</strong> Ferva cascas, deixe esfriar, use para regar</p>
+      <p><span class="step-number">3</span> <strong>NPK com mais K:</strong> Fórmulas como 4-14-8 ou 10-10-10</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Água de Casca de Banana</h4>
+      <p><strong>Ingredientes:</strong> 3-4 cascas de banana + 1L água</p>
+      <p><strong>Preparo:</strong> Ferva por 15 min. Deixe esfriar. Dilua em mais 2L de água.</p>
+      <p><strong>Aplicação:</strong> Regue quinzenalmente.</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>Dica: Cascas no Substrato</h4>
+      <p>Corte cascas de banana em pedacinhos e enterre no substrato. Liberam potássio lentamente conforme decompõem.</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 10</div>
+  </div>
+
+  <!-- MÓDULO 9: pH -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 9</h2>
+      <p>Problemas de pH</p>
+    </div>
+
+    <h3>O que é pH e Por que Importa?</h3>
+    <p>O pH mede acidez/alcalinidade do solo (escala 0-14). A maioria das plantas prefere <strong>pH 6,0-7,0</strong>. Fora dessa faixa, nutrientes ficam "travados" - mesmo existindo no solo, a planta não consegue absorver.</p>
+
+    <table class="comparison-table">
+      <tr>
+        <th>pH</th>
+        <th>Classificação</th>
+        <th>Nutrientes Disponíveis</th>
+        <th>Nutrientes Travados</th>
+      </tr>
+      <tr>
+        <td>&lt; 5,5</td>
+        <td>Muito ácido</td>
+        <td>Fe, Mn, Zn</td>
+        <td>Ca, Mg, P, K</td>
+      </tr>
+      <tr>
+        <td>6,0 - 7,0</td>
+        <td>Ideal</td>
+        <td>Todos</td>
+        <td>Nenhum</td>
+      </tr>
+      <tr>
+        <td>&gt; 7,5</td>
+        <td>Alcalino</td>
+        <td>Ca, Mg</td>
+        <td>Fe, Mn, Zn, P</td>
+      </tr>
+    </table>
+
+    <div class="diagnosis-card">
+      <h4>Quando Suspeitar de Problemas de pH</h4>
+      <div class="symptom">
+        <ul>
+          <li>Sintomas de deficiência mesmo adubando regularmente</li>
+          <li>Múltiplas deficiências ao mesmo tempo</li>
+          <li>Planta não responde à adubação</li>
+          <li>Água de rega muito calcária (dura)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Como Medir o pH</h3>
+    <ul>
+      <li><strong>Kit de teste:</strong> R$ 15-30 em garden centers</li>
+      <li><strong>Medidor digital:</strong> R$ 40-100 (mais preciso)</li>
+      <li><strong>Teste caseiro:</strong> Vinagre borbulha em solo alcalino; bicarbonato borbulha em solo ácido</li>
+    </ul>
+
+    <h3>Corrigindo o pH</h3>
+    <div class="visual-symptom">
+      <div class="symptom-box solution">
+        <h4>Para BAIXAR o pH (acidificar)</h4>
+        <ul style="text-align: left;">
+          <li>Vinagre diluído na rega</li>
+          <li>Enxofre agrícola</li>
+          <li>Composto de pinheiro</li>
+          <li>Sulfato de ferro</li>
+        </ul>
+      </div>
+      <div class="symptom-box solution">
+        <h4>Para SUBIR o pH (alcalinizar)</h4>
+        <ul style="text-align: left;">
+          <li>Calcário dolomítico</li>
+          <li>Cinzas de madeira</li>
+          <li>Casca de ovo moída</li>
+          <li>Cal hidratada (cuidado!)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <h4>Mudanças Graduais!</h4>
+      <p>Nunca tente corrigir pH drasticamente de uma vez. Ajustes brutos estressam a planta. Faça correções pequenas ao longo de semanas.</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 11</div>
+  </div>
+
+  <!-- MÓDULO 10: LUZ -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 10</h2>
+      <p>Problemas de Luz</p>
+    </div>
+
+    <h2>Falta de Luz</h2>
+    <div class="diagnosis-card">
+      <h4>Como Identificar</h4>
+      <div class="symptom">
+        <ul>
+          <li>Amarelamento gradual e uniforme em TODA a planta</li>
+          <li>Planta "espichada" (caules longos, folhas espaçadas)</li>
+          <li>Folhas menores que o normal</li>
+          <li>Cor verde-clara generalizada</li>
+          <li>Crescimento direcionado para fonte de luz</li>
+          <li>Planta em local com menos de 4h de luz</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Tratamento: Falta de Luz</h3>
+    <ul>
+      <li>Mova para local mais iluminado</li>
+      <li>Janelas norte recebem mais sol (no Brasil)</li>
+      <li>Use superfícies refletoras (papel alumínio)</li>
+      <li>Considere luz artificial (grow lights)</li>
+      <li>Gire o vaso regularmente</li>
+    </ul>
+
+    <h2>Excesso de Luz / Queimadura Solar</h2>
+    <div class="diagnosis-card">
+      <h4>Como Identificar</h4>
+      <div class="symptom">
+        <ul>
+          <li>Manchas amarelas/marrons/brancas onde sol bate</li>
+          <li>Bordas queimadas, folhas crocantes</li>
+          <li>Problemas só no lado que recebe sol</li>
+          <li>Geralmente após mudança brusca de ambiente</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Tratamento: Excesso de Luz</h3>
+    <ul>
+      <li>Mova para luz filtrada</li>
+      <li>Use cortinas ou sombrites</li>
+      <li>Proteja do sol entre 11h-15h</li>
+      <li>Aumente a rega</li>
+      <li>Faça aclimatação gradual (2 semanas)</li>
+    </ul>
+
+    <div class="tip-box">
+      <h4>Aclimatação ao Sol</h4>
+      <p>Plantas que estavam na sombra não podem ir direto ao sol forte! Aumente exposição gradualmente ao longo de 2 semanas.</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 12</div>
+  </div>
+
+  <!-- MÓDULO 11: PRAGAS E DOENÇAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 11</h2>
+      <p>Pragas e Doenças</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Atenção: Causa Menos Comum, Mas Grave!</h4>
+      <p>Pragas e doenças representam só 4% dos casos de amarelamento, mas quando acontecem precisam de ação rápida para não se espalhar.</p>
+    </div>
+
+    <h2>Pragas que Causam Amarelamento</h2>
+
+    <div class="diagnosis-card">
+      <h4>Pulgões (Afídeos)</h4>
+      <div class="symptom">
+        <p><strong>Identificação:</strong> Pequenos insetos verdes, pretos ou brancos agrupados em brotos e folhas novas.</p>
+        <p><strong>Sintomas:</strong> Folhas novas deformadas e amareladas, melado pegajoso nas folhas.</p>
+        <p><strong>Tratamento:</strong> Jato d'água forte, sabão de coco diluído, óleo de neem.</p>
+      </div>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Ácaros (Aranha Vermelha)</h4>
+      <div class="symptom">
+        <p><strong>Identificação:</strong> Pontinhos vermelhos minúsculos. Teias finas entre folhas.</p>
+        <p><strong>Sintomas:</strong> Folhas com pontinhos amarelos, aspecto "empoeirado", queda de folhas.</p>
+        <p><strong>Tratamento:</strong> Aumente umidade (eles odeiam!), sabão de coco, óleo de neem.</p>
+      </div>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Cochonilhas</h4>
+      <div class="symptom">
+        <p><strong>Identificação:</strong> Escamas brancas ou marrons grudadas em caules/folhas.</p>
+        <p><strong>Sintomas:</strong> Amarelamento localizado, melado pegajoso, fumagina (mofo preto).</p>
+        <p><strong>Tratamento:</strong> Remova manualmente com cotonete + álcool. Óleo de neem.</p>
+      </div>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Mosca-Branca</h4>
+      <div class="symptom">
+        <p><strong>Identificação:</strong> Nuvem de mosquinhas brancas ao mexer na planta.</p>
+        <p><strong>Sintomas:</strong> Folhas amarelando por baixo, melado, fumagina.</p>
+        <p><strong>Tratamento:</strong> Armadilhas amarelas adesivas, óleo de neem, sabão de coco.</p>
+      </div>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Receita Universal: Calda de Sabão de Coco</h4>
+      <p><strong>Ingredientes:</strong> 1 colher de sopa de sabão de coco ralado + 1L água morna</p>
+      <p><strong>Preparo:</strong> Dissolva bem o sabão na água morna. Deixe esfriar.</p>
+      <p><strong>Aplicação:</strong> Borrife em toda a planta, incluindo parte de baixo das folhas. Repita a cada 3 dias por 2 semanas.</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 13</div>
+  </div>
+
+  <!-- MÓDULO 11: DOENÇAS -->
+  <div class="page">
+    <h1>Doenças que Causam Amarelamento</h1>
+
+    <div class="diagnosis-card">
+      <h4>Podridão de Raiz (Fungo)</h4>
+      <div class="symptom">
+        <p><strong>Identificação:</strong> Raízes escuras, moles, com cheiro de podre.</p>
+        <p><strong>Sintomas:</strong> Amarelamento generalizado, planta murcha mesmo com solo úmido.</p>
+        <p><strong>Causa:</strong> Excesso de água + má drenagem.</p>
+        <p><strong>Tratamento:</strong> Corte raízes afetadas, replante em substrato novo, reduza rega.</p>
+      </div>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Oídio (Fungo Branco)</h4>
+      <div class="symptom">
+        <p><strong>Identificação:</strong> Pó branco nas folhas como farinha.</p>
+        <p><strong>Sintomas:</strong> Folhas amarelam por baixo do pó branco, depois secam.</p>
+        <p><strong>Tratamento:</strong> Leite diluído (10% em água), bicarbonato de sódio, melhore ventilação.</p>
+      </div>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Manchas Foliares (Fungos Diversos)</h4>
+      <div class="symptom">
+        <p><strong>Identificação:</strong> Manchas circulares marrons/pretas com halo amarelo.</p>
+        <p><strong>Sintomas:</strong> Manchas se espalham, folhas amarelam e caem.</p>
+        <p><strong>Tratamento:</strong> Remova folhas afetadas, não molhe folhas ao regar, calda bordalesa.</p>
+      </div>
+    </div>
+
+    <h2>Prevenção Geral de Pragas e Doenças</h2>
+    <div class="checklist">
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Quarentena:</strong> Isole plantas novas por 2 semanas antes de juntar às outras</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Inspeção regular:</strong> Verifique suas plantas semanalmente</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Boa ventilação:</strong> Evita fungos e dificulta pragas</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Não molhe folhas:</strong> Rega no solo reduz doenças fúngicas</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Plantas saudáveis:</strong> Adube corretamente - plantas fortes resistem melhor</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Higiene:</strong> Limpe ferramentas, remova folhas caídas</div>
+      </div>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Receita: Calda de Neem (Preventivo Universal)</h4>
+      <p><strong>Ingredientes:</strong> 5ml óleo de neem + 1ml detergente neutro + 1L água</p>
+      <p><strong>Preparo:</strong> Misture o óleo com detergente, depois adicione água.</p>
+      <p><strong>Aplicação:</strong> Borrife quinzenalmente como preventivo. Semanalmente se houver ataque.</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 14</div>
+  </div>
+
+  <!-- MÓDULO 12: ENVELHECIMENTO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 12</h2>
+      <p>Envelhecimento Natural</p>
+    </div>
+
+    <div class="success-box">
+      <h4>Nem Todo Amarelamento é Problema!</h4>
+      <p>Às vezes, folhas amarelas são completamente normais. Plantas naturalmente descartam folhas velhas para concentrar energia nas novas. É um processo saudável!</p>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Como Identificar Envelhecimento Natural</h4>
+      <div class="symptom">
+        <ul>
+          <li>APENAS folhas mais velhas (base) amarelam</li>
+          <li>Acontece gradualmente, 1-2 folhas por vez</li>
+          <li>Restante da planta saudável e vigoroso</li>
+          <li>Novas folhas nascendo normalmente</li>
+          <li>A planta está crescendo bem</li>
+          <li>Nenhum outro sintoma de estresse</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Quando o Envelhecimento é Normal</h3>
+    <ul>
+      <li><strong>Plantas anuais no fim do ciclo:</strong> Tomate, manjericão - natural</li>
+      <li><strong>Crescimento rápido:</strong> Planta descarta folhas velhas para as novas</li>
+      <li><strong>Após floração/frutificação:</strong> Energia vai para flores/frutos</li>
+      <li><strong>Mudança de estação:</strong> Algumas perdem folhas no outono</li>
+      <li><strong>Folhas sombreadas:</strong> Folhas internas sem luz são descartadas</li>
+    </ul>
+
+    <h3>O que Fazer</h3>
+    <ul>
+      <li>Remova folhas amarelas/secas (puxe ou corte)</li>
+      <li>É higiênico e evita fungos</li>
+      <li>Direciona energia para crescimento novo</li>
+      <li>Não se preocupe - é processo natural!</li>
+    </ul>
+
+    <div class="visual-symptom">
+      <div class="symptom-box solution">
+        <h4>Envelhecimento NORMAL</h4>
+        <ul style="text-align: left;">
+          <li>1-2 folhas velhas por semana</li>
+          <li>Planta continua crescendo</li>
+          <li>Folhas novas saudáveis</li>
+          <li>Sem outros sintomas</li>
+        </ul>
+      </div>
+      <div class="symptom-box problem">
+        <h4>Sinal de PROBLEMA</h4>
+        <ul style="text-align: left;">
+          <li>Muitas folhas de uma vez</li>
+          <li>Crescimento parou</li>
+          <li>Folhas novas afetadas</li>
+          <li>Outros sintomas presentes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 15</div>
+  </div>
+
+  <!-- MÓDULO 13: RECEITAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Módulo 13</h2>
+      <p>Receitas de Fertilizantes Caseiros</p>
+    </div>
+
+    <p>Previna deficiências nutricionais com estes fertilizantes fáceis de fazer!</p>
+
+    <div class="recipe-box">
+      <h4>1. Chá de Húmus de Minhoca</h4>
+      <p><strong>Rico em:</strong> Todos os nutrientes + microrganismos benéficos</p>
+      <p><strong>Ingredientes:</strong> 2 colheres de sopa húmus + 1L água sem cloro</p>
+      <p><strong>Preparo:</strong> Misture e deixe descansar 24h. Coe e use para regar.</p>
+      <p><strong>Frequência:</strong> A cada 15 dias.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>2. Água de Casca de Banana (Potássio)</h4>
+      <p><strong>Rico em:</strong> Potássio, fósforo</p>
+      <p><strong>Ingredientes:</strong> 3-4 cascas de banana + 1L água</p>
+      <p><strong>Preparo:</strong> Ferva 15 min, deixe esfriar, dilua em +2L água.</p>
+      <p><strong>Frequência:</strong> Quinzenal.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>3. Água de Arroz</h4>
+      <p><strong>Rico em:</strong> Amido, vitaminas B, minerais diversos</p>
+      <p><strong>Preparo:</strong> Use a água da lavagem do arroz (antes de cozinhar).</p>
+      <p><strong>Frequência:</strong> Semanal. Não precisa diluir.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>4. Casca de Ovo (Cálcio)</h4>
+      <p><strong>Rico em:</strong> Cálcio</p>
+      <p><strong>Preparo:</strong> Lave, seque e triture cascas de 10 ovos até virar pó.</p>
+      <p><strong>Aplicação:</strong> 1 colher de sopa misturada ao substrato.</p>
+      <p><strong>Ou:</strong> Deixe cascas de molho 48h e use água para regar.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>5. Borra de Café (Nitrogênio)</h4>
+      <p><strong>Rico em:</strong> Nitrogênio, matéria orgânica</p>
+      <p><strong>Preparo:</strong> Seque a borra ao sol.</p>
+      <p><strong>Aplicação:</strong> 1 colher de sopa por vaso, incorporada ao solo.</p>
+      <p><strong>Frequência:</strong> Mensal. Não exagere (acidifica o solo).</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>6. Sal Amargo (Magnésio)</h4>
+      <p><strong>Rico em:</strong> Magnésio, enxofre</p>
+      <p><strong>Ingredientes:</strong> 1 colher sopa sal amargo + 1L água</p>
+      <p><strong>Aplicação:</strong> Rega ou pulverização foliar.</p>
+      <p><strong>Frequência:</strong> Quinzenal quando há deficiência.</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 16</div>
+  </div>
+
+  <!-- MÓDULO 13: MAIS RECEITAS -->
+  <div class="page">
+    <h1>Mais Receitas Caseiras</h1>
+
+    <div class="recipe-box">
+      <h4>7. Água de Pregos (Ferro)</h4>
+      <p><strong>Rico em:</strong> Ferro</p>
+      <p><strong>Ingredientes:</strong> 5-10 pregos enferrujados + 1L água + gotas de vinagre</p>
+      <p><strong>Preparo:</strong> Deixe 1 semana. Água fica cor de ferrugem.</p>
+      <p><strong>Frequência:</strong> Semanal até corrigir clorose férrica.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>8. Vinagre de Maçã (Acidificar)</h4>
+      <p><strong>Uso:</strong> Baixar pH / Disponibilizar ferro</p>
+      <p><strong>Ingredientes:</strong> 1 colher sopa vinagre maçã + 1L água</p>
+      <p><strong>Aplicação:</strong> Rega normal.</p>
+      <p><strong>Frequência:</strong> Mensal para plantas que gostam de solo ácido.</p>
+    </div>
+
+    <h2>Tabela Resumo de Nutrientes</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Nutriente</th>
+        <th>Sintoma</th>
+        <th>Fonte Caseira</th>
+      </tr>
+      <tr>
+        <td><strong>Nitrogênio (N)</strong></td>
+        <td>Folhas velhas amarelas inteiras</td>
+        <td>Húmus, borra de café, água de aquário</td>
+      </tr>
+      <tr>
+        <td><strong>Fósforo (P)</strong></td>
+        <td>Folhas roxas/arroxeadas</td>
+        <td>Farinha de osso, casca de banana</td>
+      </tr>
+      <tr>
+        <td><strong>Potássio (K)</strong></td>
+        <td>Bordas queimadas</td>
+        <td>Casca de banana, cinzas</td>
+      </tr>
+      <tr>
+        <td><strong>Cálcio (Ca)</strong></td>
+        <td>Pontas novas deformadas</td>
+        <td>Casca de ovo, calcário</td>
+      </tr>
+      <tr>
+        <td><strong>Magnésio (Mg)</strong></td>
+        <td>Entre nervuras (folhas velhas)</td>
+        <td>Sal amargo</td>
+      </tr>
+      <tr>
+        <td><strong>Ferro (Fe)</strong></td>
+        <td>Entre nervuras (folhas novas)</td>
+        <td>Água de pregos, sulfato ferro</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>Dica de Ouro</h4>
+      <p>O melhor fertilizante caseiro é o <strong>húmus de minhoca</strong>! É completo, equilibrado e impossível "queimar" a planta com excesso. Tenha sempre em casa!</p>
+    </div>
+
+    <div class="success-box">
+      <h4>Prevenção é Melhor que Remédio</h4>
+      <p>Adube regularmente (a cada 2-4 semanas durante crescimento) para evitar deficiências. Plantas bem nutridas são mais resistentes a tudo!</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 17</div>
+  </div>
+
+  <!-- BÔNUS: TABELA DIAGNÓSTICO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Bônus</h2>
+      <p>Tabela de Diagnóstico Rápido</p>
+    </div>
+
+    <p><strong>Imprima esta tabela e cole próximo às suas plantas!</strong></p>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Onde Amarela?</th>
+        <th>Como Amarela?</th>
+        <th>Provável Causa</th>
+        <th>Ação Imediata</th>
+      </tr>
+      <tr>
+        <td>Folhas velhas</td>
+        <td>Toda folha + solo úmido</td>
+        <td>Excesso de água</td>
+        <td>Pare de regar!</td>
+      </tr>
+      <tr>
+        <td>Bordas/pontas</td>
+        <td>Secas + solo seco</td>
+        <td>Falta de água</td>
+        <td>Regue profundamente</td>
+      </tr>
+      <tr>
+        <td>Folhas velhas</td>
+        <td>Toda folha uniforme</td>
+        <td>Falta de Nitrogênio</td>
+        <td>Adube com húmus</td>
+      </tr>
+      <tr>
+        <td>Folhas novas</td>
+        <td>Entre nervuras (verdes)</td>
+        <td>Falta de Ferro</td>
+        <td>Corrija pH + ferro</td>
+      </tr>
+      <tr>
+        <td>Folhas velhas</td>
+        <td>Entre nervuras</td>
+        <td>Falta de Magnésio</td>
+        <td>Sal amargo</td>
+      </tr>
+      <tr>
+        <td>Bordas das folhas</td>
+        <td>Queimadas/secas</td>
+        <td>Falta de Potássio</td>
+        <td>Casca de banana</td>
+      </tr>
+      <tr>
+        <td>Toda planta</td>
+        <td>Espichada + pálida</td>
+        <td>Falta de luz</td>
+        <td>Mude de local</td>
+      </tr>
+      <tr>
+        <td>Manchas</td>
+        <td>Onde sol bate</td>
+        <td>Queimadura solar</td>
+        <td>Proteja do sol</td>
+      </tr>
+      <tr>
+        <td>Só folhas base</td>
+        <td>Gradual, poucas</td>
+        <td>Envelhecimento</td>
+        <td>Normal! Remova-as</td>
+      </tr>
+    </table>
+
+    <div class="checklist">
+      <h4>Checklist de Verificação Rápida</h4>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div>1. Solo está encharcado? → Reduza rega</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div>2. Solo está muito seco? → Regue</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div>3. Faz quanto tempo que não aduba? → Adube</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div>4. Recebe luz suficiente? → Mude de local</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div>5. Vê bichinhos ou manchas? → Trate pragas</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div>6. É só nas folhas velhas? → Normal!</div>
+      </div>
+    </div>
+
+    <div class="success-box">
+      <h4>Parabéns!</h4>
+      <p>Você agora sabe diagnosticar e tratar folhas amarelas! Lembre-se: <strong>40% dos casos é excesso de água</strong>. Na dúvida, verifique o solo primeiro!</p>
+    </div>
+
+    <div class="page-number">SOS Folhas Amarelas - Página 18</div>
+  </div>
+
+  <!-- PÁGINA FINAL -->
+  <div class="page">
+    <div style="text-align: center; padding: 40px 20px;">
+      <div class="mascote" style="margin-bottom: 30px;">
+        <svg width="120" height="150" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+          <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pgf12)" stroke="#b5441c" stroke-width="2"/>
+          <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+          <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+          <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bgf12)" stroke="#15803d" stroke-width="2.5"/>
+          <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+          <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+          <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+          <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+          <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+          <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+          <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="pgf12" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ea7531"/>
+              <stop offset="100%" stop-color="#b5441c"/>
+            </linearGradient>
+            <radialGradient id="bgf12" cx="40%" cy="30%">
+              <stop offset="0%" stop-color="#86efac"/>
+              <stop offset="50%" stop-color="#4ade80"/>
+              <stop offset="100%" stop-color="#22c55e"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1 style="border: none; font-size: 28px; color: #15803d;">Sua Planta Agradece!</h1>
+      <p style="font-size: 18px; margin: 20px 0; color: #374151;">Agora você sabe diagnosticar e tratar folhas amarelas como um profissional!</p>
+
+      <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 25px; border-radius: 12px; margin: 25px 0; border: 2px solid #f59e0b;">
+        <h3 style="color: #92400e; margin-top: 0;">Lembre-se:</h3>
+        <ul style="text-align: left; margin: 10px 0;">
+          <li><strong>40% dos casos</strong> é excesso de água</li>
+          <li>Verifique o <strong>solo primeiro</strong></li>
+          <li><strong>Onde</strong> amarela indica a <strong>causa</strong></li>
+          <li>Folhas velhas = nutrientes móveis (N, K, Mg)</li>
+          <li>Folhas novas = nutrientes imóveis (Fe, Ca)</li>
+          <li>Algumas folhas amarelas são <strong>normais</strong>!</li>
+        </ul>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #ecfdf5, #d1fae5); padding: 20px; border-radius: 12px; margin: 20px 0; border: 2px solid #22c55e;">
+        <h4 style="color: #15803d; margin-top: 0;">Sua Primeira Ação</h4>
+        <p>Da próxima vez que ver uma folha amarela, use o fluxograma da página 4. Em menos de 2 minutos você saberá exatamente o que fazer!</p>
+      </div>
+
+      <div style="margin-top: 30px;">
+        <p style="color: #15803d; font-weight: 700; font-size: 18px;">Minha Horta em Casa</p>
+        <p style="color: #22c55e;">minhahortaemcasa.com.br</p>
+      </div>
+
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+        <p style="font-size: 12px; color: #9ca3af;">SOS Folhas Amarelas - 18 páginas de diagnóstico profissional</p>
+        <p style="font-size: 12px; color: #9ca3af;">12 causas + fluxograma + 8 receitas caseiras + tabela diagnóstico</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

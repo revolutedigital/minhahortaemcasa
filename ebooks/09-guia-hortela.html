@@ -1,0 +1,4239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guia Completo da Hortelã - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.6; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+
+    /* Capa */
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 48px; font-weight: 800; color: #047857; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+    .cover .subtitle { font-size: 24px; color: #059669; margin-bottom: 30px; font-weight: 600; }
+    .cover .edition { font-size: 16px; color: #10b981; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 20px; color: #047857; font-weight: 700; }
+    .brand-url { font-size: 14px; color: #10b981; margin-top: 5px; }
+
+    /* Tipografia */
+    h1 { font-size: 32px; color: #047857; margin-bottom: 20px; border-bottom: 3px solid #10b981; padding-bottom: 10px; }
+    h2 { font-size: 26px; color: #059669; margin: 25px 0 15px; }
+    h3 { font-size: 22px; color: #047857; margin: 20px 0 12px; }
+    h4 { font-size: 18px; color: #059669; margin: 15px 0 10px; }
+    h5 { font-size: 16px; color: #047857; margin: 12px 0 8px; }
+    p { margin-bottom: 12px; text-align: justify; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; }
+
+    /* Sumário */
+    .toc { background: linear-gradient(135deg, #f0fdf4, #dcfce7); padding: 30px; border-radius: 16px; margin: 20px 0; }
+    .toc h2 { text-align: center; margin-bottom: 25px; color: #047857; border: none; }
+    .toc-section { margin-bottom: 20px; }
+    .toc-section h3 { font-size: 16px; color: #059669; margin-bottom: 10px; border-bottom: 2px dashed #a7f3d0; padding-bottom: 5px; }
+    .toc ul { list-style: none; margin: 0; padding: 0; }
+    .toc li { padding: 8px 15px; border-bottom: 1px dashed #d1fae5; display: flex; justify-content: space-between; align-items: center; }
+    .toc li:last-child { border-bottom: none; }
+    .toc .page-num { color: #10b981; font-weight: 600; }
+
+    /* Módulos */
+    .module-header { background: linear-gradient(135deg, #047857, #10b981); color: white; padding: 40px; border-radius: 16px; margin: 30px 0 25px 0; text-align: center; }
+    .module-header h2 { color: white; border: none; margin: 0; font-size: 32px; }
+    .module-header p { color: #a7f3d0; margin: 10px 0 0 0; font-size: 18px; }
+
+    /* Cards de Variedade */
+    .variety-card { background: #fff; border: 2px solid #10b981; border-radius: 16px; padding: 25px; margin: 20px 0; box-shadow: 0 4px 15px rgba(16,185,129,0.1); }
+    .variety-card h4 { color: #047857; margin: 0 0 15px 0; font-size: 20px; }
+    .variety-card .scientific { font-style: italic; color: #6b7280; font-size: 14px; margin-bottom: 15px; }
+    .variety-card .tag { display: inline-block; background: #d1fae5; color: #047857; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-right: 8px; margin-bottom: 8px; }
+    .variety-card .tag.medicinal { background: #dbeafe; color: #1d4ed8; }
+    .variety-card .tag.culinaria { background: #fef3c7; color: #92400e; }
+    .variety-card .tag.aromatica { background: #fce7f3; color: #be185d; }
+    .variety-card .tag.rara { background: #f3e8ff; color: #7c3aed; }
+
+    /* Grid de Informações */
+    .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+    .info-grid.four { grid-template-columns: repeat(4, 1fr); }
+    .info-item { background: #f0fdf4; padding: 18px; border-radius: 12px; text-align: center; border: 1px solid #a7f3d0; }
+    .info-item .icon { font-size: 28px; margin-bottom: 8px; }
+    .info-item .label { font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; }
+    .info-item .value { font-size: 18px; font-weight: 700; color: #047857; }
+
+    /* Boxes */
+    .intro-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-radius: 16px; padding: 30px; margin: 25px 0; text-align: center; }
+    .intro-box h2 { color: #047857; margin-top: 0; border: none; }
+
+    .highlight-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 5px solid #10b981; padding: 20px 25px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .highlight-box h4 { color: #047857; margin-top: 0; }
+
+    .warning-box { background: linear-gradient(135deg, #fefce8, #fef9c3); border-left: 5px solid #eab308; padding: 20px 25px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .warning-box h4 { color: #a16207; margin-top: 0; }
+
+    .danger-box { background: linear-gradient(135deg, #fef2f2, #fecaca); border-left: 5px solid #ef4444; padding: 20px 25px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .danger-box h4 { color: #dc2626; margin-top: 0; }
+
+    .success-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 5px solid #22c55e; padding: 20px 25px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .success-box h4 { color: #16a34a; margin-top: 0; }
+
+    .tip-box { background: linear-gradient(135deg, #eff6ff, #dbeafe); border-left: 5px solid #3b82f6; padding: 20px 25px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .tip-box h4 { color: #1d4ed8; margin-top: 0; }
+
+    /* Química Card */
+    .chem-card { background: linear-gradient(135deg, #f0fdf4, #d1fae5); border: 2px solid #047857; border-radius: 16px; padding: 25px; margin: 20px 0; }
+    .chem-card h4 { color: #047857; margin: 0 0 15px 0; display: flex; align-items: center; gap: 10px; }
+    .chem-card .formula { font-family: 'Courier New', monospace; background: #fff; padding: 8px 15px; border-radius: 8px; font-size: 14px; color: #059669; margin: 10px 0; display: inline-block; }
+    .chem-card .percentage { font-size: 24px; font-weight: 800; color: #10b981; }
+
+    /* Propagação Card */
+    .prop-card { background: #fff; border: 2px solid #10b981; border-radius: 16px; padding: 25px; margin: 20px 0; position: relative; overflow: hidden; }
+    .prop-card::before { content: ''; position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, #d1fae5, transparent); border-radius: 0 14px 0 100px; }
+    .prop-card h4 { color: #047857; margin: 0 0 15px 0; }
+    .prop-card .success-rate { display: inline-block; background: #10b981; color: white; padding: 5px 15px; border-radius: 20px; font-weight: 600; font-size: 14px; }
+
+    /* Step Box */
+    .step-box { background: #f8fafc; border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 5px solid #10b981; }
+    .step-box h4 { color: #047857; margin-top: 0; }
+    .step-number { display: inline-flex; width: 32px; height: 32px; background: linear-gradient(135deg, #10b981, #047857); color: white; border-radius: 50%; align-items: center; justify-content: center; font-weight: bold; margin-right: 12px; font-size: 14px; }
+
+    /* Recipe Box */
+    .recipe-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 16px; padding: 25px; margin: 20px 0; border: 2px solid #f59e0b; }
+    .recipe-box h4 { color: #92400e; margin-top: 0; display: flex; align-items: center; gap: 10px; }
+    .recipe-box .recipe-meta { display: flex; gap: 20px; margin: 15px 0; flex-wrap: wrap; }
+    .recipe-box .meta-item { display: flex; align-items: center; gap: 5px; font-size: 14px; color: #78350f; }
+
+    /* Hydro Card */
+    .hydro-card { background: linear-gradient(135deg, #eff6ff, #dbeafe); border: 2px solid #3b82f6; border-radius: 16px; padding: 25px; margin: 20px 0; }
+    .hydro-card h4 { color: #1d4ed8; margin: 0 0 15px 0; }
+
+    /* Space Card */
+    .space-card { background: linear-gradient(135deg, #faf5ff, #ede9fe); border: 2px solid #8b5cf6; border-radius: 16px; padding: 25px; margin: 20px 0; }
+    .space-card h4 { color: #7c3aed; margin: 0 0 15px 0; }
+
+    /* Comercial Card */
+    .comercial-card { background: linear-gradient(135deg, #fff7ed, #fed7aa); border: 2px solid #f97316; border-radius: 16px; padding: 25px; margin: 20px 0; }
+    .comercial-card h4 { color: #c2410c; margin: 0 0 15px 0; }
+
+    /* Region Card */
+    .region-card { background: #fff; border: 2px solid #10b981; border-radius: 16px; padding: 25px; margin: 20px 0; }
+    .region-card h4 { margin: 0 0 15px 0; }
+    .region-card.norte { border-color: #22c55e; background: linear-gradient(135deg, #f0fdf4, #dcfce7); }
+    .region-card.norte h4 { color: #15803d; }
+    .region-card.nordeste { border-color: #f59e0b; background: linear-gradient(135deg, #fffbeb, #fef3c7); }
+    .region-card.nordeste h4 { color: #b45309; }
+    .region-card.centro-oeste { border-color: #ef4444; background: linear-gradient(135deg, #fef2f2, #fecaca); }
+    .region-card.centro-oeste h4 { color: #dc2626; }
+    .region-card.sudeste { border-color: #3b82f6; background: linear-gradient(135deg, #eff6ff, #dbeafe); }
+    .region-card.sudeste h4 { color: #1d4ed8; }
+    .region-card.sul { border-color: #8b5cf6; background: linear-gradient(135deg, #faf5ff, #ede9fe); }
+    .region-card.sul h4 { color: #7c3aed; }
+
+    /* Problem/Solution */
+    .problem-solution { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+    .problem { background: linear-gradient(135deg, #fef2f2, #fecaca); padding: 20px; border-radius: 12px; border-left: 4px solid #ef4444; }
+    .problem h5 { color: #dc2626; margin: 0 0 10px 0; }
+    .solution { background: linear-gradient(135deg, #f0fdf4, #dcfce7); padding: 20px; border-radius: 12px; border-left: 4px solid #22c55e; }
+    .solution h5 { color: #16a34a; margin: 0 0 10px 0; }
+
+    /* Comparison Grid */
+    .comparison-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 20px 0; }
+    .comparison-item { background: #f0fdf4; padding: 20px; border-radius: 12px; border: 2px solid #a7f3d0; }
+    .comparison-item h5 { color: #047857; margin: 0 0 12px 0; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; border-radius: 12px; overflow: hidden; }
+    th, td { border: 1px solid #d1fae5; padding: 14px; text-align: left; }
+    th { background: linear-gradient(135deg, #047857, #10b981); color: white; font-weight: 600; }
+    tr:nth-child(even) { background: #f0fdf4; }
+    tr:hover { background: #dcfce7; }
+
+    /* Checklist */
+    .checklist { background: #f8fafc; padding: 25px; border-radius: 12px; margin: 20px 0; }
+    .checklist h4 { color: #047857; margin-top: 0; }
+    .checklist li { list-style: none; padding-left: 35px; position: relative; margin-bottom: 12px; }
+    .checklist li:before { content: "☐"; position: absolute; left: 0; color: #10b981; font-size: 20px; }
+
+    /* Benefit List */
+    .benefit-list { list-style: none; margin: 0; padding: 0; }
+    .benefit-list li { padding: 12px 0 12px 40px; position: relative; border-bottom: 1px dashed #d1fae5; }
+    .benefit-list li:last-child { border-bottom: none; }
+    .benefit-list li:before { content: "✓"; position: absolute; left: 0; width: 28px; height: 28px; background: #10b981; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+
+    /* Page Number */
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 2px solid #e5e7eb; }
+
+    /* Print Styles */
+    @media print {
+      .page { page-break-after: always; }
+      .cover { page-break-after: always; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="180" height="220" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sombra -->
+        <ellipse cx="60" cy="145" rx="35" ry="5" fill="#047857" fill-opacity="0.2"/>
+
+        <!-- Vaso -->
+        <path d="M35 105H85L78 140H42L35 105Z" fill="url(#pg09)" stroke="#92400e" stroke-width="2"/>
+        <path d="M32 98H88V108H32V98Z" fill="#c2410c" stroke="#92400e" stroke-width="2" rx="4"/>
+        <ellipse cx="60" cy="105" rx="22" ry="5" fill="#78350f"/>
+
+        <!-- Corpo do Verdinho -->
+        <ellipse cx="60" cy="68" rx="35" ry="38" fill="url(#bgf09)" stroke="#047857" stroke-width="3"/>
+
+        <!-- Textura de folhas no corpo -->
+        <path d="M45 55C45 55 50 50 55 55" stroke="#059669" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+        <path d="M65 55C65 55 70 50 75 55" stroke="#059669" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+        <path d="M50 75C50 75 55 70 60 75" stroke="#059669" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+
+        <!-- Olhos -->
+        <ellipse cx="48" cy="63" rx="5" ry="6" fill="#047857"/>
+        <ellipse cx="72" cy="63" rx="5" ry="6" fill="#047857"/>
+        <ellipse cx="49" cy="61" rx="2" ry="2.5" fill="white"/>
+        <ellipse cx="73" cy="61" rx="2" ry="2.5" fill="white"/>
+
+        <!-- Sorriso -->
+        <path d="M45 78C45 78 60 92 75 78" stroke="#047857" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- Bochechas -->
+        <ellipse cx="38" cy="73" rx="5" ry="4" fill="#fca5a5" fill-opacity="0.4"/>
+        <ellipse cx="82" cy="73" rx="5" ry="4" fill="#fca5a5" fill-opacity="0.4"/>
+
+        <!-- Ramos de Hortelã na cabeça -->
+        <g id="hortela-cabeca">
+          <!-- Ramo central -->
+          <path d="M60 30C60 30 58 15 55 5" stroke="#047857" stroke-width="2" fill="none"/>
+          <ellipse cx="52" cy="8" rx="7" ry="4" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(-30 52 8)"/>
+          <ellipse cx="58" cy="12" rx="6" ry="3.5" fill="#4ade80" stroke="#047857" stroke-width="1" transform="rotate(20 58 12)"/>
+          <ellipse cx="53" cy="18" rx="5" ry="3" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(-20 53 18)"/>
+
+          <!-- Ramo esquerdo -->
+          <path d="M45 35C45 35 32 25 22 22" stroke="#047857" stroke-width="2" fill="none"/>
+          <ellipse cx="22" cy="18" rx="8" ry="4.5" fill="#4ade80" stroke="#047857" stroke-width="1" transform="rotate(-45 22 18)"/>
+          <ellipse cx="30" cy="24" rx="7" ry="4" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(-30 30 24)"/>
+          <ellipse cx="38" cy="28" rx="6" ry="3.5" fill="#4ade80" stroke="#047857" stroke-width="1" transform="rotate(-15 38 28)"/>
+
+          <!-- Ramo direito -->
+          <path d="M75 35C75 35 88 25 98 22" stroke="#047857" stroke-width="2" fill="none"/>
+          <ellipse cx="98" cy="18" rx="8" ry="4.5" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(45 98 18)"/>
+          <ellipse cx="90" cy="24" rx="7" ry="4" fill="#4ade80" stroke="#047857" stroke-width="1" transform="rotate(30 90 24)"/>
+          <ellipse cx="82" cy="28" rx="6" ry="3.5" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(15 82 28)"/>
+        </g>
+
+        <!-- Folha de hortelã na mão -->
+        <g transform="translate(88, 70)">
+          <path d="M0 0C0 0 15 -5 20 -15C22 -5 18 5 0 0Z" fill="#22c55e" stroke="#047857" stroke-width="1.5"/>
+          <path d="M0 0C5 -3 10 -5 12 -8" stroke="#047857" stroke-width="1" fill="none"/>
+        </g>
+
+        <!-- Aroma da hortelã (ondas) -->
+        <g opacity="0.5">
+          <path d="M95 55C100 50 100 45 95 40" stroke="#10b981" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M100 58C107 52 107 44 100 38" stroke="#10b981" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M105 61C114 53 114 43 105 35" stroke="#10b981" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </g>
+
+        <defs>
+          <linearGradient id="pg09" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ea7531"/>
+            <stop offset="100%" stop-color="#c2410c"/>
+          </linearGradient>
+          <radialGradient id="bgf09" cx="40%" cy="30%">
+            <stop offset="0%" stop-color="#a7f3d0"/>
+            <stop offset="50%" stop-color="#6ee7b7"/>
+            <stop offset="100%" stop-color="#34d399"/>
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Guia Completo da Hortelã</h1>
+    <p class="subtitle">Domine o Cultivo da Erva Mais Refrescante do Mundo</p>
+    <p class="edition">Edição Expandida • 20 Variedades • 50+ Receitas • 8 Módulos Completos</p>
+    <div class="brand">Minha Horta em Casa</div>
+    <div class="brand-url">minhahortaemcasa.com.br</div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>📖 Sumário Completo</h2>
+
+      <div class="toc-section">
+        <h3>🌿 Parte 1 - Fundamentos</h3>
+        <ul>
+          <li><span>Guia 1: Conhecendo a Hortelã - História, Botânica e Ciência</span> <span class="page-num">3</span></li>
+          <li><span>Guia 2: 20 Variedades de Hortelã - Catálogo Completo</span> <span class="page-num">7</span></li>
+        </ul>
+      </div>
+
+      <div class="toc-section">
+        <h3>🧪 Parte 2 - Química da Hortelã</h3>
+        <ul>
+          <li><span>Guia 3: Fitoquímica - Mentol, Carvona e Compostos Ativos</span> <span class="page-num">15</span></li>
+          <li><span>Guia 4: Óleos Essenciais - Extração e Aplicações</span> <span class="page-num">19</span></li>
+        </ul>
+      </div>
+
+      <div class="toc-section">
+        <h3>🌱 Parte 3 - Cultivo Completo</h3>
+        <ul>
+          <li><span>Guia 5: Plantio, Substrato e Nutrição</span> <span class="page-num">23</span></li>
+          <li><span>Guia 6: Propagação Infinita - 6 Métodos</span> <span class="page-num">29</span></li>
+          <li><span>Guia 7: Controle de Invasão - Contenção Eficiente</span> <span class="page-num">33</span></li>
+          <li><span>Guia 8: Rega, Poda e Manutenção</span> <span class="page-num">37</span></li>
+        </ul>
+      </div>
+
+      <div class="toc-section">
+        <h3>💧 Parte 4 - Cultivos Especiais</h3>
+        <ul>
+          <li><span>Guia 9: Hidroponia da Hortelã</span> <span class="page-num">43</span></li>
+          <li><span>Guia 10: Hortelã em Pequenos Espaços</span> <span class="page-num">47</span></li>
+        </ul>
+      </div>
+
+      <div class="toc-section">
+        <h3>📅 Parte 5 - Calendário Regional</h3>
+        <ul>
+          <li><span>Guia 11: Cultivo por Região Brasileira</span> <span class="page-num">51</span></li>
+        </ul>
+      </div>
+
+      <div class="toc-section">
+        <h3>💰 Parte 6 - Produção e Colheita</h3>
+        <ul>
+          <li><span>Guia 12: Colheita, Secagem e Conservação</span> <span class="page-num">55</span></li>
+          <li><span>Guia 13: Produção Comercial em Pequena Escala</span> <span class="page-num">59</span></li>
+        </ul>
+      </div>
+
+      <div class="toc-section">
+        <h3>🩺 Parte 7 - Usos e Aplicações</h3>
+        <ul>
+          <li><span>Guia 14: Propriedades Medicinais e Terapêuticas</span> <span class="page-num">63</span></li>
+          <li><span>Guia 15: Problemas, Pragas e Soluções</span> <span class="page-num">67</span></li>
+        </ul>
+      </div>
+
+      <div class="toc-section">
+        <h3>👨‍🍳 Bônus - 50 Receitas</h3>
+        <ul>
+          <li><span>Bebidas Refrescantes (15 receitas)</span> <span class="page-num">71</span></li>
+          <li><span>Pratos Salgados (15 receitas)</span> <span class="page-num">75</span></li>
+          <li><span>Doces e Sobremesas (10 receitas)</span> <span class="page-num">79</span></li>
+          <li><span>Preparações Medicinais (10 receitas)</span> <span class="page-num">83</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 1</div>
+  </div>
+
+  <!-- INTRODUÇÃO -->
+  <div class="page">
+    <div class="intro-box">
+      <h2>🌿 Bem-vindo ao Guia da Hortelã!</h2>
+      <p>A hortelã é a erva aromática mais popular do mundo - e também a mais fácil de cultivar. Tão fácil que o maior desafio não é fazê-la crescer, mas sim <strong>controlá-la</strong>!</p>
+      <p>Este guia completo vai te ensinar tudo sobre as 20 principais variedades, a química por trás do frescor, técnicas de propagação infinita, e mais de 50 receitas deliciosas. Prepare-se para se tornar um especialista em hortelã!</p>
+    </div>
+
+    <h2>O Que Você Vai Aprender</h2>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="icon">🌿</div>
+        <div class="value">20</div>
+        <div class="label">Variedades Detalhadas</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🧪</div>
+        <div class="value">12+</div>
+        <div class="label">Compostos Químicos</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🔄</div>
+        <div class="value">6</div>
+        <div class="label">Métodos de Propagação</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">👨‍🍳</div>
+        <div class="value">50+</div>
+        <div class="label">Receitas Exclusivas</div>
+      </div>
+    </div>
+
+    <h3>Por Que Cultivar Hortelã?</h3>
+    <ul class="benefit-list">
+      <li><strong>Ultra fácil de cultivar</strong> - Cresce em quase qualquer condição</li>
+      <li><strong>Propagação infinita</strong> - Uma planta gera centenas gratuitamente</li>
+      <li><strong>Colheita o ano todo</strong> - Planta perene que produz continuamente</li>
+      <li><strong>Multiuso</strong> - Culinária, chás, medicinais, cosméticos</li>
+      <li><strong>Repelente natural</strong> - Afasta moscas, formigas e mosquitos</li>
+      <li><strong>Benefícios à saúde</strong> - Digestão, respiração, bem-estar</li>
+    </ul>
+
+    <div class="danger-box">
+      <h4>⚠️ Alerta Importante: Hortelã é INVASIVA!</h4>
+      <p>Esta é a característica mais importante que você precisa saber: a hortelã se espalha agressivamente por <strong>estolões subterrâneos</strong> e pode dominar todo o seu jardim em poucos meses. <strong>SEMPRE</strong> cultive em vaso separado ou com barreiras físicas!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 2</div>
+  </div>
+
+  <!-- GUIA 1: CONHECENDO A HORTELÃ -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Guia 1</h2>
+      <p>Conhecendo a Hortelã - História, Botânica e Ciência</p>
+    </div>
+
+    <h3>Uma História de 3.000 Anos</h3>
+    <p>A hortelã é uma das ervas mais antigas cultivadas pela humanidade. Registros arqueológicos mostram seu uso no Egito Antigo há mais de 3.000 anos, onde era usada em rituais religiosos, medicina e culinária.</p>
+
+    <p>Na mitologia grega, a ninfa <strong>Minta</strong> (ou Menthe) foi transformada nesta planta pela deusa Perséfone, esposa de Hades - uma punição por despertar o interesse do deus do submundo. Por isso, o gênero científico da hortelã é <em>Mentha</em>.</p>
+
+    <div class="highlight-box">
+      <h4>📜 Linha do Tempo da Hortelã</h4>
+      <ul>
+        <li><strong>1550 a.C.</strong> - Mencionada no Papiro de Ebers (Egito)</li>
+        <li><strong>400 a.C.</strong> - Hipócrates a prescreve como medicamento</li>
+        <li><strong>79 d.C.</strong> - Plínio descreve 41 usos medicinais</li>
+        <li><strong>Idade Média</strong> - Cultivada em mosteiros europeus</li>
+        <li><strong>Século XVIII</strong> - Início da produção industrial de óleo essencial</li>
+        <li><strong>Século XIX</strong> - Descoberta do mentol como composto químico</li>
+        <li><strong>Hoje</strong> - Uma das ervas mais cultivadas do mundo</li>
+      </ul>
+    </div>
+
+    <h3>Classificação Botânica</h3>
+    <table>
+      <tr>
+        <th>Categoria</th>
+        <th>Classificação</th>
+      </tr>
+      <tr>
+        <td>Reino</td>
+        <td>Plantae</td>
+      </tr>
+      <tr>
+        <td>Divisão</td>
+        <td>Magnoliophyta (Angiospermas)</td>
+      </tr>
+      <tr>
+        <td>Classe</td>
+        <td>Magnoliopsida (Dicotiledôneas)</td>
+      </tr>
+      <tr>
+        <td>Ordem</td>
+        <td>Lamiales</td>
+      </tr>
+      <tr>
+        <td>Família</td>
+        <td>Lamiaceae (antiga Labiatae)</td>
+      </tr>
+      <tr>
+        <td>Gênero</td>
+        <td>Mentha</td>
+      </tr>
+      <tr>
+        <td>Espécies</td>
+        <td>25-30 espécies + centenas de híbridos</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 3</div>
+  </div>
+
+  <div class="page">
+    <h3>Anatomia da Planta</h3>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="icon">📏</div>
+        <div class="value">30-90cm</div>
+        <div class="label">Altura Típica</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌱</div>
+        <div class="value">Perene</div>
+        <div class="label">Ciclo de Vida</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌍</div>
+        <div class="value">Europa/Ásia</div>
+        <div class="label">Origem</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌡️</div>
+        <div class="value">15-25°C</div>
+        <div class="label">Temp. Ideal</div>
+      </div>
+    </div>
+
+    <h4>Estruturas da Hortelã</h4>
+
+    <div class="comparison-grid">
+      <div class="comparison-item">
+        <h5>🌿 Folhas</h5>
+        <ul>
+          <li>Opostas e serrilhadas</li>
+          <li>Cobertas de tricomas glandulares</li>
+          <li>Formato oval a lanceolado</li>
+          <li>Verde médio a escuro</li>
+          <li>Muito aromáticas</li>
+        </ul>
+      </div>
+      <div class="comparison-item">
+        <h5>🪴 Caule</h5>
+        <ul>
+          <li>Quadrangular (família Lamiaceae)</li>
+          <li>Ereto ou prostrado</li>
+          <li>Frequentemente avermelhado</li>
+          <li>Ramificado</li>
+          <li>Piloso ou glabro</li>
+        </ul>
+      </div>
+      <div class="comparison-item">
+        <h5>🌸 Flores</h5>
+        <ul>
+          <li>Pequenas (3-5mm)</li>
+          <li>Lilases, rosadas ou brancas</li>
+          <li>Em espigas terminais</li>
+          <li>Florescem verão-outono</li>
+          <li>Atraem polinizadores</li>
+        </ul>
+      </div>
+      <div class="comparison-item">
+        <h5>🌱 Raízes</h5>
+        <ul>
+          <li>Sistema radicular superficial</li>
+          <li><strong>Estolões</strong> (raízes horizontais)</li>
+          <li>Altamente invasivas</li>
+          <li>Regeneram de fragmentos</li>
+          <li>Espalham-se rapidamente</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <h4>💡 Os Tricomas Glandulares</h4>
+      <p>As folhas da hortelã são cobertas por milhares de pequenas estruturas chamadas <strong>tricomas glandulares</strong>. São estes "pelos" que armazenam os óleos essenciais responsáveis pelo aroma característico. Quando você esfrega uma folha, rompe esses tricomas e libera o óleo - por isso o cheiro fica mais forte!</p>
+    </div>
+
+    <h3>Condições Ideais de Cultivo</h3>
+    <table>
+      <tr>
+        <th>Fator</th>
+        <th>Ideal</th>
+        <th>Tolerável</th>
+      </tr>
+      <tr>
+        <td>Luz Solar</td>
+        <td>4-6 horas (sol parcial)</td>
+        <td>Meia-sombra a sol pleno</td>
+      </tr>
+      <tr>
+        <td>Temperatura</td>
+        <td>15°C a 25°C</td>
+        <td>5°C a 35°C</td>
+      </tr>
+      <tr>
+        <td>Umidade do Solo</td>
+        <td>Sempre úmido</td>
+        <td>Nunca deixe secar completamente</td>
+      </tr>
+      <tr>
+        <td>pH do Solo</td>
+        <td>6,0 a 7,0</td>
+        <td>5,5 a 7,5</td>
+      </tr>
+      <tr>
+        <td>Tipo de Solo</td>
+        <td>Rico, úmido, bem drenado</td>
+        <td>Quase qualquer solo fértil</td>
+      </tr>
+      <tr>
+        <td>Umidade do Ar</td>
+        <td>60-80%</td>
+        <td>40-90%</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 4</div>
+  </div>
+
+  <div class="page">
+    <h3>Por Que a Hortelã é Tão Fácil de Cultivar?</h3>
+
+    <div class="success-box">
+      <h4>✅ Vantagens Naturais da Hortelã</h4>
+      <ul>
+        <li><strong>Adaptabilidade extrema:</strong> Cresce em sol, sombra parcial, solo rico ou pobre</li>
+        <li><strong>Resistência a pragas:</strong> Os óleos essenciais repelem a maioria dos insetos</li>
+        <li><strong>Regeneração vigorosa:</strong> Rebrota rapidamente após cortes</li>
+        <li><strong>Propagação fácil:</strong> Qualquer pedaço de caule ou raiz pode gerar nova planta</li>
+        <li><strong>Tolerância ao frio:</strong> Sobrevive a geadas leves (até -5°C)</li>
+        <li><strong>Perene:</strong> Não precisa replantar - dura anos</li>
+      </ul>
+    </div>
+
+    <h3>Distribuição Mundial</h3>
+    <p>A hortelã é cultivada em todos os continentes (exceto Antártida). Os maiores produtores mundiais de óleo de hortelã são:</p>
+
+    <table>
+      <tr>
+        <th>Posição</th>
+        <th>País</th>
+        <th>Produção Anual</th>
+        <th>Principal Variedade</th>
+      </tr>
+      <tr>
+        <td>1º</td>
+        <td>Índia</td>
+        <td>~30.000 toneladas</td>
+        <td>Mentha arvensis</td>
+      </tr>
+      <tr>
+        <td>2º</td>
+        <td>China</td>
+        <td>~8.000 toneladas</td>
+        <td>Mentha arvensis</td>
+      </tr>
+      <tr>
+        <td>3º</td>
+        <td>Estados Unidos</td>
+        <td>~4.000 toneladas</td>
+        <td>Mentha x piperita</td>
+      </tr>
+      <tr>
+        <td>4º</td>
+        <td>Brasil</td>
+        <td>~1.500 toneladas</td>
+        <td>Mentha x villosa</td>
+      </tr>
+      <tr>
+        <td>5º</td>
+        <td>Marrocos</td>
+        <td>~800 toneladas</td>
+        <td>Mentha spicata</td>
+      </tr>
+    </table>
+
+    <h3>Curiosidades sobre a Hortelã</h3>
+
+    <div class="highlight-box">
+      <h4>🤔 Você Sabia?</h4>
+      <ul>
+        <li>A hortelã foi usada como moeda de troca na Grécia Antiga</li>
+        <li>O mentol "engana" os receptores de frio da nossa boca - por isso sentimos frescor</li>
+        <li>Existem mais de 600 variedades catalogadas de hortelã</li>
+        <li>A hortelã-pimenta é um híbrido natural que surgiu na Inglaterra em 1696</li>
+        <li>O cheiro de hortelã pode aumentar a capacidade de memória em até 15%</li>
+        <li>Atletas mascam hortelã para melhorar o desempenho respiratório</li>
+        <li>A planta pode viver mais de 10 anos se bem cuidada</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 5</div>
+  </div>
+
+  <div class="page">
+    <h3>A Família Lamiaceae</h3>
+    <p>A hortelã pertence à família <strong>Lamiaceae</strong> (anteriormente chamada Labiatae), uma das famílias mais importantes de plantas aromáticas. Outras ervas famosas desta família incluem:</p>
+
+    <div class="info-grid four">
+      <div class="info-item">
+        <div class="icon">🌿</div>
+        <div class="value">Manjericão</div>
+        <div class="label">Ocimum</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌿</div>
+        <div class="value">Alecrim</div>
+        <div class="label">Rosmarinus</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌿</div>
+        <div class="value">Lavanda</div>
+        <div class="label">Lavandula</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌿</div>
+        <div class="value">Orégano</div>
+        <div class="label">Origanum</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌿</div>
+        <div class="value">Tomilho</div>
+        <div class="label">Thymus</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌿</div>
+        <div class="value">Sálvia</div>
+        <div class="label">Salvia</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌿</div>
+        <div class="value">Melissa</div>
+        <div class="label">Melissa</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌿</div>
+        <div class="value">Boldo</div>
+        <div class="label">Plectranthus</div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <h4>💡 Característica da Família</h4>
+      <p>Todas as plantas da família Lamiaceae têm <strong>caule quadrangular</strong> - ou seja, se você cortar o caule transversalmente, verá que ele tem formato de quadrado, não circular. Esta é uma forma fácil de identificar se uma planta pertence a esta família!</p>
+    </div>
+
+    <h3>Hortelã no Brasil</h3>
+    <p>No Brasil, a hortelã chegou com os colonizadores portugueses e rapidamente se adaptou ao clima tropical. Hoje, é uma das ervas mais cultivadas em hortas caseiras brasileiras.</p>
+
+    <div class="highlight-box">
+      <h4>🇧🇷 Nomes Populares no Brasil</h4>
+      <p>A hortelã recebe diferentes nomes dependendo da região:</p>
+      <ul>
+        <li><strong>Hortelã-comum, Hortelã-de-tempero</strong> - todo o Brasil</li>
+        <li><strong>Hortelã-rasteira</strong> - Nordeste</li>
+        <li><strong>Hortelã-de-horta</strong> - Sul</li>
+        <li><strong>Hortelã-de-cheiro</strong> - Norte</li>
+        <li><strong>Menta, Mentinha</strong> - Sudeste</li>
+        <li><strong>Hortelã-pimenta</strong> - variedade específica (M. piperita)</li>
+      </ul>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Resumo do Guia 1</h4>
+      <p>A hortelã é uma planta perene da família Lamiaceae, cultivada há mais de 3.000 anos. Com mais de 25 espécies e centenas de híbridos, adapta-se a diversas condições e é extremamente fácil de cultivar - o maior desafio é controlar sua natureza invasiva!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 6</div>
+  </div>
+
+  <!-- GUIA 2: 20 VARIEDADES DE HORTELÃ -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Guia 2</h2>
+      <p>20 Variedades de Hortelã - Catálogo Completo</p>
+    </div>
+
+    <p>Existem mais de 600 variedades catalogadas de hortelã no mundo. Apresentamos aqui as 20 mais importantes, com suas características, usos e particularidades de cultivo.</p>
+
+    <div class="variety-card">
+      <h4>1. Hortelã-Pimenta</h4>
+      <p class="scientific">Mentha x piperita</p>
+      <span class="tag medicinal">Medicinal</span>
+      <span class="tag aromatica">Alta Aromática</span>
+      <span class="tag">Chás</span>
+
+      <p><strong>Origem:</strong> Híbrido natural de M. aquatica × M. spicata (Inglaterra, 1696)</p>
+      <p><strong>Aroma:</strong> Mentolado intenso e refrescante - o mais forte de todas</p>
+      <p><strong>Aparência:</strong> Folhas escuras, ovais, serrilhadas. Caule avermelhado/arroxeado</p>
+      <p><strong>Altura:</strong> 40-80cm</p>
+      <p><strong>Teor de mentol:</strong> 40-50% do óleo essencial</p>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="label">Uso Principal</div>
+          <div class="value">Chás, doces</div>
+        </div>
+        <div class="info-item">
+          <div class="label">Dificuldade</div>
+          <div class="value">Fácil</div>
+        </div>
+      </div>
+
+      <p><strong>Usos:</strong> Chás digestivos, óleos essenciais, produtos de higiene oral, chocolates, aromaterapia</p>
+      <p><strong>Propriedades:</strong> Digestiva, analgésica, descongestionante, antiespasmódica</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>2. Hortelã-Verde / Spearmint</h4>
+      <p class="scientific">Mentha spicata</p>
+      <span class="tag culinaria">Culinária</span>
+      <span class="tag">Mais Comum</span>
+      <span class="tag">Drinks</span>
+
+      <p><strong>Origem:</strong> Europa e Ásia Menor</p>
+      <p><strong>Aroma:</strong> Doce, suave, menos mentolado - perfeito para culinária</p>
+      <p><strong>Aparência:</strong> Folhas verde-claras brilhantes, pontiagudas, textura enrugada</p>
+      <p><strong>Altura:</strong> 30-60cm</p>
+      <p><strong>Teor de carvona:</strong> 50-70% do óleo essencial (em vez de mentol)</p>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="label">Uso Principal</div>
+          <div class="value">Culinária</div>
+        </div>
+        <div class="info-item">
+          <div class="label">Dificuldade</div>
+          <div class="value">Muito Fácil</div>
+        </div>
+      </div>
+
+      <p><strong>Usos:</strong> Mojitos, sucos, tabule, molhos, goma de mascar, cordeiro</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 7</div>
+  </div>
+
+  <div class="page">
+    <div class="variety-card">
+      <h4>3. Hortelã-do-Levante / Hortelã Brasileira</h4>
+      <p class="scientific">Mentha x villosa</p>
+      <span class="tag culinaria">Brasileira</span>
+      <span class="tag">Versátil</span>
+      <span class="tag">Sucos</span>
+
+      <p><strong>Origem:</strong> Híbrido de M. spicata × M. suaveolens</p>
+      <p><strong>Aroma:</strong> Equilibrado - meio-termo entre mentolado e doce</p>
+      <p><strong>Aparência:</strong> Folhas grandes, peludas (villosa = peluda), verde-médio</p>
+      <p><strong>Altura:</strong> 40-70cm</p>
+      <p><strong>Característica:</strong> A mais comum no Brasil - muito adaptada ao nosso clima</p>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="label">Uso Principal</div>
+          <div class="value">Sucos, tempero</div>
+        </div>
+        <div class="info-item">
+          <div class="label">Dificuldade</div>
+          <div class="value">Muito Fácil</div>
+        </div>
+      </div>
+
+      <p><strong>Usos:</strong> Sucos verdes, tempero brasileiro, chás, tabule, kibe</p>
+      <p><strong>Vantagem:</strong> Extremamente resistente ao calor tropical brasileiro</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>4. Hortelã-Maçã</h4>
+      <p class="scientific">Mentha suaveolens</p>
+      <span class="tag aromatica">Frutada</span>
+      <span class="tag">Decorativa</span>
+      <span class="tag">Gourmet</span>
+
+      <p><strong>Origem:</strong> Sul e Oeste da Europa</p>
+      <p><strong>Aroma:</strong> Notas de maçã verde e menta - muito agradável</p>
+      <p><strong>Aparência:</strong> Folhas arredondadas, muito peludas, verde-acinzentado</p>
+      <p><strong>Altura:</strong> 40-100cm</p>
+      <p><strong>Variante famosa:</strong> 'Variegata' - folhas com bordas branco-creme</p>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="label">Uso Principal</div>
+          <div class="value">Saladas de fruta</div>
+        </div>
+        <div class="info-item">
+          <div class="label">Dificuldade</div>
+          <div class="value">Fácil</div>
+        </div>
+      </div>
+
+      <p><strong>Usos:</strong> Saladas de frutas, bebidas, chás, decoração, geleias</p>
+      <p><strong>Curiosidade:</strong> Também chamada de "hortelã-de-burro" em Portugal</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>5. Hortelã-Chocolate</h4>
+      <p class="scientific">Mentha x piperita 'Chocolate'</p>
+      <span class="tag aromatica">Gourmet</span>
+      <span class="tag">Sobremesas</span>
+      <span class="tag rara">Especial</span>
+
+      <p><strong>Origem:</strong> Cultivar de M. piperita selecionada</p>
+      <p><strong>Aroma:</strong> Mentolado com notas de chocolate - incrível!</p>
+      <p><strong>Aparência:</strong> Folhas escuras com veias marrom-chocolate, caule muito escuro</p>
+      <p><strong>Altura:</strong> 40-60cm</p>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="label">Uso Principal</div>
+          <div class="value">Sobremesas</div>
+        </div>
+        <div class="info-item">
+          <div class="label">Dificuldade</div>
+          <div class="value">Fácil</div>
+        </div>
+      </div>
+
+      <p><strong>Usos:</strong> Sobremesas com chocolate, sorvetes, bebidas quentes, decoração gourmet</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 8</div>
+  </div>
+
+  <div class="page">
+    <div class="variety-card">
+      <h4>6. Hortelã-Laranja / Bergamota</h4>
+      <p class="scientific">Mentha x piperita var. citrata</p>
+      <span class="tag aromatica">Cítrica</span>
+      <span class="tag">Aromaterapi</span>
+      <span class="tag">Drinks</span>
+
+      <p><strong>Origem:</strong> Variação de M. piperita</p>
+      <p><strong>Aroma:</strong> Cítrico intenso com fundo mentolado - parece laranja/bergamota</p>
+      <p><strong>Aparência:</strong> Folhas com bordas avermelhadas/arroxeadas, brilhantes</p>
+      <p><strong>Altura:</strong> 30-50cm</p>
+
+      <p><strong>Usos:</strong> Chás, coquetéis, aromaterapia, pot-pourri, cosméticos</p>
+      <p><strong>Nome alternativo:</strong> "Eau de Cologne Mint" na Europa</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>7. Hortelã-Limão</h4>
+      <p class="scientific">Mentha x piperita 'Lemon'</p>
+      <span class="tag aromatica">Cítrica</span>
+      <span class="tag">Refrescante</span>
+      <span class="tag">Chás</span>
+
+      <p><strong>Origem:</strong> Cultivar selecionada</p>
+      <p><strong>Aroma:</strong> Limão fresco com notas de menta</p>
+      <p><strong>Aparência:</strong> Folhas verde-claras, delicadas</p>
+      <p><strong>Altura:</strong> 30-45cm</p>
+
+      <p><strong>Usos:</strong> Chás gelados, limonadas, peixes, saladas</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>8. Poejo</h4>
+      <p class="scientific">Mentha pulegium</p>
+      <span class="tag medicinal">Medicinal</span>
+      <span class="tag">Repelente</span>
+      <span class="tag rara">Cuidado!</span>
+
+      <p><strong>Origem:</strong> Europa, Norte da África, Ásia Menor</p>
+      <p><strong>Aroma:</strong> Muito forte, penetrante - quase insuportável para alguns</p>
+      <p><strong>Aparência:</strong> Folhas pequenas, ovais. Planta rasteira, formando tapete</p>
+      <p><strong>Altura:</strong> 10-40cm (mais baixa que outras)</p>
+      <p><strong>Composto principal:</strong> Pulegona (até 85%) - TÓXICA em doses altas</p>
+
+      <div class="danger-box">
+        <h4>⚠️ ATENÇÃO: Toxicidade</h4>
+        <p>O poejo contém <strong>pulegona</strong>, um composto hepatotóxico. Use apenas externamente ou em doses muito pequenas. <strong>NUNCA</strong> use durante a gravidez - pode causar aborto!</p>
+      </div>
+
+      <p><strong>Usos seguros:</strong> Repelente de pulgas e mosquitos, sachês, uso tópico diluído</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 9</div>
+  </div>
+
+  <div class="page">
+    <div class="variety-card">
+      <h4>9. Hortelã-Japonesa / Menta Japonesa</h4>
+      <p class="scientific">Mentha arvensis var. piperascens</p>
+      <span class="tag">Alto Mentol</span>
+      <span class="tag">Industrial</span>
+      <span class="tag medicinal">Óleo Essencial</span>
+
+      <p><strong>Origem:</strong> Ásia Oriental (Japão, China)</p>
+      <p><strong>Aroma:</strong> Mentol extremamente concentrado - o mais alto de todas</p>
+      <p><strong>Aparência:</strong> Folhas verde-escuras, lanceoladas</p>
+      <p><strong>Altura:</strong> 50-80cm</p>
+      <p><strong>Teor de mentol:</strong> 70-90% do óleo essencial!</p>
+
+      <p><strong>Usos:</strong> Extração industrial de mentol, balas, medicamentos, cosméticos</p>
+      <p><strong>Curiosidade:</strong> É a principal fonte mundial de mentol natural</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>10. Hortelã-Aquática</h4>
+      <p class="scientific">Mentha aquatica</p>
+      <span class="tag">Ambientes Úmidos</span>
+      <span class="tag medicinal">Medicinal</span>
+      <span class="tag">Lagos</span>
+
+      <p><strong>Origem:</strong> Europa (margens de rios e lagos)</p>
+      <p><strong>Aroma:</strong> Mentolado suave, fresco</p>
+      <p><strong>Aparência:</strong> Folhas ovais, peludas. Flores em pompons esféricos (distintivo!)</p>
+      <p><strong>Altura:</strong> 30-90cm</p>
+      <p><strong>Habitat:</strong> Beira d'água - pode crescer parcialmente submersa</p>
+
+      <p><strong>Usos:</strong> Chás, lagos ornamentais, brejos, áreas úmidas do jardim</p>
+      <p><strong>Curiosidade:</strong> Uma das "mães" da hortelã-pimenta</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>11. Hortelã-Banana</h4>
+      <p class="scientific">Mentha arvensis 'Banana'</p>
+      <span class="tag aromatica">Frutada</span>
+      <span class="tag rara">Rara</span>
+      <span class="tag">Gourmet</span>
+
+      <p><strong>Origem:</strong> Cultivar selecionada</p>
+      <p><strong>Aroma:</strong> Banana doce com notas de menta - surpreendente!</p>
+      <p><strong>Aparência:</strong> Folhas verde-claras, macias</p>
+      <p><strong>Altura:</strong> 30-50cm</p>
+
+      <p><strong>Usos:</strong> Smoothies, sobremesas tropicais, decoração, chás especiais</p>
+      <p><strong>Dificuldade:</strong> Mais delicada que outras variedades</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 10</div>
+  </div>
+
+  <div class="page">
+    <div class="variety-card">
+      <h4>12. Hortelã-Gengibre</h4>
+      <p class="scientific">Mentha x gracilis 'Variegata'</p>
+      <span class="tag aromatica">Especiada</span>
+      <span class="tag">Decorativa</span>
+      <span class="tag">Ornamental</span>
+
+      <p><strong>Origem:</strong> Híbrido de M. arvensis × M. spicata</p>
+      <p><strong>Aroma:</strong> Notas de gengibre e especiarias com menta</p>
+      <p><strong>Aparência:</strong> Folhas verde-dourado variegadas com amarelo - muito ornamental!</p>
+      <p><strong>Altura:</strong> 30-60cm</p>
+
+      <p><strong>Usos:</strong> Ornamental, chás especiais, pratos asiáticos</p>
+      <p><strong>Nome alternativo:</strong> "Scotch Spearmint" ou "Ginger Mint"</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>13. Hortelã-Morango</h4>
+      <p class="scientific">Mentha species 'Strawberry'</p>
+      <span class="tag aromatica">Frutada</span>
+      <span class="tag rara">Rara</span>
+      <span class="tag">Sobremesas</span>
+
+      <p><strong>Origem:</strong> Cultivar recente</p>
+      <p><strong>Aroma:</strong> Morango doce com fundo mentolado</p>
+      <p><strong>Aparência:</strong> Folhas verde-médio, arredondadas</p>
+      <p><strong>Altura:</strong> 25-40cm</p>
+
+      <p><strong>Usos:</strong> Sobremesas com frutas vermelhas, drinks, decoração</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>14. Hortelã-Lavanda</h4>
+      <p class="scientific">Mentha x piperita 'Lavender'</p>
+      <span class="tag aromatica">Floral</span>
+      <span class="tag">Aromaterapia</span>
+      <span class="tag rara">Rara</span>
+
+      <p><strong>Origem:</strong> Cultivar especial</p>
+      <p><strong>Aroma:</strong> Lavanda floral com notas de menta</p>
+      <p><strong>Aparência:</strong> Folhas com tons arroxeados, flores lilases</p>
+      <p><strong>Altura:</strong> 30-50cm</p>
+
+      <p><strong>Usos:</strong> Aromaterapia, sachês, chás relaxantes, cosméticos</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>15. Hortelã-Coreana</h4>
+      <p class="scientific">Agastache rugosa</p>
+      <span class="tag">Não é Mentha</span>
+      <span class="tag medicinal">Medicinal</span>
+      <span class="tag culinaria">Asiática</span>
+
+      <p><strong>Nota:</strong> Tecnicamente não é uma Mentha, mas é chamada de "Korean Mint"</p>
+      <p><strong>Aroma:</strong> Anisado/alcaçuz com notas de menta</p>
+      <p><strong>Aparência:</strong> Folhas grandes, flores azul-violeta em espigas altas</p>
+      <p><strong>Altura:</strong> 60-120cm (bem maior!)</p>
+
+      <p><strong>Usos:</strong> Culinária coreana, medicina tradicional chinesa, chás</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 11</div>
+  </div>
+
+  <div class="page">
+    <div class="variety-card">
+      <h4>16. Hortelã-Pêssego</h4>
+      <p class="scientific">Mentha species 'Peach'</p>
+      <span class="tag aromatica">Frutada</span>
+      <span class="tag rara">Rara</span>
+      <span class="tag">Drinks</span>
+
+      <p><strong>Origem:</strong> Cultivar moderna</p>
+      <p><strong>Aroma:</strong> Pêssego maduro com fundo mentolado</p>
+      <p><strong>Aparência:</strong> Folhas delicadas, verde-médio</p>
+      <p><strong>Altura:</strong> 30-45cm</p>
+
+      <p><strong>Usos:</strong> Coquetéis, chás gelados, sobremesas, águas aromatizadas</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>17. Hortelã-Abacaxi</h4>
+      <p class="scientific">Mentha suaveolens 'Variegata'</p>
+      <span class="tag aromatica">Frutada</span>
+      <span class="tag">Decorativa</span>
+      <span class="tag">Ornamental</span>
+
+      <p><strong>Origem:</strong> Variante da hortelã-maçã</p>
+      <p><strong>Aroma:</strong> Abacaxi tropical com notas de menta</p>
+      <p><strong>Aparência:</strong> Folhas variegadas verde e branco-creme - muito bonita!</p>
+      <p><strong>Altura:</strong> 30-50cm</p>
+
+      <p><strong>Usos:</strong> Ornamental, drinks tropicais, sobremesas, decoração de pratos</p>
+      <p><strong>Vantagem:</strong> Uma das mais decorativas para jardins</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>18. Hortelã-Inglesa / Mitcham</h4>
+      <p class="scientific">Mentha x piperita 'Mitcham'</p>
+      <span class="tag">Premium</span>
+      <span class="tag medicinal">Alta Qualidade</span>
+      <span class="tag">Óleo Essencial</span>
+
+      <p><strong>Origem:</strong> Mitcham, Surrey, Inglaterra</p>
+      <p><strong>Aroma:</strong> O mais refinado da hortelã-pimenta - padrão ouro mundial</p>
+      <p><strong>Aparência:</strong> Semelhante à piperita padrão, mas mais escura</p>
+      <p><strong>Altura:</strong> 40-60cm</p>
+
+      <p><strong>Usos:</strong> Óleo essencial premium, produtos farmacêuticos de alta qualidade</p>
+      <p><strong>Curiosidade:</strong> O óleo de Mitcham é considerado o melhor do mundo</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>19. Hortelã-de-Córsega</h4>
+      <p class="scientific">Mentha requienii</p>
+      <span class="tag">Miniatura</span>
+      <span class="tag">Cobertura</span>
+      <span class="tag">Decorativa</span>
+
+      <p><strong>Origem:</strong> Córsega, Sardenha (Mediterrâneo)</p>
+      <p><strong>Aroma:</strong> Mentolado delicado</p>
+      <p><strong>Aparência:</strong> MINÚSCULA - folhas de apenas 2-7mm! Forma tapete rasteiro</p>
+      <p><strong>Altura:</strong> 1-3cm apenas!</p>
+
+      <p><strong>Usos:</strong> Forração entre pedras, cobertura de solo, jardins de fadas</p>
+      <p><strong>Curiosidade:</strong> A menor de todas as hortelãs</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 12</div>
+  </div>
+
+  <div class="page">
+    <div class="variety-card">
+      <h4>20. Hortelã-Preta / Black Peppermint</h4>
+      <p class="scientific">Mentha x piperita 'Black Mitcham'</p>
+      <span class="tag">Medicinal</span>
+      <span class="tag">Intenso</span>
+      <span class="tag">Rústica</span>
+
+      <p><strong>Origem:</strong> Cultivar da Inglaterra</p>
+      <p><strong>Aroma:</strong> Mentol muito intenso - mais que a piperita comum</p>
+      <p><strong>Aparência:</strong> Folhas e caules muito escuros, quase negros</p>
+      <p><strong>Altura:</strong> 50-80cm</p>
+
+      <p><strong>Usos:</strong> Óleo essencial medicinal, chás terapêuticos</p>
+      <p><strong>Vantagem:</strong> Mais resistente a doenças que a piperita comum</p>
+    </div>
+
+    <h3>Qual Hortelã Escolher?</h3>
+
+    <div class="tip-box">
+      <h4>🎯 Guia Rápido de Escolha</h4>
+      <table>
+        <tr>
+          <th>Para...</th>
+          <th>Escolha...</th>
+        </tr>
+        <tr>
+          <td>Culinária brasileira (sucos, temperos)</td>
+          <td>Hortelã-do-Levante ou Verde</td>
+        </tr>
+        <tr>
+          <td>Chás medicinais</td>
+          <td>Hortelã-Pimenta ou Japonesa</td>
+        </tr>
+        <tr>
+          <td>Mojitos e drinks</td>
+          <td>Hortelã-Verde (Spearmint)</td>
+        </tr>
+        <tr>
+          <td>Sobremesas com chocolate</td>
+          <td>Hortelã-Chocolate</td>
+        </tr>
+        <tr>
+          <td>Saladas de frutas</td>
+          <td>Hortelã-Maçã ou Morango</td>
+        </tr>
+        <tr>
+          <td>Aromaterapia</td>
+          <td>Hortelã-Pimenta ou Lavanda</td>
+        </tr>
+        <tr>
+          <td>Jardim ornamental</td>
+          <td>Hortelã-Abacaxi (variegada)</td>
+        </tr>
+        <tr>
+          <td>Iniciantes</td>
+          <td>Qualquer uma! Todas são fáceis</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Resumo do Guia 2</h4>
+      <p>Existem dezenas de variedades de hortelã com aromas que vão do mentolado intenso ao frutado tropical. As mais versáteis para cultivo doméstico são a Hortelã-do-Levante (brasileira), a Hortelã-Pimenta (medicinal) e a Hortelã-Verde (culinária). As variedades frutadas são excelentes para quem busca sabores diferenciados!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 13</div>
+  </div>
+
+  <!-- GUIA 3: FITOQUÍMICA -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Guia 3</h2>
+      <p>Fitoquímica - Mentol, Carvona e Compostos Ativos</p>
+    </div>
+
+    <p>Por que a hortelã tem aquele frescor característico? A resposta está na <strong>fitoquímica</strong> - os compostos químicos que a planta produz. Entender esses compostos permite escolher a variedade certa e maximizar o sabor!</p>
+
+    <h3>Os Principais Compostos da Hortelã</h3>
+
+    <div class="chem-card">
+      <h4>🧪 Mentol (C₁₀H₂₀O)</h4>
+      <span class="formula">C₁₀H₂₀O - Massa molecular: 156,27 g/mol</span>
+      <p><strong>O que é:</strong> Um monoterpeno álcool cíclico - o principal responsável pelo "frescor"</p>
+      <p><strong>Como funciona:</strong> Ativa os receptores de frio (TRPM8) na pele e mucosas, criando a sensação de frescor SEM diminuir a temperatura!</p>
+      <p><strong>Onde encontrar:</strong></p>
+      <ul>
+        <li>Hortelã-Japonesa: <span class="percentage">70-90%</span></li>
+        <li>Hortelã-Pimenta: <span class="percentage">40-50%</span></li>
+        <li>Hortelã-Preta: <span class="percentage">45-55%</span></li>
+      </ul>
+      <p><strong>Aplicações:</strong> Balas, pasta de dente, medicamentos, cosméticos, aromaterapia</p>
+    </div>
+
+    <div class="chem-card">
+      <h4>🧪 Carvona (C₁₀H₁₄O)</h4>
+      <span class="formula">C₁₀H₁₄O - Massa molecular: 150,22 g/mol</span>
+      <p><strong>O que é:</strong> Uma cetona monoterpênica - responsável pelo aroma "doce" da hortelã-verde</p>
+      <p><strong>Curiosidade:</strong> A carvona tem duas formas (enantiômeros): uma cheira a hortelã, outra a alcaravia/cominho!</p>
+      <p><strong>Onde encontrar:</strong></p>
+      <ul>
+        <li>Hortelã-Verde (Spearmint): <span class="percentage">50-70%</span></li>
+        <li>Hortelã-do-Levante: <span class="percentage">30-50%</span></li>
+      </ul>
+      <p><strong>Aplicações:</strong> Gomas de mascar, culinária, drinks (mojito), aromatizantes</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 14</div>
+  </div>
+
+  <div class="page">
+    <div class="chem-card">
+      <h4>🧪 Limoneno (C₁₀H₁₆)</h4>
+      <span class="formula">C₁₀H₁₆ - Massa molecular: 136,24 g/mol</span>
+      <p><strong>O que é:</strong> Monoterpeno cítrico presente em variedades como hortelã-laranja e hortelã-limão</p>
+      <p><strong>Aroma:</strong> Notas cítricas brilhantes, frescas e alegres</p>
+      <p><strong>Onde encontrar:</strong></p>
+      <ul>
+        <li>Hortelã-Laranja: <span class="percentage">15-30%</span></li>
+        <li>Hortelã-Limão: <span class="percentage">20-35%</span></li>
+      </ul>
+      <p><strong>Aplicações:</strong> Aromaterapia, produtos de limpeza, perfumaria, culinária</p>
+    </div>
+
+    <div class="chem-card">
+      <h4>🧪 Pulegona (C₁₀H₁₆O)</h4>
+      <span class="formula">C₁₀H₁₆O - Massa molecular: 152,24 g/mol</span>
+      <p><strong>O que é:</strong> Cetona monoterpênica com aroma muito penetrante</p>
+      <div class="danger-box">
+        <h4>⚠️ TÓXICO em doses altas!</h4>
+        <p>A pulegona é hepatotóxica e pode causar convulsões e aborto. Presente principalmente no Poejo (até 85%).</p>
+      </div>
+      <p><strong>Onde encontrar:</strong></p>
+      <ul>
+        <li>Poejo (M. pulegium): <span class="percentage">60-85%</span></li>
+      </ul>
+      <p><strong>Uso seguro:</strong> Apenas externo como repelente de insetos</p>
+    </div>
+
+    <div class="chem-card">
+      <h4>🧪 Linalol (C₁₀H₁₈O)</h4>
+      <span class="formula">C₁₀H₁₈O - Massa molecular: 154,25 g/mol</span>
+      <p><strong>O que é:</strong> Álcool terpênico com aroma floral e adocicado</p>
+      <p><strong>Propriedades:</strong> Ansiolítico natural, sedativo suave, anti-inflamatório</p>
+      <p><strong>Onde encontrar:</strong></p>
+      <ul>
+        <li>Hortelã-Lavanda: <span class="percentage">15-25%</span></li>
+        <li>Hortelã-Laranja: <span class="percentage">20-40%</span></li>
+      </ul>
+      <p><strong>Aplicações:</strong> Aromaterapia relaxante, cosméticos, perfumaria</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 15</div>
+  </div>
+
+  <div class="page">
+    <h3>Outros Compostos Importantes</h3>
+
+    <table>
+      <tr>
+        <th>Composto</th>
+        <th>Aroma</th>
+        <th>Propriedades</th>
+        <th>Variedades</th>
+      </tr>
+      <tr>
+        <td>Mentona</td>
+        <td>Mentolado amadeirado</td>
+        <td>Descongestionante, analgésico</td>
+        <td>Pimenta (15-30%)</td>
+      </tr>
+      <tr>
+        <td>Acetato de mentila</td>
+        <td>Mentolado frutado</td>
+        <td>Refrescante, saborizante</td>
+        <td>Pimenta (3-10%)</td>
+      </tr>
+      <tr>
+        <td>1,8-Cineol (Eucaliptol)</td>
+        <td>Eucalipto fresco</td>
+        <td>Expectorante, anti-séptico</td>
+        <td>Pimenta (3-8%)</td>
+      </tr>
+      <tr>
+        <td>β-Cariofileno</td>
+        <td>Amadeirado picante</td>
+        <td>Anti-inflamatório, analgésico</td>
+        <td>Várias (1-5%)</td>
+      </tr>
+      <tr>
+        <td>Piperitenona</td>
+        <td>Herbáceo intenso</td>
+        <td>Antimicrobiano</td>
+        <td>Villosa (5-15%)</td>
+      </tr>
+    </table>
+
+    <h3>Por Que o Mentol Causa Frescor?</h3>
+
+    <div class="highlight-box">
+      <h4>🧊 A Ciência do Frescor</h4>
+      <p>O mentol ativa os canais iônicos <strong>TRPM8</strong> nas membranas celulares - os mesmos receptores que detectam temperaturas frias (8-28°C). Quando o mentol se liga a esses receptores:</p>
+      <ol>
+        <li>Os canais se abrem permitindo entrada de cálcio</li>
+        <li>Um sinal nervoso é enviado ao cérebro</li>
+        <li>O cérebro interpreta como "frio" - mesmo sem mudança de temperatura!</li>
+      </ol>
+      <p><strong>Por isso a hortelã "esfria" a boca sem realmente diminuir a temperatura.</strong></p>
+    </div>
+
+    <h3>Fatores que Afetam a Produção de Compostos</h3>
+
+    <div class="comparison-grid">
+      <div class="comparison-item">
+        <h5>☀️ Aumentam a Concentração</h5>
+        <ul>
+          <li>Mais horas de sol (4-6h)</li>
+          <li>Estresse hídrico leve</li>
+          <li>Colheita pré-floração</li>
+          <li>Manhã (após orvalho secar)</li>
+          <li>Solo bem drenado</li>
+        </ul>
+      </div>
+      <div class="comparison-item">
+        <h5>📉 Diminuem a Concentração</h5>
+        <ul>
+          <li>Excesso de nitrogênio</li>
+          <li>Sombra excessiva</li>
+          <li>Colheita após floração</li>
+          <li>Calor extremo (>35°C)</li>
+          <li>Solo encharcado</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 16</div>
+  </div>
+
+  <div class="page">
+    <h3>Perfil Químico por Variedade</h3>
+
+    <table>
+      <tr>
+        <th>Variedade</th>
+        <th>Composto Principal</th>
+        <th>Composto Secundário</th>
+        <th>Caráter Aromático</th>
+      </tr>
+      <tr>
+        <td>Hortelã-Pimenta</td>
+        <td>Mentol (40-50%)</td>
+        <td>Mentona (15-30%)</td>
+        <td>Frescor intenso</td>
+      </tr>
+      <tr>
+        <td>Hortelã-Verde</td>
+        <td>Carvona (50-70%)</td>
+        <td>Limoneno (8-15%)</td>
+        <td>Doce herbáceo</td>
+      </tr>
+      <tr>
+        <td>Hortelã-do-Levante</td>
+        <td>Carvona (30-50%)</td>
+        <td>Piperitenona (5-15%)</td>
+        <td>Equilibrado</td>
+      </tr>
+      <tr>
+        <td>Hortelã-Japonesa</td>
+        <td>Mentol (70-90%)</td>
+        <td>Mentona (5-10%)</td>
+        <td>Super-mentolado</td>
+      </tr>
+      <tr>
+        <td>Hortelã-Laranja</td>
+        <td>Linalol (20-40%)</td>
+        <td>Limoneno (15-30%)</td>
+        <td>Cítrico floral</td>
+      </tr>
+      <tr>
+        <td>Hortelã-Maçã</td>
+        <td>Ésteres frutados</td>
+        <td>Carvona (10-20%)</td>
+        <td>Frutado doce</td>
+      </tr>
+      <tr>
+        <td>Poejo</td>
+        <td>Pulegona (60-85%)</td>
+        <td>Mentona (5-15%)</td>
+        <td>Penetrante forte</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>💡 Maximizando o Aroma</h4>
+      <p>Para obter o máximo de óleos essenciais:</p>
+      <ul>
+        <li><strong>Colha pela manhã</strong> - os óleos se concentram à noite e evaporam com o calor do dia</li>
+        <li><strong>Colha antes da floração</strong> - a planta direciona energia para as flores após florescer</li>
+        <li><strong>Não adube demais</strong> - excesso de nitrogênio produz crescimento rápido mas com menos aroma</li>
+        <li><strong>Permita estresse leve</strong> - plantas levemente estressadas produzem mais compostos de defesa (que são os aromáticos!)</li>
+      </ul>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Resumo do Guia 3</h4>
+      <p>A química da hortelã é dominada por monoterpenos como mentol (frescor), carvona (doçura) e limoneno (citrus). Cada variedade tem um perfil único que determina seu aroma e uso. Condições de cultivo como luz, água e nutrientes afetam diretamente a concentração desses compostos!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 17</div>
+  </div>
+
+  <!-- GUIA 4: ÓLEOS ESSENCIAIS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Guia 4</h2>
+      <p>Óleos Essenciais - Extração e Aplicações</p>
+    </div>
+
+    <p>Os óleos essenciais de hortelã são extraídos dos tricomas glandulares das folhas e caules. São produtos valiosos com aplicações medicinais, cosméticas e aromaterápicas.</p>
+
+    <h3>Métodos de Extração</h3>
+
+    <div class="prop-card">
+      <h4>1. Destilação a Vapor (Profissional)</h4>
+      <span class="success-rate">Rendimento: 0,3-0,6% do peso fresco</span>
+      <p>O método padrão da indústria:</p>
+      <ol>
+        <li>A planta fresca ou seca é colocada em um alambique</li>
+        <li>Vapor passa através do material vegetal</li>
+        <li>Os óleos voláteis evaporam junto com o vapor</li>
+        <li>A mistura condensa em um serpentina fria</li>
+        <li>O óleo, menos denso, flutua sobre a água (hidrolato)</li>
+        <li>O óleo é separado e coletado</li>
+      </ol>
+      <p><strong>Equipamento necessário:</strong> Alambique (a partir de R$300 para uso caseiro)</p>
+    </div>
+
+    <div class="prop-card">
+      <h4>2. Infusão em Óleo Carreador (Caseiro)</h4>
+      <span class="success-rate">Dificuldade: Fácil</span>
+      <p>Método acessível para uso doméstico:</p>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Colha hortelã fresca e seque parcialmente (24-48h)</p>
+        <p><span class="step-number">2</span> Pique as folhas e coloque em um vidro esterilizado</p>
+        <p><span class="step-number">3</span> Cubra completamente com óleo carreador (jojoba, amêndoas, coco)</p>
+        <p><span class="step-number">4</span> Deixe macerar por 2-4 semanas em local escuro</p>
+        <p><span class="step-number">5</span> Agite diariamente</p>
+        <p><span class="step-number">6</span> Coe e armazene em frasco escuro</p>
+      </div>
+      <p><strong>Resultado:</strong> Óleo infusionado (não é óleo essencial puro, mas muito útil)</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 18</div>
+  </div>
+
+  <div class="page">
+    <div class="prop-card">
+      <h4>3. Extração Alcoólica (Tintura)</h4>
+      <span class="success-rate">Dificuldade: Fácil</span>
+      <p>Extrai compostos aromáticos e medicinais:</p>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Pique 100g de hortelã fresca</p>
+        <p><span class="step-number">2</span> Coloque em vidro com 500ml de álcool de cereais (70%)</p>
+        <p><span class="step-number">3</span> Macere por 2-3 semanas, agitando diariamente</p>
+        <p><span class="step-number">4</span> Coe e armazene em frasco âmbar</p>
+      </div>
+      <p><strong>Uso:</strong> Interno (diluído) ou tópico (diluído)</p>
+    </div>
+
+    <h3>Aplicações do Óleo de Hortelã</h3>
+
+    <div class="comparison-grid">
+      <div class="comparison-item">
+        <h5>🩺 Uso Medicinal</h5>
+        <ul>
+          <li>Alívio de dores de cabeça</li>
+          <li>Descongestionante nasal</li>
+          <li>Alívio de náuseas</li>
+          <li>Dores musculares</li>
+          <li>Cólicas digestivas</li>
+          <li>Síndrome do intestino irritável</li>
+        </ul>
+      </div>
+      <div class="comparison-item">
+        <h5>💆 Cosmético</h5>
+        <ul>
+          <li>Shampoos refrescantes</li>
+          <li>Cremes para pés</li>
+          <li>Lip balms</li>
+          <li>Sabonetes</li>
+          <li>Loções pós-barba</li>
+          <li>Tratamentos capilares</li>
+        </ul>
+      </div>
+      <div class="comparison-item">
+        <h5>🏠 Doméstico</h5>
+        <ul>
+          <li>Repelente de insetos</li>
+          <li>Aromatizador de ambientes</li>
+          <li>Produtos de limpeza</li>
+          <li>Spray anti-mofo</li>
+          <li>Sachês para armários</li>
+          <li>Repelente de ratos</li>
+        </ul>
+      </div>
+      <div class="comparison-item">
+        <h5>🧘 Aromaterapia</h5>
+        <ul>
+          <li>Aumento de concentração</li>
+          <li>Alívio de stress</li>
+          <li>Energia mental</li>
+          <li>Clareza de pensamento</li>
+          <li>Combate à fadiga</li>
+          <li>Alívio respiratório</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <h4>⚠️ Precauções com Óleo Essencial</h4>
+      <ul>
+        <li><strong>NUNCA</strong> aplique puro na pele - sempre dilua (máx 2-3%)</li>
+        <li><strong>NUNCA</strong> ingira sem orientação profissional</li>
+        <li>Evite em crianças menores de 6 anos</li>
+        <li>Não use durante gravidez/amamentação</li>
+        <li>Teste alérgico antes do primeiro uso</li>
+        <li>Mantenha longe dos olhos e mucosas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 19</div>
+  </div>
+
+  <div class="page">
+    <h3>Receitas com Óleo de Hortelã</h3>
+
+    <div class="recipe-box">
+      <h4>🧴 Óleo de Massagem Refrescante</h4>
+      <div class="recipe-meta">
+        <span class="meta-item">⏱️ 5 minutos</span>
+        <span class="meta-item">📦 Rendimento: 50ml</span>
+      </div>
+      <ul>
+        <li>50ml de óleo de amêndoas doces</li>
+        <li>10 gotas de óleo essencial de hortelã-pimenta</li>
+        <li>5 gotas de óleo essencial de lavanda (opcional)</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Misture bem e armazene em frasco escuro. Use para massagear áreas tensas.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>🌬️ Inalador para Congestão Nasal</h4>
+      <div class="recipe-meta">
+        <span class="meta-item">⏱️ 2 minutos</span>
+        <span class="meta-item">📦 Uso imediato</span>
+      </div>
+      <ul>
+        <li>1 litro de água quente (não fervendo)</li>
+        <li>3-5 gotas de óleo de hortelã-pimenta</li>
+      </ul>
+      <p><strong>Modo de usar:</strong> Coloque em uma tigela, cubra a cabeça com toalha e inale o vapor por 5-10 minutos. Mantenha olhos fechados!</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>🧠 Roll-on para Dor de Cabeça</h4>
+      <div class="recipe-meta">
+        <span class="meta-item">⏱️ 5 minutos</span>
+        <span class="meta-item">📦 Rendimento: 10ml</span>
+      </div>
+      <ul>
+        <li>10ml de óleo de jojoba</li>
+        <li>6 gotas de óleo de hortelã-pimenta</li>
+      </ul>
+      <p><strong>Modo de usar:</strong> Aplique nas têmporas e nuca ao sentir os primeiros sinais de dor de cabeça. Evite a área dos olhos.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>🪰 Spray Repelente Natural</h4>
+      <div class="recipe-meta">
+        <span class="meta-item">⏱️ 5 minutos</span>
+        <span class="meta-item">📦 Rendimento: 100ml</span>
+      </div>
+      <ul>
+        <li>90ml de água destilada</li>
+        <li>10ml de álcool 70%</li>
+        <li>20 gotas de óleo de hortelã</li>
+        <li>10 gotas de óleo de citronela</li>
+      </ul>
+      <p><strong>Modo de usar:</strong> Agite bem antes de usar. Borrife no ambiente ou nas roupas (não na pele). Eficaz contra moscas, mosquitos e formigas.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 20</div>
+  </div>
+
+  <div class="page">
+    <h3>Armazenamento de Óleos Essenciais</h3>
+
+    <div class="tip-box">
+      <h4>💡 Guia de Conservação</h4>
+      <table>
+        <tr>
+          <th>Fator</th>
+          <th>Recomendação</th>
+        </tr>
+        <tr>
+          <td>Frasco</td>
+          <td>Vidro âmbar ou azul (protege da luz)</td>
+        </tr>
+        <tr>
+          <td>Temperatura</td>
+          <td>15-25°C (pode refrigerar)</td>
+        </tr>
+        <tr>
+          <td>Local</td>
+          <td>Escuro, seco, longe do calor</td>
+        </tr>
+        <tr>
+          <td>Tampa</td>
+          <td>Sempre bem fechado</td>
+        </tr>
+        <tr>
+          <td>Validade</td>
+          <td>2-3 anos se bem armazenado</td>
+        </tr>
+        <tr>
+          <td>Sinais de oxidação</td>
+          <td>Cheiro rançoso, cor alterada</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>Hidrolato de Hortelã (Água Floral)</h3>
+
+    <p>Durante a destilação, além do óleo essencial, obtém-se o <strong>hidrolato</strong> - a água que carrega traços dos compostos aromáticos. É mais suave que o óleo e pode ser usado puro!</p>
+
+    <div class="highlight-box">
+      <h4>🌸 Usos do Hidrolato de Hortelã</h4>
+      <ul>
+        <li><strong>Tônico facial:</strong> Refresca e tonifica a pele</li>
+        <li><strong>Spray capilar:</strong> Estimula o couro cabeludo</li>
+        <li><strong>Spray refrescante:</strong> Borrife no rosto em dias quentes</li>
+        <li><strong>Enxaguante bucal:</strong> Diluído em água</li>
+        <li><strong>Compressa:</strong> Para dores de cabeça</li>
+        <li><strong>Culinária:</strong> Em bebidas e sobremesas</li>
+      </ul>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Resumo do Guia 4</h4>
+      <p>Os óleos essenciais de hortelã são produtos valiosos que podem ser extraídos por destilação (profissional) ou maceração (caseiro). Têm aplicações medicinais, cosméticas e domésticas, mas exigem cuidado no uso - sempre diluir e respeitar contraindicações!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 21</div>
+  </div>
+
+  <!-- GUIA 5: PLANTIO, SUBSTRATO E NUTRIÇÃO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Guia 5</h2>
+      <p>Plantio, Substrato e Nutrição</p>
+    </div>
+
+    <p>Embora a hortelã seja extremamente adaptável, proporcionar as condições ideais resulta em plantas mais aromáticas e produtivas. Vamos detalhar cada aspecto do cultivo.</p>
+
+    <h3>Escolha do Vaso</h3>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="icon">📏</div>
+        <div class="value">25-40cm</div>
+        <div class="label">Diâmetro Ideal</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">📐</div>
+        <div class="value">20-30cm</div>
+        <div class="label">Profundidade Mínima</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🕳️</div>
+        <div class="value">3-5 furos</div>
+        <div class="label">Drenagem</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🪴</div>
+        <div class="value">Qualquer</div>
+        <div class="label">Material</div>
+      </div>
+    </div>
+
+    <div class="comparison-grid">
+      <div class="comparison-item">
+        <h5>🧱 Vaso de Barro</h5>
+        <ul>
+          <li>✅ Boa transpiração</li>
+          <li>✅ Estética tradicional</li>
+          <li>⚠️ Seca mais rápido</li>
+          <li>⚠️ Mais pesado</li>
+          <li><strong>Ideal para:</strong> Climas úmidos</li>
+        </ul>
+      </div>
+      <div class="comparison-item">
+        <h5>🥤 Vaso de Plástico</h5>
+        <ul>
+          <li>✅ Retém mais umidade</li>
+          <li>✅ Leve e barato</li>
+          <li>⚠️ Menor transpiração</li>
+          <li>⚠️ Aquece mais ao sol</li>
+          <li><strong>Ideal para:</strong> Climas secos</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="danger-box">
+      <h4>⚠️ Por que SEMPRE em Vaso Separado?</h4>
+      <p>A hortelã é extremamente invasiva! Seus estolões (raízes horizontais) viajam pelo solo e brotam novas plantas a até 1 metro de distância. Em 2-3 meses, ela pode dominar um canteiro inteiro, sufocando outras plantas.</p>
+      <p><strong>SEMPRE</strong> cultive em vaso individual ou use barreiras físicas de pelo menos 30cm de profundidade!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 22</div>
+  </div>
+
+  <div class="page">
+    <h3>Substrato Ideal</h3>
+
+    <p>A hortelã prefere solo rico, úmido mas bem drenado. Diferente de ervas mediterrâneas (como alecrim), ela gosta de substrato mais fértil e úmido.</p>
+
+    <div class="recipe-box">
+      <h4>🌱 Receita de Substrato para Hortelã</h4>
+      <div class="recipe-meta">
+        <span class="meta-item">📦 Rendimento: ~5 litros</span>
+      </div>
+      <ul>
+        <li><strong>50%</strong> - Terra vegetal ou substrato comercial para hortaliças</li>
+        <li><strong>30%</strong> - Composto orgânico ou húmus de minhoca</li>
+        <li><strong>15%</strong> - Perlita ou casca de arroz carbonizada</li>
+        <li><strong>5%</strong> - Areia grossa (opcional, melhora drenagem)</li>
+      </ul>
+      <p><strong>Característica:</strong> Mistura rica que retém umidade mas não encharca.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>🌱 Substrato Econômico Alternativo</h4>
+      <ul>
+        <li><strong>60%</strong> - Terra de jardim peneirada</li>
+        <li><strong>30%</strong> - Esterco bovino curtido</li>
+        <li><strong>10%</strong> - Areia ou vermiculita</li>
+      </ul>
+      <p><strong>Dica:</strong> Adicione 1 colher de sopa de calcário dolomítico por litro se a terra for muito ácida.</p>
+    </div>
+
+    <h3>Preparo do Vaso</h3>
+
+    <div class="step-box">
+      <h4>Passo a Passo do Plantio</h4>
+      <p><span class="step-number">1</span> Coloque uma camada de 2-3cm de argila expandida ou pedras no fundo</p>
+      <p><span class="step-number">2</span> Cubra com manta de drenagem ou TNT (evita perda de substrato)</p>
+      <p><span class="step-number">3</span> Preencha com substrato até 3cm da borda</p>
+      <p><span class="step-number">4</span> Faça um buraco do tamanho do torrão da muda</p>
+      <p><span class="step-number">5</span> Plante na mesma profundidade que estava no vaso original</p>
+      <p><span class="step-number">6</span> Complete com substrato e firme levemente</p>
+      <p><span class="step-number">7</span> Regue abundantemente até sair água pelos furos</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 23</div>
+  </div>
+
+  <div class="page">
+    <h3>Nutrição e Adubação</h3>
+
+    <p>A hortelã é uma planta "gulosa" - responde muito bem à adubação, produzindo folhas maiores e mais aromáticas.</p>
+
+    <h4>Macronutrientes</h4>
+    <table>
+      <tr>
+        <th>Nutriente</th>
+        <th>Função</th>
+        <th>Sintomas de Deficiência</th>
+      </tr>
+      <tr>
+        <td>Nitrogênio (N)</td>
+        <td>Crescimento foliar</td>
+        <td>Folhas amarelas, crescimento lento</td>
+      </tr>
+      <tr>
+        <td>Fósforo (P)</td>
+        <td>Raízes e energia</td>
+        <td>Folhas arroxeadas, raízes fracas</td>
+      </tr>
+      <tr>
+        <td>Potássio (K)</td>
+        <td>Aroma e resistência</td>
+        <td>Bordas marrons, planta fraca</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>⚠️ Cuidado com o Excesso de Nitrogênio!</h4>
+      <p>Muito nitrogênio faz a hortelã crescer rapidamente, mas com <strong>MENOS AROMA</strong>! A planta fica aquosa e com sabor fraco. Prefira adubos orgânicos equilibrados.</p>
+    </div>
+
+    <h4>Calendário de Adubação</h4>
+    <table>
+      <tr>
+        <th>Época</th>
+        <th>Tipo de Adubo</th>
+        <th>Frequência</th>
+        <th>Quantidade</th>
+      </tr>
+      <tr>
+        <td>Primavera/Verão</td>
+        <td>Composto orgânico</td>
+        <td>Mensal</td>
+        <td>2 col. sopa/vaso</td>
+      </tr>
+      <tr>
+        <td>Primavera/Verão</td>
+        <td>Húmus líquido</td>
+        <td>Quinzenal</td>
+        <td>Conforme embalagem</td>
+      </tr>
+      <tr>
+        <td>Outono</td>
+        <td>Bokashi</td>
+        <td>1x</td>
+        <td>1 col. sopa/vaso</td>
+      </tr>
+      <tr>
+        <td>Inverno</td>
+        <td>Reduzir ou suspender</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+    </table>
+
+    <div class="recipe-box">
+      <h4>🍌 Adubo Líquido Caseiro de Banana</h4>
+      <ul>
+        <li>Cascas de 3-4 bananas</li>
+        <li>1 litro de água</li>
+      </ul>
+      <p><strong>Preparo:</strong> Pique as cascas, ferva em 1L de água por 15 min. Deixe esfriar, coe e dilua 1:1 com água. Use a cada 15 dias. Rico em potássio!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 24</div>
+  </div>
+
+  <div class="page">
+    <h3>Localização e Luminosidade</h3>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="icon">☀️</div>
+        <div class="value">4-6 horas</div>
+        <div class="label">Sol Ideal</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌤️</div>
+        <div class="value">Sol Parcial</div>
+        <div class="label">Exposição</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌡️</div>
+        <div class="value">15-25°C</div>
+        <div class="label">Temperatura</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">💨</div>
+        <div class="value">Média</div>
+        <div class="label">Ventilação</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>💡 Onde Colocar Seu Vaso de Hortelã?</h4>
+      <ul>
+        <li><strong>Janela leste:</strong> Sol da manhã (ideal!)</li>
+        <li><strong>Janela oeste:</strong> Sol da tarde (OK, mas pode esquentar)</li>
+        <li><strong>Varanda com proteção:</strong> Excelente, boa ventilação</li>
+        <li><strong>Quintal sob árvore:</strong> Meia-sombra natural (muito bom)</li>
+        <li><strong>Cozinha com janela:</strong> Prático e funciona bem</li>
+      </ul>
+    </div>
+
+    <div class="comparison-grid">
+      <div class="comparison-item">
+        <h5>☀️ Muito Sol (8h+)</h5>
+        <p><strong>Efeito:</strong> Folhas menores, mais aromáticas, mas podem queimar</p>
+        <p><strong>Solução:</strong> Aumente a rega, use sombreamento parcial</p>
+      </div>
+      <div class="comparison-item">
+        <h5>🌑 Pouca Luz (2h ou menos)</h5>
+        <p><strong>Efeito:</strong> Crescimento espigado, folhas pálidas, pouco aroma</p>
+        <p><strong>Solução:</strong> Mova para local mais iluminado ou use grow light</p>
+      </div>
+    </div>
+
+    <h3>Transplante</h3>
+
+    <p>A hortelã cresce rapidamente e pode precisar de transplante anual.</p>
+
+    <div class="step-box">
+      <h4>Sinais de que Precisa Transplantar</h4>
+      <ul>
+        <li>Raízes saindo pelos furos de drenagem</li>
+        <li>Água escorre rápido demais (torrão compacto)</li>
+        <li>Crescimento desacelerou drasticamente</li>
+        <li>Folhas menores que o normal</li>
+        <li>Necessidade de rega muito frequente</li>
+      </ul>
+      <p><strong>Melhor época:</strong> Início da primavera</p>
+      <p><strong>Novo vaso:</strong> 3-5cm maior que o atual</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 25</div>
+  </div>
+
+  <div class="page">
+    <h3>pH do Solo</h3>
+
+    <p>A hortelã prefere solo levemente ácido a neutro, mas é bastante tolerante.</p>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="icon">🎯</div>
+        <div class="value">6,0 - 7,0</div>
+        <div class="label">pH Ideal</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">✅</div>
+        <div class="value">5,5 - 7,5</div>
+        <div class="label">pH Tolerável</div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <h4>💡 Corrigindo o pH</h4>
+      <ul>
+        <li><strong>Solo muito ácido (pH < 5,5):</strong> Adicione calcário dolomítico</li>
+        <li><strong>Solo muito alcalino (pH > 7,5):</strong> Adicione enxofre ou matéria orgânica</li>
+        <li><strong>Dica:</strong> Substrato comercial geralmente já tem pH adequado</li>
+      </ul>
+    </div>
+
+    <h3>Checklist de Plantio</h3>
+
+    <div class="checklist">
+      <h4>Antes de Plantar, Confirme:</h4>
+      <ul>
+        <li>Vaso com pelo menos 25cm de diâmetro</li>
+        <li>Furos de drenagem adequados</li>
+        <li>Camada de drenagem no fundo</li>
+        <li>Substrato rico e bem drenado</li>
+        <li>Muda saudável (sem pragas ou doenças)</li>
+        <li>Local com 4-6 horas de sol</li>
+        <li>Vaso SEPARADO de outras plantas</li>
+        <li>Plano de rega regular</li>
+      </ul>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Resumo do Guia 5</h4>
+      <p>Para cultivar hortelã com sucesso: use vaso de pelo menos 25cm SEPARADO de outras plantas, substrato rico em matéria orgânica com boa drenagem, 4-6 horas de sol parcial, e adubação mensal equilibrada. Lembre-se: excesso de nitrogênio reduz o aroma!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 26</div>
+  </div>
+
+  <!-- GUIA 6: PROPAGAÇÃO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Guia 6</h2>
+      <p>Propagação Infinita - 6 Métodos</p>
+    </div>
+
+    <div class="success-box">
+      <h4>🎉 A Melhor Notícia!</h4>
+      <p>A hortelã é a planta mais fácil de propagar que existe! Com uma única muda, você pode ter dezenas de plantas em poucas semanas - completamente de graça. Tão fácil que a dificuldade é PARAR de propagá-la!</p>
+    </div>
+
+    <h3>Método 1: Estaquia em Água</h3>
+
+    <div class="prop-card">
+      <h4>Estaquia em Água - O Método Mais Fácil</h4>
+      <span class="success-rate">Taxa de Sucesso: 95%</span>
+      <span class="success-rate">Tempo: 7-14 dias</span>
+
+      <div class="step-box">
+        <p><span class="step-number">1</span> Corte um ramo de 10-15cm com pelo menos 4-6 folhas</p>
+        <p><span class="step-number">2</span> Use tesoura limpa, corte logo abaixo de um nó</p>
+        <p><span class="step-number">3</span> Remova as folhas da metade inferior do caule</p>
+        <p><span class="step-number">4</span> Coloque em um copo com água (apenas o caule, não as folhas!)</p>
+        <p><span class="step-number">5</span> Posicione em local com luz indireta brilhante</p>
+        <p><span class="step-number">6</span> Troque a água a cada 2-3 dias (evita apodrecimento)</p>
+        <p><span class="step-number">7</span> Em 7-14 dias, raízes de 3-5cm estarão formadas</p>
+        <p><span class="step-number">8</span> Transplante para vaso com substrato</p>
+      </div>
+
+      <div class="tip-box">
+        <h4>💡 Dicas para Máximo Sucesso</h4>
+        <ul>
+          <li>Use água filtrada ou de chuva (sem cloro)</li>
+          <li>Copo transparente permite monitorar as raízes</li>
+          <li>Não deixe ao sol direto - as raízes são sensíveis</li>
+          <li>Várias estacas podem ficar no mesmo copo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 27</div>
+  </div>
+
+  <div class="page">
+    <h3>Método 2: Estaquia Direta no Solo</h3>
+
+    <div class="prop-card">
+      <h4>Estaquia no Solo - Mais Rápido para Plantas Grandes</h4>
+      <span class="success-rate">Taxa de Sucesso: 85%</span>
+      <span class="success-rate">Tempo: 10-21 dias</span>
+
+      <div class="step-box">
+        <p><span class="step-number">1</span> Prepare estacas como no método anterior</p>
+        <p><span class="step-number">2</span> Prepare vaso com substrato úmido</p>
+        <p><span class="step-number">3</span> Faça um buraco com lápis ou dedo</p>
+        <p><span class="step-number">4</span> Insira a estaca 5-7cm de profundidade</p>
+        <p><span class="step-number">5</span> Firme o substrato ao redor</p>
+        <p><span class="step-number">6</span> Mantenha o solo SEMPRE úmido por 2-3 semanas</p>
+        <p><span class="step-number">7</span> Cubra com plástico transparente (estufa) para manter umidade</p>
+        <p><span class="step-number">8</span> Quando surgirem folhas novas, está enraizada!</p>
+      </div>
+    </div>
+
+    <h3>Método 3: Divisão de Touceira</h3>
+
+    <div class="prop-card">
+      <h4>Divisão - Para Plantas Adultas</h4>
+      <span class="success-rate">Taxa de Sucesso: 100%</span>
+      <span class="success-rate">Tempo: Imediato</span>
+
+      <div class="step-box">
+        <p><span class="step-number">1</span> Retire a planta do vaso (regue bem antes para facilitar)</p>
+        <p><span class="step-number">2</span> Sacuda o excesso de terra das raízes</p>
+        <p><span class="step-number">3</span> Identifique grupos de caules com raízes próprias</p>
+        <p><span class="step-number">4</span> Divida cuidadosamente em 2-4 partes (pode usar faca limpa)</p>
+        <p><span class="step-number">5</span> Cada parte deve ter raízes e pelo menos 2-3 caules</p>
+        <p><span class="step-number">6</span> Replante cada parte em vaso individual</p>
+        <p><span class="step-number">7</span> Regue bem e coloque em meia-sombra por 1 semana</p>
+      </div>
+
+      <p><strong>Melhor época:</strong> Início da primavera</p>
+      <p><strong>Frequência:</strong> A cada 2-3 anos ajuda a rejuvenescer a planta</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 28</div>
+  </div>
+
+  <div class="page">
+    <h3>Método 4: Por Estolões</h3>
+
+    <div class="prop-card">
+      <h4>Estolões - A Planta Faz o Trabalho!</h4>
+      <span class="success-rate">Taxa de Sucesso: 100%</span>
+      <span class="success-rate">Tempo: Natural</span>
+
+      <p>A hortelã naturalmente produz <strong>estolões</strong> - raízes horizontais que viajam pelo solo e brotam novas plantas. Você pode usar isso a seu favor:</p>
+
+      <div class="step-box">
+        <p><span class="step-number">1</span> Identifique estolões que brotaram longe da planta-mãe</p>
+        <p><span class="step-number">2</span> Verifique se o broto tem raízes próprias (raizinhas brancas)</p>
+        <p><span class="step-number">3</span> Corte o estolão que conecta à planta-mãe</p>
+        <p><span class="step-number">4</span> Desenterrre o broto com suas raízes</p>
+        <p><span class="step-number">5</span> Replante imediatamente em novo vaso</p>
+        <p><span class="step-number">6</span> Regue bem e pronto!</p>
+      </div>
+    </div>
+
+    <h3>Método 5: Alporquia (Mergulhia Aérea)</h3>
+
+    <div class="prop-card">
+      <h4>Alporquia - Para Ramos Longos</h4>
+      <span class="success-rate">Taxa de Sucesso: 90%</span>
+      <span class="success-rate">Tempo: 2-4 semanas</span>
+
+      <div class="step-box">
+        <p><span class="step-number">1</span> Identifique um ramo longo e flexível</p>
+        <p><span class="step-number">2</span> Dobre-o até tocar o solo (ou outro vaso ao lado)</p>
+        <p><span class="step-number">3</span> Faça um pequeno corte na parte que tocará o solo</p>
+        <p><span class="step-number">4</span> Enterre essa parte 2-3cm, mantendo a ponta para fora</p>
+        <p><span class="step-number">5</span> Prenda com um arame ou pedra</p>
+        <p><span class="step-number">6</span> Mantenha úmido</p>
+        <p><span class="step-number">7</span> Quando enraizar, corte a conexão com a planta-mãe</p>
+      </div>
+    </div>
+
+    <h3>Método 6: Por Sementes (Não Recomendado)</h3>
+
+    <div class="warning-box">
+      <h4>⚠️ Por que Evitar Sementes?</h4>
+      <ul>
+        <li>Germinação demorada e irregular (2-3 semanas)</li>
+        <li>Híbridos (como hortelã-pimenta) não produzem sementes viáveis</li>
+        <li>Plantas podem não ser idênticas à planta-mãe</li>
+        <li>Outros métodos são 10x mais rápidos e fáceis!</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 29</div>
+  </div>
+
+  <div class="page">
+    <h3>Comparativo dos Métodos</h3>
+
+    <table>
+      <tr>
+        <th>Método</th>
+        <th>Sucesso</th>
+        <th>Tempo</th>
+        <th>Dificuldade</th>
+        <th>Melhor Para</th>
+      </tr>
+      <tr>
+        <td>Água</td>
+        <td>95%</td>
+        <td>7-14 dias</td>
+        <td>Muito Fácil</td>
+        <td>Iniciantes</td>
+      </tr>
+      <tr>
+        <td>Solo</td>
+        <td>85%</td>
+        <td>10-21 dias</td>
+        <td>Fácil</td>
+        <td>Muitas mudas</td>
+      </tr>
+      <tr>
+        <td>Divisão</td>
+        <td>100%</td>
+        <td>Imediato</td>
+        <td>Fácil</td>
+        <td>Plantas adultas</td>
+      </tr>
+      <tr>
+        <td>Estolões</td>
+        <td>100%</td>
+        <td>Natural</td>
+        <td>Muito Fácil</td>
+        <td>Manutenção</td>
+      </tr>
+      <tr>
+        <td>Alporquia</td>
+        <td>90%</td>
+        <td>2-4 semanas</td>
+        <td>Médio</td>
+        <td>Ramos longos</td>
+      </tr>
+      <tr>
+        <td>Sementes</td>
+        <td>60%</td>
+        <td>4-6 semanas</td>
+        <td>Difícil</td>
+        <td>Evite!</td>
+      </tr>
+    </table>
+
+    <h3>Melhor Época para Propagar</h3>
+
+    <div class="highlight-box">
+      <h4>📅 Calendário de Propagação</h4>
+      <ul>
+        <li><strong>Primavera:</strong> ⭐⭐⭐⭐⭐ IDEAL - planta em crescimento ativo</li>
+        <li><strong>Verão:</strong> ⭐⭐⭐⭐ Muito bom - mantenha na sombra</li>
+        <li><strong>Outono:</strong> ⭐⭐⭐ Bom - enraizamento mais lento</li>
+        <li><strong>Inverno:</strong> ⭐⭐ Possível em climas amenos</li>
+      </ul>
+      <p>Em climas tropicais brasileiros, a propagação funciona o ano todo!</p>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Resumo do Guia 6</h4>
+      <p>A hortelã é campeã de propagação! Os métodos mais fáceis são estaquia em água (95% sucesso) e divisão de touceira (100% sucesso). Uma única planta pode gerar dezenas de mudas gratuitamente. Evite sementes - os outros métodos são muito superiores!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 30</div>
+  </div>
+
+  <!-- GUIA 7: CONTROLE DE INVASÃO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Guia 7</h2>
+      <p>Controle de Invasão - Contenção Eficiente</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>⚠️ O Maior Erro dos Cultivadores de Hortelã</h4>
+      <p>Plantar hortelã diretamente no canteiro junto com outras plantas. Em 2-3 meses, ela terá invadido TODO o espaço, sufocando suas outras ervas e hortaliças!</p>
+    </div>
+
+    <h3>Como a Hortelã Invade</h3>
+
+    <p>A hortelã se propaga por <strong>estolões</strong> - raízes horizontais que viajam por baixo da terra e brotam novas plantas. Características preocupantes:</p>
+
+    <ul>
+      <li>Estolões podem viajar até 1 metro em uma estação</li>
+      <li>Um fragmento de 2cm é capaz de gerar uma nova planta</li>
+      <li>Crescem a 5-15cm de profundidade - difíceis de ver</li>
+      <li>Brotam em qualquer ponto do estolão</li>
+      <li>Raízes esquecidas rebrotam após remoção</li>
+    </ul>
+
+    <h3>Métodos de Contenção</h3>
+
+    <div class="step-box">
+      <h4>1. Vaso Individual (RECOMENDADO)</h4>
+      <span class="success-rate">Eficácia: 100%</span>
+      <p>A solução mais simples e eficaz:</p>
+      <ul>
+        <li>Vaso de plástico ou barro com furos</li>
+        <li>Mínimo 25cm de diâmetro, 20cm de profundidade</li>
+        <li><strong>NUNCA</strong> deixe o vaso tocar o solo do jardim</li>
+        <li>Pode colocar próximo a outras plantas, mas isolado</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>2. Vaso Enterrado no Solo</h4>
+      <span class="success-rate">Eficácia: 90%</span>
+      <p>Para quem quer visual de canteiro:</p>
+      <ul>
+        <li>Use vaso sem fundo ou com furos apenas embaixo</li>
+        <li>Enterre deixando 5cm da borda acima do solo</li>
+        <li>Verifique periodicamente se estolões não escaparam por cima</li>
+        <li>Corte qualquer estolão que tente escalar a borda</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 31</div>
+  </div>
+
+  <div class="page">
+    <div class="step-box">
+      <h4>3. Barreira Física Enterrada</h4>
+      <span class="success-rate">Eficácia: 85%</span>
+      <p>Para quem quer cultivar em canteiro:</p>
+      <ul>
+        <li>Cave uma vala de 30-40cm ao redor da área</li>
+        <li>Insira barreira de plástico rígido ou metal</li>
+        <li>A barreira deve ter pelo menos 30cm de profundidade</li>
+        <li>Deixe 5cm acima do solo</li>
+        <li>Sem furos ou frestas</li>
+        <li>Verifique anualmente se não há danos</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>4. Cultivo em Container Elevado</h4>
+      <span class="success-rate">Eficácia: 100%</span>
+      <p>Solução elegante e 100% segura:</p>
+      <ul>
+        <li>Jardineiras suspensas</li>
+        <li>Vasos em suportes</li>
+        <li>Mesas de cultivo</li>
+        <li>Cestas penduradas</li>
+      </ul>
+    </div>
+
+    <h3>Já Plantou no Canteiro? Como Remover</h3>
+
+    <div class="warning-box">
+      <h4>⚠️ Remoção é Difícil!</h4>
+      <p>Se a hortelã já invadiu seu jardim, prepare-se para um trabalho árduo. Qualquer pedacinho de estolão esquecido vai rebrotar!</p>
+    </div>
+
+    <div class="step-box">
+      <h4>Método de Remoção Completa</h4>
+      <p><span class="step-number">1</span> Remova toda a parte aérea visível</p>
+      <p><span class="step-number">2</span> Cave cuidadosamente toda a área (30-40cm de profundidade)</p>
+      <p><span class="step-number">3</span> Penere a terra removendo TODOS os fragmentos de raiz</p>
+      <p><span class="step-number">4</span> Monitore por várias semanas, removendo novos brotos</p>
+      <p><span class="step-number">5</span> Repita o processo se necessário</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>💡 Método da Lona Preta</h4>
+      <p>Cubra a área invadida com lona preta por 2-3 meses. Sem luz solar, a hortelã morrerá. É demorado mas eficaz para áreas grandes.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 32</div>
+  </div>
+
+  <!-- GUIA 8: REGA, PODA E MANUTENÇÃO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Guia 8</h2>
+      <p>Rega, Poda e Manutenção</p>
+    </div>
+
+    <h3>Rega da Hortelã</h3>
+
+    <div class="highlight-box">
+      <h4>💧 Regra de Ouro</h4>
+      <p>Ao contrário do alecrim, a hortelã <strong>AMA água</strong>! Mantenha o solo sempre levemente úmido. A hortelã avisa quando está com sede: as folhas começam a murchar.</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Estação</th>
+        <th>Frequência em Vaso</th>
+        <th>Sinais para Regar</th>
+      </tr>
+      <tr>
+        <td>Verão (quente)</td>
+        <td>Diariamente ou 2x ao dia</td>
+        <td>Solo seco na superfície</td>
+      </tr>
+      <tr>
+        <td>Primavera/Outono</td>
+        <td>A cada 1-2 dias</td>
+        <td>Solo seco até 2cm</td>
+      </tr>
+      <tr>
+        <td>Inverno</td>
+        <td>A cada 2-4 dias</td>
+        <td>Solo seco até 3cm</td>
+      </tr>
+    </table>
+
+    <h4>Técnicas de Rega</h4>
+    <ul>
+      <li><strong>Regue pela manhã:</strong> Ideal para evitar fungos</li>
+      <li><strong>Molhe bem o solo:</strong> Até sair água pelos furos</li>
+      <li><strong>Pode molhar as folhas:</strong> Diferente de outras ervas, a hortelã tolera</li>
+      <li><strong>Prato com água:</strong> OK em dias muito quentes</li>
+    </ul>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Sinais de FALTA de Água</h5>
+        <ul>
+          <li>Folhas murchas e caídas</li>
+          <li>Folhas amarelando das bordas</li>
+          <li>Caule flexível demais</li>
+          <li>Crescimento paralisado</li>
+        </ul>
+      </div>
+      <div class="solution">
+        <h5>Sinais de EXCESSO de Água</h5>
+        <ul>
+          <li>Folhas amarelas por toda planta</li>
+          <li>Raízes escuras/podres</li>
+          <li>Cheiro de mofo no solo</li>
+          <li>Fungo branco na superfície</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 33</div>
+  </div>
+
+  <div class="page">
+    <div class="step-box">
+      <h4>Recuperando Hortelã Murcha por Sede</h4>
+      <p><span class="step-number">1</span> Mergulhe o vaso em um balde com água por 15-30 minutos</p>
+      <p><span class="step-number">2</span> Deixe escorrer bem</p>
+      <p><span class="step-number">3</span> Coloque em sombra por algumas horas</p>
+      <p><span class="step-number">4</span> Em 2-4 horas ela volta ao normal!</p>
+    </div>
+
+    <h3>Poda da Hortelã</h3>
+
+    <p>A poda é o <strong>segredo</strong> para ter hortelã compacta, cheia e ultra-produtiva. Sem poda, ela fica espigada e com poucas folhas.</p>
+
+    <h4>Por que Podar?</h4>
+    <ul>
+      <li>Estimula ramificação lateral (mais galhos = mais folhas)</li>
+      <li>Evita que a planta fique "pelada" na base</li>
+      <li>Impede floração (que reduz produção de folhas)</li>
+      <li>Renova a planta e mantém o vigor</li>
+    </ul>
+
+    <div class="comparison-grid">
+      <div class="comparison-item">
+        <h5>✂️ Poda de Desponte (Regular)</h5>
+        <p>Faça SEMPRE que for colher:</p>
+        <ul>
+          <li>Corte logo acima de um par de folhas</li>
+          <li>Deixe 2-3 pares de folhas no ramo</li>
+          <li>Do ponto de corte, nascerão 2 novos ramos!</li>
+        </ul>
+        <p><strong>Frequência:</strong> Semanal</p>
+      </div>
+      <div class="comparison-item">
+        <h5>✂️ Poda Drástica (Rejuvenescimento)</h5>
+        <p>Quando a planta estiver espigada:</p>
+        <ul>
+          <li>Corte toda a planta a 5-10cm do solo</li>
+          <li>Adube levemente</li>
+          <li>Mantenha bem regada</li>
+          <li>Em 2-3 semanas: planta nova!</li>
+        </ul>
+        <p><strong>Frequência:</strong> 2-3x ao ano</p>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <h4>⚠️ Corte as Flores!</h4>
+      <p>Quando a hortelã floresce, ela para de produzir folhas novas e concentra energia nas sementes. Assim que ver botões florais, corte-os imediatamente!</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>🔄 O Ciclo Virtuoso da Poda</h4>
+      <p>Quanto mais você poda/colhe → mais a planta ramifica → mais folhas produz → mais você pode colher. É um ciclo que beneficia você e a planta!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 34</div>
+  </div>
+
+  <div class="page">
+    <h3>Manutenção Anual</h3>
+
+    <table>
+      <tr>
+        <th>Época</th>
+        <th>Tarefas</th>
+      </tr>
+      <tr>
+        <td>Primavera</td>
+        <td>Poda drástica, divisão de touceira, transplante se necessário, iniciar adubação</td>
+      </tr>
+      <tr>
+        <td>Verão</td>
+        <td>Rega frequente, colheitas regulares, monitorar pragas, sombreamento se muito quente</td>
+      </tr>
+      <tr>
+        <td>Outono</td>
+        <td>Última poda forte antes do inverno, reduzir adubação, preparar para dormência</td>
+      </tr>
+      <tr>
+        <td>Inverno</td>
+        <td>Reduzir rega, proteger de geadas se necessário, deixar descansar</td>
+      </tr>
+    </table>
+
+    <h3>Renovação da Planta</h3>
+
+    <p>A cada 3-4 anos, a hortelã pode começar a enfraquecer. Sinais de que precisa renovar:</p>
+    <ul>
+      <li>Produção de folhas diminuiu significativamente</li>
+      <li>Centro da touceira ficou lenhoso e sem folhas</li>
+      <li>Aroma mais fraco que antes</li>
+      <li>Planta não responde bem a podas</li>
+    </ul>
+
+    <div class="tip-box">
+      <h4>💡 Como Renovar</h4>
+      <ul>
+        <li>Divida a touceira, descartando a parte central velha</li>
+        <li>Replante apenas as partes jovens e vigorosas</li>
+        <li>Use substrato novo</li>
+        <li>Ou simplesmente faça estacas das partes saudáveis!</li>
+      </ul>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Resumo do Guia 8</h4>
+      <p>A hortelã ama água - mantenha sempre úmida. A poda regular é essencial para plantas cheias e produtivas. Corte flores para prolongar a produção de folhas. A cada 3-4 anos, renove a planta por divisão ou estacas.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 35</div>
+  </div>
+
+  <!-- GUIA 9: HIDROPONIA -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Guia 9</h2>
+      <p>Hidroponia da Hortelã</p>
+    </div>
+
+    <p>A hortelã é uma das melhores ervas para cultivo hidropônico! Seu amor por água e facilidade de propagação a tornam perfeita para sistemas sem solo.</p>
+
+    <h3>Por que Hidroponia para Hortelã?</h3>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="icon">🚀</div>
+        <div class="value">2x</div>
+        <div class="label">Crescimento Mais Rápido</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">💧</div>
+        <div class="value">-70%</div>
+        <div class="label">Economia de Água</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🏠</div>
+        <div class="value">Indoor</div>
+        <div class="label">Cultivo o Ano Todo</div>
+      </div>
+      <div class="info-item">
+        <div class="icon">🌿</div>
+        <div class="value">Limpo</div>
+        <div class="label">Sem Terra/Pragas</div>
+      </div>
+    </div>
+
+    <h3>Sistemas Recomendados</h3>
+
+    <div class="hydro-card">
+      <h4>1. Kratky (Passivo) - Ideal para Iniciantes</h4>
+      <p>O sistema mais simples - sem bombas ou eletricidade:</p>
+      <ul>
+        <li>Pote de vidro ou plástico opaco</li>
+        <li>Copo de rede com argila expandida</li>
+        <li>Solução nutritiva estática</li>
+        <li>Raízes parcialmente submersas</li>
+      </ul>
+      <p><strong>Custo:</strong> R$10-30</p>
+      <p><strong>Complexidade:</strong> ⭐ Muito Fácil</p>
+    </div>
+
+    <div class="hydro-card">
+      <h4>2. DWC (Deep Water Culture)</h4>
+      <p>Raízes submersas em solução oxigenada:</p>
+      <ul>
+        <li>Recipiente com solução nutritiva</li>
+        <li>Bomba de ar (aquário) para oxigenar</li>
+        <li>Plantas em copos de rede flutuantes</li>
+      </ul>
+      <p><strong>Custo:</strong> R$50-100</p>
+      <p><strong>Complexidade:</strong> ⭐⭐ Fácil</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 36</div>
+  </div>
+
+  <div class="page">
+    <div class="hydro-card">
+      <h4>3. NFT (Nutrient Film Technique)</h4>
+      <p>Filme fino de solução correndo pelas raízes:</p>
+      <ul>
+        <li>Calhas inclinadas com plantas</li>
+        <li>Bomba circula solução continuamente</li>
+        <li>Ótimo para várias plantas</li>
+      </ul>
+      <p><strong>Custo:</strong> R$150-300</p>
+      <p><strong>Complexidade:</strong> ⭐⭐⭐ Médio</p>
+    </div>
+
+    <h3>Solução Nutritiva para Hortelã</h3>
+
+    <div class="recipe-box">
+      <h4>🧪 Receita de Solução Básica</h4>
+      <p>Para 10 litros de água:</p>
+      <ul>
+        <li>10g de fertilizante hidropônico completo (ex: Hidrogood, Flora Series)</li>
+        <li>pH ajustado para 5,5-6,5</li>
+        <li>EC (condutividade): 1,5-2,0 mS/cm</li>
+      </ul>
+      <p><strong>Troca:</strong> A cada 7-14 dias ou quando EC cair muito</p>
+    </div>
+
+    <h3>Parâmetros Ideais</h3>
+
+    <table>
+      <tr>
+        <th>Parâmetro</th>
+        <th>Valor Ideal</th>
+        <th>Tolerável</th>
+      </tr>
+      <tr>
+        <td>pH</td>
+        <td>5,8-6,2</td>
+        <td>5,5-6,5</td>
+      </tr>
+      <tr>
+        <td>EC</td>
+        <td>1,5-2,0 mS/cm</td>
+        <td>1,2-2,5 mS/cm</td>
+      </tr>
+      <tr>
+        <td>Temp. Solução</td>
+        <td>18-22°C</td>
+        <td>15-26°C</td>
+      </tr>
+      <tr>
+        <td>Oxigênio</td>
+        <td>>5 mg/L</td>
+        <td>-</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>💡 Dica: Propagação Hidropônica</h4>
+      <p>A estaquia em água é na verdade uma forma de hidroponia! Você pode manter a hortelã indefinidamente na água se trocar a solução regularmente e adicionar nutrientes.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 37</div>
+  </div>
+
+  <div class="page">
+    <h3>Iluminação para Hidroponia Indoor</h3>
+
+    <table>
+      <tr>
+        <th>Tipo de Luz</th>
+        <th>Potência</th>
+        <th>Distância</th>
+        <th>Horas/dia</th>
+      </tr>
+      <tr>
+        <td>LED Full Spectrum</td>
+        <td>20-40W</td>
+        <td>20-30cm</td>
+        <td>12-16h</td>
+      </tr>
+      <tr>
+        <td>Fluorescente T5</td>
+        <td>40-60W</td>
+        <td>10-15cm</td>
+        <td>14-16h</td>
+      </tr>
+      <tr>
+        <td>Luz Natural (janela)</td>
+        <td>-</td>
+        <td>-</td>
+        <td>6+ horas</td>
+      </tr>
+    </table>
+
+    <h3>Problemas Comuns em Hidroponia</h3>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Raízes Marrons/Podres</h5>
+        <p><strong>Causa:</strong> Falta de oxigênio, temperatura alta</p>
+        <p><strong>Solução:</strong> Adicione aeração, mantenha solução <22°C</p>
+      </div>
+      <div class="solution">
+        <h5>Folhas Amareladas</h5>
+        <p><strong>Causa:</strong> pH incorreto, deficiência nutricional</p>
+        <p><strong>Solução:</strong> Verifique pH, troque solução</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Algas Verdes</h5>
+        <p><strong>Causa:</strong> Luz entrando na solução</p>
+        <p><strong>Solução:</strong> Use recipientes opacos, cubra a superfície</p>
+      </div>
+      <div class="solution">
+        <h5>Crescimento Lento</h5>
+        <p><strong>Causa:</strong> EC baixo, luz insuficiente</p>
+        <p><strong>Solução:</strong> Aumente nutrientes, melhore iluminação</p>
+      </div>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Resumo do Guia 9</h4>
+      <p>A hortelã é perfeita para hidroponia! O sistema Kratky é ideal para iniciantes. Mantenha pH entre 5,5-6,5 e EC de 1,5-2,0. A hortelã hidropônica cresce até 2x mais rápido e pode ser cultivada indoor o ano todo!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 38</div>
+  </div>
+
+  <!-- GUIA 10: PEQUENOS ESPAÇOS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Guia 10</h2>
+      <p>Hortelã em Pequenos Espaços</p>
+    </div>
+
+    <p>Mora em apartamento? Tem apenas uma janela? A hortelã é a erva perfeita para espaços compactos! Confira soluções criativas para cultivar em qualquer lugar.</p>
+
+    <h3>Opções para Apartamentos</h3>
+
+    <div class="space-card">
+      <h4>1. Janela Ensolarada</h4>
+      <p>O local mais comum e eficiente:</p>
+      <ul>
+        <li>Vaso de 20-25cm no parapeito</li>
+        <li>Suporte fixo na janela para mais vasos</li>
+        <li>Cortina leve para proteger do sol intenso</li>
+        <li><strong>Ideal:</strong> Janela leste (sol da manhã)</li>
+      </ul>
+    </div>
+
+    <div class="space-card">
+      <h4>2. Jardim Vertical</h4>
+      <p>Maximize espaço vertical:</p>
+      <ul>
+        <li>Painéis de bolsos de feltro</li>
+        <li>Prateleiras suspensas</li>
+        <li>Treliças com vasos pendurados</li>
+        <li>Tubos de PVC verticais</li>
+      </ul>
+    </div>
+
+    <div class="space-card">
+      <h4>3. Cultivo em Cozinha</h4>
+      <p>Tenha hortelã fresca a um braço de distância:</p>
+      <ul>
+        <li>Vasinhos na bancada (com luz suficiente)</li>
+        <li>Prateleira sobre a pia com grow light</li>
+        <li>Sistema hidropônico compacto</li>
+        <li><strong>Bônus:</strong> O aroma perfuma a cozinha!</li>
+      </ul>
+    </div>
+
+    <div class="space-card">
+      <h4>4. Varanda Pequena</h4>
+      <p>Mesmo 1m² é suficiente:</p>
+      <ul>
+        <li>Jardineira suspensa no parapeito</li>
+        <li>Escada decorativa com vasos</li>
+        <li>Vaso grande único (hortelã se espalha)</li>
+        <li>Canto com suporte de 3-4 vasos empilhados</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 39</div>
+  </div>
+
+  <div class="page">
+    <h3>Cultivo Indoor com Luz Artificial</h3>
+
+    <p>Sem janela ensolarada? Não há problema! A hortelã cresce bem com iluminação artificial.</p>
+
+    <div class="tip-box">
+      <h4>💡 Opções de Luz</h4>
+      <table>
+        <tr>
+          <th>Tipo</th>
+          <th>Custo</th>
+          <th>Consumo</th>
+          <th>Eficácia</th>
+        </tr>
+        <tr>
+          <td>LED Grow Light</td>
+          <td>R$50-200</td>
+          <td>Baixo</td>
+          <td>Excelente</td>
+        </tr>
+        <tr>
+          <td>Fluorescente T5</td>
+          <td>R$30-80</td>
+          <td>Médio</td>
+          <td>Bom</td>
+        </tr>
+        <tr>
+          <td>LED Branco Comum</td>
+          <td>R$10-30</td>
+          <td>Baixo</td>
+          <td>Aceitável</td>
+        </tr>
+      </table>
+      <p><strong>Dica:</strong> LEDs brancos "luz do dia" (5000-6500K) funcionam bem para hortelã!</p>
+    </div>
+
+    <h3>Projetos DIY para Pequenos Espaços</h3>
+
+    <div class="recipe-box">
+      <h4>🔨 Mini Horta de Janela com Latas</h4>
+      <ul>
+        <li>3-5 latas grandes limpas (molho de tomate, etc)</li>
+        <li>Furos no fundo para drenagem</li>
+        <li>Tinta spray para decorar (opcional)</li>
+        <li>Barra de cortina ou madeira para pendurar</li>
+        <li>Ganchos em S</li>
+      </ul>
+      <p><strong>Custo:</strong> R$20-40</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>🔨 Sistema Kratky de Garrafa PET</h4>
+      <ul>
+        <li>Garrafa PET 2L cortada ao meio</li>
+        <li>Parte superior invertida como "vaso"</li>
+        <li>Pavio de algodão ou mecha de feltro</li>
+        <li>Argila expandida como substrato</li>
+        <li>Solução nutritiva na parte inferior</li>
+      </ul>
+      <p><strong>Custo:</strong> R$5-10</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 40</div>
+  </div>
+
+  <div class="page">
+    <h3>Cuidados Especiais em Apartamentos</h3>
+
+    <div class="warning-box">
+      <h4>⚠️ Atenção ao Ar Condicionado</h4>
+      <p>O ar-condicionado reduz a umidade do ambiente, o que pode ressecar a hortelã mais rapidamente. Soluções:</p>
+      <ul>
+        <li>Borrife água nas folhas diariamente</li>
+        <li>Use prato com pedras e água sob o vaso</li>
+        <li>Mantenha longe do fluxo direto do ar</li>
+      </ul>
+    </div>
+
+    <h3>Checklist para Apartamento</h3>
+
+    <div class="checklist">
+      <h4>Antes de Começar:</h4>
+      <ul>
+        <li>Identificar local com 4+ horas de luz</li>
+        <li>Verificar se há tomada próxima (para grow light)</li>
+        <li>Escolher vaso adequado ao espaço</li>
+        <li>Providenciar prato/proteção contra vazamento</li>
+        <li>Planejar rotina de rega</li>
+        <li>Verificar regras do condomínio (se varanda)</li>
+      </ul>
+    </div>
+
+    <h3>Variedades Compactas</h3>
+
+    <p>Algumas variedades são naturalmente mais compactas e ideais para espaços pequenos:</p>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="value">Hortelã-de-Córsega</div>
+        <div class="label">1-3cm de altura</div>
+      </div>
+      <div class="info-item">
+        <div class="value">Hortelã-Limão</div>
+        <div class="label">30-45cm de altura</div>
+      </div>
+      <div class="info-item">
+        <div class="value">Hortelã-Chocolate</div>
+        <div class="label">40-60cm de altura</div>
+      </div>
+      <div class="info-item">
+        <div class="value">Hortelã-Abacaxi</div>
+        <div class="label">30-50cm de altura</div>
+      </div>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Resumo do Guia 10</h4>
+      <p>A hortelã pode ser cultivada em qualquer espaço, desde uma janela de apartamento até um cantinho da cozinha! Com luz artificial, o cultivo indoor é possível mesmo sem sol direto. Projetos DIY simples permitem criar mini hortas funcionais e decorativas.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 41</div>
+  </div>
+
+  <!-- GUIA 11: CALENDÁRIO REGIONAL -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Guia 11</h2>
+      <p>Cultivo por Região Brasileira</p>
+    </div>
+
+    <p>O Brasil tem climas diversos. Embora a hortelã seja adaptável, conhecer as particularidades de cada região ajuda a maximizar a produção.</p>
+
+    <div class="region-card norte">
+      <h4>🌴 Região Norte (AM, PA, AC, RR, AP, RO, TO)</h4>
+      <p><strong>Clima:</strong> Equatorial - quente e úmido o ano todo</p>
+      <p><strong>Temperatura:</strong> 24-30°C (pouca variação)</p>
+      <p><strong>Umidade:</strong> Alta (80-90%)</p>
+
+      <h5>Recomendações:</h5>
+      <ul>
+        <li><strong>Cultivo o ano todo</strong> - sem restrições sazonais</li>
+        <li>Prefira <strong>meia-sombra</strong> - sol intenso pode queimar</li>
+        <li>Variedade ideal: <strong>Hortelã-do-Levante</strong> (mais resistente ao calor)</li>
+        <li>Atente para excesso de umidade - garanta boa drenagem</li>
+        <li>Cuidado com fungos - evite molhar folhas à noite</li>
+      </ul>
+
+      <p><strong>Melhores meses para propagar:</strong> Qualquer um</p>
+    </div>
+
+    <div class="region-card nordeste">
+      <h4>☀️ Região Nordeste (MA, PI, CE, RN, PB, PE, AL, SE, BA)</h4>
+      <p><strong>Clima:</strong> Variado - tropical úmido (litoral) a semiárido (interior)</p>
+      <p><strong>Temperatura:</strong> 22-32°C</p>
+
+      <h5>Recomendações:</h5>
+      <ul>
+        <li><strong>Litoral:</strong> Cultivo o ano todo com sol da manhã</li>
+        <li><strong>Sertão:</strong> Cultive em sombra parcial e regue 2x ao dia</li>
+        <li>Variedade ideal: <strong>Hortelã-do-Levante</strong> (tolerante ao calor)</li>
+        <li>Mulching ajuda a manter umidade no solo</li>
+        <li>Hortelã-pimenta pode sofrer no calor intenso</li>
+      </ul>
+
+      <p><strong>Melhores meses para propagar:</strong> Março a Junho (menos calor)</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 42</div>
+  </div>
+
+  <div class="page">
+    <div class="region-card centro-oeste">
+      <h4>🌾 Região Centro-Oeste (MT, MS, GO, DF)</h4>
+      <p><strong>Clima:</strong> Tropical - estação seca marcante</p>
+      <p><strong>Temperatura:</strong> 18-32°C (amplitude térmica maior)</p>
+
+      <h5>Recomendações:</h5>
+      <ul>
+        <li><strong>Estação chuvosa (Out-Mar):</strong> Crescimento acelerado</li>
+        <li><strong>Estação seca (Abr-Set):</strong> Rega diária obrigatória</li>
+        <li>Use cobertura morta para manter umidade</li>
+        <li>Variedade ideal: <strong>Hortelã-Verde</strong> ou do Levante</li>
+        <li>Proteja do sol das 11h às 15h no verão</li>
+      </ul>
+
+      <p><strong>Melhores meses para propagar:</strong> Setembro a Novembro</p>
+    </div>
+
+    <div class="region-card sudeste">
+      <h4>🏙️ Região Sudeste (SP, RJ, MG, ES)</h4>
+      <p><strong>Clima:</strong> Tropical de altitude / Subtropical</p>
+      <p><strong>Temperatura:</strong> 15-30°C (variação sazonal)</p>
+
+      <h5>Recomendações:</h5>
+      <ul>
+        <li><strong>Verão:</strong> Rega frequente, sombra parcial</li>
+        <li><strong>Inverno:</strong> Crescimento reduzido, menos rega</li>
+        <li>Todas as variedades se adaptam bem</li>
+        <li>Ideal para <strong>Hortelã-Pimenta</strong> (prefere temperaturas amenas)</li>
+        <li>Em regiões serranas: proteger de geadas</li>
+      </ul>
+
+      <p><strong>Melhores meses para propagar:</strong> Setembro a Novembro, Março a Maio</p>
+    </div>
+
+    <div class="region-card sul">
+      <h4>❄️ Região Sul (PR, SC, RS)</h4>
+      <p><strong>Clima:</strong> Subtropical - quatro estações definidas</p>
+      <p><strong>Temperatura:</strong> 5-30°C (grande variação)</p>
+
+      <h5>Recomendações:</h5>
+      <ul>
+        <li><strong>Verão:</strong> Crescimento máximo, colheitas frequentes</li>
+        <li><strong>Inverno:</strong> Dormência - parte aérea pode morrer, mas raízes sobrevivem</li>
+        <li>Ideal para <strong>Hortelã-Pimenta</strong> e variedades europeias</li>
+        <li>Proteja de geadas severas com mulching ou cobertura</li>
+        <li>Cultivo indoor no inverno é boa opção</li>
+      </ul>
+
+      <p><strong>Melhores meses para propagar:</strong> Setembro a Dezembro</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 43</div>
+  </div>
+
+  <div class="page">
+    <h3>Calendário Geral de Cultivo</h3>
+
+    <table>
+      <tr>
+        <th>Atividade</th>
+        <th>Norte</th>
+        <th>Nordeste</th>
+        <th>Centro-Oeste</th>
+        <th>Sudeste</th>
+        <th>Sul</th>
+      </tr>
+      <tr>
+        <td>Plantio/Propagação</td>
+        <td>Ano todo</td>
+        <td>Mar-Jun</td>
+        <td>Set-Nov</td>
+        <td>Set-Nov</td>
+        <td>Set-Dez</td>
+      </tr>
+      <tr>
+        <td>Pico de Crescimento</td>
+        <td>Ano todo</td>
+        <td>Mar-Jun</td>
+        <td>Out-Mar</td>
+        <td>Out-Mar</td>
+        <td>Nov-Mar</td>
+      </tr>
+      <tr>
+        <td>Colheita Intensa</td>
+        <td>Ano todo</td>
+        <td>Ano todo</td>
+        <td>Nov-Fev</td>
+        <td>Nov-Mar</td>
+        <td>Dez-Mar</td>
+      </tr>
+      <tr>
+        <td>Período de Descanso</td>
+        <td>Não há</td>
+        <td>Não há</td>
+        <td>Jun-Ago</td>
+        <td>Jun-Ago</td>
+        <td>Mai-Ago</td>
+      </tr>
+      <tr>
+        <td>Proteção Necessária</td>
+        <td>Do sol</td>
+        <td>Do sol/seca</td>
+        <td>Da seca</td>
+        <td>-</td>
+        <td>Do frio</td>
+      </tr>
+    </table>
+
+    <h3>Variedades por Região</h3>
+
+    <div class="tip-box">
+      <h4>🎯 Melhores Escolhas Regionais</h4>
+      <table>
+        <tr>
+          <th>Região</th>
+          <th>1ª Opção</th>
+          <th>2ª Opção</th>
+          <th>Evitar</th>
+        </tr>
+        <tr>
+          <td>Norte</td>
+          <td>Do-Levante</td>
+          <td>Verde</td>
+          <td>Pimenta (muito calor)</td>
+        </tr>
+        <tr>
+          <td>Nordeste</td>
+          <td>Do-Levante</td>
+          <td>Maçã</td>
+          <td>Córsega (sensível)</td>
+        </tr>
+        <tr>
+          <td>Centro-Oeste</td>
+          <td>Do-Levante</td>
+          <td>Verde</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Sudeste</td>
+          <td>Qualquer!</td>
+          <td>Pimenta</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Sul</td>
+          <td>Pimenta</td>
+          <td>Chocolate</td>
+          <td>-</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Resumo do Guia 11</h4>
+      <p>A hortelã se adapta a todas as regiões brasileiras, mas cada clima tem particularidades. No Norte/Nordeste, proteja do sol intenso; no Sul, proteja de geadas. A Hortelã-do-Levante é a mais adaptável ao calor tropical brasileiro!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 44</div>
+  </div>
+
+  <!-- PÁGINA 45 - Guia 12: Colheita, Secagem e Conservação -->
+  <div class="page" style="page-break-after: always;">
+    <div class="chapter-header">
+      <span class="chapter-number">Guia 12</span>
+      <h1>Colheita, Secagem e Conservação</h1>
+      <p>Maximize sabor, aroma e vida útil da sua hortelã</p>
+    </div>
+
+    <h2>🌿 Momento Ideal da Colheita</h2>
+
+    <div class="info-box">
+      <h4>⏰ Timing Perfeito</h4>
+      <ul>
+        <li><strong>Hora do dia:</strong> Manhã cedo (após o orvalho secar) - máxima concentração de óleos</li>
+        <li><strong>Antes da floração:</strong> Quando os botões aparecem mas não abriram</li>
+        <li><strong>Fase da lua:</strong> Lua cheia ou crescente para maior concentração de óleos</li>
+        <li><strong>Clima:</strong> Dias secos, nunca após chuva ou irrigação</li>
+      </ul>
+    </div>
+
+    <h2>✂️ Técnicas de Colheita</h2>
+
+    <div class="tip-box">
+      <h4>Colheita de Manutenção (diária)</h4>
+      <ul>
+        <li>Corte as pontas dos ramos (últimos 5-10cm)</li>
+        <li>Sempre acima de um par de folhas</li>
+        <li>Estimula ramificação lateral</li>
+        <li>Nunca retire mais de 1/3 da planta</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h4>Colheita Principal (a cada 3-4 semanas)</h4>
+      <ul>
+        <li>Corte ramos inteiros a 5cm do solo</li>
+        <li>Deixe pelo menos 2-3 pares de folhas na base</li>
+        <li>A planta regenera em 2-3 semanas</li>
+        <li>Ideal para secagem em quantidade</li>
+      </ul>
+    </div>
+
+    <h2>🌬️ Métodos de Secagem</h2>
+
+    <table class="data-table">
+      <tr>
+        <th>Método</th>
+        <th>Tempo</th>
+        <th>Qualidade</th>
+        <th>Indicado Para</th>
+      </tr>
+      <tr>
+        <td>Pendurado (maços)</td>
+        <td>7-14 dias</td>
+        <td>⭐⭐⭐⭐⭐</td>
+        <td>Melhor resultado</td>
+      </tr>
+      <tr>
+        <td>Bandeja (sombra)</td>
+        <td>5-7 dias</td>
+        <td>⭐⭐⭐⭐</td>
+        <td>Grandes quantidades</td>
+      </tr>
+      <tr>
+        <td>Desidratador</td>
+        <td>4-8 horas</td>
+        <td>⭐⭐⭐⭐</td>
+        <td>Clima úmido</td>
+      </tr>
+      <tr>
+        <td>Forno (50°C)</td>
+        <td>2-4 horas</td>
+        <td>⭐⭐⭐</td>
+        <td>Emergência</td>
+      </tr>
+      <tr>
+        <td>Micro-ondas</td>
+        <td>2-3 minutos</td>
+        <td>⭐⭐</td>
+        <td>Pequenas quantidades</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 45</div>
+  </div>
+
+  <!-- PÁGINA 46 - Conservação -->
+  <div class="page" style="page-break-after: always;">
+    <h2>📦 Métodos de Conservação</h2>
+
+    <div class="variety-card">
+      <h3>❄️ Congelamento (Cubos de Gelo)</h3>
+      <p><strong>Duração:</strong> 6-12 meses</p>
+      <ol>
+        <li>Lave e seque as folhas completamente</li>
+        <li>Pique finamente ou deixe inteiras</li>
+        <li>Distribua em formas de gelo</li>
+        <li>Cubra com água filtrada ou azeite</li>
+        <li>Congele e transfira para saco ziplock</li>
+      </ol>
+      <p><strong>Uso:</strong> Direto em sopas, molhos, chás e sucos</p>
+    </div>
+
+    <div class="variety-card">
+      <h3>🫒 Em Azeite ou Óleo</h3>
+      <p><strong>Duração:</strong> 2-3 meses (refrigerado)</p>
+      <ol>
+        <li>Folhas secas e picadas em vidro esterilizado</li>
+        <li>Cubra completamente com azeite extra virgem</li>
+        <li>Elimine bolhas de ar</li>
+        <li>Refrigere imediatamente</li>
+      </ol>
+      <p><strong>Uso:</strong> Saladas, massas, marinadas</p>
+    </div>
+
+    <div class="variety-card">
+      <h3>🧂 Sal de Hortelã</h3>
+      <p><strong>Duração:</strong> 6-12 meses (local seco)</p>
+      <ol>
+        <li>Proporção: 1 xícara de folhas frescas : 1/2 xícara sal grosso</li>
+        <li>Processe no liquidificador até homogêneo</li>
+        <li>Espalhe em assadeira e seque em forno 50°C</li>
+        <li>Quebre e armazene em vidro hermético</li>
+      </ol>
+      <p><strong>Uso:</strong> Carnes, saladas, drinks</p>
+    </div>
+
+    <div class="variety-card">
+      <h3>🍯 Xarope de Hortelã</h3>
+      <p><strong>Duração:</strong> 3-4 semanas (refrigerado)</p>
+      <ol>
+        <li>1 xícara de água + 1 xícara de açúcar</li>
+        <li>Ferva até dissolver</li>
+        <li>Adicione 1 xícara de folhas frescas</li>
+        <li>Deixe em infusão 30 min, coe e refrigere</li>
+      </ol>
+      <p><strong>Uso:</strong> Drinks, sobremesas, chás gelados</p>
+    </div>
+
+    <div class="success-box">
+      <h4>💡 Dica de Armazenamento</h4>
+      <p>Hortelã seca deve ser armazenada em vidros escuros, longe da luz e calor. Perde aroma após 1 ano - renove sua reserva anualmente!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 46</div>
+  </div>
+
+  <!-- PÁGINA 47 - Guia 13: Produção Comercial -->
+  <div class="page" style="page-break-after: always;">
+    <div class="chapter-header">
+      <span class="chapter-number">Guia 13</span>
+      <h1>Produção Comercial em Pequena Escala</h1>
+      <p>Transforme sua hortelã em renda extra</p>
+    </div>
+
+    <h2>💰 Potencial de Mercado</h2>
+
+    <div class="comercial-card">
+      <h3>📊 Números do Mercado Brasileiro</h3>
+      <ul>
+        <li><strong>Preço médio (maço 100g):</strong> R$ 3-5 convencional / R$ 8-12 orgânico</li>
+        <li><strong>Demanda:</strong> Alta e constante (restaurantes, bares, feiras)</li>
+        <li><strong>Produtividade:</strong> 1kg/m²/mês em sistema intensivo</li>
+        <li><strong>Investimento inicial:</strong> Baixo (hortelã é resiliente)</li>
+      </ul>
+    </div>
+
+    <h2>🎯 Canais de Venda</h2>
+
+    <table class="data-table">
+      <tr>
+        <th>Canal</th>
+        <th>Margem</th>
+        <th>Volume</th>
+        <th>Dificuldade</th>
+      </tr>
+      <tr>
+        <td>Feiras livres</td>
+        <td>Alta</td>
+        <td>Médio</td>
+        <td>⭐⭐</td>
+      </tr>
+      <tr>
+        <td>Restaurantes</td>
+        <td>Média</td>
+        <td>Alto</td>
+        <td>⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td>Bares/Pubs</td>
+        <td>Alta</td>
+        <td>Alto</td>
+        <td>⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td>Delivery apps</td>
+        <td>Média</td>
+        <td>Variável</td>
+        <td>⭐⭐</td>
+      </tr>
+      <tr>
+        <td>Cestas orgânicas</td>
+        <td>Alta</td>
+        <td>Fixo</td>
+        <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td>Vizinhança</td>
+        <td>Alta</td>
+        <td>Baixo</td>
+        <td>⭐</td>
+      </tr>
+    </table>
+
+    <h2>📦 Produtos para Comercializar</h2>
+
+    <div class="comercial-card">
+      <h3>🌿 Produtos Frescos</h3>
+      <ul>
+        <li>Maços de hortelã fresca (diversos tamanhos)</li>
+        <li>Mix de ervas frescas (com manjericão, cebolinha)</li>
+        <li>Mudas em vasinhos decorativos</li>
+        <li>Hortelã hidropônica premium</li>
+      </ul>
+    </div>
+
+    <div class="comercial-card">
+      <h3>🏺 Produtos Processados (maior valor agregado)</h3>
+      <ul>
+        <li>Hortelã desidratada (sachês para chá)</li>
+        <li>Sal de hortelã gourmet</li>
+        <li>Xarope de hortelã artesanal</li>
+        <li>Óleo essencial (requer destilador)</li>
+        <li>Geleia de hortelã</li>
+        <li>Vinagre aromatizado</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 47</div>
+  </div>
+
+  <!-- PÁGINA 48 - Produção Comercial (continuação) -->
+  <div class="page" style="page-break-after: always;">
+    <h2>📐 Planejamento de Produção</h2>
+
+    <div class="info-box">
+      <h4>🌱 Sistema de Produção Escalonada</h4>
+      <p>Para garantir colheita contínua:</p>
+      <ul>
+        <li><strong>Divida a área em 4 setores</strong></li>
+        <li>Cada semana, colha 1 setor completo</li>
+        <li>O setor colhido tem 3 semanas para regenerar</li>
+        <li>Resultado: Colheita semanal garantida</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h4>💵 Exemplo de Rentabilidade (área 10m²)</h4>
+      <table class="data-table">
+        <tr>
+          <th>Item</th>
+          <th>Valor Mensal</th>
+        </tr>
+        <tr>
+          <td>Produção: 10kg/mês</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Venda orgânica (R$10/100g)</td>
+          <td>R$ 1.000</td>
+        </tr>
+        <tr>
+          <td>Custos (substrato, água, embalagem)</td>
+          <td>- R$ 150</td>
+        </tr>
+        <tr>
+          <td><strong>Lucro líquido</strong></td>
+          <td><strong>R$ 850</strong></td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>📋 Regularização</h2>
+
+    <div class="warning-box">
+      <h4>⚠️ Aspectos Legais</h4>
+      <ul>
+        <li><strong>MEI:</strong> Microempreendedor Individual - ideal para começar</li>
+        <li><strong>Vigilância Sanitária:</strong> Produtos processados precisam de alvará</li>
+        <li><strong>Certificação Orgânica:</strong> SPG (Sistema Participativo) ou OCS para pequenos</li>
+        <li><strong>Nota Fiscal:</strong> Obrigatória para restaurantes e lojas</li>
+      </ul>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Dicas para Sucesso Comercial</h4>
+      <ul>
+        <li>Comece pequeno e cresça conforme a demanda</li>
+        <li>Diversifique variedades (comum, chocolate, limão)</li>
+        <li>Crie relacionamento com clientes fixos</li>
+        <li>Ofereça amostras grátis para novos clientes</li>
+        <li>Use redes sociais para divulgação</li>
+        <li>Embalagem bonita agrega valor</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 48</div>
+  </div>
+
+  <!-- PÁGINA 49 - Guia 14: Propriedades Medicinais -->
+  <div class="page" style="page-break-after: always;">
+    <div class="chapter-header">
+      <span class="chapter-number">Guia 14</span>
+      <h1>Propriedades Medicinais e Terapêuticas</h1>
+      <p>O poder curativo da hortelã</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>⚠️ Aviso Importante</h4>
+      <p>As informações aqui são educativas. Consulte um profissional de saúde antes de usar plantas medicinais, especialmente se estiver grávida, amamentando ou em tratamento médico.</p>
+    </div>
+
+    <h2>🩺 Benefícios Comprovados Cientificamente</h2>
+
+    <div class="prop-card">
+      <h3>🫁 Sistema Digestivo</h3>
+      <ul>
+        <li><strong>Alívio de náuseas:</strong> Mentol relaxa músculos estomacais</li>
+        <li><strong>Síndrome do intestino irritável:</strong> Estudos mostram eficácia do óleo</li>
+        <li><strong>Digestão:</strong> Estimula produção de bile</li>
+        <li><strong>Gases e inchaço:</strong> Efeito carminativo comprovado</li>
+      </ul>
+      <p><strong>Como usar:</strong> Chá após refeições ou cápsulas de óleo essencial</p>
+    </div>
+
+    <div class="prop-card">
+      <h3>🧠 Sistema Nervoso</h3>
+      <ul>
+        <li><strong>Dor de cabeça tensional:</strong> Aplicação tópica de óleo diluído</li>
+        <li><strong>Concentração:</strong> Aroma melhora desempenho cognitivo</li>
+        <li><strong>Estresse:</strong> Chá tem efeito calmante leve</li>
+        <li><strong>Fadiga:</strong> Aroma é energizante natural</li>
+      </ul>
+      <p><strong>Como usar:</strong> Aromaterapia ou aplicação tópica nas têmporas</p>
+    </div>
+
+    <div class="prop-card">
+      <h3>🌬️ Sistema Respiratório</h3>
+      <ul>
+        <li><strong>Congestão nasal:</strong> Mentol desobstrui vias aéreas</li>
+        <li><strong>Tosse:</strong> Efeito expectorante</li>
+        <li><strong>Asma (leve):</strong> Relaxa brônquios</li>
+        <li><strong>Resfriados:</strong> Alívio sintomático geral</li>
+      </ul>
+      <p><strong>Como usar:</strong> Inalação com vapor ou chá quente</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 49</div>
+  </div>
+
+  <!-- PÁGINA 50 - Propriedades Medicinais (continuação) -->
+  <div class="page" style="page-break-after: always;">
+    <h2>💊 Preparações Medicinais</h2>
+
+    <div class="variety-card">
+      <h3>🍵 Chá Digestivo</h3>
+      <ul>
+        <li>10-15 folhas frescas ou 1 colher de sopa de secas</li>
+        <li>200ml de água fervente</li>
+        <li>Abafar 5-10 minutos</li>
+        <li>Tomar após refeições</li>
+      </ul>
+    </div>
+
+    <div class="variety-card">
+      <h3>💆 Óleo para Dor de Cabeça</h3>
+      <ul>
+        <li>5 gotas de óleo essencial de hortelã-pimenta</li>
+        <li>1 colher de sopa de óleo de coco</li>
+        <li>Misturar bem</li>
+        <li>Aplicar nas têmporas e nuca massageando</li>
+      </ul>
+    </div>
+
+    <div class="variety-card">
+      <h3>🛁 Banho Relaxante</h3>
+      <ul>
+        <li>1 maço grande de hortelã fresca</li>
+        <li>Fazer infusão forte (1L de água)</li>
+        <li>Adicionar à banheira morna</li>
+        <li>Relaxa músculos e alivia tensão</li>
+      </ul>
+    </div>
+
+    <div class="variety-card">
+      <h3>👄 Enxaguante Bucal Natural</h3>
+      <ul>
+        <li>500ml de água filtrada</li>
+        <li>2 colheres de sopa de folhas secas</li>
+        <li>Ferver e deixar esfriar</li>
+        <li>Usar para bochechos (não engolir)</li>
+        <li>Combate mau hálito e gengivite</li>
+      </ul>
+    </div>
+
+    <h2>⚠️ Contraindicações</h2>
+
+    <div class="warning-box">
+      <h4>Evite usar hortelã em excesso se:</h4>
+      <ul>
+        <li><strong>Refluxo gastroesofágico:</strong> Pode relaxar esfíncter e piorar</li>
+        <li><strong>Gravidez:</strong> Grandes quantidades podem ser abortivas</li>
+        <li><strong>Bebês:</strong> Mentol pode causar problemas respiratórios</li>
+        <li><strong>Cálculos biliares:</strong> Estimula vesícula</li>
+        <li><strong>Medicamentos:</strong> Pode interagir com alguns remédios</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 50</div>
+  </div>
+
+  <!-- PÁGINA 51 - Guia 15: Problemas e Pragas -->
+  <div class="page" style="page-break-after: always;">
+    <div class="chapter-header">
+      <span class="chapter-number">Guia 15</span>
+      <h1>Problemas, Pragas e Soluções</h1>
+      <p>Diagnóstico e tratamento para sua hortelã</p>
+    </div>
+
+    <h2>🐛 Pragas Mais Comuns</h2>
+
+    <div class="warning-box">
+      <h4>🪲 Pulgões</h4>
+      <p><strong>Sintomas:</strong> Pequenos insetos verdes ou pretos nas folhas novas, folhas enroladas</p>
+      <p><strong>Solução:</strong> Jato d'água forte, calda de fumo, sabão de coco diluído, joaninhas</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>🕷️ Ácaros</h4>
+      <p><strong>Sintomas:</strong> Pontos amarelos nas folhas, teias finas, folhas secando</p>
+      <p><strong>Solução:</strong> Aumentar umidade, óleo de neem, enxofre molhável</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>🐌 Lesmas e Caracóis</h4>
+      <p><strong>Sintomas:</strong> Buracos irregulares nas folhas, rastros brilhantes</p>
+      <p><strong>Solução:</strong> Armadilhas de cerveja, cascas de ovo, catação manual noturna</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>🦗 Lagartas</h4>
+      <p><strong>Sintomas:</strong> Folhas comidas, presença de excrementos</p>
+      <p><strong>Solução:</strong> Catação manual, Bacillus thuringiensis (Bt), óleo de neem</p>
+    </div>
+
+    <h2>🍂 Doenças Fúngicas</h2>
+
+    <div class="tip-box">
+      <h4>🟤 Ferrugem (Puccinia menthae)</h4>
+      <p><strong>Sintomas:</strong> Pústulas alaranjadas na parte inferior das folhas</p>
+      <p><strong>Prevenção:</strong> Boa circulação de ar, não molhar folhas</p>
+      <p><strong>Tratamento:</strong> Remover partes afetadas, calda bordalesa, funmicida cúprico</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>⚫ Oídio</h4>
+      <p><strong>Sintomas:</strong> Pó branco nas folhas</p>
+      <p><strong>Prevenção:</strong> Sol adequado, espaçamento</p>
+      <p><strong>Tratamento:</strong> Leite diluído (10%), bicarbonato de sódio</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 51</div>
+  </div>
+
+  <!-- PÁGINA 52 - Problemas (continuação) -->
+  <div class="page" style="page-break-after: always;">
+    <h2>🩺 Problemas de Cultivo</h2>
+
+    <table class="data-table">
+      <tr>
+        <th>Sintoma</th>
+        <th>Causa Provável</th>
+        <th>Solução</th>
+      </tr>
+      <tr>
+        <td>Folhas amarelando</td>
+        <td>Excesso de água ou falta de N</td>
+        <td>Ajustar rega, adubar com N</td>
+      </tr>
+      <tr>
+        <td>Folhas pequenas e pálidas</td>
+        <td>Falta de nutrientes</td>
+        <td>Adubar com composto orgânico</td>
+      </tr>
+      <tr>
+        <td>Caule fino e comprido</td>
+        <td>Falta de luz (estiolamento)</td>
+        <td>Mais sol ou luz artificial</td>
+      </tr>
+      <tr>
+        <td>Bordas das folhas secas</td>
+        <td>Baixa umidade ou excesso de sol</td>
+        <td>Borrifar, sombrear</td>
+      </tr>
+      <tr>
+        <td>Planta murcha com solo úmido</td>
+        <td>Podridão de raiz</td>
+        <td>Reduzir rega, melhorar drenagem</td>
+      </tr>
+      <tr>
+        <td>Folhas com manchas marrons</td>
+        <td>Queimadura solar ou doença</td>
+        <td>Sombrear, tratar se fúngico</td>
+      </tr>
+      <tr>
+        <td>Crescimento lento</td>
+        <td>Frio, falta de luz ou nutrientes</td>
+        <td>Avaliar ambiente e adubar</td>
+      </tr>
+      <tr>
+        <td>Floração precoce</td>
+        <td>Estresse (calor, seca)</td>
+        <td>Podar flores, melhorar condições</td>
+      </tr>
+    </table>
+
+    <h2>🧪 Receitas de Defensivos Naturais</h2>
+
+    <div class="variety-card">
+      <h3>Calda de Fumo (para pulgões)</h3>
+      <ol>
+        <li>100g de fumo de corda em 1L de água</li>
+        <li>Deixe de molho 24 horas</li>
+        <li>Coe e dilua: 1 parte para 10 de água</li>
+        <li>Adicione 1 colher de sabão de coco</li>
+        <li>Pulverize nas áreas afetadas</li>
+      </ol>
+    </div>
+
+    <div class="variety-card">
+      <h3>Óleo de Neem (multiuso)</h3>
+      <ol>
+        <li>5ml de óleo de neem</li>
+        <li>1L de água morna</li>
+        <li>5ml de detergente neutro (emulsificante)</li>
+        <li>Misture bem e pulverize</li>
+        <li>Aplicar a cada 7 dias como prevenção</li>
+      </ol>
+    </div>
+
+    <div class="success-box">
+      <h4>✅ Prevenção é o Melhor Remédio</h4>
+      <p>Plantas saudáveis resistem melhor a pragas. Mantenha boa nutrição, rega equilibrada, circulação de ar e inspecione regularmente!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 52</div>
+  </div>
+
+  <!-- PÁGINA 53 - Bônus: 50 Receitas -->
+  <div class="page" style="page-break-after: always;">
+    <div class="chapter-header" style="background: linear-gradient(135deg, #047857, #10b981);">
+      <span class="chapter-number">🎁 Bônus Especial</span>
+      <h1>50 Receitas com Hortelã</h1>
+      <p>Bebidas, salgados, doces e preparações medicinais</p>
+    </div>
+
+    <h2>🥤 15 Bebidas Refrescantes</h2>
+
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <h4>1. Mojito Clássico</h4>
+        <p>Rum, hortelã, limão, açúcar, água com gás. Macere a hortelã com limão e açúcar, adicione rum e gelo.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>2. Água Aromatizada Detox</h4>
+        <p>Água gelada + pepino + hortelã + limão. Deixe na geladeira por 2h.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>3. Suco Verde Energizante</h4>
+        <p>Couve + maçã verde + gengibre + hortelã + água de coco. Bata e coe.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>4. Limonada Suíça com Hortelã</h4>
+        <p>Limão inteiro + água + açúcar + hortelã. Bata tudo e coe imediatamente.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>5. Chá Gelado Marroquino</h4>
+        <p>Chá verde + hortelã fresca + mel + gelo. Prepare o chá, adicione hortelã e adoce.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>6. Smoothie de Melancia</h4>
+        <p>Melancia + hortelã + limão + gelo. Bata até cremoso.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>7. Virgin Mojito</h4>
+        <p>Versão sem álcool: água com gás + limão + hortelã + xarope simples.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>8. Lassi de Hortelã</h4>
+        <p>Iogurte natural + hortelã + cominho + sal. Bebida indiana refrescante.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>9. Chá de Hortelã com Gengibre</h4>
+        <p>Hortelã fresca + gengibre ralado + mel + água quente. Ótimo para digestão.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>10. Spritzer de Hortelã</h4>
+        <p>Vinho branco + água com gás + hortelã + gelo. Leve e refrescante.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 53</div>
+  </div>
+
+  <!-- PÁGINA 54 - Bebidas (continuação) -->
+  <div class="page" style="page-break-after: always;">
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <h4>11. Batida de Abacaxi com Hortelã</h4>
+        <p>Abacaxi + cachaça + leite condensado + hortelã + gelo. Bata e sirva.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>12. Água de Coco Mentolada</h4>
+        <p>Água de coco + folhas de hortelã maceradas + gelo. Simples e delicioso.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>13. Gin Tônica com Hortelã</h4>
+        <p>Gin + água tônica + hortelã + pepino + gelo. Sofisticado e aromático.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>14. Shake de Chocolate com Menta</h4>
+        <p>Sorvete de chocolate + leite + essência de menta + calda de chocolate + chantilly.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>15. Kombucha de Hortelã</h4>
+        <p>Kombucha pronta + hortelã fresca. Fermente por mais 2 dias com as folhas.</p>
+      </div>
+    </div>
+
+    <h2>🥗 15 Receitas Salgadas</h2>
+
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <h4>16. Tabule Libanês</h4>
+        <p>Trigo para quibe + tomate + pepino + hortelã + salsinha + azeite + limão. Salada fresca e nutritiva.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>17. Molho de Iogurte com Hortelã</h4>
+        <p>Iogurte grego + hortelã picada + alho + sal + azeite. Perfeito para carnes grelhadas.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>18. Kafta de Cordeiro</h4>
+        <p>Carne moída de cordeiro + cebola + hortelã + salsinha + especiarias. Grelhe em espetos.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>19. Salada Vietnamita</h4>
+        <p>Macarrão de arroz + camarão + hortelã + coentro + amendoim + molho agridoce.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>20. Rolinhos Primavera Frescos</h4>
+        <p>Papel de arroz + camarão + legumes + hortelã + manjericão tailandês. Sirva com molho de amendoim.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>21. Coalhada Seca (Labneh)</h4>
+        <p>Coalhada + hortelã + azeite + za'atar. Entrada árabe deliciosa.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>22. Salada de Melancia com Queijo</h4>
+        <p>Melancia + queijo feta + hortelã + azeite + pimenta. Combinação surpreendente!</p>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 54</div>
+  </div>
+
+  <!-- PÁGINA 55 - Salgados (continuação) -->
+  <div class="page" style="page-break-after: always;">
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <h4>23. Ervilhas à Francesa</h4>
+        <p>Ervilhas frescas + alface + cebola + hortelã + manteiga. Refogue levemente.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>24. Frango Grelhado com Molho Verde</h4>
+        <p>Peito de frango + molho de hortelã, salsinha, alho, azeite e limão.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>25. Sopa Gelada de Pepino</h4>
+        <p>Pepino + iogurte + hortelã + alho + azeite. Bata e sirva bem gelada.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>26. Bruschetta de Ervilha</h4>
+        <p>Purê de ervilha + hortelã + ricota + azeite + pão torrado. Entrada elegante.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>27. Cordeiro com Crosta de Ervas</h4>
+        <p>Carré de cordeiro + hortelã + alecrim + alho + mostarda. Asse até o ponto.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>28. Macarrão com Pesto de Hortelã</h4>
+        <p>Hortelã + manjericão + parmesão + pinoli + alho + azeite. Bata e misture à massa.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>29. Falafel com Molho de Hortelã</h4>
+        <p>Falafel tradicional servido com molho de tahine + hortelã + limão.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>30. Batatas Assadas com Hortelã</h4>
+        <p>Batatas + azeite + alho + hortelã fresca + sal. Asse até dourar.</p>
+      </div>
+    </div>
+
+    <h2>🍰 10 Receitas Doces</h2>
+
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <h4>31. Mousse de Chocolate com Menta</h4>
+        <p>Chocolate meio amargo + creme de leite + essência de menta + folhas para decorar.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>32. Sorvete de Hortelã Caseiro</h4>
+        <p>Leite + creme + açúcar + hortelã fresca. Infusione, coe e congele batendo.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>33. Brigadeiro de Menta</h4>
+        <p>Brigadeiro tradicional + essência de menta + confeitos verdes.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 55</div>
+  </div>
+
+  <!-- PÁGINA 56 - Doces (continuação) -->
+  <div class="page" style="page-break-after: always;">
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <h4>34. Geleia de Hortelã</h4>
+        <p>2 xíc. de folhas + 2 xíc. água + 3 xíc. açúcar + 1 sachê de pectina + suco de limão. Cozinhe até o ponto.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>35. Salada de Frutas com Hortelã</h4>
+        <p>Frutas da estação + xarope de hortelã + raspas de limão. Refrescante e saudável.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>36. Pavê de Menta com Chocolate</h4>
+        <p>Camadas de biscoito + creme de menta + ganache de chocolate + chantilly.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>37. Cheesecake de Limão e Hortelã</h4>
+        <p>Base de biscoito + creme de cream cheese + limão + hortelã + cobertura de geleia.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>38. Picolé de Mojito</h4>
+        <p>Suco de limão + xarope simples + hortelã + água. Congele em forminhas. (Sem álcool)</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>39. Cookies de Chocolate com Menta</h4>
+        <p>Massa de cookie de chocolate + gotas de chocolate branco + essência de menta.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>40. Calda de Hortelã para Sobremesas</h4>
+        <p>1 xíc. açúcar + 1 xíc. água + 1 maço de hortelã. Ferva, coe e reduza.</p>
+      </div>
+    </div>
+
+    <h2>💊 10 Preparações Medicinais e Cosméticas</h2>
+
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <h4>41. Chá Digestivo Pós-Refeição</h4>
+        <p>Hortelã + erva-cidreira + camomila. 1 colher de cada para 500ml de água.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>42. Compressa para Dor de Cabeça</h4>
+        <p>Macere folhas frescas + aplique na testa e têmporas. Descanse 20 min.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>43. Escalda-Pés Relaxante</h4>
+        <p>Água morna + sal grosso + folhas de hortelã. Relaxe por 20 minutos.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>44. Tônico Facial Adstringente</h4>
+        <p>Chá forte de hortelã + pepino + aloe vera. Aplique com algodão no rosto.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 56</div>
+  </div>
+
+  <!-- PÁGINA 57 - Medicinais (continuação) -->
+  <div class="page" style="page-break-after: always;">
+    <div class="recipe-grid">
+      <div class="recipe-card">
+        <h4>45. Pasta de Dentes Natural</h4>
+        <p>Bicarbonato + óleo de coco + óleo essencial de hortelã-pimenta. Use normalmente.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>46. Spray Refrescante para Pés</h4>
+        <p>Água + álcool 70% + óleo essencial de hortelã. Borrife nos pés cansados.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>47. Xarope para Tosse</h4>
+        <p>Mel + chá concentrado de hortelã + gengibre + limão. Tome 1 colher 3x/dia.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>48. Repelente Natural</h4>
+        <p>Óleo de hortelã-pimenta + citronela + água. Borrife no corpo (evite olhos).</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>49. Máscara Facial Refrescante</h4>
+        <p>Pepino + iogurte + hortelã. Bata, aplique no rosto, deixe 15 min e enxague.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>50. Sachê Aromático</h4>
+        <p>Hortelã seca + lavanda + alecrim em saquinho de tecido. Coloque em gavetas.</p>
+      </div>
+    </div>
+
+    <div class="success-box" style="margin-top: 40px;">
+      <h4>🎉 Parabéns! Você tem 50 formas de usar sua hortelã!</h4>
+      <p>Com essas receitas, você nunca mais vai desperdiçar uma folhinha. Da culinária à medicina natural, a hortelã é uma aliada versátil que merece um lugar especial na sua horta!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 57</div>
+  </div>
+
+  <!-- PÁGINA 58 - Encerramento -->
+  <div class="page" style="page-break-after: always;">
+    <div class="chapter-header" style="background: linear-gradient(135deg, #047857, #10b981);">
+      <h1>Parabéns, Especialista em Hortelã! 🌿</h1>
+      <p>Você completou o guia mais completo sobre hortelã</p>
+    </div>
+
+    <div style="text-align: center; margin: 40px 0;">
+      <!-- Verdinho com ramos de hortelã comemorando -->
+      <svg width="180" height="200" viewBox="0 0 120 130">
+        <defs>
+          <linearGradient id="pgf09" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#22c55e"/>
+            <stop offset="100%" style="stop-color:#16a34a"/>
+          </linearGradient>
+        </defs>
+        <!-- Corpo do vaso -->
+        <path d="M30 90 L25 120 L95 120 L90 90 Z" fill="#e07a30"/>
+        <ellipse cx="60" cy="90" rx="32" ry="8" fill="#c96a28"/>
+        <!-- Terra -->
+        <ellipse cx="60" cy="90" rx="28" ry="6" fill="#5c4033"/>
+        <!-- Planta (Verdinho) -->
+        <ellipse cx="60" cy="75" rx="25" ry="30" fill="url(#pgf09)"/>
+        <!-- Ramos de hortelã na cabeça -->
+        <g id="hortela-final">
+          <path d="M45 50C45 50 40 30 35 20" stroke="#047857" stroke-width="2" fill="none"/>
+          <ellipse cx="32" cy="18" rx="8" ry="5" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(-20 32 18)"/>
+          <ellipse cx="38" cy="25" rx="6" ry="4" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(15 38 25)"/>
+          <path d="M75 50C75 50 80 30 85 20" stroke="#047857" stroke-width="2" fill="none"/>
+          <ellipse cx="88" cy="18" rx="8" ry="5" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(20 88 18)"/>
+          <ellipse cx="82" cy="25" rx="6" ry="4" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(-15 82 25)"/>
+        </g>
+        <!-- Olhinhos felizes -->
+        <ellipse cx="50" cy="68" rx="4" ry="5" fill="#1a5928"/>
+        <ellipse cx="70" cy="68" rx="4" ry="5" fill="#1a5928"/>
+        <circle cx="51" cy="67" r="1.5" fill="white"/>
+        <circle cx="71" cy="67" r="1.5" fill="white"/>
+        <!-- Sorriso grande -->
+        <path d="M48 80 Q60 95 72 80" stroke="#1a5928" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- Bochechas coradas -->
+        <ellipse cx="42" cy="78" rx="5" ry="3" fill="#ff9999" opacity="0.5"/>
+        <ellipse cx="78" cy="78" rx="5" ry="3" fill="#ff9999" opacity="0.5"/>
+        <!-- Bracinhos comemorando -->
+        <path d="M35 70 Q20 55 15 45" stroke="#22c55e" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M85 70 Q100 55 105 45" stroke="#22c55e" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <!-- Mãozinhas -->
+        <circle cx="15" cy="45" r="6" fill="#22c55e"/>
+        <circle cx="105" cy="45" r="6" fill="#22c55e"/>
+        <!-- Estrelinhas de comemoração -->
+        <text x="5" y="35" font-size="12">✨</text>
+        <text x="100" y="35" font-size="12">✨</text>
+        <text x="55" y="10" font-size="14">🌿</text>
+      </svg>
+    </div>
+
+    <h2>📚 O Que Você Aprendeu</h2>
+
+    <div class="success-box">
+      <ul style="columns: 2; column-gap: 30px;">
+        <li>História e botânica da hortelã</li>
+        <li>20 variedades detalhadas</li>
+        <li>Fitoquímica e compostos ativos</li>
+        <li>Extração de óleos essenciais</li>
+        <li>Plantio e nutrição completos</li>
+        <li>6 métodos de propagação</li>
+        <li>Controle de invasão</li>
+        <li>Rega, poda e manutenção</li>
+        <li>Hidroponia da hortelã</li>
+        <li>Cultivo em pequenos espaços</li>
+        <li>Calendário por região brasileira</li>
+        <li>Colheita e conservação</li>
+        <li>Produção comercial</li>
+        <li>Propriedades medicinais</li>
+        <li>Pragas e soluções</li>
+        <li>50 receitas práticas!</li>
+      </ul>
+    </div>
+
+    <div class="info-box" style="text-align: center; margin-top: 30px;">
+      <h3>🌱 Sua Jornada com a Hortelã Começa Agora!</h3>
+      <p>Plante, colha, saboreie e compartilhe o aroma refrescante da hortelã. Sua horta nunca mais será a mesma!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 58</div>
+  </div>
+
+  <!-- PÁGINA 59 - Tabela de Referência Rápida -->
+  <div class="page" style="page-break-after: always;">
+    <div class="chapter-header">
+      <h1>📋 Tabela de Referência Rápida</h1>
+      <p>Cole na sua horta!</p>
+    </div>
+
+    <table class="data-table">
+      <tr>
+        <th colspan="2" style="background: #047857; color: white;">Cultivo da Hortelã</th>
+      </tr>
+      <tr>
+        <td><strong>Sol</strong></td>
+        <td>4-6h (tolera sombra parcial)</td>
+      </tr>
+      <tr>
+        <td><strong>Rega</strong></td>
+        <td>Solo úmido, não encharcado</td>
+      </tr>
+      <tr>
+        <td><strong>Solo</strong></td>
+        <td>Rico, bem drenado, pH 6.0-7.0</td>
+      </tr>
+      <tr>
+        <td><strong>Espaçamento</strong></td>
+        <td>30-45cm (invasiva!)</td>
+      </tr>
+      <tr>
+        <td><strong>Temperatura</strong></td>
+        <td>15-25°C (ideal)</td>
+      </tr>
+      <tr>
+        <td><strong>Propagação</strong></td>
+        <td>Estacas, divisão, estolões</td>
+      </tr>
+      <tr>
+        <td><strong>Colheita</strong></td>
+        <td>30-40 dias após plantio</td>
+      </tr>
+      <tr>
+        <td><strong>Poda</strong></td>
+        <td>Regularmente para estimular crescimento</td>
+      </tr>
+      <tr>
+        <td><strong>Adubação</strong></td>
+        <td>Composto orgânico mensal</td>
+      </tr>
+      <tr>
+        <td><strong>Problemas comuns</strong></td>
+        <td>Ferrugem, pulgões, invasão</td>
+      </tr>
+    </table>
+
+    <h2 style="margin-top: 30px;">🌿 Variedades Mais Populares</h2>
+
+    <table class="data-table">
+      <tr>
+        <th>Variedade</th>
+        <th>Uso Principal</th>
+        <th>Característica</th>
+      </tr>
+      <tr>
+        <td>Hortelã-Pimenta</td>
+        <td>Chás, medicinal</td>
+        <td>Alto mentol (40%)</td>
+      </tr>
+      <tr>
+        <td>Hortelã-Verde</td>
+        <td>Culinária, mojitos</td>
+        <td>Sabor suave</td>
+      </tr>
+      <tr>
+        <td>Hortelã-do-Levante</td>
+        <td>Sucos, tabule</td>
+        <td>Mais usada no Brasil</td>
+      </tr>
+      <tr>
+        <td>Hortelã-Chocolate</td>
+        <td>Sobremesas</td>
+        <td>Aroma achocolatado</td>
+      </tr>
+      <tr>
+        <td>Hortelã-Limão</td>
+        <td>Bebidas, chás</td>
+        <td>Notas cítricas</td>
+      </tr>
+      <tr>
+        <td>Hortelã-Maçã</td>
+        <td>Saladas, decoração</td>
+        <td>Folhas aveludadas</td>
+      </tr>
+    </table>
+
+    <div class="tip-box" style="margin-top: 30px;">
+      <h4>⏰ Calendário Simplificado</h4>
+      <ul>
+        <li><strong>Primavera:</strong> Plantio principal, divisão de touceiras</li>
+        <li><strong>Verão:</strong> Rega frequente, colheita intensa, sombra parcial</li>
+        <li><strong>Outono:</strong> Último plantio, preparar mudas para inverno</li>
+        <li><strong>Inverno:</strong> Proteção contra geadas, menos rega</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 59</div>
+  </div>
+
+  <!-- PÁGINA 60 - Diário de Cultivo -->
+  <div class="page" style="page-break-after: always;">
+    <div class="chapter-header">
+      <h1>📓 Meu Diário de Hortelã</h1>
+      <p>Registre sua jornada de cultivo</p>
+    </div>
+
+    <div style="border: 2px dashed #10b981; padding: 20px; margin: 20px 0; border-radius: 10px;">
+      <h3>🌱 Minhas Variedades</h3>
+      <p style="border-bottom: 1px solid #ccc; padding: 10px 0;">1. ________________________________</p>
+      <p style="border-bottom: 1px solid #ccc; padding: 10px 0;">2. ________________________________</p>
+      <p style="border-bottom: 1px solid #ccc; padding: 10px 0;">3. ________________________________</p>
+      <p style="border-bottom: 1px solid #ccc; padding: 10px 0;">4. ________________________________</p>
+    </div>
+
+    <div style="border: 2px dashed #10b981; padding: 20px; margin: 20px 0; border-radius: 10px;">
+      <h3>📅 Registro de Plantio</h3>
+      <table style="width: 100%;">
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #ccc;">Data do plantio:</td>
+          <td style="padding: 10px; border-bottom: 1px solid #ccc;">_______________</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #ccc;">Primeira colheita:</td>
+          <td style="padding: 10px; border-bottom: 1px solid #ccc;">_______________</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #ccc;">Local:</td>
+          <td style="padding: 10px; border-bottom: 1px solid #ccc;">_______________</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #ccc;">Tipo de vaso/canteiro:</td>
+          <td style="padding: 10px; border-bottom: 1px solid #ccc;">_______________</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="border: 2px dashed #10b981; padding: 20px; margin: 20px 0; border-radius: 10px;">
+      <h3>📝 Minhas Anotações</h3>
+      <p style="border-bottom: 1px solid #ccc; padding: 15px 0;"> </p>
+      <p style="border-bottom: 1px solid #ccc; padding: 15px 0;"> </p>
+      <p style="border-bottom: 1px solid #ccc; padding: 15px 0;"> </p>
+      <p style="border-bottom: 1px solid #ccc; padding: 15px 0;"> </p>
+      <p style="border-bottom: 1px solid #ccc; padding: 15px 0;"> </p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 60</div>
+  </div>
+
+  <!-- PÁGINA 61 - Contracapa -->
+  <div class="page" style="page-break-after: always;">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; text-align: center;">
+
+      <div style="margin-bottom: 40px;">
+        <svg width="150" height="170" viewBox="0 0 120 130">
+          <defs>
+            <linearGradient id="pgend09" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#22c55e"/>
+              <stop offset="100%" style="stop-color:#16a34a"/>
+            </linearGradient>
+          </defs>
+          <!-- Vaso -->
+          <path d="M30 90 L25 120 L95 120 L90 90 Z" fill="#e07a30"/>
+          <ellipse cx="60" cy="90" rx="32" ry="8" fill="#c96a28"/>
+          <ellipse cx="60" cy="90" rx="28" ry="6" fill="#5c4033"/>
+          <!-- Verdinho -->
+          <ellipse cx="60" cy="75" rx="25" ry="30" fill="url(#pgend09)"/>
+          <!-- Ramos de hortelã -->
+          <path d="M50 48C50 48 45 30 42 18" stroke="#047857" stroke-width="2" fill="none"/>
+          <ellipse cx="40" cy="15" rx="7" ry="4" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(-25 40 15)"/>
+          <path d="M70 48C70 48 75 30 78 18" stroke="#047857" stroke-width="2" fill="none"/>
+          <ellipse cx="80" cy="15" rx="7" ry="4" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(25 80 15)"/>
+          <!-- Olhinhos -->
+          <ellipse cx="50" cy="68" rx="4" ry="5" fill="#1a5928"/>
+          <ellipse cx="70" cy="68" rx="4" ry="5" fill="#1a5928"/>
+          <circle cx="51" cy="67" r="1.5" fill="white"/>
+          <circle cx="71" cy="67" r="1.5" fill="white"/>
+          <!-- Sorriso -->
+          <path d="M50 80 Q60 90 70 80" stroke="#1a5928" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Folha na mão -->
+          <path d="M90 72 Q105 65 100 55" stroke="#047857" stroke-width="2" fill="none"/>
+          <ellipse cx="100" cy="52" rx="8" ry="5" fill="#22c55e" stroke="#047857" stroke-width="1" transform="rotate(30 100 52)"/>
+        </svg>
+      </div>
+
+      <h1 style="color: #047857; font-size: 2.5em; margin-bottom: 10px;">Minha Horta em Casa</h1>
+      <h2 style="color: #10b981; font-size: 1.5em; font-weight: normal;">Guia Definitivo da Hortelã</h2>
+
+      <div style="margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #f0fdf4, #d1fae5); border-radius: 20px; max-width: 400px;">
+        <p style="font-size: 1.2em; color: #047857; line-height: 1.8;">
+          "A hortelã é como a generosidade: quanto mais você compartilha, mais ela se multiplica."
+        </p>
+        <p style="color: #059669; font-style: italic;">— Sabedoria do Horteleiro</p>
+      </div>
+
+      <div style="margin-top: 40px;">
+        <p style="color: #6b7280;">www.minhaHortaemcasa.com</p>
+        <p style="color: #9ca3af; font-size: 0.9em;">© 2024 Minha Horta em Casa - Todos os direitos reservados</p>
+      </div>
+
+      <div style="margin-top: 30px; padding: 15px 30px; background: #047857; color: white; border-radius: 30px;">
+        <strong>60+ páginas de conteúdo premium</strong>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 61</div>
+  </div>
+
+</body>
+</html>

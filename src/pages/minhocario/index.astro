@@ -1,0 +1,176 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+import ContentIllustration from '../../components/illustrations/ContentIllustration.astro';
+import Mascote from '../../components/illustrations/Mascote.astro';
+
+export const prerender = true;
+
+const allMinhocario = await getCollection('minhocario', ({ data }) => !data.draft);
+const sortedMinhocario = allMinhocario.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Minhocário Doméstico | Guia Completo de Vermicompostagem"
+  description="Aprenda a montar e manter um minhocário em casa. Transforme resíduos orgânicos em húmus de minhoca, o melhor adubo para sua horta."
+>
+  <!-- Hero Section -->
+  <section class="relative py-20 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-leaf-50"></div>
+    <div class="absolute top-20 left-10 w-72 h-72 bg-amber-200/30 rounded-full blur-3xl blob-animate"></div>
+    <div class="absolute bottom-10 right-10 w-64 h-64 bg-leaf-200/20 rounded-full blur-3xl blob-animate" style="animation-delay: -3s;"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <!-- Content -->
+        <div class="flex-1 text-center lg:text-left">
+          <nav class="text-sm text-gray-500 mb-4">
+            <a href="/" class="hover:text-leaf-600 transition-colors">Início</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 font-medium">Minhocário</span>
+          </nav>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <span class="text-gradient">Minhocário</span> Doméstico
+          </h1>
+
+          <p class="text-xl text-gray-600 max-w-xl mb-8">
+            Transforme seu lixo orgânico em húmus de minhoca, o adubo mais nutritivo para sua horta. Guias completos de vermicompostagem.
+          </p>
+
+          <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+            <span class="badge badge-sun">Sustentável</span>
+            <span class="badge badge-leaf">Húmus grátis</span>
+            <span class="badge badge-water">Sem cheiro</span>
+          </div>
+        </div>
+
+        <!-- Mascote -->
+        <div class="relative">
+          <Mascote mood="happy" size="xl" />
+
+          <!-- Floating icons -->
+          <div class="absolute -top-2 -right-6 animate-float bg-white rounded-2xl shadow-lg p-3">
+            <svg class="w-8 h-8 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </div>
+
+          <div class="absolute -bottom-4 -left-4 animate-float bg-white rounded-2xl shadow-lg p-3" style="animation-delay: -2s;">
+            <svg class="w-8 h-8 text-leaf-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minhocario Grid -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {sortedMinhocario.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedMinhocario.map((artigo, index) => (
+            <a
+              href={`/minhocario/${artigo.slug}`}
+              class={`group bg-white rounded-3xl border border-gray-100 p-6 hover:shadow-xl hover:border-amber-200 transition-all card-hover scroll-reveal reveal-delay-${Math.min(index + 1, 5)}`}
+            >
+              <div class="w-20 h-20 bg-gradient-to-br from-amber-50 to-orange-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform overflow-hidden">
+                <ContentIllustration slug={artigo.slug} category="Minhocário" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-amber-700 transition-colors">
+                {artigo.data.title.split(':')[0]}
+              </h3>
+              <p class="text-gray-500 mb-4 line-clamp-2">{artigo.data.description}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-gray-400">{artigo.data.readTime}</span>
+                <span class="flex items-center text-amber-600 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                  Ver artigo
+                  <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16 bg-gray-50 rounded-3xl">
+          <Mascote mood="sleeping" size="lg" class="mx-auto mb-4" />
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Artigos em breve</h3>
+          <p class="text-gray-600">O Verdinho está preparando conteúdos incríveis sobre minhocário!</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-16 bg-gradient-to-r from-amber-50 to-leaf-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 scroll-reveal">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+          Por que ter um Minhocário?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Descubra os benefícios de transformar seu lixo em adubo premium
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-6 shadow-sm scroll-reveal reveal-delay-1">
+          <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Economia</h3>
+          <p class="text-gray-600">Húmus de minhoca custa R$ 15-30/kg no mercado. Produza grátis em casa!</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm scroll-reveal reveal-delay-2">
+          <div class="w-12 h-12 bg-leaf-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-leaf-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Sustentabilidade</h3>
+          <p class="text-gray-600">Reduza até 50% do lixo doméstico transformando resíduos em adubo.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm scroll-reveal reveal-delay-3">
+          <div class="w-12 h-12 bg-sun-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-sun-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Qualidade Superior</h3>
+          <p class="text-gray-600">Húmus caseiro é mais nutritivo que fertilizantes químicos industriais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+      <div class="flex justify-center mb-6">
+        <Mascote mood="excited" size="lg" />
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+        Quer começar sua horta?
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Descubra qual planta é perfeita para seu espaço e estilo de vida!
+      </p>
+      <a href="/quiz" class="btn-primary">
+        Fazer o quiz
+        <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

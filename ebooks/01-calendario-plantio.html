@@ -1,0 +1,2837 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calendário de Plantio Anual - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.6; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 48px; font-weight: 800; color: #15803d; margin-bottom: 20px; }
+    .cover .subtitle { font-size: 24px; color: #166534; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #15803d; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #22c55e; }
+    h1 { font-size: 36px; color: #15803d; margin-bottom: 20px; border-bottom: 3px solid #22c55e; padding-bottom: 10px; }
+    h2 { font-size: 28px; color: #166534; margin: 30px 0 15px; }
+    h3 { font-size: 22px; color: #15803d; margin: 25px 0 12px; }
+    p { margin-bottom: 15px; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid #22c55e; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .month-header { background: #15803d; color: white; padding: 15px 20px; border-radius: 12px 12px 0 0; margin-top: 30px; }
+    .month-content { border: 2px solid #22c55e; border-top: none; padding: 20px; border-radius: 0 0 12px 12px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #d1d5db; padding: 10px; text-align: left; }
+    th { background: #15803d; color: white; }
+    tr:nth-child(even) { background: #f0fdf4; }
+    .toc { background: #f8fafc; padding: 30px; border-radius: 12px; margin: 20px 0; }
+    .toc h2 { margin-top: 0; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dotted #d1d5db; }
+    .plant-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+    .plant-item { background: #f0fdf4; padding: 12px; border-radius: 8px; border-left: 3px solid #22c55e; }
+    .avoid-item { background: #fef2f2; border-left-color: #ef4444; }
+    .moon-box { background: #f8fafc; padding: 20px; border-radius: 12px; margin: 15px 0; border: 2px solid #e5e7eb; }
+    .moon-phase { display: inline-block; width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle; }
+    .lua-nova { background: #1f2937; }
+    .lua-crescente { background: linear-gradient(90deg, #1f2937 50%, #fbbf24 50%); }
+    .lua-cheia { background: #fbbf24; border: 2px solid #f59e0b; }
+    .lua-minguante { background: linear-gradient(90deg, #fbbf24 50%, #1f2937 50%); }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; }
+    .tip-box { background: #dbeafe; border-left: 4px solid #3b82f6; padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .region-tag { display: inline-block; background: #22c55e; color: white; padding: 3px 10px; border-radius: 15px; font-size: 12px; margin-right: 5px; }
+    @media print { .page { page-break-after: always; } }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGrad)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGrad)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs>
+          <linearGradient id="potGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bodyGrad" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Calendário de Plantio Anual</h1>
+    <p class="subtitle">Saiba exatamente o que plantar em cada mês do ano</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>Sumário</h2>
+      <ul>
+        <li><strong>Introdução</strong> - Por que plantar na época certa?.......3</li>
+        <li><strong>Capítulo 1</strong> - Janeiro.......4</li>
+        <li><strong>Capítulo 2</strong> - Fevereiro.......6</li>
+        <li><strong>Capítulo 3</strong> - Março.......8</li>
+        <li><strong>Capítulo 4</strong> - Abril.......10</li>
+        <li><strong>Capítulo 5</strong> - Maio.......12</li>
+        <li><strong>Capítulo 6</strong> - Junho.......14</li>
+        <li><strong>Capítulo 7</strong> - Julho.......16</li>
+        <li><strong>Capítulo 8</strong> - Agosto.......18</li>
+        <li><strong>Capítulo 9</strong> - Setembro.......20</li>
+        <li><strong>Capítulo 10</strong> - Outubro.......22</li>
+        <li><strong>Capítulo 11</strong> - Novembro.......24</li>
+        <li><strong>Capítulo 12</strong> - Dezembro.......26</li>
+        <li><strong>Tabela Completa</strong> - 50+ plantas com épocas ideais.......28</li>
+        <li><strong>Guia Lunar</strong> - Plantio pelas fases da lua.......32</li>
+        <li><strong>Planejador</strong> - Organize sua horta.......35</li>
+        <li><strong>Dicas Regionais</strong> - Adaptações por região.......38</li>
+        <li><strong>Bônus 1</strong> - 20 Plantas Para Todo o Ano.......41</li>
+        <li><strong>Bônus 2</strong> - Consórcios por Estação.......45</li>
+        <li><strong>Bônus 3</strong> - Guia de Colheita Mês a Mês.......49</li>
+        <li><strong>Bônus 4</strong> - Diagnóstico: Por Que Minha Planta Não Cresceu?.......53</li>
+        <li><strong>FAQ</strong> - 25 Perguntas Frequentes.......56</li>
+        <li><strong>Checklist Anual</strong> - Organize Sua Horta.......60</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 2</div>
+  </div>
+
+  <!-- INTRODUÇÃO -->
+  <div class="page">
+    <h1>Introdução: Por Que Plantar na Época Certa?</h1>
+    <p>Você sabia que <strong>70% dos fracassos em hortas caseiras</strong> acontecem porque as plantas são cultivadas na época errada? Não é falta de dedicação, não é solo ruim, não é praga. É simplesmente plantar no momento errado.</p>
+
+    <h3>O Problema</h3>
+    <p>Cada planta tem sua época ideal de plantio. Isso está no DNA dela, desenvolvido ao longo de milhares de anos de evolução. Quando ignoramos isso:</p>
+    <ul>
+      <li><strong>Alface no verão:</strong> Pendoa rapidamente e fica amarga</li>
+      <li><strong>Tomate no inverno:</strong> Não floresce direito, produção mínima</li>
+      <li><strong>Couve no calor extremo:</strong> Atrai pragas e fica murcha</li>
+      <li><strong>Cenoura fora de época:</strong> Raízes finas e deformadas</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h3>A Solução</h3>
+      <p>Com este calendário, você saberá <strong>EXATAMENTE</strong> o que plantar em cada mês. Sem adivinhação, sem desperdício de sementes, sem frustração.</p>
+    </div>
+
+    <h3>Como Usar Este Calendário</h3>
+    <ol>
+      <li><strong>Identifique sua região:</strong> Sul, Sudeste, Centro-Oeste ou Norte/Nordeste</li>
+      <li><strong>Consulte o mês atual:</strong> Veja o que é ideal plantar AGORA</li>
+      <li><strong>Planeje os próximos meses:</strong> Prepare-se com antecedência</li>
+      <li><strong>Siga as fases da lua:</strong> Otimize ainda mais seus resultados</li>
+    </ol>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Imprima o calendário e cole na parede da sua varanda ou cozinha. Consulta rápida toda semana!
+    </div>
+    <div class="page-number">Página 3</div>
+  </div>
+
+  <!-- JANEIRO -->
+  <div class="page">
+    <div class="month-header"><h2>Janeiro - Auge do Verão</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Mês mais quente do ano na maior parte do Brasil. Chuvas abundantes no Sudeste e Centro-Oeste. Alta umidade favorece fungos.</p>
+
+      <h3>O Que Plantar em Janeiro</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Abobrinha</strong><br>Colheita: 45-60 dias</div>
+        <div class="plant-item"><strong>Berinjela</strong><br>Colheita: 100-120 dias</div>
+        <div class="plant-item"><strong>Jiló</strong><br>Colheita: 90-100 dias</div>
+        <div class="plant-item"><strong>Maxixe</strong><br>Colheita: 60-70 dias</div>
+        <div class="plant-item"><strong>Melancia</strong><br>Colheita: 80-100 dias</div>
+        <div class="plant-item"><strong>Melão</strong><br>Colheita: 85-100 dias</div>
+        <div class="plant-item"><strong>Pepino</strong><br>Colheita: 50-60 dias</div>
+        <div class="plant-item"><strong>Pimenta</strong><br>Colheita: 120-150 dias</div>
+        <div class="plant-item"><strong>Quiabo</strong><br>Colheita: 60-80 dias</div>
+        <div class="plant-item"><strong>Coentro</strong><br>Colheita: 40-60 dias</div>
+      </div>
+
+      <h3>Evite Plantar em Janeiro</h3>
+      <div class="plant-grid">
+        <div class="plant-item avoid-item"><strong>Alface</strong><br>Pendoa com calor</div>
+        <div class="plant-item avoid-item"><strong>Espinafre</strong><br>Não tolera calor</div>
+        <div class="plant-item avoid-item"><strong>Brócolis</strong><br>Precisa de frio</div>
+        <div class="plant-item avoid-item"><strong>Couve-flor</strong><br>Precisa de frio</div>
+      </div>
+
+      <div class="warning-box">
+        <strong>Atenção:</strong> Em janeiro, regue de manhã cedo ou no final da tarde. Regar ao meio-dia pode queimar as folhas!
+      </div>
+    </div>
+    <div class="page-number">Página 4</div>
+  </div>
+
+  <div class="page">
+    <h3>Cuidados Especiais em Janeiro</h3>
+    <ul>
+      <li><strong>Pragas:</strong> Pulgões e lagartas estão em alta. Inspecione diariamente.</li>
+      <li><strong>Rega:</strong> Aumente a frequência, mas não encharque.</li>
+      <li><strong>Sombreamento:</strong> Use sombrite 50% nas horas mais quentes.</li>
+      <li><strong>Fungos:</strong> Evite molhar as folhas. Prefira irrigação por gotejamento.</li>
+    </ul>
+
+    <h3>Tarefas do Mês</h3>
+    <ol>
+      <li>Renovar cobertura morta (mulch) para manter umidade</li>
+      <li>Podar tomates para melhor ventilação</li>
+      <li>Colher frutas maduras imediatamente (estragam rápido no calor)</li>
+      <li>Preparar canteiros para plantio de outono (março/abril)</li>
+    </ol>
+
+    <table>
+      <tr><th>Planta</th><th>Germinação</th><th>Colheita</th><th>Dificuldade</th></tr>
+      <tr><td>Abobrinha</td><td>5-8 dias</td><td>45-60 dias</td><td>Fácil</td></tr>
+      <tr><td>Pepino</td><td>4-7 dias</td><td>50-60 dias</td><td>Fácil</td></tr>
+      <tr><td>Berinjela</td><td>10-14 dias</td><td>100-120 dias</td><td>Média</td></tr>
+      <tr><td>Quiabo</td><td>7-14 dias</td><td>60-80 dias</td><td>Fácil</td></tr>
+      <tr><td>Pimenta</td><td>14-21 dias</td><td>120-150 dias</td><td>Média</td></tr>
+    </table>
+    <div class="page-number">Página 5</div>
+  </div>
+
+  <!-- FEVEREIRO -->
+  <div class="page">
+    <div class="month-header"><h2>Fevereiro - Calor Intenso</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Ainda muito quente, com chuvas frequentes. Final do verão se aproxima. Dias começam a encurtar levemente.</p>
+
+      <h3>O Que Plantar em Fevereiro</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Abobrinha</strong><br>Última chance do verão</div>
+        <div class="plant-item"><strong>Feijão-vagem</strong><br>Colheita: 60-70 dias</div>
+        <div class="plant-item"><strong>Milho-verde</strong><br>Colheita: 90-110 dias</div>
+        <div class="plant-item"><strong>Pepino</strong><br>Ainda dá tempo!</div>
+        <div class="plant-item"><strong>Tomate</strong><br>Início para colheita no outono</div>
+        <div class="plant-item"><strong>Manjericão</strong><br>Cresce rápido no calor</div>
+        <div class="plant-item"><strong>Cebolinha</strong><br>Adapta-se bem</div>
+        <div class="plant-item"><strong>Salsinha</strong><br>Tolera o calor</div>
+      </div>
+
+      <h3>Evite Plantar em Fevereiro</h3>
+      <div class="plant-grid">
+        <div class="plant-item avoid-item"><strong>Alface</strong><br>Espere março</div>
+        <div class="plant-item avoid-item"><strong>Rúcula</strong><br>Vai amargar</div>
+        <div class="plant-item avoid-item"><strong>Repolho</strong><br>Espere o frio</div>
+        <div class="plant-item avoid-item"><strong>Cenoura</strong><br>Melhor em março</div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Fevereiro é ótimo para fazer compostagem! O calor acelera a decomposição. Aproveite os restos de poda.
+    </div>
+    <div class="page-number">Página 6</div>
+  </div>
+
+  <div class="page">
+    <h3>Preparação para o Outono</h3>
+    <p>Fevereiro é o mês de <strong>preparar a transição</strong>. Enquanto ainda colhe as culturas de verão, prepare-se para o plantio de outono:</p>
+    <ul>
+      <li>Compre sementes de folhosas (alface, rúcula, espinafre)</li>
+      <li>Prepare novos canteiros enriquecendo com composto</li>
+      <li>Faça mudas em bandejas para transplante em março</li>
+    </ul>
+
+    <table>
+      <tr><th>Planta</th><th>Germinação</th><th>Colheita</th><th>Dificuldade</th></tr>
+      <tr><td>Feijão-vagem</td><td>5-10 dias</td><td>60-70 dias</td><td>Fácil</td></tr>
+      <tr><td>Milho-verde</td><td>5-8 dias</td><td>90-110 dias</td><td>Média</td></tr>
+      <tr><td>Tomate</td><td>6-14 dias</td><td>90-120 dias</td><td>Média</td></tr>
+      <tr><td>Manjericão</td><td>7-14 dias</td><td>45-60 dias</td><td>Fácil</td></tr>
+      <tr><td>Cebolinha</td><td>10-15 dias</td><td>60-90 dias</td><td>Fácil</td></tr>
+    </table>
+
+    <h3>Colheitas de Fevereiro</h3>
+    <p>Se você plantou certo nos meses anteriores, agora colhe:</p>
+    <ul>
+      <li>Tomates plantados em outubro/novembro</li>
+      <li>Abobrinhas plantadas em dezembro</li>
+      <li>Pepinos em produção contínua</li>
+      <li>Pimentas começando a produzir</li>
+    </ul>
+    <div class="page-number">Página 7</div>
+  </div>
+
+  <!-- MARÇO -->
+  <div class="page">
+    <div class="month-header"><h2>Março - Início do Outono</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Temperaturas começam a cair. Menos chuvas. O melhor mês para plantar folhosas! O calor diminui e as plantas de clima ameno prosperam.</p>
+
+      <h3>O Que Plantar em Março</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Alface</strong><br>Época ideal! 45-60 dias</div>
+        <div class="plant-item"><strong>Rúcula</strong><br>Vai ficar macia! 30-40 dias</div>
+        <div class="plant-item"><strong>Espinafre</strong><br>Perfeito! 40-50 dias</div>
+        <div class="plant-item"><strong>Couve</strong><br>Começa agora! 60-90 dias</div>
+        <div class="plant-item"><strong>Brócolis</strong><br>Ótima época! 80-100 dias</div>
+        <div class="plant-item"><strong>Cenoura</strong><br>Plantio ideal! 80-110 dias</div>
+        <div class="plant-item"><strong>Beterraba</strong><br>Excelente! 60-70 dias</div>
+        <div class="plant-item"><strong>Rabanete</strong><br>Super rápido! 25-30 dias</div>
+        <div class="plant-item"><strong>Agrião</strong><br>Cresce bem! 50-60 dias</div>
+        <div class="plant-item"><strong>Chicória</strong><br>Época perfeita! 60-80 dias</div>
+      </div>
+
+      <h3>Ainda Dá Tempo</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Tomate</strong><br>Última janela</div>
+        <div class="plant-item"><strong>Pimentão</strong><br>Início de março</div>
+      </div>
+    </div>
+    <div class="page-number">Página 8</div>
+  </div>
+
+  <div class="page">
+    <div class="highlight-box">
+      <h3>Março é o Mês de Ouro!</h3>
+      <p>Se você só pudesse plantar em um mês do ano, escolha MARÇO. É quando a maior variedade de plantas pode ser cultivada com sucesso, especialmente folhosas e raízes.</p>
+    </div>
+
+    <h3>Cuidados Especiais em Março</h3>
+    <ul>
+      <li><strong>Transição:</strong> Plantas de verão começam a declinar - colha o que resta</li>
+      <li><strong>Semeadura:</strong> Faça escalonada (a cada 15 dias) para colheita contínua</li>
+      <li><strong>Solo:</strong> Renove canteiros com composto antes de plantar</li>
+      <li><strong>Mudas:</strong> Proteja mudas jovens do sol da tarde</li>
+    </ul>
+
+    <table>
+      <tr><th>Planta</th><th>Germinação</th><th>Colheita</th><th>Dificuldade</th></tr>
+      <tr><td>Alface</td><td>4-7 dias</td><td>45-60 dias</td><td>Fácil</td></tr>
+      <tr><td>Rúcula</td><td>3-7 dias</td><td>30-40 dias</td><td>Fácil</td></tr>
+      <tr><td>Cenoura</td><td>10-20 dias</td><td>80-110 dias</td><td>Média</td></tr>
+      <tr><td>Beterraba</td><td>7-14 dias</td><td>60-70 dias</td><td>Fácil</td></tr>
+      <tr><td>Brócolis</td><td>5-10 dias</td><td>80-100 dias</td><td>Média</td></tr>
+      <tr><td>Rabanete</td><td>3-6 dias</td><td>25-30 dias</td><td>Muito Fácil</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Plante rabanete entre outras culturas mais lentas. Você colhe enquanto as outras ainda crescem!
+    </div>
+    <div class="page-number">Página 9</div>
+  </div>
+
+  <!-- ABRIL -->
+  <div class="page">
+    <div class="month-header"><h2>Abril - Outono Pleno</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Temperaturas amenas, ideais para a maioria das hortaliças. Menos pragas, menos doenças. Mês muito produtivo!</p>
+
+      <h3>O Que Plantar em Abril</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Alface</strong><br>Continua perfeito!</div>
+        <div class="plant-item"><strong>Almeirão</strong><br>Ótima época! 60-70 dias</div>
+        <div class="plant-item"><strong>Acelga</strong><br>Ideal! 50-60 dias</div>
+        <div class="plant-item"><strong>Couve-flor</strong><br>Hora de plantar! 90-120 dias</div>
+        <div class="plant-item"><strong>Repolho</strong><br>Perfeito! 90-120 dias</div>
+        <div class="plant-item"><strong>Ervilha</strong><br>Excelente! 60-70 dias</div>
+        <div class="plant-item"><strong>Fava</strong><br>Boa época! 80-90 dias</div>
+        <div class="plant-item"><strong>Cebola</strong><br>Início plantio! 120-150 dias</div>
+        <div class="plant-item"><strong>Alho</strong><br>Plante agora! 120-150 dias</div>
+        <div class="plant-item"><strong>Nabo</strong><br>Cresce bem! 45-60 dias</div>
+      </div>
+
+      <h3>Temperos para Abril</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Salsa</strong><br>Época ideal</div>
+        <div class="plant-item"><strong>Coentro</strong><br>Não pendoa no frio</div>
+        <div class="plant-item"><strong>Cebolinha</strong><br>Sempre vai bem</div>
+        <div class="plant-item"><strong>Hortelã</strong><br>Cresce menos, mas vai</div>
+      </div>
+    </div>
+    <div class="page-number">Página 10</div>
+  </div>
+
+  <div class="page">
+    <h3>Foco nas Brássicas</h3>
+    <p>Abril é o mês das <strong>brássicas</strong> (família do repolho). São plantas que adoram clima ameno:</p>
+    <ul>
+      <li><strong>Brócolis:</strong> Plante mudas, não sementes direto (demora muito)</li>
+      <li><strong>Couve-flor:</strong> Mais exigente, precisa de solo rico</li>
+      <li><strong>Repolho:</strong> Resistente, ótimo para iniciantes</li>
+      <li><strong>Couve:</strong> Produz o ano todo, mas prefere frio</li>
+      <li><strong>Couve-de-bruxelas:</strong> Para quem quer um desafio</li>
+    </ul>
+
+    <div class="warning-box">
+      <strong>Atenção com as Brássicas:</strong> Todas atraem a lagarta-da-couve. Inspecione as folhas regularmente e remova ovos/lagartas manualmente.
+    </div>
+
+    <table>
+      <tr><th>Planta</th><th>Germinação</th><th>Colheita</th><th>Dificuldade</th></tr>
+      <tr><td>Couve-flor</td><td>5-10 dias</td><td>90-120 dias</td><td>Difícil</td></tr>
+      <tr><td>Repolho</td><td>5-10 dias</td><td>90-120 dias</td><td>Média</td></tr>
+      <tr><td>Ervilha</td><td>7-14 dias</td><td>60-70 dias</td><td>Fácil</td></tr>
+      <tr><td>Alho</td><td>15-20 dias</td><td>120-150 dias</td><td>Fácil</td></tr>
+      <tr><td>Cebola</td><td>10-15 dias</td><td>120-150 dias</td><td>Média</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Abril é perfeito para plantar alho. Você colhe no final do ano, justo para o Natal!
+    </div>
+    <div class="page-number">Página 11</div>
+  </div>
+
+  <!-- MAIO -->
+  <div class="page">
+    <div class="month-header"><h2>Maio - Final do Outono</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Frio chegando forte, especialmente no Sul e Sudeste. Dias mais curtos. Crescimento das plantas desacelera.</p>
+
+      <h3>O Que Plantar em Maio</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Alface</strong><br>Ainda excelente!</div>
+        <div class="plant-item"><strong>Espinafre</strong><br>Adora o frio!</div>
+        <div class="plant-item"><strong>Rúcula</strong><br>Fica mais saborosa</div>
+        <div class="plant-item"><strong>Mostarda</strong><br>Época ideal! 40-50 dias</div>
+        <div class="plant-item"><strong>Agrião</strong><br>Perfeito no frio</div>
+        <div class="plant-item"><strong>Rabanete</strong><br>Sempre rápido</div>
+        <div class="plant-item"><strong>Ervilha</strong><br>Continua boa</div>
+        <div class="plant-item"><strong>Fava</strong><br>Adora frio!</div>
+        <div class="plant-item"><strong>Alho-poró</strong><br>Hora certa! 120 dias</div>
+        <div class="plant-item"><strong>Salsão</strong><br>Para pacientes! 120+ dias</div>
+      </div>
+
+      <h3>Evite em Maio</h3>
+      <div class="plant-grid">
+        <div class="plant-item avoid-item"><strong>Tomate</strong><br>Não vai produzir</div>
+        <div class="plant-item avoid-item"><strong>Pimentão</strong><br>Precisa de calor</div>
+        <div class="plant-item avoid-item"><strong>Abobrinha</strong><br>Não germina no frio</div>
+        <div class="plant-item avoid-item"><strong>Pepino</strong><br>Fica parado</div>
+      </div>
+    </div>
+    <div class="page-number">Página 12</div>
+  </div>
+
+  <div class="page">
+    <h3>Proteção Contra Geadas</h3>
+    <p>Em regiões mais frias (Sul e Serra do Sudeste), geadas podem ocorrer a partir de maio. Proteja suas plantas:</p>
+    <ul>
+      <li><strong>TNT (tecido não-tecido):</strong> Cubra as plantas à noite</li>
+      <li><strong>Garrafas PET:</strong> Corte o fundo e use como mini-estufa</li>
+      <li><strong>Palha:</strong> Cubra o solo para reter calor</li>
+      <li><strong>Irrigação noturna:</strong> Água libera calor ao esfriar</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h3>Plantas que Amam o Frio</h3>
+      <p>Algumas plantas não só toleram, mas <strong>precisam</strong> do frio para ficar saborosas:</p>
+      <ul>
+        <li>Espinafre fica mais doce após geada leve</li>
+        <li>Couve desenvolve melhor sabor</li>
+        <li>Alho-poró intensifica o aroma</li>
+      </ul>
+    </div>
+
+    <table>
+      <tr><th>Planta</th><th>Germinação</th><th>Colheita</th><th>Tolera Geada?</th></tr>
+      <tr><td>Espinafre</td><td>7-14 dias</td><td>40-50 dias</td><td>Sim</td></tr>
+      <tr><td>Mostarda</td><td>4-7 dias</td><td>40-50 dias</td><td>Leve</td></tr>
+      <tr><td>Fava</td><td>7-14 dias</td><td>80-90 dias</td><td>Sim</td></tr>
+      <tr><td>Alho-poró</td><td>10-15 dias</td><td>120 dias</td><td>Sim</td></tr>
+      <tr><td>Ervilha</td><td>7-14 dias</td><td>60-70 dias</td><td>Leve</td></tr>
+    </table>
+    <div class="page-number">Página 13</div>
+  </div>
+
+  <!-- JUNHO -->
+  <div class="page">
+    <div class="month-header"><h2>Junho - Início do Inverno</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Inverno oficial. Dias curtos, noites longas e frias. Crescimento lento. Foco em manutenção e planejamento.</p>
+
+      <h3>O Que Plantar em Junho</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Alface</strong><br>Variedades de inverno</div>
+        <div class="plant-item"><strong>Rúcula</strong><br>Cresce devagar mas vai</div>
+        <div class="plant-item"><strong>Espinafre</strong><br>Continua ótimo</div>
+        <div class="plant-item"><strong>Couve</strong><br>Produz bem no frio</div>
+        <div class="plant-item"><strong>Agrião</strong><br>Não para!</div>
+        <div class="plant-item"><strong>Cebola</strong><br>Bulbificação</div>
+        <div class="plant-item"><strong>Alho</strong><br>Desenvolvimento</div>
+        <div class="plant-item"><strong>Morango</strong><br>Plantar mudas!</div>
+      </div>
+
+      <h3>Tarefas de Inverno</h3>
+      <ul>
+        <li><strong>Planejamento:</strong> Monte o calendário da primavera/verão</li>
+        <li><strong>Compras:</strong> Adquira sementes para setembro</li>
+        <li><strong>Compostagem:</strong> Vire a pilha, adicione material</li>
+        <li><strong>Manutenção:</strong> Limpe ferramentas, conserte estruturas</li>
+        <li><strong>Enriquecimento:</strong> Adicione composto aos canteiros vazios</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 14</div>
+  </div>
+
+  <div class="page">
+    <div class="warning-box">
+      <h3>Junho: Mês de Menor Produtividade</h3>
+      <p>É normal a horta produzir menos em junho. Não desanime! Use este tempo para:</p>
+      <ul>
+        <li>Descansar canteiros</li>
+        <li>Preparar solo para primavera</li>
+        <li>Estudar novas técnicas</li>
+        <li>Planejar expansões</li>
+      </ul>
+    </div>
+
+    <h3>Morango: A Estrela do Inverno</h3>
+    <p>Junho é época de plantar <strong>mudas de morango</strong>. Elas precisam de frio para produzir bem:</p>
+    <ul>
+      <li>Compre mudas certificadas (não sementes - demora demais)</li>
+      <li>Plante em solo bem drenado</li>
+      <li>Mulch com palha (protege e mantém frutas limpas)</li>
+      <li>Produção começa em agosto/setembro</li>
+    </ul>
+
+    <table>
+      <tr><th>Atividade</th><th>Prioridade</th><th>Benefício</th></tr>
+      <tr><td>Plantar morango</td><td>Alta</td><td>Frutas na primavera</td></tr>
+      <tr><td>Preparar canteiros</td><td>Média</td><td>Solo pronto em setembro</td></tr>
+      <tr><td>Compostar</td><td>Alta</td><td>Adubo para verão</td></tr>
+      <tr><td>Podar frutíferas</td><td>Alta</td><td>Melhor produção</td></tr>
+      <tr><td>Comprar sementes</td><td>Média</td><td>Evitar falta depois</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> O inverno é perfeito para podar árvores frutíferas caducas (que perdem folhas). Elas estão dormentes e se recuperam bem.
+    </div>
+    <div class="page-number">Página 15</div>
+  </div>
+
+  <!-- JULHO -->
+  <div class="page">
+    <div class="month-header"><h2>Julho - Inverno Pleno</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Mês mais frio na maior parte do Brasil. Geadas frequentes no Sul. Férias escolares - ótimo para projetos na horta com a família!</p>
+
+      <h3>O Que Plantar em Julho</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Alface</strong><br>Variedades resistentes</div>
+        <div class="plant-item"><strong>Espinafre</strong><br>Adora esse frio!</div>
+        <div class="plant-item"><strong>Couve</strong><br>Sabor intensificado</div>
+        <div class="plant-item"><strong>Agrião</strong><br>Produz sem parar</div>
+        <div class="plant-item"><strong>Morango</strong><br>Ainda dá tempo!</div>
+        <div class="plant-item"><strong>Cebola</strong><br>Em desenvolvimento</div>
+      </div>
+
+      <h3>Começar em Bandejas (para Primavera)</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Tomate</strong><br>Mudas para setembro</div>
+        <div class="plant-item"><strong>Pimentão</strong><br>Mudas para setembro</div>
+        <div class="plant-item"><strong>Berinjela</strong><br>Germinação lenta</div>
+        <div class="plant-item"><strong>Pimenta</strong><br>Precisa de antecedência</div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>Produção de Mudas em Julho</h3>
+        <p>Julho é estratégico para fazer mudas das plantas de verão. Elas demoram para germinar e crescer, então precisa começar agora:</p>
+        <ul>
+          <li>Tomate: 6-8 semanas até transplante</li>
+          <li>Pimentão: 8-10 semanas até transplante</li>
+          <li>Berinjela: 8-10 semanas até transplante</li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-number">Página 16</div>
+  </div>
+
+  <div class="page">
+    <h3>Mini-Estufa Caseira</h3>
+    <p>Para germinar sementes de verão no frio de julho, você precisa de uma mini-estufa:</p>
+    <ol>
+      <li><strong>Caixa de isopor:</strong> Pegue uma caixa de frutas</li>
+      <li><strong>Cobertura:</strong> Tampa de vidro ou plástico transparente</li>
+      <li><strong>Posição:</strong> Local que pegue sol da manhã</li>
+      <li><strong>Ventilação:</strong> Abra durante o dia para evitar fungos</li>
+      <li><strong>Rega:</strong> Mantenha úmido, nunca encharcado</li>
+    </ol>
+
+    <div class="warning-box">
+      <strong>Cuidado com as Mudas:</strong> Mudas feitas em julho precisam ficar protegidas até setembro. Não transplante antes da última geada!
+    </div>
+
+    <h3>Colheitas de Julho</h3>
+    <p>O que você plantou no outono está pronto agora:</p>
+    <ul>
+      <li>Brócolis plantado em março/abril</li>
+      <li>Couve-flor (finalmente!)</li>
+      <li>Repolho formando cabeças</li>
+      <li>Alface de inverno</li>
+      <li>Espinafre contínuo</li>
+    </ul>
+
+    <table>
+      <tr><th>Muda para Fazer</th><th>Início</th><th>Transplante</th><th>Colheita</th></tr>
+      <tr><td>Tomate</td><td>Julho</td><td>Setembro</td><td>Dezembro</td></tr>
+      <tr><td>Pimentão</td><td>Julho</td><td>Setembro</td><td>Janeiro</td></tr>
+      <tr><td>Berinjela</td><td>Julho</td><td>Setembro</td><td>Janeiro</td></tr>
+      <tr><td>Pimenta</td><td>Julho</td><td>Setembro</td><td>Fevereiro</td></tr>
+    </table>
+    <div class="page-number">Página 17</div>
+  </div>
+
+  <!-- AGOSTO -->
+  <div class="page">
+    <div class="month-header"><h2>Agosto - Final do Inverno</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Inverno começando a ceder. Dias mais longos. Ainda frio, mas sol mais forte. Mês de transição importante!</p>
+
+      <h3>O Que Plantar em Agosto</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Alface</strong><br>Última leva de inverno</div>
+        <div class="plant-item"><strong>Rúcula</strong><br>Ainda excelente</div>
+        <div class="plant-item"><strong>Tomate (mudas)</strong><br>Continuar produção</div>
+        <div class="plant-item"><strong>Pimentão (mudas)</strong><br>Em bandeja protegida</div>
+        <div class="plant-item"><strong>Cenoura</strong><br>Boa época no Sul</div>
+        <div class="plant-item"><strong>Beterraba</strong><br>Plante agora!</div>
+        <div class="plant-item"><strong>Salsa</strong><br>Germina bem</div>
+        <div class="plant-item"><strong>Coentro</strong><br>Antes do calor</div>
+      </div>
+
+      <h3>Transplantes de Agosto</h3>
+      <p>As mudas feitas em junho/julho podem ir para os canteiros em regiões mais quentes (Norte, Nordeste, parte do Centro-Oeste):</p>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Tomate</strong><br>Se não houver mais geadas</div>
+        <div class="plant-item"><strong>Pimentão</strong><br>Com proteção noturna</div>
+      </div>
+    </div>
+    <div class="page-number">Página 18</div>
+  </div>
+
+  <div class="page">
+    <h3>Agosto: Mês Estratégico</h3>
+    <p>Agosto é quando você <strong>prepara o terreno</strong> para a grande safra de primavera/verão:</p>
+    <ul>
+      <li><strong>Limpe canteiros:</strong> Retire restos de culturas de inverno</li>
+      <li><strong>Adicione composto:</strong> Enriqueça o solo agora</li>
+      <li><strong>Faça covas:</strong> Prepare buracos para tomates e pimentões</li>
+      <li><strong>Instale tutores:</strong> Estacas e estruturas de suporte</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h3>Checklist de Agosto</h3>
+      <ul>
+        <li>☐ Mudas de tomate com 15-20cm de altura</li>
+        <li>☐ Mudas de pimentão com 4-6 folhas</li>
+        <li>☐ Canteiros limpos e adubados</li>
+        <li>☐ Sementes de verão compradas</li>
+        <li>☐ Tutores e suportes prontos</li>
+      </ul>
+    </div>
+
+    <h3>Colheitas de Agosto</h3>
+    <table>
+      <tr><th>Planta</th><th>Plantada em</th><th>Observação</th></tr>
+      <tr><td>Alho</td><td>Abril/Maio</td><td>Quase pronto! Folhas amarelando</td></tr>
+      <tr><td>Cebola</td><td>Abril/Maio</td><td>Bulbos crescendo</td></tr>
+      <tr><td>Morango</td><td>Junho</td><td>Primeiras frutas!</td></tr>
+      <tr><td>Brócolis</td><td>Março/Abril</td><td>Últimas colheitas</td></tr>
+      <tr><td>Couve</td><td>Contínuo</td><td>Colha folhas externas</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> O alho está pronto quando metade das folhas secaram. Não espere demais ou os bulbos se abrem!
+    </div>
+    <div class="page-number">Página 19</div>
+  </div>
+
+  <!-- SETEMBRO -->
+  <div class="page">
+    <div class="month-header"><h2>Setembro - Início da Primavera</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Primavera oficial! Temperaturas subindo, dias mais longos. Hora de plantar as culturas de verão. A horta ganha vida novamente!</p>
+
+      <h3>O Que Plantar em Setembro</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Tomate</strong><br>Época perfeita! Transplante mudas</div>
+        <div class="plant-item"><strong>Pimentão</strong><br>Hora de transplantar!</div>
+        <div class="plant-item"><strong>Berinjela</strong><br>Transplante agora</div>
+        <div class="plant-item"><strong>Abobrinha</strong><br>Semeadura direta</div>
+        <div class="plant-item"><strong>Pepino</strong><br>Germina rápido no calor</div>
+        <div class="plant-item"><strong>Feijão-vagem</strong><br>Plante direto</div>
+        <div class="plant-item"><strong>Milho</strong><br>Início da safra</div>
+        <div class="plant-item"><strong>Manjericão</strong><br>Adora calor!</div>
+        <div class="plant-item"><strong>Coentro</strong><br>Último plantio antes do calor</div>
+        <div class="plant-item"><strong>Quiabo</strong><br>Começa agora</div>
+      </div>
+
+      <h3>Cuidado com Geadas Tardias</h3>
+      <div class="warning-box">
+        <p>Em regiões serranas e no Sul, geadas podem ocorrer até meados de setembro. Proteja mudas transplantadas com garrafas PET ou TNT nas primeiras semanas.</p>
+      </div>
+    </div>
+    <div class="page-number">Página 20</div>
+  </div>
+
+  <div class="page">
+    <h3>Transplante de Mudas</h3>
+    <p>As mudas que você preparou no inverno estão prontas. Como transplantar corretamente:</p>
+    <ol>
+      <li><strong>Escolha o dia:</strong> Nublado ou final de tarde</li>
+      <li><strong>Regue antes:</strong> Solo úmido facilita a remoção</li>
+      <li><strong>Cave fundo:</strong> Tomates podem ser enterrados até as primeiras folhas</li>
+      <li><strong>Firme a terra:</strong> Mas não compacte demais</li>
+      <li><strong>Regue após:</strong> Assente a terra ao redor das raízes</li>
+      <li><strong>Sombreie:</strong> Proteja do sol forte nos primeiros 3-5 dias</li>
+    </ol>
+
+    <div class="highlight-box">
+      <h3>Setembro é o Mês do Tomate!</h3>
+      <p>Se você quer tomates abundantes no verão, setembro é crucial:</p>
+      <ul>
+        <li>Plante em local com 6+ horas de sol</li>
+        <li>Espaçamento: 60-80cm entre plantas</li>
+        <li>Já instale o tutor/gaiola</li>
+        <li>Primeira adubação após 15 dias</li>
+      </ul>
+    </div>
+
+    <table>
+      <tr><th>Planta</th><th>Espaçamento</th><th>Sol</th><th>Primeira Colheita</th></tr>
+      <tr><td>Tomate</td><td>60-80cm</td><td>6+ horas</td><td>90-120 dias</td></tr>
+      <tr><td>Pimentão</td><td>40-50cm</td><td>6+ horas</td><td>90-120 dias</td></tr>
+      <tr><td>Abobrinha</td><td>80-100cm</td><td>6+ horas</td><td>45-60 dias</td></tr>
+      <tr><td>Pepino</td><td>40-60cm</td><td>4+ horas</td><td>50-60 dias</td></tr>
+      <tr><td>Manjericão</td><td>20-30cm</td><td>4+ horas</td><td>45-60 dias</td></tr>
+    </table>
+    <div class="page-number">Página 21</div>
+  </div>
+
+  <!-- OUTUBRO -->
+  <div class="page">
+    <div class="month-header"><h2>Outubro - Primavera Plena</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Calor chegando! Crescimento acelerado. Chuvas de primavera. Pragas começam a aparecer. Mês de muito trabalho na horta!</p>
+
+      <h3>O Que Plantar em Outubro</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Tomate</strong><br>Segunda leva para escalonar</div>
+        <div class="plant-item"><strong>Pimenta</strong><br>Todas as variedades</div>
+        <div class="plant-item"><strong>Abóbora</strong><br>Precisa de espaço!</div>
+        <div class="plant-item"><strong>Melancia</strong><br>Início do plantio</div>
+        <div class="plant-item"><strong>Melão</strong><br>Para colher no verão</div>
+        <div class="plant-item"><strong>Jiló</strong><br>Típico brasileiro</div>
+        <div class="plant-item"><strong>Maxixe</strong><br>Nordestino, adora calor</div>
+        <div class="plant-item"><strong>Quiabo</strong><br>Continua excelente</div>
+        <div class="plant-item"><strong>Mandioca</strong><br>Início das chuvas</div>
+        <div class="plant-item"><strong>Batata-doce</strong><br>Plante ramas</div>
+      </div>
+
+      <h3>Folhosas: Com Cuidado</h3>
+      <p>Ainda dá para plantar algumas folhosas, mas escolha variedades resistentes ao calor:</p>
+      <ul>
+        <li><strong>Alface crespa:</strong> Mais resistente que a lisa</li>
+        <li><strong>Couve:</strong> Aguenta bem o calor</li>
+        <li><strong>Taioba:</strong> Nativa, adora calor e chuva</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 22</div>
+  </div>
+
+  <div class="page">
+    <h3>Manejo de Pragas na Primavera</h3>
+    <p>Com o calor, as pragas proliferam. Esteja preparado:</p>
+
+    <table>
+      <tr><th>Praga</th><th>Plantas Afetadas</th><th>Controle Natural</th></tr>
+      <tr><td>Pulgão</td><td>Quase todas</td><td>Jato d'água forte, calda de fumo</td></tr>
+      <tr><td>Lagarta</td><td>Brássicas, tomate</td><td>Catação manual, Bacillus thuringiensis</td></tr>
+      <tr><td>Mosca-branca</td><td>Tomate, feijão</td><td>Armadilhas amarelas, óleo de neem</td></tr>
+      <tr><td>Ácaros</td><td>Várias</td><td>Aumentar umidade, calda de alho</td></tr>
+      <tr><td>Lesmas/caracóis</td><td>Folhosas</td><td>Armadilhas de cerveja, catação noturna</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Inspecione suas plantas TODOS OS DIAS em outubro. Pragas detectadas cedo são muito mais fáceis de controlar!
+    </div>
+
+    <h3>Adubação de Cobertura</h3>
+    <p>Plantas de crescimento rápido precisam de nutrientes extras:</p>
+    <ul>
+      <li><strong>Tomate:</strong> Adube a cada 15 dias após o transplante</li>
+      <li><strong>Abobrinha/Pepino:</strong> Adube quando começar a florir</li>
+      <li><strong>Folhosas:</strong> Adubação leve a cada 20 dias</li>
+    </ul>
+
+    <div class="warning-box">
+      <strong>Cuidado com Excesso:</strong> Adubo demais queima as plantas! Siga sempre as doses recomendadas. Menos é mais.
+    </div>
+    <div class="page-number">Página 23</div>
+  </div>
+
+  <!-- NOVEMBRO -->
+  <div class="page">
+    <div class="month-header"><h2>Novembro - Calor e Chuvas</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Calor intenso chegando. Chuvas mais frequentes (especialmente Sudeste e Centro-Oeste). Crescimento explosivo das plantas!</p>
+
+      <h3>O Que Plantar em Novembro</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Abobrinha</strong><br>Produção rápida</div>
+        <div class="plant-item"><strong>Pepino</strong><br>Última janela boa</div>
+        <div class="plant-item"><strong>Quiabo</strong><br>Adora esse clima</div>
+        <div class="plant-item"><strong>Melancia</strong><br>Continua ótimo</div>
+        <div class="plant-item"><strong>Abóbora</strong><br>Para colher em fevereiro</div>
+        <div class="plant-item"><strong>Feijão-vagem</strong><br>Segunda safra</div>
+        <div class="plant-item"><strong>Berinjela</strong><br>Transplante de mudas</div>
+        <div class="plant-item"><strong>Jiló</strong><br>Pleno desenvolvimento</div>
+      </div>
+
+      <h3>Evite Plantar em Novembro</h3>
+      <div class="plant-grid">
+        <div class="plant-item avoid-item"><strong>Alface</strong><br>Vai amargar/pendoar</div>
+        <div class="plant-item avoid-item"><strong>Rúcula</strong><br>Muito quente</div>
+        <div class="plant-item avoid-item"><strong>Espinafre</strong><br>Não tolera calor</div>
+        <div class="plant-item avoid-item"><strong>Brássicas</strong><br>Espere o outono</div>
+      </div>
+    </div>
+    <div class="page-number">Página 24</div>
+  </div>
+
+  <div class="page">
+    <h3>Colheitas de Novembro</h3>
+    <p>Se você plantou certinho em setembro/outubro, novembro é mês de fartura:</p>
+    <ul>
+      <li><strong>Abobrinha:</strong> Colha pequenas (15-20cm) para melhor sabor</li>
+      <li><strong>Pepino:</strong> Colha antes de amarelar</li>
+      <li><strong>Tomate:</strong> Primeiros frutos maduros!</li>
+      <li><strong>Manjericão:</strong> Pode antes de florir para mais folhas</li>
+      <li><strong>Pimentão:</strong> Verde já pode colher, vermelho espere mais</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h3>Dicas para Colheita</h3>
+      <ul>
+        <li><strong>Colha cedo:</strong> Manhã, quando está mais fresco</li>
+        <li><strong>Colha frequente:</strong> Estimula mais produção</li>
+        <li><strong>Use tesoura:</strong> Não arranque, pode danificar a planta</li>
+        <li><strong>Não lave antes de guardar:</strong> Aumenta durabilidade</li>
+      </ul>
+    </div>
+
+    <h3>Problemas Comuns em Novembro</h3>
+    <table>
+      <tr><th>Problema</th><th>Causa</th><th>Solução</th></tr>
+      <tr><td>Tomate rachando</td><td>Rega irregular + chuva</td><td>Rega constante, mulch</td></tr>
+      <tr><td>Podridão apical</td><td>Falta de cálcio</td><td>Casca de ovo moída</td></tr>
+      <tr><td>Folhas amarelando</td><td>Excesso de água</td><td>Melhore drenagem</td></tr>
+      <tr><td>Poucas flores</td><td>Muito nitrogênio</td><td>Pare de adubar</td></tr>
+      <tr><td>Fungos</td><td>Alta umidade</td><td>Espaçamento, poda</td></tr>
+    </table>
+    <div class="page-number">Página 25</div>
+  </div>
+
+  <!-- DEZEMBRO -->
+  <div class="page">
+    <div class="month-header"><h2>Dezembro - Auge do Verão</h2></div>
+    <div class="month-content">
+      <p><strong>Características:</strong> Verão oficial! Muito calor, chuvas fortes (em algumas regiões). Férias, festividades. A horta produz intensamente!</p>
+
+      <h3>O Que Plantar em Dezembro</h3>
+      <div class="plant-grid">
+        <div class="plant-item"><strong>Abobrinha</strong><br>Continua bem</div>
+        <div class="plant-item"><strong>Pepino</strong><br>Com sombrite</div>
+        <div class="plant-item"><strong>Quiabo</strong><br>Produção máxima</div>
+        <div class="plant-item"><strong>Feijão-vagem</strong><br>Vai bem</div>
+        <div class="plant-item"><strong>Milho</strong><br>Segunda safra</div>
+        <div class="plant-item"><strong>Coentro</strong><br>Em meia-sombra</div>
+        <div class="plant-item"><strong>Manjericão</strong><br>Cresce explosivo</div>
+        <div class="plant-item"><strong>Cebolinha</strong><br>Tolera bem</div>
+      </div>
+
+      <h3>Foco em Dezembro</h3>
+      <ul>
+        <li><strong>Colheita:</strong> Mês de colher mais do que plantar</li>
+        <li><strong>Manutenção:</strong> Capinas, podas, tutoramentos</li>
+        <li><strong>Rega:</strong> Crítica no calor intenso</li>
+        <li><strong>Proteção:</strong> Sombrite nas horas mais quentes</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 26</div>
+  </div>
+
+  <div class="page">
+    <h3>Cuidados Especiais em Dezembro</h3>
+
+    <div class="warning-box">
+      <h3>Férias x Horta</h3>
+      <p>Vai viajar? Prepare sua horta:</p>
+      <ul>
+        <li>Peça para um vizinho regar</li>
+        <li>Instale irrigação por gotejamento com timer</li>
+        <li>Use garrafas PET invertidas como gotejadores</li>
+        <li>Cubra o solo com palha (retém umidade)</li>
+        <li>Colha tudo que estiver pronto antes de viajar</li>
+      </ul>
+    </div>
+
+    <h3>Resumo das Colheitas de Dezembro</h3>
+    <table>
+      <tr><th>Planta</th><th>Plantada em</th><th>Frequência de Colheita</th></tr>
+      <tr><td>Tomate</td><td>Setembro</td><td>2-3x por semana</td></tr>
+      <tr><td>Abobrinha</td><td>Outubro</td><td>Dia sim, dia não</td></tr>
+      <tr><td>Pepino</td><td>Outubro</td><td>Diária</td></tr>
+      <tr><td>Pimentão</td><td>Setembro</td><td>1x por semana</td></tr>
+      <tr><td>Berinjela</td><td>Setembro</td><td>1x por semana</td></tr>
+      <tr><td>Quiabo</td><td>Outubro</td><td>Dia sim, dia não</td></tr>
+      <tr><td>Manjericão</td><td>Setembro</td><td>Sempre que precisar</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Dezembro é ótimo para começar a planejar o ano seguinte! Anote o que deu certo e errado, compre sementes na promoção de fim de ano.
+    </div>
+    <div class="page-number">Página 27</div>
+  </div>
+
+  <!-- TABELA COMPLETA -->
+  <div class="page">
+    <h1>Tabela Completa: 50+ Plantas</h1>
+    <p>Consulta rápida com época ideal de plantio para cada região do Brasil.</p>
+
+    <h3>Legenda Regional</h3>
+    <p>
+      <span class="region-tag">S</span> Sul (RS, SC, PR) |
+      <span class="region-tag">SE</span> Sudeste (SP, RJ, MG, ES) |
+      <span class="region-tag">CO</span> Centro-Oeste (MT, MS, GO, DF) |
+      <span class="region-tag">N/NE</span> Norte e Nordeste
+    </p>
+
+    <h3>Folhosas</h3>
+    <table>
+      <tr><th>Planta</th><th>S</th><th>SE</th><th>CO</th><th>N/NE</th><th>Colheita</th></tr>
+      <tr><td>Alface</td><td>Mar-Mai, Ago-Set</td><td>Mar-Jun, Ago-Set</td><td>Mar-Jul</td><td>Abr-Ago</td><td>45-60 dias</td></tr>
+      <tr><td>Rúcula</td><td>Mar-Mai, Ago-Set</td><td>Mar-Jun, Ago-Set</td><td>Mar-Jul</td><td>Abr-Ago</td><td>30-40 dias</td></tr>
+      <tr><td>Espinafre</td><td>Mar-Ago</td><td>Mar-Jul</td><td>Abr-Jul</td><td>Mai-Jul</td><td>40-50 dias</td></tr>
+      <tr><td>Couve</td><td>Ano todo</td><td>Ano todo</td><td>Mar-Set</td><td>Abr-Ago</td><td>60-90 dias</td></tr>
+      <tr><td>Agrião</td><td>Mar-Set</td><td>Mar-Ago</td><td>Abr-Jul</td><td>Mai-Jul</td><td>50-60 dias</td></tr>
+      <tr><td>Chicória</td><td>Mar-Jun</td><td>Mar-Jun</td><td>Abr-Jun</td><td>Mai-Jul</td><td>60-80 dias</td></tr>
+      <tr><td>Almeirão</td><td>Mar-Jun</td><td>Mar-Jun</td><td>Abr-Jun</td><td>Mai-Jul</td><td>60-70 dias</td></tr>
+      <tr><td>Acelga</td><td>Mar-Jun</td><td>Mar-Jun</td><td>Abr-Jun</td><td>Mai-Jul</td><td>50-60 dias</td></tr>
+      <tr><td>Mostarda</td><td>Abr-Jul</td><td>Abr-Jul</td><td>Mai-Jul</td><td>Mai-Jul</td><td>40-50 dias</td></tr>
+      <tr><td>Repolho</td><td>Mar-Jun</td><td>Mar-Jun</td><td>Abr-Jun</td><td>Mai-Jul</td><td>90-120 dias</td></tr>
+    </table>
+    <div class="page-number">Página 28</div>
+  </div>
+
+  <div class="page">
+    <h3>Raízes e Tubérculos</h3>
+    <table>
+      <tr><th>Planta</th><th>S</th><th>SE</th><th>CO</th><th>N/NE</th><th>Colheita</th></tr>
+      <tr><td>Cenoura</td><td>Mar-Jun, Ago</td><td>Mar-Jun</td><td>Abr-Jun</td><td>Mai-Jul</td><td>80-110 dias</td></tr>
+      <tr><td>Beterraba</td><td>Mar-Jun, Ago</td><td>Mar-Jun</td><td>Abr-Jun</td><td>Mai-Jul</td><td>60-70 dias</td></tr>
+      <tr><td>Rabanete</td><td>Ano todo</td><td>Ano todo</td><td>Mar-Set</td><td>Abr-Ago</td><td>25-30 dias</td></tr>
+      <tr><td>Nabo</td><td>Mar-Jun</td><td>Mar-Jun</td><td>Abr-Jun</td><td>Mai-Jul</td><td>45-60 dias</td></tr>
+      <tr><td>Batata</td><td>Ago-Nov</td><td>Ago-Nov</td><td>Set-Nov</td><td>Mai-Jul</td><td>90-120 dias</td></tr>
+      <tr><td>Batata-doce</td><td>Set-Dez</td><td>Set-Dez</td><td>Out-Jan</td><td>Ano todo</td><td>100-150 dias</td></tr>
+      <tr><td>Mandioca</td><td>Set-Nov</td><td>Set-Nov</td><td>Out-Dez</td><td>Ano todo</td><td>8-18 meses</td></tr>
+      <tr><td>Cebola</td><td>Abr-Jun</td><td>Mar-Mai</td><td>Abr-Jun</td><td>Abr-Jun</td><td>120-150 dias</td></tr>
+      <tr><td>Alho</td><td>Abr-Mai</td><td>Abr-Mai</td><td>Abr-Mai</td><td>Abr-Mai</td><td>120-150 dias</td></tr>
+      <tr><td>Alho-poró</td><td>Abr-Jun</td><td>Abr-Jun</td><td>Mai-Jun</td><td>Mai-Jul</td><td>120 dias</td></tr>
+    </table>
+
+    <h3>Frutos</h3>
+    <table>
+      <tr><th>Planta</th><th>S</th><th>SE</th><th>CO</th><th>N/NE</th><th>Colheita</th></tr>
+      <tr><td>Tomate</td><td>Set-Nov</td><td>Ago-Nov</td><td>Ago-Nov</td><td>Mar-Jun</td><td>90-120 dias</td></tr>
+      <tr><td>Pimentão</td><td>Set-Nov</td><td>Ago-Nov</td><td>Ago-Nov</td><td>Mar-Jun</td><td>90-120 dias</td></tr>
+      <tr><td>Pimenta</td><td>Set-Nov</td><td>Ago-Nov</td><td>Ago-Nov</td><td>Ano todo</td><td>120-150 dias</td></tr>
+      <tr><td>Berinjela</td><td>Set-Nov</td><td>Ago-Nov</td><td>Ago-Nov</td><td>Mar-Jun</td><td>100-120 dias</td></tr>
+      <tr><td>Abobrinha</td><td>Set-Dez</td><td>Set-Jan</td><td>Set-Jan</td><td>Ano todo</td><td>45-60 dias</td></tr>
+      <tr><td>Pepino</td><td>Set-Dez</td><td>Set-Jan</td><td>Set-Jan</td><td>Ano todo</td><td>50-60 dias</td></tr>
+    </table>
+    <div class="page-number">Página 29</div>
+  </div>
+
+  <div class="page">
+    <h3>Frutos (continuação)</h3>
+    <table>
+      <tr><th>Planta</th><th>S</th><th>SE</th><th>CO</th><th>N/NE</th><th>Colheita</th></tr>
+      <tr><td>Abóbora</td><td>Set-Dez</td><td>Set-Jan</td><td>Set-Jan</td><td>Ano todo</td><td>90-120 dias</td></tr>
+      <tr><td>Melancia</td><td>Out-Dez</td><td>Set-Jan</td><td>Set-Jan</td><td>Ano todo</td><td>80-100 dias</td></tr>
+      <tr><td>Melão</td><td>Out-Dez</td><td>Set-Jan</td><td>Set-Jan</td><td>Ano todo</td><td>85-100 dias</td></tr>
+      <tr><td>Quiabo</td><td>Set-Dez</td><td>Set-Jan</td><td>Set-Jan</td><td>Ano todo</td><td>60-80 dias</td></tr>
+      <tr><td>Jiló</td><td>Set-Dez</td><td>Set-Jan</td><td>Set-Jan</td><td>Ano todo</td><td>90-100 dias</td></tr>
+      <tr><td>Morango</td><td>Mai-Jul</td><td>Mai-Jul</td><td>Mai-Jul</td><td>Mai-Jul</td><td>60-90 dias</td></tr>
+    </table>
+
+    <h3>Leguminosas</h3>
+    <table>
+      <tr><th>Planta</th><th>S</th><th>SE</th><th>CO</th><th>N/NE</th><th>Colheita</th></tr>
+      <tr><td>Feijão-vagem</td><td>Set-Dez</td><td>Set-Jan</td><td>Set-Jan</td><td>Mar-Jun</td><td>60-70 dias</td></tr>
+      <tr><td>Ervilha</td><td>Abr-Jul</td><td>Abr-Jul</td><td>Mai-Jul</td><td>Mai-Jul</td><td>60-70 dias</td></tr>
+      <tr><td>Fava</td><td>Abr-Jul</td><td>Abr-Jul</td><td>Mai-Jul</td><td>Mai-Jul</td><td>80-90 dias</td></tr>
+    </table>
+
+    <h3>Temperos e Ervas</h3>
+    <table>
+      <tr><th>Planta</th><th>S</th><th>SE</th><th>CO</th><th>N/NE</th><th>Colheita</th></tr>
+      <tr><td>Manjericão</td><td>Set-Dez</td><td>Set-Jan</td><td>Set-Jan</td><td>Ano todo</td><td>45-60 dias</td></tr>
+      <tr><td>Salsa</td><td>Mar-Jun, Ago-Set</td><td>Mar-Jun, Ago-Set</td><td>Mar-Jul</td><td>Abr-Ago</td><td>60-90 dias</td></tr>
+      <tr><td>Cebolinha</td><td>Ano todo</td><td>Ano todo</td><td>Ano todo</td><td>Ano todo</td><td>60-90 dias</td></tr>
+      <tr><td>Coentro</td><td>Mar-Jun, Ago-Set</td><td>Mar-Jun, Ago-Set</td><td>Mar-Jul</td><td>Abr-Ago</td><td>40-60 dias</td></tr>
+      <tr><td>Hortelã</td><td>Ano todo</td><td>Ano todo</td><td>Ano todo</td><td>Ano todo</td><td>60-90 dias</td></tr>
+      <tr><td>Alecrim</td><td>Ano todo</td><td>Ano todo</td><td>Ano todo</td><td>Ano todo</td><td>90+ dias</td></tr>
+    </table>
+    <div class="page-number">Página 30</div>
+  </div>
+
+  <div class="page">
+    <h3>Brássicas</h3>
+    <table>
+      <tr><th>Planta</th><th>S</th><th>SE</th><th>CO</th><th>N/NE</th><th>Colheita</th></tr>
+      <tr><td>Brócolis</td><td>Mar-Jun</td><td>Mar-Jun</td><td>Abr-Jun</td><td>Mai-Jul</td><td>80-100 dias</td></tr>
+      <tr><td>Couve-flor</td><td>Mar-Jun</td><td>Mar-Jun</td><td>Abr-Jun</td><td>Mai-Jul</td><td>90-120 dias</td></tr>
+      <tr><td>Couve-de-bruxelas</td><td>Mar-Mai</td><td>Mar-Mai</td><td>Abr-Mai</td><td>Mai-Jun</td><td>90-120 dias</td></tr>
+    </table>
+
+    <div class="highlight-box">
+      <h3>Como Usar Esta Tabela</h3>
+      <ol>
+        <li>Identifique sua região</li>
+        <li>Olhe o mês atual</li>
+        <li>Veja quais plantas estão na época ideal</li>
+        <li>Considere o tempo até a colheita para planejar</li>
+      </ol>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Regiões de altitude (serras) seguem o calendário de regiões mais ao sul. Litoral quente segue o calendário mais ao norte.
+    </div>
+
+    <h3>Microclimas</h3>
+    <p>Sua região pode ter microclimas específicos:</p>
+    <ul>
+      <li><strong>Áreas urbanas:</strong> Mais quentes (ilha de calor)</li>
+      <li><strong>Fundos de vale:</strong> Mais úmidos e frios</li>
+      <li><strong>Encostas norte:</strong> Mais sol, mais quentes</li>
+      <li><strong>Encostas sul:</strong> Menos sol, mais frescas</li>
+      <li><strong>Próximo a corpos d'água:</strong> Temperaturas mais amenas</li>
+    </ul>
+    <div class="page-number">Página 31</div>
+  </div>
+
+  <!-- GUIA LUNAR -->
+  <div class="page">
+    <h1>Guia de Plantio Lunar</h1>
+    <p>A influência da lua na agricultura é conhecida há milhares de anos. A ideia básica é que a lua afeta os líquidos na Terra (assim como nas marés), influenciando a seiva das plantas.</p>
+
+    <h3>As Quatro Fases</h3>
+
+    <div class="moon-box">
+      <span class="moon-phase lua-nova"></span>
+      <strong>Lua Nova</strong>
+      <p>A seiva está concentrada nas raízes. Período de descanso.</p>
+      <ul>
+        <li><strong>Plantar:</strong> Raízes (cenoura, beterraba, rabanete, batata)</li>
+        <li><strong>Fazer:</strong> Preparar canteiros, capinar, compostar</li>
+        <li><strong>Evitar:</strong> Transplantar, colher para armazenar</li>
+      </ul>
+    </div>
+
+    <div class="moon-box">
+      <span class="moon-phase lua-crescente"></span>
+      <strong>Lua Crescente</strong>
+      <p>A seiva começa a subir. Crescimento acelerado da parte aérea.</p>
+      <ul>
+        <li><strong>Plantar:</strong> Folhosas (alface, rúcula, couve), ervas</li>
+        <li><strong>Fazer:</strong> Podar para estimular crescimento, transplantar mudas</li>
+        <li><strong>Evitar:</strong> Colher folhas (secam rápido)</li>
+      </ul>
+    </div>
+
+    <div class="moon-box">
+      <span class="moon-phase lua-cheia"></span>
+      <strong>Lua Cheia</strong>
+      <p>A seiva está no máximo nas partes aéreas. Maior vitalidade.</p>
+      <ul>
+        <li><strong>Plantar:</strong> Frutos (tomate, pimentão, abóbora)</li>
+        <li><strong>Fazer:</strong> Colher ervas medicinais, frutas</li>
+        <li><strong>Evitar:</strong> Podar (sangramento excessivo)</li>
+      </ul>
+    </div>
+
+    <div class="moon-box">
+      <span class="moon-phase lua-minguante"></span>
+      <strong>Lua Minguante</strong>
+      <p>A seiva desce novamente. Crescimento mais lento.</p>
+      <ul>
+        <li><strong>Plantar:</strong> Bulbos (alho, cebola), gramíneas</li>
+        <li><strong>Fazer:</strong> Podar árvores, colher para armazenamento</li>
+        <li><strong>Evitar:</strong> Transplantar, adubar</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 32</div>
+  </div>
+
+  <div class="page">
+    <h3>Tabela Resumo - Plantio Lunar</h3>
+    <table>
+      <tr><th>Fase</th><th>Plantar</th><th>Melhor Para</th><th>Evitar</th></tr>
+      <tr><td>Nova</td><td>Raízes, tubérculos</td><td>Preparar solo, capinar</td><td>Transplantar</td></tr>
+      <tr><td>Crescente</td><td>Folhosas, ervas</td><td>Transplantar, enxertar</td><td>Colher folhas</td></tr>
+      <tr><td>Cheia</td><td>Frutos, flores</td><td>Colher ervas/frutas</td><td>Podar</td></tr>
+      <tr><td>Minguante</td><td>Bulbos, batatas</td><td>Podar, colher grãos</td><td>Adubar</td></tr>
+    </table>
+
+    <h3>Calendário Lunar (Exemplo)</h3>
+    <p>Consulte um calendário lunar atualizado para o ano corrente. As fases se repetem aproximadamente a cada 29,5 dias.</p>
+
+    <div class="highlight-box">
+      <h3>Dica Prática</h3>
+      <p>Se você não conseguir plantar exatamente na lua indicada, não se preocupe! A influência lunar é sutil. Plantar na <strong>época do ano correta</strong> é muito mais importante do que a fase da lua.</p>
+    </div>
+
+    <h3>Ciência ou Tradição?</h3>
+    <p>A agricultura lunar é controversa cientificamente. Estudos são inconclusivos. Mas:</p>
+    <ul>
+      <li>É uma prática milenar em várias culturas</li>
+      <li>Não tem contraindicações</li>
+      <li>Ajuda a criar um ritmo de trabalho na horta</li>
+      <li>Muitos agricultores experientes seguem e relatam bons resultados</li>
+    </ul>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Experimente! Plante metade na lua "certa" e metade fora dela. Compare os resultados. Tire suas próprias conclusões!
+    </div>
+    <div class="page-number">Página 33</div>
+  </div>
+
+  <div class="page">
+    <h3>Sinais do Zodíaco na Agricultura</h3>
+    <p>Alguns agricultores também consideram o signo zodiacal em que a lua está:</p>
+
+    <table>
+      <tr><th>Elemento</th><th>Signos</th><th>Favorece</th></tr>
+      <tr><td>Terra</td><td>Touro, Virgem, Capricórnio</td><td>Raízes, tubérculos</td></tr>
+      <tr><td>Água</td><td>Câncer, Escorpião, Peixes</td><td>Folhosas, plantas suculentas</td></tr>
+      <tr><td>Fogo</td><td>Áries, Leão, Sagitário</td><td>Frutos, sementes</td></tr>
+      <tr><td>Ar</td><td>Gêmeos, Libra, Aquário</td><td>Flores, ervas aromáticas</td></tr>
+    </table>
+
+    <div class="warning-box">
+      <h3>Não Se Paralise!</h3>
+      <p>Combinar fase da lua + signo + época do ano pode ficar muito complicado. Se for muito trabalhoso, foque apenas na <strong>época do ano</strong> - que é o fator mais importante!</p>
+    </div>
+
+    <h3>Ferramentas Úteis</h3>
+    <p>Para acompanhar as fases da lua:</p>
+    <ul>
+      <li><strong>Apps:</strong> "Fases da Lua", "Calendário Lunar Agrícola"</li>
+      <li><strong>Sites:</strong> Climatempo, INMET mostram fases da lua</li>
+      <li><strong>Almanaque:</strong> O tradicional Almanaque Brasileiro Agrícola</li>
+      <li><strong>Olhe pro céu:</strong> O método mais antigo!</li>
+    </ul>
+    <div class="page-number">Página 34</div>
+  </div>
+
+  <!-- PLANEJADOR -->
+  <div class="page">
+    <h1>Planejador de Horta</h1>
+    <p>Use estas páginas para planejar sua produção ao longo do ano.</p>
+
+    <h3>Passo 1: Defina Seus Objetivos</h3>
+    <div class="feature-box">
+      <p>Quanto você quer produzir?</p>
+      <ul>
+        <li>☐ Apenas temperos frescos</li>
+        <li>☐ Saladas semanais</li>
+        <li>☐ Parte dos vegetais da casa</li>
+        <li>☐ Autossuficiência total em vegetais</li>
+      </ul>
+    </div>
+
+    <h3>Passo 2: Avalie Seu Espaço</h3>
+    <div class="feature-box">
+      <p>Qual seu espaço disponível?</p>
+      <ul>
+        <li>☐ Varanda pequena (até 5m²) - foco em temperos e folhosas</li>
+        <li>☐ Varanda média (5-15m²) - adicione alguns frutos</li>
+        <li>☐ Quintal pequeno (15-50m²) - horta diversificada</li>
+        <li>☐ Quintal grande (50m²+) - produção significativa</li>
+      </ul>
+    </div>
+
+    <h3>Passo 3: Liste o Que Sua Família Come</h3>
+    <div class="feature-box">
+      <p>Anote os vegetais que vocês mais consomem:</p>
+      <p>1. _________________ 2. _________________ 3. _________________</p>
+      <p>4. _________________ 5. _________________ 6. _________________</p>
+      <p>7. _________________ 8. _________________ 9. _________________</p>
+      <p>10. ________________</p>
+    </div>
+    <div class="page-number">Página 35</div>
+  </div>
+
+  <div class="page">
+    <h3>Passo 4: Planejamento Trimestral</h3>
+
+    <div class="feature-box">
+      <h4>1º Trimestre (Janeiro-Março)</h4>
+      <p>Transição verão → outono</p>
+      <table>
+        <tr><th>Planta</th><th>Quantidade</th><th>Local</th><th>Data Plantio</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="feature-box">
+      <h4>2º Trimestre (Abril-Junho)</h4>
+      <p>Outono → inverno</p>
+      <table>
+        <tr><th>Planta</th><th>Quantidade</th><th>Local</th><th>Data Plantio</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <div class="page-number">Página 36</div>
+  </div>
+
+  <div class="page">
+    <div class="feature-box">
+      <h4>3º Trimestre (Julho-Setembro)</h4>
+      <p>Inverno → primavera</p>
+      <table>
+        <tr><th>Planta</th><th>Quantidade</th><th>Local</th><th>Data Plantio</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="feature-box">
+      <h4>4º Trimestre (Outubro-Dezembro)</h4>
+      <p>Primavera → verão</p>
+      <table>
+        <tr><th>Planta</th><th>Quantidade</th><th>Local</th><th>Data Plantio</th></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Imprima esta página e preencha a lápis! Assim você pode ajustar ao longo do ano.
+    </div>
+    <div class="page-number">Página 37</div>
+  </div>
+
+  <!-- DICAS REGIONAIS -->
+  <div class="page">
+    <h1>Dicas por Região do Brasil</h1>
+    <p>O Brasil é um país continental com climas muito diversos. Adapte o calendário à sua realidade!</p>
+
+    <h3>Região Sul (RS, SC, PR)</h3>
+    <div class="feature-box">
+      <p><strong>Características:</strong> Quatro estações bem definidas. Geadas frequentes no inverno. Verão quente mas não extremo.</p>
+      <ul>
+        <li><strong>Vantagem:</strong> Clima ideal para brássicas, raízes e folhosas</li>
+        <li><strong>Desafio:</strong> Inverno rigoroso limita culturas tropicais</li>
+        <li><strong>Dica especial:</strong> Invista em estufas para estender a temporada</li>
+        <li><strong>Plantas estrela:</strong> Cebola, alho, brócolis, couve-flor, morango</li>
+      </ul>
+    </div>
+
+    <h3>Região Sudeste (SP, RJ, MG, ES)</h3>
+    <div class="feature-box">
+      <p><strong>Características:</strong> Grande variação (litoral quente a serras frias). Verão chuvoso, inverno seco.</p>
+      <ul>
+        <li><strong>Vantagem:</strong> Clima versátil permite quase tudo</li>
+        <li><strong>Desafio:</strong> Umidade alta favorece fungos no verão</li>
+        <li><strong>Dica especial:</strong> Serra = siga calendário do Sul; Litoral = mais próximo do Norte</li>
+        <li><strong>Plantas estrela:</strong> Tomate, pimentão, alface, couve</li>
+      </ul>
+    </div>
+
+    <h3>Região Centro-Oeste (MT, MS, GO, DF)</h3>
+    <div class="feature-box">
+      <p><strong>Características:</strong> Duas estações - seca (abril-setembro) e chuvosa (outubro-março). Calor intenso.</p>
+      <ul>
+        <li><strong>Vantagem:</strong> Sol abundante o ano todo</li>
+        <li><strong>Desafio:</strong> Seca extrema exige irrigação; calor intenso no verão</li>
+        <li><strong>Dica especial:</strong> Plante folhosas na estação seca (menos pragas)</li>
+        <li><strong>Plantas estrela:</strong> Quiabo, jiló, mandioca, tomate (seca)</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 38</div>
+  </div>
+
+  <div class="page">
+    <h3>Região Nordeste</h3>
+    <div class="feature-box">
+      <p><strong>Características:</strong> Litoral úmido, sertão semiárido. Pouca variação de temperatura. Muito sol.</p>
+      <ul>
+        <li><strong>Vantagem:</strong> Produção de tropicais o ano todo</li>
+        <li><strong>Desafio:</strong> Seca no sertão; pragas persistentes no litoral</li>
+        <li><strong>Dica especial:</strong> Invista em sistemas de captação de água; use cobertura morta</li>
+        <li><strong>Plantas estrela:</strong> Coentro, maxixe, macaxeira, feijão-caupi</li>
+      </ul>
+    </div>
+
+    <h3>Região Norte</h3>
+    <div class="feature-box">
+      <p><strong>Características:</strong> Clima equatorial. Quente e úmido o ano todo. Chuvas intensas.</p>
+      <ul>
+        <li><strong>Vantagem:</strong> Plantas tropicais adoram; sem geadas</li>
+        <li><strong>Desafio:</strong> Umidade favorece doenças; solo ácido</li>
+        <li><strong>Dica especial:</strong> Cultivo em canteiros elevados; correção de solo essencial</li>
+        <li><strong>Plantas estrela:</strong> Cheiro-verde, maxixe, quiabo, pimenta-de-cheiro</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h3>Regra de Ouro</h3>
+      <p>Observe o que os agricultores locais e vizinhos estão plantando. Eles conhecem o microclima da região há gerações!</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Participe de grupos de horticultores da sua cidade (Facebook, WhatsApp). As melhores dicas são sempre locais!
+    </div>
+    <div class="page-number">Página 39</div>
+  </div>
+
+  <!-- ADAPTAÇÕES REGIONAIS CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Ajustes por Altitude</h2>
+
+    <div class="highlight-box">
+      <h3>Até 500m de Altitude</h3>
+      <p>Siga o calendário padrão. Verões são mais quentes, invernos mais amenos.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h3>500m a 1000m (Planaltos)</h3>
+      <ul>
+        <li>Adie plantios de primavera em 2-3 semanas</li>
+        <li>Estenda cultivos de inverno por mais tempo</li>
+        <li>Alfaces e brássicas vão melhor</li>
+        <li>Tomates precisam de variedades adaptadas</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h3>Acima de 1000m (Serra)</h3>
+      <ul>
+        <li>Geadas são comuns - proteja plantas sensíveis</li>
+        <li>Verão mais curto e ameno - ideal para folhosas</li>
+        <li>Inicie cultivos de verão bem mais tarde</li>
+        <li>Algumas tropicais não vão bem (mamão, maracujá)</li>
+      </ul>
+    </div>
+
+    <h2>Microclimas Especiais</h2>
+
+    <div class="warning-box">
+      <h3>Litoral</h3>
+      <ul>
+        <li>Umidade alta favorece fungos</li>
+        <li>Vento constante pode danificar plantas altas</li>
+        <li>Salinidade do ar afeta algumas plantas</li>
+        <li><strong>Dica:</strong> Use barreiras contra vento e prefira plantas resistentes</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h3>Área Urbana</h3>
+      <ul>
+        <li>Temperaturas 2-4°C mais altas (ilhas de calor)</li>
+        <li>Menos geadas no inverno</li>
+        <li>Estação quente mais longa</li>
+        <li><strong>Vantagem:</strong> Pode estender cultivos de verão!</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 40</div>
+  </div>
+
+  <!-- BÔNUS 1: PLANTAS TODO O ANO -->
+  <div class="page">
+    <h1>Bônus 1: 20 Plantas Para Todo o Ano</h1>
+
+    <p>Estas plantas podem ser cultivadas o ano todo na maioria das regiões do Brasil, com pequenos ajustes.</p>
+
+    <h2>Folhosas Versáteis</h2>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Observação</th>
+        <th>Dica</th>
+      </tr>
+      <tr>
+        <td><strong>Alface (variedades)</strong></td>
+        <td>Crespa tolera calor</td>
+        <td>Sombra no verão intenso</td>
+      </tr>
+      <tr>
+        <td><strong>Rúcula</strong></td>
+        <td>Pendoa rápido no calor</td>
+        <td>Colha jovem no verão</td>
+      </tr>
+      <tr>
+        <td><strong>Couve</strong></td>
+        <td>Perene, produz sempre</td>
+        <td>Colha folhas de baixo</td>
+      </tr>
+      <tr>
+        <td><strong>Agrião</strong></td>
+        <td>Adora água</td>
+        <td>Mantenha sempre úmido</td>
+      </tr>
+      <tr>
+        <td><strong>Espinafre NZ</strong></td>
+        <td>Não é espinafre verdadeiro</td>
+        <td>Tolera calor melhor</td>
+      </tr>
+    </table>
+
+    <h2>Temperos Permanentes</h2>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Ciclo</th>
+        <th>Dica</th>
+      </tr>
+      <tr>
+        <td><strong>Cebolinha</strong></td>
+        <td>Perene</td>
+        <td>Divida a cada 6 meses</td>
+      </tr>
+      <tr>
+        <td><strong>Salsa</strong></td>
+        <td>Bienal (18 meses)</td>
+        <td>Replante antes de florir</td>
+      </tr>
+      <tr>
+        <td><strong>Hortelã</strong></td>
+        <td>Perene</td>
+        <td>Controle invasão!</td>
+      </tr>
+      <tr>
+        <td><strong>Manjericão</strong></td>
+        <td>Anual, mas replante</td>
+        <td>Evite florir</td>
+      </tr>
+      <tr>
+        <td><strong>Coentro</strong></td>
+        <td>Anual, ciclo curto</td>
+        <td>Plante a cada 3 semanas</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Página 41</div>
+  </div>
+
+  <!-- PLANTAS TODO ANO CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Raízes e Tubérculos</h2>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Época Ideal</th>
+        <th>Possível Todo Ano?</th>
+      </tr>
+      <tr>
+        <td><strong>Rabanete</strong></td>
+        <td>Outono/Inverno</td>
+        <td>Sim, com irrigação</td>
+      </tr>
+      <tr>
+        <td><strong>Beterraba</strong></td>
+        <td>Outono/Inverno</td>
+        <td>Sim, exceto calor extremo</td>
+      </tr>
+      <tr>
+        <td><strong>Cenoura</strong></td>
+        <td>Outono/Inverno/Primavera</td>
+        <td>Variedades de verão existem</td>
+      </tr>
+      <tr>
+        <td><strong>Mandioca</strong></td>
+        <td>Primavera/Verão</td>
+        <td>Sim em regiões quentes</td>
+      </tr>
+      <tr>
+        <td><strong>Batata-doce</strong></td>
+        <td>Primavera/Verão</td>
+        <td>Sim em regiões quentes</td>
+      </tr>
+    </table>
+
+    <h2>Frutos Contínuos</h2>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Produção</th>
+        <th>Dica</th>
+      </tr>
+      <tr>
+        <td><strong>Pimenta</strong></td>
+        <td>Produz por 2-3 anos</td>
+        <td>Proteja do frio intenso</td>
+      </tr>
+      <tr>
+        <td><strong>Jiló</strong></td>
+        <td>Produz muito tempo</td>
+        <td>Pode para rejuvenescer</td>
+      </tr>
+      <tr>
+        <td><strong>Berinjela</strong></td>
+        <td>Produz por 1-2 anos</td>
+        <td>Proteja de geadas</td>
+      </tr>
+      <tr>
+        <td><strong>Quiabo</strong></td>
+        <td>Produz na estação quente</td>
+        <td>Replante anualmente</td>
+      </tr>
+      <tr>
+        <td><strong>Tomatinho</strong></td>
+        <td>Longa produção</td>
+        <td>Cereja tolera mais calor</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h3>Estratégia de Produção Contínua</h3>
+      <p>Para ter produção o ano todo, combine:</p>
+      <ul>
+        <li><strong>Perenes:</strong> Couve, hortelã, pimentas</li>
+        <li><strong>Escalonados:</strong> Alface, rúcula, rabanete a cada 2-3 semanas</li>
+        <li><strong>Sazonais:</strong> Tomate no verão, brócolis no inverno</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 42</div>
+  </div>
+
+  <!-- PLANTAS TODO ANO PARTE 3 -->
+  <div class="page">
+    <h2>Ervas Aromáticas e Medicinais</h2>
+
+    <div class="plant-grid">
+      <div class="plant-item">
+        <strong>Alecrim</strong><br>
+        Perene, sol pleno<br>
+        Resiste a seca
+      </div>
+      <div class="plant-item">
+        <strong>Tomilho</strong><br>
+        Perene, sol pleno<br>
+        Pouca água
+      </div>
+      <div class="plant-item">
+        <strong>Orégano</strong><br>
+        Perene, sol/meia-sombra<br>
+        Divisão fácil
+      </div>
+      <div class="plant-item">
+        <strong>Sálvia</strong><br>
+        Perene, sol pleno<br>
+        Poda regular
+      </div>
+      <div class="plant-item">
+        <strong>Capim-limão</strong><br>
+        Perene, sol<br>
+        Cresce muito!
+      </div>
+      <div class="plant-item">
+        <strong>Erva-cidreira</strong><br>
+        Perene, meia-sombra<br>
+        Invasiva
+      </div>
+      <div class="plant-item">
+        <strong>Boldo</strong><br>
+        Perene, sol/sombra<br>
+        Muito resistente
+      </div>
+      <div class="plant-item">
+        <strong>Arruda</strong><br>
+        Perene, sol<br>
+        Uso cuidadoso
+      </div>
+    </div>
+
+    <h2>Calendário Simplificado: Todo o Ano</h2>
+
+    <div class="warning-box">
+      <h3>Plantio Escalonado</h3>
+      <p>A técnica mais importante para ter colheita o ano todo:</p>
+      <ol>
+        <li>Escolha 3-5 plantas que deseja consumir regularmente</li>
+        <li>Plante pequenas quantidades a cada 2-3 semanas</li>
+        <li>Quando começar a colher as primeiras, as próximas já estarão crescendo</li>
+        <li>Nunca fique sem produção!</li>
+      </ol>
+    </div>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Intervalo de Plantio</th>
+        <th>Tempo até Colheita</th>
+      </tr>
+      <tr>
+        <td>Alface</td>
+        <td>A cada 2 semanas</td>
+        <td>30-45 dias</td>
+      </tr>
+      <tr>
+        <td>Rúcula</td>
+        <td>A cada 2 semanas</td>
+        <td>25-35 dias</td>
+      </tr>
+      <tr>
+        <td>Rabanete</td>
+        <td>A cada 2 semanas</td>
+        <td>25-30 dias</td>
+      </tr>
+      <tr>
+        <td>Coentro</td>
+        <td>A cada 3 semanas</td>
+        <td>40-50 dias</td>
+      </tr>
+      <tr>
+        <td>Espinafre</td>
+        <td>A cada 3 semanas</td>
+        <td>40-50 dias</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Página 43</div>
+  </div>
+
+  <!-- BÔNUS 1 FINAL -->
+  <div class="page">
+    <h2>Calendário Visual: Melhor Época por Planta</h2>
+
+    <p>Legenda: <span style="background: #22c55e; color: white; padding: 2px 8px; border-radius: 4px;">Ideal</span> <span style="background: #fbbf24; color: black; padding: 2px 8px; border-radius: 4px;">Possível</span> <span style="background: #ef4444; color: white; padding: 2px 8px; border-radius: 4px;">Evitar</span></p>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Jan-Mar</th>
+        <th>Abr-Jun</th>
+        <th>Jul-Set</th>
+        <th>Out-Dez</th>
+      </tr>
+      <tr>
+        <td>Alface</td>
+        <td style="background: #fbbf24;">Possível</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #fbbf24;">Possível</td>
+      </tr>
+      <tr>
+        <td>Tomate</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #fbbf24;">Possível</td>
+        <td style="background: #ef4444; color: white;">Evitar</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+      </tr>
+      <tr>
+        <td>Couve</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+      </tr>
+      <tr>
+        <td>Cenoura</td>
+        <td style="background: #fbbf24;">Possível</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #fbbf24;">Possível</td>
+      </tr>
+      <tr>
+        <td>Brócolis</td>
+        <td style="background: #ef4444; color: white;">Evitar</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #ef4444; color: white;">Evitar</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+        <td style="background: #22c55e; color: white;">Ideal</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Imprima esta tabela e cole na sua área de plantio. Consultar rapidamente evita erros!
+    </div>
+
+    <div class="highlight-box">
+      <h3>Resumo: As 5 Plantas Mais Fáceis Para Todo o Ano</h3>
+      <ol>
+        <li><strong>Couve:</strong> Perene, nutritiva, resistente</li>
+        <li><strong>Cebolinha:</strong> Perene, tempero versátil</li>
+        <li><strong>Hortelã:</strong> Cresce em qualquer lugar</li>
+        <li><strong>Rúcula:</strong> Ciclo rápido, escalone</li>
+        <li><strong>Rabanete:</strong> 25 dias e pronto!</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Página 44</div>
+  </div>
+
+  <!-- BÔNUS 2: CONSÓRCIOS POR ESTAÇÃO -->
+  <div class="page">
+    <h1>Bônus 2: Consórcios por Estação</h1>
+
+    <p>Consórcio é plantar espécies diferentes juntas que se beneficiam mutuamente. Aqui estão os melhores para cada estação!</p>
+
+    <h2>Verão (Dezembro a Março)</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <h3>Consórcio 1: Trio do Verão</h3>
+      <div class="plant-grid">
+        <div class="plant-item">
+          <strong>Tomate</strong><br>
+          Planta principal<br>
+          Tutor necessário
+        </div>
+        <div class="plant-item">
+          <strong>Manjericão</strong><br>
+          Repele pragas<br>
+          Melhora sabor
+        </div>
+        <div class="plant-item">
+          <strong>Cenoura</strong><br>
+          Usa espaço baixo<br>
+          Solta o solo
+        </div>
+        <div class="plant-item">
+          <strong>Alface</strong><br>
+          Sombra do tomate<br>
+          Ciclo rápido
+        </div>
+      </div>
+      <p><strong>Por que funciona:</strong> O tomate faz sombra para alface (que sofreria no calor). Manjericão repele mosca-branca. Cenoura ocupa espaço subterrâneo sem competir.</p>
+    </div>
+
+    <h3>Consórcio 2: Milho-Feijão-Abóbora (Três Irmãs)</h3>
+    <div class="highlight-box">
+      <p>Técnica milenar indígena!</p>
+      <ul>
+        <li><strong>Milho:</strong> Serve de tutor para o feijão</li>
+        <li><strong>Feijão:</strong> Fixa nitrogênio no solo</li>
+        <li><strong>Abóbora:</strong> Folhas cobrem o solo, retendo umidade</li>
+      </ul>
+    </div>
+
+    <h3>Consórcio 3: Pimentas e Companhia</h3>
+    <div class="plant-grid">
+      <div class="plant-item">
+        <strong>Pimenta</strong><br>
+        Central
+      </div>
+      <div class="plant-item">
+        <strong>Cebolinha</strong><br>
+        Repele pulgões
+      </div>
+      <div class="plant-item">
+        <strong>Tagetes</strong><br>
+        Repele nematoides
+      </div>
+      <div class="plant-item">
+        <strong>Salsa</strong><br>
+        Atrai polinizadores
+      </div>
+    </div>
+
+    <div class="page-number">Página 45</div>
+  </div>
+
+  <!-- CONSÓRCIOS OUTONO/INVERNO -->
+  <div class="page">
+    <h2>Outono (Março a Junho)</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <h3>Consórcio 4: Canteiro de Inverno</h3>
+      <div class="plant-grid">
+        <div class="plant-item">
+          <strong>Brócolis</strong><br>
+          Alto, central
+        </div>
+        <div class="plant-item">
+          <strong>Alface</strong><br>
+          Entre os brócolis
+        </div>
+        <div class="plant-item">
+          <strong>Cebolinha</strong><br>
+          Bordas do canteiro
+        </div>
+        <div class="plant-item">
+          <strong>Rabanete</strong><br>
+          Indicador de pragas
+        </div>
+      </div>
+      <p><strong>Por que funciona:</strong> Brócolis demora 90 dias; alface e rabanete são colhidos antes, liberando espaço. Cebolinha protege das bordas.</p>
+    </div>
+
+    <h2>Inverno (Junho a Setembro)</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <h3>Consórcio 5: Reino das Folhosas</h3>
+      <div class="plant-grid">
+        <div class="plant-item">
+          <strong>Couve</strong><br>
+          Perene, alta
+        </div>
+        <div class="plant-item">
+          <strong>Espinafre</strong><br>
+          Meia altura
+        </div>
+        <div class="plant-item">
+          <strong>Rúcula</strong><br>
+          Ciclo rápido
+        </div>
+        <div class="plant-item">
+          <strong>Beterraba</strong><br>
+          Subterrânea
+        </div>
+      </div>
+    </div>
+
+    <h3>Consórcio 6: Raízes e Aromáticas</h3>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>Cenoura + Alho-poró:</strong> Alho repele mosca da cenoura</li>
+        <li><strong>Beterraba + Alface:</strong> Compartilham espaço vertical</li>
+        <li><strong>Nabo + Ervilha:</strong> Ervilha fixa nitrogênio</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h3>Evite Juntar:</h3>
+      <ul>
+        <li>Couve + Morango (competem)</li>
+        <li>Brássicas + Brássicas (mesmas pragas)</li>
+        <li>Cebola + Feijão (inibição)</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 46</div>
+  </div>
+
+  <!-- CONSÓRCIOS PRIMAVERA -->
+  <div class="page">
+    <h2>Primavera (Setembro a Dezembro)</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <h3>Consórcio 7: Transição para o Calor</h3>
+      <div class="plant-grid">
+        <div class="plant-item">
+          <strong>Pepino</strong><br>
+          Trepadeira
+        </div>
+        <div class="plant-item">
+          <strong>Feijão-vagem</strong><br>
+          Fixa nitrogênio
+        </div>
+        <div class="plant-item">
+          <strong>Milho</strong><br>
+          Tutor natural
+        </div>
+        <div class="plant-item">
+          <strong>Abóbora</strong><br>
+          Cobre o solo
+        </div>
+      </div>
+    </div>
+
+    <h3>Consórcio 8: Horta de Temperos</h3>
+    <div class="plant-grid">
+      <div class="plant-item">
+        <strong>Manjericão</strong><br>
+        Central
+      </div>
+      <div class="plant-item">
+        <strong>Tomilho</strong><br>
+        Bordas
+      </div>
+      <div class="plant-item">
+        <strong>Orégano</strong><br>
+        Bordas
+      </div>
+      <div class="plant-item">
+        <strong>Salsa</strong><br>
+        Sombra parcial
+      </div>
+    </div>
+
+    <h2>Tabela de Companheiras</h2>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Boas Companheiras</th>
+        <th>Evitar</th>
+      </tr>
+      <tr>
+        <td>Tomate</td>
+        <td>Manjericão, cenoura, salsa</td>
+        <td>Repolho, batata</td>
+      </tr>
+      <tr>
+        <td>Cenoura</td>
+        <td>Alho-poró, alface, rabanete</td>
+        <td>Endro, aneto</td>
+      </tr>
+      <tr>
+        <td>Feijão</td>
+        <td>Milho, abóbora, cenoura</td>
+        <td>Cebola, alho</td>
+      </tr>
+      <tr>
+        <td>Alface</td>
+        <td>Cenoura, rabanete, morango</td>
+        <td>Salsa (muita)</td>
+      </tr>
+      <tr>
+        <td>Repolho</td>
+        <td>Beterraba, cebola, alface</td>
+        <td>Tomate, morango</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Página 47</div>
+  </div>
+
+  <!-- CONSÓRCIOS FINAL -->
+  <div class="page">
+    <h2>Planejando Seus Consórcios</h2>
+
+    <div class="highlight-box">
+      <h3>Princípios do Consórcio</h3>
+      <ol>
+        <li><strong>Alturas diferentes:</strong> Plantas altas não devem sombrear demais as baixas</li>
+        <li><strong>Raízes diferentes:</strong> Profundas + superficiais não competem</li>
+        <li><strong>Ciclos diferentes:</strong> Colha uma enquanto outra cresce</li>
+        <li><strong>Famílias diferentes:</strong> Evita pragas e doenças comuns</li>
+      </ol>
+    </div>
+
+    <h3>Consórcio Universal: Funciona Sempre</h3>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <h4>O Canteiro Perfeito (1m x 1m)</h4>
+      <ul>
+        <li><strong>Centro:</strong> 1 pé de couve ou tomate</li>
+        <li><strong>Ao redor:</strong> 4 pés de alface ou rúcula</li>
+        <li><strong>Bordas:</strong> Cebolinha ou alho</li>
+        <li><strong>Cantos:</strong> Tagetes (cravo-de-defunto)</li>
+      </ul>
+      <p>Este layout funciona o ano todo adaptando a planta central!</p>
+    </div>
+
+    <h3>Flores que Ajudam a Horta</h3>
+
+    <table>
+      <tr>
+        <th>Flor</th>
+        <th>Benefício</th>
+        <th>Onde Plantar</th>
+      </tr>
+      <tr>
+        <td>Tagetes (cravo)</td>
+        <td>Repele nematoides e pragas</td>
+        <td>Bordas de canteiros</td>
+      </tr>
+      <tr>
+        <td>Capuchinha</td>
+        <td>Atrai pulgões (longe das hortaliças)</td>
+        <td>Longe da horta principal</td>
+      </tr>
+      <tr>
+        <td>Calêndula</td>
+        <td>Repele pragas, atrai polinizadores</td>
+        <td>Entre as hortaliças</td>
+      </tr>
+      <tr>
+        <td>Girassol</td>
+        <td>Atrai polinizadores, quebra-vento</td>
+        <td>Bordas da horta</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Nunca tenha uma horta só de hortaliças! Flores e ervas aromáticas são essenciais para um ecossistema saudável e menos pragas.
+    </div>
+
+    <div class="page-number">Página 48</div>
+  </div>
+
+  <!-- BÔNUS 3: GUIA DE COLHEITA -->
+  <div class="page">
+    <h1>Bônus 3: Guia de Colheita Mês a Mês</h1>
+
+    <p>Saber quando colher é tão importante quanto saber quando plantar. Colher no ponto certo garante sabor e nutrientes máximos!</p>
+
+    <h2>Janeiro e Fevereiro</h2>
+
+    <table>
+      <tr>
+        <th>O que Colher</th>
+        <th>Como Identificar o Ponto</th>
+        <th>Dica de Conservação</th>
+      </tr>
+      <tr>
+        <td>Tomate</td>
+        <td>Vermelho intenso, firme</td>
+        <td>Fora da geladeira até amadurecer</td>
+      </tr>
+      <tr>
+        <td>Pimentão</td>
+        <td>Cor uniforme, firme</td>
+        <td>Geladeira até 10 dias</td>
+      </tr>
+      <tr>
+        <td>Berinjela</td>
+        <td>Casca brilhante, firme</td>
+        <td>Consuma em 3-5 dias</td>
+      </tr>
+      <tr>
+        <td>Pepino</td>
+        <td>Verde intenso, firme</td>
+        <td>Geladeira até 7 dias</td>
+      </tr>
+      <tr>
+        <td>Melancia</td>
+        <td>Som oco ao bater</td>
+        <td>Ambiente até cortar</td>
+      </tr>
+      <tr>
+        <td>Abóbora</td>
+        <td>Casca dura, talo seco</td>
+        <td>Ambiente por meses!</td>
+      </tr>
+    </table>
+
+    <h2>Março e Abril</h2>
+
+    <table>
+      <tr>
+        <th>O que Colher</th>
+        <th>Como Identificar o Ponto</th>
+        <th>Dica de Conservação</th>
+      </tr>
+      <tr>
+        <td>Quiabo</td>
+        <td>6-8cm, tenro</td>
+        <td>Consuma rápido</td>
+      </tr>
+      <tr>
+        <td>Jiló</td>
+        <td>Verde claro, firme</td>
+        <td>Geladeira 5-7 dias</td>
+      </tr>
+      <tr>
+        <td>Feijão-vagem</td>
+        <td>Vagem fina, sem semente marcada</td>
+        <td>Geladeira ou congele</td>
+      </tr>
+      <tr>
+        <td>Milho verde</td>
+        <td>Cabelo escurecido, grãos leitosos</td>
+        <td>Congele imediatamente</td>
+      </tr>
+      <tr>
+        <td>Mandioca</td>
+        <td>12-18 meses após plantio</td>
+        <td>Congele após descascar</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Página 49</div>
+  </div>
+
+  <!-- COLHEITA CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Maio a Julho (Outono/Inverno)</h2>
+
+    <table>
+      <tr>
+        <th>O que Colher</th>
+        <th>Como Identificar o Ponto</th>
+        <th>Dica de Conservação</th>
+      </tr>
+      <tr>
+        <td>Alface</td>
+        <td>Folhas desenvolvidas, antes de pendoar</td>
+        <td>Geladeira em saco úmido</td>
+      </tr>
+      <tr>
+        <td>Rúcula</td>
+        <td>Folhas 15-20cm, antes da flor</td>
+        <td>Consumir em 3 dias</td>
+      </tr>
+      <tr>
+        <td>Espinafre</td>
+        <td>Folhas grandes, verde escuro</td>
+        <td>Congele para smoothies</td>
+      </tr>
+      <tr>
+        <td>Couve</td>
+        <td>Folhas de baixo, bem desenvolvidas</td>
+        <td>Geladeira até 7 dias</td>
+      </tr>
+      <tr>
+        <td>Brócolis</td>
+        <td>Cabeça compacta, verde intenso</td>
+        <td>Consuma ou congele rápido</td>
+      </tr>
+      <tr>
+        <td>Couve-flor</td>
+        <td>Cabeça branca, compacta</td>
+        <td>Geladeira até 5 dias</td>
+      </tr>
+    </table>
+
+    <h2>Agosto a Outubro</h2>
+
+    <table>
+      <tr>
+        <th>O que Colher</th>
+        <th>Como Identificar o Ponto</th>
+        <th>Dica de Conservação</th>
+      </tr>
+      <tr>
+        <td>Cenoura</td>
+        <td>Topo aparente, 2-3cm diâmetro</td>
+        <td>Geladeira sem folhas</td>
+      </tr>
+      <tr>
+        <td>Beterraba</td>
+        <td>Raiz aparente, 5-8cm diâmetro</td>
+        <td>Geladeira até 2 semanas</td>
+      </tr>
+      <tr>
+        <td>Rabanete</td>
+        <td>Raiz aparente, 25-30 dias</td>
+        <td>Consumir fresco</td>
+      </tr>
+      <tr>
+        <td>Cebola</td>
+        <td>Folhas secas e tombadas</td>
+        <td>Secar ao sol, armazenar seco</td>
+      </tr>
+      <tr>
+        <td>Alho</td>
+        <td>Folhas 70% secas</td>
+        <td>Secar e armazenar pendurado</td>
+      </tr>
+      <tr>
+        <td>Batata</td>
+        <td>Folhas secas e mortas</td>
+        <td>Local escuro e seco</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h3>Erro Comum: Colher Tarde Demais</h3>
+      <p>Folhosas que passam do ponto ficam amargas. Raízes que demoram ficam fibrosas. Frutas que esperam demais apodrecem. Na dúvida, colha um pouco antes!</p>
+    </div>
+
+    <div class="page-number">Página 50</div>
+  </div>
+
+  <!-- COLHEITA FINAL -->
+  <div class="page">
+    <h2>Novembro e Dezembro</h2>
+
+    <table>
+      <tr>
+        <th>O que Colher</th>
+        <th>Como Identificar o Ponto</th>
+        <th>Dica de Conservação</th>
+      </tr>
+      <tr>
+        <td>Morango</td>
+        <td>Vermelho uniforme, aromático</td>
+        <td>Geladeira 3-5 dias, congele</td>
+      </tr>
+      <tr>
+        <td>Abobrinha</td>
+        <td>15-20cm, casca tenra</td>
+        <td>Geladeira 5-7 dias</td>
+      </tr>
+      <tr>
+        <td>Chuchu</td>
+        <td>Verde claro, pequeno</td>
+        <td>Ambiente até 2 semanas</td>
+      </tr>
+      <tr>
+        <td>Ervilha</td>
+        <td>Vagens cheias, verdes</td>
+        <td>Congele rapidamente</td>
+      </tr>
+    </table>
+
+    <h2>Colheita de Temperos e Ervas</h2>
+
+    <div class="highlight-box">
+      <h3>Regras Gerais para Ervas</h3>
+      <ul>
+        <li><strong>Melhor horário:</strong> Manhã, após secar o orvalho</li>
+        <li><strong>Quantidade:</strong> Nunca mais de 1/3 da planta</li>
+        <li><strong>Frequência:</strong> Colheita regular estimula crescimento</li>
+        <li><strong>Evite:</strong> Colher quando florindo (menos sabor)</li>
+      </ul>
+    </div>
+
+    <table>
+      <tr>
+        <th>Erva</th>
+        <th>Parte Colhida</th>
+        <th>Conservação</th>
+      </tr>
+      <tr>
+        <td>Manjericão</td>
+        <td>Folhas e pontas</td>
+        <td>Fresco, ou seque/congele</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>Folhas e ramos</td>
+        <td>Água fresca, ou seque</td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>Ramos inteiros</td>
+        <td>Seco dura muito</td>
+      </tr>
+      <tr>
+        <td>Cebolinha</td>
+        <td>Folhas (corte na base)</td>
+        <td>Congele picada</td>
+      </tr>
+      <tr>
+        <td>Salsa</td>
+        <td>Folhas com talo</td>
+        <td>Água na geladeira, ou seque</td>
+      </tr>
+      <tr>
+        <td>Coentro</td>
+        <td>Ramos inteiros</td>
+        <td>Água na geladeira (curto prazo)</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Seque suas ervas excedentes! Amarre em maços e pendure de cabeça para baixo em local arejado. Em 1-2 semanas estarão prontas para armazenar.
+    </div>
+
+    <div class="page-number">Página 51</div>
+  </div>
+
+  <!-- MAIS COLHEITA -->
+  <div class="page">
+    <h2>Sinais de Que a Colheita Está Atrasada</h2>
+
+    <div class="warning-box">
+      <h3>Folhosas</h3>
+      <ul>
+        <li>Começou a formar haste central (pendoamento)</li>
+        <li>Folhas amarelando ou ficando duras</li>
+        <li>Sabor amargo</li>
+        <li>Flores aparecendo</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h3>Raízes</h3>
+      <ul>
+        <li>Rachando ou quebrando</li>
+        <li>Centro fibroso/lenhoso</li>
+        <li>Brotando novamente</li>
+        <li>Muito grandes (menos saborosas)</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h3>Frutos</h3>
+      <ul>
+        <li>Muito moles</li>
+        <li>Mudança de cor excessiva</li>
+        <li>Caindo da planta</li>
+        <li>Sementes grandes demais</li>
+      </ul>
+    </div>
+
+    <h2>Calendário Resumido de Colheitas</h2>
+
+    <table>
+      <tr>
+        <th>Mês</th>
+        <th>Principais Colheitas</th>
+      </tr>
+      <tr>
+        <td>Jan-Fev</td>
+        <td>Tomate, pimentão, pepino, abóbora, melancia</td>
+      </tr>
+      <tr>
+        <td>Mar-Abr</td>
+        <td>Quiabo, jiló, feijão-vagem, milho verde</td>
+      </tr>
+      <tr>
+        <td>Mai-Jun</td>
+        <td>Alface, rúcula, couve, espinafre</td>
+      </tr>
+      <tr>
+        <td>Jul-Ago</td>
+        <td>Brócolis, couve-flor, repolho, cenoura</td>
+      </tr>
+      <tr>
+        <td>Set-Out</td>
+        <td>Beterraba, cebola, alho, batata</td>
+      </tr>
+      <tr>
+        <td>Nov-Dez</td>
+        <td>Morango, abobrinha, início dos tomates</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Página 52</div>
+  </div>
+
+  <!-- BÔNUS 4: DIAGNÓSTICO -->
+  <div class="page">
+    <h1>Bônus 4: Por Que Minha Planta Não Cresceu?</h1>
+
+    <p>Plantou na época certa mas não deu certo? Veja os diagnósticos mais comuns!</p>
+
+    <h2>Problema: Não Germinou</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <h3>Possíveis Causas</h3>
+      <table>
+        <tr>
+          <th>Causa</th>
+          <th>Solução</th>
+        </tr>
+        <tr>
+          <td>Semente velha</td>
+          <td>Use sementes de até 2-3 anos</td>
+        </tr>
+        <tr>
+          <td>Muito fundo</td>
+          <td>Regra: 2-3x o tamanho da semente</td>
+        </tr>
+        <tr>
+          <td>Solo seco</td>
+          <td>Mantenha úmido (não encharcado)</td>
+        </tr>
+        <tr>
+          <td>Solo frio</td>
+          <td>Espere esquentar ou use estufa</td>
+        </tr>
+        <tr>
+          <td>Solo compactado</td>
+          <td>Prepare bem antes de plantar</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>Problema: Germinou Mas Morreu</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <h3>Damping-off (Tombamento)</h3>
+      <ul>
+        <li><strong>Sintoma:</strong> Muda tomba na base, caule escurecido</li>
+        <li><strong>Causa:</strong> Fungo + excesso de umidade</li>
+        <li><strong>Solução:</strong> Menos água, boa drenagem, canela no substrato</li>
+      </ul>
+
+      <h3>Sol Direto</h3>
+      <ul>
+        <li><strong>Sintoma:</strong> Folhas queimadas, muda murcha</li>
+        <li><strong>Causa:</strong> Sol forte demais para muda jovem</li>
+        <li><strong>Solução:</strong> Proteção nas primeiras semanas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 53</div>
+  </div>
+
+  <!-- DIAGNÓSTICO CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Problema: Cresceu Mas Não Produziu</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <table>
+        <tr>
+          <th>Sintoma</th>
+          <th>Causa Provável</th>
+          <th>Solução</th>
+        </tr>
+        <tr>
+          <td>Muito folha, pouca fruta</td>
+          <td>Excesso de nitrogênio</td>
+          <td>Reduza adubo verde, aumente potássio</td>
+        </tr>
+        <tr>
+          <td>Flores mas sem frutos</td>
+          <td>Falta de polinização</td>
+          <td>Atraia abelhas, polinize à mão</td>
+        </tr>
+        <tr>
+          <td>Alface pendoou</td>
+          <td>Calor excessivo</td>
+          <td>Plante em época mais fresca</td>
+        </tr>
+        <tr>
+          <td>Cenoura deformada</td>
+          <td>Solo compactado/pedras</td>
+          <td>Prepare solo profundo e solto</td>
+        </tr>
+        <tr>
+          <td>Tomate rachou</td>
+          <td>Rega irregular</td>
+          <td>Mantenha rega constante</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>Problema: Folhas com Manchas</h2>
+
+    <div class="highlight-box">
+      <h3>Identificação por Cor</h3>
+      <ul>
+        <li><strong>Amarelo uniforme:</strong> Falta de nitrogênio ou água</li>
+        <li><strong>Amarelo entre veias:</strong> Falta de ferro ou magnésio</li>
+        <li><strong>Pontas marrons:</strong> Falta de potássio ou queima de adubo</li>
+        <li><strong>Manchas marrons circulares:</strong> Fungo (remova folhas)</li>
+        <li><strong>Manchas pretas:</strong> Doença bacteriana (remova planta)</li>
+        <li><strong>Pó branco:</strong> Oídio (fungicida ou leite diluído)</li>
+      </ul>
+    </div>
+
+    <h2>Problema: Pragas</h2>
+
+    <table>
+      <tr>
+        <th>Praga</th>
+        <th>Sintoma</th>
+        <th>Controle Natural</th>
+      </tr>
+      <tr>
+        <td>Pulgão</td>
+        <td>Folhas enroladas, melado</td>
+        <td>Água com sabão, joaninhas</td>
+      </tr>
+      <tr>
+        <td>Lagarta</td>
+        <td>Furos nas folhas, fezes</td>
+        <td>Catação manual, Bt</td>
+      </tr>
+      <tr>
+        <td>Mosca-branca</td>
+        <td>Nuvem branca ao mexer</td>
+        <td>Armadilhas amarelas, óleo de neem</td>
+      </tr>
+      <tr>
+        <td>Lesma/Caracol</td>
+        <td>Rastro brilhante, folhas roídas</td>
+        <td>Armadilhas de cerveja</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Página 54</div>
+  </div>
+
+  <!-- DIAGNÓSTICO FINAL -->
+  <div class="page">
+    <h2>Checklist de Diagnóstico Rápido</h2>
+
+    <div class="highlight-box">
+      <h3>Quando a Planta Não Vai Bem, Verifique:</h3>
+      <ol>
+        <li><strong>Época:</strong> Está plantada na época certa?</li>
+        <li><strong>Água:</strong> Muito ou pouco? Solo úmido ao toque?</li>
+        <li><strong>Luz:</strong> Recebe sol suficiente (6h/dia)?</li>
+        <li><strong>Espaço:</strong> Está apertada demais?</li>
+        <li><strong>Nutrientes:</strong> Solo foi adubado? Quando?</li>
+        <li><strong>Pragas:</strong> Olhe embaixo das folhas!</li>
+        <li><strong>Drenagem:</strong> Água escoa bem ou empoça?</li>
+      </ol>
+    </div>
+
+    <h2>Soluções Rápidas para Problemas Comuns</h2>
+
+    <table>
+      <tr>
+        <th>Problema</th>
+        <th>Solução Imediata</th>
+      </tr>
+      <tr>
+        <td>Planta murcha</td>
+        <td>Regue e faça sombra temporária</td>
+      </tr>
+      <tr>
+        <td>Folhas amarelas (todas)</td>
+        <td>Adube com nitrogênio (ureia diluída)</td>
+      </tr>
+      <tr>
+        <td>Folhas amarelas (velhas)</td>
+        <td>Normal! Remova e continue</td>
+      </tr>
+      <tr>
+        <td>Planta estagnada</td>
+        <td>Verifique raízes, transplante se necessário</td>
+      </tr>
+      <tr>
+        <td>Pulgões</td>
+        <td>Jato forte de água + sabão de coco</td>
+      </tr>
+      <tr>
+        <td>Fungo nas folhas</td>
+        <td>Remova afetadas, reduza rega, mais ventilação</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> A maioria dos problemas é causada por EXCESSO de cuidado - muita água, muito adubo, muito sol. Na dúvida, menos é mais!
+    </div>
+
+    <div class="warning-box">
+      <h3>Quando Desistir?</h3>
+      <p>Se a planta está muito doente, é melhor remover para não contaminar as outras. Não tenha pena - aprenda com o erro e tente novamente!</p>
+    </div>
+
+    <div class="page-number">Página 55</div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="page">
+    <h1>FAQ: 25 Perguntas Frequentes</h1>
+
+    <h2>Sobre Épocas de Plantio</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <p><strong>1. Posso plantar qualquer coisa o ano todo?</strong><br>
+      Não. Cada planta tem época ideal. Algumas toleram variação, outras são muito específicas.</p>
+
+      <p><strong>2. O calendário vale para todo o Brasil?</strong><br>
+      É uma base. Norte/Nordeste tem menos variação. Sul precisa ajustar para invernos mais frios.</p>
+
+      <p><strong>3. Posso ignorar a lua?</strong><br>
+      Sim. Plantar na época certa importa mais que a fase da lua, mas muitos agricultores tradicionais seguem e relatam bons resultados.</p>
+
+      <p><strong>4. Atrasei o plantio, ainda dá?</strong><br>
+      Depende de quanto. 2-3 semanas geralmente ok. Mais que isso, pode ser melhor esperar a próxima janela.</p>
+
+      <p><strong>5. Por que o mesmo mês tem plantas de frio e calor?</strong><br>
+      Março e abril, por exemplo, são transição. Dá para plantar as últimas de verão e as primeiras de outono.</p>
+    </div>
+
+    <h2>Sobre Cultivo</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <p><strong>6. Preciso de sol pleno para horta?</strong><br>
+      Ideal são 6h de sol. Folhosas toleram menos (4h). Frutos precisam de mais (6-8h).</p>
+
+      <p><strong>7. Posso plantar em vaso?</strong><br>
+      Sim! Adapte o tamanho. Tomate precisa de 20L+. Alface funciona em 5L.</p>
+
+      <p><strong>8. Qual adubo usar?</strong><br>
+      Composto orgânico é o mais versátil. Adicione húmus de minhoca mensalmente.</p>
+
+      <p><strong>9. Quanto regar?</strong><br>
+      Quando o solo estiver seco a 2-3cm de profundidade. Geralmente diário no verão, dia sim dia não no inverno.</p>
+
+      <p><strong>10. Posso usar semente de fruta comprada?</strong><br>
+      Sim para tomate, pimentão, abóbora. Híbridos podem não reproduzir igual.</p>
+    </div>
+
+    <div class="page-number">Página 56</div>
+  </div>
+
+  <!-- FAQ CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Sobre Problemas</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <p><strong>11. Minhas sementes não germinaram. Por quê?</strong><br>
+      Causas comuns: sementes velhas, plantadas muito fundo, solo muito seco ou frio.</p>
+
+      <p><strong>12. Por que minha alface ficou amarga?</strong><br>
+      Calor excessivo ou colheita tardia (pendoamento). Plante em época mais fresca.</p>
+
+      <p><strong>13. Por que meu tomate não dá frutos?</strong><br>
+      Falta de polinização, excesso de nitrogênio, ou temperatura inadequada (muito quente ou frio).</p>
+
+      <p><strong>14. Por que minhas cenouras ficaram tortas?</strong><br>
+      Solo compactado, pedras, ou muito adubado. Prepare solo bem solto e profundo.</p>
+
+      <p><strong>15. Posso usar defensivo químico?</strong><br>
+      Evite na horta caseira. Controles naturais (neem, sabão, catação) são seguros e eficazes.</p>
+    </div>
+
+    <h2>Sobre Colheita</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <p><strong>16. Como sei que está no ponto?</strong><br>
+      Veja as tabelas de colheita neste ebook. Cada planta tem sinais específicos.</p>
+
+      <p><strong>17. Posso colher um pouco e deixar crescer mais?</strong><br>
+      Sim para folhosas (alface, couve). Não para raízes inteiras (cenoura, beterraba).</p>
+
+      <p><strong>18. Quanto tempo do plantio à colheita?</strong><br>
+      Varia: rabanete 25 dias, alface 45 dias, tomate 90 dias, abóbora 120 dias.</p>
+
+      <p><strong>19. Posso guardar sementes das minhas plantas?</strong><br>
+      Sim! Deixe frutas amadurecerem bem, extraia sementes, seque e guarde.</p>
+
+      <p><strong>20. Por que minha planta floriu antes de produzir?</strong><br>
+      Estresse (calor, seca) faz plantas acelerarem ciclo. Colha antes ou plante em época melhor.</p>
+    </div>
+
+    <div class="page-number">Página 57</div>
+  </div>
+
+  <!-- FAQ FINAL -->
+  <div class="page">
+    <h2>Perguntas Gerais</h2>
+
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <p><strong>21. Quanto espaço preciso para uma horta?</strong><br>
+      1m² já produz bastante! Uma jardineira na janela já é um começo.</p>
+
+      <p><strong>22. Quanto tempo preciso dedicar?</strong><br>
+      15-30 minutos por dia para horta pequena. Mais no início, menos depois.</p>
+
+      <p><strong>23. Preciso de ferramentas especiais?</strong><br>
+      Básico: pá pequena, regador, tesoura. Resto é luxo.</p>
+
+      <p><strong>24. Posso misturar flores com hortaliças?</strong><br>
+      Sim e deve! Flores atraem polinizadores e repelem pragas.</p>
+
+      <p><strong>25. Vale a pena ter horta em apartamento?</strong><br>
+      Muito! Varanda com sol produz temperos, folhosas e até tomates.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h3>A Pergunta Mais Importante</h3>
+      <p><strong>"Por onde começo?"</strong></p>
+      <p>Comece HOJE com 3 plantas fáceis: hortelã (vaso), cebolinha (vaso) e rúcula (sementeira). Em 30 dias você já estará colhendo!</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica Final do Verdinho:</strong> Não espere o momento perfeito, o espaço perfeito, ou o conhecimento perfeito. Comece com o que tem, onde está, com o que sabe. A experiência é a melhor professora!
+    </div>
+
+    <div class="page-number">Página 58</div>
+  </div>
+
+  <!-- CHECKLIST ANUAL -->
+  <div class="page">
+    <h1>Checklist Anual: Organize Sua Horta</h1>
+
+    <h2>Verão (Dezembro a Março)</h2>
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <ul>
+        <li>☐ Plantar tomate, pimentão, pepino, abóbora</li>
+        <li>☐ Manter rega frequente (diária se necessário)</li>
+        <li>☐ Proteger folhosas do sol intenso</li>
+        <li>☐ Vigiar pragas (aumentam no calor)</li>
+        <li>☐ Colher frutos regularmente</li>
+        <li>☐ Preparar canteiros para outono</li>
+      </ul>
+    </div>
+
+    <h2>Outono (Março a Junho)</h2>
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <ul>
+        <li>☐ Plantar brássicas (brócolis, couve-flor)</li>
+        <li>☐ Iniciar folhosas de inverno</li>
+        <li>☐ Colher últimos frutos de verão</li>
+        <li>☐ Adicionar composto aos canteiros</li>
+        <li>☐ Reduzir frequência de rega</li>
+        <li>☐ Plantar cebola e alho</li>
+      </ul>
+    </div>
+
+    <h2>Inverno (Junho a Setembro)</h2>
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <ul>
+        <li>☐ Colher brássicas e folhosas</li>
+        <li>☐ Manter canteiros limpos</li>
+        <li>☐ Preparar solo para primavera</li>
+        <li>☐ Plantar raízes (cenoura, beterraba)</li>
+        <li>☐ Proteger plantas sensíveis de geadas</li>
+        <li>☐ Planejar próxima temporada</li>
+      </ul>
+    </div>
+
+    <h2>Primavera (Setembro a Dezembro)</h2>
+    <div class="month-content" style="border-radius: 12px; border: 2px solid #22c55e;">
+      <ul>
+        <li>☐ Preparar sementeiras de verão</li>
+        <li>☐ Transplantar mudas de tomate, pimentão</li>
+        <li>☐ Aumentar rega gradualmente</li>
+        <li>☐ Colher cebola e alho</li>
+        <li>☐ Adubar canteiros</li>
+        <li>☐ Propagar ervas perenes</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 59</div>
+  </div>
+
+  <!-- CHECKLIST FINAL -->
+  <div class="page">
+    <h2>Checklist Mensal de Manutenção</h2>
+
+    <div class="highlight-box">
+      <h3>Todo Mês, Faça:</h3>
+      <ul>
+        <li>☐ Remover ervas daninhas</li>
+        <li>☐ Verificar pragas e doenças</li>
+        <li>☐ Adicionar cobertura morta se necessário</li>
+        <li>☐ Colher o que estiver pronto</li>
+        <li>☐ Plantar novos cultivos (escalonamento)</li>
+        <li>☐ Verificar sistema de rega</li>
+        <li>☐ Observar e anotar aprendizados</li>
+      </ul>
+    </div>
+
+    <h2>Materiais para Ter Sempre</h2>
+
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Quantidade Sugerida</th>
+      </tr>
+      <tr>
+        <td>Composto orgânico</td>
+        <td>Saco de 20L por mês</td>
+      </tr>
+      <tr>
+        <td>Húmus de minhoca</td>
+        <td>5L por mês</td>
+      </tr>
+      <tr>
+        <td>Sementes variadas</td>
+        <td>3-5 pacotes por estação</td>
+      </tr>
+      <tr>
+        <td>Óleo de neem</td>
+        <td>1 frasco por temporada</td>
+      </tr>
+      <tr>
+        <td>Saquinhos/copos para mudas</td>
+        <td>20-50 unidades</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Diário da Horta:</strong> Mantenha um caderno simples anotando o que plantou, quando, e como foi. Em 1 ano você terá seu próprio calendário personalizado!
+    </div>
+
+    <div class="warning-box">
+      <h3>Lembrete Final</h3>
+      <p>Este calendário é um GUIA, não uma regra absoluta. Observe sua horta, seu clima local, e adapte. A natureza é sábia - aprenda com ela!</p>
+    </div>
+
+    <div class="page-number">Página 60</div>
+  </div>
+
+  <!-- CONCLUSÃO -->
+  <div class="page">
+    <h1>Conclusão</h1>
+    <p>Parabéns por adquirir este Calendário de Plantio! Agora você tem todas as informações necessárias para plantar na época certa e colher resultados muito melhores.</p>
+
+    <h3>Resumo do Que Você Aprendeu</h3>
+    <ul>
+      <li>A importância de plantar na época correta</li>
+      <li>O que plantar em cada um dos 12 meses</li>
+      <li>Épocas ideais para mais de 50 plantas</li>
+      <li>Como usar as fases da lua no plantio</li>
+      <li>Como planejar sua produção anual</li>
+      <li>Adaptações para sua região específica</li>
+    </ul>
+
+    <h3>Próximos Passos</h3>
+    <ol>
+      <li>Identifique sua região e o mês atual</li>
+      <li>Escolha 3-5 plantas para começar</li>
+      <li>Anote no planejador</li>
+      <li>Mãos à terra!</li>
+    </ol>
+
+    <div class="highlight-box">
+      <h3>Lembre-se</h3>
+      <p>A melhor época para plantar uma árvore foi há 20 anos. A segunda melhor época é <strong>agora</strong>. O mesmo vale para sua horta. Não espere o "momento perfeito" - comece hoje!</p>
+    </div>
+
+    <h3>Precisa de Mais Ajuda?</h3>
+    <p>Visite nosso site para mais conteúdos, dúvidas e comunidade:</p>
+    <p><strong>minhahortaemcasa.com.br</strong></p>
+
+    <div class="page-number">Página 40</div>
+  </div>
+
+  <div class="cover" style="min-height: 50vh;">
+    <div class="mascote">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGrad2)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGrad2)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs>
+          <linearGradient id="potGrad2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bodyGrad2" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h2 style="color: #15803d;">Boas colheitas!</h2>
+    <p>Minha Horta em Casa</p>
+    <p style="color: #22c55e;">minhahortaemcasa.com.br</p>
+  </div>
+</body>
+</html>

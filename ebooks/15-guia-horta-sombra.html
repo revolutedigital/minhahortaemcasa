@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guia Horta na Sombra - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.7; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #3b7ab8 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 44px; font-weight: 800; color: #fff; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+    .cover .subtitle { font-size: 20px; color: #a5d6ff; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #fff; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #a5d6ff; }
+    h1 { font-size: 32px; color: #1e3a5f; margin-bottom: 20px; border-bottom: 3px solid #3b7ab8; padding-bottom: 10px; }
+    h2 { font-size: 24px; color: #2d5a87; margin: 25px 0 15px; }
+    h3 { font-size: 20px; color: #1e3a5f; margin: 20px 0 10px; }
+    h4 { font-size: 17px; color: #2d5a87; margin: 15px 0 8px; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin: 12px 0 15px 25px; }
+    li { margin-bottom: 6px; }
+    .intro-box { background: linear-gradient(135deg, #e0f2fe, #bae6fd); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 5px solid #0284c7; }
+    .science-box { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border: 2px solid #a855f7; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .science-box h3 { color: #7c3aed; margin-top: 0; }
+    .plant-card { background: #fff; border: 2px solid #3b7ab8; border-radius: 12px; padding: 20px; margin: 15px 0; box-shadow: 0 2px 8px rgba(59,122,184,0.1); }
+    .plant-card h3 { color: #1e3a5f; border-bottom: 2px solid #e0f2fe; padding-bottom: 8px; margin-bottom: 15px; margin-top: 0; }
+    .light-level { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 10px; }
+    .light-full-shade { background: #1e3a5f; color: white; }
+    .light-partial { background: #fbbf24; color: #78350f; }
+    .light-minimal { background: #6366f1; color: white; }
+    .technique-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid #10b981; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .technique-card h3 { color: #059669; margin-top: 0; }
+    .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .tip-box { background: #e0f2fe; border-left: 4px solid #0284c7; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .success-box { background: #ecfdf5; border-left: 4px solid #10b981; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .dli-card { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #f59e0b; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .dli-card h3 { color: #b45309; margin-top: 0; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    .comparison-table th { background: #1e3a5f; color: white; padding: 12px 8px; text-align: left; }
+    .comparison-table td { padding: 10px 8px; border-bottom: 1px solid #e5e7eb; }
+    .comparison-table tr:nth-child(even) { background: #e0f2fe; }
+    .spectrum-bar { height: 30px; border-radius: 8px; margin: 10px 0; display: flex; overflow: hidden; }
+    .spectrum-blue { background: linear-gradient(90deg, #1e40af, #3b82f6); flex: 1; }
+    .spectrum-green { background: linear-gradient(90deg, #15803d, #22c55e); flex: 1; }
+    .spectrum-red { background: linear-gradient(90deg, #dc2626, #f87171); flex: 1; }
+    .light-map { background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .grow-light-card { background: linear-gradient(135deg, #fdf4ff, #fae8ff); border: 2px solid #d946ef; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .grow-light-card h3 { color: #a21caf; margin-top: 0; }
+    .chapter-intro { font-size: 18px; color: #374151; margin-bottom: 20px; font-style: italic; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+    .toc { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); padding: 30px; border-radius: 12px; margin: 20px 0; border: 2px solid #0284c7; }
+    .toc h2 { border-bottom: none; margin-top: 0; color: #0369a1; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dotted #7dd3fc; }
+    .ranking-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .ranking-table th { background: #1e3a5f; color: white; padding: 10px; text-align: left; }
+    .ranking-table td { padding: 10px; border-bottom: 1px solid #e5e7eb; }
+    .ranking-table tr:nth-child(even) { background: #e0f2fe; }
+    .stars { color: #f59e0b; }
+    .lux-meter { background: linear-gradient(90deg, #1e3a5f 0%, #3b7ab8 25%, #fbbf24 50%, #f97316 75%, #ef4444 100%); height: 25px; border-radius: 12px; position: relative; margin: 15px 0; }
+    .lux-marker { position: absolute; top: -8px; width: 3px; height: 40px; background: #1f2937; }
+    .photoperiod-chart { display: grid; grid-template-columns: repeat(24, 1fr); gap: 2px; margin: 15px 0; }
+    .hour-block { height: 30px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; }
+    .hour-dark { background: #1e3a5f; }
+    .hour-light { background: #fbbf24; }
+    .hour-artificial { background: #d946ef; }
+    .diagnosis-card { background: #fff; border: 2px solid #ef4444; border-radius: 12px; padding: 20px; margin: 15px 0; }
+    .diagnosis-card.ok { border-color: #10b981; }
+    .diagnosis-card h4 { margin-top: 0; }
+    .microgreen-card { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 15px 0; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0; }
+    .stat-box { background: #fff; border: 2px solid #3b7ab8; border-radius: 12px; padding: 15px; text-align: center; }
+    .stat-number { font-size: 32px; font-weight: 800; color: #1e3a5f; }
+    .stat-label { font-size: 12px; color: #64748b; }
+    .checklist { background: #f8fafc; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .checklist-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
+    .checklist-item:last-child { border-bottom: none; }
+    .checkbox { width: 20px; height: 20px; border: 2px solid #3b7ab8; border-radius: 4px; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#fff" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pg15)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bg15)" stroke="#15803d" stroke-width="2.5"/>
+        <!-- Olhos com lanterna/luz -->
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <!-- Sorriso -->
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Bochechas -->
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <!-- Folhas -->
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <!-- Lanterna na mão -->
+        <ellipse cx="78" cy="75" rx="8" ry="6" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+        <path d="M78 69L78 60" stroke="#fbbf24" stroke-width="3"/>
+        <circle cx="78" cy="57" r="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="2"/>
+        <path d="M78 50L78 40L85 35M78 50L71 35" stroke="#fbbf24" stroke-width="1.5" stroke-linecap="round"/>
+        <defs>
+          <linearGradient id="pg15" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ea7531"/>
+            <stop offset="100%" stop-color="#b5441c"/>
+          </linearGradient>
+          <radialGradient id="bg15" cx="40%" cy="30%">
+            <stop offset="0%" stop-color="#86efac"/>
+            <stop offset="50%" stop-color="#4ade80"/>
+            <stop offset="100%" stop-color="#22c55e"/>
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Guia Completo<br>Horta na Sombra</h1>
+    <p class="subtitle">20+ plantas que prosperam com pouca luz + ciência do fotoperíodo<br>+ grow lights + técnicas profissionais</p>
+    <p style="font-size: 16px; color: #a5d6ff; margin-top: 20px; background: rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 20px;">Pouca luz? Sem problema!</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>Sumário Completo</h2>
+      <ul>
+        <li><strong>Módulo 1:</strong> A Ciência da Luz para Plantas (pág. 2-4)</li>
+        <li><strong>Módulo 2:</strong> Mapeando a Luz do Seu Espaço (pág. 5-6)</li>
+        <li><strong>Módulo 3:</strong> 20+ Plantas para Sombra - Fichas Completas (pág. 7-12)</li>
+        <li><strong>Módulo 4:</strong> Microverdes - A Solução para Sombra Total (pág. 13-14)</li>
+        <li><strong>Módulo 5:</strong> Técnicas para Maximizar Luz Natural (pág. 15-16)</li>
+        <li><strong>Módulo 6:</strong> Grow Lights 2025 - Guia Definitivo (pág. 17-19)</li>
+        <li><strong>Módulo 7:</strong> Diagnóstico Visual de Problemas de Luz (pág. 20-21)</li>
+        <li><strong>Módulo 8:</strong> Calendário Sazonal para Sombra (pág. 22)</li>
+        <li><strong>Bônus:</strong> Checklist + Ranking Final (pág. 23)</li>
+      </ul>
+    </div>
+
+    <div class="intro-box">
+      <h3>Para Quem É Este Guia?</h3>
+      <ul>
+        <li>Mora em apartamento com janela pequena ou obstruída</li>
+        <li>Tem varanda/sacada coberta e sombreada</li>
+        <li>Quer cultivar dentro de casa (sala, cozinha, quarto)</li>
+        <li>Tem quintal com muita sombra de árvores ou muros</li>
+        <li>Recebe menos de 4 horas de sol direto por dia</li>
+        <li>Quer usar iluminação artificial (grow lights)</li>
+      </ul>
+      <p style="margin-top: 15px; font-weight: 700; color: #0369a1;"><strong>Boa notícia:</strong> Você PODE ter uma horta extremamente produtiva mesmo assim!</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Plantas para Sombra</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">23</div>
+        <div class="stat-label">Páginas de Conteúdo</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Prático e Aplicável</div>
+      </div>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 1</div>
+  </div>
+
+  <!-- MÓDULO 1: A CIÊNCIA DA LUZ - PARTE 1 -->
+  <div class="page">
+    <h1>Módulo 1: A Ciência da Luz para Plantas</h1>
+    <p class="chapter-intro">Entenda a fotossíntese, fotoperíodo e DLI para otimizar sua horta na sombra.</p>
+
+    <div class="science-box">
+      <h3>O que é Fotossíntese?</h3>
+      <p>A fotossíntese é o processo pelo qual as plantas convertem luz em energia (açúcares). A equação simplificada:</p>
+      <p style="text-align: center; font-size: 18px; margin: 15px 0; font-weight: 700; color: #7c3aed;">
+        CO₂ + H₂O + LUZ → Glicose + O₂
+      </p>
+      <p><strong>Traduzindo:</strong> Gás carbônico + Água + Luz = Açúcar (energia) + Oxigênio</p>
+      <p style="margin-top: 10px;"><strong>Menos luz = menos energia = crescimento lento ou parado.</strong></p>
+    </div>
+
+    <h2>O Espectro de Luz e as Plantas</h2>
+    <p>As plantas não usam toda a luz igualmente. Elas absorvem principalmente:</p>
+
+    <div class="spectrum-bar">
+      <div class="spectrum-blue" style="flex: 1.2;"><span style="padding: 5px;">AZUL</span></div>
+      <div class="spectrum-green" style="flex: 0.6; opacity: 0.5;"><span style="padding: 5px;">VERDE</span></div>
+      <div class="spectrum-red" style="flex: 1.2;"><span style="padding: 5px;">VERMELHO</span></div>
+    </div>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Cor</th>
+        <th>Comprimento de Onda</th>
+        <th>Função na Planta</th>
+      </tr>
+      <tr>
+        <td><strong>Azul (400-500nm)</strong></td>
+        <td>Luz "fria"</td>
+        <td>Crescimento vegetativo, folhas compactas, raízes fortes</td>
+      </tr>
+      <tr>
+        <td><strong>Verde (500-600nm)</strong></td>
+        <td>Luz "neutra"</td>
+        <td>Pouco absorvido (por isso as folhas são verdes!)</td>
+      </tr>
+      <tr>
+        <td><strong>Vermelho (600-700nm)</strong></td>
+        <td>Luz "quente"</td>
+        <td>Floração, frutificação, alongamento do caule</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>Por que isso importa?</h4>
+      <p>Lâmpadas "full spectrum" contêm todas as cores necessárias. Lâmpadas comuns podem ser deficientes em vermelho ou azul, causando crescimento inadequado.</p>
+    </div>
+
+    <h2>Os 4 Níveis de Luminosidade</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Nível</th>
+        <th>Definição</th>
+        <th>Horas de Sol</th>
+        <th>Lux Aproximado</th>
+      </tr>
+      <tr>
+        <td><strong>Sol Pleno</strong></td>
+        <td>Sol direto batendo na planta</td>
+        <td>6+ horas/dia</td>
+        <td>50.000-100.000 lux</td>
+      </tr>
+      <tr>
+        <td><strong>Meia-Sombra</strong></td>
+        <td>Sol direto parte do dia</td>
+        <td>3-6 horas/dia</td>
+        <td>15.000-50.000 lux</td>
+      </tr>
+      <tr>
+        <td><strong>Sombra Luminosa</strong></td>
+        <td>Luz indireta forte, sem sol direto</td>
+        <td>0-3h sol + luz indireta</td>
+        <td>5.000-15.000 lux</td>
+      </tr>
+      <tr>
+        <td><strong>Sombra Total</strong></td>
+        <td>Pouca luz natural</td>
+        <td>0 horas (artificial necessária)</td>
+        <td>&lt;5.000 lux</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia Horta na Sombra - Página 2</div>
+  </div>
+
+  <!-- MÓDULO 1: A CIÊNCIA DA LUZ - PARTE 2 -->
+  <div class="page">
+    <h1>A Ciência da Luz (continuação)</h1>
+
+    <div class="dli-card">
+      <h3>DLI - Daily Light Integral (Integral de Luz Diária)</h3>
+      <p>O DLI é a quantidade TOTAL de luz que uma planta recebe em 24 horas. É medido em <strong>mol/m²/dia</strong>.</p>
+      <p>Pense assim: não é só a INTENSIDADE da luz, mas a QUANTIDADE acumulada ao longo do dia.</p>
+
+      <h4 style="margin-top: 15px;">DLI Necessário por Tipo de Planta:</h4>
+      <table class="comparison-table" style="margin-top: 10px;">
+        <tr>
+          <th>Tipo de Planta</th>
+          <th>DLI Mínimo</th>
+          <th>DLI Ideal</th>
+          <th>Exemplos</th>
+        </tr>
+        <tr>
+          <td>Folhosas de sombra</td>
+          <td>4-6 mol</td>
+          <td>8-12 mol</td>
+          <td>Alface, agrião, hortelã</td>
+        </tr>
+        <tr>
+          <td>Ervas aromáticas</td>
+          <td>8-12 mol</td>
+          <td>12-16 mol</td>
+          <td>Manjericão, tomilho</td>
+        </tr>
+        <tr>
+          <td>Frutos pequenos</td>
+          <td>15-20 mol</td>
+          <td>20-30 mol</td>
+          <td>Morangos, pimentas</td>
+        </tr>
+        <tr>
+          <td>Frutos grandes</td>
+          <td>20-30 mol</td>
+          <td>30-40 mol</td>
+          <td>Tomates, berinjelas</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="success-box">
+      <h4>Como Compensar Baixa Intensidade com Mais Horas</h4>
+      <p>Se sua luz é fraca, você pode compensar deixando a luz artificial ligada por mais tempo:</p>
+      <ul>
+        <li>Luz forte por 8 horas = Luz fraca por 14-16 horas</li>
+        <li>O importante é atingir o DLI mínimo da planta!</li>
+      </ul>
+    </div>
+
+    <h2>Fotoperíodo - O Relógio Biológico das Plantas</h2>
+    <p>O fotoperíodo é a duração do período de luz em 24 horas. Afeta:</p>
+    <ul>
+      <li><strong>Floração:</strong> Algumas plantas só florescem com dias curtos ou longos</li>
+      <li><strong>Crescimento:</strong> Mais horas de luz = mais crescimento vegetativo</li>
+      <li><strong>Dormência:</strong> Dias curtos podem induzir dormência</li>
+    </ul>
+
+    <h4>Exemplo de Fotoperíodo (16h luz / 8h escuro):</h4>
+    <div class="photoperiod-chart">
+      <div class="hour-block hour-dark">0</div>
+      <div class="hour-block hour-dark">1</div>
+      <div class="hour-block hour-dark">2</div>
+      <div class="hour-block hour-dark">3</div>
+      <div class="hour-block hour-dark">4</div>
+      <div class="hour-block hour-dark">5</div>
+      <div class="hour-block hour-light">6</div>
+      <div class="hour-block hour-light">7</div>
+      <div class="hour-block hour-light">8</div>
+      <div class="hour-block hour-light">9</div>
+      <div class="hour-block hour-light">10</div>
+      <div class="hour-block hour-light">11</div>
+      <div class="hour-block hour-light">12</div>
+      <div class="hour-block hour-light">13</div>
+      <div class="hour-block hour-light">14</div>
+      <div class="hour-block hour-light">15</div>
+      <div class="hour-block hour-light">16</div>
+      <div class="hour-block hour-artificial">17</div>
+      <div class="hour-block hour-artificial">18</div>
+      <div class="hour-block hour-artificial">19</div>
+      <div class="hour-block hour-artificial">20</div>
+      <div class="hour-block hour-artificial">21</div>
+      <div class="hour-block hour-dark">22</div>
+      <div class="hour-block hour-dark">23</div>
+    </div>
+    <p style="font-size: 12px; text-align: center;"><span style="background: #1e3a5f; color: white; padding: 2px 8px; border-radius: 4px;">Escuro</span> <span style="background: #fbbf24; color: #78350f; padding: 2px 8px; border-radius: 4px;">Luz Natural</span> <span style="background: #d946ef; color: white; padding: 2px 8px; border-radius: 4px;">Luz Artificial</span></p>
+
+    <div class="warning-box">
+      <h4>Importante: Plantas Precisam de Escuro!</h4>
+      <p>Não deixe a luz ligada 24h! As plantas precisam de um período escuro (6-8 horas mínimo) para processos metabólicos essenciais. Luz constante causa estresse e problemas de crescimento.</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 3</div>
+  </div>
+
+  <!-- MÓDULO 1: A CIÊNCIA DA LUZ - PARTE 3 -->
+  <div class="page">
+    <h1>A Ciência da Luz (final)</h1>
+
+    <h2>Por que Algumas Plantas Não Funcionam na Sombra?</h2>
+
+    <div class="science-box">
+      <h3>A Matemática da Energia</h3>
+      <p>Produzir frutos é MUITO mais "caro" energeticamente do que produzir folhas:</p>
+      <table class="comparison-table" style="margin-top: 10px;">
+        <tr>
+          <th>O que a planta produz</th>
+          <th>Custo Energético</th>
+          <th>Precisa de Luz</th>
+        </tr>
+        <tr>
+          <td>Folhas (alface, rúcula)</td>
+          <td>Baixo</td>
+          <td>Pouca a moderada</td>
+        </tr>
+        <tr>
+          <td>Raízes (rabanete, cenoura)</td>
+          <td>Médio</td>
+          <td>Moderada</td>
+        </tr>
+        <tr>
+          <td>Flores (comestíveis)</td>
+          <td>Alto</td>
+          <td>Alta</td>
+        </tr>
+        <tr>
+          <td>Frutos (tomate, pimentão)</td>
+          <td>Muito Alto</td>
+          <td>Muito alta (sol pleno)</td>
+        </tr>
+        <tr>
+          <td>Sementes/Grãos</td>
+          <td>Altíssimo</td>
+          <td>Sol pleno intenso</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tip-box">
+      <h4>A Regra de Ouro</h4>
+      <p><strong>Na sombra, foque em FOLHAS e RAÍZES.</strong> Esqueça frutos e flores - você só vai se frustrar. Mas a boa notícia é que as folhas mais gostosas e nutritivas crescem MELHOR na sombra!</p>
+    </div>
+
+    <h2>Benefícios Surpreendentes da Sombra</h2>
+    <p>Acredite: para MUITAS plantas, a sombra é MELHOR que o sol pleno!</p>
+
+    <div class="stat-grid">
+      <div class="stat-box" style="border-color: #10b981;">
+        <div class="stat-number" style="color: #059669;">+30%</div>
+        <div class="stat-label">Folhas mais macias</div>
+      </div>
+      <div class="stat-box" style="border-color: #10b981;">
+        <div class="stat-number" style="color: #059669;">-50%</div>
+        <div class="stat-label">Menos irrigação</div>
+      </div>
+      <div class="stat-box" style="border-color: #10b981;">
+        <div class="stat-number" style="color: #059669;">2x</div>
+        <div class="stat-label">Mais tempo até florescer</div>
+      </div>
+    </div>
+
+    <h3>Por que a sombra pode ser melhor:</h3>
+    <ul>
+      <li><strong>Folhas mais tenras:</strong> Menos fibra, mais macias para saladas</li>
+      <li><strong>Sabor mais suave:</strong> Rúcula menos picante, alface menos amarga</li>
+      <li><strong>Menos rega:</strong> Evaporação reduzida em até 50%</li>
+      <li><strong>Floração atrasada:</strong> Mais tempo de colheita de folhas</li>
+      <li><strong>Menos pragas:</strong> Pulgões e ácaros preferem sol quente</li>
+      <li><strong>Folhas maiores:</strong> A planta aumenta a superfície para captar mais luz</li>
+    </ul>
+
+    <div class="success-box">
+      <h4>Plantas que PREFEREM Sombra</h4>
+      <p>Estas plantas realmente produzem MELHOR na sombra do que no sol:</p>
+      <ul>
+        <li><strong>Agrião:</strong> Sol forte deixa amargo e acelera floração</li>
+        <li><strong>Alface:</strong> Sol intenso causa "bolting" (floração precoce)</li>
+        <li><strong>Gengibre/Açafrão:</strong> Queimam no sol direto</li>
+        <li><strong>Hortelã:</strong> Sol forte queima as folhas</li>
+        <li><strong>Espinafre:</strong> Detesta calor - sombra fresca é ideal</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 4</div>
+  </div>
+
+  <!-- MÓDULO 2: MAPEANDO A LUZ - PARTE 1 -->
+  <div class="page">
+    <h1>Módulo 2: Mapeando a Luz do Seu Espaço</h1>
+    <p class="chapter-intro">Antes de plantar, descubra EXATAMENTE quanta luz você tem em cada canto.</p>
+
+    <h2>Método 1: Mapeamento de 1 Dia</h2>
+    <div class="technique-card">
+      <h3>Passo a Passo</h3>
+      <ol>
+        <li>Escolha um dia ensolarado (não nublado)</li>
+        <li>Às <strong>8h</strong>: marque onde o sol bate diretamente</li>
+        <li>Às <strong>10h</strong>: observe novamente</li>
+        <li>Às <strong>12h</strong>: meio-dia, sol mais alto</li>
+        <li>Às <strong>14h</strong>: observe mudanças</li>
+        <li>Às <strong>16h</strong>: sol da tarde</li>
+        <li>Anote: quantas horas de sol DIRETO cada local recebeu?</li>
+      </ol>
+    </div>
+
+    <div class="light-map">
+      <h3>Exemplo: Mapa de Luz de um Apartamento</h3>
+      <table class="comparison-table">
+        <tr>
+          <th>Local</th>
+          <th>8h</th>
+          <th>10h</th>
+          <th>12h</th>
+          <th>14h</th>
+          <th>16h</th>
+          <th>Total</th>
+          <th>Classificação</th>
+        </tr>
+        <tr>
+          <td>Varanda Norte</td>
+          <td>Sol</td>
+          <td>Sol</td>
+          <td>Sol</td>
+          <td>Sol</td>
+          <td>Sol</td>
+          <td>8h+</td>
+          <td><span class="light-level light-partial">Sol Pleno</span></td>
+        </tr>
+        <tr>
+          <td>Janela Leste</td>
+          <td>Sol</td>
+          <td>Sol</td>
+          <td>Sombra</td>
+          <td>Sombra</td>
+          <td>Sombra</td>
+          <td>3-4h</td>
+          <td><span class="light-level light-partial">Meia-Sombra</span></td>
+        </tr>
+        <tr>
+          <td>Janela Oeste</td>
+          <td>Sombra</td>
+          <td>Sombra</td>
+          <td>Sombra</td>
+          <td>Sol</td>
+          <td>Sol</td>
+          <td>3-4h</td>
+          <td><span class="light-level light-partial">Meia-Sombra</span></td>
+        </tr>
+        <tr>
+          <td>Janela Sul</td>
+          <td>Indireta</td>
+          <td>Indireta</td>
+          <td>Indireta</td>
+          <td>Indireta</td>
+          <td>Indireta</td>
+          <td>0h</td>
+          <td><span class="light-level light-full-shade">Sombra Luminosa</span></td>
+        </tr>
+        <tr>
+          <td>Cozinha (janela pequena)</td>
+          <td>Pouca</td>
+          <td>Pouca</td>
+          <td>Pouca</td>
+          <td>Pouca</td>
+          <td>Pouca</td>
+          <td>0h</td>
+          <td><span class="light-level light-minimal">Sombra Total</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>Método 2: Teste da Sombra da Mão</h2>
+    <p>Ao meio-dia, coloque sua mão entre a luz e uma superfície branca:</p>
+
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div style="font-size: 24px;">✋</div>
+        <div class="stat-label"><strong>Sombra bem definida</strong><br>Sol direto ou luz muito forte<br>(15.000+ lux)</div>
+      </div>
+      <div class="stat-box">
+        <div style="font-size: 24px;">🤚</div>
+        <div class="stat-label"><strong>Sombra suave</strong><br>Luz indireta moderada<br>(5.000-15.000 lux)</div>
+      </div>
+      <div class="stat-box">
+        <div style="font-size: 24px;">👋</div>
+        <div class="stat-label"><strong>Quase sem sombra</strong><br>Luz fraca<br>(&lt;5.000 lux)</div>
+      </div>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 5</div>
+  </div>
+
+  <!-- MÓDULO 2: MAPEANDO A LUZ - PARTE 2 -->
+  <div class="page">
+    <h1>Mapeando a Luz (continuação)</h1>
+
+    <h2>Método 3: Aplicativo de Celular (Luxímetro)</h2>
+    <div class="tip-box">
+      <h4>Apps Gratuitos para Medir Luz</h4>
+      <ul>
+        <li><strong>Android:</strong> "Light Meter" ou "Lux Light Meter"</li>
+        <li><strong>iPhone:</strong> "Lux Light Meter Pro" ou "myLightMeter"</li>
+      </ul>
+      <p style="margin-top: 10px;">Meça a luz em diferentes horários e locais. Anote os valores!</p>
+    </div>
+
+    <h3>Interpretando os Valores de Lux:</h3>
+    <div class="lux-meter"></div>
+    <table class="comparison-table">
+      <tr>
+        <th>Lux</th>
+        <th>Equivalente</th>
+        <th>O que plantar</th>
+      </tr>
+      <tr>
+        <td><strong>50.000-100.000</strong></td>
+        <td>Sol pleno direto</td>
+        <td>Qualquer planta, inclusive frutíferas</td>
+      </tr>
+      <tr>
+        <td><strong>15.000-50.000</strong></td>
+        <td>Meia-sombra</td>
+        <td>Maioria das folhosas e ervas</td>
+      </tr>
+      <tr>
+        <td><strong>5.000-15.000</strong></td>
+        <td>Sombra luminosa</td>
+        <td>Folhosas resistentes, microverdes</td>
+      </tr>
+      <tr>
+        <td><strong>2.000-5.000</strong></td>
+        <td>Interior bem iluminado</td>
+        <td>Brotos, gengibre, açafrão</td>
+      </tr>
+      <tr>
+        <td><strong>&lt;2.000</strong></td>
+        <td>Interior escuro</td>
+        <td>Necessário luz artificial</td>
+      </tr>
+    </table>
+
+    <h2>Orientação das Janelas no Brasil</h2>
+    <p>No hemisfério sul, a orientação das janelas é CRUCIAL:</p>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Direção</th>
+        <th>Característica</th>
+        <th>Horas de Sol</th>
+        <th>Melhor Para</th>
+      </tr>
+      <tr>
+        <td><strong>NORTE ⭐</strong></td>
+        <td>Sol o dia todo (MELHOR!)</td>
+        <td>6-10+ horas</td>
+        <td>Qualquer planta</td>
+      </tr>
+      <tr>
+        <td><strong>LESTE</strong></td>
+        <td>Sol da manhã (mais suave)</td>
+        <td>3-5 horas</td>
+        <td>Folhosas, ervas delicadas</td>
+      </tr>
+      <tr>
+        <td><strong>OESTE</strong></td>
+        <td>Sol da tarde (mais forte/quente)</td>
+        <td>3-5 horas</td>
+        <td>Plantas resistentes ao calor</td>
+      </tr>
+      <tr>
+        <td><strong>SUL</strong></td>
+        <td>Pouco ou nenhum sol direto</td>
+        <td>0-2 horas</td>
+        <td>Plantas de sombra, luz artificial</td>
+      </tr>
+    </table>
+
+    <div class="success-box">
+      <h4>Dica de Ouro</h4>
+      <p>Janelas voltadas para o <strong>NORTE</strong> são as melhores no Brasil! Se você tem uma, aproveite ao máximo. Se só tem janela para o sul, não desista - use as técnicas dos próximos módulos.</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Fatores que Reduzem a Luz</h4>
+      <ul>
+        <li>Vidros sujos (podem bloquear 30% da luz!)</li>
+        <li>Cortinas e persianas</li>
+        <li>Árvores ou prédios bloqueando</li>
+        <li>Telas de proteção na varanda</li>
+        <li>Cobertura/toldo sobre a varanda</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 6</div>
+  </div>
+
+  <!-- MÓDULO 3: 20+ PLANTAS PARA SOMBRA - PARTE 1 -->
+  <div class="page">
+    <h1>Módulo 3: 20+ Plantas para Sombra</h1>
+    <p class="chapter-intro">Fichas completas das melhores opções para pouca luz, organizadas por nível de tolerância.</p>
+
+    <h2>Categoria 1: Campeãs da Sombra Total</h2>
+    <p>Estas plantas PREFEREM sombra e produzem MELHOR com pouca luz:</p>
+
+    <div class="plant-card">
+      <span class="light-level light-full-shade">Sombra Total OK</span>
+      <h3>1. Agrião (Nasturtium officinale)</h3>
+      <p><strong>Luz mínima:</strong> 2-3 horas de luz indireta | <strong>DLI:</strong> 4-6 mol/m²/dia</p>
+      <p><strong>Por que é campeão:</strong> Na natureza cresce em riachos sombreados. Sol forte deixa amargo!</p>
+      <p><strong>Na sombra produz:</strong> Folhas maiores, mais suculentas, sabor suave e agradável.</p>
+      <p><strong>Dica profissional:</strong> Pode cultivar em água (hidroponia simples). Troque a água 2x/semana.</p>
+      <p><strong>Colheita:</strong> 30-40 dias. Corte deixando 3cm para rebrota.</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-full-shade">Sombra Total OK</span>
+      <h3>2. Hortelã (Mentha spicata)</h3>
+      <p><strong>Luz mínima:</strong> 2-3 horas de luz indireta | <strong>DLI:</strong> 4-8 mol/m²/dia</p>
+      <p><strong>Por que é campeã:</strong> Originalmente planta de sub-bosque. Sol intenso queima as folhas.</p>
+      <p><strong>Na sombra produz:</strong> Folhas maiores, mais aromáticas, verde mais intenso.</p>
+      <p><strong>Variedades para sombra:</strong> Hortelã-pimenta, hortelã-verde, hortelã-do-levante.</p>
+      <p><strong>Dica profissional:</strong> ISOLE em vaso separado - é invasiva! Propaga facilmente por estacas.</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-full-shade">Sombra Total OK</span>
+      <h3>3. Gengibre (Zingiber officinale)</h3>
+      <p><strong>Luz mínima:</strong> 2-4 horas de luz indireta | <strong>DLI:</strong> 4-8 mol/m²/dia</p>
+      <p><strong>Por que é campeão:</strong> Planta tropical de sub-bosque. Na natureza cresce sob árvores.</p>
+      <p><strong>Na sombra produz:</strong> Rizomas (raízes) de excelente qualidade. Sol direto queima folhas.</p>
+      <p><strong>Como plantar:</strong> Compre gengibre orgânico no mercado com "olhos" (brotos). Plante a 5cm de profundidade.</p>
+      <p><strong>Colheita:</strong> 8-10 meses. Pode colher parcialmente sem matar a planta.</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-full-shade">Sombra Total OK</span>
+      <h3>4. Açafrão-da-Terra / Cúrcuma (Curcuma longa)</h3>
+      <p><strong>Luz mínima:</strong> 2-4 horas de luz indireta | <strong>DLI:</strong> 4-8 mol/m²/dia</p>
+      <p><strong>Por que é campeão:</strong> Parente do gengibre, mesmas preferências de sombra.</p>
+      <p><strong>Bônus:</strong> Folhas também são comestíveis! Use em moquecas e peixes.</p>
+      <p><strong>Como plantar:</strong> Mesmo método do gengibre. Rizomas de supermercado funcionam.</p>
+      <p><strong>Colheita:</strong> 8-10 meses. Rizomas alaranjados = prontos!</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 7</div>
+  </div>
+
+  <!-- MÓDULO 3: 20+ PLANTAS PARA SOMBRA - PARTE 2 -->
+  <div class="page">
+    <h1>20+ Plantas para Sombra (continuação)</h1>
+
+    <div class="plant-card">
+      <span class="light-level light-full-shade">Sombra Total OK</span>
+      <h3>5. Melissa / Erva-Cidreira (Melissa officinalis)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas de luz indireta | <strong>DLI:</strong> 5-8 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Na sombra, folhas ficam maiores e mais aromáticas.</p>
+      <p><strong>Uso:</strong> Chás calmantes, temperos, sobremesas.</p>
+      <p><strong>Dica:</strong> Corte antes de florescer para manter produção de folhas.</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-full-shade">Sombra Total OK</span>
+      <h3>6. Capim-Limão / Capim-Santo (Cymbopogon citratus)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas de luz indireta | <strong>DLI:</strong> 5-10 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Gramínea resistente, tolera várias condições.</p>
+      <p><strong>Como plantar:</strong> Compre maço no mercado, coloque em água até enraizar, depois plante.</p>
+      <p><strong>Uso:</strong> Chás, tempero asiático, repelente natural de mosquitos.</p>
+    </div>
+
+    <h2>Categoria 2: Excelentes em Meia-Sombra</h2>
+    <p>Precisam de 3-4 horas de luz (direta ou indireta forte):</p>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>7. Alface (Lactuca sativa)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas | <strong>DLI:</strong> 6-10 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Sol forte causa "bolting" (floração precoce) e deixa amarga.</p>
+      <p><strong>Na sombra produz:</strong> Folhas maiores, mais macias, menos amargas, colheita prolongada.</p>
+      <p><strong>Melhores variedades:</strong> Crespa, mimosa, roxa, americana (cabeça menor na sombra).</p>
+      <p><strong>Dica:</strong> Colha folhas externas primeiro (corte-e-volte). Plantio escalonado a cada 15 dias.</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>8. Rúcula (Eruca vesicaria)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas | <strong>DLI:</strong> 6-10 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Sol forte acelera floração e deixa MUITO picante.</p>
+      <p><strong>Na sombra produz:</strong> Sabor mais suave e equilibrado, folhas maiores.</p>
+      <p><strong>Ciclo:</strong> Rápido - 30-40 dias. Ideal para plantio contínuo.</p>
+      <p><strong>Dica:</strong> Quando começar a florescer, deixe algumas para sementes (auto-semeiam!).</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>9. Espinafre (Spinacia oleracea)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas | <strong>DLI:</strong> 6-10 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> DETESTA calor. Sombra = ambiente mais fresco.</p>
+      <p><strong>Na sombra produz:</strong> Folhas maiores, mais macias, demora mais para florescer.</p>
+      <p><strong>Alternativa tropical:</strong> Espinafre-da-Nova-Zelândia (Tetragonia) - suporta calor.</p>
+      <p><strong>Dica:</strong> Ideal para outono/inverno. Verão quente = floração rápida.</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 8</div>
+  </div>
+
+  <!-- MÓDULO 3: 20+ PLANTAS PARA SOMBRA - PARTE 3 -->
+  <div class="page">
+    <h1>20+ Plantas para Sombra (continuação)</h1>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>10. Salsinha (Petroselinum crispum)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas | <strong>DLI:</strong> 6-10 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Tolera bem condições variadas de luz.</p>
+      <p><strong>Na sombra:</strong> Crescimento mais lento, mas constante. Folhas maiores.</p>
+      <p><strong>Variedades:</strong> Lisa (mais aromática) e crespa (mais decorativa).</p>
+      <p><strong>Dica:</strong> Germinação lenta (2-4 semanas). Deixe sementes de molho 24h antes de plantar.</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>11. Cebolinha (Allium schoenoprasum)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas | <strong>DLI:</strong> 6-10 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Muito adaptável a diferentes condições.</p>
+      <p><strong>Na sombra:</strong> Folhas mais finas mas igualmente saborosas.</p>
+      <p><strong>Dica:</strong> Corte a 3cm do solo - rebrota indefinidamente. Divida touceiras anualmente.</p>
+      <p><strong>Bônus:</strong> Flores comestíveis! Sabor suave de cebola.</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>12. Coentro (Coriandrum sativum)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas | <strong>DLI:</strong> 6-10 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Sol forte = floração imediata (indesejável).</p>
+      <p><strong>Na sombra:</strong> Mais tempo para colher folhas antes de florescer.</p>
+      <p><strong>Dica:</strong> Quando florescer, deixe formar sementes - são o "coentro em grão" de temperos!</p>
+      <p><strong>Plantio:</strong> Direto no vaso (não gosta de transplante). Escalonado a cada 2 semanas.</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>13. Nirá / Cebolinha Japonesa (Allium tuberosum)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas | <strong>DLI:</strong> 6-10 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Extremamente resistente e adaptável.</p>
+      <p><strong>Diferencial:</strong> Folhas achatadas, sabor mais suave que cebolinha comum.</p>
+      <p><strong>Uso:</strong> Culinária asiática, omeletes, sopas.</p>
+      <p><strong>Dica:</strong> Perene - plante uma vez, colha por anos. Praticamente indestrutível!</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>14. Chicória (Cichorium intybus)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas | <strong>DLI:</strong> 6-10 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Folhosa resistente, tolera sombra parcial.</p>
+      <p><strong>Na sombra:</strong> Menos amarga, folhas mais tenras.</p>
+      <p><strong>Variedades:</strong> Escarola, endívia, radicchio (precisa de mais sol para cor roxa).</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 9</div>
+  </div>
+
+  <!-- MÓDULO 3: 20+ PLANTAS PARA SOMBRA - PARTE 4 -->
+  <div class="page">
+    <h1>20+ Plantas para Sombra (continuação)</h1>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>15. Acelga (Beta vulgaris cicla)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas | <strong>DLI:</strong> 6-12 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Folhosa robusta, parente da beterraba.</p>
+      <p><strong>Na sombra:</strong> Talos podem ser menos coloridos, mas igualmente nutritivos.</p>
+      <p><strong>Variedades:</strong> Talos brancos, vermelhos, amarelos, arco-íris.</p>
+      <p><strong>Dica:</strong> Colha folhas externas. Muito nutritiva - rica em ferro e vitaminas.</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>16. Mostarda (Brassica juncea)</h3>
+      <p><strong>Luz mínima:</strong> 3-4 horas | <strong>DLI:</strong> 6-10 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Cresce rápido, tolera condições variadas.</p>
+      <p><strong>Na sombra:</strong> Menos picante, folhas maiores.</p>
+      <p><strong>Variedades:</strong> Folha roxa, verde, crespa. Todas funcionam na sombra.</p>
+      <p><strong>Ciclo:</strong> Muito rápido - 25-35 dias para colheita!</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>17. Rabanete (Raphanus sativus)</h3>
+      <p><strong>Luz mínima:</strong> 4 horas | <strong>DLI:</strong> 8-12 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Ciclo ultra-rápido compensa luz reduzida.</p>
+      <p><strong>Na sombra:</strong> Raízes menores mas saborosas. Folhas também comestíveis!</p>
+      <p><strong>Ciclo:</strong> Impressionante - 25-30 dias para colheita.</p>
+      <p><strong>Dica:</strong> Ideal para iniciantes - resultado rápido motiva!</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>18. Couve (Brassica oleracea)</h3>
+      <p><strong>Luz mínima:</strong> 4 horas | <strong>DLI:</strong> 8-12 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Robusta e adaptável.</p>
+      <p><strong>Na sombra:</strong> Folhas menores, crescimento mais lento, mas funciona.</p>
+      <p><strong>Variedades para sombra:</strong> Couve-manteiga (melhor), couve-crespa.</p>
+      <p><strong>Dica:</strong> Colha de baixo para cima. Atenção a lagartas!</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>19. Beterraba - Foco nas Folhas (Beta vulgaris)</h3>
+      <p><strong>Luz mínima:</strong> 4 horas | <strong>DLI:</strong> 8-12 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Folhas crescem bem na sombra (raiz pode ser menor).</p>
+      <p><strong>Na sombra:</strong> Folhas excelentes! Raiz menor mas comestível.</p>
+      <p><strong>Dica:</strong> Use as folhas em saladas e refogados - são super nutritivas!</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 10</div>
+  </div>
+
+  <!-- MÓDULO 3: 20+ PLANTAS PARA SOMBRA - PARTE 5 -->
+  <div class="page">
+    <h1>20+ Plantas para Sombra (final)</h1>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>20. Cenoura - Baby (Daucus carota)</h3>
+      <p><strong>Luz mínima:</strong> 4 horas | <strong>DLI:</strong> 8-12 mol/m²/dia</p>
+      <p><strong>Por que funciona:</strong> Versões baby/mini precisam de menos energia.</p>
+      <p><strong>Na sombra:</strong> Cenouras menores mas doces. Folhas também comestíveis!</p>
+      <p><strong>Variedades:</strong> Cenoura baby, mini, parisiense (redonda).</p>
+      <p><strong>Dica:</strong> Solo solto e profundo (mínimo 20cm). Sem pedras.</p>
+    </div>
+
+    <div class="plant-card">
+      <span class="light-level light-partial">Meia-Sombra</span>
+      <h3>21. Manjericão (com cuidados especiais)</h3>
+      <p><strong>Luz mínima:</strong> 4-5 horas | <strong>DLI:</strong> 10-14 mol/m²/dia</p>
+      <p><strong>Por que incluí:</strong> Possível na sombra com ajustes.</p>
+      <p><strong>Na sombra:</strong> Crescimento lento, folhas menores, menos aromático.</p>
+      <p><strong>Melhores variedades:</strong> Manjericão-roxo e manjericão-limão (mais tolerantes).</p>
+      <p><strong>Dica:</strong> Considere luz artificial complementar para melhores resultados.</p>
+    </div>
+
+    <h2>Tabela Resumo: Ranking de Tolerância</h2>
+    <table class="ranking-table">
+      <tr>
+        <th>Planta</th>
+        <th>Tolerância</th>
+        <th>Luz Mínima</th>
+        <th>Observação</th>
+      </tr>
+      <tr>
+        <td>Agrião</td>
+        <td><span class="stars">★★★★★</span></td>
+        <td>2-3h indireta</td>
+        <td>PREFERE sombra!</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td><span class="stars">★★★★★</span></td>
+        <td>2-3h indireta</td>
+        <td>Sol queima folhas</td>
+      </tr>
+      <tr>
+        <td>Gengibre/Açafrão</td>
+        <td><span class="stars">★★★★★</span></td>
+        <td>2-4h indireta</td>
+        <td>Ideal para interiores</td>
+      </tr>
+      <tr>
+        <td>Melissa</td>
+        <td><span class="stars">★★★★★</span></td>
+        <td>3-4h indireta</td>
+        <td>Mais aromática na sombra</td>
+      </tr>
+      <tr>
+        <td>Alface</td>
+        <td><span class="stars">★★★★☆</span></td>
+        <td>3-4h</td>
+        <td>Qualidade MELHOR</td>
+      </tr>
+      <tr>
+        <td>Rúcula</td>
+        <td><span class="stars">★★★★☆</span></td>
+        <td>3-4h</td>
+        <td>Menos picante</td>
+      </tr>
+      <tr>
+        <td>Espinafre</td>
+        <td><span class="stars">★★★★☆</span></td>
+        <td>3-4h</td>
+        <td>Detesta calor</td>
+      </tr>
+      <tr>
+        <td>Coentro</td>
+        <td><span class="stars">★★★★☆</span></td>
+        <td>3-4h</td>
+        <td>Demora florescer</td>
+      </tr>
+      <tr>
+        <td>Salsinha/Cebolinha</td>
+        <td><span class="stars">★★★☆☆</span></td>
+        <td>3-4h</td>
+        <td>Adapta-se bem</td>
+      </tr>
+      <tr>
+        <td>Rabanete/Mostarda</td>
+        <td><span class="stars">★★★☆☆</span></td>
+        <td>4h</td>
+        <td>Ciclo rápido ajuda</td>
+      </tr>
+      <tr>
+        <td>Couve/Acelga</td>
+        <td><span class="stars">★★☆☆☆</span></td>
+        <td>4h</td>
+        <td>Funciona, menor</td>
+      </tr>
+      <tr>
+        <td>Manjericão</td>
+        <td><span class="stars">★★☆☆☆</span></td>
+        <td>4-5h</td>
+        <td>Precisa de cuidado extra</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia Horta na Sombra - Página 11</div>
+  </div>
+
+  <!-- MÓDULO 3: O QUE NÃO PLANTAR -->
+  <div class="page">
+    <h1>O que NÃO Plantar na Sombra</h1>
+    <p class="chapter-intro">Evite frustração: estas plantas precisam de sol pleno e não funcionam na sombra.</p>
+
+    <div class="warning-box">
+      <h4>Plantas que PRECISAM de 6+ Horas de Sol Direto</h4>
+      <p>Na sombra, estas plantas sobrevivem mas NÃO produzem:</p>
+    </div>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Planta</th>
+        <th>Por que não funciona</th>
+        <th>O que acontece na sombra</th>
+      </tr>
+      <tr>
+        <td><strong>Tomate</strong></td>
+        <td>Precisa de muita energia para frutos</td>
+        <td>Cresce, não dá frutos ou pouquíssimos</td>
+      </tr>
+      <tr>
+        <td><strong>Pimentão/Pimenta</strong></td>
+        <td>Frutos exigem sol pleno</td>
+        <td>Planta fraca, sem frutos</td>
+      </tr>
+      <tr>
+        <td><strong>Berinjela</strong></td>
+        <td>Tropical, precisa de calor e sol</td>
+        <td>Não produz ou frutos deformados</td>
+      </tr>
+      <tr>
+        <td><strong>Morango</strong></td>
+        <td>Frutos precisam de sol</td>
+        <td>Poucos frutos, sem sabor</td>
+      </tr>
+      <tr>
+        <td><strong>Abóbora/Abobrinha</strong></td>
+        <td>Planta grande, muito exigente</td>
+        <td>Cresce mas não frutifica</td>
+      </tr>
+      <tr>
+        <td><strong>Pepino</strong></td>
+        <td>Precisa de calor e luz intensa</td>
+        <td>Frutos amargos ou inexistentes</td>
+      </tr>
+      <tr>
+        <td><strong>Feijão-Vagem</strong></td>
+        <td>Leguminosa exigente</td>
+        <td>Poucas vagens</td>
+      </tr>
+      <tr>
+        <td><strong>Alecrim</strong></td>
+        <td>Mediterrâneo, precisa de sol</td>
+        <td>Fica fraco, pouco aromático</td>
+      </tr>
+      <tr>
+        <td><strong>Lavanda</strong></td>
+        <td>Mediterrâneo, sol pleno</td>
+        <td>Morre ou fica sem flores</td>
+      </tr>
+      <tr>
+        <td><strong>Orégano</strong></td>
+        <td>Mediterrâneo</td>
+        <td>Sobrevive fraco, pouco sabor</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>A Regra Simples</h4>
+      <p><strong>Se a planta produz FRUTO = precisa de SOL PLENO.</strong></p>
+      <p><strong>Se você come a FOLHA = pode funcionar na SOMBRA.</strong></p>
+      <p>Exceções: gengibre/açafrão (raízes que gostam de sombra).</p>
+    </div>
+
+    <div class="success-box">
+      <h4>Alternativas para Quem Quer Frutas</h4>
+      <p>Se você realmente quer frutos em ambiente com pouca luz, suas opções são:</p>
+      <ul>
+        <li><strong>Grow lights potentes:</strong> LED de 100W+ pode viabilizar tomates indoor</li>
+        <li><strong>Morango em sombra parcial:</strong> Produz pouco, mas algo sai</li>
+        <li><strong>Physalis (pouco exigente):</strong> Tolera mais sombra que outros frutos</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 12</div>
+  </div>
+
+  <!-- MÓDULO 4: MICROVERDES -->
+  <div class="page">
+    <h1>Módulo 4: Microverdes - A Solução para Sombra Total</h1>
+    <p class="chapter-intro">Microverdes são a MELHOR opção para ambientes com pouquíssima luz natural.</p>
+
+    <div class="intro-box">
+      <h3>Por que Microverdes são Perfeitos para Sombra?</h3>
+      <ul>
+        <li><strong>Ciclo ultra-rápido:</strong> 7-14 dias da semente à colheita</li>
+        <li><strong>Pouca luz necessária:</strong> Funcionam com apenas 4-6 horas de luz indireta</li>
+        <li><strong>Luz artificial simples:</strong> Uma lâmpada LED comum de 15W já funciona</li>
+        <li><strong>Super nutritivos:</strong> Até 40x mais nutrientes que vegetais maduros</li>
+        <li><strong>Espaço mínimo:</strong> Uma bandeja na bancada da cozinha</li>
+      </ul>
+    </div>
+
+    <h2>O que são Microverdes?</h2>
+    <p>São vegetais colhidos muito jovens (7-21 dias), quando têm apenas as primeiras folhas (cotilédones + 1-2 folhas verdadeiras). Diferentes de brotos, que são germinados no escuro.</p>
+
+    <div class="stat-grid">
+      <div class="stat-box" style="border-color: #22c55e;">
+        <div class="stat-number" style="color: #15803d;">7-14</div>
+        <div class="stat-label">Dias até colheita</div>
+      </div>
+      <div class="stat-box" style="border-color: #22c55e;">
+        <div class="stat-number" style="color: #15803d;">40x</div>
+        <div class="stat-label">Mais nutrientes</div>
+      </div>
+      <div class="stat-box" style="border-color: #22c55e;">
+        <div class="stat-number" style="color: #15803d;">4-6h</div>
+        <div class="stat-label">Luz necessária</div>
+      </div>
+    </div>
+
+    <h2>Melhores Microverdes para Sombra</h2>
+
+    <div class="microgreen-card">
+      <h3>Rabanete (7-10 dias) ⭐ Mais Fácil</h3>
+      <p><strong>Sabor:</strong> Picante, intenso</p>
+      <p><strong>Por que é fácil:</strong> Germina rápido, tolera condições variadas.</p>
+      <p><strong>Dica:</strong> Ideal para iniciantes. Resultado garantido!</p>
+    </div>
+
+    <div class="microgreen-card">
+      <h3>Girassol (10-14 dias) ⭐ Mais Nutritivo</h3>
+      <p><strong>Sabor:</strong> Amanteigado, suave</p>
+      <p><strong>Por que é bom:</strong> Rico em proteínas e vitamina E.</p>
+      <p><strong>Dica:</strong> Deixe as sementes de molho 8-12h antes de plantar.</p>
+    </div>
+
+    <div class="microgreen-card">
+      <h3>Ervilha (10-14 dias)</h3>
+      <p><strong>Sabor:</strong> Doce, como ervilha fresca</p>
+      <p><strong>Por que é bom:</strong> Brotos grandes, fáceis de colher.</p>
+      <p><strong>Dica:</strong> Use ervilhas inteiras secas do mercado.</p>
+    </div>
+
+    <div class="microgreen-card">
+      <h3>Mostarda/Rúcula (7-10 dias)</h3>
+      <p><strong>Sabor:</strong> Picante, intenso</p>
+      <p><strong>Por que é bom:</strong> Crescimento rápido, sementes baratas.</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 13</div>
+  </div>
+
+  <!-- MÓDULO 4: MICROVERDES - COMO CULTIVAR -->
+  <div class="page">
+    <h1>Como Cultivar Microverdes em Casa</h1>
+
+    <div class="technique-card">
+      <h3>Materiais Necessários</h3>
+      <ul>
+        <li><strong>Bandeja rasa:</strong> 5-10cm de profundidade (pode ser pote de sorvete, bandeja de isopor)</li>
+        <li><strong>Substrato:</strong> Terra vegetal, fibra de coco ou papel toalha (para iniciantes)</li>
+        <li><strong>Sementes:</strong> Compre sementes específicas para microverdes ou use sementes comuns</li>
+        <li><strong>Borrifador:</strong> Para manter úmido sem encharcar</li>
+        <li><strong>Luz:</strong> Janela clara OU lâmpada LED 15-20W</li>
+      </ul>
+    </div>
+
+    <h2>Passo a Passo</h2>
+    <ol>
+      <li><strong>Prepare a bandeja:</strong> Coloque 2-3cm de substrato, nivele e umedeça</li>
+      <li><strong>Distribua as sementes:</strong> Densamente, quase encostando umas nas outras</li>
+      <li><strong>Cubra levemente:</strong> Fina camada de substrato ou deixe descoberto</li>
+      <li><strong>Fase escura (2-3 dias):</strong> Cubra com pano ou outra bandeja para germinar</li>
+      <li><strong>Retire a cobertura:</strong> Quando brotar, exponha à luz</li>
+      <li><strong>Mantenha úmido:</strong> Borrife 1-2x ao dia, sem encharcar</li>
+      <li><strong>Colheita:</strong> Quando tiver 5-10cm, corte com tesoura rente ao substrato</li>
+    </ol>
+
+    <div class="tip-box">
+      <h4>Dica: Método do Papel Toalha (Ultra Simples)</h4>
+      <ol>
+        <li>Forre bandeja com 4-5 camadas de papel toalha</li>
+        <li>Umedeça bem (não encharcado)</li>
+        <li>Espalhe sementes densamente</li>
+        <li>Cubra com outra camada de papel toalha úmido</li>
+        <li>Após germinar, retire a cobertura</li>
+        <li>Mantenha o papel sempre úmido</li>
+      </ol>
+      <p><strong>Vantagem:</strong> Sem sujeira, sem terra, ideal para apartamentos!</p>
+    </div>
+
+    <h2>Luz Artificial para Microverdes</h2>
+    <p>Microverdes precisam de pouca luz. Opções econômicas:</p>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Opção</th>
+        <th>Potência</th>
+        <th>Distância</th>
+        <th>Horas/dia</th>
+        <th>Custo</th>
+      </tr>
+      <tr>
+        <td>LED comum 6500K</td>
+        <td>15-20W</td>
+        <td>15-20cm</td>
+        <td>12-16h</td>
+        <td>R$ 15-30</td>
+      </tr>
+      <tr>
+        <td>Luminária de mesa LED</td>
+        <td>10-15W</td>
+        <td>10-15cm</td>
+        <td>14-16h</td>
+        <td>R$ 40-80</td>
+      </tr>
+      <tr>
+        <td>Fita LED branca</td>
+        <td>5W/metro</td>
+        <td>10-15cm</td>
+        <td>14-16h</td>
+        <td>R$ 30-60</td>
+      </tr>
+    </table>
+
+    <div class="success-box">
+      <h4>Investimento Mínimo</h4>
+      <p>Com R$ 50-80 você monta um sistema completo de microverdes que funciona o ano todo, independente da luz natural!</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 14</div>
+  </div>
+
+  <!-- MÓDULO 5: TÉCNICAS PARA MAXIMIZAR LUZ -->
+  <div class="page">
+    <h1>Módulo 5: Técnicas para Maximizar Luz Natural</h1>
+    <p class="chapter-intro">Aproveite cada raio de luz disponível com estas técnicas profissionais.</p>
+
+    <div class="technique-card">
+      <h3>1. Superfícies Refletoras</h3>
+      <p>Materiais claros refletem luz para as plantas, aumentando a luminosidade em até 30%!</p>
+      <h4>Opções (da mais eficiente para menos):</h4>
+      <ul>
+        <li><strong>Mylar/Manta térmica:</strong> 90-95% de reflexão. Melhor opção!</li>
+        <li><strong>Papel alumínio (lado fosco para fora):</strong> 70-80% de reflexão</li>
+        <li><strong>Pintura branca fosca:</strong> 75-85% de reflexão</li>
+        <li><strong>Espelhos:</strong> 90%+ mas podem criar pontos quentes</li>
+        <li><strong>Isopor branco:</strong> 70-80% de reflexão, barato</li>
+      </ul>
+      <p><strong>Como usar:</strong> Posicione atrás e ao lado dos vasos, refletindo a luz da janela de volta para as plantas.</p>
+    </div>
+
+    <div class="technique-card">
+      <h3>2. Rotação de Vasos</h3>
+      <p>Plantas perto de janelas recebem luz só de um lado, ficando "tortas".</p>
+      <h4>Protocolo:</h4>
+      <ul>
+        <li>Gire 1/4 de volta (90°) a cada 2-3 dias</li>
+        <li>Sempre no mesmo sentido (horário ou anti-horário)</li>
+        <li>Resultado: crescimento uniforme e saudável</li>
+      </ul>
+    </div>
+
+    <div class="technique-card">
+      <h3>3. Prateleiras Escalonadas</h3>
+      <p>Aproveite o espaço vertical organizando por necessidade de luz:</p>
+      <ul>
+        <li><strong>Nível superior (mais luz):</strong> Manjericão, couve, plantas mais exigentes</li>
+        <li><strong>Nível médio:</strong> Alface, salsinha, cebolinha</li>
+        <li><strong>Nível inferior (menos luz):</strong> Hortelã, agrião, gengibre</li>
+      </ul>
+    </div>
+
+    <div class="technique-card">
+      <h3>4. Limpeza Regular</h3>
+      <p>Fatores que ROUBAM luz sem você perceber:</p>
+      <ul>
+        <li><strong>Vidros sujos:</strong> Podem bloquear 20-30% da luz! Limpe mensalmente.</li>
+        <li><strong>Poeira nas folhas:</strong> Limpe com pano úmido a cada 2 semanas.</li>
+        <li><strong>Cortinas/persianas:</strong> Mantenha abertas durante o dia.</li>
+        <li><strong>Telas de proteção:</strong> Telas pretas bloqueiam 30-50% da luz.</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Erro Comum: Plantas Muito Longe da Janela</h4>
+      <p>A intensidade da luz cai DRASTICAMENTE com a distância:</p>
+      <ul>
+        <li>Na janela: 100% da luz</li>
+        <li>1 metro da janela: ~50% da luz</li>
+        <li>2 metros: ~25% da luz</li>
+        <li>3 metros: ~10% da luz</li>
+      </ul>
+      <p><strong>Solução:</strong> Mantenha plantas o mais perto possível da fonte de luz!</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 15</div>
+  </div>
+
+  <!-- MÓDULO 5: TÉCNICAS - PARTE 2 -->
+  <div class="page">
+    <h1>Técnicas para Maximizar Luz (continuação)</h1>
+
+    <div class="technique-card">
+      <h3>5. DIY: Refletor de Papelão</h3>
+      <p>Construa um refletor grátis para aumentar a luz em até 30%:</p>
+      <ol>
+        <li>Pegue uma caixa de papelão grande</li>
+        <li>Corte em formato de "U" ou "L"</li>
+        <li>Forre o interior com papel alumínio (lado fosco para fora)</li>
+        <li>Posicione ao redor dos vasos, atrás e nas laterais</li>
+        <li>A luz da janela bate no refletor e volta para as plantas</li>
+      </ol>
+      <p><strong>Custo:</strong> Praticamente zero!</p>
+    </div>
+
+    <div class="technique-card">
+      <h3>6. Poda Estratégica</h3>
+      <p>Plantas muito densas bloqueiam luz para as folhas internas:</p>
+      <ul>
+        <li>Remova folhas velhas e amareladas</li>
+        <li>Desbaste plantas muito cheias</li>
+        <li>Mantenha espaçamento adequado entre vasos</li>
+        <li>Use as folhas podadas na cozinha!</li>
+      </ul>
+    </div>
+
+    <div class="technique-card">
+      <h3>7. Vasos Claros e Elevados</h3>
+      <ul>
+        <li><strong>Vasos brancos/claros:</strong> Refletem luz para o substrato</li>
+        <li><strong>Suportes elevados:</strong> Aproximam a planta da janela</li>
+        <li><strong>Cachepôs de espelho:</strong> Refletem luz adicional</li>
+        <li><strong>Bandejas brancas:</strong> Refletem luz de baixo para cima</li>
+      </ul>
+    </div>
+
+    <h2>Combinação de Técnicas: Máximo Resultado</h2>
+    <div class="success-box">
+      <h4>Setup Otimizado para Janela com Pouca Luz</h4>
+      <ol>
+        <li>Limpe o vidro da janela</li>
+        <li>Posicione refletor de papelão com alumínio atrás</li>
+        <li>Use prateleira ou suporte para elevar os vasos</li>
+        <li>Coloque bandeja branca embaixo dos vasos</li>
+        <li>Gire os vasos a cada 2-3 dias</li>
+        <li>Adicione LED complementar se necessário</li>
+      </ol>
+      <p><strong>Resultado:</strong> Pode dobrar a luz efetiva disponível para as plantas!</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>Plantas Móveis</h4>
+      <p>Se possível, mova as plantas para acompanhar o sol:</p>
+      <ul>
+        <li><strong>Manhã:</strong> Janela leste</li>
+        <li><strong>Tarde:</strong> Janela oeste</li>
+        <li><strong>Use rodinhas:</strong> Vasos grandes ficam fáceis de mover</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 16</div>
+  </div>
+
+  <!-- MÓDULO 6: GROW LIGHTS 2025 -->
+  <div class="page">
+    <h1>Módulo 6: Grow Lights 2025 - Guia Definitivo</h1>
+    <p class="chapter-intro">Quando a luz natural não é suficiente, a luz artificial é a solução.</p>
+
+    <div class="intro-box">
+      <h3>Quando Usar Luz Artificial?</h3>
+      <ul>
+        <li>Menos de 3 horas de luz natural por dia</li>
+        <li>Janela voltada para o sul (no Brasil)</li>
+        <li>Inverno com dias curtos</li>
+        <li>Cômodos internos sem janela (cozinha, banheiro)</li>
+        <li>Quer cultivar plantas mais exigentes (manjericão, por ex.)</li>
+      </ul>
+    </div>
+
+    <h2>Tipos de Lâmpadas para Plantas</h2>
+
+    <div class="grow-light-card">
+      <h3>LED Full Spectrum ⭐ Melhor Opção 2025</h3>
+      <p><strong>Por que é melhor:</strong> Todas as cores necessárias, eficiente, durável, baixo consumo.</p>
+      <p><strong>Custo:</strong> R$ 50-300 dependendo da potência</p>
+      <p><strong>Eficiência:</strong> 2-3 µmol/J (excelente)</p>
+      <p><strong>Duração:</strong> 50.000+ horas</p>
+      <p><strong>Para quem:</strong> Qualquer pessoa que quer resultado profissional.</p>
+    </div>
+
+    <div class="grow-light-card">
+      <h3>LED Comum Branco (6500K)</h3>
+      <p><strong>Por que funciona:</strong> Contém azul e algum vermelho. Não é ideal mas funciona.</p>
+      <p><strong>Custo:</strong> R$ 10-30 (supermercado)</p>
+      <p><strong>Para quem:</strong> Iniciantes, microverdes, complemento de luz natural.</p>
+      <p><strong>Limitação:</strong> Menos vermelho = menos floração/frutificação.</p>
+    </div>
+
+    <div class="grow-light-card">
+      <h3>Fluorescente T5/T8</h3>
+      <p><strong>Status:</strong> Ainda funciona, mas sendo substituído por LED.</p>
+      <p><strong>Custo:</strong> R$ 30-100</p>
+      <p><strong>Consumo:</strong> Maior que LED</p>
+      <p><strong>Para quem:</strong> Quem já tem as lâmpadas.</p>
+    </div>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Tipo</th>
+        <th>Custo Inicial</th>
+        <th>Consumo</th>
+        <th>Eficácia</th>
+        <th>Duração</th>
+      </tr>
+      <tr>
+        <td><strong>LED Full Spectrum</strong></td>
+        <td>R$ 50-300</td>
+        <td>Muito Baixo</td>
+        <td>Excelente</td>
+        <td>50.000h</td>
+      </tr>
+      <tr>
+        <td><strong>LED Comum 6500K</strong></td>
+        <td>R$ 10-30</td>
+        <td>Baixo</td>
+        <td>Moderada</td>
+        <td>25.000h</td>
+      </tr>
+      <tr>
+        <td><strong>Fluorescente T5</strong></td>
+        <td>R$ 30-100</td>
+        <td>Médio</td>
+        <td>Boa</td>
+        <td>10.000h</td>
+      </tr>
+      <tr>
+        <td><strong>Incandescente</strong></td>
+        <td>R$ 5-15</td>
+        <td>Muito Alto</td>
+        <td>Ruim</td>
+        <td>1.000h</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>Evite: Lâmpadas Incandescentes</h4>
+      <p>Produzem muito calor, consomem muita energia e têm espectro inadequado. Podem queimar as plantas!</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 17</div>
+  </div>
+
+  <!-- MÓDULO 6: GROW LIGHTS - PARTE 2 -->
+  <div class="page">
+    <h1>Grow Lights 2025 (continuação)</h1>
+
+    <h2>Especificações Técnicas Explicadas</h2>
+
+    <div class="science-box">
+      <h3>O que Procurar em uma Grow Light</h3>
+      <table class="comparison-table" style="margin-top: 10px;">
+        <tr>
+          <th>Especificação</th>
+          <th>O que significa</th>
+          <th>Valor Ideal</th>
+        </tr>
+        <tr>
+          <td><strong>Watts (W)</strong></td>
+          <td>Consumo de energia</td>
+          <td>20-50W para área pequena</td>
+        </tr>
+        <tr>
+          <td><strong>Kelvin (K)</strong></td>
+          <td>Temperatura de cor</td>
+          <td>5000-6500K para folhosas</td>
+        </tr>
+        <tr>
+          <td><strong>Lúmens (lm)</strong></td>
+          <td>Brilho percebido (humano)</td>
+          <td>Pouco útil para plantas</td>
+        </tr>
+        <tr>
+          <td><strong>PPFD (µmol/m²/s)</strong></td>
+          <td>Luz útil para plantas</td>
+          <td>100-300 para folhosas</td>
+        </tr>
+        <tr>
+          <td><strong>Full Spectrum</strong></td>
+          <td>Todas as cores necessárias</td>
+          <td>Sim (essencial)</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>Quanto de Luz é Necessário?</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Tipo de Planta</th>
+        <th>PPFD Mínimo</th>
+        <th>PPFD Ideal</th>
+        <th>Potência Sugerida</th>
+      </tr>
+      <tr>
+        <td>Microverdes</td>
+        <td>50-100</td>
+        <td>100-200</td>
+        <td>10-20W</td>
+      </tr>
+      <tr>
+        <td>Folhosas (alface, rúcula)</td>
+        <td>100-200</td>
+        <td>200-400</td>
+        <td>20-40W</td>
+      </tr>
+      <tr>
+        <td>Ervas (manjericão, hortelã)</td>
+        <td>150-300</td>
+        <td>300-500</td>
+        <td>30-50W</td>
+      </tr>
+      <tr>
+        <td>Frutos (tomate, pimenta)</td>
+        <td>400-600</td>
+        <td>600-1000</td>
+        <td>100W+</td>
+      </tr>
+    </table>
+
+    <h2>Distância e Duração</h2>
+    <div class="tip-box">
+      <h4>Configuração Básica</h4>
+      <ul>
+        <li><strong>Distância:</strong> 15-30cm acima das plantas (LED), 10-20cm (fluorescente)</li>
+        <li><strong>Duração:</strong> 12-16 horas por dia</li>
+        <li><strong>Intervalo escuro:</strong> Mínimo 6-8 horas (ESSENCIAL!)</li>
+        <li><strong>Timer:</strong> Use timer para automatizar - R$ 20-50</li>
+      </ul>
+    </div>
+
+    <h2>Calculando o Custo de Energia</h2>
+    <div class="dli-card">
+      <h3>Exemplo: LED 30W ligado 14h/dia</h3>
+      <p><strong>Consumo diário:</strong> 30W × 14h = 420Wh = 0,42 kWh</p>
+      <p><strong>Consumo mensal:</strong> 0,42 × 30 dias = 12,6 kWh</p>
+      <p><strong>Custo mensal:</strong> 12,6 kWh × R$ 0,80 = <strong>R$ 10,08/mês</strong></p>
+      <p style="margin-top: 10px;">Muito mais barato que comprar verduras no mercado!</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 18</div>
+  </div>
+
+  <!-- MÓDULO 6: GROW LIGHTS - PARTE 3 -->
+  <div class="page">
+    <h1>Grow Lights 2025 (recomendações)</h1>
+
+    <h2>Melhores Opções por Orçamento (2025)</h2>
+
+    <div class="grow-light-card">
+      <h3>Orçamento Mínimo: R$ 30-50</h3>
+      <p><strong>Opção:</strong> 2-3 lâmpadas LED comum 15W 6500K + bocal com fio</p>
+      <p><strong>Área:</strong> 0,3-0,5 m² (uma bandeja de microverdes ou 2-3 vasos)</p>
+      <p><strong>Ideal para:</strong> Microverdes, complementar luz natural</p>
+      <p><strong>Onde comprar:</strong> Supermercado, loja de materiais elétricos</p>
+    </div>
+
+    <div class="grow-light-card">
+      <h3>Custo-Benefício: R$ 80-150</h3>
+      <p><strong>Opção:</strong> Painel LED Full Spectrum 25-50W ou luminária LED T5</p>
+      <p><strong>Área:</strong> 0,5-1 m² (4-8 vasos médios)</p>
+      <p><strong>Ideal para:</strong> Folhosas, ervas, horta em prateleira</p>
+      <p><strong>Onde comprar:</strong> Mercado Livre, Amazon, lojas de cultivo</p>
+    </div>
+
+    <div class="grow-light-card">
+      <h3>Investimento: R$ 200-400</h3>
+      <p><strong>Opção:</strong> Painel LED Samsung/Quantum Board 100W+</p>
+      <p><strong>Área:</strong> 1-2 m² (horta completa)</p>
+      <p><strong>Ideal para:</strong> Produção contínua, plantas exigentes, frutíferas indoor</p>
+      <p><strong>Onde comprar:</strong> Lojas especializadas em cultivo indoor</p>
+    </div>
+
+    <h2>Montando seu Setup</h2>
+    <div class="technique-card">
+      <h3>Checklist de Instalação</h3>
+      <ul>
+        <li>☐ Suporte/estrutura para pendurar a luz</li>
+        <li>☐ Correntes ou cabos ajustáveis (para regular altura)</li>
+        <li>☐ Timer programável (12-16h ligado, 8-12h desligado)</li>
+        <li>☐ Extensão/régua com proteção de surto</li>
+        <li>☐ Bandeja coletora de água (para não danificar equipamentos)</li>
+        <li>☐ Termômetro (para monitorar temperatura)</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Cuidados de Segurança</h4>
+      <ul>
+        <li>Mantenha cabos e conexões longe da água</li>
+        <li>Use extensões de qualidade com proteção</li>
+        <li>Não sobrecarregue tomadas</li>
+        <li>Mantenha ventilação adequada (LEDs geram algum calor)</li>
+        <li>Verifique periodicamente conexões e cabos</li>
+      </ul>
+    </div>
+
+    <div class="success-box">
+      <h4>Resultado Esperado</h4>
+      <p>Com luz artificial adequada, você consegue cultivar praticamente qualquer folhosa e erva o ano todo, independente da luz natural. Microverdes funcionam 100% com luz artificial!</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 19</div>
+  </div>
+
+  <!-- MÓDULO 7: DIAGNÓSTICO VISUAL -->
+  <div class="page">
+    <h1>Módulo 7: Diagnóstico Visual de Problemas de Luz</h1>
+    <p class="chapter-intro">Aprenda a "ler" suas plantas e identificar se estão recebendo luz adequada.</p>
+
+    <h2>Sinais de POUCA Luz (Estiolamento)</h2>
+
+    <div class="diagnosis-card">
+      <h4>Sintoma: Caules Longos e Finos (Esticados)</h4>
+      <p><strong>O que acontece:</strong> A planta "estica" buscando luz. Entrenós (espaços entre folhas) ficam muito longos.</p>
+      <p><strong>Aparência:</strong> Planta alta, caída, frágil, "pernuda".</p>
+      <p><strong>Solução:</strong> Mais luz! Aproxime da janela ou adicione luz artificial.</p>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Sintoma: Folhas Pequenas e/ou Pálidas</h4>
+      <p><strong>O que acontece:</strong> Sem energia suficiente, a planta não consegue produzir folhas grandes e verdes.</p>
+      <p><strong>Aparência:</strong> Folhas menores que o normal, verde-claro ou amarelado.</p>
+      <p><strong>Solução:</strong> Mais luz + verificar nutrientes (pode ser deficiência combinada).</p>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Sintoma: Crescimento Lento ou Parado</h4>
+      <p><strong>O que acontece:</strong> Fotossíntese insuficiente = energia insuficiente para crescer.</p>
+      <p><strong>Aparência:</strong> Planta parece "parada" por semanas.</p>
+      <p><strong>Solução:</strong> Aumente a luz. Se impossível, aceite crescimento lento ou escolha plantas mais tolerantes.</p>
+    </div>
+
+    <div class="diagnosis-card">
+      <h4>Sintoma: Inclinação em Direção à Luz</h4>
+      <p><strong>O que acontece:</strong> Fototropismo - a planta cresce em direção à fonte de luz.</p>
+      <p><strong>Aparência:</strong> Planta "torta", inclinada para a janela.</p>
+      <p><strong>Solução:</strong> Gire o vaso regularmente (90° a cada 2-3 dias) ou adicione luz de outro lado.</p>
+    </div>
+
+    <h2>Sinais de LUZ EXCESSIVA</h2>
+
+    <div class="diagnosis-card ok">
+      <h4>Sintoma: Folhas com Manchas Marrons/Secas</h4>
+      <p><strong>O que acontece:</strong> Queimadura solar - tecido vegetal danificado.</p>
+      <p><strong>Aparência:</strong> Manchas marrons, secas, bordas queimadas.</p>
+      <p><strong>Solução:</strong> Afaste do sol direto. Use tela de sombreamento ou mova para local com luz indireta.</p>
+    </div>
+
+    <div class="diagnosis-card ok">
+      <h4>Sintoma: Folhas Enrolando ou Murchando ao Meio-Dia</h4>
+      <p><strong>O que acontece:</strong> Estresse de calor/luz intensa.</p>
+      <p><strong>Aparência:</strong> Folhas se fecham ou murcham nas horas mais quentes.</p>
+      <p><strong>Solução:</strong> Sombreamento nas horas mais quentes. Aumente a rega.</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 20</div>
+  </div>
+
+  <!-- MÓDULO 7: DIAGNÓSTICO - PARTE 2 -->
+  <div class="page">
+    <h1>Diagnóstico Visual (continuação)</h1>
+
+    <h2>Tabela de Diagnóstico Rápido</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Sintoma</th>
+        <th>Possível Causa</th>
+        <th>Ação</th>
+      </tr>
+      <tr>
+        <td>Caule longo e fino</td>
+        <td>Pouca luz</td>
+        <td>Mais luz</td>
+      </tr>
+      <tr>
+        <td>Folhas pálidas</td>
+        <td>Pouca luz OU falta de nitrogênio</td>
+        <td>Mais luz + adubo</td>
+      </tr>
+      <tr>
+        <td>Crescimento parado</td>
+        <td>Pouca luz</td>
+        <td>Mais luz</td>
+      </tr>
+      <tr>
+        <td>Planta inclinada</td>
+        <td>Luz unilateral</td>
+        <td>Girar vaso</td>
+      </tr>
+      <tr>
+        <td>Manchas marrons secas</td>
+        <td>Queimadura solar</td>
+        <td>Menos sol direto</td>
+      </tr>
+      <tr>
+        <td>Folhas enrolando</td>
+        <td>Excesso de calor/luz</td>
+        <td>Sombrear</td>
+      </tr>
+      <tr>
+        <td>Floração precoce</td>
+        <td>Estresse (calor/luz/seca)</td>
+        <td>Condições mais amenas</td>
+      </tr>
+      <tr>
+        <td>Sem floração/frutos</td>
+        <td>Luz insuficiente</td>
+        <td>Mais luz ou trocar planta</td>
+      </tr>
+    </table>
+
+    <h2>Teste Visual: Sua Planta Está Bem?</h2>
+    <div class="checklist">
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Cor verde vibrante</strong> - Folhas têm coloração saudável, não pálida</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Entrenós curtos</strong> - Distância entre folhas é curta, planta compacta</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Crescimento visível</strong> - Novas folhas surgem regularmente</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Caule firme</strong> - Planta se sustenta sem cair ou inclinar excessivamente</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Folhas de tamanho normal</strong> - Comparável a fotos da espécie</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Sem manchas</strong> - Ausência de queimaduras ou descolorações</div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <h4>A Planta Sempre Conta a Verdade</h4>
+      <p>Observe suas plantas diariamente. Elas comunicam suas necessidades através de sinais visuais. Aprenda a "ler" esses sinais e ajuste as condições conforme necessário.</p>
+    </div>
+
+    <div class="success-box">
+      <h4>Quando Tudo Está Bem</h4>
+      <p>Uma planta com luz adequada terá: cor verde vibrante, crescimento compacto, folhas de tamanho proporcional e desenvolvimento contínuo. Se você vê isso, parabéns - sua iluminação está correta!</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 21</div>
+  </div>
+
+  <!-- MÓDULO 8: CALENDÁRIO SAZONAL -->
+  <div class="page">
+    <h1>Módulo 8: Calendário Sazonal para Horta na Sombra</h1>
+    <p class="chapter-intro">O que plantar em cada estação para maximizar resultados em ambientes com pouca luz.</p>
+
+    <h2>Variação de Luz ao Longo do Ano (Brasil)</h2>
+    <table class="comparison-table">
+      <tr>
+        <th>Estação</th>
+        <th>Horas de Luz</th>
+        <th>Intensidade</th>
+        <th>Impacto na Horta</th>
+      </tr>
+      <tr>
+        <td><strong>Verão</strong> (Dez-Mar)</td>
+        <td>13-14h</td>
+        <td>Alta</td>
+        <td>Melhor época! Máxima produção</td>
+      </tr>
+      <tr>
+        <td><strong>Outono</strong> (Mar-Jun)</td>
+        <td>11-12h</td>
+        <td>Média</td>
+        <td>Boa produção, folhosas prosperam</td>
+      </tr>
+      <tr>
+        <td><strong>Inverno</strong> (Jun-Set)</td>
+        <td>10-11h</td>
+        <td>Baixa</td>
+        <td>Crescimento lento, luz artificial ajuda</td>
+      </tr>
+      <tr>
+        <td><strong>Primavera</strong> (Set-Dez)</td>
+        <td>12-13h</td>
+        <td>Crescente</td>
+        <td>Época de plantar, luz aumentando</td>
+      </tr>
+    </table>
+
+    <h2>O que Plantar em Cada Estação (Sombra)</h2>
+
+    <div class="technique-card">
+      <h3>Verão (Dezembro a Março)</h3>
+      <p><strong>Foco:</strong> Aproveite a luz máxima! Plante o que precisar de mais energia.</p>
+      <ul>
+        <li><strong>Ideais:</strong> Manjericão, coentro (rápido antes de florescer), alface (variedades resistentes ao calor)</li>
+        <li><strong>Cuidado:</strong> Calor + sombra = ambiente úmido. Atenção a fungos!</li>
+        <li><strong>Dica:</strong> Alface e rúcula podem precisar de mais sombra (sol forte causa amargor)</li>
+      </ul>
+    </div>
+
+    <div class="technique-card">
+      <h3>Outono (Março a Junho)</h3>
+      <p><strong>Foco:</strong> Época IDEAL para folhosas na sombra!</p>
+      <ul>
+        <li><strong>Ideais:</strong> Alface, rúcula, espinafre, acelga, mostarda</li>
+        <li><strong>Por que é bom:</strong> Temperaturas amenas, luz adequada, crescimento equilibrado</li>
+        <li><strong>Dica:</strong> Plante gengibre/açafrão para colher no próximo outono</li>
+      </ul>
+    </div>
+
+    <div class="technique-card">
+      <h3>Inverno (Junho a Setembro)</h3>
+      <p><strong>Foco:</strong> Luz artificial se torna mais importante.</p>
+      <ul>
+        <li><strong>Ideais:</strong> Microverdes (funcionam com artificial), hortelã, agrião</li>
+        <li><strong>Desafio:</strong> Dias curtos + sombra = crescimento muito lento</li>
+        <li><strong>Solução:</strong> Complementar com 4-6h de luz LED</li>
+      </ul>
+    </div>
+
+    <div class="technique-card">
+      <h3>Primavera (Setembro a Dezembro)</h3>
+      <p><strong>Foco:</strong> Preparar e plantar para o verão!</p>
+      <ul>
+        <li><strong>Ideais:</strong> Todas as folhosas, ervas, preparar mudas</li>
+        <li><strong>Por que é bom:</strong> Luz aumentando, temperaturas subindo</li>
+        <li><strong>Dica:</strong> Época de renovar plantas perenes (hortelã, cebolinha)</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 22</div>
+  </div>
+
+  <!-- BÔNUS: CHECKLIST + RANKING FINAL -->
+  <div class="page">
+    <h1>Bônus: Checklist + Ranking Final</h1>
+
+    <h2>Checklist: Iniciando sua Horta na Sombra</h2>
+    <div class="checklist">
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Mapeei a luz do meu espaço</strong> - Sei quantas horas de sol/luz cada local recebe</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Escolhi plantas adequadas</strong> - Selecionei plantas que toleram minha condição de luz</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Preparei superfícies refletoras</strong> - Papel alumínio, parede branca ou outro refletor</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Limpei vidros e janelas</strong> - Maximizando a entrada de luz</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Posicionei vasos estrategicamente</strong> - O mais perto possível da fonte de luz</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Defini rotina de rotação</strong> - Girar vasos a cada 2-3 dias</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Avaliei necessidade de luz artificial</strong> - E defini orçamento se necessário</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Preparei substrato e vasos</strong> - Com drenagem adequada</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Comprei sementes/mudas</strong> - Das plantas escolhidas para minha condição</div>
+      </div>
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div><strong>Plantei!</strong> - E vou monitorar o crescimento ajustando conforme necessário</div>
+      </div>
+    </div>
+
+    <h2>Ranking Final: Top 5 Plantas para Cada Situação</h2>
+
+    <div class="stat-grid">
+      <div class="stat-box" style="border-color: #1e3a5f;">
+        <h4 style="color: #1e3a5f; margin: 0 0 10px 0;">Sombra Total</h4>
+        <ol style="text-align: left; margin: 0; padding-left: 20px; font-size: 13px;">
+          <li>Agrião</li>
+          <li>Hortelã</li>
+          <li>Gengibre</li>
+          <li>Açafrão</li>
+          <li>Melissa</li>
+        </ol>
+      </div>
+      <div class="stat-box" style="border-color: #fbbf24;">
+        <h4 style="color: #b45309; margin: 0 0 10px 0;">Meia-Sombra</h4>
+        <ol style="text-align: left; margin: 0; padding-left: 20px; font-size: 13px;">
+          <li>Alface</li>
+          <li>Rúcula</li>
+          <li>Espinafre</li>
+          <li>Cebolinha</li>
+          <li>Coentro</li>
+        </ol>
+      </div>
+      <div class="stat-box" style="border-color: #22c55e;">
+        <h4 style="color: #15803d; margin: 0 0 10px 0;">Iniciantes</h4>
+        <ol style="text-align: left; margin: 0; padding-left: 20px; font-size: 13px;">
+          <li>Hortelã</li>
+          <li>Cebolinha</li>
+          <li>Microverdes</li>
+          <li>Alface</li>
+          <li>Rabanete</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="success-box">
+      <h4>Sua Primeira Ação</h4>
+      <p>Mapeie a luz do seu espaço HOJE. Observe onde o sol bate (ou não bate) em diferentes horários. Com essa informação, escolha 2-3 plantas da lista adequada e comece sua horta na sombra!</p>
+    </div>
+
+    <div class="page-number">Guia Horta na Sombra - Página 23</div>
+  </div>
+
+  <!-- PÁGINA FINAL -->
+  <div class="page">
+    <div style="text-align: center; padding: 40px 20px;">
+      <div class="mascote" style="margin-bottom: 30px;">
+        <svg width="120" height="150" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+          <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pgf15)" stroke="#b5441c" stroke-width="2"/>
+          <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+          <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+          <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bgf15)" stroke="#15803d" stroke-width="2.5"/>
+          <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+          <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+          <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+          <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+          <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+          <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+          <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="pgf15" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ea7531"/>
+              <stop offset="100%" stop-color="#b5441c"/>
+            </linearGradient>
+            <radialGradient id="bgf15" cx="40%" cy="30%">
+              <stop offset="0%" stop-color="#86efac"/>
+              <stop offset="50%" stop-color="#4ade80"/>
+              <stop offset="100%" stop-color="#22c55e"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1 style="border: none; font-size: 28px; color: #1e3a5f;">Parabéns!</h1>
+      <p style="font-size: 18px; margin: 20px 0; color: #374151;">Você agora tem todo o conhecimento para cultivar uma horta produtiva mesmo com pouca luz!</p>
+
+      <div style="background: linear-gradient(135deg, #e0f2fe, #bae6fd); padding: 25px; border-radius: 12px; margin: 25px 0;">
+        <h3 style="color: #0369a1; margin-top: 0;">Lembre-se:</h3>
+        <p style="margin: 0;"><strong>Pouca luz não é desculpa para não ter uma horta.</strong></p>
+        <p>Escolha as plantas certas, maximize a luz disponível, use luz artificial se necessário - e aproveite sua colheita!</p>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #faf5ff, #f3e8ff); padding: 20px; border-radius: 12px; margin: 20px 0; border: 2px solid #a855f7;">
+        <h4 style="color: #7c3aed; margin-top: 0;">O que Você Aprendeu:</h4>
+        <ul style="text-align: left; margin: 10px 0;">
+          <li>Ciência da luz: fotossíntese, DLI, fotoperíodo</li>
+          <li>Como mapear a luz do seu espaço</li>
+          <li>20+ plantas que prosperam na sombra</li>
+          <li>Microverdes: solução para sombra total</li>
+          <li>Técnicas para maximizar luz natural</li>
+          <li>Grow lights 2025: escolha e uso</li>
+          <li>Diagnóstico visual de problemas</li>
+          <li>Calendário sazonal para sombra</li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 30px;">
+        <p style="color: #15803d; font-weight: 700; font-size: 18px;">Minha Horta em Casa</p>
+        <p style="color: #22c55e;">minhahortaemcasa.com.br</p>
+      </div>
+
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+        <p style="font-size: 12px; color: #9ca3af;">Guia Completo Horta na Sombra - 23 páginas de conteúdo profissional</p>
+        <p style="font-size: 12px; color: #9ca3af;">20+ plantas + ciência da luz + grow lights + diagnóstico visual</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,3114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pack Propagação de Plantas - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.7; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 44px; font-weight: 800; color: #15803d; margin-bottom: 20px; }
+    .cover .subtitle { font-size: 22px; color: #166534; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #15803d; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #22c55e; }
+    h1 { font-size: 32px; color: #15803d; margin-bottom: 20px; border-bottom: 3px solid #22c55e; padding-bottom: 10px; }
+    h2 { font-size: 26px; color: #166534; margin: 25px 0 15px; }
+    h3 { font-size: 22px; color: #15803d; margin: 20px 0 12px; }
+    h4 { font-size: 18px; color: #166534; margin: 15px 0 10px; }
+    p { margin-bottom: 15px; text-align: justify; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 10px; }
+    .toc { background: #f0fdf4; padding: 30px; border-radius: 12px; }
+    .toc h2 { border: none; margin-top: 0; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dashed #86efac; }
+    .toc a { color: #15803d; text-decoration: none; }
+    .intro-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 5px solid #22c55e; }
+    .method-card { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 25px; margin: 20px 0; }
+    .method-card h3 { color: #15803d; margin-top: 0; border-bottom: 2px solid #dcfce7; padding-bottom: 10px; }
+    .tip-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 4px solid #22c55e; padding: 20px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .tip-box h4 { color: #15803d; margin-top: 0; }
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 20px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .warning-box h4 { color: #92400e; margin-top: 0; }
+    .danger-box { background: linear-gradient(135deg, #fee2e2, #fecaca); border-left: 4px solid #ef4444; padding: 20px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .danger-box h4 { color: #991b1b; margin-top: 0; }
+    .success-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 4px solid #22c55e; padding: 20px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .success-box h4 { color: #15803d; margin-top: 0; }
+    .step-box { background: #fff; border: 2px solid #86efac; border-radius: 12px; padding: 20px; margin: 20px 0; position: relative; padding-top: 30px; }
+    .step-number { position: absolute; top: -15px; left: 20px; background: #22c55e; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+    .plant-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    .plant-table th { background: #15803d; color: white; padding: 12px 8px; text-align: left; }
+    .plant-table td { padding: 10px 8px; border-bottom: 1px solid #e5e7eb; }
+    .plant-table tr:nth-child(even) { background: #f0fdf4; }
+    .economy-card { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #f59e0b; border-radius: 12px; padding: 25px; margin: 20px 0; }
+    .economy-card h3 { color: #92400e; margin-top: 0; }
+    .recipe-card { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 2px dashed #22c55e; border-radius: 12px; padding: 25px; margin: 20px 0; }
+    .recipe-card h4 { color: #15803d; margin-top: 0; }
+    .comparison-box { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+    .compare-item { padding: 15px; border-radius: 12px; border: 2px solid #e5e7eb; }
+    .compare-item h4 { margin-top: 0; color: #15803d; }
+    .difficulty { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 700; }
+    .easy { background: #dcfce7; color: #15803d; }
+    .medium { background: #fef3c7; color: #92400e; }
+    .hard { background: #fee2e2; color: #991b1b; }
+    .diy-box { background: linear-gradient(135deg, #e0f2fe, #bae6fd); border: 2px solid #0ea5e9; border-radius: 12px; padding: 25px; margin: 20px 0; }
+    .diy-box h4 { color: #0369a1; margin-top: 0; }
+    .final-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); border-radius: 12px; padding: 30px; margin: 25px 0; text-align: center; }
+    .checklist { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .checklist h4 { color: #15803d; margin-top: 0; }
+    .checklist li { list-style: none; padding-left: 30px; position: relative; margin-bottom: 12px; }
+    .checklist li:before { content: "☐"; position: absolute; left: 0; color: #22c55e; font-size: 18px; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+    blockquote { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 20px; margin: 20px 0; font-style: italic; border-radius: 0 12px 12px 0; }
+    blockquote cite { display: block; margin-top: 10px; font-weight: 600; color: #15803d; font-style: normal; }
+    .timeline { border-left: 3px solid #22c55e; padding-left: 20px; margin: 20px 0; }
+    .timeline-item { position: relative; margin-bottom: 20px; }
+    .timeline-item:before { content: ""; position: absolute; left: -27px; top: 5px; width: 12px; height: 12px; background: #22c55e; border-radius: 50%; }
+    .timeline-item h4 { color: #15803d; margin: 0 0 5px 0; }
+    .timeline-item p { margin: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pg20)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bg20)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs>
+          <linearGradient id="pg20" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ea7531"/>
+            <stop offset="100%" stop-color="#b5441c"/>
+          </linearGradient>
+          <radialGradient id="bg20" cx="40%" cy="30%">
+            <stop offset="0%" stop-color="#86efac"/>
+            <stop offset="50%" stop-color="#4ade80"/>
+            <stop offset="100%" stop-color="#22c55e"/>
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Pack Propagação de Plantas</h1>
+    <p class="subtitle">Multiplique suas plantas infinitamente - 5 métodos para nunca mais comprar mudas!</p>
+    <div class="brand">
+      Minha Horta em Casa
+      <div class="brand-url">minhahortaemcasa.com.br</div>
+    </div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>Sumário</h2>
+      <ul>
+        <li><a href="#intro">Introdução: O Poder da Propagação</a></li>
+        <li><a href="#metodo1">Método 1: Estacas em Água</a></li>
+        <li><a href="#metodo2">Método 2: Estacas em Substrato</a></li>
+        <li><a href="#metodo3">Método 3: Divisão de Touceiras</a></li>
+        <li><a href="#metodo4">Método 4: Mergulhia</a></li>
+        <li><a href="#metodo5">Método 5: Alporquia</a></li>
+        <li><a href="#hormonios">Bônus: Hormônios Enraizadores</a></li>
+        <li><a href="#tabela">Tabela: Qual Método para Cada Planta</a></li>
+        <li><a href="#problemas">Problemas Comuns e Soluções</a></li>
+        <li><a href="#calendario">Calendário Anual de Propagação</a></li>
+        <li><a href="#estacoes">Propagação por Estação do Ano</a></li>
+        <li><a href="#30plantas">Guia de 30 Plantas Populares</a></li>
+        <li><a href="#miniestufas">10 Modelos de Mini-Estufas DIY</a></li>
+        <li><a href="#substratos">Guia Completo de Substratos</a></li>
+        <li><a href="#ferramentas">Ferramentas e Equipamentos</a></li>
+        <li><a href="#erros">15 Erros Fatais e Como Evitar</a></li>
+        <li><a href="#faq">30 Perguntas Frequentes</a></li>
+        <li><a href="#projetos">5 Projetos Práticos Passo a Passo</a></li>
+        <li><a href="#negocio">Bônus: Transforme em Negócio</a></li>
+      </ul>
+    </div>
+    <div class="page-number">Página 2</div>
+  </div>
+
+  <!-- INTRODUÇÃO -->
+  <div class="page" id="intro">
+    <h1>Introdução: O Poder da Propagação</h1>
+
+    <div class="intro-box">
+      <p><strong>Uma única planta pode gerar centenas de outras.</strong> Dominar as técnicas de propagação significa nunca mais precisar comprar mudas, poder trocar com outros cultivadores, e multiplicar suas plantas favoritas infinitamente.</p>
+    </div>
+
+    <h2>Por que Propagar?</h2>
+
+    <ul>
+      <li><strong>Economia absurda:</strong> Mudas custam R$ 5-30 cada. Propagação custa R$ 0</li>
+      <li><strong>Plantas idênticas:</strong> Clone suas plantas favoritas com as mesmas características</li>
+      <li><strong>Independência:</strong> Não dependa de viveiros ou disponibilidade</li>
+      <li><strong>Presente perfeito:</strong> Dê mudas para amigos e família</li>
+      <li><strong>Trocar:</strong> Entre em grupos de troca e multiplique sua coleção</li>
+    </ul>
+
+    <div class="economy-card">
+      <h3>Economia Real com Propagação</h3>
+      <table class="plant-table">
+        <tr>
+          <th>Planta</th>
+          <th>Preço da Muda</th>
+          <th>Custo Propagando</th>
+          <th>Economia</th>
+        </tr>
+        <tr>
+          <td>Hortelã</td>
+          <td>R$ 8-12</td>
+          <td>R$ 0 (estaca)</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td>Alecrim</td>
+          <td>R$ 12-18</td>
+          <td>R$ 0 (estaca)</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td>Manjericão</td>
+          <td>R$ 8-15</td>
+          <td>R$ 0 (estaca)</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td>Cebolinha</td>
+          <td>R$ 6-10</td>
+          <td>R$ 0 (divisão)</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td>Frutíferas</td>
+          <td>R$ 30-80</td>
+          <td>R$ 2-5 (alporquia)</td>
+          <td>90-97%</td>
+        </tr>
+      </table>
+      <p style="text-align: center; margin-top: 15px;"><strong>10 plantas propagadas = R$ 100+ de economia!</strong></p>
+    </div>
+
+    <h2>Os 5 Métodos que Você Vai Aprender</h2>
+
+    <ol>
+      <li><strong>Estacas em água:</strong> O mais fácil, visual e popular</li>
+      <li><strong>Estacas em substrato:</strong> Para plantas mais resistentes</li>
+      <li><strong>Divisão de touceiras:</strong> O mais rápido para ervas</li>
+      <li><strong>Mergulhia:</strong> Sem cortar da planta mãe</li>
+      <li><strong>Alporquia:</strong> Para frutíferas e arbustos</li>
+    </ol>
+
+    <blockquote>
+      "Comecei com uma única hortelã. Hoje tenho 15 vasos e já dei mais de 30 mudas para vizinhos e família!"
+      <cite>- Amanda, São Paulo</cite>
+    </blockquote>
+
+    <div class="page-number">Página 3</div>
+  </div>
+
+  <!-- MÉTODO 1: ESTACAS EM ÁGUA -->
+  <div class="page" id="metodo1">
+    <h1>Método 1: Estacas em Água</h1>
+
+    <div class="method-card">
+      <h3>O método mais fácil e visual</h3>
+      <p><span class="difficulty easy">Fácil</span></p>
+
+      <p><strong>Ideal para:</strong> Hortelã, manjericão, tomilho, alecrim (com paciência), pothos, jiboias, singônio</p>
+
+      <h4>Taxa de sucesso: 80-95%</h4>
+    </div>
+
+    <h2>Passo a Passo</h2>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Escolha o Ramo Certo</h4>
+      <ul>
+        <li>Ramos saudáveis, sem flores ou botões</li>
+        <li>Nem muito jovem (verde claro) nem muito velho (lenhoso)</li>
+        <li>Comprimento ideal: 10-15cm</li>
+        <li>Deve ter pelo menos 2-3 nós (pontos de onde saem folhas)</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Faça o Corte</h4>
+      <ul>
+        <li>Use tesoura ou faca bem afiada e limpa</li>
+        <li>Corte em ângulo de 45° (aumenta área de absorção)</li>
+        <li>Corte logo abaixo de um nó (é de onde saem as raízes)</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Prepare a Estaca</h4>
+      <ul>
+        <li>Remova as folhas da metade inferior</li>
+        <li>Se as folhas forem grandes, corte-as pela metade</li>
+        <li>Deixe 2-4 folhas no topo</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">4</div>
+      <h4>Coloque na Água</h4>
+      <ul>
+        <li>Use recipiente de vidro transparente (para ver raízes)</li>
+        <li>Água filtrada ou descansada por 24h (remove cloro)</li>
+        <li>Nível: cobrir os nós inferiores, mas não as folhas</li>
+        <li>Local: luz indireta, sem sol direto</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">5</div>
+      <h4>Manutenção</h4>
+      <ul>
+        <li>Troque a água a cada 2-3 dias (evita apodrecimento)</li>
+        <li>Lave o recipiente se criar limo</li>
+        <li>Mantenha nível de água constante</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">6</div>
+      <h4>Transplante</h4>
+      <ul>
+        <li>Quando raízes tiverem 3-5cm, plante em substrato</li>
+        <li>Não deixe passar de 8-10cm (adaptação mais difícil)</li>
+        <li>Nas primeiras 2 semanas, mantenha solo mais úmido</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 4</div>
+  </div>
+
+  <!-- MÉTODO 1 - Continuação -->
+  <div class="page">
+    <h2>Tempo de Enraizamento em Água</h2>
+
+    <table class="plant-table">
+      <tr>
+        <th>Planta</th>
+        <th>Tempo para Raízes</th>
+        <th>Dificuldade</th>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>5-10 dias</td>
+        <td><span class="difficulty easy">Muito fácil</span></td>
+      </tr>
+      <tr>
+        <td>Manjericão</td>
+        <td>7-14 dias</td>
+        <td><span class="difficulty easy">Fácil</span></td>
+      </tr>
+      <tr>
+        <td>Tomilho</td>
+        <td>14-21 dias</td>
+        <td><span class="difficulty medium">Médio</span></td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>21-45 dias</td>
+        <td><span class="difficulty medium">Médio</span></td>
+      </tr>
+      <tr>
+        <td>Lavanda</td>
+        <td>21-30 dias</td>
+        <td><span class="difficulty medium">Médio</span></td>
+      </tr>
+      <tr>
+        <td>Sálvia</td>
+        <td>14-21 dias</td>
+        <td><span class="difficulty medium">Médio</span></td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>Dicas para Acelerar</h4>
+      <ul>
+        <li><strong>Temperatura:</strong> 20-25°C é ideal. Mais quente = mais rápido</li>
+        <li><strong>Hormônio:</strong> Adicione uma gota de hormônio enraizador líquido</li>
+        <li><strong>Mel:</strong> Mergulhe a ponta em mel antes de colocar na água (antifúngico natural)</li>
+        <li><strong>Salgueiro:</strong> Água de galhos de salgueiro contém auxinas naturais</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Erros Comuns</h4>
+      <ul>
+        <li><strong>Água suja:</strong> Não trocar água = bactérias = estaca apodrece</li>
+        <li><strong>Sol direto:</strong> Aquece a água e mata a estaca</li>
+        <li><strong>Muitas folhas:</strong> Mais folhas = mais transpiração = desidrata</li>
+        <li><strong>Estaca muito curta:</strong> Pouca reserva de energia</li>
+        <li><strong>Raízes muito longas:</strong> Difícil adaptar ao substrato depois</li>
+      </ul>
+    </div>
+
+    <h2>Plantas que NÃO Funcionam Bem em Água</h2>
+
+    <ul>
+      <li>Plantas suculentas (apodrecem)</li>
+      <li>Cactos (apodrecem)</li>
+      <li>Alecrim muito lenhoso (melhor em substrato)</li>
+      <li>Plantas com caule muito grosso/lenhoso</li>
+    </ul>
+
+    <div class="success-box">
+      <h4>Vantagens das Estacas em Água</h4>
+      <ul>
+        <li>Você VÊ as raízes se formando</li>
+        <li>Fácil identificar se está funcionando</li>
+        <li>Não precisa de material especial</li>
+        <li>Decorativo enquanto enraíza</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 5</div>
+  </div>
+
+  <!-- MÉTODO 2: ESTACAS EM SUBSTRATO -->
+  <div class="page" id="metodo2">
+    <h1>Método 2: Estacas em Substrato</h1>
+
+    <div class="method-card">
+      <h3>Para plantas lenhosas e maior taxa de sucesso</h3>
+      <p><span class="difficulty medium">Médio</span></p>
+
+      <p><strong>Ideal para:</strong> Alecrim, lavanda, sálvia, tomilho, orégano, louro, goiaba, pitanga, jabuticaba</p>
+
+      <h4>Taxa de sucesso: 60-80% (com hormônio: 80-95%)</h4>
+    </div>
+
+    <h2>Por que em Substrato?</h2>
+
+    <ul>
+      <li>Melhor para plantas lenhosas/semi-lenhosas</li>
+      <li>Raízes já nascem adaptadas ao solo</li>
+      <li>Menor choque no transplante</li>
+      <li>Possibilidade de usar hormônio enraizador em pó</li>
+    </ul>
+
+    <h2>Passo a Passo</h2>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Prepare o Substrato</h4>
+      <p>Use mistura leve e aerada:</p>
+      <ul>
+        <li>2 partes de areia grossa</li>
+        <li>1 parte de vermiculita ou perlita</li>
+        <li>1 parte de turfa ou fibra de coco</li>
+      </ul>
+      <p><strong>Ou:</strong> Apenas vermiculita pura (excelente para estacas)</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Prepare as Estacas</h4>
+      <ul>
+        <li>Corte estacas de 8-15cm com 3-4 nós</li>
+        <li>Corte inferior em ângulo, superior reto</li>
+        <li>Remova folhas da metade inferior</li>
+        <li>Se usar, aplique hormônio enraizador na base</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Plante as Estacas</h4>
+      <ul>
+        <li>Faça um buraco com lápis (não force a estaca diretamente)</li>
+        <li>Insira a estaca até metade do comprimento</li>
+        <li>Firme o substrato ao redor</li>
+        <li>Regue levemente</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">4</div>
+      <h4>Crie um Ambiente Úmido</h4>
+      <ul>
+        <li>Cubra com plástico transparente ou garrafa PET cortada</li>
+        <li>Deixe uma pequena abertura para ar</li>
+        <li>Isso cria uma mini estufa com umidade alta</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">5</div>
+      <h4>Manutenção</h4>
+      <ul>
+        <li>Local com luz indireta (não sol direto!)</li>
+        <li>Borrife água se o substrato secar</li>
+        <li>Retire a cobertura por 1h diária para ventilar</li>
+        <li>Remova estacas que apodrecerem</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 6</div>
+  </div>
+
+  <!-- MÉTODO 2 - Continuação -->
+  <div class="page">
+    <h2>Como Saber se Enraizou?</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Semana 1-2</h4>
+        <p>Formação de calo na base (inchaço branco). A estaca ainda está viva se não murchar.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Semana 2-4</h4>
+        <p>Primeiras raízes começam a sair do calo. Você pode sentir leve resistência ao puxar gentilmente.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Semana 4-6</h4>
+        <p>Novos brotos começam a surgir no topo. Este é o sinal definitivo de sucesso!</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Semana 6-8</h4>
+        <p>Sistema radicular estabelecido. Pode começar a aclimatar removendo a cobertura gradualmente.</p>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <h4>Não puxe para verificar!</h4>
+      <p>Puxar a estaca para ver se tem raiz danifica as raízes delicadas que estão se formando. Aguarde os sinais externos (novos brotos) ou, se necessário, puxe muito gentilmente sentindo apenas resistência.</p>
+    </div>
+
+    <h2>Mini Estufa DIY para Estacas</h2>
+
+    <div class="diy-box">
+      <h4>Com Garrafa PET</h4>
+      <ol>
+        <li>Corte uma garrafa PET 2L ao meio</li>
+        <li>Use a parte de cima como cúpula sobre a estaca</li>
+        <li>Mantenha a tampa semi-aberta para ventilação</li>
+        <li>Remove quando brotos surgirem</li>
+      </ol>
+    </div>
+
+    <div class="diy-box">
+      <h4>Com Saco Plástico</h4>
+      <ol>
+        <li>Coloque 3-4 palitos no vaso (mais altos que as estacas)</li>
+        <li>Cubra com saco plástico transparente</li>
+        <li>Prenda com elástico, deixando uma abertura</li>
+        <li>O plástico não deve encostar nas folhas</li>
+      </ol>
+    </div>
+
+    <h2>Época Ideal para Estacas</h2>
+
+    <table class="plant-table">
+      <tr>
+        <th>Tipo de Estaca</th>
+        <th>Melhor Época</th>
+        <th>Plantas</th>
+      </tr>
+      <tr>
+        <td>Herbácea (verde)</td>
+        <td>Primavera/Verão</td>
+        <td>Hortelã, manjericão, tomilho</td>
+      </tr>
+      <tr>
+        <td>Semi-lenhosa</td>
+        <td>Final do verão/Outono</td>
+        <td>Alecrim, lavanda, sálvia</td>
+      </tr>
+      <tr>
+        <td>Lenhosa</td>
+        <td>Inverno (dormência)</td>
+        <td>Frutíferas, arbustos</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Página 7</div>
+  </div>
+
+  <!-- MÉTODO 3: DIVISÃO DE TOUCEIRAS -->
+  <div class="page" id="metodo3">
+    <h1>Método 3: Divisão de Touceiras</h1>
+
+    <div class="method-card">
+      <h3>O método mais rápido - plantas já com raiz!</h3>
+      <p><span class="difficulty easy">Fácil</span></p>
+
+      <p><strong>Ideal para:</strong> Cebolinha, alho-poró, capim-limão, erva-cidreira, nirá, orégano, morango</p>
+
+      <h4>Taxa de sucesso: 95-100%</h4>
+    </div>
+
+    <h2>O que é Touceira?</h2>
+
+    <p>Touceira é quando uma planta cresce formando vários "perfilhos" ou brotos que saem da base. Cada broto tem suas próprias raízes e pode ser separado para formar uma nova planta independente.</p>
+
+    <div class="success-box">
+      <h4>Por que é o Método Mais Fácil?</h4>
+      <ul>
+        <li>Cada divisão JÁ TEM raízes próprias</li>
+        <li>Recuperação em dias, não semanas</li>
+        <li>Taxa de sucesso quase 100%</li>
+        <li>Resultado imediato - planta já adulta!</li>
+      </ul>
+    </div>
+
+    <h2>Passo a Passo</h2>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Escolha o Momento Certo</h4>
+      <ul>
+        <li>Planta saudável e bem estabelecida</li>
+        <li>Touceira grande o suficiente para dividir</li>
+        <li>Evite períodos de floração</li>
+        <li>Melhor época: início da primavera ou outono</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Retire a Planta do Vaso</h4>
+      <ul>
+        <li>Regue bem no dia anterior (facilita remoção)</li>
+        <li>Inverta o vaso e bata suavemente</li>
+        <li>Remova a planta com torrão inteiro</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Divida a Touceira</h4>
+      <ul>
+        <li>Sacuda terra das raízes para visualizar</li>
+        <li>Identifique divisões naturais (grupos de brotos com raízes)</li>
+        <li>Separe gentilmente com as mãos</li>
+        <li>Se necessário, use faca limpa para cortar raízes entrelaçadas</li>
+        <li>Cada divisão deve ter raízes E folhas</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">4</div>
+      <h4>Plante as Divisões</h4>
+      <ul>
+        <li>Plante cada divisão em vaso próprio</li>
+        <li>Use substrato fresco e nutritivo</li>
+        <li>Mantenha mesma profundidade que antes</li>
+        <li>Regue bem após plantar</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">5</div>
+      <h4>Cuidados Pós-Divisão</h4>
+      <ul>
+        <li>Mantenha em meia-sombra por 1 semana</li>
+        <li>Regue frequentemente (raízes cortadas perdem capacidade)</li>
+        <li>Não adube nas primeiras 2 semanas</li>
+        <li>Corte folhas velhas ou danificadas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 8</div>
+  </div>
+
+  <!-- MÉTODO 3 - Continuação -->
+  <div class="page">
+    <h2>Plantas Ideais para Divisão</h2>
+
+    <table class="plant-table">
+      <tr>
+        <th>Planta</th>
+        <th>Frequência de Divisão</th>
+        <th>Melhor Época</th>
+        <th>Dica Especial</th>
+      </tr>
+      <tr>
+        <td>Cebolinha</td>
+        <td>Anual</td>
+        <td>Outono/Primavera</td>
+        <td>Divida em grupos de 5-10 bulbos</td>
+      </tr>
+      <tr>
+        <td>Capim-limão</td>
+        <td>A cada 2-3 anos</td>
+        <td>Primavera</td>
+        <td>Cada divisão com 3+ perfilhos</td>
+      </tr>
+      <tr>
+        <td>Erva-cidreira</td>
+        <td>A cada 2-3 anos</td>
+        <td>Primavera/Outono</td>
+        <td>Pode dividir bem pequeno</td>
+      </tr>
+      <tr>
+        <td>Orégano</td>
+        <td>A cada 2-3 anos</td>
+        <td>Primavera</td>
+        <td>Aproveite para rejuvenescer planta</td>
+      </tr>
+      <tr>
+        <td>Morango</td>
+        <td>Anual (estolhos)</td>
+        <td>Outono/Inverno</td>
+        <td>Plante os filhotes dos estolhos</td>
+      </tr>
+      <tr>
+        <td>Alho-poró</td>
+        <td>Anual</td>
+        <td>Outono/Primavera</td>
+        <td>Separe bulbilhos laterais</td>
+      </tr>
+      <tr>
+        <td>Gengibre</td>
+        <td>Na colheita</td>
+        <td>Primavera</td>
+        <td>Cada pedaço com 2-3 "olhos"</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>Dica: Rejuvenescimento</h4>
+      <p>Plantas que formam touceiras ficam "cansadas" após alguns anos - o centro morre e só as bordas crescem. Dividir e replantar rejuvenesce a planta e aumenta a produtividade!</p>
+    </div>
+
+    <h2>Caso Especial: Morango (Estolhos)</h2>
+
+    <p>Morango produz "estolhos" - cordões que saem da planta mãe com um novo morangueiro na ponta.</p>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Identifique os Estolhos</h4>
+      <p>São cordões longos com uma plântula na ponta. Podem ter várias plântulas em sequência.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Enraíze o Filhote</h4>
+      <p>Coloque um copinho com substrato sob a plântula sem cortar da mãe. Prenda com grampo. Em 2-3 semanas estará enraizado.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Corte e Transplante</h4>
+      <p>Quando bem enraizado, corte o cordão e transplante para vaso definitivo.</p>
+    </div>
+
+    <div class="success-box">
+      <h4>Produção Infinita de Morangos!</h4>
+      <p>Um único pé de morango pode produzir 10-20 novos pés por ano através dos estolhos. Em 2-3 anos você terá dezenas de plantas!</p>
+    </div>
+
+    <div class="page-number">Página 9</div>
+  </div>
+
+  <!-- MÉTODO 4: MERGULHIA -->
+  <div class="page" id="metodo4">
+    <h1>Método 4: Mergulhia</h1>
+
+    <div class="method-card">
+      <h3>Enraizar sem cortar da planta mãe</h3>
+      <p><span class="difficulty easy">Fácil</span></p>
+
+      <p><strong>Ideal para:</strong> Plantas com ramos flexíveis - tomilho, alecrim rasteiro, manjericão, hortelã, jasmim</p>
+
+      <h4>Taxa de sucesso: 85-95%</h4>
+    </div>
+
+    <h2>O que é Mergulhia?</h2>
+
+    <p>Mergulhia é enterrar parte de um ramo ainda conectado à planta mãe para que enraíze. Como continua recebendo nutrientes da mãe, a taxa de sucesso é muito alta.</p>
+
+    <div class="comparison-box">
+      <div class="compare-item">
+        <h4>Vantagens</h4>
+        <ul>
+          <li>Não precisa cortar</li>
+          <li>Planta continua viva</li>
+          <li>Alta taxa de sucesso</li>
+          <li>Sem necessidade de cobertura</li>
+        </ul>
+      </div>
+      <div class="compare-item">
+        <h4>Limitações</h4>
+        <ul>
+          <li>Precisa de ramos flexíveis</li>
+          <li>Ramos devem alcançar o solo</li>
+          <li>Processo mais lento que divisão</li>
+          <li>Uma planta por vez (geralmente)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Passo a Passo</h2>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Escolha o Ramo</h4>
+      <ul>
+        <li>Ramo longo e flexível</li>
+        <li>Deve alcançar o solo (ou vaso ao lado)</li>
+        <li>Saudável, sem pragas ou doenças</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Prepare o Local de Enraizamento</h4>
+      <ul>
+        <li>Faça uma pequena cova no solo ou prepare vaso ao lado</li>
+        <li>Solo deve ser solto e úmido</li>
+        <li>Pode adicionar hormônio enraizador</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Estimule o Enraizamento (Opcional)</h4>
+      <ul>
+        <li>Faça uma pequena incisão no lado de baixo do ramo</li>
+        <li>Remova casca de 1-2cm</li>
+        <li>Aplique hormônio na ferida</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">4</div>
+      <h4>Enterre o Ramo</h4>
+      <ul>
+        <li>Curve o ramo e enterre a parte do meio</li>
+        <li>A ponta deve ficar para fora, apontando para cima</li>
+        <li>Prenda com pedra, grampo ou estaca</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">5</div>
+      <h4>Aguarde e Separe</h4>
+      <ul>
+        <li>Mantenha solo úmido por 4-8 semanas</li>
+        <li>Quando houver resistência ao puxar = enraizou</li>
+        <li>Corte o cordão umbilical e transplante</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 10</div>
+  </div>
+
+  <!-- MÉTODO 5: ALPORQUIA -->
+  <div class="page" id="metodo5">
+    <h1>Método 5: Alporquia</h1>
+
+    <div class="method-card">
+      <h3>O método para frutíferas e arbustos</h3>
+      <p><span class="difficulty hard">Avançado</span></p>
+
+      <p><strong>Ideal para:</strong> Jabuticaba, goiaba, pitanga, limoeiro, laranjeira, figueira, acerola, amora</p>
+
+      <h4>Taxa de sucesso: 70-90% (quando bem feito)</h4>
+    </div>
+
+    <h2>O que é Alporquia?</h2>
+
+    <p>Alporquia é forçar um ramo a enraizar ENQUANTO ainda está na árvore, criando um "pacote" com substrato úmido ao redor de uma área descascada. É o método preferido para frutíferas porque produz mudas que frutificam mais rápido.</p>
+
+    <div class="economy-card">
+      <h3>Economia com Alporquia</h3>
+      <p>Uma muda de jabuticaba de semente demora 10-15 anos para frutificar. Uma de alporquia frutifica em 2-3 anos e custa apenas o plástico e substrato!</p>
+      <table class="plant-table">
+        <tr>
+          <th>Frutífera</th>
+          <th>Muda (Viveiro)</th>
+          <th>Alporquia</th>
+          <th>Economia</th>
+        </tr>
+        <tr>
+          <td>Jabuticaba</td>
+          <td>R$ 50-150</td>
+          <td>R$ 2-5</td>
+          <td>96-97%</td>
+        </tr>
+        <tr>
+          <td>Goiaba</td>
+          <td>R$ 25-60</td>
+          <td>R$ 2-5</td>
+          <td>90-95%</td>
+        </tr>
+        <tr>
+          <td>Pitanga</td>
+          <td>R$ 20-50</td>
+          <td>R$ 2-5</td>
+          <td>90-95%</td>
+        </tr>
+        <tr>
+          <td>Acerola</td>
+          <td>R$ 20-40</td>
+          <td>R$ 2-5</td>
+          <td>85-90%</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>Materiais Necessários</h2>
+
+    <ul>
+      <li>Faca ou canivete bem afiado</li>
+      <li>Plástico transparente (garrafa PET ou filme)</li>
+      <li>Substrato (esfagno, fibra de coco ou vermiculita)</li>
+      <li>Barbante ou fita</li>
+      <li>Hormônio enraizador (opcional mas recomendado)</li>
+    </ul>
+
+    <div class="page-number">Página 11</div>
+  </div>
+
+  <!-- MÉTODO 5 - Continuação -->
+  <div class="page">
+    <h2>Passo a Passo da Alporquia</h2>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Escolha o Ramo</h4>
+      <ul>
+        <li>Ramo saudável, do ano anterior (semi-lenhoso)</li>
+        <li>Diâmetro de 1-2cm (grossura de um lápis a dedo)</li>
+        <li>Posição que receba luz</li>
+        <li>Se possível, ramo que já tenha frutificado</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Faça o Anelamento</h4>
+      <ul>
+        <li>Marque duas linhas circulares com 2-3cm de distância</li>
+        <li>Corte a casca nas duas linhas (não o lenho!)</li>
+        <li>Remova completamente a casca entre os cortes</li>
+        <li>Raspe qualquer resto de casca verde (cambium)</li>
+        <li>O anel deve ficar branco/bege (lenho exposto)</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Aplique Hormônio (Recomendado)</h4>
+      <ul>
+        <li>Passe hormônio enraizador em pó no corte superior</li>
+        <li>Ou use pasta de hormônio mais concentrada</li>
+        <li>Isso acelera muito a formação de raízes</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">4</div>
+      <h4>Monte o "Pacote"</h4>
+      <ul>
+        <li>Umedeça bem o substrato (esfagno é ideal)</li>
+        <li>Envolva a área anelada com bola de substrato</li>
+        <li>O substrato deve cobrir 5-10cm acima e abaixo do anel</li>
+        <li>Envolva com plástico transparente</li>
+        <li>Amarre bem nas duas pontas (não deixe entrar água de chuva)</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">5</div>
+      <h4>Manutenção e Corte</h4>
+      <ul>
+        <li>Verifique umidade mensalmente (injete água se secar)</li>
+        <li>Aguarde 2-4 meses (varia por espécie)</li>
+        <li>Quando vir raízes preenchendo o plástico, está pronto</li>
+        <li>Corte ABAIXO do pacote e plante em vaso</li>
+        <li>Mantenha em meia-sombra por 30-60 dias</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Cuidados Importantes</h4>
+      <ul>
+        <li>Não corte o lenho (parte branca dura) - só a casca</li>
+        <li>Remova TODO o cambium (tecido verde sob a casca)</li>
+        <li>O substrato deve estar úmido, não encharcado</li>
+        <li>Proteja de sol direto intenso</li>
+        <li>Não tenha pressa de cortar - espere raízes abundantes</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 12</div>
+  </div>
+
+  <!-- HORMÔNIOS ENRAIZADORES -->
+  <div class="page" id="hormonios">
+    <h1>Bônus: Hormônios Enraizadores</h1>
+
+    <p>Hormônios enraizadores aumentam drasticamente a taxa de sucesso, especialmente em plantas difíceis.</p>
+
+    <h2>O que são?</h2>
+
+    <p>São auxinas - hormônios vegetais que estimulam a formação de raízes. O mais comum é o AIB (ácido indolbutírico).</p>
+
+    <h2>Tipos Disponíveis</h2>
+
+    <div class="comparison-box">
+      <div class="compare-item">
+        <h4>Em Pó</h4>
+        <ul>
+          <li>Mais comum e fácil de usar</li>
+          <li>Ideal para estacas em substrato</li>
+          <li>Mergulhe a base, sacuda excesso</li>
+          <li>Marcas: Rootone, Forth Enraizador</li>
+        </ul>
+      </div>
+      <div class="compare-item">
+        <h4>Líquido/Gel</h4>
+        <ul>
+          <li>Mais versátil</li>
+          <li>Pode diluir para diferentes concentrações</li>
+          <li>Bom para alporquia</li>
+          <li>Mais caro mas rende mais</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Hormônios Enraizadores Caseiros</h2>
+
+    <div class="recipe-card">
+      <h4>1. Água de Salgueiro</h4>
+      <p>Galhos de salgueiro contêm ácido salicílico e auxinas naturais.</p>
+      <p><strong>Preparo:</strong></p>
+      <ol>
+        <li>Corte galhos jovens de salgueiro em pedaços de 2-3cm</li>
+        <li>Deixe de molho em água por 24-48 horas</li>
+        <li>Coe e use a água para hidratar estacas</li>
+      </ol>
+      <p><strong>Eficácia:</strong> Moderada, mas funciona!</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>2. Mel Puro</h4>
+      <p>Mel tem propriedades antifúngicas e enzimas que estimulam raízes.</p>
+      <p><strong>Uso:</strong></p>
+      <ol>
+        <li>Mergulhe a base da estaca em mel puro</li>
+        <li>Plante normalmente</li>
+      </ol>
+      <p><strong>Eficácia:</strong> Boa para prevenção de fungos, moderada para enraizamento</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>3. Canela em Pó</h4>
+      <p>Antifúngico natural que protege a base da estaca.</p>
+      <p><strong>Uso:</strong></p>
+      <ol>
+        <li>Mergulhe a base úmida em canela em pó</li>
+        <li>Plante normalmente</li>
+      </ol>
+      <p><strong>Eficácia:</strong> Boa proteção, ajuda no enraizamento indiretamente</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>4. Aloe Vera (Babosa)</h4>
+      <p>Rico em auxinas naturais e proteção.</p>
+      <p><strong>Uso:</strong></p>
+      <ol>
+        <li>Corte uma folha de babosa</li>
+        <li>Faça uma fenda e insira a base da estaca</li>
+        <li>Deixe por algumas horas</li>
+        <li>Plante normalmente</li>
+      </ol>
+      <p><strong>Eficácia:</strong> Boa!</p>
+    </div>
+
+    <div class="page-number">Página 13</div>
+  </div>
+
+  <!-- TABELA COMPARATIVA -->
+  <div class="page" id="tabela">
+    <h1>Tabela: Qual Método para Cada Planta</h1>
+
+    <table class="plant-table">
+      <tr>
+        <th>Planta</th>
+        <th>Método Recomendado</th>
+        <th>Dificuldade</th>
+        <th>Tempo</th>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>Estaca em água</td>
+        <td><span class="difficulty easy">Fácil</span></td>
+        <td>7-14 dias</td>
+      </tr>
+      <tr>
+        <td>Manjericão</td>
+        <td>Estaca em água</td>
+        <td><span class="difficulty easy">Fácil</span></td>
+        <td>10-14 dias</td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>Estaca em substrato</td>
+        <td><span class="difficulty medium">Médio</span></td>
+        <td>4-8 semanas</td>
+      </tr>
+      <tr>
+        <td>Lavanda</td>
+        <td>Estaca em substrato</td>
+        <td><span class="difficulty medium">Médio</span></td>
+        <td>4-6 semanas</td>
+      </tr>
+      <tr>
+        <td>Tomilho</td>
+        <td>Mergulhia / Estaca</td>
+        <td><span class="difficulty easy">Fácil</span></td>
+        <td>3-4 semanas</td>
+      </tr>
+      <tr>
+        <td>Orégano</td>
+        <td>Divisão / Estaca</td>
+        <td><span class="difficulty easy">Fácil</span></td>
+        <td>Imediato / 3 sem</td>
+      </tr>
+      <tr>
+        <td>Cebolinha</td>
+        <td>Divisão</td>
+        <td><span class="difficulty easy">Fácil</span></td>
+        <td>Imediato</td>
+      </tr>
+      <tr>
+        <td>Sálvia</td>
+        <td>Estaca em substrato</td>
+        <td><span class="difficulty medium">Médio</span></td>
+        <td>4-6 semanas</td>
+      </tr>
+      <tr>
+        <td>Capim-limão</td>
+        <td>Divisão</td>
+        <td><span class="difficulty easy">Fácil</span></td>
+        <td>Imediato</td>
+      </tr>
+      <tr>
+        <td>Morango</td>
+        <td>Estolhos</td>
+        <td><span class="difficulty easy">Fácil</span></td>
+        <td>2-3 semanas</td>
+      </tr>
+      <tr>
+        <td>Gengibre</td>
+        <td>Divisão rizoma</td>
+        <td><span class="difficulty easy">Fácil</span></td>
+        <td>Imediato</td>
+      </tr>
+      <tr>
+        <td>Jabuticaba</td>
+        <td>Alporquia</td>
+        <td><span class="difficulty hard">Avançado</span></td>
+        <td>2-4 meses</td>
+      </tr>
+      <tr>
+        <td>Goiaba</td>
+        <td>Alporquia / Estaca</td>
+        <td><span class="difficulty medium">Médio</span></td>
+        <td>2-3 meses</td>
+      </tr>
+      <tr>
+        <td>Pitanga</td>
+        <td>Alporquia</td>
+        <td><span class="difficulty medium">Médio</span></td>
+        <td>2-3 meses</td>
+      </tr>
+      <tr>
+        <td>Acerola</td>
+        <td>Alporquia / Estaca</td>
+        <td><span class="difficulty medium">Médio</span></td>
+        <td>2-3 meses</td>
+      </tr>
+      <tr>
+        <td>Limoeiro</td>
+        <td>Alporquia</td>
+        <td><span class="difficulty hard">Avançado</span></td>
+        <td>3-4 meses</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>Regra Geral</h4>
+      <ul>
+        <li><strong>Ervas de caule mole:</strong> Água ou substrato</li>
+        <li><strong>Ervas de caule lenhoso:</strong> Substrato com hormônio</li>
+        <li><strong>Plantas que formam touceira:</strong> Divisão</li>
+        <li><strong>Frutíferas:</strong> Alporquia</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 14</div>
+  </div>
+
+  <!-- PROBLEMAS COMUNS -->
+  <div class="page" id="problemas">
+    <h1>Problemas Comuns e Soluções</h1>
+
+    <h2>Estacas Apodrecendo</h2>
+
+    <div class="danger-box">
+      <h4>Sintomas:</h4>
+      <p>Base da estaca fica preta/mole, mau cheiro, folhas murcham rapidamente.</p>
+    </div>
+
+    <div class="success-box">
+      <h4>Causas e Soluções:</h4>
+      <ul>
+        <li><strong>Água suja:</strong> Troque a cada 2 dias</li>
+        <li><strong>Muito úmido:</strong> Substrato deve ser úmido, não encharcado</li>
+        <li><strong>Sem ventilação:</strong> Abra a mini-estufa diariamente</li>
+        <li><strong>Corte infectado:</strong> Use ferramentas limpas</li>
+        <li><strong>Estaca muito velha:</strong> Use material saudável</li>
+      </ul>
+    </div>
+
+    <h2>Estacas Murchando</h2>
+
+    <div class="danger-box">
+      <h4>Sintomas:</h4>
+      <p>Folhas murcham, ficam flácidas, mesmo com substrato úmido.</p>
+    </div>
+
+    <div class="success-box">
+      <h4>Causas e Soluções:</h4>
+      <ul>
+        <li><strong>Folhas demais:</strong> Reduza folhagem pela metade</li>
+        <li><strong>Sol forte:</strong> Mantenha em luz indireta</li>
+        <li><strong>Umidade baixa:</strong> Use cobertura plástica</li>
+        <li><strong>Vento:</strong> Proteja de correntes de ar</li>
+      </ul>
+    </div>
+
+    <h2>Demora para Enraizar</h2>
+
+    <div class="warning-box">
+      <h4>Possíveis causas:</h4>
+      <ul>
+        <li><strong>Temperatura baixa:</strong> Mínimo 18-20°C para maioria</li>
+        <li><strong>Época errada:</strong> Cada planta tem época ideal</li>
+        <li><strong>Material muito lenhoso:</strong> Prefira ramos semi-lenhosos</li>
+        <li><strong>Falta de hormônio:</strong> Ajuda especialmente plantas difíceis</li>
+      </ul>
+    </div>
+
+    <h2>Raízes Mas Não Cresce</h2>
+
+    <div class="tip-box">
+      <h4>Solução:</h4>
+      <p>Normal nas primeiras semanas! A planta está investindo energia nas raízes. Quando o sistema radicular estiver estabelecido, a parte aérea vai disparar. Seja paciente e não adube pesado nessa fase.</p>
+    </div>
+
+    <h2>Alporquia Não Enraíza</h2>
+
+    <div class="success-box">
+      <h4>Verifique:</h4>
+      <ul>
+        <li>Removeu TODO o cambium? (tecido verde sob a casca)</li>
+        <li>Substrato está úmido?</li>
+        <li>Espécie é difícil? (algumas precisam 6+ meses)</li>
+        <li>Época correta? (primavera/verão é melhor)</li>
+        <li>Usou hormônio? (muito recomendado para frutíferas)</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 15</div>
+  </div>
+
+  <!-- CHECKLIST FINAL -->
+  <div class="page">
+    <h2>Checklist de Propagação</h2>
+
+    <div class="checklist">
+      <h4>Antes de Começar</h4>
+      <ul>
+        <li>Planta mãe saudável e bem nutrida</li>
+        <li>Ferramentas limpas e afiadas</li>
+        <li>Substrato/água preparados</li>
+        <li>Hormônio enraizador (se necessário)</li>
+        <li>Local com luz indireta disponível</li>
+        <li>Materiais para mini-estufa</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Ao Fazer Estacas</h4>
+      <ul>
+        <li>Ramo saudável, sem flores</li>
+        <li>Corte em ângulo de 45°</li>
+        <li>Logo abaixo de um nó</li>
+        <li>Remover folhas da metade inferior</li>
+        <li>Aplicar hormônio na base (se usar)</li>
+        <li>Plantar imediatamente</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Manutenção</h4>
+      <ul>
+        <li>Trocar água a cada 2-3 dias (se em água)</li>
+        <li>Manter substrato úmido (não encharcado)</li>
+        <li>Ventilar mini-estufa diariamente</li>
+        <li>Remover estacas mortas</li>
+        <li>Verificar raízes semanalmente</li>
+        <li>Transplantar quando raízes tiverem 3-5cm</li>
+      </ul>
+    </div>
+
+    <div class="final-box">
+      <h2>Parabéns!</h2>
+      <p>Você agora domina os 5 métodos de propagação mais importantes!</p>
+      <p>Com esse conhecimento, você pode multiplicar praticamente qualquer planta, economizando muito dinheiro e nunca mais dependendo de viveiros.</p>
+      <p><strong>Vá propagar!</strong></p>
+    </div>
+
+    <div class="page-number">Página 16</div>
+  </div>
+
+  <!-- CALENDÁRIO ANUAL -->
+  <div class="page" id="calendario">
+    <h1>Calendário Anual de Propagação</h1>
+
+    <p>Saber QUANDO propagar é tão importante quanto saber COMO. Cada estação oferece condições ideais para diferentes métodos e plantas.</p>
+
+    <h2>Janeiro - Verão Pleno</h2>
+    <div class="method-card">
+      <h3>Mês de Alta Atividade</h3>
+      <ul>
+        <li><strong>Estacas herbáceas:</strong> Hortelã, manjericão, sálvia - enraízam em 7-10 dias</li>
+        <li><strong>Estolhos:</strong> Época ideal para morangos</li>
+        <li><strong>Divisão:</strong> Evitar - calor estressa plantas divididas</li>
+        <li><strong>Alporquia:</strong> Boa época para iniciar em frutíferas</li>
+      </ul>
+      <p><strong>Cuidado:</strong> Calor intenso pode desidratar estacas. Mantenha sempre em meia-sombra e borrife frequentemente.</p>
+    </div>
+
+    <h2>Fevereiro</h2>
+    <div class="method-card">
+      <ul>
+        <li><strong>Estacas:</strong> Continue com herbáceas, inicie semi-lenhosas de alecrim</li>
+        <li><strong>Alporquia:</strong> Excelente época - máximo crescimento</li>
+        <li><strong>Mergulhia:</strong> Ideal para plantas rasteiras</li>
+        <li><strong>Divisão:</strong> Ainda evitar pelo calor</li>
+      </ul>
+    </div>
+
+    <h2>Março - Final do Verão</h2>
+    <div class="method-card">
+      <ul>
+        <li><strong>Estacas semi-lenhosas:</strong> Época de ouro para alecrim, lavanda, sálvia</li>
+        <li><strong>Alporquia:</strong> Última chance antes do outono</li>
+        <li><strong>Divisão:</strong> Pode começar no final do mês</li>
+        <li><strong>Coleta de sementes:</strong> Muitas plantas já produziram</li>
+      </ul>
+    </div>
+
+    <h2>Abril - Outono</h2>
+    <div class="method-card">
+      <h3>Mês Estratégico</h3>
+      <ul>
+        <li><strong>Divisão:</strong> ÉPOCA IDEAL para ervas que formam touceira</li>
+        <li><strong>Estacas semi-lenhosas:</strong> Excelente para plantas lenhosas</li>
+        <li><strong>Transplante:</strong> Mude estacas enraizadas para vasos maiores</li>
+        <li><strong>Preparação:</strong> Colete material para propagar no inverno</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 17</div>
+  </div>
+
+  <!-- CALENDÁRIO CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Maio</h2>
+    <div class="method-card">
+      <ul>
+        <li><strong>Divisão:</strong> Continue dividindo touceiras</li>
+        <li><strong>Estacas lenhosas:</strong> Comece a coletar de plantas caducas</li>
+        <li><strong>Alporquia:</strong> Verificar as iniciadas no verão</li>
+        <li><strong>Proteção:</strong> Prepare abrigos para estacas sensíveis ao frio</li>
+      </ul>
+    </div>
+
+    <h2>Junho - Inverno</h2>
+    <div class="method-card">
+      <h3>Mês de Descanso... ou Não!</h3>
+      <ul>
+        <li><strong>Estacas lenhosas:</strong> Época ideal para frutíferas de folha caduca</li>
+        <li><strong>Divisão:</strong> Boa para capim-limão, gengibre</li>
+        <li><strong>Planejamento:</strong> Identifique plantas que quer propagar</li>
+        <li><strong>Manutenção:</strong> Cuide das propagações feitas</li>
+      </ul>
+      <p><strong>Dica:</strong> Enraizamento é mais lento, mas plantas descansam e acumulam energia.</p>
+    </div>
+
+    <h2>Julho</h2>
+    <div class="method-card">
+      <ul>
+        <li><strong>Estacas lenhosas:</strong> Continue com frutíferas e arbustos</li>
+        <li><strong>Alporquia:</strong> Pode iniciar em cítricos</li>
+        <li><strong>Divisão:</strong> Gengibre e cúrcuma</li>
+        <li><strong>Aquisição:</strong> Bom mês para comprar plantas-mãe</li>
+      </ul>
+    </div>
+
+    <h2>Agosto</h2>
+    <div class="method-card">
+      <ul>
+        <li><strong>Estacas lenhosas:</strong> Última época para caducas</li>
+        <li><strong>Preparação:</strong> Final do mês, prepare para primavera</li>
+        <li><strong>Verificação:</strong> Alporquias devem estar enraizando</li>
+        <li><strong>Poda:</strong> Podar e usar podas para estacas</li>
+      </ul>
+    </div>
+
+    <h2>Setembro - Primavera</h2>
+    <div class="method-card">
+      <h3>ESTAÇÃO DOURADA!</h3>
+      <ul>
+        <li><strong>Tudo funciona:</strong> Melhor época geral para propagação</li>
+        <li><strong>Estacas herbáceas:</strong> Taxas altíssimas de sucesso</li>
+        <li><strong>Divisão:</strong> Época ideal para maioria das plantas</li>
+        <li><strong>Alporquia:</strong> Corte as prontas e inicie novas</li>
+      </ul>
+      <p><strong>Priorize:</strong> Propague o máximo possível neste mês!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 18</div>
+  </div>
+
+  <!-- CALENDÁRIO FINAL -->
+  <div class="page">
+    <h2>Outubro</h2>
+    <div class="method-card">
+      <ul>
+        <li><strong>Estacas herbáceas:</strong> Continue aproveitando</li>
+        <li><strong>Divisão:</strong> Ainda excelente época</li>
+        <li><strong>Transplante:</strong> Mude propagações do inverno para vasos maiores</li>
+        <li><strong>Estolhos:</strong> Morangos produzindo muito</li>
+      </ul>
+    </div>
+
+    <h2>Novembro</h2>
+    <div class="method-card">
+      <ul>
+        <li><strong>Estacas:</strong> Herbáceas e semi-lenhosas</li>
+        <li><strong>Alporquia:</strong> Iniciar para colher em janeiro-fevereiro</li>
+        <li><strong>Cuidado:</strong> Calor chegando - prepare sombra</li>
+        <li><strong>Rega:</strong> Aumente frequência para estacas</li>
+      </ul>
+    </div>
+
+    <h2>Dezembro</h2>
+    <div class="method-card">
+      <ul>
+        <li><strong>Estacas herbáceas:</strong> Enraizamento ultra-rápido</li>
+        <li><strong>Férias:</strong> Prepare sistema de rega automática</li>
+        <li><strong>Divisão:</strong> Evitar pelo calor</li>
+        <li><strong>Presentes:</strong> Plantas propagadas como presentes de Natal!</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h4>Resumo por Estação</h4>
+      <table class="plant-table">
+        <tr>
+          <th>Estação</th>
+          <th>Melhor Método</th>
+          <th>Plantas Ideais</th>
+        </tr>
+        <tr>
+          <td>Verão</td>
+          <td>Estacas herbáceas</td>
+          <td>Hortelã, manjericão, tomilho</td>
+        </tr>
+        <tr>
+          <td>Outono</td>
+          <td>Divisão + Semi-lenhosas</td>
+          <td>Cebolinha, alecrim, lavanda</td>
+        </tr>
+        <tr>
+          <td>Inverno</td>
+          <td>Estacas lenhosas</td>
+          <td>Frutíferas, arbustos</td>
+        </tr>
+        <tr>
+          <td>Primavera</td>
+          <td>TODOS!</td>
+          <td>Qualquer planta</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 19</div>
+  </div>
+
+  <!-- PROPAGAÇÃO POR ESTAÇÃO -->
+  <div class="page" id="estacoes">
+    <h1>Propagação por Estação - Guia Detalhado</h1>
+
+    <h2>Primavera: A Estação Mágica</h2>
+
+    <div class="intro-box">
+      <p><strong>Por que a primavera é a melhor época?</strong></p>
+      <ul>
+        <li>Plantas saem da dormência com muita energia</li>
+        <li>Hormônios de crescimento em alta</li>
+        <li>Temperatura ideal (18-25°C)</li>
+        <li>Dias mais longos = mais fotossíntese</li>
+        <li>Chuvas frequentes = umidade natural</li>
+      </ul>
+    </div>
+
+    <h3>Checklist da Primavera</h3>
+    <div class="checklist">
+      <ul>
+        <li>Dividir todas as touceiras que precisam</li>
+        <li>Fazer estacas de ervas aromáticas</li>
+        <li>Iniciar alporquias em frutíferas</li>
+        <li>Transplantar mudas do inverno</li>
+        <li>Coletar sementes de flores primaveris</li>
+        <li>Preparar mais substrato</li>
+        <li>Limpar e organizar área de propagação</li>
+      </ul>
+    </div>
+
+    <h2>Verão: Velocidade Máxima</h2>
+
+    <div class="success-box">
+      <h4>Vantagens do Verão</h4>
+      <ul>
+        <li>Enraizamento super rápido (calor acelera)</li>
+        <li>Plantas em crescimento ativo</li>
+        <li>Muitos brotos para usar como estacas</li>
+        <li>Estolhos de morango abundantes</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Desafios do Verão</h4>
+      <ul>
+        <li>Desidratação rápida - borrife 2-3x ao dia</li>
+        <li>Sol intenso queima estacas - sempre meia-sombra</li>
+        <li>Água aquece - troque diariamente</li>
+        <li>Pragas mais ativas - inspecione frequentemente</li>
+      </ul>
+    </div>
+
+    <h3>Dicas Específicas para Verão</h3>
+    <ul>
+      <li>Propague de manhã cedo ou final da tarde</li>
+      <li>Use recipientes maiores de água (demoram mais para aquecer)</li>
+      <li>Coloque estacas em água dentro de recipiente maior com água (banho-maria frio)</li>
+      <li>Borrife folhas 2-3x ao dia</li>
+      <li>Use cobertura leve de tecido branco (sombrite)</li>
+    </ul>
+
+    <div class="page-number">Minha Horta em Casa - Página 20</div>
+  </div>
+
+  <!-- OUTONO E INVERNO -->
+  <div class="page">
+    <h2>Outono: Preparação e Divisão</h2>
+
+    <div class="intro-box">
+      <p><strong>O outono é subestimado!</strong> É a segunda melhor época para propagação, especialmente para:</p>
+      <ul>
+        <li>Divisão de touceiras (temperatura amena reduz estresse)</li>
+        <li>Estacas semi-lenhosas (maduras mas não velhas demais)</li>
+        <li>Coleta de material para propagar no inverno</li>
+        <li>Transplante de mudas estabelecidas</li>
+      </ul>
+    </div>
+
+    <h3>Estratégia de Outono</h3>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Março: Últimas Herbáceas</h4>
+      <p>Aproveite o finalzinho do calor para fazer estacas de manjericão, que não sobrevive ao frio.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Abril: Divisões em Massa</h4>
+      <p>Divida todas as touceiras que precisam: cebolinha, orégano, erva-cidreira, capim-limão.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Maio: Semi-Lenhosas</h4>
+      <p>Faça estacas de alecrim, lavanda, sálvia. O material está no ponto perfeito.</p>
+    </div>
+
+    <h2>Inverno: Trabalho Estratégico</h2>
+
+    <div class="method-card">
+      <h3>O Inverno Não é Pausa Total!</h3>
+      <ul>
+        <li><strong>Estacas lenhosas:</strong> Única época para frutíferas de folha caduca (figo, amora, uva)</li>
+        <li><strong>Alporquia:</strong> Verificar e cortar as prontas</li>
+        <li><strong>Planejamento:</strong> Identifique plantas para propagar na primavera</li>
+        <li><strong>Manutenção:</strong> Cuide das propagações existentes</li>
+        <li><strong>Estudo:</strong> Aprenda técnicas novas, pesquise plantas</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h4>Truque para Inverno Frio</h4>
+      <p>Se sua região tem geadas, mantenha estacas dentro de casa perto de janela com luz. A temperatura mais amena interna acelera o enraizamento significativamente.</p>
+    </div>
+
+    <h3>Proteção Contra Frio</h3>
+    <ul>
+      <li><strong>Estacas em água:</strong> Mantenha dentro de casa</li>
+      <li><strong>Estacas em substrato:</strong> Cubra com plástico e TNT</li>
+      <li><strong>Divisões recentes:</strong> Mulch grosso ao redor</li>
+      <li><strong>Alporquias:</strong> Envolva o pacote com plástico-bolha</li>
+    </ul>
+
+    <div class="page-number">Minha Horta em Casa - Página 21</div>
+  </div>
+
+  <!-- GUIA 30 PLANTAS - PARTE 1 -->
+  <div class="page" id="30plantas">
+    <h1>Guia de 30 Plantas Populares</h1>
+
+    <p>Instruções detalhadas para propagar as plantas mais cultivadas em hortas e jardins brasileiros.</p>
+
+    <h2>1. Hortelã (Mentha spp.)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Super Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca em água</li>
+        <li><strong>Época:</strong> Ano todo (melhor na primavera)</li>
+        <li><strong>Tempo:</strong> 5-10 dias para raízes</li>
+        <li><strong>Dica:</strong> Qualquer pedaço com um nó enraíza. Troque água a cada 2 dias.</li>
+      </ul>
+    </div>
+
+    <h2>2. Manjericão (Ocimum basilicum)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca em água</li>
+        <li><strong>Época:</strong> Primavera/Verão</li>
+        <li><strong>Tempo:</strong> 7-14 dias para raízes</li>
+        <li><strong>Dica:</strong> Use brotos sem flor. Corte rente às folhas laterais.</li>
+      </ul>
+    </div>
+
+    <h2>3. Alecrim (Rosmarinus officinalis)</h2>
+    <div class="method-card">
+      <p><span class="difficulty medium">Médio</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca em substrato com hormônio</li>
+        <li><strong>Época:</strong> Final do verão/Outono</li>
+        <li><strong>Tempo:</strong> 4-8 semanas</li>
+        <li><strong>Dica:</strong> Use estacas semi-lenhosas. Hormônio aumenta sucesso em 50%.</li>
+      </ul>
+    </div>
+
+    <h2>4. Lavanda (Lavandula spp.)</h2>
+    <div class="method-card">
+      <p><span class="difficulty medium">Médio</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca em substrato</li>
+        <li><strong>Época:</strong> Outono</li>
+        <li><strong>Tempo:</strong> 4-6 semanas</li>
+        <li><strong>Dica:</strong> Substrato muito drenante. Não deixe encharcar.</li>
+      </ul>
+    </div>
+
+    <h2>5. Sálvia (Salvia officinalis)</h2>
+    <div class="method-card">
+      <p><span class="difficulty medium">Médio</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca em substrato ou mergulhia</li>
+        <li><strong>Época:</strong> Primavera ou Outono</li>
+        <li><strong>Tempo:</strong> 3-4 semanas</li>
+        <li><strong>Dica:</strong> Mergulhia funciona muito bem para sálvia rasteira.</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 22</div>
+  </div>
+
+  <!-- GUIA 30 PLANTAS - PARTE 2 -->
+  <div class="page">
+    <h2>6. Tomilho (Thymus vulgaris)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Mergulhia ou estaca</li>
+        <li><strong>Época:</strong> Primavera/Verão</li>
+        <li><strong>Tempo:</strong> 2-4 semanas</li>
+        <li><strong>Dica:</strong> Mergulhia é o mais fácil - ramos tocam o solo e enraízam sozinhos!</li>
+      </ul>
+    </div>
+
+    <h2>7. Orégano (Origanum vulgare)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Divisão de touceira</li>
+        <li><strong>Época:</strong> Outono/Primavera</li>
+        <li><strong>Tempo:</strong> Imediato</li>
+        <li><strong>Dica:</strong> Cada pedaço com raízes vira uma nova planta. Rejuvenesce a planta mãe!</li>
+      </ul>
+    </div>
+
+    <h2>8. Cebolinha (Allium schoenoprasum)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Super Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Divisão</li>
+        <li><strong>Época:</strong> Outono/Primavera</li>
+        <li><strong>Tempo:</strong> Imediato</li>
+        <li><strong>Dica:</strong> Separe em grupos de 5-10 bulbos. Dá para fazer dezenas de mudas!</li>
+      </ul>
+    </div>
+
+    <h2>9. Salsinha (Petroselinum crispum)</h2>
+    <div class="method-card">
+      <p><span class="difficulty hard">Difícil por estaca</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Sementes (estaca não funciona bem)</li>
+        <li><strong>Época:</strong> Ano todo</li>
+        <li><strong>Tempo:</strong> 3-4 semanas para germinar</li>
+        <li><strong>Dica:</strong> Deixe sementes de molho 24h antes de plantar. Germinação lenta é normal.</li>
+      </ul>
+    </div>
+
+    <h2>10. Coentro (Coriandrum sativum)</h2>
+    <div class="method-card">
+      <p><span class="difficulty hard">Difícil por estaca</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Sementes</li>
+        <li><strong>Época:</strong> Outono/Inverno</li>
+        <li><strong>Tempo:</strong> 1-2 semanas para germinar</li>
+        <li><strong>Dica:</strong> Raiz pivotante não divide. Use sementes compradas ou próprias.</li>
+      </ul>
+    </div>
+
+    <h2>11. Capim-Limão (Cymbopogon citratus)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Super Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Divisão de touceira</li>
+        <li><strong>Época:</strong> Primavera</li>
+        <li><strong>Tempo:</strong> Imediato</li>
+        <li><strong>Dica:</strong> Ou compre talos no supermercado e coloque na água - enraíza!</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 23</div>
+  </div>
+
+  <!-- GUIA 30 PLANTAS - PARTE 3 -->
+  <div class="page">
+    <h2>12. Erva-Cidreira (Melissa officinalis)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Divisão ou estaca em água</li>
+        <li><strong>Época:</strong> Primavera/Outono</li>
+        <li><strong>Tempo:</strong> 1-2 semanas</li>
+        <li><strong>Dica:</strong> Invasiva! Uma planta vira muitas rapidamente.</li>
+      </ul>
+    </div>
+
+    <h2>13. Arruda (Ruta graveolens)</h2>
+    <div class="method-card">
+      <p><span class="difficulty medium">Médio</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca em substrato</li>
+        <li><strong>Época:</strong> Primavera</li>
+        <li><strong>Tempo:</strong> 3-4 semanas</li>
+        <li><strong>Dica:</strong> Use luvas - seiva pode causar queimaduras na pele.</li>
+      </ul>
+    </div>
+
+    <h2>14. Boldo (Plectranthus barbatus)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Super Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca em água ou substrato</li>
+        <li><strong>Época:</strong> Ano todo</li>
+        <li><strong>Tempo:</strong> 7-14 dias</li>
+        <li><strong>Dica:</strong> Extremamente fácil. Qualquer pedaço de caule enraíza.</li>
+      </ul>
+    </div>
+
+    <h2>15. Pimenta (Capsicum spp.)</h2>
+    <div class="method-card">
+      <p><span class="difficulty medium">Médio</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca ou sementes</li>
+        <li><strong>Época:</strong> Primavera/Verão</li>
+        <li><strong>Tempo:</strong> 3-4 semanas (estaca)</li>
+        <li><strong>Dica:</strong> Estacas mantêm características da planta mãe (picância, tamanho).</li>
+      </ul>
+    </div>
+
+    <h2>16. Tomate (Solanum lycopersicum)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca em água ou sementes</li>
+        <li><strong>Época:</strong> Primavera/Verão</li>
+        <li><strong>Tempo:</strong> 7-10 dias (estaca)</li>
+        <li><strong>Dica:</strong> Os brotos laterais (chupões) que você remove são estacas perfeitas!</li>
+      </ul>
+    </div>
+
+    <h2>17. Morango (Fragaria × ananassa)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Super Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estolhos</li>
+        <li><strong>Época:</strong> Outono</li>
+        <li><strong>Tempo:</strong> 2-3 semanas</li>
+        <li><strong>Dica:</strong> Cada planta produz 10-20 filhotes por ano!</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 24</div>
+  </div>
+
+  <!-- GUIA 30 PLANTAS - PARTE 4 -->
+  <div class="page">
+    <h2>18. Gengibre (Zingiber officinale)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Divisão do rizoma</li>
+        <li><strong>Época:</strong> Primavera</li>
+        <li><strong>Tempo:</strong> 2-3 semanas para brotar</li>
+        <li><strong>Dica:</strong> Compre gengibre orgânico no mercado e plante pedaços com "olhos".</li>
+      </ul>
+    </div>
+
+    <h2>19. Cúrcuma (Curcuma longa)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Divisão do rizoma</li>
+        <li><strong>Época:</strong> Primavera</li>
+        <li><strong>Tempo:</strong> 2-4 semanas para brotar</li>
+        <li><strong>Dica:</strong> Igual ao gengibre. Adora calor e umidade.</li>
+      </ul>
+    </div>
+
+    <h2>20. Babosa/Aloe Vera (Aloe vera)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Super Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Separação de filhotes</li>
+        <li><strong>Época:</strong> Ano todo</li>
+        <li><strong>Tempo:</strong> Imediato</li>
+        <li><strong>Dica:</strong> Separe os "filhotes" que nascem ao redor. Deixe secar 1 dia antes de plantar.</li>
+      </ul>
+    </div>
+
+    <h2>21. Jabuticaba (Plinia cauliflora)</h2>
+    <div class="method-card">
+      <p><span class="difficulty hard">Avançado</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Alporquia</li>
+        <li><strong>Época:</strong> Verão</li>
+        <li><strong>Tempo:</strong> 3-4 meses</li>
+        <li><strong>Dica:</strong> Alporquia produz em 2-3 anos. Semente leva 10-15 anos!</li>
+      </ul>
+    </div>
+
+    <h2>22. Goiaba (Psidium guajava)</h2>
+    <div class="method-card">
+      <p><span class="difficulty medium">Médio</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Alporquia ou estaca</li>
+        <li><strong>Época:</strong> Primavera/Verão</li>
+        <li><strong>Tempo:</strong> 2-3 meses</li>
+        <li><strong>Dica:</strong> Estacas lenhosas com hormônio funcionam bem.</li>
+      </ul>
+    </div>
+
+    <h2>23. Pitanga (Eugenia uniflora)</h2>
+    <div class="method-card">
+      <p><span class="difficulty medium">Médio</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Alporquia</li>
+        <li><strong>Época:</strong> Primavera</li>
+        <li><strong>Tempo:</strong> 2-3 meses</li>
+        <li><strong>Dica:</strong> Semente germina fácil mas demora para frutificar.</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 25</div>
+  </div>
+
+  <!-- GUIA 30 PLANTAS - PARTE 5 -->
+  <div class="page">
+    <h2>24. Acerola (Malpighia emarginata)</h2>
+    <div class="method-card">
+      <p><span class="difficulty medium">Médio</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca ou alporquia</li>
+        <li><strong>Época:</strong> Verão</li>
+        <li><strong>Tempo:</strong> 2-3 meses</li>
+        <li><strong>Dica:</strong> Estacas semi-lenhosas com hormônio têm boa taxa.</li>
+      </ul>
+    </div>
+
+    <h2>25. Amora (Morus spp.)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca lenhosa</li>
+        <li><strong>Época:</strong> Inverno (dormência)</li>
+        <li><strong>Tempo:</strong> 4-8 semanas para brotar</li>
+        <li><strong>Dica:</strong> Corte estacas de 20-30cm, enterre 2/3 e espere.</li>
+      </ul>
+    </div>
+
+    <h2>26. Figo (Ficus carica)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca lenhosa</li>
+        <li><strong>Época:</strong> Inverno</li>
+        <li><strong>Tempo:</strong> 4-6 semanas</li>
+        <li><strong>Dica:</strong> Uma das frutíferas mais fáceis de propagar!</li>
+      </ul>
+    </div>
+
+    <h2>27. Romã (Punica granatum)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca semi-lenhosa</li>
+        <li><strong>Época:</strong> Primavera/Outono</li>
+        <li><strong>Tempo:</strong> 4-6 semanas</li>
+        <li><strong>Dica:</strong> Enraíza muito fácil. Pode usar água ou substrato.</li>
+      </ul>
+    </div>
+
+    <h2>28. Limoeiro (Citrus limon)</h2>
+    <div class="method-card">
+      <p><span class="difficulty hard">Avançado</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Alporquia</li>
+        <li><strong>Época:</strong> Verão</li>
+        <li><strong>Tempo:</strong> 3-4 meses</li>
+        <li><strong>Dica:</strong> Estacas são difíceis. Alporquia ou enxertia são melhores.</li>
+      </ul>
+    </div>
+
+    <h2>29. Maracujá (Passiflora edulis)</h2>
+    <div class="method-card">
+      <p><span class="difficulty easy">Fácil</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Sementes ou estaca</li>
+        <li><strong>Época:</strong> Primavera</li>
+        <li><strong>Tempo:</strong> 2-3 semanas</li>
+        <li><strong>Dica:</strong> Estacas de ramos jovens enraízam facilmente.</li>
+      </ul>
+    </div>
+
+    <h2>30. Uva (Vitis vinifera)</h2>
+    <div class="method-card">
+      <p><span class="difficulty medium">Médio</span></p>
+      <ul>
+        <li><strong>Melhor método:</strong> Estaca lenhosa</li>
+        <li><strong>Época:</strong> Inverno</li>
+        <li><strong>Tempo:</strong> 4-8 semanas</li>
+        <li><strong>Dica:</strong> Estacas com 3-4 gemas, enterre 2 gemas.</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 26</div>
+  </div>
+
+  <!-- MINI-ESTUFAS DIY -->
+  <div class="page" id="miniestufas">
+    <h1>10 Modelos de Mini-Estufas DIY</h1>
+
+    <p>Estufas aumentam drasticamente a taxa de sucesso mantendo umidade alta. Veja modelos simples e baratos.</p>
+
+    <h2>1. Garrafa PET Clássica</h2>
+    <div class="diy-box">
+      <h4>Materiais:</h4>
+      <p>Garrafa PET 2L, tesoura</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Corte a garrafa ao meio</li>
+        <li>Use a parte de cima como cúpula sobre a estaca</li>
+        <li>Tampa aberta = ventilação; fechada = mais umidade</li>
+      </ol>
+      <p><strong>Custo: R$ 0</strong></p>
+    </div>
+
+    <h2>2. Caixa de Plástico Transparente</h2>
+    <div class="diy-box">
+      <h4>Materiais:</h4>
+      <p>Caixa organizadora transparente com tampa, vasinhos</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Coloque os vasinhos com estacas dentro da caixa</li>
+        <li>Feche a tampa (faça furinhos pequenos para ventilação)</li>
+        <li>Abra 1x ao dia para ventilar</li>
+      </ol>
+      <p><strong>Custo: R$ 15-30</strong></p>
+    </div>
+
+    <h2>3. Saco Plástico com Palitos</h2>
+    <div class="diy-box">
+      <h4>Materiais:</h4>
+      <p>Saco plástico transparente, palitos de churrasco, elástico</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Espete 3-4 palitos no vaso (mais altos que a estaca)</li>
+        <li>Coloque o saco por cima</li>
+        <li>Prenda com elástico, deixando abertura</li>
+      </ol>
+      <p><strong>Custo: R$ 2-3</strong></p>
+    </div>
+
+    <h2>4. Caixa de Isopor</h2>
+    <div class="diy-box">
+      <h4>Materiais:</h4>
+      <p>Caixa de isopor de frutas, plástico transparente</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Forre o fundo com plástico (para reter água)</li>
+        <li>Coloque substrato ou bandejas de mudas</li>
+        <li>Cubra com plástico transparente ou a própria tampa com furos</li>
+      </ol>
+      <p><strong>Custo: R$ 5-10 (ou grátis em feiras)</strong></p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 27</div>
+  </div>
+
+  <!-- MINI-ESTUFAS CONTINUAÇÃO -->
+  <div class="page">
+    <h2>5. Aquário Desativado</h2>
+    <div class="diy-box">
+      <h4>Materiais:</h4>
+      <p>Aquário velho, vidro ou plástico para tampa</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Limpe bem o aquário</li>
+        <li>Coloque vasinhos ou substrato direto</li>
+        <li>Cubra com vidro/plástico deixando fresta</li>
+      </ol>
+      <p><strong>Custo: R$ 0 se já tiver / R$ 20-50 usado</strong></p>
+      <p><strong>Vantagem:</strong> Muito bonito, pode ficar visível!</p>
+    </div>
+
+    <h2>6. Bandeja com Filme Plástico</h2>
+    <div class="diy-box">
+      <h4>Materiais:</h4>
+      <p>Bandeja de alumínio ou plástico, filme plástico de cozinha, palitos</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Coloque estacas na bandeja com substrato</li>
+        <li>Espete palitos mais altos que estacas</li>
+        <li>Cubra com filme plástico, furando pequenos orifícios</li>
+      </ol>
+      <p><strong>Custo: R$ 5-8</strong></p>
+    </div>
+
+    <h2>7. Pote de Sorvete</h2>
+    <div class="diy-box">
+      <h4>Materiais:</h4>
+      <p>Pote de sorvete 2L transparente</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Fure o fundo para drenagem</li>
+        <li>Coloque substrato e estacas</li>
+        <li>Use a tampa como base (bandeja de drenagem)</li>
+        <li>Cubra com plástico transparente</li>
+      </ol>
+      <p><strong>Custo: R$ 0</strong></p>
+    </div>
+
+    <h2>8. Garrafa de Água 5L</h2>
+    <div class="diy-box">
+      <h4>Materiais:</h4>
+      <p>Galão de água 5L transparente</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Corte horizontalmente criando "porta"</li>
+        <li>Use como mini-estufa para vasos maiores</li>
+        <li>A abertura permite acesso fácil</li>
+      </ol>
+      <p><strong>Custo: R$ 0</strong></p>
+    </div>
+
+    <h2>9. Engradado com Plástico</h2>
+    <div class="diy-box">
+      <h4>Materiais:</h4>
+      <p>Engradado de feira, plástico transparente grosso</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Forre interior e exterior com plástico</li>
+        <li>Deixe o topo com plástico removível</li>
+        <li>Comporta muitas estacas</li>
+      </ol>
+      <p><strong>Custo: R$ 10-15</strong></p>
+    </div>
+
+    <h2>10. Estufa com Arcos de PVC</h2>
+    <div class="diy-box">
+      <h4>Materiais:</h4>
+      <p>Canos PVC finos (1/2"), plástico transparente, caixa grande</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Curve os canos formando arcos</li>
+        <li>Fixe nas laterais da caixa</li>
+        <li>Cubra com plástico formando túnel</li>
+      </ol>
+      <p><strong>Custo: R$ 20-40</strong></p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 28</div>
+  </div>
+
+  <!-- GUIA SUBSTRATOS -->
+  <div class="page" id="substratos">
+    <h1>Guia Completo de Substratos para Propagação</h1>
+
+    <p>O substrato certo faz TODA diferença na taxa de sucesso. Cada método e planta tem seu substrato ideal.</p>
+
+    <h2>Substratos Básicos</h2>
+
+    <div class="method-card">
+      <h3>Areia Grossa</h3>
+      <ul>
+        <li><strong>Vantagens:</strong> Excelente drenagem, barata, estéril</li>
+        <li><strong>Desvantagens:</strong> Não retém nutrientes, pode secar rápido</li>
+        <li><strong>Ideal para:</strong> Cactos, suculentas, plantas que odeiam umidade</li>
+        <li><strong>Onde comprar:</strong> Lojas de construção (areia média/grossa)</li>
+        <li><strong>Preço:</strong> R$ 5-10 por saco</li>
+      </ul>
+    </div>
+
+    <div class="method-card">
+      <h3>Vermiculita</h3>
+      <ul>
+        <li><strong>Vantagens:</strong> Leve, retém umidade e ar, estéril</li>
+        <li><strong>Desvantagens:</strong> Sem nutrientes, pode compactar com tempo</li>
+        <li><strong>Ideal para:</strong> Estacas herbáceas, sementes pequenas</li>
+        <li><strong>Onde comprar:</strong> Lojas de jardinagem, pet shops</li>
+        <li><strong>Preço:</strong> R$ 15-25 por litro</li>
+      </ul>
+    </div>
+
+    <div class="method-card">
+      <h3>Perlita</h3>
+      <ul>
+        <li><strong>Vantagens:</strong> Muito leve, ótima aeração, estéril</li>
+        <li><strong>Desvantagens:</strong> Flutua na rega, não retém nutrientes</li>
+        <li><strong>Ideal para:</strong> Misturar com outros substratos</li>
+        <li><strong>Onde comprar:</strong> Lojas de jardinagem</li>
+        <li><strong>Preço:</strong> R$ 20-35 por litro</li>
+      </ul>
+    </div>
+
+    <div class="method-card">
+      <h3>Fibra de Coco</h3>
+      <ul>
+        <li><strong>Vantagens:</strong> Sustentável, retém umidade, aerado</li>
+        <li><strong>Desvantagens:</strong> Pode ter excesso de sal (lave antes)</li>
+        <li><strong>Ideal para:</strong> Praticamente tudo, excelente custo-benefício</li>
+        <li><strong>Onde comprar:</strong> Lojas de jardinagem, pet shops</li>
+        <li><strong>Preço:</strong> R$ 8-15 por bloco (rende muito)</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 29</div>
+  </div>
+
+  <!-- SUBSTRATOS CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Substratos Especiais</h2>
+
+    <div class="method-card">
+      <h3>Esfagno (Sphagnum)</h3>
+      <ul>
+        <li><strong>Vantagens:</strong> Perfeito para alporquia, retém MUITA umidade</li>
+        <li><strong>Desvantagens:</strong> Caro, recurso limitado</li>
+        <li><strong>Ideal para:</strong> Alporquia, orquídeas, plantas exigentes</li>
+        <li><strong>Onde comprar:</strong> Orquidários, lojas especializadas</li>
+        <li><strong>Preço:</strong> R$ 30-60 por pacote pequeno</li>
+      </ul>
+    </div>
+
+    <div class="method-card">
+      <h3>Turfa</h3>
+      <ul>
+        <li><strong>Vantagens:</strong> Retém umidade, levemente ácida</li>
+        <li><strong>Desvantagens:</strong> Recurso não renovável, difícil reidratar</li>
+        <li><strong>Ideal para:</strong> Plantas acidófilas (azaleias, hortênsias)</li>
+        <li><strong>Onde comprar:</strong> Lojas de jardinagem</li>
+        <li><strong>Preço:</strong> R$ 20-40 por pacote</li>
+      </ul>
+    </div>
+
+    <h2>Receitas de Substrato por Método</h2>
+
+    <div class="recipe-card">
+      <h4>Para Estacas Herbáceas (Hortelã, Manjericão)</h4>
+      <ul>
+        <li>2 partes de fibra de coco</li>
+        <li>1 parte de perlita</li>
+        <li>1 parte de vermiculita</li>
+      </ul>
+      <p><strong>Resultado:</strong> Leve, úmido, aerado</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>Para Estacas Semi-Lenhosas (Alecrim, Lavanda)</h4>
+      <ul>
+        <li>2 partes de areia grossa</li>
+        <li>1 parte de vermiculita</li>
+        <li>1 parte de fibra de coco</li>
+      </ul>
+      <p><strong>Resultado:</strong> Drenante, evita apodrecimento</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>Para Estacas Lenhosas (Frutíferas)</h4>
+      <ul>
+        <li>2 partes de areia grossa</li>
+        <li>1 parte de terra vegetal</li>
+        <li>1 parte de composto orgânico</li>
+      </ul>
+      <p><strong>Resultado:</strong> Firme, nutritivo para raízes grossas</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>Para Alporquia</h4>
+      <ul>
+        <li>Esfagno puro (melhor opção)</li>
+        <li>Ou: fibra de coco + vermiculita (50/50)</li>
+      </ul>
+      <p><strong>Resultado:</strong> Retém muita umidade por meses</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>Esterilize o Substrato!</h4>
+      <p>Para evitar fungos e pragas, esterilize no microondas (5min em potência alta) ou forno (180°C por 30min). Deixe esfriar antes de usar.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 30</div>
+  </div>
+
+  <!-- FERRAMENTAS -->
+  <div class="page" id="ferramentas">
+    <h1>Ferramentas e Equipamentos</h1>
+
+    <p>Você não precisa de muito, mas as ferramentas certas fazem toda diferença.</p>
+
+    <h2>Ferramentas Essenciais</h2>
+
+    <div class="method-card">
+      <h3>Tesoura de Poda</h3>
+      <ul>
+        <li><strong>Por que:</strong> Cortes limpos cicatrizam melhor</li>
+        <li><strong>Dica:</strong> Afiada e limpa SEMPRE</li>
+        <li><strong>Custo:</strong> R$ 20-80</li>
+        <li><strong>Substituto:</strong> Faca ou estilete bem afiados</li>
+      </ul>
+    </div>
+
+    <div class="method-card">
+      <h3>Recipientes de Vidro</h3>
+      <ul>
+        <li><strong>Por que:</strong> Ver raízes se formando</li>
+        <li><strong>Dica:</strong> Boca estreita segura melhor a estaca</li>
+        <li><strong>Custo:</strong> R$ 0 (reuse potes)</li>
+        <li><strong>Alternativa:</strong> Copos transparentes</li>
+      </ul>
+    </div>
+
+    <div class="method-card">
+      <h3>Borrifador</h3>
+      <ul>
+        <li><strong>Por que:</strong> Manter umidade sem encharcar</li>
+        <li><strong>Dica:</strong> Borrife folhas, não o substrato</li>
+        <li><strong>Custo:</strong> R$ 5-15</li>
+        <li><strong>Alternativa:</strong> Spray de limpeza limpo</li>
+      </ul>
+    </div>
+
+    <div class="method-card">
+      <h3>Vasinhos Pequenos</h3>
+      <ul>
+        <li><strong>Por que:</strong> Tamanho ideal para estacas</li>
+        <li><strong>Dica:</strong> Com furos de drenagem!</li>
+        <li><strong>Custo:</strong> R$ 1-5 cada</li>
+        <li><strong>Alternativa:</strong> Copos de iogurte furados</li>
+      </ul>
+    </div>
+
+    <h2>Ferramentas Úteis</h2>
+
+    <table class="plant-table">
+      <tr>
+        <th>Ferramenta</th>
+        <th>Uso</th>
+        <th>Custo</th>
+      </tr>
+      <tr>
+        <td>Hormônio enraizador</td>
+        <td>Acelera enraizamento</td>
+        <td>R$ 15-40</td>
+      </tr>
+      <tr>
+        <td>Termômetro</td>
+        <td>Monitorar temperatura</td>
+        <td>R$ 10-25</td>
+      </tr>
+      <tr>
+        <td>Etiquetas</td>
+        <td>Identificar plantas e datas</td>
+        <td>R$ 5-15</td>
+      </tr>
+      <tr>
+        <td>Canivete</td>
+        <td>Cortes precisos, alporquia</td>
+        <td>R$ 20-60</td>
+      </tr>
+      <tr>
+        <td>Plástico filme</td>
+        <td>Mini-estufas</td>
+        <td>R$ 8-15</td>
+      </tr>
+      <tr>
+        <td>Barbante</td>
+        <td>Amarrar alporquias</td>
+        <td>R$ 5-10</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 31</div>
+  </div>
+
+  <!-- 15 ERROS FATAIS -->
+  <div class="page" id="erros">
+    <h1>15 Erros Fatais e Como Evitar</h1>
+
+    <p>Aprenda com os erros mais comuns para não repeti-los!</p>
+
+    <h2>Erros na Preparação</h2>
+
+    <div class="danger-box">
+      <h4>Erro #1: Usar ferramentas sujas</h4>
+      <p><strong>Problema:</strong> Transmite fungos e bactérias</p>
+      <p><strong>Solução:</strong> Limpe com álcool 70% antes de cada uso</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro #2: Escolher ramos doentes</h4>
+      <p><strong>Problema:</strong> A doença se propaga para a nova planta</p>
+      <p><strong>Solução:</strong> Só use material 100% saudável</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro #3: Estacas muito curtas</h4>
+      <p><strong>Problema:</strong> Pouca reserva de energia</p>
+      <p><strong>Solução:</strong> Mínimo 8-10cm com 2-3 nós</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro #4: Corte irregular ou esmagado</h4>
+      <p><strong>Problema:</strong> Dificulta absorção e cicatrização</p>
+      <p><strong>Solução:</strong> Corte limpo em ângulo de 45°</p>
+    </div>
+
+    <h2>Erros no Processo</h2>
+
+    <div class="danger-box">
+      <h4>Erro #5: Deixar folhas demais</h4>
+      <p><strong>Problema:</strong> Transpiração excessiva desidrata</p>
+      <p><strong>Solução:</strong> Deixe apenas 2-4 folhas no topo</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro #6: Não trocar água</h4>
+      <p><strong>Problema:</strong> Bactérias proliferam e apodrecem</p>
+      <p><strong>Solução:</strong> Troque a cada 2-3 dias</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro #7: Sol direto nas estacas</h4>
+      <p><strong>Problema:</strong> Queima e desidrata</p>
+      <p><strong>Solução:</strong> Sempre luz indireta</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro #8: Substrato encharcado</h4>
+      <p><strong>Problema:</strong> Raízes apodrecem antes de formar</p>
+      <p><strong>Solução:</strong> Úmido sim, encharcado não!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 32</div>
+  </div>
+
+  <!-- ERROS CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Erros na Manutenção</h2>
+
+    <div class="danger-box">
+      <h4>Erro #9: Puxar para ver se enraizou</h4>
+      <p><strong>Problema:</strong> Danifica raízes delicadas em formação</p>
+      <p><strong>Solução:</strong> Espere sinais externos (novos brotos) ou puxe muito gentilmente</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro #10: Transplantar cedo demais</h4>
+      <p><strong>Problema:</strong> Raízes frágeis não sustentam a planta</p>
+      <p><strong>Solução:</strong> Espere raízes com 3-5cm</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro #11: Adubar estacas</h4>
+      <p><strong>Problema:</strong> Queima raízes delicadas</p>
+      <p><strong>Solução:</strong> Só adube após 4-6 semanas bem estabelecida</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro #12: Não ventilar mini-estufa</h4>
+      <p><strong>Problema:</strong> Fungos proliferam com excesso de umidade</p>
+      <p><strong>Solução:</strong> Abra 15-30min por dia</p>
+    </div>
+
+    <h2>Erros de Timing</h2>
+
+    <div class="danger-box">
+      <h4>Erro #13: Propagar na época errada</h4>
+      <p><strong>Problema:</strong> Baixa taxa de sucesso</p>
+      <p><strong>Solução:</strong> Consulte o calendário de propagação</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro #14: Usar material lenhoso para água</h4>
+      <p><strong>Problema:</strong> Demora muito, pode apodrecer</p>
+      <p><strong>Solução:</strong> Lenhosas vão para substrato</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro #15: Desistir cedo demais</h4>
+      <p><strong>Problema:</strong> Algumas plantas demoram 2-3 meses</p>
+      <p><strong>Solução:</strong> Se a estaca está verde e firme, ainda tem chance!</p>
+    </div>
+
+    <div class="success-box">
+      <h4>Regra de Ouro</h4>
+      <p>Se não sabe, propague MAIS estacas do que precisa. Mesmo com 50% de sucesso, você terá o suficiente. É melhor ter mudas sobrando do que faltar!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 33</div>
+  </div>
+
+  <!-- FAQ PARTE 1 -->
+  <div class="page" id="faq">
+    <h1>30 Perguntas Frequentes</h1>
+
+    <h2>Perguntas Básicas</h2>
+
+    <div class="method-card">
+      <h4>1. Qualquer planta pode ser propagada por estaca?</h4>
+      <p>Não. Plantas com raiz pivotante (cenoura, salsinha) ou bulbosas (alho, cebola) não funcionam por estaca. Cada planta tem seu método ideal.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>2. Estaca em água ou substrato - qual é melhor?</h4>
+      <p>Depende da planta. Herbáceas (hortelã, manjericão) vão bem em água. Lenhosas (alecrim, lavanda) preferem substrato. Água permite ver raízes, substrato causa menos choque no transplante.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>3. Hormônio enraizador é necessário?</h4>
+      <p>Para plantas fáceis, não. Para difíceis (lavanda, alecrim), aumenta muito a taxa de sucesso. Vale o investimento para plantas que você realmente quer propagar.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>4. Posso usar água da torneira?</h4>
+      <p>Sim, mas deixe descansar 24h para o cloro evaporar. Ou use água filtrada. Cloro em excesso prejudica o enraizamento.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>5. Por que minhas estacas apodrecem?</h4>
+      <p>Causas comuns: água suja/parada, substrato encharcado, falta de ventilação, ferramenta contaminada, ou material doente.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>6. Por que minhas estacas murcham?</h4>
+      <p>Transpiração maior que absorção. Soluções: reduzir folhas, aumentar umidade ambiente (mini-estufa), evitar sol e vento.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>7. Qual o tamanho ideal de estaca?</h4>
+      <p>10-15cm para a maioria. Mínimo 8cm com 2-3 nós. Estacas muito curtas não têm reserva suficiente.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>8. Devo cortar as folhas?</h4>
+      <p>Remova as da metade inferior sempre. Se as folhas forem grandes, corte-as pela metade para reduzir transpiração.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 34</div>
+  </div>
+
+  <!-- FAQ PARTE 2 -->
+  <div class="page">
+    <h2>Perguntas sobre Técnicas</h2>
+
+    <div class="method-card">
+      <h4>9. O que é o "nó" da planta?</h4>
+      <p>É o ponto de onde saem folhas e ramos. É também de onde brotam as raízes. Sempre inclua pelo menos 2-3 nós na estaca.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>10. Por que cortar em ângulo de 45°?</h4>
+      <p>Aumenta a área de absorção de água e hormônios. Também evita que a base fique apoiada no fundo do recipiente bloqueando a absorção.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>11. Posso propagar de plantas compradas em supermercado?</h4>
+      <p>Sim! Hortelã, manjericão e ervas do supermercado funcionam. Mas escolha as mais frescas e saudáveis.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>12. Quanto tempo leva para enraizar?</h4>
+      <p>Varia muito: hortelã 7 dias, alecrim 6 semanas, frutíferas 3-4 meses. Consulte a tabela de cada planta.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>13. Como sei que enraizou?</h4>
+      <p>Em água, você vê. Em substrato: leve resistência ao puxar gentilmente, novos brotos surgindo, ou planta começando a crescer.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>14. Posso propagar no inverno?</h4>
+      <p>Sim, mas é mais lento. Ideal para estacas lenhosas de frutíferas. Mantenha em local aquecido.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>15. O que fazer se a estaca está verde mas não enraíza?</h4>
+      <p>Algumas demoram! Se está verde e firme, ainda tem chance. Verifique: temperatura adequada? Umidade suficiente? Já tentou hormônio?</p>
+    </div>
+
+    <div class="method-card">
+      <h4>16. Posso propagar plantas de vizinhos/parques?</h4>
+      <p>Peça permissão! Eticamente, sempre pergunte antes. Uma pequena estaca não prejudica a planta mãe.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>17. Alporquia funciona em qualquer árvore?</h4>
+      <p>Funciona na maioria das dicotiledôneas. Não funciona em palmeiras, bambus e monocotiledôneas em geral.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 35</div>
+  </div>
+
+  <!-- FAQ PARTE 3 -->
+  <div class="page">
+    <h2>Perguntas sobre Cuidados</h2>
+
+    <div class="method-card">
+      <h4>18. Quando posso transplantar para vaso definitivo?</h4>
+      <p>Quando as raízes tiverem 3-5cm. Não deixe passar de 8-10cm em água pois a adaptação fica difícil.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>19. Como aclimatar após transplantar?</h4>
+      <p>Mantenha em meia-sombra por 1-2 semanas. Regue mais frequentemente. Proteja de vento. Gradualmente exponha ao sol normal.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>20. Quando posso começar a colher?</h4>
+      <p>Espere a planta estar bem estabelecida (1-2 meses no vaso definitivo). Comece colhendo pouco para não estressar.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>21. As plantas propagadas são iguais à mãe?</h4>
+      <p>Sim! Propagação vegetativa produz clones idênticos. Diferente de sementes, que podem variar.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>22. Posso propagar plantas doentes para salvar?</h4>
+      <p>Não recomendado. A doença vai junto. Trate a planta primeiro, depois propague de partes saudáveis.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>23. É possível propagar frutíferas por estaca?</h4>
+      <p>Algumas sim (figo, amora, romã). Outras são difíceis (cítricos, jabuticaba). Para estas, prefira alporquia ou enxertia.</p>
+    </div>
+
+    <h2>Perguntas Avançadas</h2>
+
+    <div class="method-card">
+      <h4>24. O que é propagação in vitro?</h4>
+      <p>Técnica de laboratório usando pequenos pedaços de tecido em meio nutritivo estéril. Produz milhares de plantas idênticas. Não é prática para amadores.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>25. Posso guardar estacas para propagar depois?</h4>
+      <p>Herbáceas não. Lenhosas podem ser guardadas por semanas na geladeira, embrulhadas em papel úmido dentro de saco plástico.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>26. Por que minha alporquia não enraíza?</h4>
+      <p>Possíveis causas: não removeu todo cambium, substrato secou, época errada, espécie muito difícil. Verifique e tente novamente.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 36</div>
+  </div>
+
+  <!-- FAQ PARTE 4 -->
+  <div class="page">
+    <div class="method-card">
+      <h4>27. Divisão prejudica a planta mãe?</h4>
+      <p>Não, se feita corretamente. Na verdade, rejuvenesce plantas velhas! Touceiras antigas ficam mais produtivas após divisão.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>28. Posso fazer várias alporquias na mesma árvore?</h4>
+      <p>Sim, se a árvore for grande e saudável. Não exagere - cada alporquia remove um ramo. 2-4 por árvore grande é razoável.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>29. Qual a diferença entre enxertia e propagação?</h4>
+      <p>Propagação cria nova planta idêntica. Enxertia une duas plantas diferentes - usa raízes de uma (porta-enxerto) com parte aérea de outra (enxerto). São técnicas complementares.</p>
+    </div>
+
+    <div class="method-card">
+      <h4>30. Como aumentar minha taxa de sucesso?</h4>
+      <p>Use material saudável, ferramentas limpas, substrato adequado, temperatura ideal (20-25°C), umidade alta, e seja paciente. Propague mais estacas do que precisa!</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>Resumo das Boas Práticas</h4>
+      <ul>
+        <li>Planta mãe saudável = estacas saudáveis</li>
+        <li>Ferramentas limpas = menos doenças</li>
+        <li>Época certa = maior sucesso</li>
+        <li>Paciência = resultados garantidos</li>
+        <li>Prática = mestria na propagação</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 37</div>
+  </div>
+
+  <!-- 5 PROJETOS PRÁTICOS -->
+  <div class="page" id="projetos">
+    <h1>5 Projetos Práticos Passo a Passo</h1>
+
+    <p>Coloque em prática o que aprendeu com estes projetos completos!</p>
+
+    <h2>Projeto 1: Multiplicar Hortelã para Chás</h2>
+
+    <div class="method-card">
+      <h3>Objetivo: 10 vasos de hortelã em 30 dias</h3>
+
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <h4>Dia 1: Coleta</h4>
+        <p>De uma planta saudável, corte 15 estacas de 10-12cm. Melhor de manhã cedo.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <h4>Dia 1: Preparo</h4>
+        <p>Remova folhas da metade inferior. Corte em ângulo. Coloque em copos com água.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <h4>Dias 2-10: Manutenção</h4>
+        <p>Troque água a cada 2 dias. Mantenha em luz indireta. Raízes aparecem em 5-7 dias.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <h4>Dias 10-14: Transplante</h4>
+        <p>Com raízes de 3-5cm, plante em vasos individuais. Solo rico e úmido.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">5</div>
+        <h4>Dias 15-30: Estabelecimento</h4>
+        <p>Meia-sombra, rega frequente. Após 30 dias, pode começar a colher folhas!</p>
+      </div>
+
+      <p><strong>Taxa esperada:</strong> 12-15 das 15 estacas sobrevivem (80-100%)</p>
+      <p><strong>Custo:</strong> R$ 0 (reutilize vasos e copos)</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 38</div>
+  </div>
+
+  <!-- PROJETOS CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Projeto 2: Banco de Alecrim</h2>
+
+    <div class="method-card">
+      <h3>Objetivo: 5 plantas de alecrim em 3 meses</h3>
+
+      <p><strong>Materiais:</strong> 10 estacas, hormônio enraizador, vermiculita, garrafas PET</p>
+
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <h4>Semana 1: Preparo</h4>
+        <p>Corte 10 estacas semi-lenhosas de 12-15cm. Remova folhas inferiores. Aplique hormônio na base.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <h4>Semana 1: Plantio</h4>
+        <p>Plante em vermiculita úmida. Cubra com garrafa PET cortada. Local com luz indireta.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <h4>Semanas 2-8: Espera</h4>
+        <p>Borrife se secar. Ventile 15min/dia. Alecrim demora - paciência!</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <h4>Semanas 8-12: Transplante</h4>
+        <p>Quando novos brotos surgirem, transplante para vasos. Solo bem drenado.</p>
+      </div>
+
+      <p><strong>Taxa esperada:</strong> 5-7 das 10 estacas (50-70%)</p>
+      <p><strong>Custo:</strong> R$ 20-30 (hormônio + vermiculita)</p>
+    </div>
+
+    <h2>Projeto 3: Divisão de Cebolinha</h2>
+
+    <div class="method-card">
+      <h3>Objetivo: 10 touceiras de 1 planta mãe</h3>
+
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <h4>Preparo</h4>
+        <p>Regue bem no dia anterior. Retire a touceira do vaso. Sacuda a terra.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <h4>Divisão</h4>
+        <p>Separe em grupos de 5-10 bulbos cada. Uma touceira grande rende 10+ divisões!</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <h4>Plantio</h4>
+        <p>Plante cada divisão em vaso individual. Mesma profundidade de antes. Regue bem.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <h4>Cuidados</h4>
+        <p>Meia-sombra por 1 semana. Em 2-3 semanas, prontas para colheita!</p>
+      </div>
+
+      <p><strong>Taxa esperada:</strong> 100% de sucesso</p>
+      <p><strong>Custo:</strong> R$ 10-20 (vasos e substrato)</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 39</div>
+  </div>
+
+  <!-- PROJETOS FINAIS -->
+  <div class="page">
+    <h2>Projeto 4: Alporquia de Jabuticaba</h2>
+
+    <div class="method-card">
+      <h3>Objetivo: 1 muda que frutifica em 2-3 anos</h3>
+
+      <p><strong>Materiais:</strong> Faca, esfagno, plástico, barbante, hormônio (opcional)</p>
+
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <h4>Escolha do Ramo</h4>
+        <p>Ramo de 1-2cm de diâmetro, saudável, que já frutificou se possível.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <h4>Anelamento</h4>
+        <p>Faça dois cortes circulares com 3cm de distância. Remova TODA a casca, raspando o verde (cambium).</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <h4>Montagem</h4>
+        <p>Aplique hormônio. Envolva com esfagno bem úmido. Cubra com plástico. Amarre firme.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <h4>Manutenção (3-4 meses)</h4>
+        <p>Verifique umidade mensalmente. Injete água se secar. Espere raízes visíveis no plástico.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">5</div>
+        <h4>Corte e Plantio</h4>
+        <p>Corte abaixo da alporquia. Plante em vaso grande. Meia-sombra por 2 meses.</p>
+      </div>
+
+      <p><strong>Economia:</strong> Muda de jabuticaba custa R$ 50-150. Alporquia custa R$ 5!</p>
+    </div>
+
+    <h2>Projeto 5: Kit de Trocas</h2>
+
+    <div class="method-card">
+      <h3>Objetivo: 20 mudas para trocar com outros cultivadores</h3>
+
+      <p>Propague variedade de plantas para participar de grupos de troca!</p>
+
+      <table class="plant-table">
+        <tr>
+          <th>Planta</th>
+          <th>Método</th>
+          <th>Quantidade</th>
+        </tr>
+        <tr>
+          <td>Hortelã (3 tipos)</td>
+          <td>Estaca água</td>
+          <td>6 mudas</td>
+        </tr>
+        <tr>
+          <td>Manjericão</td>
+          <td>Estaca água</td>
+          <td>4 mudas</td>
+        </tr>
+        <tr>
+          <td>Alecrim</td>
+          <td>Estaca substrato</td>
+          <td>4 mudas</td>
+        </tr>
+        <tr>
+          <td>Boldo</td>
+          <td>Estaca fácil</td>
+          <td>3 mudas</td>
+        </tr>
+        <tr>
+          <td>Babosa</td>
+          <td>Filhotes</td>
+          <td>3 mudas</td>
+        </tr>
+      </table>
+
+      <p><strong>Dica:</strong> Grupos de troca no Facebook, WhatsApp e feiras locais. Uma muda pode virar muitas plantas diferentes!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 40</div>
+  </div>
+
+  <!-- TRANSFORME EM NEGÓCIO -->
+  <div class="page" id="negocio">
+    <h1>Bônus: Transforme em Negócio</h1>
+
+    <p>Com as habilidades de propagação, você pode criar uma renda extra vendendo mudas!</p>
+
+    <h2>Por que Vender Mudas?</h2>
+
+    <div class="economy-card">
+      <h3>Potencial de Renda</h3>
+      <table class="plant-table">
+        <tr>
+          <th>Planta</th>
+          <th>Custo Produção</th>
+          <th>Preço Venda</th>
+          <th>Lucro/Unidade</th>
+        </tr>
+        <tr>
+          <td>Hortelã</td>
+          <td>R$ 0,50</td>
+          <td>R$ 5-8</td>
+          <td>R$ 4,50-7,50</td>
+        </tr>
+        <tr>
+          <td>Alecrim</td>
+          <td>R$ 1,00</td>
+          <td>R$ 10-15</td>
+          <td>R$ 9-14</td>
+        </tr>
+        <tr>
+          <td>Manjericão</td>
+          <td>R$ 0,50</td>
+          <td>R$ 6-10</td>
+          <td>R$ 5,50-9,50</td>
+        </tr>
+        <tr>
+          <td>Lavanda</td>
+          <td>R$ 1,50</td>
+          <td>R$ 15-25</td>
+          <td>R$ 13,50-23,50</td>
+        </tr>
+        <tr>
+          <td>Jabuticaba (alporquia)</td>
+          <td>R$ 5,00</td>
+          <td>R$ 40-80</td>
+          <td>R$ 35-75</td>
+        </tr>
+      </table>
+      <p style="text-align: center; margin-top: 15px;"><strong>100 mudas/mês = R$ 500-1500 de lucro!</strong></p>
+    </div>
+
+    <h2>Onde Vender</h2>
+
+    <ul>
+      <li><strong>Feiras livres e orgânicas:</strong> Aluguel de banca R$ 30-100/dia</li>
+      <li><strong>Marketplace (OLX, Facebook):</strong> Anúncio gratuito</li>
+      <li><strong>Instagram/WhatsApp:</strong> Crie perfil e divulgue</li>
+      <li><strong>Lojas de produtos naturais:</strong> Consignação ou venda direta</li>
+      <li><strong>Vizinhança:</strong> Boca a boca funciona muito!</li>
+    </ul>
+
+    <h2>Dicas para Começar</h2>
+
+    <div class="checklist">
+      <ul>
+        <li>Comece pequeno: 10-20 mudas por semana</li>
+        <li>Especialize-se em poucas espécies primeiro</li>
+        <li>Apresentação importa: vasos bonitos vendem mais</li>
+        <li>Inclua etiqueta com nome e cuidados básicos</li>
+        <li>Ofereça garantia de 7 dias (passa confiança)</li>
+        <li>Fotografe bem para anúncios online</li>
+        <li>Precifique considerando seu tempo!</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 41</div>
+  </div>
+
+  <!-- NEGÓCIO CONTINUAÇÃO -->
+  <div class="page">
+    <h2>Estrutura Básica para Produção</h2>
+
+    <div class="method-card">
+      <h3>Espaço Mínimo: 4-6 m²</h3>
+      <ul>
+        <li>Bancada para preparar estacas</li>
+        <li>Área de enraizamento (estufas)</li>
+        <li>Área de crescimento (vasos prontos)</li>
+        <li>Estoque de materiais</li>
+      </ul>
+    </div>
+
+    <h3>Investimento Inicial</h3>
+
+    <table class="plant-table">
+      <tr>
+        <th>Item</th>
+        <th>Quantidade</th>
+        <th>Custo</th>
+      </tr>
+      <tr>
+        <td>Vasinhos pequenos</td>
+        <td>100 unidades</td>
+        <td>R$ 50-100</td>
+      </tr>
+      <tr>
+        <td>Substrato</td>
+        <td>50 litros</td>
+        <td>R$ 40-60</td>
+      </tr>
+      <tr>
+        <td>Hormônio enraizador</td>
+        <td>1 frasco</td>
+        <td>R$ 20-40</td>
+      </tr>
+      <tr>
+        <td>Ferramentas básicas</td>
+        <td>Kit</td>
+        <td>R$ 50-100</td>
+      </tr>
+      <tr>
+        <td>Estrutura de estufa simples</td>
+        <td>1</td>
+        <td>R$ 100-200</td>
+      </tr>
+      <tr>
+        <td>Etiquetas</td>
+        <td>200</td>
+        <td>R$ 20-40</td>
+      </tr>
+      <tr>
+        <td><strong>TOTAL</strong></td>
+        <td></td>
+        <td><strong>R$ 280-540</strong></td>
+      </tr>
+    </table>
+
+    <div class="success-box">
+      <h4>Retorno do Investimento</h4>
+      <p>Com 50-100 mudas vendidas, você recupera o investimento inicial. A partir daí, é lucro praticamente líquido!</p>
+    </div>
+
+    <h2>Plantas Mais Rentáveis</h2>
+
+    <ol>
+      <li><strong>Lavanda:</strong> Alta demanda, preço alto, relativamente fácil</li>
+      <li><strong>Alecrim:</strong> Muito procurado, boa margem</li>
+      <li><strong>Suculentas:</strong> Fáceis, decorativas, jovens adoram</li>
+      <li><strong>Frutíferas (alporquia):</strong> Valor alto, diferencial no mercado</li>
+      <li><strong>Temperos variados:</strong> Kits vendem muito bem</li>
+    </ol>
+
+    <div class="tip-box">
+      <h4>Kits Vendem Mais!</h4>
+      <p>Ao invés de vender plantas individuais, monte kits temáticos:</p>
+      <ul>
+        <li>"Kit Chás" (hortelã, erva-cidreira, camomila)</li>
+        <li>"Kit Italiano" (manjericão, orégano, tomilho)</li>
+        <li>"Kit Iniciante" (3 plantas fáceis)</li>
+      </ul>
+      <p>Kits permitem preço maior e vendem mais rápido!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 42</div>
+  </div>
+
+  <!-- CHECKLIST FINAL EXPANDIDO -->
+  <div class="page">
+    <h1>Checklist Final do Propagador</h1>
+
+    <div class="checklist">
+      <h4>Antes de Propagar</h4>
+      <ul>
+        <li>Identifiquei o melhor método para a planta?</li>
+        <li>É a época certa do ano?</li>
+        <li>A planta mãe está saudável?</li>
+        <li>Tenho todos os materiais necessários?</li>
+        <li>Ferramentas estão limpas e afiadas?</li>
+        <li>Substrato está preparado e esterilizado?</li>
+        <li>Tenho local com luz indireta disponível?</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Durante o Processo</h4>
+      <ul>
+        <li>Corte limpo em ângulo de 45°?</li>
+        <li>Removi folhas da metade inferior?</li>
+        <li>Apliquei hormônio (se necessário)?</li>
+        <li>Montei mini-estufa (se em substrato)?</li>
+        <li>Etiquetar com nome e data?</li>
+        <li>Coloquei em local adequado?</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Manutenção Semanal</h4>
+      <ul>
+        <li>Trocar água a cada 2-3 dias?</li>
+        <li>Verificar umidade do substrato?</li>
+        <li>Ventilar mini-estufa diariamente?</li>
+        <li>Remover material morto?</li>
+        <li>Procurar sinais de pragas/doenças?</li>
+        <li>Registrar observações?</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Após Enraizamento</h4>
+      <ul>
+        <li>Raízes com 3-5cm antes de transplantar?</li>
+        <li>Vaso do tamanho adequado?</li>
+        <li>Substrato nutritivo para crescimento?</li>
+        <li>Aclimatação gradual ao sol?</li>
+        <li>Rega adequada nas primeiras semanas?</li>
+        <li>Aguardar antes de adubar?</li>
+      </ul>
+    </div>
+
+    <div class="final-box">
+      <h2>Você Agora é um Propagador!</h2>
+      <p>Com este guia completo, você domina os 5 métodos principais de propagação e pode multiplicar praticamente qualquer planta. Pratique, experimente, e logo você terá mais plantas do que espaço!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 43</div>
+  </div>
+
+  <!-- PÁGINA FINAL -->
+  <div class="page">
+    <div class="final-box">
+      <div class="mascote">
+        <svg width="120" height="144" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+          <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pgf20)" stroke="#b5441c" stroke-width="2"/>
+          <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+          <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+          <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bgf20)" stroke="#15803d" stroke-width="2.5"/>
+          <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+          <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+          <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+          <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+          <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+          <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+          <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="pgf20" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ea7531"/>
+              <stop offset="100%" stop-color="#b5441c"/>
+            </linearGradient>
+            <radialGradient id="bgf20" cx="40%" cy="30%">
+              <stop offset="0%" stop-color="#86efac"/>
+              <stop offset="50%" stop-color="#4ade80"/>
+              <stop offset="100%" stop-color="#22c55e"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+      <h2>Obrigado por adquirir este guia!</h2>
+      <p>Esperamos que ele transforme você em um mestre da propagação, capaz de multiplicar qualquer planta infinitamente!</p>
+      <p style="margin-top: 30px;">
+        <strong>Minha Horta em Casa</strong><br>
+        <span style="color: #22c55e;">minhahortaemcasa.com.br</span>
+      </p>
+      <p style="margin-top: 20px; font-size: 14px; color: #6b7280;">
+        Dúvidas? Entre em contato pelo site.<br>
+        Compartilhe suas propagações nas redes sociais!
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

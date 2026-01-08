@@ -27,6 +27,21 @@ const problemas = defineCollection({
   schema: articleSchema,
 });
 
+const minhocario = defineCollection({
+  type: 'content',
+  schema: articleSchema,
+});
+
+const microverdes = defineCollection({
+  type: 'content',
+  schema: articleSchema,
+});
+
+const pimentas = defineCollection({
+  type: 'content',
+  schema: articleSchema,
+});
+
 const produtos = defineCollection({
   type: 'content',
   schema: z.object({
@@ -45,5 +60,8 @@ export const collections = {
   guias,
   plantas,
   problemas,
+  minhocario,
+  microverdes,
+  pimentas,
   produtos,
 };

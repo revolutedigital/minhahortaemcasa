@@ -5,6 +5,7 @@ originalPrice: 29
 description: "Cultive mesmo com pouca luz! 15 plantas que crescem na sombra + técnicas para maximizar luz em apartamentos."
 category: "guia"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ck3df50729?funnel=fnacdf1224"
 ---
 
 # Guia Horta na Sombra - R$ 14

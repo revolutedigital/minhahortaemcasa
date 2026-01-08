@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit Saladas Frescas em Casa - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.7; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 44px; font-weight: 800; color: #059669; margin-bottom: 20px; line-height: 1.2; }
+    .cover .subtitle { font-size: 22px; color: #047857; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #059669; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #10b981; }
+    h1 { font-size: 32px; color: #059669; margin-bottom: 20px; border-bottom: 3px solid #10b981; padding-bottom: 10px; }
+    h2 { font-size: 26px; color: #047857; margin: 25px 0 15px; }
+    h3 { font-size: 20px; color: #059669; margin: 20px 0 12px; }
+    h4 { font-size: 18px; color: #047857; margin: 15px 0 10px; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin: 12px 0 15px 25px; }
+    li { margin-bottom: 6px; }
+    .highlight-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 4px solid #10b981; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .tip-box { background: linear-gradient(135deg, #eff6ff, #dbeafe); border-left: 4px solid #3b82f6; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .plant-card { background: #fff; border: 2px solid #10b981; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .plant-card h4 { color: #059669; margin-bottom: 10px; border-bottom: 1px solid #d1fae5; padding-bottom: 8px; }
+    .recipe-box { background: linear-gradient(135deg, #fdf4ff, #fae8ff); border: 2px solid #a855f7; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .recipe-box h4 { color: #7c3aed; margin-bottom: 10px; }
+    .step-box { background: linear-gradient(135deg, #f8fafc, #f1f5f9); border: 2px solid #64748b; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .step-number { display: inline-block; width: 28px; height: 28px; background: #059669; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: bold; margin-right: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px; }
+    th, td { border: 1px solid #d1d5db; padding: 10px 8px; text-align: left; }
+    th { background: #059669; color: white; }
+    tr:nth-child(even) { background: #ecfdf5; }
+    .toc { background: #f8fafc; padding: 30px; border-radius: 12px; margin: 20px 0; }
+    .toc h2 { border-bottom: none; margin-top: 0; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dashed #d1d5db; }
+    .module-header { background: linear-gradient(135deg, #059669, #10b981); color: white; padding: 25px; border-radius: 12px; margin: 30px 0 25px; text-align: center; }
+    .module-header h2 { color: white; border-bottom: none; margin: 0; }
+    .module-header p { color: #d1fae5; margin: 10px 0 0; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+    .nutrition-card { background: linear-gradient(135deg, #fef2f2, #fecaca); border: 2px solid #ef4444; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .nutrition-card h4 { color: #dc2626; }
+    .microgreen-card { background: linear-gradient(135deg, #f0fdf4, #bbf7d0); border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .microgreen-card h4 { color: #15803d; }
+    .hydro-card { background: linear-gradient(135deg, #ecfeff, #cffafe); border: 2px solid #06b6d4; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .hydro-card h4 { color: #0891b2; }
+    .flavor-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin: 2px; }
+    .flavor-mild { background: #dcfce7; color: #166534; }
+    .flavor-bitter { background: #fef3c7; color: #92400e; }
+    .flavor-spicy { background: #fee2e2; color: #991b1b; }
+    .flavor-peppery { background: #fce7f3; color: #9d174d; }
+    .season-badge { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; margin: 2px; }
+    .season-all { background: #10b981; color: white; }
+    .season-cool { background: #3b82f6; color: white; }
+    .season-warm { background: #f59e0b; color: white; }
+    .icon-badge { display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px; background: #ecfdf5; border-radius: 20px; font-size: 12px; margin: 2px; }
+    .highlight-stat { background: linear-gradient(135deg, #059669, #10b981); color: white; padding: 20px; border-radius: 12px; text-align: center; margin: 20px 0; }
+    .highlight-stat .number { font-size: 42px; font-weight: 800; }
+    .highlight-stat .label { font-size: 14px; opacity: 0.9; }
+    .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+    .comparison-card { background: #fff; border: 2px solid #e5e7eb; border-radius: 8px; padding: 15px; }
+    .comparison-card.good { border-color: #10b981; background: #ecfdf5; }
+    .comparison-card.bad { border-color: #ef4444; background: #fef2f2; }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="160" height="200" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sombra -->
+        <ellipse cx="55" cy="145" rx="30" ry="5" fill="#059669" fill-opacity="0.15"/>
+        <!-- Vaso -->
+        <path d="M30 105H80L74 135H36L30 105Z" fill="url(#pg07)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 98H83V108H27V98Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="55" cy="105" rx="22" ry="5" fill="#5c4033"/>
+        <!-- Corpo (folha verde) -->
+        <ellipse cx="55" cy="70" rx="32" ry="35" fill="url(#bg07)" stroke="#15803d" stroke-width="2.5"/>
+        <!-- Olhos felizes -->
+        <ellipse cx="44" cy="64" rx="5" ry="6" fill="#15803d"/>
+        <ellipse cx="66" cy="64" rx="5" ry="6" fill="#15803d"/>
+        <ellipse cx="45" cy="62" rx="2" ry="2.5" fill="white"/>
+        <ellipse cx="67" cy="62" rx="2" ry="2.5" fill="white"/>
+        <!-- Sorriso grande -->
+        <path d="M42 78C42 78 55 92 68 78" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Bochechas -->
+        <ellipse cx="35" cy="74" rx="5" ry="4" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="75" cy="74" rx="5" ry="4" fill="#fca5a5" fill-opacity="0.5"/>
+        <!-- Folhas no topo -->
+        <path d="M55 40C55 40 48 22 44 10C52 10 58 22 55 40Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M55 40C55 40 62 22 66 10C58 10 52 22 55 40Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M43 48C43 48 28 36 18 30C28 27 42 36 43 48Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M67 48C67 48 82 36 92 30C82 27 68 36 67 48Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <!-- Tigela de salada na mão -->
+        <g transform="translate(78, 50)">
+          <ellipse cx="18" cy="20" rx="16" ry="10" fill="#f5f5f4" stroke="#a8a29e" stroke-width="1.5"/>
+          <ellipse cx="18" cy="16" rx="14" ry="8" fill="#ecfdf5"/>
+          <!-- Folhas na tigela -->
+          <path d="M10 14 Q14 8 18 14 Q22 8 26 14" fill="#22c55e"/>
+          <path d="M8 16 Q12 10 16 16" fill="#4ade80"/>
+          <path d="M20 16 Q24 10 28 16" fill="#86efac"/>
+          <!-- Tomate cereja -->
+          <circle cx="14" cy="12" r="3" fill="#ef4444"/>
+          <circle cx="22" cy="11" r="2.5" fill="#ef4444"/>
+        </g>
+        <defs>
+          <linearGradient id="pg07" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ea7531"/>
+            <stop offset="100%" stop-color="#b5441c"/>
+          </linearGradient>
+          <radialGradient id="bg07" cx="40%" cy="30%">
+            <stop offset="0%" stop-color="#86efac"/>
+            <stop offset="50%" stop-color="#4ade80"/>
+            <stop offset="100%" stop-color="#22c55e"/>
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Kit Saladas Frescas em Casa</h1>
+    <p class="subtitle">Da sua horta para sua mesa em minutos!</p>
+    <p style="font-size: 16px; color: #047857; margin-top: 20px;">Guia completo: 15 folhosas + microgreens + 20 receitas</p>
+    <div style="display: flex; gap: 15px; margin-top: 25px; flex-wrap: wrap; justify-content: center;">
+      <span class="icon-badge">🥬 15 Folhosas</span>
+      <span class="icon-badge">🌱 Microgreens</span>
+      <span class="icon-badge">🥗 20 Receitas</span>
+      <span class="icon-badge">💧 Hidroponia DIY</span>
+    </div>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <h1>📚 Sumário do Kit</h1>
+    <p>Este kit completo ensina você a cultivar folhosas para saladas frescas o ano todo, com técnicas de colheita contínua, microgreens e até hidroponia simples.</p>
+
+    <div class="toc">
+      <h2>Conteúdo Completo</h2>
+      <ul>
+        <li><strong>Guia 1:</strong> Cultivo de Folhosas - 15 variedades (Páginas 3-12)</li>
+        <li><strong>Guia 2:</strong> Microgreens e Baby Leaves (Páginas 13-16)</li>
+        <li><strong>Guia 3:</strong> Colheita Contínua e Escalonamento (Páginas 17-20)</li>
+        <li><strong>Guia 4:</strong> Hidroponia Simples - Sistema Kratky (Páginas 21-23)</li>
+        <li><strong>Guia 5:</strong> 20 Receitas de Saladas + Molhos (Páginas 24-28)</li>
+        <li><strong>Bônus:</strong> Tabela Nutricional e Calendário Anual</li>
+      </ul>
+    </div>
+
+    <h2>Quanto Você Economiza?</h2>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Comprando (mês)</th>
+        <th>Cultivando (mês)</th>
+      </tr>
+      <tr><td>Alface (2/semana)</td><td>R$ 40</td><td>R$ 2</td></tr>
+      <tr><td>Rúcula (maço/semana)</td><td>R$ 28</td><td>R$ 1</td></tr>
+      <tr><td>Agrião</td><td>R$ 20</td><td>R$ 1</td></tr>
+      <tr><td>Microgreens (bandeja)</td><td>R$ 60</td><td>R$ 5</td></tr>
+      <tr><td><strong>Total Anual</strong></td><td><strong>R$ 1.776</strong></td><td><strong>R$ 108</strong></td></tr>
+    </table>
+
+    <div class="highlight-stat">
+      <div class="number">R$ 1.668</div>
+      <div class="label">de economia por ano em folhosas frescas!</div>
+    </div>
+
+    <div class="page-number">Kit Saladas Frescas - Página 1</div>
+  </div>
+
+  <!-- INTRODUÇÃO -->
+  <div class="page">
+    <h1>Por que Cultivar Suas Próprias Saladas?</h1>
+
+    <div class="comparison-grid">
+      <div class="comparison-card good">
+        <h4 style="color: #059669;">✅ Cultivando em Casa</h4>
+        <ul style="margin: 10px 0 0 15px; font-size: 14px;">
+          <li>Colhida na hora = máximo frescor</li>
+          <li>Zero agrotóxicos</li>
+          <li>Variedades especiais</li>
+          <li>Economia de até 90%</li>
+          <li>Disponível 24h</li>
+          <li>Valor nutricional máximo</li>
+        </ul>
+      </div>
+      <div class="comparison-card bad">
+        <h4 style="color: #dc2626;">❌ Comprando no Mercado</h4>
+        <ul style="margin: 10px 0 0 15px; font-size: 14px;">
+          <li>Dias desde a colheita</li>
+          <li>Possíveis resíduos</li>
+          <li>Poucas variedades</li>
+          <li>Preços altos</li>
+          <li>Precisa ir ao mercado</li>
+          <li>Nutrientes perdidos</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Classificação de Sabores</h2>
+    <p>Entender os sabores ajuda a criar saladas equilibradas:</p>
+    <table>
+      <tr>
+        <th>Sabor</th>
+        <th>Folhosas</th>
+        <th>Combina Com</th>
+      </tr>
+      <tr>
+        <td><span class="flavor-badge flavor-mild">SUAVE</span></td>
+        <td>Alface, acelga, espinafre</td>
+        <td>Base de qualquer salada</td>
+      </tr>
+      <tr>
+        <td><span class="flavor-badge flavor-bitter">AMARGO</span></td>
+        <td>Chicória, escarola, almeirão</td>
+        <td>Frutas doces, queijos</td>
+      </tr>
+      <tr>
+        <td><span class="flavor-badge flavor-peppery">APIMENTADO</span></td>
+        <td>Rúcula, agrião</td>
+        <td>Tomates, azeite, parmesão</td>
+      </tr>
+      <tr>
+        <td><span class="flavor-badge flavor-spicy">PICANTE</span></td>
+        <td>Mostarda, rabanete (folhas)</td>
+        <td>Molhos cremosos, ovos</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>🎨 Regra de Ouro das Saladas</h4>
+      <p><strong>Mix ideal:</strong> 60% folhas suaves + 30% folhas com sabor + 10% extras (ervas, flores, sementes)</p>
+    </div>
+
+    <div class="page-number">Kit Saladas Frescas - Página 2</div>
+  </div>
+
+  <!-- GUIA 1: CULTIVO DE FOLHOSAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 1: Cultivo de Folhosas</h2>
+      <p>15 variedades para sua horta de saladas</p>
+    </div>
+
+    <h2>Condições Ideais para Folhosas</h2>
+    <table>
+      <tr>
+        <th>Fator</th>
+        <th>Ideal</th>
+        <th>Tolerável</th>
+      </tr>
+      <tr><td>Luz solar</td><td>4-6 horas</td><td>3-4 horas (meia-sombra)</td></tr>
+      <tr><td>Temperatura</td><td>15-22°C</td><td>10-28°C</td></tr>
+      <tr><td>Rega</td><td>Solo sempre úmido</td><td>Nunca encharcado</td></tr>
+      <tr><td>Vaso mínimo</td><td>3-5L por planta</td><td>2L para baby leaves</td></tr>
+      <tr><td>pH do solo</td><td>6.0-7.0</td><td>5.5-7.5</td></tr>
+    </table>
+
+    <h2>Substrato Rico para Folhosas</h2>
+    <div class="plant-card">
+      <h4>🌱 Receita Ideal (Rica em Nitrogênio)</h4>
+      <ul>
+        <li><strong>40%</strong> - Terra vegetal ou substrato comercial</li>
+        <li><strong>30%</strong> - Composto orgânico bem curtido</li>
+        <li><strong>20%</strong> - Húmus de minhoca</li>
+        <li><strong>10%</strong> - Perlita ou areia grossa (drenagem)</li>
+      </ul>
+      <p style="margin-top: 15px;"><em>O nitrogênio do composto e húmus estimula folhas verdes e vigorosas. Folhosas precisam de MUITO nitrogênio!</em></p>
+    </div>
+
+    <h2>Adubação para Folhosas</h2>
+    <ul>
+      <li><strong>Plantio:</strong> Substrato rico já é suficiente</li>
+      <li><strong>Manutenção:</strong> A cada 15-20 dias, aplique húmus ou fertilizante líquido</li>
+      <li><strong>Fórmula NPK:</strong> Prefira fórmulas com N alto (ex: 10-5-5)</li>
+      <li><strong>Orgânico:</strong> Chá de húmus ou bokashi quinzenalmente</li>
+    </ul>
+
+    <div class="warning-box">
+      <h4>⚠️ Cuidado com Nitrogênio Excessivo</h4>
+      <p>Folhosas adoram nitrogênio, mas excesso pode deixar as folhas com sabor amargo e atrair mais pragas. Equilíbrio é a chave!</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Folhosas - Página 3</div>
+  </div>
+
+  <!-- FICHAS: ALFACES -->
+  <div class="page">
+    <h2>Fichas de Cultivo: Família das Alfaces</h2>
+
+    <div class="plant-card">
+      <h4>1. Alface Crespa <span class="season-badge season-all">ANO TODO</span></h4>
+      <p><strong>A mais fácil e popular!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>5-10 dias</td><td><strong>Colheita</strong></td><td>45-60 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>4-6h (tolera sombra)</td><td><strong>Vaso</strong></td><td>3-5 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-mild">SUAVE</span> Neutro, leve</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Perfeita para técnica "corta-e-volta". Plante a cada 2 semanas para ter sempre. Não deixe florir (fica amarga).</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>2. Alface Americana <span class="season-badge season-cool">CLIMA AMENO</span></h4>
+      <p><strong>Forma cabeça crocante - a do hambúrguer!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>7-14 dias</td><td><strong>Colheita</strong></td><td>70-90 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>6 horas</td><td><strong>Vaso</strong></td><td>8-10 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-mild">SUAVE</span> Crocante, refrescante</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Mais exigente, precisa de mais espaço e clima fresco. Colha a cabeça inteira quando firme.</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>3. Alface Romana <span class="season-badge season-all">ANO TODO</span></h4>
+      <p><strong>Folhas alongadas - base da Salada Caesar!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>7-14 dias</td><td><strong>Colheita</strong></td><td>60-75 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>6 horas</td><td><strong>Vaso</strong></td><td>5-8 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-mild">SUAVE</span> Crocante, levemente doce</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Mais resistente ao calor que outras alfaces. Pode colher folhas externas gradualmente.</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>4. Alface Roxa <span class="season-badge season-all">ANO TODO</span></h4>
+      <p><strong>Cor vibrante + antioxidantes!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>5-10 dias</td><td><strong>Colheita</strong></td><td>50-65 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>6h (mais sol = cor mais intensa)</td><td><strong>Vaso</strong></td><td>5 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-mild">SUAVE</span> Similar à crespa</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> A cor roxa indica antocianinas (antioxidantes poderosos). Linda para decorar!</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Folhosas - Página 4</div>
+  </div>
+
+  <!-- FICHAS: OUTRAS FOLHOSAS -->
+  <div class="page">
+    <h2>Fichas de Cultivo: Folhosas com Sabor</h2>
+
+    <div class="plant-card">
+      <h4>5. Rúcula <span class="season-badge season-cool">OUTONO/INVERNO</span></h4>
+      <p><strong>Sabor marcante, crescimento ultra-rápido!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>5-7 dias</td><td><strong>Colheita</strong></td><td>30-40 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>4-6h (prefere meia-sombra)</td><td><strong>Vaso</strong></td><td>2-3 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-peppery">APIMENTADO</span> Picante característico</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Super rápida! Colha folhas externas para prolongar. Flores são comestíveis. Pendoa rápido no calor - cultive na sombra no verão.</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>6. Agrião <span class="season-badge season-cool">OUTONO/INVERNO</span></h4>
+      <p><strong>Sabor forte, rico em ferro!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>7-14 dias</td><td><strong>Colheita</strong></td><td>40-50 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra</td><td><strong>Vaso</strong></td><td>3-5 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-peppery">APIMENTADO</span> Forte, levemente amargo</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> AMA água! Pode cultivar em pratinho cheio de água. Propaga facilmente por estacas. Talos mergulhados na água enraízam em dias.</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>7. Espinafre <span class="season-badge season-cool">OUTONO/INVERNO</span></h4>
+      <p><strong>Rico em ferro, versátil na cozinha!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>7-14 dias</td><td><strong>Colheita</strong></td><td>45-60 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>4-6 horas</td><td><strong>Vaso</strong></td><td>5 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-mild">SUAVE</span> Neutro, levemente terroso</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> NÃO gosta de calor (pendoa fácil). Ideal para outono/inverno. "Espinafre brasileiro" (Alternanthera) é diferente e mais rústico.</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>8. Mostarda <span class="season-badge season-all">ANO TODO</span></h4>
+      <p><strong>Sabor picante intenso, crescimento rápido!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>4-7 dias</td><td><strong>Colheita</strong></td><td>30-45 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>4-6 horas</td><td><strong>Vaso</strong></td><td>3-5 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-spicy">PICANTE</span> Ardido como wasabi</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Folhas jovens são mais suaves. Variedade roxa é decorativa. Pendoa rápido no calor.</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Folhosas - Página 5</div>
+  </div>
+
+  <!-- FICHAS: FOLHOSAS AMARGAS E GRANDES -->
+  <div class="page">
+    <h2>Fichas de Cultivo: Folhosas Amargas</h2>
+
+    <div class="plant-card">
+      <h4>9. Chicória / Escarola <span class="season-badge season-cool">OUTONO/INVERNO</span></h4>
+      <p><strong>Sabor amargo elegante!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>7-10 dias</td><td><strong>Colheita</strong></td><td>60-80 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>4-6 horas</td><td><strong>Vaso</strong></td><td>5-8 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-bitter">AMARGO</span> Elegante, complexo</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Para reduzir amargor: cubra com prato 5 dias antes da colheita (branqueamento). Ótima refogada!</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>10. Almeirão <span class="season-badge season-all">ANO TODO</span></h4>
+      <p><strong>O mais amargo - digestivo natural!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>7-14 dias</td><td><strong>Colheita</strong></td><td>60-70 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>4-6 horas</td><td><strong>Vaso</strong></td><td>5 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-bitter">MUITO AMARGO</span> Intenso</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Amargor estimula digestão. Combine com frutas doces ou queijos. Almeirão roxo é mais suave.</p>
+    </div>
+
+    <h2>Fichas de Cultivo: Folhosas de Porte Grande</h2>
+
+    <div class="plant-card">
+      <h4>11. Couve Manteiga <span class="season-badge season-all">ANO TODO</span></h4>
+      <p><strong>A rainha das folhosas - produz por anos!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>5-10 dias</td><td><strong>Colheita</strong></td><td>60-90 dias (depois contínua)</td></tr>
+        <tr><td><strong>Luz</strong></td><td>6 horas</td><td><strong>Vaso</strong></td><td>10-15 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-mild">SUAVE</span> Levemente adocicado</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Colha folhas de baixo para cima, deixando o topo crescer. Uma planta produz por 1-2 anos! Cuidado com lagartas.</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>12. Acelga <span class="season-badge season-all">ANO TODO</span></h4>
+      <p><strong>Talos coloridos lindos!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>7-14 dias</td><td><strong>Colheita</strong></td><td>50-60 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>4-6 horas</td><td><strong>Vaso</strong></td><td>8-10 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-mild">SUAVE</span> Similar ao espinafre</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Variedade "Rainbow" tem talos em várias cores - vermelho, amarelo, laranja! Folhas e talos comestíveis.</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Folhosas - Página 6</div>
+  </div>
+
+  <!-- MAIS FOLHOSAS -->
+  <div class="page">
+    <h2>Fichas de Cultivo: Complementares</h2>
+
+    <div class="plant-card">
+      <h4>13. Alface Mimosa <span class="season-badge season-cool">CLIMA AMENO</span></h4>
+      <p><strong>Folhas delicadas e recortadas!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>5-10 dias</td><td><strong>Colheita</strong></td><td>40-55 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>4-6 horas</td><td><strong>Vaso</strong></td><td>3-5 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-mild">SUAVE</span> Delicado, amanteigado</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Folhas muito macias - ótima para baby leaf. Disponível em verde e roxa.</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>14. Endívia <span class="season-badge season-cool">OUTONO/INVERNO</span></h4>
+      <p><strong>Elegante e gourmet!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>7-14 dias</td><td><strong>Colheita</strong></td><td>90-120 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>6 horas (depois escuro)</td><td><strong>Vaso</strong></td><td>8 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-bitter">AMARGO</span> Elegante, crocante</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Requer etapa de forçamento no escuro para formar cabeça branca. Desafiadora mas recompensadora!</p>
+    </div>
+
+    <div class="plant-card">
+      <h4>15. Radicchio <span class="season-badge season-cool">OUTONO/INVERNO</span></h4>
+      <p><strong>Folhas roxas lindas!</strong></p>
+      <table>
+        <tr><td><strong>Germinação</strong></td><td>7-14 dias</td><td><strong>Colheita</strong></td><td>80-100 dias</td></tr>
+        <tr><td><strong>Luz</strong></td><td>6 horas</td><td><strong>Vaso</strong></td><td>8 litros</td></tr>
+        <tr><td><strong>Sabor</strong></td><td colspan="3"><span class="flavor-badge flavor-bitter">AMARGO</span> Intenso, levemente doce</td></tr>
+      </table>
+      <p><strong>Dicas:</strong> Cor intensifica com frio. Excelente grelhado ou em saladas italianas. Combina com queijos fortes.</p>
+    </div>
+
+    <h2>Tabela Resumo das 15 Folhosas</h2>
+    <table style="font-size: 12px;">
+      <tr>
+        <th>Folhosa</th>
+        <th>Dias</th>
+        <th>Dificuldade</th>
+        <th>Sabor</th>
+      </tr>
+      <tr><td>Alface Crespa</td><td>45-60</td><td>⭐ Fácil</td><td>Suave</td></tr>
+      <tr><td>Rúcula</td><td>30-40</td><td>⭐ Fácil</td><td>Apimentado</td></tr>
+      <tr><td>Mostarda</td><td>30-45</td><td>⭐ Fácil</td><td>Picante</td></tr>
+      <tr><td>Agrião</td><td>40-50</td><td>⭐ Fácil</td><td>Apimentado</td></tr>
+      <tr><td>Couve</td><td>60-90</td><td>⭐⭐ Médio</td><td>Suave</td></tr>
+      <tr><td>Espinafre</td><td>45-60</td><td>⭐⭐ Médio</td><td>Suave</td></tr>
+    </table>
+
+    <div class="page-number">Guia 1 - Cultivo de Folhosas - Página 7</div>
+  </div>
+
+  <!-- PROBLEMAS COMUNS -->
+  <div class="page">
+    <h2>Problemas Comuns em Folhosas</h2>
+
+    <div class="plant-card">
+      <h4>🟡 Problema 1: Planta Pendoando (Florescendo)</h4>
+      <p><strong>Sintomas:</strong> Haste central alongando, flores aparecendo</p>
+      <p><strong>Causas:</strong> Calor excessivo, dias longos, estresse hídrico</p>
+      <p><strong>Soluções:</strong></p>
+      <ul>
+        <li>Cultive em meia-sombra no verão</li>
+        <li>Mantenha solo sempre úmido</li>
+        <li>Escolha variedades resistentes ao pendoamento</li>
+        <li>Colha ANTES de florescer (folhas ficam amargas depois)</li>
+      </ul>
+    </div>
+
+    <div class="plant-card">
+      <h4>🟡 Problema 2: Folhas Amarelando</h4>
+      <p><strong>Causas e Soluções:</strong></p>
+      <ul>
+        <li><strong>Falta de nitrogênio:</strong> Adube com húmus ou fertilizante líquido</li>
+        <li><strong>Excesso de água:</strong> Melhore drenagem, regue menos</li>
+        <li><strong>Falta de luz:</strong> Mova para local mais iluminado</li>
+        <li><strong>Idade natural:</strong> Folhas velhas amarelam - normal</li>
+      </ul>
+    </div>
+
+    <div class="plant-card">
+      <h4>🟡 Problema 3: Bordas Queimadas (Tip Burn)</h4>
+      <p><strong>Causas:</strong> Falta de cálcio, rega irregular, excesso de fertilizante</p>
+      <p><strong>Soluções:</strong></p>
+      <ul>
+        <li>Adicione casca de ovo triturada ao substrato</li>
+        <li>Mantenha rega consistente (nunca deixe secar muito)</li>
+        <li>Reduza adubação se excessiva</li>
+      </ul>
+    </div>
+
+    <h3>Pragas Comuns</h3>
+    <table>
+      <tr>
+        <th>Praga</th>
+        <th>Sinais</th>
+        <th>Controle</th>
+      </tr>
+      <tr>
+        <td>Pulgões</td>
+        <td>Pequenos insetos verdes/pretos</td>
+        <td>Jato d'água, óleo de neem</td>
+      </tr>
+      <tr>
+        <td>Lagartas</td>
+        <td>Furos nas folhas</td>
+        <td>Catação manual, Bt</td>
+      </tr>
+      <tr>
+        <td>Lesmas</td>
+        <td>Rastros brilhantes</td>
+        <td>Armadilhas com cerveja</td>
+      </tr>
+      <tr>
+        <td>Mosca-minadora</td>
+        <td>Túneis brancos nas folhas</td>
+        <td>Remover folhas afetadas</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia 1 - Cultivo de Folhosas - Página 8</div>
+  </div>
+
+  <!-- GUIA 2: MICROGREENS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 2: Microgreens e Baby Leaves</h2>
+      <p>Salada em 7-14 dias - a tendência que veio para ficar!</p>
+    </div>
+
+    <h2>O que são Microgreens?</h2>
+    <p>Microgreens são plantas colhidas super jovens, entre 7-21 dias após a germinação, quando aparecem os primeiros pares de folhas verdadeiras. São diferentes de brotos (que são consumidos com raiz e tudo).</p>
+
+    <div class="highlight-stat">
+      <div class="number">40x</div>
+      <div class="label">mais nutrientes que folhas adultas em alguns casos!</div>
+    </div>
+
+    <div class="comparison-grid">
+      <div class="microgreen-card">
+        <h4>✅ Vantagens dos Microgreens</h4>
+        <ul style="margin: 10px 0 0 15px; font-size: 14px;">
+          <li>Colheita em 7-21 dias</li>
+          <li>Sabor intenso concentrado</li>
+          <li>Altíssimo valor nutricional</li>
+          <li>Ocupam pouco espaço</li>
+          <li>Crescem em qualquer lugar</li>
+          <li>Não precisam de sol forte</li>
+        </ul>
+      </div>
+      <div class="microgreen-card">
+        <h4>📋 Equipamento Necessário</h4>
+        <ul style="margin: 10px 0 0 15px; font-size: 14px;">
+          <li>Bandejas rasas (3-5cm de profundidade)</li>
+          <li>Substrato fino ou papel toalha</li>
+          <li>Sementes próprias para microgreens</li>
+          <li>Borrifador</li>
+          <li>Luz indireta ou grow light</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Passo a Passo do Cultivo</h2>
+    <div class="step-box">
+      <p><span class="step-number">1</span><strong>PREPARE A BANDEJA:</strong> Coloque 2-3cm de substrato fino úmido ou papel toalha dobrado</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">2</span><strong>SEMEIE DENSO:</strong> Espalhe sementes cobrindo toda a superfície (mais denso que plantio normal)</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">3</span><strong>CUBRA (BLACKOUT):</strong> Cubra com bandeja invertida ou pano por 2-4 dias (escuro estimula crescimento)</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">4</span><strong>EXPONHA À LUZ:</strong> Quando brotos amarelos aparecerem, exponha à luz indireta</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">5</span><strong>COLHA:</strong> Corte com tesoura rente ao substrato quando tiver 5-10cm</p>
+    </div>
+
+    <div class="page-number">Guia 2 - Microgreens - Página 9</div>
+  </div>
+
+  <!-- MICROGREENS PARTE 2 -->
+  <div class="page">
+    <h2>Melhores Sementes para Microgreens</h2>
+    <table>
+      <tr>
+        <th>Semente</th>
+        <th>Dias</th>
+        <th>Sabor</th>
+        <th>Dificuldade</th>
+      </tr>
+      <tr><td>Rabanete</td><td>5-7</td><td>Picante</td><td>⭐ Muito fácil</td></tr>
+      <tr><td>Mostarda</td><td>7-10</td><td>Picante</td><td>⭐ Muito fácil</td></tr>
+      <tr><td>Girassol</td><td>8-12</td><td>Nozes</td><td>⭐ Muito fácil</td></tr>
+      <tr><td>Ervilha</td><td>10-14</td><td>Doce</td><td>⭐ Muito fácil</td></tr>
+      <tr><td>Brócolis</td><td>7-10</td><td>Suave</td><td>⭐⭐ Fácil</td></tr>
+      <tr><td>Rúcula</td><td>7-10</td><td>Apimentado</td><td>⭐⭐ Fácil</td></tr>
+      <tr><td>Couve</td><td>8-12</td><td>Suave</td><td>⭐⭐ Fácil</td></tr>
+      <tr><td>Manjericão</td><td>12-18</td><td>Aromático</td><td>⭐⭐⭐ Médio</td></tr>
+      <tr><td>Coentro</td><td>14-21</td><td>Aromático</td><td>⭐⭐⭐ Médio</td></tr>
+      <tr><td>Beterraba</td><td>10-14</td><td>Terroso</td><td>⭐⭐ Fácil</td></tr>
+    </table>
+
+    <h2>Baby Leaves - Meio Termo</h2>
+    <p>Baby leaves são folhas colhidas jovens (20-35 dias), maiores que microgreens mas menores que folhas adultas. O sabor é mais suave e a textura mais delicada.</p>
+
+    <div class="plant-card">
+      <h4>🥬 Técnica de Baby Leaf Mix</h4>
+      <ol>
+        <li>Semeie 3-4 variedades misturadas na mesma bandeja</li>
+        <li>Use espaçamento de 2-3cm entre sementes</li>
+        <li>Colha com 10-15cm de altura (20-35 dias)</li>
+        <li>Corte deixando 2cm para rebrota</li>
+        <li>Algumas variedades rebrotam 2-3x!</li>
+      </ol>
+      <p><strong>Mix sugerido:</strong> Alface mimosa + rúcula + mostarda roxa + espinafre</p>
+    </div>
+
+    <h2>Onde Cultivar Microgreens</h2>
+    <ul>
+      <li><strong>Bancada de cozinha:</strong> Luz de janela é suficiente</li>
+      <li><strong>Prateleira com grow light:</strong> Produção o ano todo</li>
+      <li><strong>Peitoril de janela:</strong> Luz indireta funciona</li>
+      <li><strong>Varanda coberta:</strong> Protegido de chuva forte</li>
+    </ul>
+
+    <div class="tip-box">
+      <h4>💡 Dica Profissional</h4>
+      <p>Comece nova bandeja a cada 3-4 dias para ter colheita contínua. 3 bandejas em rotação = microgreens frescos sempre!</p>
+    </div>
+
+    <div class="page-number">Guia 2 - Microgreens - Página 10</div>
+  </div>
+
+  <!-- GUIA 3: COLHEITA CONTÍNUA -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 3: Colheita Contínua e Escalonamento</h2>
+      <p>Técnicas para NUNCA ficar sem salada!</p>
+    </div>
+
+    <h2>Técnica "Corta-e-Volta"</h2>
+    <p>Em vez de arrancar a planta inteira, você colhe apenas as folhas externas, deixando o centro crescer. A planta continua produzindo por semanas ou meses!</p>
+
+    <div class="step-box">
+      <h4>Como Fazer:</h4>
+      <ol>
+        <li>Espere a planta ter pelo menos 6-8 folhas</li>
+        <li>Segure a folha externa pela base</li>
+        <li>Corte ou destaque com movimento lateral firme</li>
+        <li>Deixe SEMPRE as 4-5 folhas centrais (o coração)</li>
+        <li>Nunca remova mais que 1/3 da planta de uma vez</li>
+        <li>Regue e adube levemente após cada colheita</li>
+      </ol>
+    </div>
+
+    <h3>Quais Plantas Funcionam?</h3>
+    <table>
+      <tr>
+        <th>Funciona MUITO BEM</th>
+        <th>Funciona BEM</th>
+        <th>Não Recomendado</th>
+      </tr>
+      <tr>
+        <td>Alface crespa, mimosa</td>
+        <td>Alface romana</td>
+        <td>Alface americana (forma cabeça)</td>
+      </tr>
+      <tr>
+        <td>Rúcula</td>
+        <td>Espinafre</td>
+        <td>Radicchio</td>
+      </tr>
+      <tr>
+        <td>Couve (folhas de baixo)</td>
+        <td>Chicória</td>
+        <td>Endívia</td>
+      </tr>
+      <tr>
+        <td>Acelga</td>
+        <td>Mostarda</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Agrião</td>
+        <td>Almeirão</td>
+        <td>-</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>📈 Resultado da Técnica</h4>
+      <p>Uma alface que produziria UMA colheita, agora produz <strong>3-5 colheitas</strong> ao longo de 2-3 meses! Economia multiplicada!</p>
+    </div>
+
+    <div class="page-number">Guia 3 - Colheita Contínua - Página 11</div>
+  </div>
+
+  <!-- ESCALONAMENTO -->
+  <div class="page">
+    <h2>Escalonamento de Plantio</h2>
+    <p>Em vez de plantar tudo de uma vez (e colher tudo de uma vez), plante pequenas quantidades a cada 1-2 semanas. Assim sempre terá plantas em diferentes estágios!</p>
+
+    <div class="step-box">
+      <h4>Exemplo: Rotação de Alface (família de 4)</h4>
+      <ul>
+        <li><strong>Semana 1:</strong> Plante 4 mudas de alface</li>
+        <li><strong>Semana 3:</strong> Plante mais 4 mudas</li>
+        <li><strong>Semana 5:</strong> Plante mais 4 mudas</li>
+        <li><strong>Semana 7:</strong> Plante mais 4 mudas</li>
+        <li><strong>Semana 8:</strong> Comece a colher as primeiras!</li>
+      </ul>
+      <p>A partir daí, você colhe e planta toda semana, mantendo sempre 16 plantas em diferentes estágios = salada fresca toda semana!</p>
+    </div>
+
+    <h3>Calendário de Escalonamento</h3>
+    <table>
+      <tr>
+        <th>Folhosa</th>
+        <th>Plantar a Cada</th>
+        <th>Quantidade</th>
+        <th>Espaço (vasos)</th>
+      </tr>
+      <tr><td>Alface (família 2-4)</td><td>2 semanas</td><td>2-4 mudas</td><td>4-8 vasos de 5L</td></tr>
+      <tr><td>Rúcula</td><td>2-3 semanas</td><td>1 bandeja</td><td>1 jardineira</td></tr>
+      <tr><td>Agrião</td><td>3 semanas</td><td>2-3 mudas</td><td>2-3 vasos</td></tr>
+      <tr><td>Espinafre</td><td>2-3 semanas</td><td>3-4 mudas</td><td>3-4 vasos</td></tr>
+      <tr><td>Microgreens</td><td>3-4 dias</td><td>1 bandeja</td><td>3 bandejas rotação</td></tr>
+    </table>
+
+    <h3>Calendário Sazonal</h3>
+    <table>
+      <tr>
+        <th>Estação</th>
+        <th>Melhores Folhosas</th>
+        <th>Evitar</th>
+      </tr>
+      <tr>
+        <td>Verão (Dez-Mar)</td>
+        <td>Couve, mostarda (sombra)</td>
+        <td>Alface, espinafre (pendoam)</td>
+      </tr>
+      <tr>
+        <td>Outono (Mar-Jun)</td>
+        <td>TODAS - época ideal!</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Inverno (Jun-Set)</td>
+        <td>Alface, espinafre, chicória</td>
+        <td>Crescimento lento</td>
+      </tr>
+      <tr>
+        <td>Primavera (Set-Dez)</td>
+        <td>TODAS - segunda melhor</td>
+        <td>-</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>📅 Dica de Organização</h4>
+      <p>Marque no calendário ou celular para lembrar de plantar! A consistência é o segredo do escalonamento.</p>
+    </div>
+
+    <div class="page-number">Guia 3 - Colheita Contínua - Página 12</div>
+  </div>
+
+  <!-- GUIA 4: HIDROPONIA KRATKY -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 4: Hidroponia Simples - Sistema Kratky</h2>
+      <p>Cultive folhosas SEM terra e SEM bomba d'água!</p>
+    </div>
+
+    <h2>O que é o Sistema Kratky?</h2>
+    <p>O método Kratky é a hidroponia mais simples que existe: você coloca a planta em água com nutrientes e... pronto! Não precisa de bomba, não precisa de eletricidade. A raiz fica parcialmente na água e parcialmente no ar.</p>
+
+    <div class="hydro-card">
+      <h4>💧 Vantagens do Sistema Kratky</h4>
+      <ul>
+        <li><strong>Zero eletricidade:</strong> Não precisa de bomba</li>
+        <li><strong>Super barato:</strong> Pode usar potes de maionese!</li>
+        <li><strong>Pouca manutenção:</strong> Só completa água de vez em quando</li>
+        <li><strong>Crescimento acelerado:</strong> 30% mais rápido que no solo</li>
+        <li><strong>Sem pragas de solo:</strong> Menos problemas</li>
+        <li><strong>Ideal para iniciantes:</strong> Muito simples</li>
+      </ul>
+    </div>
+
+    <h2>Material Necessário</h2>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Opções</th>
+        <th>Custo</th>
+      </tr>
+      <tr>
+        <td>Recipiente opaco</td>
+        <td>Pote de maionese 3L, balde, caixa plástica</td>
+        <td>R$ 0-20</td>
+      </tr>
+      <tr>
+        <td>Copo de rede</td>
+        <td>Net pot 5-8cm ou copinho furado</td>
+        <td>R$ 1-5</td>
+      </tr>
+      <tr>
+        <td>Substrato inerte</td>
+        <td>Argila expandida, perlita ou espuma</td>
+        <td>R$ 5-15</td>
+      </tr>
+      <tr>
+        <td>Solução nutritiva</td>
+        <td>Fertilizante hidropônico ou caseiro</td>
+        <td>R$ 20-50</td>
+      </tr>
+      <tr>
+        <td>Mudas ou sementes</td>
+        <td>Alface, rúcula, ervas</td>
+        <td>R$ 5-15</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>⚠️ Importante: Recipiente Opaco!</h4>
+      <p>O recipiente PRECISA ser opaco (não transparente) para evitar algas. Se usar pote transparente, pinte ou cubra com fita adesiva preta.</p>
+    </div>
+
+    <div class="page-number">Guia 4 - Hidroponia Kratky - Página 13</div>
+  </div>
+
+  <!-- KRATKY PASSO A PASSO -->
+  <div class="page">
+    <h2>Montagem Passo a Passo</h2>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span><strong>PREPARE O RECIPIENTE:</strong> Faça um furo na tampa do tamanho do copo de rede. O copo deve encaixar firme.</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">2</span><strong>PREPARE A SOLUÇÃO:</strong> Misture o fertilizante hidropônico na água conforme instruções (geralmente 1-2ml por litro).</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">3</span><strong>ENCHA O RECIPIENTE:</strong> A água deve tocar APENAS a base do copo de rede - deixe espaço para ar.</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">4</span><strong>PREPARE A MUDA:</strong> Lave as raízes da muda removendo toda a terra (não pode ter terra na água!).</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">5</span><strong>COLOQUE NO COPO:</strong> Posicione a muda no copo de rede com argila expandida para sustentar.</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">6</span><strong>DEIXE CRESCER:</strong> Coloque em local com luz (4-6h de sol) e observe a mágica acontecer!</p>
+    </div>
+
+    <h2>Manutenção</h2>
+    <ul>
+      <li><strong>Completar água:</strong> Quando o nível baixar, complete com água e nutrientes</li>
+      <li><strong>Nunca afogue as raízes:</strong> Sempre deixe espaço de ar entre água e copo</li>
+      <li><strong>Trocar solução:</strong> A cada 2-3 semanas, troque toda a solução</li>
+      <li><strong>Verificar pH:</strong> Idealmente entre 5.5-6.5 (opcional para iniciantes)</li>
+    </ul>
+
+    <h2>Folhosas que Funcionam Bem</h2>
+    <div class="comparison-grid">
+      <div class="plant-card" style="margin: 0;">
+        <h4 style="font-size: 14px;">✅ Excelentes para Kratky</h4>
+        <ul style="margin: 5px 0 0 15px; font-size: 13px;">
+          <li>Alface (todas)</li>
+          <li>Rúcula</li>
+          <li>Manjericão</li>
+          <li>Espinafre</li>
+          <li>Coentro</li>
+        </ul>
+      </div>
+      <div class="plant-card" style="margin: 0;">
+        <h4 style="font-size: 14px;">⚠️ Possíveis mas Desafiadores</h4>
+        <ul style="margin: 5px 0 0 15px; font-size: 13px;">
+          <li>Couve (fica grande)</li>
+          <li>Tomate (precisa de muito)</li>
+          <li>Pimentão</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">Guia 4 - Hidroponia Kratky - Página 14</div>
+  </div>
+
+  <!-- GUIA 5: RECEITAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 5: 20 Receitas de Saladas</h2>
+      <p>Combinações deliciosas com suas folhosas caseiras!</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>1. Salada Verde Clássica 🥬</h4>
+      <p><strong>Folhosas:</strong> Mix de alfaces (crespa + lisa + roxa) + rúcula</p>
+      <p><strong>Extras:</strong> Tomate-cereja, pepino em rodelas</p>
+      <p><strong>Molho:</strong> Azeite + limão + sal</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>2. Caesar Caseira 🏛️</h4>
+      <p><strong>Folhosas:</strong> Alface romana</p>
+      <p><strong>Extras:</strong> Croutons caseiros, parmesão ralado, bacon crocante</p>
+      <p><strong>Molho Caesar:</strong> 1 gema + 2 col azeite + 1 dente alho + limão + parmesão</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>3. Salada Detox 🍃</h4>
+      <p><strong>Folhosas:</strong> Couve fatiada fina + rúcula</p>
+      <p><strong>Extras:</strong> Maçã verde, cenoura ralada, sementes de girassol</p>
+      <p><strong>Molho:</strong> Iogurte natural + limão + hortelã picada</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>4. Mediterrânea 🫒</h4>
+      <p><strong>Folhosas:</strong> Alface romana + rúcula</p>
+      <p><strong>Extras:</strong> Tomate, pepino, azeitonas pretas, queijo feta, cebola roxa</p>
+      <p><strong>Molho:</strong> Azeite + orégano fresco + limão</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>5. Asiática 🥢</h4>
+      <p><strong>Folhosas:</strong> Acelga em tiras finas + microgreens</p>
+      <p><strong>Extras:</strong> Cenoura em palitos, pepino, coentro, amendoim</p>
+      <p><strong>Molho:</strong> Shoyu + gengibre + mel + óleo de gergelim</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>6. Caprese Verde 🇮🇹</h4>
+      <p><strong>Folhosas:</strong> Rúcula + manjericão fresco</p>
+      <p><strong>Extras:</strong> Tomate, mussarela de búfala</p>
+      <p><strong>Molho:</strong> Azeite + redução de balsâmico + sal</p>
+    </div>
+
+    <div class="page-number">Guia 5 - Receitas - Página 15</div>
+  </div>
+
+  <!-- MAIS RECEITAS -->
+  <div class="page">
+    <div class="recipe-box">
+      <h4>7. Primavera com Flores 🌸</h4>
+      <p><strong>Folhosas:</strong> Mix de baby leaves</p>
+      <p><strong>Extras:</strong> Flores comestíveis (capuchinha, amor-perfeito), rabanete</p>
+      <p><strong>Molho:</strong> Azeite + vinagre de maçã + mel</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>8. Waldorf Brasileira 🍎</h4>
+      <p><strong>Folhosas:</strong> Alface americana</p>
+      <p><strong>Extras:</strong> Maçã, uva, aipo, nozes</p>
+      <p><strong>Molho:</strong> Maionese + iogurte + limão</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>9. Tropical 🥭</h4>
+      <p><strong>Folhosas:</strong> Alface + agrião</p>
+      <p><strong>Extras:</strong> Manga, abacate, coco ralado fresco</p>
+      <p><strong>Molho:</strong> Azeite + limão + gengibre</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>10. Proteica Fitness 💪</h4>
+      <p><strong>Folhosas:</strong> Espinafre + rúcula</p>
+      <p><strong>Extras:</strong> Frango grelhado, ovo cozido, grão-de-bico, abacate</p>
+      <p><strong>Molho:</strong> Tahine + limão + água</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>11. Agridoce com Frutas 🍓</h4>
+      <p><strong>Folhosas:</strong> Mix de alfaces + chicória</p>
+      <p><strong>Extras:</strong> Morango, queijo de cabra, nozes caramelizadas</p>
+      <p><strong>Molho:</strong> Azeite + vinagre balsâmico + mostarda dijon</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>12. Oriental Light 🍜</h4>
+      <p><strong>Folhosas:</strong> Acelga + mostarda + microgreens de rabanete</p>
+      <p><strong>Extras:</strong> Edamame, gergelim torrado</p>
+      <p><strong>Molho:</strong> Molho ponzu + azeite de gergelim</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>13. Beterraba Power 💜</h4>
+      <p><strong>Folhosas:</strong> Rúcula + folhas de beterraba</p>
+      <p><strong>Extras:</strong> Beterraba assada, queijo feta, nozes</p>
+      <p><strong>Molho:</strong> Azeite + laranja + mel</p>
+    </div>
+
+    <div class="page-number">Guia 5 - Receitas - Página 16</div>
+  </div>
+
+  <!-- MAIS RECEITAS + MOLHOS -->
+  <div class="page">
+    <div class="recipe-box">
+      <h4>14. Nicoise Caseira 🇫🇷</h4>
+      <p><strong>Folhosas:</strong> Alface + agrião</p>
+      <p><strong>Extras:</strong> Atum, ovo cozido, batata, vagem, azeitona, tomate</p>
+      <p><strong>Molho:</strong> Vinagrete clássico com mostarda</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>15. Grãos e Folhas 🌾</h4>
+      <p><strong>Folhosas:</strong> Couve + espinafre</p>
+      <p><strong>Extras:</strong> Quinoa, grão-de-bico, pepino, tomate seco</p>
+      <p><strong>Molho:</strong> Pesto de manjericão + limão</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>16. Inverno Quente-Fria 🥗</h4>
+      <p><strong>Folhosas:</strong> Chicória + almeirão</p>
+      <p><strong>Extras:</strong> Cogumelos salteados quentes, bacon crocante</p>
+      <p><strong>Molho:</strong> Vinagrete morno com alho</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>17. Wrap de Alface 🌯</h4>
+      <p><strong>Folhosas:</strong> Folhas grandes de alface americana (como "tortilha")</p>
+      <p><strong>Recheio:</strong> Frango desfiado, cenoura ralada, pepino, molho de gergelim</p>
+    </div>
+
+    <h2>Molhos Básicos</h2>
+    <table>
+      <tr>
+        <th>Molho</th>
+        <th>Ingredientes</th>
+        <th>Combina com</th>
+      </tr>
+      <tr>
+        <td><strong>Vinagrete Clássico</strong></td>
+        <td>3 azeite : 1 vinagre + sal + pimenta</td>
+        <td>Tudo!</td>
+      </tr>
+      <tr>
+        <td><strong>Iogurte com Ervas</strong></td>
+        <td>Iogurte + alho + cebolinha + limão</td>
+        <td>Folhas amargas</td>
+      </tr>
+      <tr>
+        <td><strong>Tahine</strong></td>
+        <td>Tahine + limão + água + alho</td>
+        <td>Saladas proteicas</td>
+      </tr>
+      <tr>
+        <td><strong>Oriental</strong></td>
+        <td>Shoyu + gengibre + mel + gergelim</td>
+        <td>Saladas asiáticas</td>
+      </tr>
+      <tr>
+        <td><strong>Mel e Mostarda</strong></td>
+        <td>Azeite + mostarda + mel + vinagre</td>
+        <td>Saladas com frutas</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia 5 - Receitas - Página 17</div>
+  </div>
+
+  <!-- CONSERVAÇÃO -->
+  <div class="page">
+    <h2>Conservação e Preparo</h2>
+
+    <div class="step-box">
+      <h4>🧊 Como Lavar e Guardar Folhas</h4>
+      <ol>
+        <li>Destaque as folhas do talo</li>
+        <li>Lave em água corrente</li>
+        <li>Deixe de molho em água com vinagre (1 col/litro) por 15 min</li>
+        <li>Enxague bem em água limpa</li>
+        <li>Seque com centrífuga ou papel toalha</li>
+        <li>Guarde em pote fechado com papel toalha no fundo</li>
+      </ol>
+      <p><strong>Duração:</strong> 5-7 dias na geladeira</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>🔑 Segredo para Durar Mais</h4>
+      <p><strong>Folhas secas duram mais!</strong> A umidade é inimiga. O papel toalha no fundo do pote absorve a umidade excessiva.</p>
+    </div>
+
+    <h2>Salada de Pote (Meal Prep)</h2>
+    <div class="plant-card">
+      <h4>📦 Ordem de Montagem (de baixo para cima)</h4>
+      <ol>
+        <li><strong>MOLHO:</strong> No fundo do pote (não encosta nas folhas)</li>
+        <li><strong>GRÃOS/PROTEÍNA:</strong> Grão-de-bico, frango, ovo</li>
+        <li><strong>VEGETAIS DUROS:</strong> Cenoura, pepino, beterraba</li>
+        <li><strong>TOMATES:</strong> Camada intermediária</li>
+        <li><strong>QUEIJOS/EXTRAS:</strong> Queijo, croutons, sementes</li>
+        <li><strong>FOLHAS:</strong> NO TOPO! (longe do molho)</li>
+      </ol>
+      <p><strong>Duração:</strong> 4-5 dias na geladeira. Na hora de comer, agite e despeje em prato!</p>
+    </div>
+
+    <h2>Receitas de Pote</h2>
+    <div class="recipe-box">
+      <h4>18. Pote Mediterrâneo 🥫</h4>
+      <p>Molho vinagrete → grão-de-bico → pepino → tomate → feta → rúcula + alface</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>19. Pote Asiático 🥫</h4>
+      <p>Molho de gergelim → edamame → cenoura → repolho → amendoim → acelga + coentro</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>20. Pote Proteico 🥫</h4>
+      <p>Molho tahine → grão-de-bico → frango → tomate → abacate → espinafre + rúcula</p>
+    </div>
+
+    <div class="page-number">Guia 5 - Receitas - Página 18</div>
+  </div>
+
+  <!-- BÔNUS: TABELA NUTRICIONAL -->
+  <div class="page">
+    <h1>Bônus: Tabela Nutricional das Folhosas</h1>
+    <p>Valores por 100g de folha crua:</p>
+
+    <table style="font-size: 12px;">
+      <tr>
+        <th>Folhosa</th>
+        <th>Calorias</th>
+        <th>Vitamina A</th>
+        <th>Vitamina C</th>
+        <th>Ferro</th>
+        <th>Cálcio</th>
+      </tr>
+      <tr><td>Alface</td><td>15 kcal</td><td>⭐⭐</td><td>⭐⭐</td><td>⭐</td><td>⭐</td></tr>
+      <tr><td>Rúcula</td><td>25 kcal</td><td>⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐</td><td>⭐⭐⭐</td></tr>
+      <tr><td>Espinafre</td><td>23 kcal</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+      <tr><td>Couve</td><td>36 kcal</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+      <tr><td>Agrião</td><td>11 kcal</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+      <tr><td>Acelga</td><td>19 kcal</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td></tr>
+      <tr><td>Chicória</td><td>17 kcal</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐</td><td>⭐⭐</td></tr>
+      <tr><td>Mostarda</td><td>27 kcal</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐</td><td>⭐⭐⭐</td></tr>
+    </table>
+    <p style="font-size: 11px; color: #6b7280;">⭐ = baixo | ⭐⭐⭐ = médio | ⭐⭐⭐⭐⭐ = alto</p>
+
+    <h2>Benefícios por Cor</h2>
+    <table>
+      <tr>
+        <th>Cor</th>
+        <th>Nutrientes</th>
+        <th>Exemplos</th>
+      </tr>
+      <tr>
+        <td style="background: #22c55e; color: white;">Verde escuro</td>
+        <td>Ferro, Cálcio, Vitamina K</td>
+        <td>Couve, espinafre, agrião</td>
+      </tr>
+      <tr>
+        <td style="background: #86efac;">Verde claro</td>
+        <td>Água, Fibras, Potássio</td>
+        <td>Alface, acelga</td>
+      </tr>
+      <tr>
+        <td style="background: #a855f7; color: white;">Roxo/Vermelho</td>
+        <td>Antocianinas (antioxidantes)</td>
+        <td>Alface roxa, radicchio, acelga rainbow</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>💡 Dica de Ouro</h4>
+      <p><strong>Varie as cores!</strong> Cada cor traz nutrientes diferentes. Uma salada colorida é uma salada completa nutricionalmente.</p>
+    </div>
+
+    <h2>Campeãs por Categoria</h2>
+    <ul>
+      <li><strong>Mais nutritiva geral:</strong> Couve manteiga</li>
+      <li><strong>Mais ferro:</strong> Espinafre e agrião</li>
+      <li><strong>Mais antioxidantes:</strong> Folhas roxas</li>
+      <li><strong>Menos calorias:</strong> Agrião (11 kcal/100g)</li>
+      <li><strong>Mais vitamina C:</strong> Couve e mostarda</li>
+    </ul>
+
+    <div class="page-number">Bônus - Tabela Nutricional - Página 19</div>
+  </div>
+
+  <!-- PÁGINA FINAL -->
+  <div class="page">
+    <div style="text-align: center; padding: 40px 20px;">
+      <div class="mascote" style="margin-bottom: 30px;">
+        <svg width="140" height="175" viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="55" cy="145" rx="30" ry="5" fill="#059669" fill-opacity="0.15"/>
+          <path d="M30 105H80L74 135H36L30 105Z" fill="url(#pgf07)" stroke="#b5441c" stroke-width="2"/>
+          <path d="M27 98H83V108H27V98Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+          <ellipse cx="55" cy="105" rx="22" ry="5" fill="#5c4033"/>
+          <ellipse cx="55" cy="70" rx="32" ry="35" fill="url(#bgf07)" stroke="#15803d" stroke-width="2.5"/>
+          <ellipse cx="44" cy="64" rx="5" ry="6" fill="#15803d"/>
+          <ellipse cx="66" cy="64" rx="5" ry="6" fill="#15803d"/>
+          <ellipse cx="45" cy="62" rx="2" ry="2.5" fill="white"/>
+          <ellipse cx="67" cy="62" rx="2" ry="2.5" fill="white"/>
+          <path d="M42 78C42 78 55 92 68 78" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="35" cy="74" rx="5" ry="4" fill="#fca5a5" fill-opacity="0.5"/>
+          <ellipse cx="75" cy="74" rx="5" ry="4" fill="#fca5a5" fill-opacity="0.5"/>
+          <path d="M55 40C55 40 48 22 44 10C52 10 58 22 55 40Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M55 40C55 40 62 22 66 10C58 10 52 22 55 40Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M43 48C43 48 28 36 18 30C28 27 42 36 43 48Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M67 48C67 48 82 36 92 30C82 27 68 36 67 48Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+          <!-- Polegar para cima -->
+          <g transform="translate(82, 58)">
+            <circle cx="12" cy="12" r="14" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+            <path d="M8 18 L8 10 L10 6 L12 6 L12 10 L18 10 L18 18 Z" fill="#10b981"/>
+          </g>
+          <defs>
+            <linearGradient id="pgf07" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ea7531"/>
+              <stop offset="100%" stop-color="#b5441c"/>
+            </linearGradient>
+            <radialGradient id="bgf07" cx="40%" cy="30%">
+              <stop offset="0%" stop-color="#86efac"/>
+              <stop offset="50%" stop-color="#4ade80"/>
+              <stop offset="100%" stop-color="#22c55e"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <h1 style="border: none; font-size: 32px; color: #059669;">Parabéns!</h1>
+      <p style="font-size: 18px; margin: 20px 0; color: #374151;">Você completou o Kit Saladas Frescas em Casa!</p>
+
+      <div style="background: linear-gradient(135deg, #ecfdf5, #d1fae5); padding: 30px; border-radius: 12px; margin: 30px 0;">
+        <h3 style="color: #059669; margin-bottom: 15px;">🥗 Resumo do que Você Aprendeu</h3>
+        <ul style="text-align: left; margin: 0 auto; max-width: 400px;">
+          <li>Cultivar 15 tipos de folhosas</li>
+          <li>Produzir microgreens em 7 dias</li>
+          <li>Técnica "corta-e-volta"</li>
+          <li>Escalonamento de plantio</li>
+          <li>Hidroponia Kratky simples</li>
+          <li>20 receitas deliciosas</li>
+          <li>Conservação perfeita</li>
+        </ul>
+      </div>
+
+      <div class="highlight-stat" style="margin: 30px 0;">
+        <div class="number">R$ 1.668</div>
+        <div class="label">de economia potencial por ano!</div>
+      </div>
+
+      <div style="background: #f8fafc; padding: 25px; border-radius: 12px; margin: 30px 0;">
+        <h4 style="color: #059669; margin-bottom: 15px;">🚀 Próximos Passos</h4>
+        <ol style="text-align: left; margin: 0;">
+          <li>Escolha 3-4 folhosas para começar</li>
+          <li>Prepare vasos com substrato rico</li>
+          <li>Comece o escalonamento (plante a cada 2 semanas)</li>
+          <li>Experimente uma bandeja de microgreens</li>
+          <li>Em 45 dias: primeira salada da SUA horta!</li>
+        </ol>
+      </div>
+
+      <div style="margin-top: 40px;">
+        <p style="color: #059669; font-weight: 700; font-size: 20px;">Minha Horta em Casa</p>
+        <p style="color: #10b981;">minhahortaemcasa.com.br</p>
+      </div>
+
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+        <p style="font-size: 12px; color: #9ca3af;">Kit Saladas Frescas em Casa - 20 páginas de conteúdo profissional</p>
+        <p style="font-size: 12px; color: #9ca3af;">Atualizado para 2025 com microgreens e hidroponia Kratky</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

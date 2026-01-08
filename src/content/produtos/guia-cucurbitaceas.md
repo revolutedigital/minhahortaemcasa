@@ -5,6 +5,7 @@ originalPrice: 29
 description: "Pepino, abobrinha, abóbora e melão em vasos. Tutoramento, polinização manual e colheita abundante."
 category: "guia"
 featured: false
+checkoutUrl: "https://checkout.pagtrust.com.br/ck64fdfd8a?funnel=fne8a27613"
 ---
 
 # Guia Cucurbitáceas em Vaso - R$ 14

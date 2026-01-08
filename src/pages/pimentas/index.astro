@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+import ContentIllustration from '../../components/illustrations/ContentIllustration.astro';
+import Mascote from '../../components/illustrations/Mascote.astro';
+
+export const prerender = true;
+
+const allPimentas = await getCollection('pimentas', ({ data }) => !data.draft);
+const sortedPimentas = allPimentas.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Cultivo de Pimentas | Da Semente à Colheita"
+  description="Aprenda a cultivar pimentas em casa: dedo-de-moça, jalapeño, habanero e mais. Guias completos para iniciantes e avançados."
+>
+  <!-- Hero Section -->
+  <section class="relative py-20 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-orange-50"></div>
+    <div class="absolute top-20 left-10 w-72 h-72 bg-red-200/30 rounded-full blur-3xl blob-animate"></div>
+    <div class="absolute bottom-10 right-10 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl blob-animate" style="animation-delay: -3s;"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <!-- Content -->
+        <div class="flex-1 text-center lg:text-left">
+          <nav class="text-sm text-gray-500 mb-4">
+            <a href="/" class="hover:text-leaf-600 transition-colors">Início</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 font-medium">Pimentas</span>
+          </nav>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            Cultivo de <span class="text-gradient-fire">Pimentas</span>
+          </h1>
+
+          <p class="text-xl text-gray-600 max-w-xl mb-8">
+            Da dedo-de-moça à Carolina Reaper: aprenda a cultivar pimentas em vasos, varandas ou quintais.
+          </p>
+
+          <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+            <span class="badge badge-fire">Ardidas</span>
+            <span class="badge badge-sun">Decorativas</span>
+            <span class="badge badge-leaf">Perenes</span>
+          </div>
+        </div>
+
+        <!-- Mascote -->
+        <div class="relative">
+          <Mascote mood="surprised" size="xl" />
+
+          <!-- Floating icons -->
+          <div class="absolute -top-2 -right-6 animate-float bg-white rounded-2xl shadow-lg p-3">
+            <svg class="w-8 h-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+            </svg>
+          </div>
+
+          <div class="absolute -bottom-4 -left-4 animate-float bg-white rounded-2xl shadow-lg p-3" style="animation-delay: -2s;">
+            <svg class="w-8 h-8 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pimentas Grid -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {sortedPimentas.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedPimentas.map((artigo, index) => (
+            <a
+              href={`/pimentas/${artigo.slug}`}
+              class={`group bg-white rounded-3xl border border-gray-100 p-6 hover:shadow-xl hover:border-red-200 transition-all card-hover scroll-reveal reveal-delay-${Math.min(index + 1, 5)}`}
+            >
+              <div class="w-20 h-20 bg-gradient-to-br from-red-50 to-orange-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform overflow-hidden">
+                <ContentIllustration slug={artigo.slug} category="Pimentas" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-700 transition-colors">
+                {artigo.data.title.split(':')[0]}
+              </h3>
+              <p class="text-gray-500 mb-4 line-clamp-2">{artigo.data.description}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-gray-400">{artigo.data.readTime}</span>
+                <span class="flex items-center text-red-600 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                  Ver artigo
+                  <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16 bg-gray-50 rounded-3xl">
+          <Mascote mood="sleeping" size="lg" class="mx-auto mb-4" />
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Artigos em breve</h3>
+          <p class="text-gray-600">O Verdinho está preparando conteúdos incríveis sobre pimentas!</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Scoville Scale Preview -->
+  <section class="py-16 bg-gradient-to-r from-red-50 to-orange-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 scroll-reveal">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+          Escala de Ardor (Scoville)
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Do suave ao extremo: conheça o ardor de cada pimenta
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-4">
+        <div class="bg-white rounded-2xl p-4 shadow-sm scroll-reveal reveal-delay-1 border-l-4 border-green-400">
+          <h3 class="text-sm font-bold text-gray-900 mb-1">Suave</h3>
+          <p class="text-xs text-gray-500 mb-2">0-2.500 SHU</p>
+          <p class="text-sm text-gray-600">Pimentão, Biquinho, Banana Pepper</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 shadow-sm scroll-reveal reveal-delay-2 border-l-4 border-yellow-400">
+          <h3 class="text-sm font-bold text-gray-900 mb-1">Médio</h3>
+          <p class="text-xs text-gray-500 mb-2">2.500-30.000 SHU</p>
+          <p class="text-sm text-gray-600">Jalapeño, Dedo-de-moça, Serrano</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 shadow-sm scroll-reveal reveal-delay-3 border-l-4 border-orange-500">
+          <h3 class="text-sm font-bold text-gray-900 mb-1">Quente</h3>
+          <p class="text-xs text-gray-500 mb-2">30.000-100.000 SHU</p>
+          <p class="text-sm text-gray-600">Cayenne, Malagueta, Tabasco</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 shadow-sm scroll-reveal reveal-delay-4 border-l-4 border-red-600">
+          <h3 class="text-sm font-bold text-gray-900 mb-1">Extremo</h3>
+          <p class="text-xs text-gray-500 mb-2">100.000+ SHU</p>
+          <p class="text-sm text-gray-600">Habanero, Ghost, Carolina Reaper</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+      <div class="flex justify-center mb-6">
+        <Mascote mood="excited" size="lg" />
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+        Quer começar sua horta?
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Descubra qual planta é perfeita para seu espaço e estilo de vida!
+      </p>
+      <a href="/quiz" class="btn-primary">
+        Fazer o quiz
+        <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .text-gradient-fire {
+    background: linear-gradient(135deg, #ef4444 0%, #f97316 50%, #eab308 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .badge-fire {
+    background-color: #fef2f2;
+    color: #dc2626;
+  }
+</style>

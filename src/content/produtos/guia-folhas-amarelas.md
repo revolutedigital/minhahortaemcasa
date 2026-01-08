@@ -5,6 +5,7 @@ originalPrice: 19
 description: "Diagnóstico e solução para folhas amarelando"
 category: "problemas"
 relatedProblem: "folhas-amarelas"
+checkoutUrl: "https://checkout.pagtrust.com.br/ckb8343952?funnel=fn2c7437ce"
 ---
 
 # SOS Folhas Amarelas - R$ 9

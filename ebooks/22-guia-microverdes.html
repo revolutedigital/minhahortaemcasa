@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Completo de Microverdes - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.6; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #6ee7b7 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 42px; font-weight: 800; color: #065f46; margin-bottom: 20px; line-height: 1.2; }
+    .cover .subtitle { font-size: 22px; color: #047857; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #065f46; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #10b981; }
+    h1 { font-size: 36px; color: #065f46; margin-bottom: 20px; border-bottom: 3px solid #10b981; padding-bottom: 10px; }
+    h2 { font-size: 28px; color: #047857; margin: 30px 0 15px; }
+    h3 { font-size: 22px; color: #065f46; margin: 25px 0 12px; }
+    h4 { font-size: 18px; color: #047857; margin: 15px 0 10px; }
+    p { margin-bottom: 15px; font-size: 16px; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: linear-gradient(135deg, #d1fae5, #a7f3d0); border-left: 4px solid #10b981; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .danger-box { background: linear-gradient(135deg, #fee2e2, #fecaca); border-left: 4px solid #ef4444; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .success-box { background: linear-gradient(135deg, #d1fae5, #a7f3d0); border-left: 4px solid #10b981; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .step-box { background: #fff; border: 2px solid #10b981; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .step-box h4 { color: #065f46; margin-bottom: 10px; border-bottom: 1px solid #a7f3d0; padding-bottom: 8px; }
+    .materials-box { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border: 2px solid #a855f7; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .materials-box h4 { color: #7c3aed; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #d1d5db; padding: 10px; text-align: left; }
+    th { background: #065f46; color: white; }
+    tr:nth-child(even) { background: #d1fae5; }
+    .toc { background: #f8fafc; padding: 30px; border-radius: 12px; margin: 30px 0; }
+    .toc h2 { border-bottom: none; margin-top: 0; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dashed #d1d5db; }
+    .module-header { background: linear-gradient(135deg, #065f46, #10b981); color: white; padding: 30px; border-radius: 12px; margin: 40px 0 30px; text-align: center; }
+    .module-header h2 { color: white; border-bottom: none; margin: 0; }
+    .module-header p { color: #a7f3d0; margin: 10px 0 0; }
+    .checklist { background: #d1fae5; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    .checklist li { list-style: none; padding-left: 30px; position: relative; }
+    .checklist li:before { content: "☐"; position: absolute; left: 0; color: #10b981; font-size: 18px; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; }
+    @media print { .page { page-break-after: always; } }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#065f46" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGrad22)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGrad22)" stroke="#065f46" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#065f46"/><ellipse cx="60" cy="50" rx="4" ry="5" fill="#065f46"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/><ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#065f46" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <!-- Microgreen sprouts -->
+        <path d="M42 28C42 28 38 18 35 12C40 14 42 20 42 28Z" fill="#10b981" stroke="#065f46" stroke-width="1"/>
+        <path d="M50 25C50 25 50 12 50 5C50 12 50 18 50 25Z" fill="#34d399" stroke="#065f46" stroke-width="1"/>
+        <path d="M58 28C58 28 62 18 65 12C60 14 58 20 58 28Z" fill="#10b981" stroke="#065f46" stroke-width="1"/>
+        <path d="M46 30C46 30 42 22 38 18C44 20 46 25 46 30Z" fill="#6ee7b7" stroke="#065f46" stroke-width="1"/>
+        <path d="M54 30C54 30 58 22 62 18C56 20 54 25 54 30Z" fill="#6ee7b7" stroke="#065f46" stroke-width="1"/>
+        <defs>
+          <linearGradient id="potGrad22" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bodyGrad22" cx="40%" cy="30%"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="50%" stop-color="#34d399"/><stop offset="100%" stop-color="#10b981"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Guia Completo de Microverdes</h1>
+    <p class="subtitle">Superalimentos em miniatura na sua cozinha!</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <h1>Sumário</h1>
+    <p>Este guia completo vai te ensinar tudo sobre microverdes: da semente à colheita em apenas 7-14 dias.</p>
+
+    <div class="toc">
+      <h2>Conteúdo</h2>
+      <ul>
+        <li><strong>Módulo 1:</strong> O Que São Microverdes (Páginas 3-5)</li>
+        <li><strong>Módulo 2:</strong> Materiais e Equipamentos (Páginas 6-8)</li>
+        <li><strong>Módulo 3:</strong> Passo a Passo do Cultivo (Páginas 9-14)</li>
+        <li><strong>Módulo 4:</strong> As 15 Melhores Variedades (Páginas 15-19)</li>
+        <li><strong>Módulo 5:</strong> Colheita e Armazenamento (Páginas 20-22)</li>
+        <li><strong>Módulo 6:</strong> Problemas e Soluções (Páginas 23-26)</li>
+        <li><strong>Bônus 1:</strong> Guia de Brotos em 7 Dias (Páginas 27-30)</li>
+        <li><strong>Bônus 2:</strong> Receitas com Microverdes (Páginas 31-33)</li>
+      </ul>
+    </div>
+
+    <h3>Por que Cultivar Microverdes?</h3>
+    <ul>
+      <li><strong>Nutrição:</strong> Até 40x mais nutrientes que a planta adulta</li>
+      <li><strong>Velocidade:</strong> Prontos para colher em 7-14 dias</li>
+      <li><strong>Espaço:</strong> Uma bandeja na bancada é suficiente</li>
+      <li><strong>Custo:</strong> Centavos por porção vs R$30-50/kg no mercado</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>O que você vai aprender:</h4>
+      <ul>
+        <li>Cultivar microverdes do zero</li>
+        <li>Escolher as melhores variedades</li>
+        <li>Colher no ponto certo</li>
+        <li>Conservar por mais tempo</li>
+        <li>Resolver problemas comuns</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia de Microverdes - Página 2</div>
+  </div>
+
+  <!-- MÓDULO 1 -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 1: O Que São Microverdes</h2>
+      <p>Entenda esses superalimentos em miniatura</p>
+    </div>
+
+    <h2>Definição</h2>
+    <p>Microverdes são plantas jovens colhidas logo após o desenvolvimento dos primeiros pares de folhas verdadeiras (cotilédones + 1-2 folhas). Ficam entre o broto e a baby leaf.</p>
+
+    <h2>Microverdes vs Brotos vs Baby Leaf</h2>
+    <table>
+      <tr>
+        <th>Característica</th>
+        <th>Brotos</th>
+        <th>Microverdes</th>
+        <th>Baby Leaf</th>
+      </tr>
+      <tr>
+        <td>Tempo</td>
+        <td>3-7 dias</td>
+        <td>7-14 dias</td>
+        <td>21-40 dias</td>
+      </tr>
+      <tr>
+        <td>Luz</td>
+        <td>Não precisa</td>
+        <td>Precisa</td>
+        <td>Precisa</td>
+      </tr>
+      <tr>
+        <td>Substrato</td>
+        <td>Só água</td>
+        <td>Terra/fibra</td>
+        <td>Terra</td>
+      </tr>
+      <tr>
+        <td>O que come</td>
+        <td>Tudo</td>
+        <td>Parte aérea</td>
+        <td>Folhas</td>
+      </tr>
+      <tr>
+        <td>Tamanho</td>
+        <td>2-5cm</td>
+        <td>5-10cm</td>
+        <td>10-15cm</td>
+      </tr>
+    </table>
+
+    <h2>Benefícios Nutricionais</h2>
+    <p>Estudos mostram que microverdes contêm concentrações muito maiores de nutrientes:</p>
+
+    <table>
+      <tr>
+        <th>Nutriente</th>
+        <th>Aumento vs Planta Adulta</th>
+      </tr>
+      <tr>
+        <td>Vitamina C</td>
+        <td>Até 5x mais</td>
+      </tr>
+      <tr>
+        <td>Vitamina E</td>
+        <td>Até 40x mais</td>
+      </tr>
+      <tr>
+        <td>Vitamina K</td>
+        <td>Até 4x mais</td>
+      </tr>
+      <tr>
+        <td>Beta-caroteno</td>
+        <td>Até 3x mais</td>
+      </tr>
+      <tr>
+        <td>Antioxidantes</td>
+        <td>Até 6x mais</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Módulo 1 - Introdução - Página 3</div>
+  </div>
+
+  <div class="page">
+    <h2>Por Que São Tão Nutritivos?</h2>
+    <p>A planta jovem concentra todos os nutrientes que precisaria para crescer. Ao colher cedo, você captura essa "bomba nutricional" antes que ela seja diluída pelo crescimento.</p>
+
+    <h2>Quem Pode Cultivar?</h2>
+    <div class="success-box">
+      <p><strong>Qualquer pessoa!</strong> Microverdes são perfeitos para:</p>
+      <ul>
+        <li>Iniciantes absolutos em jardinagem</li>
+        <li>Moradores de apartamento</li>
+        <li>Quem tem pouco tempo</li>
+        <li>Crianças (projeto educativo)</li>
+        <li>Restaurantes e chefs</li>
+        <li>Quem quer alimentação mais saudável</li>
+      </ul>
+    </div>
+
+    <h2>Investimento Inicial</h2>
+    <table>
+      <tr>
+        <th>Nível</th>
+        <th>Investimento</th>
+        <th>Produção</th>
+      </tr>
+      <tr>
+        <td>Básico (1-2 bandejas)</td>
+        <td>R$ 30-50</td>
+        <td>100-200g/semana</td>
+      </tr>
+      <tr>
+        <td>Intermediário (4-6 bandejas)</td>
+        <td>R$ 80-150</td>
+        <td>400-600g/semana</td>
+      </tr>
+      <tr>
+        <td>Avançado (estante)</td>
+        <td>R$ 200-500</td>
+        <td>1-2kg/semana</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Economia Real:</h4>
+      <p>Microverdes no mercado: <strong>R$ 30-60/kg</strong></p>
+      <p>Custo de produção em casa: <strong>R$ 3-8/kg</strong></p>
+      <p>Economia: <strong>80-90%!</strong></p>
+    </div>
+
+    <div class="page-number">Módulo 1 - Introdução - Página 4</div>
+  </div>
+
+  <!-- MÓDULO 2 -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 2: Materiais e Equipamentos</h2>
+      <p>Tudo que você precisa para começar</p>
+    </div>
+
+    <h2>Kit Básico para Iniciantes</h2>
+
+    <div class="materials-box">
+      <h4>Materiais Essenciais:</h4>
+      <ul>
+        <li><strong>Bandejas:</strong> 2-3 bandejas rasas (5-7cm de altura)</li>
+        <li><strong>Substrato:</strong> Fibra de coco ou substrato para mudas</li>
+        <li><strong>Sementes:</strong> Pacotes específicos para microverdes</li>
+        <li><strong>Borrifador:</strong> Para rega delicada</li>
+        <li><strong>Tesoura:</strong> Para colheita</li>
+      </ul>
+      <p><strong>Custo total:</strong> R$ 30-50</p>
+    </div>
+
+    <h2>Tipos de Bandeja</h2>
+    <table>
+      <tr>
+        <th>Tipo</th>
+        <th>Prós</th>
+        <th>Contras</th>
+        <th>Preço</th>
+      </tr>
+      <tr>
+        <td>Bandeja plástica</td>
+        <td>Barata, fácil de achar</td>
+        <td>Sem furos de drenagem</td>
+        <td>R$ 5-15</td>
+      </tr>
+      <tr>
+        <td>Bandeja de mudas</td>
+        <td>Com furos, profissional</td>
+        <td>Precisa de base</td>
+        <td>R$ 8-20</td>
+      </tr>
+      <tr>
+        <td>Pote de sorvete</td>
+        <td>Grátis, reciclado</td>
+        <td>Pequeno</td>
+        <td>R$ 0</td>
+      </tr>
+      <tr>
+        <td>Kit específico</td>
+        <td>Completo, otimizado</td>
+        <td>Mais caro</td>
+        <td>R$ 50-100</td>
+      </tr>
+    </table>
+
+    <h2>Substratos</h2>
+
+    <h3>Opção 1: Fibra de Coco (Recomendado)</h3>
+    <ul>
+      <li>Leve e aerado</li>
+      <li>Retém umidade na medida</li>
+      <li>Livre de pragas</li>
+      <li>Sustentável</li>
+      <li>Preço: R$ 10-20 (rende muito)</li>
+    </ul>
+
+    <h3>Opção 2: Substrato para Mudas</h3>
+    <ul>
+      <li>Já vem pronto</li>
+      <li>Rico em nutrientes</li>
+      <li>Mais pesado</li>
+      <li>Preço: R$ 8-15/5L</li>
+    </ul>
+
+    <div class="page-number">Módulo 2 - Materiais - Página 5</div>
+  </div>
+
+  <div class="page">
+    <h3>Opção 3: Papel/Algodão (Hidropônico)</h3>
+    <ul>
+      <li>Mais limpo</li>
+      <li>Sem terra</li>
+      <li>Precisa de mais atenção com rega</li>
+      <li>Ideal para algumas variedades</li>
+    </ul>
+
+    <h2>Sementes para Microverdes</h2>
+
+    <div class="warning-box">
+      <h4>Importante:</h4>
+      <p>Use sementes <strong>específicas para microverdes</strong> ou <strong>não tratadas</strong>. Sementes de supermercado para plantio podem ter tratamento químico.</p>
+    </div>
+
+    <h3>Onde Comprar:</h3>
+    <ul>
+      <li><strong>Mercado Livre:</strong> "sementes microverdes"</li>
+      <li><strong>Lojas de jardinagem:</strong> Seção orgânica</li>
+      <li><strong>Sites especializados:</strong> Isla, Feltrin, Topseed</li>
+      <li><strong>Cooperativas orgânicas</strong></li>
+    </ul>
+
+    <h3>Quantidade Necessária:</h3>
+    <table>
+      <tr>
+        <th>Semente</th>
+        <th>Gramas/Bandeja (20x30cm)</th>
+        <th>Rendimento</th>
+      </tr>
+      <tr>
+        <td>Girassol</td>
+        <td>30-40g</td>
+        <td>150-200g</td>
+      </tr>
+      <tr>
+        <td>Rabanete</td>
+        <td>15-20g</td>
+        <td>100-150g</td>
+      </tr>
+      <tr>
+        <td>Brócolis</td>
+        <td>10-15g</td>
+        <td>80-120g</td>
+      </tr>
+      <tr>
+        <td>Rúcula</td>
+        <td>8-12g</td>
+        <td>60-100g</td>
+      </tr>
+      <tr>
+        <td>Mostarda</td>
+        <td>8-12g</td>
+        <td>60-100g</td>
+      </tr>
+    </table>
+
+    <h2>Iluminação</h2>
+    <p>Microverdes precisam de luz após germinação:</p>
+    <ul>
+      <li><strong>Luz natural:</strong> Janela bem iluminada (4-6h de luz)</li>
+      <li><strong>Grow light:</strong> 12-16h por dia (30-50cm de distância)</li>
+      <li><strong>Lâmpada comum:</strong> Funciona, mas menos eficiente</li>
+    </ul>
+
+    <div class="page-number">Módulo 2 - Materiais - Página 6</div>
+  </div>
+
+  <!-- MÓDULO 3 -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 3: Passo a Passo do Cultivo</h2>
+      <p>Do plantio à colheita em 7-14 dias</p>
+    </div>
+
+    <h2>Visão Geral do Processo</h2>
+    <ol>
+      <li><strong>Dia 0:</strong> Preparação e semeadura</li>
+      <li><strong>Dias 1-3:</strong> Fase de blackout (escuro)</li>
+      <li><strong>Dias 4-10:</strong> Fase de crescimento (luz)</li>
+      <li><strong>Dias 7-14:</strong> Colheita</li>
+    </ol>
+
+    <h2>PASSO 1: Preparar a Bandeja</h2>
+
+    <div class="step-box">
+      <h4>Instruções:</h4>
+      <ol>
+        <li>Limpe a bandeja (lave com água e sabão se usada)</li>
+        <li>Se não tiver furos, faça alguns pequenos para drenagem</li>
+        <li>Adicione 2-3cm de substrato umedecido</li>
+        <li>Nivele a superfície com a mão (não compacte demais)</li>
+        <li>O substrato deve estar úmido como esponja torcida</li>
+      </ol>
+    </div>
+
+    <h2>PASSO 2: Semear</h2>
+
+    <div class="step-box">
+      <h4>Instruções:</h4>
+      <ol>
+        <li>Distribua as sementes uniformemente sobre o substrato</li>
+        <li>Densidade: sementes quase se tocando (mas não empilhadas)</li>
+        <li>Pressione levemente para contato com substrato</li>
+        <li>Para sementes grandes (girassol, ervilha): deixe de molho 8-12h antes</li>
+        <li>Borrife água generosamente</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4>Dica Importante:</h4>
+      <p>Sementes muito espaçadas = desperdício de espaço. Sementes empilhadas = mofo. Encontre o equilíbrio!</p>
+    </div>
+
+    <div class="page-number">Módulo 3 - Cultivo - Página 7</div>
+  </div>
+
+  <div class="page">
+    <h2>PASSO 3: Fase de Blackout (Dias 1-3)</h2>
+
+    <div class="step-box">
+      <h4>Por que fazer blackout?</h4>
+      <ul>
+        <li>Simula as sementes sob a terra</li>
+        <li>Estimula o alongamento do caule</li>
+        <li>Aumenta a suculência</li>
+        <li>Facilita a colheita depois</li>
+      </ul>
+
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Cubra a bandeja com outra bandeja invertida (ou tampa)</li>
+        <li>Coloque um peso leve por cima (livro, pedra)</li>
+        <li>Mantenha em local escuro</li>
+        <li>Borrife água 1-2x por dia (levante a tampa)</li>
+        <li>Mantenha por 2-4 dias até germinarem e crescerem 2-3cm</li>
+      </ol>
+    </div>
+
+    <h2>PASSO 4: Fase de Crescimento (Dias 4-10)</h2>
+
+    <div class="step-box">
+      <h4>Instruções:</h4>
+      <ol>
+        <li>Remova a cobertura quando os brotos tiverem 2-3cm</li>
+        <li>Coloque em local com luz (janela ou grow light)</li>
+        <li>Os brotos estarão amarelados - vão verdejar em 24-48h</li>
+        <li>Regue diariamente (borrife ou rega na base)</li>
+        <li>Mantenha o substrato úmido mas não encharcado</li>
+        <li>Gire a bandeja a cada dia para crescimento uniforme</li>
+      </ol>
+    </div>
+
+    <h3>Sinais de Bom Desenvolvimento:</h3>
+    <ul>
+      <li>✅ Caules eretos e firmes</li>
+      <li>✅ Cor verde vibrante</li>
+      <li>✅ Folhas abertas e expandidas</li>
+      <li>✅ Cheiro fresco de vegetais</li>
+    </ul>
+
+    <h3>Sinais de Problemas:</h3>
+    <ul>
+      <li>❌ Tombamento (damping off)</li>
+      <li>❌ Mofo branco ou cinza</li>
+      <li>❌ Amarelamento persistente</li>
+      <li>❌ Cheiro ruim</li>
+    </ul>
+
+    <div class="page-number">Módulo 3 - Cultivo - Página 8</div>
+  </div>
+
+  <div class="page">
+    <h2>PASSO 5: Colheita</h2>
+
+    <div class="step-box">
+      <h4>Quando colher:</h4>
+      <ul>
+        <li>Quando aparecem as primeiras folhas verdadeiras</li>
+        <li>Altura de 5-10cm (varia por espécie)</li>
+        <li>Geralmente entre 7-14 dias após semeadura</li>
+      </ul>
+
+      <h4>Como colher:</h4>
+      <ol>
+        <li>Use tesoura limpa e afiada</li>
+        <li>Corte logo acima do substrato</li>
+        <li>Colha toda a bandeja de uma vez (não rebrota)</li>
+        <li>Melhor horário: manhã (mais turgidos)</li>
+      </ol>
+    </div>
+
+    <h2>Calendário Visual</h2>
+
+    <table>
+      <tr>
+        <th>Dia</th>
+        <th>O Que Acontece</th>
+        <th>O Que Fazer</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>Semeadura</td>
+        <td>Semear, cobrir, escuro</td>
+      </tr>
+      <tr>
+        <td>1-2</td>
+        <td>Germinação</td>
+        <td>Manter coberto, borrifar</td>
+      </tr>
+      <tr>
+        <td>3-4</td>
+        <td>Brotos emergem</td>
+        <td>Descobrir, colocar na luz</td>
+      </tr>
+      <tr>
+        <td>5-7</td>
+        <td>Desenvolvimento</td>
+        <td>Regar, girar bandeja</td>
+      </tr>
+      <tr>
+        <td>8-14</td>
+        <td>Pronto!</td>
+        <td>Colher e aproveitar</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Produção Contínua:</h4>
+      <p>Para ter microverdes frescos sempre, plante uma nova bandeja a cada 3-4 dias. Assim você terá uma "linha de produção" com bandejas em diferentes estágios.</p>
+    </div>
+
+    <div class="page-number">Módulo 3 - Cultivo - Página 9</div>
+  </div>
+
+  <!-- MÓDULO 4 -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 4: As 15 Melhores Variedades</h2>
+      <p>Escolha o microverdo perfeito para você</p>
+    </div>
+
+    <h2>Para Iniciantes (Muito Fáceis)</h2>
+
+    <div class="step-box">
+      <h4>1. Rabanete</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 5-8 dias</li>
+        <li><strong>Sabor:</strong> Picante, pimenta</li>
+        <li><strong>Dificuldade:</strong> ⭐ (muito fácil)</li>
+        <li><strong>Uso:</strong> Saladas, sanduíches, tacos</li>
+        <li><strong>Dica:</strong> O mais rápido e resistente. Perfeito para começar!</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>2. Girassol</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 8-12 dias</li>
+        <li><strong>Sabor:</strong> Amendoado, crocante</li>
+        <li><strong>Dificuldade:</strong> ⭐⭐</li>
+        <li><strong>Uso:</strong> Saladas, smoothies, snack</li>
+        <li><strong>Dica:</strong> Deixe de molho 8h antes. Remove casca após colher.</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>3. Ervilha</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 8-14 dias</li>
+        <li><strong>Sabor:</strong> Doce, fresco como ervilha</li>
+        <li><strong>Dificuldade:</strong> ⭐⭐</li>
+        <li><strong>Uso:</strong> Saladas, decoração, refogados</li>
+        <li><strong>Dica:</strong> Deixe de molho 8-12h. Gavinhas são comestíveis!</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>4. Brócolis</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 8-12 dias</li>
+        <li><strong>Sabor:</strong> Suave, levemente amargo</li>
+        <li><strong>Dificuldade:</strong> ⭐⭐</li>
+        <li><strong>Uso:</strong> Saladas, sucos, wraps</li>
+        <li><strong>Dica:</strong> Riquíssimo em sulforafano (anticancerígeno).</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Módulo 4 - Variedades - Página 10</div>
+  </div>
+
+  <div class="page">
+    <h2>Intermediários</h2>
+
+    <div class="step-box">
+      <h4>5. Rúcula</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 8-12 dias</li>
+        <li><strong>Sabor:</strong> Picante, mostarda</li>
+        <li><strong>Dificuldade:</strong> ⭐⭐</li>
+        <li><strong>Uso:</strong> Pizzas, saladas, sanduíches</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>6. Mostarda</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 8-12 dias</li>
+        <li><strong>Sabor:</strong> Picante, intenso</li>
+        <li><strong>Dificuldade:</strong> ⭐⭐</li>
+        <li><strong>Uso:</strong> Hambúrgueres, saladas asiáticas</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>7. Repolho Roxo</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 8-12 dias</li>
+        <li><strong>Sabor:</strong> Suave, repolho</li>
+        <li><strong>Dificuldade:</strong> ⭐⭐</li>
+        <li><strong>Uso:</strong> Decoração (cor linda!), saladas</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>8. Coentro</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 14-21 dias</li>
+        <li><strong>Sabor:</strong> Coentro concentrado</li>
+        <li><strong>Dificuldade:</strong> ⭐⭐⭐</li>
+        <li><strong>Uso:</strong> Pratos mexicanos, asiáticos</li>
+        <li><strong>Dica:</strong> Germinação mais lenta. Paciência!</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>9. Beterraba</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 12-18 dias</li>
+        <li><strong>Sabor:</strong> Terroso, doce</li>
+        <li><strong>Dificuldade:</strong> ⭐⭐⭐</li>
+        <li><strong>Uso:</strong> Saladas, decoração (cor vermelha!)</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Módulo 4 - Variedades - Página 11</div>
+  </div>
+
+  <div class="page">
+    <h2>Avançados</h2>
+
+    <div class="step-box">
+      <h4>10. Manjericão</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 14-21 dias</li>
+        <li><strong>Sabor:</strong> Manjericão intenso</li>
+        <li><strong>Dificuldade:</strong> ⭐⭐⭐</li>
+        <li><strong>Uso:</strong> Massas, caprese, pesto</li>
+        <li><strong>Dica:</strong> Precisa de calor. Mínimo 20°C.</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>11. Cenoura</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 14-21 dias</li>
+        <li><strong>Sabor:</strong> Cenoura, levemente terroso</li>
+        <li><strong>Dificuldade:</strong> ⭐⭐⭐</li>
+        <li><strong>Uso:</strong> Decoração gourmet, saladas</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>12. Amaranto</h4>
+      <ul>
+        <li><strong>Tempo:</strong> 10-14 dias</li>
+        <li><strong>Sabor:</strong> Terroso, amendoado</li>
+        <li><strong>Dificuldade:</strong> ⭐⭐⭐</li>
+        <li><strong>Uso:</strong> Decoração (cor magenta!), saladas</li>
+      </ul>
+    </div>
+
+    <h2>Tabela Comparativa Completa</h2>
+    <table>
+      <tr>
+        <th>Variedade</th>
+        <th>Dias</th>
+        <th>Sabor</th>
+        <th>Nível</th>
+      </tr>
+      <tr><td>Rabanete</td><td>5-8</td><td>Picante</td><td>Fácil</td></tr>
+      <tr><td>Girassol</td><td>8-12</td><td>Amendoado</td><td>Fácil</td></tr>
+      <tr><td>Ervilha</td><td>8-14</td><td>Doce</td><td>Fácil</td></tr>
+      <tr><td>Brócolis</td><td>8-12</td><td>Suave</td><td>Fácil</td></tr>
+      <tr><td>Rúcula</td><td>8-12</td><td>Picante</td><td>Médio</td></tr>
+      <tr><td>Mostarda</td><td>8-12</td><td>Picante</td><td>Médio</td></tr>
+      <tr><td>Manjericão</td><td>14-21</td><td>Aromático</td><td>Difícil</td></tr>
+      <tr><td>Coentro</td><td>14-21</td><td>Intenso</td><td>Difícil</td></tr>
+    </table>
+
+    <div class="page-number">Módulo 4 - Variedades - Página 12</div>
+  </div>
+
+  <!-- MÓDULO 5 -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 5: Colheita e Armazenamento</h2>
+      <p>Maximize a vida útil dos seus microverdes</p>
+    </div>
+
+    <h2>Ponto Ideal de Colheita</h2>
+    <p>Colha quando:</p>
+    <ul>
+      <li>Aparecem as primeiras folhas verdadeiras (após os cotilédones)</li>
+      <li>Altura de 5-10cm (varia por espécie)</li>
+      <li>Cor verde vibrante</li>
+      <li>Caules firmes e eretos</li>
+    </ul>
+
+    <div class="warning-box">
+      <h4>Não Espere Demais!</h4>
+      <p>Se colher muito tarde:</p>
+      <ul>
+        <li>Sabor fica amargo</li>
+        <li>Textura fica fibrosa</li>
+        <li>Nutrientes diminuem</li>
+        <li>Risco de tombamento/mofo</li>
+      </ul>
+    </div>
+
+    <h2>Técnica de Colheita</h2>
+    <ol>
+      <li>Use tesoura limpa e afiada</li>
+      <li>Corte logo acima do substrato (1cm)</li>
+      <li>Colha toda a bandeja de uma vez</li>
+      <li>Evite puxar (danifica e traz substrato)</li>
+      <li>Melhor horário: manhã cedo</li>
+    </ol>
+
+    <h2>Lavagem</h2>
+    <div class="step-box">
+      <h4>Como Lavar:</h4>
+      <ol>
+        <li>Encha uma tigela com água fria</li>
+        <li>Mergulhe os microverdes</li>
+        <li>Agite gentilmente</li>
+        <li>Retire e escorra</li>
+        <li>Repita se necessário</li>
+        <li>Seque com centrífuga de salada ou papel toalha</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Módulo 5 - Colheita - Página 13</div>
+  </div>
+
+  <div class="page">
+    <h2>Armazenamento</h2>
+
+    <h3>Método 1: Pote com Papel (Recomendado)</h3>
+    <ol>
+      <li>Forre um pote com papel toalha</li>
+      <li>Coloque os microverdes secos</li>
+      <li>Cubra com mais papel toalha</li>
+      <li>Feche (não hermético)</li>
+      <li>Guarde na geladeira</li>
+      <li><strong>Duração: 7-10 dias</strong></li>
+    </ol>
+
+    <h3>Método 2: Saco Plástico</h3>
+    <ol>
+      <li>Coloque em saco com zip</li>
+      <li>Adicione papel toalha</li>
+      <li>Deixe ar dentro (não esmague)</li>
+      <li>Guarde na gaveta de legumes</li>
+      <li><strong>Duração: 5-7 dias</strong></li>
+    </ol>
+
+    <h3>Método 3: Colheita na Hora</h3>
+    <p>O ideal é colher conforme consumir. Microverdes ficam vivos na bandeja por mais alguns dias após o ponto de colheita.</p>
+
+    <div class="highlight-box">
+      <h4>Dicas de Conservação:</h4>
+      <ul>
+        <li>Nunca lave antes de guardar (só antes de consumir)</li>
+        <li>Temperatura ideal: 1-4°C</li>
+        <li>Umidade: baixa (papel absorve excesso)</li>
+        <li>Troque o papel se ficar úmido</li>
+        <li>Não congele (perdem textura)</li>
+      </ul>
+    </div>
+
+    <h2>Vida Útil por Variedade</h2>
+    <table>
+      <tr>
+        <th>Variedade</th>
+        <th>Geladeira</th>
+      </tr>
+      <tr><td>Girassol</td><td>10-14 dias</td></tr>
+      <tr><td>Ervilha</td><td>10-12 dias</td></tr>
+      <tr><td>Rabanete</td><td>7-10 dias</td></tr>
+      <tr><td>Brócolis</td><td>7-10 dias</td></tr>
+      <tr><td>Manjericão</td><td>5-7 dias</td></tr>
+    </table>
+
+    <div class="page-number">Módulo 5 - Colheita - Página 14</div>
+  </div>
+
+  <!-- MÓDULO 6 -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 6: Problemas e Soluções</h2>
+      <p>Resolva qualquer issue rapidamente</p>
+    </div>
+
+    <h2>Problema 1: Mofo</h2>
+    <div class="danger-box">
+      <h4>Sintomas:</h4>
+      <p>Penugem branca ou cinza na base dos caules ou no substrato</p>
+      <h4>Causas:</h4>
+      <ul>
+        <li>Excesso de umidade</li>
+        <li>Pouca ventilação</li>
+        <li>Sementes muito densas</li>
+        <li>Temperatura alta + umidade</li>
+      </ul>
+      <h4>Solução:</h4>
+      <ol>
+        <li>Aumente a ventilação (ventilador suave)</li>
+        <li>Reduza a rega</li>
+        <li>Semeie menos denso na próxima</li>
+        <li>Se severo, descarte a bandeja</li>
+      </ol>
+    </div>
+
+    <h2>Problema 2: Tombamento (Damping Off)</h2>
+    <div class="danger-box">
+      <h4>Sintomas:</h4>
+      <p>Mudas tombam, caule fino na base, parecem "derretendo"</p>
+      <h4>Causas:</h4>
+      <ul>
+        <li>Fungo no substrato</li>
+        <li>Excesso de água</li>
+        <li>Sementes velhas ou contaminadas</li>
+      </ul>
+      <h4>Solução:</h4>
+      <ol>
+        <li>Use substrato estéril</li>
+        <li>Não encharque</li>
+        <li>Melhore a drenagem</li>
+        <li>Use sementes frescas</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Módulo 6 - Problemas - Página 15</div>
+  </div>
+
+  <div class="page">
+    <h2>Problema 3: Crescimento Lento</h2>
+    <div class="warning-box">
+      <h4>Causas Possíveis:</h4>
+      <ul>
+        <li>Pouca luz</li>
+        <li>Temperatura baixa</li>
+        <li>Sementes velhas</li>
+        <li>Substrato pobre</li>
+      </ul>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Aumente a exposição à luz</li>
+        <li>Mantenha 18-24°C</li>
+        <li>Use sementes novas</li>
+        <li>Considere grow light</li>
+      </ul>
+    </div>
+
+    <h2>Problema 4: Amarelamento</h2>
+    <div class="warning-box">
+      <h4>Se amarelo durante blackout:</h4>
+      <p>Normal! Vão verdejar quando expostos à luz.</p>
+
+      <h4>Se amarelo após luz:</h4>
+      <ul>
+        <li><strong>Causa:</strong> Excesso de água ou luz insuficiente</li>
+        <li><strong>Solução:</strong> Reduza rega, aumente luz</li>
+      </ul>
+    </div>
+
+    <h2>Problema 5: Germinação Irregular</h2>
+    <div class="warning-box">
+      <h4>Causas:</h4>
+      <ul>
+        <li>Sementes de qualidade variada</li>
+        <li>Distribuição desigual de água</li>
+        <li>Temperatura inconsistente</li>
+      </ul>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Compre sementes de boa procedência</li>
+        <li>Borrife uniformemente</li>
+        <li>Mantenha temperatura estável</li>
+        <li>Para sementes grandes: deixe de molho antes</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Módulo 6 - Problemas - Página 16</div>
+  </div>
+
+  <!-- BÔNUS: BROTOS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>BÔNUS: Guia de Brotos em 7 Dias</h2>
+      <p>O cultivo mais fácil que existe!</p>
+    </div>
+
+    <h2>Brotos: O Que São?</h2>
+    <p>Brotos são sementes germinadas comidas inteiras (semente + raiz + talo). Diferente dos microverdes, crescem NA ÁGUA, SEM LUZ e ficam prontos em 3-7 dias.</p>
+
+    <h2>Materiais</h2>
+    <ul>
+      <li>Pote de vidro (tipo conserva)</li>
+      <li>Gaze ou tecido fino</li>
+      <li>Elástico</li>
+      <li>Sementes para broto</li>
+      <li>Água filtrada</li>
+    </ul>
+
+    <h2>Passo a Passo: Broto de Feijão Moyashi</h2>
+
+    <div class="step-box">
+      <h4>Dia 1: Hidratação</h4>
+      <ol>
+        <li>Coloque 2 colheres de sopa de sementes no pote</li>
+        <li>Cubra com água (3x o volume)</li>
+        <li>Deixe de molho 8-12 horas</li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <h4>Dias 2-6: Germinação</h4>
+      <ol>
+        <li>Escorra toda a água</li>
+        <li>Cubra o pote com gaze + elástico</li>
+        <li>Deixe o pote inclinado (água escorrer)</li>
+        <li>Enxágue 2-3x por dia</li>
+        <li>Mantenha em local escuro</li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <h4>Dia 7: Colheita</h4>
+      <ol>
+        <li>Brotos terão 5-10cm</li>
+        <li>Enxágue bem para remover cascas</li>
+        <li>Consuma imediatamente ou guarde na geladeira (5 dias)</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Bônus - Brotos - Página 17</div>
+  </div>
+
+  <div class="page">
+    <h2>Melhores Sementes para Brotos</h2>
+
+    <table>
+      <tr>
+        <th>Semente</th>
+        <th>Tempo</th>
+        <th>Sabor</th>
+        <th>Dificuldade</th>
+      </tr>
+      <tr>
+        <td>Feijão Moyashi</td>
+        <td>5-7 dias</td>
+        <td>Neutro, crocante</td>
+        <td>Muito fácil</td>
+      </tr>
+      <tr>
+        <td>Lentilha</td>
+        <td>3-5 dias</td>
+        <td>Adocicado</td>
+        <td>Muito fácil</td>
+      </tr>
+      <tr>
+        <td>Alfafa</td>
+        <td>5-7 dias</td>
+        <td>Suave, fresco</td>
+        <td>Fácil</td>
+      </tr>
+      <tr>
+        <td>Grão-de-bico</td>
+        <td>3-5 dias</td>
+        <td>Encorpado</td>
+        <td>Fácil</td>
+      </tr>
+      <tr>
+        <td>Rabanete</td>
+        <td>4-6 dias</td>
+        <td>Picante</td>
+        <td>Fácil</td>
+      </tr>
+    </table>
+
+    <h2>Benefícios dos Brotos</h2>
+    <ul>
+      <li>Aumenta vitaminas em até 500%</li>
+      <li>Quebra anti-nutrientes</li>
+      <li>Cria enzimas digestivas</li>
+      <li>Reduz amido</li>
+      <li>Aumenta proteína disponível</li>
+    </ul>
+
+    <h2>Cuidados com Higiene</h2>
+    <div class="danger-box">
+      <h4>Importante:</h4>
+      <ul>
+        <li>Lave muito bem as mãos</li>
+        <li>Use água filtrada</li>
+        <li>Esterilize o pote</li>
+        <li>Enxágue 2-3x por dia (não pule!)</li>
+        <li>Descarte se tiver cheiro ruim ou mofo</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Bônus - Brotos - Página 18</div>
+  </div>
+
+  <!-- BÔNUS: RECEITAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>BÔNUS: Receitas com Microverdes</h2>
+      <p>Ideias deliciosas para usar sua produção</p>
+    </div>
+
+    <h2>1. Salada Power</h2>
+    <div class="step-box">
+      <h4>Ingredientes:</h4>
+      <ul>
+        <li>2 xícaras de microverdes variados</li>
+        <li>1 abacate fatiado</li>
+        <li>1/2 xícara de tomate cereja</li>
+        <li>2 colheres de sementes de girassol</li>
+        <li>Azeite, limão, sal</li>
+      </ul>
+      <h4>Modo de Preparo:</h4>
+      <p>Misture tudo. Tempere com azeite, limão e sal a gosto.</p>
+    </div>
+
+    <h2>2. Smoothie Verde</h2>
+    <div class="step-box">
+      <h4>Ingredientes:</h4>
+      <ul>
+        <li>1 punhado de microverdes de girassol</li>
+        <li>1 banana</li>
+        <li>1 maçã</li>
+        <li>200ml de água de coco</li>
+        <li>Gelo</li>
+      </ul>
+      <h4>Modo de Preparo:</h4>
+      <p>Bata tudo no liquidificador. Sirva gelado.</p>
+    </div>
+
+    <h2>3. Sanduíche Gourmet</h2>
+    <div class="step-box">
+      <h4>Ingredientes:</h4>
+      <ul>
+        <li>2 fatias de pão integral</li>
+        <li>Pasta de grão-de-bico</li>
+        <li>Microverdes de rabanete</li>
+        <li>Tomate</li>
+        <li>Pepino</li>
+      </ul>
+      <h4>Modo de Preparo:</h4>
+      <p>Monte em camadas. Os microverdes vão por cima!</p>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 19</div>
+  </div>
+
+  <div class="page">
+    <h2>4. Omelete Nutritiva</h2>
+    <div class="step-box">
+      <h4>Ingredientes:</h4>
+      <ul>
+        <li>3 ovos</li>
+        <li>1 punhado de microverdes de brócolis</li>
+        <li>Queijo a gosto</li>
+        <li>Sal e pimenta</li>
+      </ul>
+      <h4>Modo de Preparo:</h4>
+      <p>Faça a omelete normalmente. Adicione os microverdes DEPOIS de pronta (crus, por cima).</p>
+    </div>
+
+    <h2>5. Bowl Asiático</h2>
+    <div class="step-box">
+      <h4>Ingredientes:</h4>
+      <ul>
+        <li>Arroz ou macarrão</li>
+        <li>Legumes salteados</li>
+        <li>Proteína de escolha</li>
+        <li>Microverdes de ervilha</li>
+        <li>Molho de soja, gergelim</li>
+      </ul>
+      <h4>Modo de Preparo:</h4>
+      <p>Monte o bowl. Finalize com microverdes crus por cima.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Dica Geral:</h4>
+      <p>Microverdes devem ser consumidos <strong>CRUS</strong> para preservar os nutrientes. Adicione sempre no final, após o cozimento dos outros ingredientes.</p>
+    </div>
+
+    <h2>Harmonização de Sabores</h2>
+    <table>
+      <tr>
+        <th>Microverdo</th>
+        <th>Combina com</th>
+      </tr>
+      <tr><td>Rabanete</td><td>Tacos, hambúrgueres, sushi</td></tr>
+      <tr><td>Girassol</td><td>Saladas, smoothies, sanduíches</td></tr>
+      <tr><td>Ervilha</td><td>Pratos asiáticos, sopas, risotos</td></tr>
+      <tr><td>Manjericão</td><td>Massas, pizzas, caprese</td></tr>
+      <tr><td>Mostarda</td><td>Carnes, sanduíches, wraps</td></tr>
+    </table>
+
+    <div class="page-number">Bônus - Receitas - Página 20</div>
+  </div>
+
+  <!-- PÁGINA FINAL -->
+  <div class="page">
+    <h1>Parabéns!</h1>
+    <p>Você completou o Guia Completo de Microverdes. Agora você tem todo o conhecimento para cultivar superalimentos em miniatura na sua própria cozinha!</p>
+
+    <div class="success-box">
+      <h4>Resumo do que você aprendeu:</h4>
+      <ul>
+        <li>✅ O que são microverdes e seus benefícios</li>
+        <li>✅ Materiais necessários para começar</li>
+        <li>✅ Passo a passo completo do cultivo</li>
+        <li>✅ As 15 melhores variedades</li>
+        <li>✅ Colheita e armazenamento corretos</li>
+        <li>✅ Como resolver problemas comuns</li>
+        <li>✅ Cultivo de brotos em 7 dias</li>
+        <li>✅ Receitas deliciosas</li>
+      </ul>
+    </div>
+
+    <h2>Próximos Passos</h2>
+    <ol>
+      <li>Compre os materiais básicos</li>
+      <li>Comece com rabanete ou girassol (mais fáceis)</li>
+      <li>Plante sua primeira bandeja</li>
+      <li>Mantenha uma rotação de bandejas</li>
+      <li>Experimente novas variedades</li>
+    </ol>
+
+    <div class="highlight-box">
+      <h4>Dúvidas?</h4>
+      <p>Acesse <strong>minhahortaemcasa.com.br/microverdes</strong> para mais artigos, dicas e inspiração.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+      <p><strong>Minha Horta em Casa</strong></p>
+      <p>minhahortaemcasa.com.br</p>
+      <p style="margin-top: 20px; color: #9ca3af;">© 2025 - Todos os direitos reservados</p>
+    </div>
+  </div>
+</body>
+</html>

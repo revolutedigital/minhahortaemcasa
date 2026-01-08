@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Pragas e Doenças Completo - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.7; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 42px; font-weight: 800; color: #15803d; margin-bottom: 20px; line-height: 1.2; }
+    .cover .subtitle { font-size: 22px; color: #166534; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #15803d; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #22c55e; }
+    h1 { font-size: 32px; color: #15803d; margin-bottom: 20px; border-bottom: 3px solid #22c55e; padding-bottom: 10px; }
+    h2 { font-size: 26px; color: #166534; margin: 30px 0 15px; }
+    h3 { font-size: 20px; color: #15803d; margin: 25px 0 12px; }
+    h4 { font-size: 17px; color: #166534; margin: 15px 0 10px; }
+    p { margin-bottom: 15px; font-size: 15px; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; font-size: 15px; }
+    .highlight-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid #22c55e; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .danger-box { background: linear-gradient(135deg, #fee2e2, #fecaca); border-left: 4px solid #ef4444; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .pest-card { background: #fff; border: 2px solid #ef4444; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .pest-card h4 { color: #dc2626; border-bottom: 1px solid #fecaca; padding-bottom: 8px; margin-bottom: 10px; }
+    .disease-card { background: #fff; border: 2px solid #8b5cf6; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .disease-card h4 { color: #7c3aed; border-bottom: 1px solid #ddd6fe; padding-bottom: 8px; margin-bottom: 10px; }
+    .recipe-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .recipe-box h4 { color: #15803d; margin-bottom: 10px; }
+    .step-box { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .step-box h4 { color: #15803d; font-size: 17px; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    th, td { border: 1px solid #d1d5db; padding: 10px; text-align: left; }
+    th { background: #15803d; color: white; font-weight: 600; }
+    tr:nth-child(even) { background: #f0fdf4; }
+    .severity-alta { color: #dc2626; font-weight: bold; }
+    .severity-media { color: #f59e0b; font-weight: bold; }
+    .severity-baixa { color: #22c55e; font-weight: bold; }
+    .toc { background: #f8fafc; padding: 25px; border-radius: 12px; margin: 20px 0; }
+    .toc h3 { color: #15803d; margin-bottom: 15px; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dashed #e2e8f0; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+    @media print { .page { page-break-after: always; } }
+  </style>
+</head>
+<body>
+
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGrad4)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGrad4)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/><ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/><ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs>
+          <linearGradient id="potGrad4" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bodyGrad4" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Guia Pragas e Doenças Completo</h1>
+    <p class="subtitle">Identifique e elimine qualquer praga ou doença da sua horta</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <h1>Sumário</h1>
+    <div class="toc">
+      <ul>
+        <li><strong>Módulo 1: Diagnóstico Rápido</strong> .................. 3</li>
+        <li><strong>Módulo 2: Pragas Sugadoras</strong> .................. 6</li>
+        <li><strong>Módulo 3: Pragas Mastigadoras</strong> .................. 14</li>
+        <li><strong>Módulo 4: Pragas do Solo</strong> .................. 20</li>
+        <li><strong>Módulo 5: Doenças Fúngicas</strong> .................. 24</li>
+        <li><strong>Módulo 6: Doenças Bacterianas e Virais</strong> .................. 30</li>
+        <li><strong>Módulo 7: Receitas de Defensivos Naturais</strong> .................. 33</li>
+        <li><strong>Módulo 8: Prevenção e Manejo Integrado</strong> .................. 40</li>
+        <li><strong>Módulo 9: Guia de Insetos Benéficos</strong> .................. 44</li>
+        <li><strong>Módulo 10: Armadilhas Caseiras DIY</strong> .................. 48</li>
+        <li><strong>Módulo 11: Pragas por Tipo de Planta</strong> .................. 52</li>
+        <li><strong>Bônus 1: 40 Perguntas Frequentes</strong> .................. 56</li>
+        <li><strong>Bônus 2: Checklist de Emergência</strong> .................. 60</li>
+      </ul>
+    </div>
+    <div class="page-number">Minha Horta em Casa - Página 2</div>
+  </div>
+
+  <!-- MÓDULO 1: DIAGNÓSTICO -->
+  <div class="page">
+    <h1>Módulo 1: Diagnóstico Rápido</h1>
+
+    <h2>Praga ou Doença? Como Identificar</h2>
+    <p>A primeira coisa é entender a diferença entre pragas e doenças para escolher o tratamento certo:</p>
+
+    <table>
+      <tr>
+        <th>Característica</th>
+        <th>Pragas</th>
+        <th>Doenças</th>
+      </tr>
+      <tr>
+        <td>O que são</td>
+        <td>Insetos, moluscos, ácaros</td>
+        <td>Fungos, bactérias, vírus</td>
+      </tr>
+      <tr>
+        <td>Visibilidade</td>
+        <td>Geralmente visíveis a olho nu</td>
+        <td>Invisíveis (vemos os sintomas)</td>
+      </tr>
+      <tr>
+        <td>Movimento</td>
+        <td>Podem se mover na planta</td>
+        <td>Não se movem</td>
+      </tr>
+      <tr>
+        <td>Dano típico</td>
+        <td>Furos, mordidas, sugação</td>
+        <td>Manchas, podridão, murcha</td>
+      </tr>
+      <tr>
+        <td>Tratamento</td>
+        <td>Inseticidas/catação manual</td>
+        <td>Fungicidas/bactericidas</td>
+      </tr>
+    </table>
+
+    <h2>Fluxograma de Diagnóstico</h2>
+    <div class="step-box">
+      <h4>Passo 1: Observe os sintomas</h4>
+      <p><strong>Tem furos nas folhas?</strong></p>
+      <ul>
+        <li>SIM → Pragas mastigadoras (lagartas, besouros, lesmas)</li>
+        <li>NÃO → Continue para passo 2</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 2: Verifique a parte de baixo das folhas</h4>
+      <p><strong>Tem insetos pequenos ou pontos escuros?</strong></p>
+      <ul>
+        <li>SIM → Pragas sugadoras (pulgões, cochonilhas, ácaros)</li>
+        <li>NÃO → Continue para passo 3</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 3: Analise as manchas</h4>
+      <p><strong>Tem manchas coloridas ou pó nas folhas?</strong></p>
+      <ul>
+        <li>Pó branco → Oídio (fungo)</li>
+        <li>Manchas amarelas/marrons → Ferrugem ou mancha foliar</li>
+        <li>Manchas encharcadas → Bacteriose</li>
+        <li>Folhas enrolando/deformando → Vírus ou ácaros</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 4: Verifique o caule e raízes</h4>
+      <p><strong>Caule ou raízes com problemas?</strong></p>
+      <ul>
+        <li>Caule apodrecendo na base → Tombamento (fungo de solo)</li>
+        <li>Raízes com nódulos → Nematoides</li>
+        <li>Planta murcha com solo úmido → Podridão radicular</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 3</div>
+  </div>
+
+  <div class="page">
+    <h2>Tabela de Diagnóstico Visual</h2>
+
+    <table>
+      <tr>
+        <th>Sintoma</th>
+        <th>Causa Provável</th>
+        <th>Gravidade</th>
+      </tr>
+      <tr>
+        <td>Furos redondos nas folhas</td>
+        <td>Besouros, lagartas</td>
+        <td class="severity-media">Média</td>
+      </tr>
+      <tr>
+        <td>Folhas roídas nas bordas</td>
+        <td>Lesmas, caracóis, lagartas</td>
+        <td class="severity-media">Média</td>
+      </tr>
+      <tr>
+        <td>Folhas com manchas amarelas + insetos</td>
+        <td>Pulgões</td>
+        <td class="severity-alta">Alta</td>
+      </tr>
+      <tr>
+        <td>Folhas com teias finas</td>
+        <td>Ácaro rajado</td>
+        <td class="severity-alta">Alta</td>
+      </tr>
+      <tr>
+        <td>Substância pegajosa nas folhas</td>
+        <td>Pulgões, cochonilhas, mosca branca</td>
+        <td class="severity-alta">Alta</td>
+      </tr>
+      <tr>
+        <td>Pó branco nas folhas</td>
+        <td>Oídio</td>
+        <td class="severity-media">Média</td>
+      </tr>
+      <tr>
+        <td>Manchas alaranjadas</td>
+        <td>Ferrugem</td>
+        <td class="severity-media">Média</td>
+      </tr>
+      <tr>
+        <td>Manchas escuras com bordas amarelas</td>
+        <td>Antracnose ou bacteriose</td>
+        <td class="severity-alta">Alta</td>
+      </tr>
+      <tr>
+        <td>Planta murcha mesmo com água</td>
+        <td>Podridão radicular, nematoides</td>
+        <td class="severity-alta">Alta</td>
+      </tr>
+      <tr>
+        <td>Folhas enroladas e deformadas</td>
+        <td>Vírus ou ácaros</td>
+        <td class="severity-alta">Alta</td>
+      </tr>
+      <tr>
+        <td>Muda tombando na base</td>
+        <td>Tombamento (damping off)</td>
+        <td class="severity-alta">Alta</td>
+      </tr>
+    </table>
+
+    <h2>Quando Agir?</h2>
+
+    <div class="highlight-box">
+      <h4>Regra dos 3 Passos</h4>
+      <ol>
+        <li><strong>Detectou o problema?</strong> Aja no mesmo dia</li>
+        <li><strong>Identifique a causa</strong> antes de tratar</li>
+        <li><strong>Isole a planta afetada</strong> para não contaminar outras</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4>Sinais de Urgência - Aja Imediatamente!</h4>
+      <ul>
+        <li>Infestação se espalhando rapidamente</li>
+        <li>Mais de 30% da planta afetada</li>
+        <li>Várias plantas com o mesmo problema</li>
+        <li>Mudas jovens atacadas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 4</div>
+  </div>
+
+  <div class="page">
+    <h2>Equipamentos para Diagnóstico</h2>
+
+    <h3>Kit Básico de Inspeção</h3>
+    <ul>
+      <li><strong>Lupa de bolso (10x):</strong> Para ver ácaros e ovos de insetos</li>
+      <li><strong>Folha branca:</strong> Bata a folha sobre ela - pragas caem e ficam visíveis</li>
+      <li><strong>Lanterna:</strong> Ilumine embaixo das folhas</li>
+      <li><strong>Celular com câmera:</strong> Fotografe para comparar depois</li>
+      <li><strong>Caderno:</strong> Anote datas e sintomas</li>
+    </ul>
+
+    <h3>Técnica do Papel Branco</h3>
+    <div class="step-box">
+      <ol>
+        <li>Pegue uma folha de papel branco</li>
+        <li>Segure embaixo de uma folha suspeita</li>
+        <li>Bata levemente na folha da planta</li>
+        <li>Observe o que cai no papel</li>
+        <li>Pontos que se movem = pragas (ácaros, trips)</li>
+        <li>Pontos que não se movem = sujeira ou dejetos</li>
+      </ol>
+    </div>
+
+    <h3>Inspeção Noturna</h3>
+    <p>Muitas pragas são noturnas! Faça inspeções à noite com lanterna:</p>
+    <ul>
+      <li><strong>Lesmas e caracóis:</strong> Ativos após as 22h</li>
+      <li><strong>Lagartas:</strong> Muitas se alimentam à noite</li>
+      <li><strong>Grilos:</strong> Atacam mudas de noite</li>
+    </ul>
+
+    <h2>Rotina de Inspeção Preventiva</h2>
+
+    <table>
+      <tr>
+        <th>Frequência</th>
+        <th>O Que Verificar</th>
+      </tr>
+      <tr>
+        <td>Diária (ao regar)</td>
+        <td>Olhada geral nas plantas</td>
+      </tr>
+      <tr>
+        <td>2x por semana</td>
+        <td>Embaixo das folhas, especialmente novas</td>
+      </tr>
+      <tr>
+        <td>Semanal</td>
+        <td>Caules, base das plantas, solo</td>
+      </tr>
+      <tr>
+        <td>Quinzenal</td>
+        <td>Raízes (levante um vaso para checar)</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 5</div>
+  </div>
+
+  <!-- MÓDULO 2: PRAGAS SUGADORAS -->
+  <div class="page">
+    <h1>Módulo 2: Pragas Sugadoras</h1>
+
+    <p>Pragas sugadoras inserem seu aparelho bucal na planta e sugam a seiva. Causam enfraquecimento, transmitem doenças e produzem melado que atrai fungos.</p>
+
+    <div class="pest-card">
+      <h4>Pulgões (Aphididae)</h4>
+      <table>
+        <tr><td><strong>Tamanho:</strong></td><td>1-3mm</td></tr>
+        <tr><td><strong>Cores:</strong></td><td>Verde, preto, marrom, amarelo, rosa</td></tr>
+        <tr><td><strong>Onde encontrar:</strong></td><td>Brotos novos, embaixo das folhas, botões florais</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta - reprodução muito rápida</td></tr>
+      </table>
+      <h4>Sinais de Infestação:</h4>
+      <ul>
+        <li>Colônias visíveis (muitos juntos)</li>
+        <li>Folhas novas enrolando</li>
+        <li>Melado pegajoso nas folhas</li>
+        <li>Fumagina (fungo preto sobre o melado)</li>
+        <li>Formigas subindo na planta (atraídas pelo melado)</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Imediato:</strong> Jato forte de água para derrubar</li>
+        <li><strong>Calda de sabão:</strong> 1 colher de sopa de sabão neutro em 1L de água</li>
+        <li><strong>Óleo de neem:</strong> 5ml por litro de água, aplicar a cada 5 dias</li>
+        <li><strong>Grave:</strong> Podar e descartar partes muito afetadas</li>
+      </ol>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Plantar tagetes (cravo de defunto) perto</li>
+        <li>Atrair joaninhas (predador natural)</li>
+        <li>Evitar excesso de nitrogênio (brotos suculentos atraem)</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 6</div>
+  </div>
+
+  <div class="page">
+    <div class="pest-card">
+      <h4>Cochonilhas</h4>
+      <table>
+        <tr><td><strong>Tipos:</strong></td><td>Algodão (branca), carapaça (marrom), farinhenta</td></tr>
+        <tr><td><strong>Tamanho:</strong></td><td>2-5mm</td></tr>
+        <tr><td><strong>Onde encontrar:</strong></td><td>Caules, axilas das folhas, embaixo das folhas</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta - difícil de eliminar</td></tr>
+      </table>
+      <h4>Sinais de Infestação:</h4>
+      <ul>
+        <li>Manchas brancas "algodoadas" (cochonilha algodão)</li>
+        <li>Crostas marrons no caule (cochonilha de carapaça)</li>
+        <li>Folhas amarelando e caindo</li>
+        <li>Melado pegajoso e fumagina</li>
+        <li>Crescimento lento da planta</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Remoção manual:</strong> Cotonete com álcool 70% para pequenas infestações</li>
+        <li><strong>Calda de sabão + óleo:</strong> 1 colher de sabão + 1 colher de óleo vegetal em 1L água</li>
+        <li><strong>Óleo de neem:</strong> 5ml/L, aplicar 3x com intervalo de 7 dias</li>
+        <li><strong>Álcool diluído:</strong> 1 parte de álcool para 1 de água (testar antes)</li>
+      </ol>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Inspecionar plantas novas antes de trazer para casa</li>
+        <li>Manter boa circulação de ar</li>
+        <li>Evitar estresse hídrico (plantas fracas são mais vulneráveis)</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Por Que Cochonilhas São Difíceis?</h4>
+      <p>A carapaça cerosa protege contra defensivos. Por isso é necessário:</p>
+      <ul>
+        <li>Usar óleo para penetrar a proteção</li>
+        <li>Aplicar múltiplas vezes para pegar ovos que eclodem</li>
+        <li>Ser persistente - tratamento leva 2-3 semanas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 7</div>
+  </div>
+
+  <div class="page">
+    <div class="pest-card">
+      <h4>Mosca Branca (Bemisia tabaci)</h4>
+      <table>
+        <tr><td><strong>Tamanho:</strong></td><td>1-2mm</td></tr>
+        <tr><td><strong>Cor:</strong></td><td>Branca com asas</td></tr>
+        <tr><td><strong>Onde encontrar:</strong></td><td>Embaixo das folhas, voam quando a planta é tocada</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta - transmite vírus</td></tr>
+      </table>
+      <h4>Sinais de Infestação:</h4>
+      <ul>
+        <li>Mosquinhas brancas voando ao mexer na planta</li>
+        <li>Ninfas amareladas embaixo das folhas</li>
+        <li>Folhas amarelando e secando</li>
+        <li>Melado e fumagina</li>
+        <li>Transmissão de vírus (folhas deformadas)</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Armadilhas amarelas adesivas:</strong> Muito eficaz para adultos</li>
+        <li><strong>Aspirador de pó:</strong> Aspire os adultos (sério, funciona!)</li>
+        <li><strong>Óleo de neem:</strong> 5ml/L, aplicar embaixo das folhas</li>
+        <li><strong>Sabão de potássio:</strong> Mata ninfas por contato</li>
+      </ol>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Armadilhas amarelas como monitoramento</li>
+        <li>Telas anti-afídeo em estufas</li>
+        <li>Plantar manjericão por perto (repelente natural)</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Como Fazer Armadilha Amarela</h4>
+      <ol>
+        <li>Pegue cartolina ou plástico amarelo</li>
+        <li>Passe óleo vegetal ou vaselina na superfície</li>
+        <li>Pendure perto das plantas afetadas</li>
+        <li>Troque quando estiver cheia de insetos</li>
+      </ol>
+      <p><strong>Por que amarelo?</strong> Mosca branca, pulgões e trips são atraídos por essa cor.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 8</div>
+  </div>
+
+  <div class="page">
+    <div class="pest-card">
+      <h4>Ácaro Rajado (Tetranychus urticae)</h4>
+      <table>
+        <tr><td><strong>Tamanho:</strong></td><td>0,3-0,5mm (quase invisível)</td></tr>
+        <tr><td><strong>Cor:</strong></td><td>Amarelo, verde ou vermelho com manchas escuras</td></tr>
+        <tr><td><strong>Onde encontrar:</strong></td><td>Embaixo das folhas, especialmente em tempo seco</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta - explosão populacional rápida</td></tr>
+      </table>
+      <h4>Sinais de Infestação:</h4>
+      <ul>
+        <li>Pontilhado claro/prateado nas folhas (dano de sucção)</li>
+        <li>Teias finas entre folhas (infestação avançada)</li>
+        <li>Folhas amarelando e secando</li>
+        <li>Pontos móveis visíveis com lupa</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Aumentar umidade:</strong> Ácaros odeiam umidade alta</li>
+        <li><strong>Jato de água forte:</strong> Diariamente por 1 semana</li>
+        <li><strong>Enxofre em pó:</strong> Eficaz contra ácaros</li>
+        <li><strong>Óleo mineral ou de neem:</strong> Sufoca os ácaros</li>
+        <li><strong>Controle biológico:</strong> Ácaro predador (Phytoseiulus)</li>
+      </ol>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Manter umidade adequada (borrifar água nas folhas)</li>
+        <li>Não deixar plantas estressadas por falta de água</li>
+        <li>Quarentena para plantas novas</li>
+      </ul>
+    </div>
+
+    <div class="danger-box">
+      <h4>Cuidado: Ácaros Explodem no Calor</h4>
+      <p>Em dias quentes e secos, uma fêmea pode gerar 100+ descendentes em 2 semanas. Detecte cedo!</p>
+      <p><strong>Teste do papel branco:</strong> Bata uma folha sobre papel - se os pontinhos se moverem, são ácaros.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 9</div>
+  </div>
+
+  <div class="page">
+    <div class="pest-card">
+      <h4>Tripes (Thysanoptera)</h4>
+      <table>
+        <tr><td><strong>Tamanho:</strong></td><td>1-2mm</td></tr>
+        <tr><td><strong>Cor:</strong></td><td>Amarelo, marrom ou preto</td></tr>
+        <tr><td><strong>Onde encontrar:</strong></td><td>Flores, brotos novos, embaixo das folhas</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-media">Média - danos estéticos e transmite vírus</td></tr>
+      </table>
+      <h4>Sinais de Infestação:</h4>
+      <ul>
+        <li>Manchas prateadas nas folhas (células vazias)</li>
+        <li>Pontos escuros (fezes)</li>
+        <li>Flores deformadas ou que não abrem</li>
+        <li>Folhas novas enroladas</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Armadilhas azuis adesivas:</strong> Trips preferem azul</li>
+        <li><strong>Óleo de neem:</strong> Aplicar nos brotos e flores</li>
+        <li><strong>Spinosad:</strong> Inseticida orgânico muito eficaz</li>
+        <li><strong>Remover flores afetadas:</strong> Onde se escondem e reproduzem</li>
+      </ol>
+    </div>
+
+    <h2>Resumo: Pragas Sugadoras</h2>
+    <table>
+      <tr>
+        <th>Praga</th>
+        <th>Sinal Principal</th>
+        <th>Melhor Tratamento</th>
+      </tr>
+      <tr>
+        <td>Pulgões</td>
+        <td>Colônias + melado</td>
+        <td>Jato de água + neem</td>
+      </tr>
+      <tr>
+        <td>Cochonilhas</td>
+        <td>Manchas brancas/marrons no caule</td>
+        <td>Álcool + óleo</td>
+      </tr>
+      <tr>
+        <td>Mosca branca</td>
+        <td>Mosquinhas voando</td>
+        <td>Armadilhas amarelas + neem</td>
+      </tr>
+      <tr>
+        <td>Ácaros</td>
+        <td>Teias finas + pontilhado</td>
+        <td>Água + umidade + enxofre</td>
+      </tr>
+      <tr>
+        <td>Trips</td>
+        <td>Manchas prateadas</td>
+        <td>Armadilhas azuis + spinosad</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 10</div>
+  </div>
+
+  <!-- MÓDULO 3: PRAGAS MASTIGADORAS -->
+  <div class="page">
+    <h1>Módulo 3: Pragas Mastigadoras</h1>
+
+    <p>Pragas mastigadoras têm mandíbulas e comem partes da planta. Causam danos visíveis como furos, cortes e folhas devoradas.</p>
+
+    <div class="pest-card">
+      <h4>Lagartas (várias espécies)</h4>
+      <table>
+        <tr><td><strong>Tipos comuns:</strong></td><td>Lagarta da couve, mede-palmo, rosca, cartucho</td></tr>
+        <tr><td><strong>Tamanho:</strong></td><td>1-5cm dependendo da espécie</td></tr>
+        <tr><td><strong>Onde encontrar:</strong></td><td>Folhas, caule, dentro de frutos</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta - podem devastar rapidamente</td></tr>
+      </table>
+      <h4>Sinais de Infestação:</h4>
+      <ul>
+        <li>Furos grandes e irregulares nas folhas</li>
+        <li>Folhas esqueletizadas (só nervuras)</li>
+        <li>Fezes (bolinhas escuras) nas folhas</li>
+        <li>Lagartas visíveis (especialmente de manhã cedo ou à noite)</li>
+        <li>Ovos na parte de baixo das folhas</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Catação manual:</strong> Mais eficaz para poucas lagartas</li>
+        <li><strong>Bt (Bacillus thuringiensis):</strong> Bactéria que mata apenas lagartas</li>
+        <li><strong>Óleo de neem:</strong> Repelente, afeta crescimento</li>
+        <li><strong>Calda de pimenta:</strong> Repelente natural</li>
+        <li><strong>Atrair vespas:</strong> Predadores naturais de lagartas</li>
+      </ol>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Tela de proteção sobre as plantas (rede anti-insetos)</li>
+        <li>Inspeção diária e remoção de ovos</li>
+        <li>Plantar coentro e endro (atraem vespas predadoras)</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Lagarta Rosca: A Mais Traiçoeira</h4>
+      <p>Se esconde no solo durante o dia e ataca à noite, cortando mudas na base. Procure cavando levemente ao redor de mudas tombadas.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 11</div>
+  </div>
+
+  <div class="page">
+    <div class="pest-card">
+      <h4>Lesmas e Caracóis</h4>
+      <table>
+        <tr><td><strong>Tamanho:</strong></td><td>2-10cm</td></tr>
+        <tr><td><strong>Atividade:</strong></td><td>Noturna e dias nublados/chuvosos</td></tr>
+        <tr><td><strong>Onde encontrar:</strong></td><td>Solo úmido, embaixo de vasos, entulhos</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-media">Média - danos concentrados em mudas</td></tr>
+      </table>
+      <h4>Sinais de Infestação:</h4>
+      <ul>
+        <li>Furos irregulares com bordas lisas</li>
+        <li>Rastro de muco brilhante nas folhas e solo</li>
+        <li>Mudas completamente devoradas de manhã</li>
+        <li>Danos mais intensos em noites úmidas</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Catação manual noturna:</strong> Com lanterna após as 22h</li>
+        <li><strong>Armadilha de cerveja:</strong> Enterrar pote com cerveja - morrem afogadas</li>
+        <li><strong>Barreira de cobre:</strong> Fita de cobre ao redor dos vasos</li>
+        <li><strong>Barreira de cinzas ou cascas de ovo:</strong> Desidrata o corpo delas</li>
+        <li><strong>Sal:</strong> Eficaz mas deve-se ter cuidado com o solo</li>
+      </ol>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Remover esconderijos (entulhos, tijolos, tábuas)</li>
+        <li>Regar de manhã para que o solo seque à noite</li>
+        <li>Usar cobertura de palha seca (menos úmido)</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Armadilha de Cerveja para Lesmas</h4>
+      <ol>
+        <li>Enterre um pote de vidro até a borda ficar no nível do solo</li>
+        <li>Encha 1/3 com cerveja (qualquer tipo)</li>
+        <li>Coloque uma "telhadinho" inclinado para a chuva não diluir</li>
+        <li>Troque a cerveja a cada 2-3 dias</li>
+        <li>Descarte as lesmas coletadas longe da horta</li>
+      </ol>
+      <p><strong>Por que funciona:</strong> A levedura da cerveja atrai lesmas que caem e se afogam.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 12</div>
+  </div>
+
+  <div class="page">
+    <div class="pest-card">
+      <h4>Besouros</h4>
+      <table>
+        <tr><td><strong>Tipos comuns:</strong></td><td>Vaquinha, besouro japonês, burrinho</td></tr>
+        <tr><td><strong>Tamanho:</strong></td><td>5-15mm</td></tr>
+        <tr><td><strong>Onde encontrar:</strong></td><td>Folhas, flores, solo (larvas)</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-media">Média</td></tr>
+      </table>
+      <h4>Sinais de Infestação:</h4>
+      <ul>
+        <li>Furos redondos nas folhas</li>
+        <li>Folhas esqueletizadas (só nervuras)</li>
+        <li>Flores danificadas</li>
+        <li>Besouros visíveis (geralmente durante o dia)</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Catação manual:</strong> De manhã cedo (estão lentos)</li>
+        <li><strong>Balde com água e sabão:</strong> Sacuda a planta sobre ele</li>
+        <li><strong>Óleo de neem:</strong> Repelente e afeta desenvolvimento</li>
+        <li><strong>Armadilhas com feromônio:</strong> Para espécies específicas</li>
+      </ol>
+    </div>
+
+    <div class="pest-card">
+      <h4>Gafanhotos e Grilos</h4>
+      <table>
+        <tr><td><strong>Tamanho:</strong></td><td>2-8cm</td></tr>
+        <tr><td><strong>Atividade:</strong></td><td>Gafanhotos: dia / Grilos: noite</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-media">Média - mas podem devastar mudas</td></tr>
+      </table>
+      <h4>Sinais de Infestação:</h4>
+      <ul>
+        <li>Folhas com cortes irregulares</li>
+        <li>Mudas cortadas na base (grilos)</li>
+        <li>Insetos visíveis saltando</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Catação manual</strong></li>
+        <li><strong>Galinhas ou aves:</strong> Predadores naturais</li>
+        <li><strong>Telas de proteção:</strong> Especialmente em mudas</li>
+        <li><strong>Iscas envenenadas:</strong> Para grilos (cuidado com animais)</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 13</div>
+  </div>
+
+  <!-- MÓDULO 4: PRAGAS DO SOLO -->
+  <div class="page">
+    <h1>Módulo 4: Pragas do Solo</h1>
+
+    <div class="pest-card">
+      <h4>Formigas Cortadeiras</h4>
+      <table>
+        <tr><td><strong>Tipos:</strong></td><td>Saúva, quenquém</td></tr>
+        <tr><td><strong>Tamanho:</strong></td><td>2-15mm</td></tr>
+        <tr><td><strong>Dano:</strong></td><td>Cortam folhas para cultivar fungo no formigueiro</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta - podem desfolhar planta inteira</td></tr>
+      </table>
+      <h4>Sinais de Infestação:</h4>
+      <ul>
+        <li>Folhas cortadas em semicírculo</li>
+        <li>Trilhas de formigas carregando pedaços de folha</li>
+        <li>Plantas desfolhadas rapidamente (de noite)</li>
+        <li>Montes de terra (formigueiro) próximo</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Barreiras físicas:</strong> Graxa ou vaselina ao redor do caule/vaso</li>
+        <li><strong>Água com sabão:</strong> Despejar nos olheiros (mata formigas)</li>
+        <li><strong>Iscas formicidas:</strong> Levam para o formigueiro</li>
+        <li><strong>Localizar e destruir formigueiro:</strong> Solução definitiva</li>
+      </ol>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Plantar gergelim perto da horta (formigas não gostam)</li>
+        <li>Manter a área livre de restos vegetais</li>
+        <li>Monitorar aparecimento de trilhas</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Barreira de Proteção para Vasos</h4>
+      <ol>
+        <li>Passe uma faixa de graxa ou vaselina ao redor da borda do vaso</li>
+        <li>Renove quando secar ou sujar</li>
+        <li>Para canteiros: use fita adesiva dupla face no entorno</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 14</div>
+  </div>
+
+  <div class="page">
+    <div class="pest-card">
+      <h4>Nematoides</h4>
+      <table>
+        <tr><td><strong>O que são:</strong></td><td>Vermes microscópicos que atacam raízes</td></tr>
+        <tr><td><strong>Tamanho:</strong></td><td>Invisível a olho nu</td></tr>
+        <tr><td><strong>Plantas afetadas:</strong></td><td>Tomate, cenoura, batata, alface</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta - difícil de eliminar</td></tr>
+      </table>
+      <h4>Sinais de Infestação:</h4>
+      <ul>
+        <li>Planta murcha mesmo com água adequada</li>
+        <li>Crescimento lento e atrofiado</li>
+        <li>Folhas amarelando</li>
+        <li>Raízes com nódulos (galhas) - sinal definitivo</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Não existe cura fácil!</strong> Melhor prevenir</li>
+        <li><strong>Solarização:</strong> Cobrir solo com plástico por 4-6 semanas</li>
+        <li><strong>Rotação de culturas:</strong> Não plantar mesma família</li>
+        <li><strong>Plantar tagetes:</strong> Libera substâncias nematicidas</li>
+        <li><strong>Trocar o solo:</strong> Em casos graves (vasos)</li>
+      </ol>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Usar substrato novo e de qualidade</li>
+        <li>Não reutilizar solo de plantas suspeitas</li>
+        <li>Intercalar plantio com tagetes/cravo-de-defunto</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Como Verificar se é Nematoide</h4>
+      <ol>
+        <li>Arranque uma planta suspeita</li>
+        <li>Lave as raízes com cuidado</li>
+        <li>Procure por nódulos (inchaços) nas raízes</li>
+        <li>Raízes saudáveis são lisas e uniformes</li>
+      </ol>
+      <p><strong>Atenção:</strong> Algumas leguminosas (feijão, ervilha) têm nódulos BONS (fixação de nitrogênio). São diferentes!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 15</div>
+  </div>
+
+  <!-- MÓDULO 5: DOENÇAS FÚNGICAS -->
+  <div class="page">
+    <h1>Módulo 5: Doenças Fúngicas</h1>
+
+    <p>Fungos são responsáveis por 80% das doenças em plantas. Proliferam em condições úmidas e podem se espalhar rapidamente.</p>
+
+    <div class="disease-card">
+      <h4>Oídio (Erysiphales)</h4>
+      <table>
+        <tr><td><strong>Aparência:</strong></td><td>Pó branco nas folhas</td></tr>
+        <tr><td><strong>Condições favoráveis:</strong></td><td>Umidade alta, temperatura amena (20-25°C)</td></tr>
+        <tr><td><strong>Plantas afetadas:</strong></td><td>Abóbora, pepino, abobrinha, uva, roseiras</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-media">Média - raramente mata, mas enfraquece</td></tr>
+      </table>
+      <h4>Sinais:</h4>
+      <ul>
+        <li>Manchas brancas polvilhadas nas folhas</li>
+        <li>Começa em folhas velhas, sobe para novas</li>
+        <li>Folhas amarelam e secam</li>
+        <li>Redução na produção</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Leite:</strong> 1 parte de leite para 9 de água, borrifar</li>
+        <li><strong>Bicarbonato:</strong> 1 colher de chá por litro de água</li>
+        <li><strong>Enxofre:</strong> Em pó ou calda sulfocálcica</li>
+        <li><strong>Remover folhas afetadas</strong></li>
+      </ol>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Boa circulação de ar entre plantas</li>
+        <li>Não molhar as folhas ao regar</li>
+        <li>Espaçamento adequado</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Receita: Calda de Leite para Oídio</h4>
+      <ul>
+        <li>100ml de leite (qualquer tipo, até vencido)</li>
+        <li>900ml de água</li>
+        <li>Misture bem</li>
+        <li>Aplique nas folhas (cima e baixo) em dia ensolarado</li>
+        <li>Repita a cada 7 dias até sumir</li>
+      </ul>
+      <p><strong>Por que funciona:</strong> A luz do sol + proteínas do leite criam radicais que matam o fungo.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 16</div>
+  </div>
+
+  <div class="page">
+    <div class="disease-card">
+      <h4>Ferrugem (Puccinia spp.)</h4>
+      <table>
+        <tr><td><strong>Aparência:</strong></td><td>Manchas alaranjadas/marrons (pústulas)</td></tr>
+        <tr><td><strong>Condições favoráveis:</strong></td><td>Umidade alta, temperaturas moderadas</td></tr>
+        <tr><td><strong>Plantas afetadas:</strong></td><td>Feijão, alho, cebola, rosas, frutíferas</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-media">Média</td></tr>
+      </table>
+      <h4>Sinais:</h4>
+      <ul>
+        <li>Pústulas alaranjadas na parte de baixo das folhas</li>
+        <li>Manchas amarelas correspondentes na parte de cima</li>
+        <li>Folhas secando e caindo</li>
+        <li>Pó alaranjado (esporos) ao tocar</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Remover folhas afetadas</strong> (queimar ou descartar longe)</li>
+        <li><strong>Calda bordalesa:</strong> Fungicida de cobre</li>
+        <li><strong>Enxofre:</strong> Preventivo e curativo leve</li>
+        <li><strong>Não molhar folhas</strong></li>
+      </ol>
+    </div>
+
+    <div class="disease-card">
+      <h4>Antracnose (Colletotrichum spp.)</h4>
+      <table>
+        <tr><td><strong>Aparência:</strong></td><td>Manchas escuras afundadas em folhas e frutos</td></tr>
+        <tr><td><strong>Condições favoráveis:</strong></td><td>Chuva frequente, respingos de água</td></tr>
+        <tr><td><strong>Plantas afetadas:</strong></td><td>Pimentão, tomate, feijão, mamão, manga</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta - pode destruir frutos</td></tr>
+      </table>
+      <h4>Sinais:</h4>
+      <ul>
+        <li>Manchas circulares escuras com centro mais claro</li>
+        <li>Lesões afundadas em frutos</li>
+        <li>Anéis concêntricos nas manchas</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Remover partes afetadas</strong></li>
+        <li><strong>Calda bordalesa:</strong> Preventivo</li>
+        <li><strong>Evitar respingos de água</strong> (irrigação por gotejamento)</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 17</div>
+  </div>
+
+  <div class="page">
+    <div class="disease-card">
+      <h4>Tombamento / Damping Off</h4>
+      <table>
+        <tr><td><strong>O que é:</strong></td><td>Fungos de solo que atacam mudas jovens</td></tr>
+        <tr><td><strong>Fungos:</strong></td><td>Pythium, Rhizoctonia, Fusarium</td></tr>
+        <tr><td><strong>Condições favoráveis:</strong></td><td>Solo encharcado, má drenagem</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta para mudas</td></tr>
+      </table>
+      <h4>Sinais:</h4>
+      <ul>
+        <li>Mudas tombam na base como se tivessem sido cortadas</li>
+        <li>Estrangulamento do caule na linha do solo</li>
+        <li>Raízes podres (marrons e moles)</li>
+        <li>Acontece principalmente após germinação</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Não tem cura!</strong> Mudas afetadas morrem</li>
+        <li>Remova imediatamente para não contaminar outras</li>
+        <li>Aplique canela em pó nas saudáveis (antifúngico natural)</li>
+      </ol>
+      <h4>Prevenção (Fundamental!):</h4>
+      <ul>
+        <li>Usar substrato esterilizado para mudas</li>
+        <li>Não encharcar - deixar secar entre regas</li>
+        <li>Boa drenagem nos recipientes</li>
+        <li>Ventilação para evitar umidade excessiva</li>
+        <li>Polvilhar canela na superfície do substrato</li>
+      </ul>
+    </div>
+
+    <div class="danger-box">
+      <h4>Tombamento: Perdeu as Mudas?</h4>
+      <p>Se suas mudas tombaram, NÃO reutilize o mesmo substrato! Descarte e comece com substrato novo e esterilizado. Lave bem os recipientes com água sanitária antes de usar novamente.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 18</div>
+  </div>
+
+  <div class="page">
+    <div class="disease-card">
+      <h4>Mofo Cinzento / Botrytis (Botrytis cinerea)</h4>
+      <table>
+        <tr><td><strong>Aparência:</strong></td><td>Massa cinzenta fofa sobre a planta</td></tr>
+        <tr><td><strong>Condições favoráveis:</strong></td><td>Alta umidade, pouca ventilação</td></tr>
+        <tr><td><strong>Plantas afetadas:</strong></td><td>Morango, tomate, alface, flores</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta</td></tr>
+      </table>
+      <h4>Sinais:</h4>
+      <ul>
+        <li>Mofo cinzento fofo (parece poeira)</li>
+        <li>Podridão em flores e frutos</li>
+        <li>Lesões encharcadas que viram mofo</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ol>
+        <li><strong>Remover todas as partes afetadas</strong></li>
+        <li><strong>Melhorar ventilação</strong></li>
+        <li><strong>Reduzir umidade</strong></li>
+        <li><strong>Calda de alho</strong> (antifúngico)</li>
+      </ol>
+    </div>
+
+    <h2>Resumo: Doenças Fúngicas</h2>
+    <table>
+      <tr>
+        <th>Doença</th>
+        <th>Sinal Principal</th>
+        <th>Tratamento</th>
+      </tr>
+      <tr>
+        <td>Oídio</td>
+        <td>Pó branco nas folhas</td>
+        <td>Leite, bicarbonato, enxofre</td>
+      </tr>
+      <tr>
+        <td>Ferrugem</td>
+        <td>Pústulas alaranjadas</td>
+        <td>Calda bordalesa, remover folhas</td>
+      </tr>
+      <tr>
+        <td>Antracnose</td>
+        <td>Manchas escuras afundadas</td>
+        <td>Calda bordalesa, evitar respingos</td>
+      </tr>
+      <tr>
+        <td>Tombamento</td>
+        <td>Mudas tombando na base</td>
+        <td>Prevenção! Canela</td>
+      </tr>
+      <tr>
+        <td>Mofo cinzento</td>
+        <td>Massa cinzenta fofa</td>
+        <td>Remover, ventilar, calda de alho</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 19</div>
+  </div>
+
+  <!-- MÓDULO 6: DOENÇAS BACTERIANAS E VIRAIS -->
+  <div class="page">
+    <h1>Módulo 6: Doenças Bacterianas e Virais</h1>
+
+    <h2>Doenças Bacterianas</h2>
+
+    <div class="disease-card">
+      <h4>Podridão Mole (Erwinia spp.)</h4>
+      <table>
+        <tr><td><strong>Aparência:</strong></td><td>Tecido encharcado, mole, com mau cheiro</td></tr>
+        <tr><td><strong>Plantas afetadas:</strong></td><td>Alface, repolho, couve, tomate, batata</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta</td></tr>
+      </table>
+      <h4>Sinais:</h4>
+      <ul>
+        <li>Lesões encharcadas que viram podres</li>
+        <li>Odor forte desagradável</li>
+        <li>Tecido se desfaz ao toque</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ul>
+        <li><strong>Não existe cura!</strong></li>
+        <li>Remova e destrua plantas afetadas</li>
+        <li>Não colocar no composto</li>
+      </ul>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Evitar ferimentos nas plantas</li>
+        <li>Não regar por cima</li>
+        <li>Boa drenagem do solo</li>
+      </ul>
+    </div>
+
+    <h2>Doenças Virais</h2>
+
+    <div class="disease-card">
+      <h4>Mosaico (vários vírus)</h4>
+      <table>
+        <tr><td><strong>Aparência:</strong></td><td>Padrão de manchas verdes claras e escuras</td></tr>
+        <tr><td><strong>Transmissão:</strong></td><td>Pulgões, mosca branca, ferramentas contaminadas</td></tr>
+        <tr><td><strong>Plantas afetadas:</strong></td><td>Tomate, pimentão, pepino, abobrinha</td></tr>
+        <tr><td><strong>Gravidade:</strong></td><td class="severity-alta">Alta - não tem cura</td></tr>
+      </table>
+      <h4>Sinais:</h4>
+      <ul>
+        <li>Folhas com padrão de mosaico (manchas alternadas)</li>
+        <li>Folhas deformadas, enrugadas</li>
+        <li>Crescimento atrofiado</li>
+        <li>Frutos deformados e manchados</li>
+      </ul>
+      <h4>Tratamento:</h4>
+      <ul>
+        <li><strong>NÃO EXISTE CURA!</strong></li>
+        <li>Arrancar e destruir plantas infectadas</li>
+        <li>Não colocar no composto (vírus sobrevive)</li>
+      </ul>
+      <h4>Prevenção:</h4>
+      <ul>
+        <li>Controlar vetores (pulgões, mosca branca)</li>
+        <li>Usar variedades resistentes</li>
+        <li>Desinfetar ferramentas (álcool 70%)</li>
+        <li>Lavar mãos após tocar plantas suspeitas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 20</div>
+  </div>
+
+  <!-- MÓDULO 7: RECEITAS DE DEFENSIVOS -->
+  <div class="page">
+    <h1>Módulo 7: Receitas de Defensivos Naturais</h1>
+
+    <h2>Receitas Multiuso (Pragas em Geral)</h2>
+
+    <div class="recipe-box">
+      <h4>1. Óleo de Neem Diluído</h4>
+      <p><strong>Para:</strong> Pulgões, cochonilhas, ácaros, lagartas, mosca branca</p>
+      <ul>
+        <li>5ml de óleo de neem</li>
+        <li>1ml de detergente neutro (emulsificante)</li>
+        <li>1 litro de água</li>
+      </ul>
+      <p><strong>Preparo:</strong> Misture o neem com o detergente primeiro, depois adicione a água.</p>
+      <p><strong>Aplicação:</strong> Pulverizar em toda a planta (cima e baixo das folhas). Aplicar no fim da tarde. Repetir a cada 5-7 dias.</p>
+      <p><strong>Carência:</strong> 7 dias antes da colheita</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>2. Calda de Sabão</h4>
+      <p><strong>Para:</strong> Pulgões, cochonilhas, mosca branca (contato direto)</p>
+      <ul>
+        <li>1 colher de sopa de sabão neutro (em barra ralado ou líquido)</li>
+        <li>1 litro de água morna</li>
+      </ul>
+      <p><strong>Preparo:</strong> Dissolva bem o sabão na água morna. Deixe esfriar.</p>
+      <p><strong>Aplicação:</strong> Pulverizar diretamente sobre as pragas. Atua por contato (sufoca).</p>
+      <p><strong>Obs:</strong> Lave as plantas após 2-3 horas em dias quentes (evita queima).</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>3. Calda de Alho</h4>
+      <p><strong>Para:</strong> Repelente geral, pulgões, fungos leves</p>
+      <ul>
+        <li>100g de alho (1 cabeça média)</li>
+        <li>500ml de água</li>
+        <li>10ml de óleo vegetal</li>
+        <li>10ml de sabão neutro líquido</li>
+      </ul>
+      <p><strong>Preparo:</strong></p>
+      <ol>
+        <li>Bata o alho com a água no liquidificador</li>
+        <li>Deixe descansar 24 horas</li>
+        <li>Coe bem</li>
+        <li>Adicione óleo e sabão</li>
+        <li>Dilua: 100ml desta mistura em 1L de água para usar</li>
+      </ol>
+      <p><strong>Aplicação:</strong> Pulverizar semanalmente como preventivo.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 21</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>4. Calda de Pimenta</h4>
+      <p><strong>Para:</strong> Lagartas, formigas, lesmas (repelente)</p>
+      <ul>
+        <li>100g de pimenta fresca (qualquer tipo forte)</li>
+        <li>1 litro de água</li>
+        <li>1 colher de sabão líquido</li>
+      </ul>
+      <p><strong>Preparo:</strong></p>
+      <ol>
+        <li>Bata a pimenta com a água</li>
+        <li>Deixe descansar 24 horas</li>
+        <li>Coe</li>
+        <li>Adicione o sabão</li>
+      </ol>
+      <p><strong>Aplicação:</strong> Pulverizar nas folhas. CUIDADO ao manusear!</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>5. Calda de Fumo (Nicotina)</h4>
+      <p><strong>Para:</strong> Pulgões, cochonilhas, tripes, lagartas</p>
+      <ul>
+        <li>100g de fumo de rolo (ou 20 cigarros sem filtro)</li>
+        <li>1 litro de água</li>
+        <li>10g de sabão neutro</li>
+      </ul>
+      <p><strong>Preparo:</strong></p>
+      <ol>
+        <li>Ferva a água e desligue o fogo</li>
+        <li>Adicione o fumo picado</li>
+        <li>Deixe em infusão por 24 horas</li>
+        <li>Coe bem e adicione sabão</li>
+        <li>Dilua: 1 parte para 10 de água para usar</li>
+      </ol>
+      <p><strong>ATENÇÃO:</strong> Não usar em plantas da família Solanaceae (tomate, pimenta, berinjela) - pode transmitir vírus do mosaico do tabaco!</p>
+      <p><strong>Carência:</strong> 15 dias antes da colheita</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Cuidados com a Calda de Fumo</h4>
+      <ul>
+        <li>Use luvas - nicotina é absorvida pela pele</li>
+        <li>Mantenha longe de crianças e animais</li>
+        <li>Não inale ao aplicar</li>
+        <li>Descarte sobras adequadamente</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 22</div>
+  </div>
+
+  <div class="page">
+    <h2>Receitas para Fungos</h2>
+
+    <div class="recipe-box">
+      <h4>6. Calda Bordalesa Simplificada</h4>
+      <p><strong>Para:</strong> Fungos em geral (oídio, ferrugem, antracnose)</p>
+      <ul>
+        <li>100g de sulfato de cobre</li>
+        <li>100g de cal virgem</li>
+        <li>10 litros de água</li>
+      </ul>
+      <p><strong>Preparo:</strong></p>
+      <ol>
+        <li>Dissolva o sulfato de cobre em 5L de água (recipiente plástico!)</li>
+        <li>Em outro recipiente, dissolva a cal em 5L de água</li>
+        <li>Despeje a solução de cobre sobre a de cal, NUNCA o contrário</li>
+        <li>Mexa bem enquanto mistura</li>
+        <li>Teste com prego: se escurecer, adicione mais cal</li>
+      </ol>
+      <p><strong>Aplicação:</strong> Pulverizar em toda planta. Usar no mesmo dia do preparo.</p>
+      <p><strong>Carência:</strong> 14 dias antes da colheita</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>7. Calda de Leite</h4>
+      <p><strong>Para:</strong> Oídio</p>
+      <ul>
+        <li>100ml de leite (qualquer tipo)</li>
+        <li>900ml de água</li>
+      </ul>
+      <p><strong>Preparo:</strong> Misturar simplesmente.</p>
+      <p><strong>Aplicação:</strong> Pulverizar em dia ENSOLARADO. A luz solar ativa o efeito antifúngico.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>8. Bicarbonato de Sódio</h4>
+      <p><strong>Para:</strong> Oídio, prevenção de fungos</p>
+      <ul>
+        <li>1 colher de chá de bicarbonato</li>
+        <li>1 litro de água</li>
+        <li>1/2 colher de sabão líquido</li>
+      </ul>
+      <p><strong>Aplicação:</strong> Pulverizar semanalmente como preventivo.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 23</div>
+  </div>
+
+  <div class="page">
+    <h2>Receitas Específicas</h2>
+
+    <div class="recipe-box">
+      <h4>9. Armadilha para Lesmas</h4>
+      <ul>
+        <li>Cerveja (qualquer tipo) ou</li>
+        <li>Água com farinha de trigo + fermento</li>
+      </ul>
+      <p>Enterrar pote até a borda no nível do solo. Trocar a cada 3 dias.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>10. Repelente de Formigas</h4>
+      <ul>
+        <li>Água com pimenta + detergente</li>
+        <li>Borrifar nas trilhas e entrada do formigueiro</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>11. Calda Sulfocálcica</h4>
+      <p><strong>Para:</strong> Ácaros, cochonilhas, fungos</p>
+      <p>Receita mais complexa - recomendo comprar pronta.</p>
+      <p><strong>Diluição:</strong> Geralmente 10-20ml por litro</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>12. Canela em Pó</h4>
+      <p><strong>Para:</strong> Prevenção de tombamento em mudas</p>
+      <p>Polvilhar na superfície do substrato e na base das mudas.</p>
+      <p>A canela tem propriedades antifúngicas naturais.</p>
+    </div>
+
+    <h2>Tabela de Referência Rápida</h2>
+    <table>
+      <tr>
+        <th>Problema</th>
+        <th>Receita Recomendada</th>
+      </tr>
+      <tr><td>Pulgões</td><td>Neem, Sabão, Alho</td></tr>
+      <tr><td>Cochonilhas</td><td>Sabão + Óleo, Álcool</td></tr>
+      <tr><td>Lagartas</td><td>Pimenta, Fumo, Bt</td></tr>
+      <tr><td>Lesmas</td><td>Armadilha de cerveja</td></tr>
+      <tr><td>Oídio</td><td>Leite, Bicarbonato</td></tr>
+      <tr><td>Fungos gerais</td><td>Calda bordalesa</td></tr>
+      <tr><td>Tombamento</td><td>Canela (prevenção)</td></tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 24</div>
+  </div>
+
+  <!-- MÓDULO 8: PREVENÇÃO -->
+  <div class="page">
+    <h1>Módulo 8: Prevenção e Manejo Integrado</h1>
+
+    <h2>Os 7 Pilares da Prevenção</h2>
+
+    <div class="step-box">
+      <h4>1. Plantas Saudáveis e Fortes</h4>
+      <p>Plantas bem nutridas e regadas corretamente resistem melhor a pragas e doenças. Um solo equilibrado é a melhor defesa!</p>
+    </div>
+
+    <div class="step-box">
+      <h4>2. Biodiversidade</h4>
+      <p>Monocultura atrai pragas específicas. Plante variedades diferentes misturadas para confundir pragas e atrair predadores naturais.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>3. Rotação de Culturas</h4>
+      <p>Não plante a mesma família no mesmo local em sequência. Quebra o ciclo de pragas e doenças do solo.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>4. Inspeção Regular</h4>
+      <p>Verifique suas plantas 2-3x por semana. Detecção precoce = tratamento fácil.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>5. Higiene</h4>
+      <p>Remova restos de cultura, desinfete ferramentas, quarentena para plantas novas.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>6. Predadores Naturais</h4>
+      <p>Atraia joaninhas, crisopídeos, vespas parasitas. Eles controlam pragas de graça!</p>
+    </div>
+
+    <div class="step-box">
+      <h4>7. Plantas Companheiras</h4>
+      <p>Algumas plantas repelem pragas ou atraem inimigos naturais quando plantadas junto.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 25</div>
+  </div>
+
+  <div class="page">
+    <h2>Plantas Companheiras</h2>
+
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Repele/Atrai</th>
+        <th>Plantar Perto De</th>
+      </tr>
+      <tr>
+        <td>Tagetes (cravo de defunto)</td>
+        <td>Repele nematoides, pulgões</td>
+        <td>Tomate, pimentão, repolho</td>
+      </tr>
+      <tr>
+        <td>Manjericão</td>
+        <td>Repele mosca branca, pulgões</td>
+        <td>Tomate</td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>Repele mosca da cenoura</td>
+        <td>Cenoura, repolho</td>
+      </tr>
+      <tr>
+        <td>Cebolinha/Alho</td>
+        <td>Repele pulgões, ácaros</td>
+        <td>Cenoura, morango, tomate</td>
+      </tr>
+      <tr>
+        <td>Coentro/Endro</td>
+        <td>Atrai vespas predadoras</td>
+        <td>Em toda a horta</td>
+      </tr>
+      <tr>
+        <td>Capuchinha</td>
+        <td>Atrai pulgões (planta armadilha)</td>
+        <td>Longe de plantas principais</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>Repele formigas, pulgões</td>
+        <td>Repolho (em vaso separado!)</td>
+      </tr>
+    </table>
+
+    <h2>Atraindo Predadores Naturais</h2>
+
+    <h3>Joaninhas</h3>
+    <p>Cada joaninha come até 5.000 pulgões na vida!</p>
+    <ul>
+      <li>Plantar endro, coentro, cenoura florida</li>
+      <li>Deixar algumas ervas florescerem</li>
+      <li>Não usar inseticidas de amplo espectro</li>
+    </ul>
+
+    <h3>Crisopídeos (Bicho-lixeiro)</h3>
+    <p>Larvas devoram pulgões, cochonilhas, ácaros.</p>
+    <ul>
+      <li>Plantar cosmos, girassol</li>
+      <li>Deixar áreas "selvagens" na horta</li>
+    </ul>
+
+    <h3>Vespas Parasitas</h3>
+    <p>Colocam ovos dentro de lagartas, matando-as.</p>
+    <ul>
+      <li>Plantar coentro, endro, funcho (flores pequenas)</li>
+      <li>Fornecer água (prato raso com pedras)</li>
+    </ul>
+
+    <div class="page-number">Minha Horta em Casa - Página 26</div>
+  </div>
+
+  <div class="page">
+    <h2>Calendário de Prevenção</h2>
+
+    <table>
+      <tr>
+        <th>Época</th>
+        <th>Pragas Comuns</th>
+        <th>Ação Preventiva</th>
+      </tr>
+      <tr>
+        <td>Primavera</td>
+        <td>Pulgões, lagartas, lesmas</td>
+        <td>Iniciar inspeções frequentes, armadilhas amarelas</td>
+      </tr>
+      <tr>
+        <td>Verão</td>
+        <td>Ácaros, mosca branca, trips</td>
+        <td>Manter umidade, borrifar água nas folhas</td>
+      </tr>
+      <tr>
+        <td>Outono</td>
+        <td>Lesmas, caracóis, fungos</td>
+        <td>Armadilhas, melhorar ventilação</td>
+      </tr>
+      <tr>
+        <td>Inverno</td>
+        <td>Cochonilhas, fungos</td>
+        <td>Poda de limpeza, aplicação de óleo mineral</td>
+      </tr>
+    </table>
+
+    <h2>Checklist de Prevenção</h2>
+
+    <div class="highlight-box">
+      <h4>Semanal</h4>
+      <ul>
+        <li>☐ Inspecionar embaixo das folhas</li>
+        <li>☐ Verificar brotos novos</li>
+        <li>☐ Checar armadilhas</li>
+        <li>☐ Remover folhas mortas</li>
+      </ul>
+      <h4>Mensal</h4>
+      <ul>
+        <li>☐ Aplicação preventiva de neem (se necessário)</li>
+        <li>☐ Verificar raízes de uma planta aleatória</li>
+        <li>☐ Reavaliar espaçamento e ventilação</li>
+      </ul>
+      <h4>A Cada Ciclo/Colheita</h4>
+      <ul>
+        <li>☐ Remover restos de cultura</li>
+        <li>☐ Adicionar composto ao solo</li>
+        <li>☐ Planejar rotação para próximo plantio</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 27</div>
+  </div>
+
+  <!-- MÓDULO 9: INSETOS BENÉFICOS -->
+  <div class="page">
+    <h1>Módulo 9: Guia de Insetos Benéficos</h1>
+    <p>Seus aliados naturais no controle de pragas.</p>
+
+    <div class="highlight-box">
+      <h4>🐞 Joaninhas</h4>
+      <p><strong>O que comem:</strong> Pulgões (até 100/dia), cochonilhas, ácaros</p>
+      <p><strong>Como atrair:</strong> Plante endro, funcho, yarrow, coentro</p>
+      <p><strong>Dica:</strong> Suas larvas parecem "jacarezinhos" pretos - não mate!</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>🦗 Louva-a-Deus</h4>
+      <p><strong>O que comem:</strong> Lagartas, gafanhotos, besouros, moscas</p>
+      <p><strong>Como atrair:</strong> Gramíneas altas e arbustos nas bordas</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>🐝 Vespas Parasitoides</h4>
+      <p><strong>O que fazem:</strong> Depositam ovos dentro de lagartas</p>
+      <p><strong>Como atrair:</strong> Flores pequenas (cenoura, salsa floridas)</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>🕷️ Aranhas de Jardim</h4>
+      <p><strong>O que comem:</strong> Moscas, mosquitos, pulgões alados</p>
+      <p><strong>Dica:</strong> Não destrua teias - uma aranha come centenas de insetos/mês</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>🐛 Crisopídeos (Bicho-lixeiro)</h4>
+      <p><strong>O que comem:</strong> Pulgões, cochonilhas, ovos de pragas</p>
+      <p><strong>Como atrair:</strong> Flores de umbela, evitar inseticidas</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 28</div>
+  </div>
+
+  <div class="page">
+    <h2>Mais Aliados da Horta</h2>
+
+    <div class="highlight-box">
+      <h4>🐸 Sapos e Pererecas</h4>
+      <p><strong>O que comem:</strong> Lesmas, caracóis, insetos diversos</p>
+      <p><strong>Como atrair:</strong> Fonte de água, pedras para esconderijo</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>🦎 Lagartixas</h4>
+      <p><strong>O que comem:</strong> Mosquitos, grilos, baratas, aranhas</p>
+      <p><strong>Como atrair:</strong> Paredes com frestas, pedras empilhadas</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>🐦 Pássaros</h4>
+      <p><strong>O que comem:</strong> Lagartas, besouros, gafanhotos, lesmas</p>
+      <p><strong>Como atrair:</strong> Bebedouro, arbustos para ninho</p>
+      <p><strong>Atenção:</strong> Podem comer frutas também!</p>
+    </div>
+
+    <h2>Como Criar um "Hotel de Insetos"</h2>
+    <div class="step-box">
+      <h4>Materiais</h4>
+      <ul>
+        <li>Caixa de madeira (pode ser de frutas)</li>
+        <li>Bambus ocos de vários diâmetros</li>
+        <li>Pinhas, gravetos, cascas de árvore</li>
+        <li>Tijolos com furos</li>
+      </ul>
+      <h4>Montagem</h4>
+      <ol>
+        <li>Preencha a caixa com os materiais</li>
+        <li>Pendure em local protegido de chuva</li>
+        <li>Altura de 1-1,5m do chão</li>
+        <li>Face voltada para leste (sol da manhã)</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 29</div>
+  </div>
+
+  <!-- MÓDULO 10: ARMADILHAS -->
+  <div class="page">
+    <h1>Módulo 10: Armadilhas Caseiras DIY</h1>
+
+    <div class="recipe-box">
+      <h4>Armadilha Adesiva Amarela</h4>
+      <p><strong>Atrai:</strong> Mosca branca, pulgões alados, minadores</p>
+      <p><strong>Material:</strong> Plástico amarelo + óleo vegetal ou cola</p>
+      <ol>
+        <li>Corte retângulos de plástico amarelo (20x15cm)</li>
+        <li>Passe uma camada de óleo ou cola entomológica</li>
+        <li>Pendure na altura das plantas</li>
+        <li>Troque quando estiver cheia</li>
+      </ol>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Armadilha Adesiva Azul</h4>
+      <p><strong>Atrai:</strong> Trips (especificamente)</p>
+      <p>Mesmo método da amarela, mas use azul royal.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Armadilha de Cerveja</h4>
+      <p><strong>Atrai:</strong> Lesmas e caracóis</p>
+      <ol>
+        <li>Enterre pote no solo (borda rente ao chão)</li>
+        <li>Encha até metade com cerveja</li>
+        <li>Lesmas caem e se afogam</li>
+        <li>Renove a cada 2-3 dias</li>
+      </ol>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Armadilha Pet (Mosca-das-frutas)</h4>
+      <ol>
+        <li>Corte 3-4 furos (2cm) na garrafa pet</li>
+        <li>Isca: suco de fruta + vinagre</li>
+        <li>Pendure nas frutíferas</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 30</div>
+  </div>
+
+  <div class="page">
+    <h2>Mais Armadilhas Eficazes</h2>
+
+    <div class="recipe-box">
+      <h4>Armadilha de Feromônio (Comprada)</h4>
+      <p><strong>Para:</strong> Traças, brocas, moscas específicas</p>
+      <p>Compre em lojas agrícolas. Específica para cada praga.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Armadilha Luminosa</h4>
+      <p><strong>Para:</strong> Mariposas, mosquitos</p>
+      <ol>
+        <li>Coloque luz (LED azul funciona bem) sobre bacia com água</li>
+        <li>Adicione gotas de detergente</li>
+        <li>Insetos caem na água e afundam</li>
+      </ol>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Barreira de Cobre</h4>
+      <p><strong>Para:</strong> Lesmas e caracóis</p>
+      <p>Fita de cobre ao redor de vasos. A lesma leva choque leve ao tocar.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Armadilha de Jornal Úmido</h4>
+      <p><strong>Para:</strong> Tesourinhas, tatuzinhos</p>
+      <ol>
+        <li>Enrole jornal úmido em canudo</li>
+        <li>Deixe no jardim à noite</li>
+        <li>De manhã, colete com insetos dentro</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4>Dica Importante</h4>
+      <p>Armadilhas são para monitoramento e redução de população. Raramente eliminam a praga sozinhas - combine com outros métodos.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 31</div>
+  </div>
+
+  <!-- MÓDULO 11: PRAGAS POR TIPO DE PLANTA -->
+  <div class="page">
+    <h1>Módulo 11: Pragas por Tipo de Planta</h1>
+
+    <h2>Tomates e Pimentões</h2>
+    <table>
+      <tr><th>Praga/Doença</th><th>Sintoma</th><th>Tratamento</th></tr>
+      <tr><td>Mosca branca</td><td>Nuvem ao mexer</td><td>Neem + armadilhas</td></tr>
+      <tr><td>Broca-do-fruto</td><td>Furos nos frutos</td><td>Bt, catação</td></tr>
+      <tr><td>Requeima</td><td>Manchas marrons</td><td>Calda bordalesa</td></tr>
+      <tr><td>Podridão apical</td><td>Ponta preta</td><td>Cálcio, rega regular</td></tr>
+    </table>
+
+    <h2>Alface e Folhosas</h2>
+    <table>
+      <tr><th>Praga/Doença</th><th>Sintoma</th><th>Tratamento</th></tr>
+      <tr><td>Pulgões</td><td>Colônias em folhas</td><td>Sabão, jato d'água</td></tr>
+      <tr><td>Lesmas</td><td>Furos irregulares</td><td>Cerveja, cinzas</td></tr>
+      <tr><td>Míldio</td><td>Manchas amarelas</td><td>Calda bordalesa</td></tr>
+      <tr><td>Queima das bordas</td><td>Bordas secas</td><td>Cálcio, menos calor</td></tr>
+    </table>
+
+    <h2>Brássicas (Couve, Brócolis, Repolho)</h2>
+    <table>
+      <tr><th>Praga/Doença</th><th>Sintoma</th><th>Tratamento</th></tr>
+      <tr><td>Lagarta-da-couve</td><td>Folhas comidas</td><td>Bt, catação</td></tr>
+      <tr><td>Pulgão-ceroso</td><td>Insetos brancos</td><td>Neem, óleo mineral</td></tr>
+      <tr><td>Hérnia das crucíferas</td><td>Raízes deformadas</td><td>Calagem, rotação</td></tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 32</div>
+  </div>
+
+  <div class="page">
+    <h2>Ervas Aromáticas</h2>
+    <table>
+      <tr><th>Praga/Doença</th><th>Sintoma</th><th>Tratamento</th></tr>
+      <tr><td>Ácaros</td><td>Teias finas, folhas bronzeadas</td><td>Umidade, neem</td></tr>
+      <tr><td>Oídio</td><td>Pó branco nas folhas</td><td>Leite diluído</td></tr>
+      <tr><td>Cochonilhas</td><td>Escamas nos caules</td><td>Álcool, escova</td></tr>
+    </table>
+
+    <h2>Cucurbitáceas (Abobrinha, Pepino, Melão)</h2>
+    <table>
+      <tr><th>Praga/Doença</th><th>Sintoma</th><th>Tratamento</th></tr>
+      <tr><td>Oídio</td><td>Pó branco</td><td>Leite, bicarbonato</td></tr>
+      <tr><td>Broca-do-fruto</td><td>Furos nas abobrinhas</td><td>Ensacar frutos</td></tr>
+      <tr><td>Mosca minadora</td><td>Túneis nas folhas</td><td>Neem, remover folhas</td></tr>
+      <tr><td>Vaquinha</td><td>Furos redondos</td><td>Catação, neem</td></tr>
+    </table>
+
+    <h2>Morango</h2>
+    <table>
+      <tr><th>Praga/Doença</th><th>Sintoma</th><th>Tratamento</th></tr>
+      <tr><td>Ácaros</td><td>Folhas bronzeadas</td><td>Enxofre, umidade</td></tr>
+      <tr><td>Mofo cinzento</td><td>Frutos mofados</td><td>Ventilação, remoção</td></tr>
+      <tr><td>Lesmas</td><td>Frutos comidos</td><td>Cerveja, palha</td></tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 33</div>
+  </div>
+
+  <!-- BÔNUS 1: FAQ -->
+  <div class="page">
+    <h1>Bônus 1: 40 Perguntas Frequentes</h1>
+
+    <div class="highlight-box">
+      <h4>1. Posso usar vinagre como inseticida?</h4>
+      <p>Com cuidado! Diluído (1 col/L) pode ajudar contra lesmas. Puro queima folhas.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>2. Neem faz mal para abelhas?</h4>
+      <p>Sim, se aplicado em flores abertas. Aplique sempre no fim da tarde.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>3. Quanto tempo esperar para colher após aplicar neem?</h4>
+      <p>3-7 dias. Lave bem os vegetais antes de consumir.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>4. Por que as pragas voltam sempre?</h4>
+      <p>Você trata sintomas, não causas. Melhore a saúde geral das plantas.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>5. Borra de café funciona contra pragas?</h4>
+      <p>Mito parcial. Pode repelir algumas formigas, mas não é eficaz para maioria.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>6. Devo tirar todas as folhas com pulgões?</h4>
+      <p>Só se forem poucas. Senão, trate e deixe a planta se recuperar.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>7. Como saber se é praga ou falta de nutriente?</h4>
+      <p>Pragas: danos localizados, insetos visíveis. Nutrientes: sintomas em toda planta.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 34</div>
+  </div>
+
+  <div class="page">
+    <div class="highlight-box">
+      <h4>8. Posso misturar neem com sabão?</h4>
+      <p>Sim! O sabão ajuda a emulsificar o neem e potencializa o efeito.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>9. Quanto tempo dura a calda de neem?</h4>
+      <p>Use no mesmo dia. Máximo 24h na geladeira.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>10. Cascas de ovo funcionam contra lesmas?</h4>
+      <p>Parcialmente. Precisam estar bem trituradas e secas.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>11-15. Formigas na horta são ruins?</h4>
+      <p>Só cortadeiras e as que "criam" pulgões. Outras são neutras ou benéficas.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>16-20. Canela realmente funciona?</h4>
+      <p>Sim! Tem propriedades antifúngicas comprovadas. Use em cortes e substrato.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>21-25. Devo alternar produtos?</h4>
+      <p>Recomendado. Evita que pragas desenvolvam resistência.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>26-30. Quanto tempo durar o tratamento?</h4>
+      <p>Mínimo 3-4 semanas para quebrar o ciclo reprodutivo.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>31-40. O que fazer se nada funcionar?</h4>
+      <p>Isole a planta, considere descartar, consulte agrônomo se persistir.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 35</div>
+  </div>
+
+  <!-- BÔNUS 2: CHECKLIST EMERGÊNCIA -->
+  <div class="page">
+    <h1>Bônus 2: Checklist de Emergência</h1>
+    <p>Imprima e cole na sua área de cultivo!</p>
+
+    <div class="danger-box">
+      <h4>Quando é Emergência?</h4>
+      <ul>
+        <li>☐ Mais de 50% da planta afetada</li>
+        <li>☐ Praga se espalhando rapidamente</li>
+        <li>☐ Planta definhando visivelmente</li>
+        <li>☐ Métodos normais não funcionaram</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Protocolo de Emergência</h4>
+      <ol>
+        <li><strong>Isolar:</strong> Afaste planta das outras imediatamente</li>
+        <li><strong>Avaliar:</strong> Vale salvar? Custo x benefício</li>
+        <li><strong>Podar:</strong> Remova todas as partes afetadas</li>
+        <li><strong>Lavar:</strong> Jato forte em toda a planta</li>
+        <li><strong>Tratar:</strong> Aplique tratamento a cada 3 dias (não 7)</li>
+        <li><strong>Monitorar:</strong> Inspecione diariamente por 2 semanas</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4>Quando Descartar</h4>
+      <ul>
+        <li>Vírus confirmado (não tem cura)</li>
+        <li>Mais de 80% comprometida</li>
+        <li>Praga nas raízes (nematoides graves)</li>
+        <li>3 semanas de tratamento sem melhora</li>
+      </ul>
+      <p><strong>Descarte:</strong> Ensaque e lixo comum. NUNCA composte!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 36</div>
+  </div>
+
+  <div class="page">
+    <h2>Kit de Primeiros Socorros da Horta</h2>
+    <div class="highlight-box">
+      <h4>Tenha Sempre à Mão</h4>
+      <ul>
+        <li>☐ Óleo de Neem (pragas em geral)</li>
+        <li>☐ Sabão de coco (pulgões, cochonilhas)</li>
+        <li>☐ Canela em pó (fungos)</li>
+        <li>☐ Álcool 70% (cochonilhas)</li>
+        <li>☐ Bicarbonato (oídio)</li>
+        <li>☐ Borrifador exclusivo</li>
+        <li>☐ Lupa de bolso</li>
+        <li>☐ Tesoura de poda limpa</li>
+        <li>☐ Cotonetes</li>
+        <li>☐ Plástico amarelo + cola</li>
+      </ul>
+    </div>
+
+    <h2>Receitas de Emergência</h2>
+    <div class="recipe-box">
+      <h4>Spray Universal</h4>
+      <p>5ml neem + 1 col sabão + 1L água</p>
+      <p>Borrife em qualquer praga como primeiro socorro.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Antifúngico Rápido</h4>
+      <p>100ml leite + 1 col chá bicarbonato + 900ml água</p>
+      <p>Para oídio e manchas fúngicas.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Custo do Kit Completo</h4>
+      <p>Aproximadamente R$ 80-120. Dura meses!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 37</div>
+  </div>
+
+  <!-- CONCLUSÃO -->
+  <div class="page">
+    <h1>Conclusão: Sua Horta Protegida</h1>
+
+    <h2>Resumo do Que Você Aprendeu</h2>
+    <ul>
+      <li>✅ Diagnosticar rapidamente pragas e doenças</li>
+      <li>✅ Identificar as principais pragas sugadoras e mastigadoras</li>
+      <li>✅ Reconhecer doenças fúngicas, bacterianas e virais</li>
+      <li>✅ Preparar 12 defensivos naturais em casa</li>
+      <li>✅ Prevenir problemas antes que aconteçam</li>
+      <li>✅ Usar plantas companheiras e atrair predadores</li>
+    </ul>
+
+    <h2>Regras de Ouro</h2>
+
+    <div class="highlight-box">
+      <ol>
+        <li><strong>Prevenir é melhor que remediar</strong> - Plantas fortes resistem mais</li>
+        <li><strong>Detecte cedo</strong> - Inspeção regular salva plantas</li>
+        <li><strong>Identifique antes de tratar</strong> - Tratamento errado não funciona</li>
+        <li><strong>Comece pelo menos tóxico</strong> - Água, sabão, neem, depois mais fortes</li>
+        <li><strong>Seja persistente</strong> - Tratamentos precisam de repetição</li>
+      </ol>
+    </div>
+
+    <h2>Quando Desistir de Uma Planta</h2>
+    <p>Às vezes é melhor sacrificar uma planta para salvar as outras:</p>
+    <ul>
+      <li>Mais de 50% afetada</li>
+      <li>Doença viral confirmada</li>
+      <li>Tratamentos não funcionaram após 3 tentativas</li>
+      <li>Risco de contaminar plantas saudáveis</li>
+    </ul>
+
+    <div class="warning-box">
+      <h4>Descarte Correto de Plantas Doentes</h4>
+      <p>NUNCA coloque plantas com doenças ou pragas no composto! Queime, enterre fundo ou coloque no lixo comum (ensacado).</p>
+    </div>
+
+    <p><strong>Bom cultivo e plantas saudáveis!</strong></p>
+    <p>Equipe Minha Horta em Casa</p>
+
+    <div class="page-number">Minha Horta em Casa - Página 28</div>
+  </div>
+
+</body>
+</html>

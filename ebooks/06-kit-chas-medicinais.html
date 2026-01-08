@@ -1,0 +1,3861 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit Horta de Chás e Ervas Medicinais - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.6; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #fdf4ff 0%, #f5d0fe 50%, #e9d5ff 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 42px; font-weight: 800; color: #7c3aed; margin-bottom: 20px; line-height: 1.2; }
+    .cover .subtitle { font-size: 22px; color: #8b5cf6; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #7c3aed; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #a78bfa; }
+    h1 { font-size: 34px; color: #7c3aed; margin-bottom: 20px; border-bottom: 3px solid #a78bfa; padding-bottom: 10px; }
+    h2 { font-size: 28px; color: #8b5cf6; margin: 30px 0 15px; }
+    h3 { font-size: 22px; color: #7c3aed; margin: 25px 0 12px; }
+    h4 { font-size: 18px; color: #8b5cf6; margin: 15px 0 10px; }
+    p { margin-bottom: 15px; font-size: 16px; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: linear-gradient(135deg, #fdf4ff, #f5d0fe); border-left: 4px solid #a78bfa; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .danger-box { background: linear-gradient(135deg, #fee2e2, #fecaca); border-left: 4px solid #ef4444; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .herb-card { background: #fff; border: 2px solid #a78bfa; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .herb-card h4 { color: #7c3aed; margin-bottom: 10px; border-bottom: 1px solid #e9d5ff; padding-bottom: 8px; }
+    .recipe-box { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border: 2px solid #a855f7; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .recipe-box h4 { color: #7c3aed; margin-bottom: 10px; }
+    .tea-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #f59e0b; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .tea-box h4 { color: #92400e; margin-bottom: 10px; }
+    .phyto-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid #10b981; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .phyto-card h4 { color: #059669; margin-bottom: 10px; }
+    .prep-card { background: linear-gradient(135deg, #fff7ed, #fed7aa); border: 2px solid #f97316; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .prep-card h4 { color: #c2410c; margin-bottom: 10px; }
+    .aroma-card { background: linear-gradient(135deg, #fdf2f8, #fce7f3); border: 2px solid #ec4899; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .aroma-card h4 { color: #be185d; margin-bottom: 10px; }
+    .safety-card { background: linear-gradient(135deg, #eff6ff, #dbeafe); border: 2px solid #3b82f6; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .safety-card h4 { color: #1d4ed8; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    th, td { border: 1px solid #d1d5db; padding: 10px; text-align: left; }
+    th { background: #7c3aed; color: white; }
+    tr:nth-child(even) { background: #fdf4ff; }
+    .toc { background: #f8fafc; padding: 30px; border-radius: 12px; margin: 30px 0; }
+    .toc h2 { border-bottom: none; margin-top: 0; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dashed #d1d5db; }
+    .module-header { background: linear-gradient(135deg, #7c3aed, #a78bfa); color: white; padding: 30px; border-radius: 12px; margin: 40px 0 30px; text-align: center; }
+    .module-header h2 { color: white; border-bottom: none; margin: 0; }
+    .module-header p { color: #e9d5ff; margin: 10px 0 0; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; }
+    .step-box { display: flex; align-items: flex-start; margin: 15px 0; }
+    .step-number { background: linear-gradient(135deg, #7c3aed, #a78bfa); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-right: 15px; flex-shrink: 0; }
+    .step-content { flex: 1; }
+    .category-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-right: 8px; margin-bottom: 8px; }
+    .cat-relaxante { background: #dbeafe; color: #1d4ed8; }
+    .cat-digestivo { background: #dcfce7; color: #166534; }
+    .cat-respiratorio { background: #fce7f3; color: #9d174d; }
+    .cat-imunidade { background: #fef3c7; color: #92400e; }
+    .cat-topico { background: #e0e7ff; color: #4338ca; }
+    .cat-feminino { background: #fce7f3; color: #be185d; }
+    .difficulty-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .diff-facil { background: #dcfce7; color: #166534; }
+    .diff-medio { background: #fef3c7; color: #92400e; }
+    .diff-avancado { background: #fee2e2; color: #991b1b; }
+    .compound-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid #22c55e; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+    .interaction-warning { background: linear-gradient(135deg, #fff7ed, #fed7aa); border: 2px dashed #f97316; padding: 15px; margin: 15px 0; border-radius: 8px; }
+    .region-card { background: #fff; border: 2px solid #a78bfa; border-radius: 12px; padding: 15px; margin: 15px 0; }
+    .region-card.norte { border-color: #22c55e; background: linear-gradient(135deg, #f0fdf4, #dcfce7); }
+    .region-card.nordeste { border-color: #f59e0b; background: linear-gradient(135deg, #fffbeb, #fef3c7); }
+    .region-card.centro-oeste { border-color: #ef4444; background: linear-gradient(135deg, #fef2f2, #fecaca); }
+    .region-card.sudeste { border-color: #3b82f6; background: linear-gradient(135deg, #eff6ff, #dbeafe); }
+    .region-card.sul { border-color: #8b5cf6; background: linear-gradient(135deg, #faf5ff, #ede9fe); }
+    @media print { .page { page-break-after: always; } }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="200" viewBox="0 0 100 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="135" rx="25" ry="4" fill="#7c3aed" fill-opacity="0.15"/>
+        <!-- Vaso -->
+        <path d="M30 100H70L65 125H35L30 100Z" fill="url(#pg06)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 95H73V103H27V95Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="100" rx="18" ry="4" fill="#5c4033"/>
+        <!-- Corpo do Verdinho -->
+        <ellipse cx="50" cy="70" rx="28" ry="30" fill="url(#bg06)" stroke="#7c3aed" stroke-width="2.5"/>
+        <!-- Olhos -->
+        <ellipse cx="40" cy="65" rx="4" ry="5" fill="#7c3aed"/>
+        <ellipse cx="60" cy="65" rx="4" ry="5" fill="#7c3aed"/>
+        <ellipse cx="41" cy="63" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="63" rx="1.5" ry="2" fill="white"/>
+        <!-- Sorriso -->
+        <path d="M38 77C38 77 50 87 62 77" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Bochechas -->
+        <ellipse cx="32" cy="73" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="73" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <!-- Folhinhas na cabeça -->
+        <path d="M50 45C50 45 45 30 42 20C48 20 52 30 50 45Z" fill="#a78bfa" stroke="#7c3aed" stroke-width="1.5"/>
+        <path d="M50 45C50 45 55 30 58 20C52 20 48 30 50 45Z" fill="#c4b5fd" stroke="#7c3aed" stroke-width="1.5"/>
+        <path d="M40 50C40 50 28 40 20 35C28 33 38 40 40 50Z" fill="#a78bfa" stroke="#7c3aed" stroke-width="1.5"/>
+        <path d="M60 50C60 50 72 40 80 35C72 33 62 40 60 50Z" fill="#c4b5fd" stroke="#7c3aed" stroke-width="1.5"/>
+        <!-- Braço segurando xícara -->
+        <ellipse cx="82" cy="78" rx="5" ry="4" fill="#a78bfa" stroke="#7c3aed" stroke-width="1.5"/>
+        <!-- Xícara de chá -->
+        <path d="M75 72H95V88C95 92 91 96 85 96C79 96 75 92 75 88V72Z" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+        <path d="M95 76C98 76 100 78 100 81C100 84 98 86 95 86" stroke="#f59e0b" stroke-width="2" fill="none"/>
+        <!-- Vapor do chá -->
+        <path d="M80 68C80 65 82 63 82 60" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+        <path d="M85 66C85 63 87 61 87 58" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+        <path d="M90 68C90 65 92 63 92 60" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+        <defs>
+          <linearGradient id="pg06" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bg06" cx="40%" cy="30%"><stop offset="0%" stop-color="#e9d5ff"/><stop offset="50%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#a78bfa"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Kit Horta de Chás e<br>Ervas Medicinais</h1>
+    <p class="subtitle">Sua farmácia natural completa em casa!</p>
+    <p style="color: #8b5cf6; font-size: 16px; margin-top: 20px;">30 ervas • 50 receitas • Fitoquímica • Aromaterapia</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <h1>Sumário Completo</h1>
+    <p>Este kit profissional ensina você a cultivar, colher, preparar e usar ervas medicinais de forma segura, eficaz e científica.</p>
+
+    <div class="toc">
+      <h2>📚 Conteúdo do Kit</h2>
+      <ul>
+        <li><strong>Guia 1:</strong> Cultivo de 30 Ervas Medicinais (Páginas 3-18)</li>
+        <li><strong>Guia 2:</strong> Manual do Chá Perfeito (Páginas 19-24)</li>
+        <li><strong>Guia 3:</strong> Fitoquímica Básica - Princípios Ativos (Páginas 25-30)</li>
+        <li><strong>Guia 4:</strong> Formas Farmacêuticas Caseiras (Páginas 31-38)</li>
+        <li><strong>Guia 5:</strong> Aromaterapia com Ervas (Páginas 39-44)</li>
+        <li><strong>Guia 6:</strong> Segurança e Interações (Páginas 45-50)</li>
+        <li><strong>Guia 7:</strong> Calendário por Região (Páginas 51-54)</li>
+        <li><strong>Bônus:</strong> 50 Receitas de Blends Terapêuticos (Páginas 55-65)</li>
+      </ul>
+    </div>
+
+    <div class="danger-box">
+      <h4>⚠️ Aviso Importante</h4>
+      <p>Este material é educativo. Ervas medicinais possuem princípios ativos potentes e <strong>não substituem tratamento médico</strong>. Consulte um profissional de saúde antes de usar ervas para fins terapêuticos, especialmente se você:</p>
+      <ul>
+        <li>Está grávida ou amamentando</li>
+        <li>Toma medicamentos contínuos</li>
+        <li>Tem doenças crônicas (diabetes, hipertensão, problemas hepáticos/renais)</li>
+        <li>Vai fazer cirurgia (interromper ervas 2 semanas antes)</li>
+      </ul>
+    </div>
+
+    <h3>O que você vai dominar:</h3>
+    <ul>
+      <li>✅ Cultivar 30 ervas medicinais com fichas detalhadas</li>
+      <li>✅ Entender os princípios ativos e como agem no corpo</li>
+      <li>✅ Preparar chás, tinturas, xaropes, pomadas e óleos</li>
+      <li>✅ Aplicar aromaterapia segura em casa</li>
+      <li>✅ Evitar interações perigosas com medicamentos</li>
+      <li>✅ Saber quando NÃO usar cada erva</li>
+    </ul>
+
+    <div class="page-number">Kit Chás Medicinais - Página 2</div>
+  </div>
+
+  <!-- ==================== GUIA 1: CULTIVO DE ERVAS MEDICINAIS ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 1: Cultivo de 30 Ervas Medicinais</h2>
+      <p>Sua farmácia natural completa - do plantio à colheita</p>
+    </div>
+
+    <h2>Capítulo 1: Fundamentos do Cultivo Medicinal</h2>
+
+    <h3>1.1 Por que Cultivar suas Próprias Ervas?</h3>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>Potência máxima:</strong> Ervas frescas têm 3-5x mais princípios ativos que secas comerciais</li>
+        <li><strong>Pureza garantida:</strong> Sem agrotóxicos, metais pesados ou adulterações</li>
+        <li><strong>Identificação correta:</strong> Você sabe exatamente o que está usando</li>
+        <li><strong>Economia:</strong> 100g de camomila orgânica = R$40+ | Seu cultivo = R$2/mês</li>
+        <li><strong>Sustentabilidade:</strong> Algumas ervas estão em risco de extinção por coleta predatória</li>
+        <li><strong>Terapia dupla:</strong> O ato de cultivar já é medicinal para a mente</li>
+      </ul>
+    </div>
+
+    <h3>1.2 Condições Gerais de Cultivo</h3>
+    <table>
+      <tr>
+        <th>Fator</th>
+        <th>Ideal para Maioria</th>
+        <th>Por quê?</th>
+      </tr>
+      <tr>
+        <td>Luz</td>
+        <td>4-6 horas sol direto</td>
+        <td>Estimula produção de óleos essenciais</td>
+      </tr>
+      <tr>
+        <td>Solo</td>
+        <td>Bem drenado, rico</td>
+        <td>Raízes saudáveis = planta potente</td>
+      </tr>
+      <tr>
+        <td>Rega</td>
+        <td>Moderada, sem encharcamento</td>
+        <td>Excesso dilui princípios ativos</td>
+      </tr>
+      <tr>
+        <td>Vaso</td>
+        <td>Mínimo 3L com furos</td>
+        <td>Espaço para desenvolvimento</td>
+      </tr>
+      <tr>
+        <td>pH</td>
+        <td>6.0 a 7.0</td>
+        <td>Absorção ideal de nutrientes</td>
+      </tr>
+      <tr>
+        <td>Adubação</td>
+        <td>Orgânica, mensal</td>
+        <td>Químicos reduzem qualidade medicinal</td>
+      </tr>
+    </table>
+
+    <h3>1.3 Substrato Ideal para Medicinais</h3>
+    <div class="herb-card">
+      <h4>🌿 Receita de Substrato Premium:</h4>
+      <ul>
+        <li>35% - Terra vegetal peneirada</li>
+        <li>25% - Composto orgânico bem curtido</li>
+        <li>20% - Areia grossa lavada</li>
+        <li>10% - Húmus de minhoca</li>
+        <li>10% - Perlita ou vermiculita</li>
+      </ul>
+      <p><em>Esta mistura garante drenagem perfeita, retenção de umidade equilibrada e nutrição completa.</em></p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 3</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 2: Fichas de Cultivo - Ervas Relaxantes e Calmantes</h2>
+
+    <div class="herb-card">
+      <h4>1. Camomila (Matricaria chamomilla)</h4>
+      <span class="category-badge cat-relaxante">Relaxante</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Apigenina, bisabolol, camazuleno</p>
+      <p><strong>Uso principal:</strong> Calmante, digestivo, anti-inflamatório</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno a meia-sombra</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Moderada, solo levemente úmido</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>3 litros</td></tr>
+        <tr><td><strong>Germinação</strong></td><td>7-14 dias (sementes na superfície)</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Flores abertas, pela manhã cedo</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Anual - replante a cada temporada</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Sementes microscópicas - misture com areia fina para distribuir. NÃO cubra, precisa de luz para germinar. Flores duram apenas 2-3 dias abertas - colha diariamente. O centro amarelo deve estar abaulado (convexo) para máxima potência.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>2. Erva-cidreira / Melissa (Melissa officinalis)</h4>
+      <span class="category-badge cat-relaxante">Relaxante</span>
+      <span class="difficulty-badge diff-facil">Fácil</span>
+      <p><strong>Princípio ativo:</strong> Citral, citronelal, ácido rosmarínico</p>
+      <p><strong>Uso principal:</strong> Ansiedade, insônia, herpes labial, cólicas</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra a sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Regular, não deixar secar completamente</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>5 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Estacas em água ou divisão de touceira</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas a qualquer momento, antes da floração</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Uma das mais fáceis! Estacas enraízam em água em 7-10 dias. Pode se espalhar invasivamente - mantenha em vaso isolado. Aroma cítrico intenso quando folhas são amassadas. NÃO confundir com capim-limão!</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 4</div>
+  </div>
+
+  <div class="page">
+    <div class="herb-card">
+      <h4>3. Capim-limão / Capim-santo (Cymbopogon citratus)</h4>
+      <span class="category-badge cat-relaxante">Relaxante</span>
+      <span class="category-badge cat-digestivo">Digestivo</span>
+      <span class="difficulty-badge diff-facil">Fácil</span>
+      <p><strong>Princípio ativo:</strong> Citral (65-85%), geraniol, mirceno</p>
+      <p><strong>Uso principal:</strong> Calmante, digestivo, febrífugo, repelente</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno (6+ horas)</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Regular a abundante, gosta de umidade</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>15 litros (planta grande)</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Divisão de touceira</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas externas, base branca</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Cresce em touceiras enormes - precisa de espaço. A base branca (bulbo) é mais concentrada em óleos. Folhas são cortantes - use luvas. Pode plantar diretamente de talos comprados no mercado - coloque em água até enraizar.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>4. Lavanda (Lavandula angustifolia / L. dentata)</h4>
+      <span class="category-badge cat-relaxante">Relaxante</span>
+      <span class="difficulty-badge diff-avancado">Avançado</span>
+      <p><strong>Princípio ativo:</strong> Linalol, acetato de linalila, cânfora</p>
+      <p><strong>Uso principal:</strong> Relaxante, ansiolítico, repelente, cicatrizante</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno (6+ horas obrigatório)</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Pouca - tolera seca, odeia encharcamento</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>5 litros com excelente drenagem</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Estacas semi-lenhosas (difícil)</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Flores quando 1/3 estiverem abertas</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Desafiadora no Brasil tropical! Prefira variedades adaptadas: L. dentata (lavanda-francesa) ou L. stoechas toleram melhor o calor. Substrato com 50% areia. NUNCA molhe as folhas. Poda drástica após floração.</p>
+      <div class="warning-box">
+        <p><strong>Clima:</strong> Melhor desempenho em regiões serranas ou Sul do Brasil. No calor intenso, pode não sobreviver ao verão.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 5</div>
+  </div>
+
+  <div class="page">
+    <div class="herb-card">
+      <h4>5. Maracujá (Passiflora incarnata / P. edulis)</h4>
+      <span class="category-badge cat-relaxante">Relaxante</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Flavonoides (crisina), alcaloides harmânicos</p>
+      <p><strong>Uso principal:</strong> Ansiedade severa, insônia, hipertensão nervosa</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Regular, solo úmido</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>20 litros + suporte para trepar</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes ou estacas</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas maduras, não muito velhas</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene (trepadeira vigorosa)</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> A P. incarnata é a espécie medicinal clássica, mas a P. edulis (maracujá comum) também tem propriedades. Precisa de estrutura para trepar. Flores espetaculares! Folhas são usadas secas para chá - mais potente que o fruto para efeito calmante.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>6. Valeriana (Valeriana officinalis)</h4>
+      <span class="category-badge cat-relaxante">Relaxante</span>
+      <span class="difficulty-badge diff-avancado">Avançado</span>
+      <p><strong>Princípio ativo:</strong> Ácido valerênico, valepotriatos, GABA</p>
+      <p><strong>Uso principal:</strong> Insônia crônica, ansiedade, tensão muscular</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra a sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Frequente, solo sempre úmido</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>10 litros (raízes profundas)</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes ou divisão de raízes</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Raízes após 2 anos</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> A parte medicinal é a RAIZ, não as folhas. Precisa de 2 anos para desenvolver raízes potentes. Cheiro forte e desagradável quando seca (normal). Melhor adaptada a climas frios/temperados. No Brasil, prefira regiões serranas.</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 6</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 3: Fichas de Cultivo - Ervas Digestivas</h2>
+
+    <div class="herb-card">
+      <h4>7. Hortelã-pimenta (Mentha x piperita)</h4>
+      <span class="category-badge cat-digestivo">Digestivo</span>
+      <span class="difficulty-badge diff-facil">Fácil</span>
+      <p><strong>Princípio ativo:</strong> Mentol (40-50%), mentona, mentofurano</p>
+      <p><strong>Uso principal:</strong> Digestivo, antiespasmódico, refrescante, cefaleia</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra a sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Frequente, gosta de umidade</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>3 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Estacas em água (enraíza em 5-7 dias)</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas a qualquer momento</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> SEMPRE em vaso isolado - é extremamente invasiva e domina qualquer canteiro. A hortelã-pimenta tem hastes arroxeadas e sabor mais intenso que a hortelã comum. Existem dezenas de variedades: hortelã-verde, chocolate, maçã...</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>8. Boldo-brasileiro (Plectranthus barbatus)</h4>
+      <span class="category-badge cat-digestivo">Digestivo</span>
+      <span class="difficulty-badge diff-facil">Fácil</span>
+      <p><strong>Princípio ativo:</strong> Forscolina, barbatusina, coleol</p>
+      <p><strong>Uso principal:</strong> Fígado, vesícula, digestão de gorduras, ressaca</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Moderada</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>5 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Estacas (enraízam facilmente)</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas maduras</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Muito mais fácil que o boldo-do-chile verdadeiro. Folhas carnudas, peludas e muito amargas. Uma folha pequena basta para uma xícara. Para uso ocasional apenas - não usar diariamente.</p>
+      <div class="danger-box">
+        <p><strong>⚠️ Contraindicações:</strong> PROIBIDO na gravidez (pode causar aborto). Não usar com problemas biliares graves ou obstrução. Uso prolongado pode ser hepatotóxico.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 7</div>
+  </div>
+
+  <div class="page">
+    <div class="herb-card">
+      <h4>9. Erva-doce / Funcho (Foeniculum vulgare)</h4>
+      <span class="category-badge cat-digestivo">Digestivo</span>
+      <span class="category-badge cat-feminino">Feminino</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Anetol (80-90%), fenchona, estragol</p>
+      <p><strong>Uso principal:</strong> Gases, cólicas, lactação, cólicas de bebê</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Moderada</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>15 litros (raiz pivotante profunda)</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes diretas (não gosta de transplante)</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas, bulbo e sementes</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Bienal a perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Planta alta (até 1,5m) - não serve para varandas pequenas. As SEMENTES são a parte mais usada para chá, mas folhas também funcionam. Atrai borboletas e insetos benéficos. Não plante perto de endro - hibridizam.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>10. Gengibre (Zingiber officinale)</h4>
+      <span class="category-badge cat-digestivo">Digestivo</span>
+      <span class="category-badge cat-imunidade">Imunidade</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Gingeróis, shogaóis, zingerona</p>
+      <p><strong>Uso principal:</strong> Náusea, digestão, anti-inflamatório, gripes</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra a sombra</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Frequente, solo sempre úmido</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>15 litros (rizoma se espalha)</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Pedaços de rizoma com "olhos"</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>8-10 meses após plantio</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene tropical</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Plante pedaços de 3-5cm com brotos visíveis ("olhos"). Enterre 2-3cm de profundidade. Gosta de calor e alta umidade - perfeito para o Brasil! Parte aérea morre no frio mas rizoma rebrota. Colha quando folhas amarelarem naturalmente.</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 8</div>
+  </div>
+
+  <div class="page">
+    <div class="herb-card">
+      <h4>11. Açafrão-da-terra / Cúrcuma (Curcuma longa)</h4>
+      <span class="category-badge cat-digestivo">Digestivo</span>
+      <span class="category-badge cat-imunidade">Imunidade</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Curcumina, turmerona, ar-turmerona</p>
+      <p><strong>Uso principal:</strong> Anti-inflamatório potente, digestivo, antioxidante</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Frequente, solo úmido</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>15 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Pedaços de rizoma</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>8-10 meses após plantio</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene tropical</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Cultivo idêntico ao gengibre - podem ser plantados juntos! Rizoma laranja-intenso mancha TUDO - use luvas. A curcumina precisa de pimenta preta (piperina) para ser absorvida - adicione uma pitada ao chá.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>12. Espinheira-santa (Maytenus ilicifolia)</h4>
+      <span class="category-badge cat-digestivo">Digestivo</span>
+      <span class="difficulty-badge diff-avancado">Avançado</span>
+      <p><strong>Princípio ativo:</strong> Maitenina, triterpenos, taninos</p>
+      <p><strong>Uso principal:</strong> Gastrite, úlcera, azia, refluxo</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra a sombra</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Regular</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>20 litros (arbusto)</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes (difícil) ou mudas</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas de plantas com 2+ anos</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene (arbusto nativo brasileiro)</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Espécie nativa da Mata Atlântica - bem adaptada ao Brasil. Crescimento lento mas recompensador. Folhas com bordas espinhosas (daí o nome). Comprovação científica para problemas gástricos. Evitar na gravidez e lactação.</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 9</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 4: Fichas de Cultivo - Ervas para Imunidade</h2>
+
+    <div class="herb-card">
+      <h4>13. Alecrim (Salvia rosmarinus)</h4>
+      <span class="category-badge cat-imunidade">Imunidade</span>
+      <span class="category-badge cat-digestivo">Digestivo</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Ácido rosmarínico, carnosol, 1,8-cineol</p>
+      <p><strong>Uso principal:</strong> Memória, circulação, antioxidante, cabelo</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno (mínimo 6 horas)</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Pouca - tolera seca, odeia encharcamento</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>5 litros com ótima drenagem</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Estacas semi-lenhosas</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Ramos a qualquer momento</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene (pode virar arbusto grande)</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Reclassificado de Rosmarinus para Salvia em 2017. Substrato com muita areia. Não gosta de umidade - evite borrifar folhas. Poda regular mantém compacto e estimula brotos novos. Estudos promissores para memória e Alzheimer.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>14. Equinácea (Echinacea purpurea)</h4>
+      <span class="category-badge cat-imunidade">Imunidade</span>
+      <span class="difficulty-badge diff-avancado">Avançado</span>
+      <p><strong>Princípio ativo:</strong> Equinacosídeos, alquilamidas, polissacarídeos</p>
+      <p><strong>Uso principal:</strong> Imunidade, gripes, resfriados, infecções</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno a meia-sombra</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Moderada</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>7 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes estratificadas ou divisão</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Raízes (3+ anos), flores e folhas</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Sementes precisam de estratificação fria (30 dias na geladeira) para germinar. Flores roxas espetaculares atraem polinizadores. Use no INÍCIO dos sintomas de gripe - não adianta depois. Não usar por mais de 8 semanas seguidas.</p>
+      <div class="warning-box">
+        <p><strong>Atenção:</strong> Contraindicada para doenças autoimunes (lúpus, esclerose múltipla) - estimula demais o sistema imune.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 10</div>
+  </div>
+
+  <div class="page">
+    <div class="herb-card">
+      <h4>15. Unha-de-gato (Uncaria tomentosa)</h4>
+      <span class="category-badge cat-imunidade">Imunidade</span>
+      <span class="difficulty-badge diff-avancado">Avançado</span>
+      <p><strong>Princípio ativo:</strong> Alcaloides oxindólicos, glicosídeos</p>
+      <p><strong>Uso principal:</strong> Imunidade, anti-inflamatório, artrite</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Frequente, alta umidade</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>30 litros (trepadeira grande)</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes ou estacas</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Casca e raízes (plantas maduras)</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene (trepadeira amazônica)</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Trepadeira nativa da Amazônia - gosta de calor e muita umidade. Nome vem dos espinhos curvos que parecem unhas de gato. Difícil cultivar fora de ambiente tropical. Considere comprar de fornecedores sustentáveis.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>16. Própolis Verde (Baccharis dracunculifolia)</h4>
+      <span class="category-badge cat-imunidade">Imunidade</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Artepilina C, ácido cinâmico, flavonoides</p>
+      <p><strong>Uso principal:</strong> Imunidade, antibacteriano, cicatrizante</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Moderada</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>15 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes ou estacas</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Brotos e folhas jovens</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene (arbusto)</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Esta é a planta que as abelhas usam para fazer a famosa própolis verde brasileira! Arbusto nativo do cerrado. As folhas podem ser usadas em chá, mas a própolis das abelhas é mais concentrada. Se tiver colmeias próximas, plante bastante!</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 11</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 5: Fichas de Cultivo - Ervas Respiratórias</h2>
+
+    <div class="herb-card">
+      <h4>17. Tomilho (Thymus vulgaris)</h4>
+      <span class="category-badge cat-respiratorio">Respiratório</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Timol (20-55%), carvacrol, p-cimeno</p>
+      <p><strong>Uso principal:</strong> Tosse, bronquite, antisséptico, expectorante</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Pouca - tolera seca</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>2 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Estacas ou sementes</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Ramos antes da floração</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Planta compacta - perfeita para vasos pequenos e janelas. O timol é um dos antissépticos naturais mais potentes que existem. Origem mediterrânea - gosta de sol e solo bem drenado. Base de muitos xaropes para tosse.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>18. Guaco (Mikania glomerata)</h4>
+      <span class="category-badge cat-respiratorio">Respiratório</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Cumarina, ácido caurenóico, taninos</p>
+      <p><strong>Uso principal:</strong> Tosse, bronquite, asma, expectorante</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra a sombra</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Regular</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>15 litros (trepadeira)</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Estacas (fácil)</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas maduras</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Trepadeira nativa brasileira - super adaptada! Precisa de suporte para crescer. Folhas em forma de coração. Base do famoso "Xarope de Guaco" vendido em farmácias. A cumarina dá o aroma característico.</p>
+      <div class="danger-box">
+        <p><strong>⚠️ Atenção:</strong> Cumarina tem efeito anticoagulante. NÃO usar com medicamentos para afinar o sangue (varfarina, AAS). Suspender 2 semanas antes de cirurgias.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 12</div>
+  </div>
+
+  <div class="page">
+    <div class="herb-card">
+      <h4>19. Eucalipto (Eucalyptus globulus)</h4>
+      <span class="category-badge cat-respiratorio">Respiratório</span>
+      <span class="difficulty-badge diff-avancado">Avançado</span>
+      <p><strong>Princípio ativo:</strong> 1,8-cineol (eucaliptol) 60-85%</p>
+      <p><strong>Uso principal:</strong> Descongestionante, expectorante, antisséptico</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Moderada</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>30 litros (árvore!)</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas adultas (oval-alongadas)</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene (árvore de crescimento rápido)</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> É uma ÁRVORE - não recomendado para vasos pequenos! Pode manter podado como arbusto, mas perde vigor. Folhas jovens (redondas) e adultas (alongadas) têm composição diferente. Inalação do vapor é a forma mais comum de uso.</p>
+      <div class="warning-box">
+        <p><strong>Alternativa para espaços pequenos:</strong> Use E. citriodora (cheiro de limão) que pode ser mantido menor, ou simplesmente compre folhas secas de fornecedores.</p>
+      </div>
+    </div>
+
+    <div class="herb-card">
+      <h4>20. Poejo (Mentha pulegium)</h4>
+      <span class="category-badge cat-respiratorio">Respiratório</span>
+      <span class="category-badge cat-digestivo">Digestivo</span>
+      <span class="difficulty-badge diff-facil">Fácil</span>
+      <p><strong>Princípio ativo:</strong> Pulegona (até 90%), mentona</p>
+      <p><strong>Uso principal:</strong> Gripes, resfriados, digestão, repelente</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra a sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Regular a frequente</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>3 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Estacas ou divisão</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas e ramos</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Parente da hortelã mas com aroma mais intenso e medicinal. Muito usado na culinária portuguesa. Cresce rasteiro - bom para vasos pendentes.</p>
+      <div class="danger-box">
+        <p><strong>⚠️ CUIDADO:</strong> A pulegona é TÓXICA em doses altas. Use com moderação. NUNCA na gravidez (abortivo). Não usar óleo essencial puro internamente.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 13</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 6: Fichas de Cultivo - Ervas para Uso Tópico</h2>
+
+    <div class="herb-card">
+      <h4>21. Babosa / Aloe vera (Aloe vera)</h4>
+      <span class="category-badge cat-topico">Uso Tópico</span>
+      <span class="difficulty-badge diff-facil">Fácil</span>
+      <p><strong>Princípio ativo:</strong> Acemanana, aloína, aloesina, vitaminas</p>
+      <p><strong>Uso principal:</strong> Queimaduras, cicatrização, hidratação, cabelos</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno a meia-sombra</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Pouca (suculenta)</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>5 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Filhotes laterais (brotos)</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas externas maduras</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Extremamente resistente - a planta perfeita para iniciantes! Produz filhotes que podem ser replantados. Corte folhas da base, deixe escorrer o látex amarelo (aloína) por 15 minutos antes de usar o gel interno.</p>
+      <div class="warning-box">
+        <p><strong>⚠️ Importante:</strong> O gel transparente é seguro para uso tópico. O látex amarelo (aloína) que fica entre a casca e o gel é LAXANTE forte e potencialmente tóxico - NÃO ingerir!</p>
+      </div>
+    </div>
+
+    <div class="herb-card">
+      <h4>22. Calêndula (Calendula officinalis)</h4>
+      <span class="category-badge cat-topico">Uso Tópico</span>
+      <span class="difficulty-badge diff-facil">Fácil</span>
+      <p><strong>Princípio ativo:</strong> Triterpenoides, flavonoides, carotenoides</p>
+      <p><strong>Uso principal:</strong> Cicatrizante, anti-inflamatório, antisséptico</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Moderada</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>3 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes (fácil e rápido)</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Flores abertas, pela manhã</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Anual</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Flores alaranjadas lindas que alegram qualquer horta! Fácil de sementes - germina em 5-14 dias. Colha flores pela manhã quando totalmente abertas. Quanto mais colhe, mais flores produz. Ideal para pomadas caseiras.</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 14</div>
+  </div>
+
+  <div class="page">
+    <div class="herb-card">
+      <h4>23. Confrei (Symphytum officinale)</h4>
+      <span class="category-badge cat-topico">Uso Tópico</span>
+      <span class="difficulty-badge diff-facil">Fácil</span>
+      <p><strong>Princípio ativo:</strong> Alantoína, mucilagens, taninos</p>
+      <p><strong>Uso principal:</strong> Cicatrização de feridas, contusões, fraturas (tópico)</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra a sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Regular</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>10 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Divisão de raízes</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas e raízes</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> A alantoína é um potente regenerador celular. Folhas grandes e peludas. Cresce vigorosamente.</p>
+      <div class="danger-box">
+        <p><strong>⚠️ APENAS USO EXTERNO!</strong> Contém alcaloides pirrolizidínicos hepatotóxicos. NUNCA ingerir. Não aplicar em feridas abertas ou profundas. Uso máximo: 4-6 semanas/ano.</p>
+      </div>
+    </div>
+
+    <div class="herb-card">
+      <h4>24. Arruda (Ruta graveolens)</h4>
+      <span class="category-badge cat-topico">Uso Tópico</span>
+      <span class="difficulty-badge diff-facil">Fácil</span>
+      <p><strong>Princípio ativo:</strong> Rutina, furocumarinas, alcaloides</p>
+      <p><strong>Uso principal:</strong> Repelente, uso ritualístico/cultural</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Pouca</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>3 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Estacas ou sementes</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Ramos</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <div class="danger-box">
+        <p><strong>⚠️ EXTREMO CUIDADO:</strong></p>
+        <ul>
+          <li>TÓXICA se ingerida - pode causar vômitos, convulsões</li>
+          <li>ABORTIVA - NUNCA usar na gravidez</li>
+          <li>FOTOTÓXICA - causa queimaduras graves se tocar a pele e expor ao sol</li>
+          <li>Manusear com luvas e lavar bem as mãos</li>
+          <li>Uso interno não é recomendado por nenhuma literatura científica atual</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 15</div>
+  </div>
+
+  <div class="page">
+    <div class="herb-card">
+      <h4>25. Arnica-brasileira (Solidago chilensis)</h4>
+      <span class="category-badge cat-topico">Uso Tópico</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Quercetina, ácido clorogênico, saponinas</p>
+      <p><strong>Uso principal:</strong> Contusões, hematomas, dores musculares (tópico)</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Moderada</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>5 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes ou divisão</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas e flores</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> NÃO é a mesma arnica europeia (Arnica montana), que é tóxica! A brasileira é mais segura e bem adaptada ao nosso clima. Flores amarelas. Usar em compressas, óleos ou pomadas para pancadas e dores.</p>
+    </div>
+
+    <h2>Capítulo 7: Fichas de Cultivo - Ervas Especiais</h2>
+
+    <div class="herb-card">
+      <h4>26. Cavalinha (Equisetum arvense)</h4>
+      <span class="category-badge cat-imunidade">Remineralizante</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Sílica (até 10%), flavonoides, saponinas</p>
+      <p><strong>Uso principal:</strong> Unhas, cabelos, ossos, diurético</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Meia-sombra</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Abundante - gosta de umidade</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>10 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Divisão de rizomas</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Hastes verdes estéreis</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Planta primitiva (era dos dinossauros!). Rica em sílica biodisponível - ótima para fortalecer cabelos, unhas e ossos. CUIDADO: extremamente invasiva - sempre em vaso isolado. Não usar se tiver problemas renais.</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 16</div>
+  </div>
+
+  <div class="page">
+    <div class="herb-card">
+      <h4>27. Hibisco (Hibiscus sabdariffa)</h4>
+      <span class="category-badge cat-digestivo">Digestivo</span>
+      <span class="category-badge cat-feminino">Feminino</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Antocianinas, ácido hibístico, vitamina C</p>
+      <p><strong>Uso principal:</strong> Emagrecimento, pressão arterial, antioxidante</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Regular</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>15 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Cálices (sépalas) vermelhos</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Anual em clima temperado, perene no tropical</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> O que usamos para chá são os CÁLICES (estrutura vermelha ao redor da flor), não as pétalas! Flores duram apenas 1 dia. Colha os cálices quando carnudos. Chá vermelho lindo e refrescante gelado.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>28. Manjericão-santo / Tulsi (Ocimum tenuiflorum)</h4>
+      <span class="category-badge cat-relaxante">Adaptogênico</span>
+      <span class="category-badge cat-imunidade">Imunidade</span>
+      <span class="difficulty-badge diff-facil">Fácil</span>
+      <p><strong>Princípio ativo:</strong> Eugenol, ácido ursólico, apigenina</p>
+      <p><strong>Uso principal:</strong> Estresse, adaptogênico, imunidade, respiratório</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Regular</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>5 litros</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes ou estacas</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas e flores</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene em clima quente</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> Sagrado na Índia há milênios. Considerado "adaptogênico" - ajuda o corpo a lidar com estresse. Aroma de cravo. Existem variedades verde (Rama) e roxa (Krishna). Pode ser consumido diariamente.</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 17</div>
+  </div>
+
+  <div class="page">
+    <div class="herb-card">
+      <h4>29. Ora-pro-nóbis (Pereskia aculeata)</h4>
+      <span class="category-badge cat-imunidade">Nutritivo</span>
+      <span class="difficulty-badge diff-facil">Fácil</span>
+      <p><strong>Princípio ativo:</strong> Proteína (25-35%), mucilagens, vitaminas</p>
+      <p><strong>Uso principal:</strong> Suplemento proteico, anemia, lactação</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno a meia-sombra</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Moderada (suculenta)</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>15 litros (trepadeira)</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Estacas (enraíza super fácil)</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas novas</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> "Carne de pobre" - uma das plantas mais ricas em proteína do mundo! Cacto primitivo com folhas. Usada na culinária mineira (frango com ora-pro-nóbis). As folhas podem ser consumidas cruas, cozidas, em sucos ou chás. Planta super rústica.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>30. Moringa (Moringa oleifera)</h4>
+      <span class="category-badge cat-imunidade">Supernutritivo</span>
+      <span class="difficulty-badge diff-medio">Médio</span>
+      <p><strong>Princípio ativo:</strong> Proteína, vitaminas A, C, E, minerais, antioxidantes</p>
+      <p><strong>Uso principal:</strong> Suplemento nutricional completo</p>
+      <table>
+        <tr><td><strong>Luz</strong></td><td>Sol pleno</td></tr>
+        <tr><td><strong>Rega</strong></td><td>Moderada (tolera seca)</td></tr>
+        <tr><td><strong>Vaso mínimo</strong></td><td>30 litros (árvore)</td></tr>
+        <tr><td><strong>Propagação</strong></td><td>Sementes ou estacas grandes</td></tr>
+        <tr><td><strong>Colheita</strong></td><td>Folhas, flores, vagens</td></tr>
+        <tr><td><strong>Ciclo</strong></td><td>Perene (árvore de crescimento rápido)</td></tr>
+      </table>
+      <p><strong>Dicas especiais:</strong> "Árvore milagrosa" - contém todos os aminoácidos essenciais, mais cálcio que leite, mais potássio que banana, mais vitamina A que cenoura. Cresce muito rápido (3m no primeiro ano). Pode manter podada. Folhas secas e em pó são super-alimento.</p>
+    </div>
+
+    <div class="page-number">Guia 1 - Cultivo de Ervas - Página 18</div>
+  </div>
+
+  <!-- ==================== GUIA 2: MANUAL DO CHÁ PERFEITO ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 2: Manual do Chá Perfeito</h2>
+      <p>Técnicas profissionais para extrair o máximo das suas ervas</p>
+    </div>
+
+    <h2>Capítulo 1: Tipos de Preparo</h2>
+
+    <h3>1.1 Infusão (Método mais comum)</h3>
+    <div class="herb-card">
+      <h4>☕ Quando usar:</h4>
+      <p>Para partes delicadas: <strong>folhas, flores, partes aéreas</strong></p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Ferva a água e <strong>desligue o fogo</strong></li>
+        <li>Adicione as ervas</li>
+        <li><strong>Tampe</strong> e deixe em infusão por 5-15 minutos</li>
+        <li>Coe e beba</li>
+      </ol>
+      <h4>Por que tampar?</h4>
+      <p>Os óleos essenciais (princípios ativos voláteis) evaporam com o vapor. Tampar preserva até 90% mais compostos ativos!</p>
+    </div>
+
+    <h3>1.2 Decocção</h3>
+    <div class="herb-card">
+      <h4>🔥 Quando usar:</h4>
+      <p>Para partes duras: <strong>raízes, cascas, sementes, talos lenhosos</strong></p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Coloque as ervas na água <strong>fria</strong></li>
+        <li>Leve ao fogo e ferva por 10-20 minutos</li>
+        <li>Desligue, tampe e deixe mais 10 minutos</li>
+        <li>Coe e beba</li>
+      </ol>
+      <h4>Exemplos:</h4>
+      <p>Gengibre, canela em pau, raiz de equinácea, cascas de frutas</p>
+    </div>
+
+    <div class="page-number">Guia 2 - Manual do Chá - Página 19</div>
+  </div>
+
+  <div class="page">
+    <h3>1.3 Maceração</h3>
+    <div class="herb-card">
+      <h4>❄️ Quando usar:</h4>
+      <p>Para ervas que perdem propriedades com calor, ou extrações mais suaves</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Coloque as ervas em água fria ou morna</li>
+        <li>Deixe repousar por 4-12 horas (pode ser overnight)</li>
+        <li>Coe e consuma frio ou aqueça levemente</li>
+      </ol>
+      <h4>Exemplos:</h4>
+      <p>Malva, hibisco gelado, ervas mucilaginosas, chás de frutas</p>
+    </div>
+
+    <h3>1.4 Decocção Mista (Técnica Avançada)</h3>
+    <div class="herb-card">
+      <h4>🎯 Quando usar:</h4>
+      <p>Para blends com partes duras E delicadas</p>
+      <h4>Como fazer:</h4>
+      <ol>
+        <li>Faça decocção das partes duras (raízes, cascas) por 15 min</li>
+        <li>Desligue o fogo</li>
+        <li>Adicione as partes delicadas (folhas, flores)</li>
+        <li>Tampe e deixe em infusão por 5-10 min</li>
+        <li>Coe e beba</li>
+      </ol>
+    </div>
+
+    <h2>Capítulo 2: Proporções Corretas</h2>
+
+    <table>
+      <tr>
+        <th>Tipo de Erva</th>
+        <th>Erva Fresca</th>
+        <th>Erva Seca</th>
+        <th>Água</th>
+      </tr>
+      <tr>
+        <td>Folhas/Flores</td>
+        <td>2-3 colheres (sopa)</td>
+        <td>1 colher (sopa)</td>
+        <td>250ml</td>
+      </tr>
+      <tr>
+        <td>Raízes/Cascas</td>
+        <td>1-2 colheres (sopa) picadas</td>
+        <td>1 colher (chá)</td>
+        <td>250ml</td>
+      </tr>
+      <tr>
+        <td>Sementes</td>
+        <td>Levemente amassadas</td>
+        <td>1 colher (chá)</td>
+        <td>250ml</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>💡 Regra de Ouro:</h4>
+      <p>Use o <strong>DOBRO</strong> de ervas frescas em comparação com secas. Ervas frescas têm mais água (70-80%), então precisam de mais quantidade para ter a mesma concentração de princípios ativos.</p>
+    </div>
+
+    <div class="page-number">Guia 2 - Manual do Chá - Página 20</div>
+  </div>
+
+  <div class="page">
+    <h3>2.1 Temperatura da Água</h3>
+    <table>
+      <tr>
+        <th>Temperatura</th>
+        <th>Quando Usar</th>
+        <th>Ervas</th>
+        <th>Como Identificar</th>
+      </tr>
+      <tr>
+        <td>70-80°C</td>
+        <td>Ervas muito delicadas</td>
+        <td>Camomila, melissa, flores</td>
+        <td>Pequenas bolhas no fundo</td>
+      </tr>
+      <tr>
+        <td>85-95°C</td>
+        <td>Maioria das ervas</td>
+        <td>Hortelã, alecrim, tomilho</td>
+        <td>Bolhas subindo, vapor intenso</td>
+      </tr>
+      <tr>
+        <td>100°C (fervura)</td>
+        <td>Decocção</td>
+        <td>Gengibre, raízes, cascas</td>
+        <td>Ebulição completa</td>
+      </tr>
+    </table>
+
+    <h2>Capítulo 3: Tempo de Infusão por Erva</h2>
+
+    <table>
+      <tr>
+        <th>Erva</th>
+        <th>Tempo Mínimo</th>
+        <th>Tempo Ideal</th>
+        <th>Tempo Máximo</th>
+        <th>Observação</th>
+      </tr>
+      <tr>
+        <td>Camomila</td>
+        <td>3 min</td>
+        <td>5-7 min</td>
+        <td>10 min</td>
+        <td>Amarga se passar</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>3 min</td>
+        <td>5 min</td>
+        <td>7 min</td>
+        <td>Perde frescor se muito</td>
+      </tr>
+      <tr>
+        <td>Erva-cidreira</td>
+        <td>5 min</td>
+        <td>7-10 min</td>
+        <td>15 min</td>
+        <td>Mais tempo = mais calmante</td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>7 min</td>
+        <td>10-12 min</td>
+        <td>15 min</td>
+        <td>Folhas duras precisam mais</td>
+      </tr>
+      <tr>
+        <td>Gengibre</td>
+        <td>10 min</td>
+        <td>15-20 min</td>
+        <td>30 min</td>
+        <td>Decocção, quanto mais = mais picante</td>
+      </tr>
+      <tr>
+        <td>Boldo</td>
+        <td>3 min</td>
+        <td>5 min</td>
+        <td>5 min</td>
+        <td>NUNCA passar - fica intragável</td>
+      </tr>
+      <tr>
+        <td>Capim-limão</td>
+        <td>5 min</td>
+        <td>10 min</td>
+        <td>15 min</td>
+        <td>Base branca precisa mais</td>
+      </tr>
+      <tr>
+        <td>Hibisco</td>
+        <td>5 min</td>
+        <td>8-10 min</td>
+        <td>15 min</td>
+        <td>Mais tempo = mais azedo</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>⚠️ Atenção ao Tempo:</h4>
+      <p>Tempo demais extrai <strong>taninos em excesso</strong>, deixando o chá amargo e adstringente. Se ficou amargo, não foi erro da erva - foi tempo demais! Comece pelo tempo mínimo e aumente gradualmente até encontrar seu ponto ideal.</p>
+    </div>
+
+    <div class="page-number">Guia 2 - Manual do Chá - Página 21</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 4: A Arte dos Blends</h2>
+
+    <h3>4.1 Princípios da Combinação</h3>
+    <div class="highlight-box">
+      <h4>🎨 Estrutura de um Blend Perfeito:</h4>
+      <ul>
+        <li><strong>Base (60-70%):</strong> Erva principal com o efeito desejado</li>
+        <li><strong>Suporte (20-30%):</strong> Erva que complementa ou potencializa a base</li>
+        <li><strong>Acento (5-10%):</strong> Erva para aroma, sabor ou toque especial</li>
+      </ul>
+    </div>
+
+    <h3>4.2 Combinações Sinérgicas Comprovadas</h3>
+    <div class="tea-box">
+      <h4>🌙 Blend "Sono Profundo"</h4>
+      <ul>
+        <li><strong>Base:</strong> 2 partes camomila (apigenina)</li>
+        <li><strong>Suporte:</strong> 1 parte erva-cidreira (citral)</li>
+        <li><strong>Acento:</strong> 1/4 parte lavanda (linalol)</li>
+      </ul>
+      <p><em>Sinergismo: Apigenina + citral potencializam efeito GABAérgico</em></p>
+    </div>
+
+    <div class="tea-box">
+      <h4>🔥 Blend "Digestão Turbo"</h4>
+      <ul>
+        <li><strong>Base:</strong> 2 partes hortelã (mentol)</li>
+        <li><strong>Suporte:</strong> 1 parte erva-doce (anetol)</li>
+        <li><strong>Acento:</strong> Gengibre fresco (gingeróis)</li>
+      </ul>
+      <p><em>Sinergismo: Mentol + anetol = efeito carminativo potencializado</em></p>
+    </div>
+
+    <div class="tea-box">
+      <h4>💪 Blend "Imunidade Máxima"</h4>
+      <ul>
+        <li><strong>Base:</strong> 2 partes equinácea (alquilamidas)</li>
+        <li><strong>Suporte:</strong> 1 parte gengibre (gingeróis)</li>
+        <li><strong>Acento:</strong> 1/2 limão + mel</li>
+      </ul>
+      <p><em>Sinergismo: Imunoestimulantes + vitamina C + própolis do mel</em></p>
+    </div>
+
+    <h3>4.3 Combinações a EVITAR</h3>
+    <div class="danger-box">
+      <ul>
+        <li><strong>Boldo + qualquer coisa de sabor delicado:</strong> O amargor domina tudo</li>
+        <li><strong>Ervas calmantes + alecrim:</strong> Efeitos opostos se cancelam</li>
+        <li><strong>Muitas ervas juntas (5+):</strong> Confusão de princípios ativos</li>
+        <li><strong>Ervas com mesma contraindicação:</strong> Potencializa riscos</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 2 - Manual do Chá - Página 22</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 5: Secagem Profissional</h2>
+
+    <h3>5.1 Métodos de Secagem</h3>
+
+    <div class="herb-card">
+      <h4>Método 1: Pendurar (Tradicional)</h4>
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <div class="step-content">Faça pequenos buquês (5-10 ramos) - não amasse</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <div class="step-content">Amarre com barbante (não elástico - encolhe)</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <div class="step-content">Pendure de cabeça para baixo em local arejado e sombreado</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <div class="step-content">Pronto em 1-2 semanas quando folhas esfarelam ao toque</div>
+      </div>
+      <p><strong>Ideal para:</strong> Alecrim, tomilho, lavanda, orégano, sálvia</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>Método 2: Bandeja (Para Folhas e Flores)</h4>
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <div class="step-content">Espalhe em camada única sobre papel toalha ou tela</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <div class="step-content">Vire 1-2x ao dia para secagem uniforme</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <div class="step-content">Local arejado, sombreado, longe de umidade</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <div class="step-content">Pronto em 3-7 dias</div>
+      </div>
+      <p><strong>Ideal para:</strong> Camomila, erva-cidreira, hortelã, pétalas</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>Método 3: Desidratador/Forno (Rápido)</h4>
+      <ul>
+        <li><strong>Temperatura:</strong> 35-40°C MÁXIMO (acima perde óleos)</li>
+        <li><strong>Forno:</strong> Temperatura mínima, porta entreaberta</li>
+        <li><strong>Tempo:</strong> 2-4 horas, verificando a cada 30 min</li>
+        <li><strong>Teste:</strong> Pronto quando crocante e quebradiço</li>
+      </ul>
+      <div class="warning-box">
+        <p><strong>⚠️ Cuidado:</strong> Temperatura alta (60°C+) evapora óleos essenciais e destrói compostos sensíveis ao calor. Melhor demorar mais em temperatura baixa.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Guia 2 - Manual do Chá - Página 23</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 6: Armazenamento Correto</h2>
+
+    <h3>6.1 Os 5 Inimigos das Ervas Secas</h3>
+    <table>
+      <tr>
+        <th>Inimigo</th>
+        <th>O que causa</th>
+        <th>Solução</th>
+      </tr>
+      <tr>
+        <td>Luz</td>
+        <td>Degrada pigmentos e compostos</td>
+        <td>Recipiente opaco ou escuro</td>
+      </tr>
+      <tr>
+        <td>Umidade</td>
+        <td>Mofo, fermentação</td>
+        <td>Secar bem, local seco</td>
+      </tr>
+      <tr>
+        <td>Calor</td>
+        <td>Evapora óleos essenciais</td>
+        <td>Local fresco (não geladeira)</td>
+      </tr>
+      <tr>
+        <td>Ar</td>
+        <td>Oxidação</td>
+        <td>Recipiente bem fechado</td>
+      </tr>
+      <tr>
+        <td>Tempo</td>
+        <td>Perda gradual de potência</td>
+        <td>Usar em 6-12 meses</td>
+      </tr>
+    </table>
+
+    <h3>6.2 Recipientes Ideais</h3>
+    <div class="highlight-box">
+      <ul>
+        <li>✅ <strong>Vidro âmbar ou escuro:</strong> O melhor! Bloqueia luz, não absorve odores</li>
+        <li>✅ <strong>Latas metálicas:</strong> Ótimo, especialmente com tampa hermética</li>
+        <li>✅ <strong>Cerâmica opaca:</strong> Tradicional e eficiente</li>
+        <li>⚠️ <strong>Vidro transparente:</strong> Só em armário escuro</li>
+        <li>❌ <strong>Plástico:</strong> Absorve e libera odores, não recomendado</li>
+        <li>❌ <strong>Sacos de papel/pano:</strong> Apenas para transporte curto</li>
+      </ul>
+    </div>
+
+    <h3>6.3 Validade das Ervas Secas</h3>
+    <table>
+      <tr>
+        <th>Tipo</th>
+        <th>Validade Ideal</th>
+        <th>Validade Máxima</th>
+      </tr>
+      <tr>
+        <td>Folhas e flores</td>
+        <td>6 meses</td>
+        <td>1 ano</td>
+      </tr>
+      <tr>
+        <td>Raízes e cascas</td>
+        <td>1 ano</td>
+        <td>2 anos</td>
+      </tr>
+      <tr>
+        <td>Sementes inteiras</td>
+        <td>1-2 anos</td>
+        <td>3 anos</td>
+      </tr>
+      <tr>
+        <td>Ervas moídas/em pó</td>
+        <td>3 meses</td>
+        <td>6 meses</td>
+      </tr>
+    </table>
+
+    <div class="herb-card">
+      <h4>📝 Dica de Organização:</h4>
+      <p>Sempre etiquete seus recipientes com:</p>
+      <ul>
+        <li>Nome da erva</li>
+        <li>Data de colheita/compra</li>
+        <li>Origem (sua horta ou comprado)</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 2 - Manual do Chá - Página 24</div>
+  </div>
+
+  <!-- ==================== GUIA 3: FITOQUÍMICA BÁSICA ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 3: Fitoquímica Básica</h2>
+      <p>Entenda os princípios ativos e como agem no corpo</p>
+    </div>
+
+    <h2>Capítulo 1: Classes de Compostos Bioativos</h2>
+
+    <p>Entender a fitoquímica transforma você de usuário em especialista. Você saberá POR QUE cada erva funciona e como potencializar seus efeitos.</p>
+
+    <div class="phyto-card">
+      <h4>1. Óleos Essenciais (Terpenos Voláteis)</h4>
+      <p><strong>O que são:</strong> Compostos aromáticos que evaporam facilmente</p>
+      <p><strong>Exemplos:</strong></p>
+      <ul>
+        <li><strong>Mentol</strong> (hortelã) → Refrescante, analgésico, digestivo</li>
+        <li><strong>Timol</strong> (tomilho) → Antisséptico potente</li>
+        <li><strong>Linalol</strong> (lavanda) → Calmante, ansiolítico</li>
+        <li><strong>Citral</strong> (capim-limão, melissa) → Relaxante, antifúngico</li>
+        <li><strong>Eucaliptol</strong> (eucalipto, alecrim) → Descongestionante</li>
+      </ul>
+      <p><strong>Cuidados no preparo:</strong> Evaporam com calor excessivo - SEMPRE tampe!</p>
+    </div>
+
+    <div class="phyto-card">
+      <h4>2. Flavonoides</h4>
+      <p><strong>O que são:</strong> Pigmentos vegetais com ação antioxidante</p>
+      <p><strong>Exemplos:</strong></p>
+      <ul>
+        <li><strong>Apigenina</strong> (camomila) → Liga-se aos receptores GABA = calmante</li>
+        <li><strong>Quercetina</strong> (várias ervas) → Anti-inflamatório, anti-histamínico</li>
+        <li><strong>Rutina</strong> (arruda, citrus) → Fortalece vasos sanguíneos</li>
+        <li><strong>Antocianinas</strong> (hibisco) → Antioxidante, hipotensor</li>
+      </ul>
+      <p><strong>Características:</strong> Estáveis ao calor, extraem bem em água quente</p>
+    </div>
+
+    <div class="page-number">Guia 3 - Fitoquímica - Página 25</div>
+  </div>
+
+  <div class="page">
+    <div class="phyto-card">
+      <h4>3. Alcaloides</h4>
+      <p><strong>O que são:</strong> Compostos nitrogenados com forte ação farmacológica</p>
+      <p><strong>Exemplos:</strong></p>
+      <ul>
+        <li><strong>Harmina/Harmalina</strong> (maracujá) → Inibidores da MAO, sedativos</li>
+        <li><strong>Pirrolizidínicos</strong> (confrei) → TÓXICOS para o fígado</li>
+        <li><strong>Oxindólicos</strong> (unha-de-gato) → Imunomoduladores</li>
+      </ul>
+      <div class="warning-box">
+        <p><strong>⚠️ Atenção:</strong> Alcaloides são os compostos mais potentes e também os mais perigosos. Doses precisam ser controladas. Muitas ervas com alcaloides têm contraindicações sérias.</p>
+      </div>
+    </div>
+
+    <div class="phyto-card">
+      <h4>4. Taninos</h4>
+      <p><strong>O que são:</strong> Compostos adstringentes que "fecham" tecidos</p>
+      <p><strong>Exemplos:</strong></p>
+      <ul>
+        <li><strong>Taninos condensados</strong> → Antidiarreico, cicatrizante</li>
+        <li><strong>Taninos hidrolisáveis</strong> → Antioxidante, anti-inflamatório</li>
+      </ul>
+      <p><strong>Presentes em:</strong> Chá verde, goiabeira, barbatimão</p>
+      <p><strong>Cuidados:</strong> Excesso causa constipação e reduz absorção de ferro/proteínas. Por isso não deixar o chá por tempo demais!</p>
+    </div>
+
+    <div class="phyto-card">
+      <h4>5. Mucilagens</h4>
+      <p><strong>O que são:</strong> Polissacarídeos que formam gel em contato com água</p>
+      <p><strong>Ação:</strong> Emoliente, protetor de mucosas, laxante suave</p>
+      <p><strong>Presentes em:</strong> Babosa, malva, linhaça, ora-pro-nóbis</p>
+      <p><strong>Preparo ideal:</strong> Maceração em água fria para preservar a consistência</p>
+    </div>
+
+    <div class="page-number">Guia 3 - Fitoquímica - Página 26</div>
+  </div>
+
+  <div class="page">
+    <div class="phyto-card">
+      <h4>6. Cumarinas</h4>
+      <p><strong>O que são:</strong> Compostos aromáticos com cheiro de feno cortado</p>
+      <p><strong>Ação:</strong> Anticoagulante, anti-inflamatório, venotônico</p>
+      <p><strong>Presentes em:</strong> Guaco, camomila, castanha-da-índia</p>
+      <div class="danger-box">
+        <p><strong>⚠️ IMPORTANTE:</strong> Cumarinas interagem com anticoagulantes (varfarina, AAS). Suspender uso 2 semanas antes de cirurgias. Não usar com sangramento ativo.</p>
+      </div>
+    </div>
+
+    <div class="phyto-card">
+      <h4>7. Saponinas</h4>
+      <p><strong>O que são:</strong> Compostos que fazem espuma em água (como sabão)</p>
+      <p><strong>Ação:</strong> Expectorante, diurético, adaptogênico</p>
+      <p><strong>Presentes em:</strong> Ginseng, cavalinha, quilaia</p>
+      <p><strong>Curiosidade:</strong> Algumas plantas com saponinas eram usadas como sabão natural</p>
+    </div>
+
+    <h2>Capítulo 2: Tabela de Princípios Ativos por Erva</h2>
+
+    <table>
+      <tr>
+        <th>Erva</th>
+        <th>Principal Composto</th>
+        <th>Classe</th>
+        <th>Mecanismo de Ação</th>
+      </tr>
+      <tr>
+        <td>Camomila</td>
+        <td>Apigenina</td>
+        <td>Flavonoide</td>
+        <td>Agonista GABA-A</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>Mentol</td>
+        <td>Monoterpeno</td>
+        <td>Ativa receptores de frio (TRPM8)</td>
+      </tr>
+      <tr>
+        <td>Gengibre</td>
+        <td>Gingeróis</td>
+        <td>Fenólico</td>
+        <td>Inibe COX-2, antagonista 5-HT3</td>
+      </tr>
+      <tr>
+        <td>Cúrcuma</td>
+        <td>Curcumina</td>
+        <td>Curcuminoide</td>
+        <td>Inibe NF-κB (anti-inflamatório)</td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>Ácido rosmarínico</td>
+        <td>Fenólico</td>
+        <td>Antioxidante, inibe acetilcolinesterase</td>
+      </tr>
+      <tr>
+        <td>Valeriana</td>
+        <td>Ácido valerênico</td>
+        <td>Sesquiterpeno</td>
+        <td>Modulador GABA</td>
+      </tr>
+      <tr>
+        <td>Guaco</td>
+        <td>Cumarina</td>
+        <td>Cumarina</td>
+        <td>Broncodilatador, anticoagulante</td>
+      </tr>
+      <tr>
+        <td>Equinácea</td>
+        <td>Alquilamidas</td>
+        <td>Alcamidas</td>
+        <td>Imunoestimulante (ativa macrófagos)</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia 3 - Fitoquímica - Página 27</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 3: Sinergismo e Biodisponibilidade</h2>
+
+    <h3>3.1 O que é Sinergismo?</h3>
+    <p>Quando dois compostos juntos têm efeito MAIOR que a soma individual. Em fitoterapia, isso é comum e desejável.</p>
+
+    <div class="phyto-card">
+      <h4>Exemplos de Sinergismo Comprovado:</h4>
+      <table>
+        <tr>
+          <th>Combinação</th>
+          <th>Efeito Potencializado</th>
+        </tr>
+        <tr>
+          <td>Curcumina + Piperina (pimenta)</td>
+          <td>Absorção aumenta 2000%</td>
+        </tr>
+        <tr>
+          <td>Apigenina + Linalol</td>
+          <td>Efeito sedativo amplificado</td>
+        </tr>
+        <tr>
+          <td>Vitamina C + Flavonoides</td>
+          <td>Proteção antioxidante mútua</td>
+        </tr>
+        <tr>
+          <td>Mentol + Anetol</td>
+          <td>Efeito carminativo (gases) potente</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>3.2 Fatores que Afetam a Biodisponibilidade</h3>
+
+    <div class="compound-box">
+      <h4>🔬 Biodisponibilidade = Quanto do que você ingere realmente chega à corrente sanguínea</h4>
+    </div>
+
+    <table>
+      <tr>
+        <th>Fator</th>
+        <th>Aumenta Absorção</th>
+        <th>Diminui Absorção</th>
+      </tr>
+      <tr>
+        <td>Gordura</td>
+        <td>Curcumina, óleos essenciais</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Piperina</td>
+        <td>Curcumina, muitos compostos</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Taninos</td>
+        <td>-</td>
+        <td>Ferro, proteínas, alcaloides</td>
+      </tr>
+      <tr>
+        <td>Leite/laticínios</td>
+        <td>-</td>
+        <td>Taninos, alguns flavonoides</td>
+      </tr>
+      <tr>
+        <td>Jejum</td>
+        <td>Absorção rápida</td>
+        <td>Pode irritar estômago</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>💡 Dica Prática:</h4>
+      <p>Para chás com curcumina (açafrão), sempre adicione:</p>
+      <ul>
+        <li>Uma pitada de pimenta preta (piperina)</li>
+        <li>Um fio de azeite ou leite de coco (gordura)</li>
+      </ul>
+      <p>Isso pode aumentar a absorção em até <strong>20x</strong>!</p>
+    </div>
+
+    <div class="page-number">Guia 3 - Fitoquímica - Página 28</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 4: Mecanismos de Ação no Corpo</h2>
+
+    <h3>4.1 Sistema Nervoso</h3>
+    <div class="phyto-card">
+      <h4>🧠 Ervas que Agem no Sistema Nervoso:</h4>
+      <table>
+        <tr>
+          <th>Mecanismo</th>
+          <th>Ervas</th>
+          <th>Efeito</th>
+        </tr>
+        <tr>
+          <td>Agonista GABA</td>
+          <td>Camomila, valeriana, maracujá</td>
+          <td>Sedativo, ansiolítico</td>
+        </tr>
+        <tr>
+          <td>Inibidor acetilcolinesterase</td>
+          <td>Alecrim, sálvia</td>
+          <td>Melhora memória</td>
+        </tr>
+        <tr>
+          <td>Antagonista 5-HT3</td>
+          <td>Gengibre</td>
+          <td>Antiemético</td>
+        </tr>
+        <tr>
+          <td>Adaptogênico</td>
+          <td>Tulsi, ginseng</td>
+          <td>Equilibra resposta ao estresse</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>4.2 Sistema Digestivo</h3>
+    <div class="phyto-card">
+      <h4>🫄 Ervas que Agem no Sistema Digestivo:</h4>
+      <table>
+        <tr>
+          <th>Mecanismo</th>
+          <th>Ervas</th>
+          <th>Efeito</th>
+        </tr>
+        <tr>
+          <td>Carminativo (relaxa esfíncteres)</td>
+          <td>Hortelã, erva-doce, gengibre</td>
+          <td>Elimina gases</td>
+        </tr>
+        <tr>
+          <td>Colagogo (estimula bile)</td>
+          <td>Boldo, alcachofra</td>
+          <td>Digestão de gorduras</td>
+        </tr>
+        <tr>
+          <td>Protetor gástrico</td>
+          <td>Espinheira-santa</td>
+          <td>Reduz acidez, protege mucosa</td>
+        </tr>
+        <tr>
+          <td>Procinético</td>
+          <td>Gengibre</td>
+          <td>Acelera esvaziamento gástrico</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>4.3 Sistema Imune</h3>
+    <div class="phyto-card">
+      <h4>🛡️ Ervas que Agem no Sistema Imune:</h4>
+      <table>
+        <tr>
+          <th>Mecanismo</th>
+          <th>Ervas</th>
+          <th>Efeito</th>
+        </tr>
+        <tr>
+          <td>Imunoestimulante</td>
+          <td>Equinácea, própolis verde</td>
+          <td>Ativa macrófagos e NK cells</td>
+        </tr>
+        <tr>
+          <td>Imunomodulador</td>
+          <td>Unha-de-gato, tulsi</td>
+          <td>Equilibra resposta imune</td>
+        </tr>
+        <tr>
+          <td>Anti-inflamatório</td>
+          <td>Cúrcuma, gengibre</td>
+          <td>Inibe mediadores inflamatórios</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="page-number">Guia 3 - Fitoquímica - Página 29</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 5: Identificação de Qualidade</h2>
+
+    <h3>5.1 Como Saber se sua Erva é de Qualidade</h3>
+
+    <table>
+      <tr>
+        <th>Característica</th>
+        <th>Boa Qualidade</th>
+        <th>Qualidade Ruim</th>
+      </tr>
+      <tr>
+        <td>Cor</td>
+        <td>Vibrante, característica da espécie</td>
+        <td>Desbotada, amarronzada, opaca</td>
+      </tr>
+      <tr>
+        <td>Aroma</td>
+        <td>Intenso, característico</td>
+        <td>Fraco, ausente, rançoso</td>
+      </tr>
+      <tr>
+        <td>Textura</td>
+        <td>Íntegra, quebradiça (não pulverizada)</td>
+        <td>Muito fragmentada, poeira</td>
+      </tr>
+      <tr>
+        <td>Umidade</td>
+        <td>Seca, crocante</td>
+        <td>Úmida, mole, mofo</td>
+      </tr>
+      <tr>
+        <td>Contaminação</td>
+        <td>Limpa, sem insetos ou terra</td>
+        <td>Sujeira visível, furos de insetos</td>
+      </tr>
+    </table>
+
+    <h3>5.2 Teste de Qualidade Caseiro</h3>
+
+    <div class="herb-card">
+      <h4>🔍 Teste do Aroma:</h4>
+      <ol>
+        <li>Esfregue uma pequena quantidade entre os dedos</li>
+        <li>Aroma deve ser intenso e característico</li>
+        <li>Se não tiver cheiro ou cheirar a mofo → descarte</li>
+      </ol>
+    </div>
+
+    <div class="herb-card">
+      <h4>🔍 Teste da Cor do Chá:</h4>
+      <ol>
+        <li>Prepare uma infusão padrão</li>
+        <li>Observe a cor: deve ser vibrante</li>
+        <li>Cor muito clara = erva velha ou de baixa qualidade</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4>⚠️ Sinais de Adulteração:</h4>
+      <ul>
+        <li>Preço muito abaixo do mercado</li>
+        <li>Sem identificação botânica completa</li>
+        <li>Excesso de caules e partes não medicinais</li>
+        <li>Cor artificial (corantes)</li>
+        <li>Aroma de produto químico</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>💡 Dica:</h4>
+      <p>Sempre que possível, compre ervas de <strong>fornecedores especializados</strong> com certificação orgânica ou análise de metais pesados. Ervas de origem duvidosa podem conter agrotóxicos, metais pesados ou adulterações.</p>
+    </div>
+
+    <div class="page-number">Guia 3 - Fitoquímica - Página 30</div>
+  </div>
+
+  <!-- ==================== GUIA 4: FORMAS FARMACÊUTICAS CASEIRAS ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 4: Formas Farmacêuticas Caseiras</h2>
+      <p>Além do chá: tinturas, xaropes, pomadas e óleos</p>
+    </div>
+
+    <p>Dominar diferentes formas de preparo expande seu arsenal terapêutico. Cada forma tem vantagens específicas e aplicações ideais.</p>
+
+    <h2>Capítulo 1: Tinturas (Extratos Alcoólicos)</h2>
+
+    <div class="prep-card">
+      <h4>O que são Tinturas?</h4>
+      <p>Extratos concentrados de ervas em álcool. O álcool extrai compostos que a água não consegue e preserva por anos.</p>
+      <table>
+        <tr>
+          <th>Vantagens</th>
+          <th>Desvantagens</th>
+        </tr>
+        <tr>
+          <td>Muito concentrada (poucas gotas)</td>
+          <td>Contém álcool</td>
+        </tr>
+        <tr>
+          <td>Dura 2-5 anos</td>
+          <td>Não indicada para crianças/gestantes</td>
+        </tr>
+        <tr>
+          <td>Extrai compostos hidro e lipossolúveis</td>
+          <td>Gosto forte</td>
+        </tr>
+        <tr>
+          <td>Fácil de transportar</td>
+          <td>Requer álcool de qualidade</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="herb-card">
+      <h4>🧪 Receita: Tintura Básica (Método Tradicional)</h4>
+      <p><strong>Ingredientes:</strong></p>
+      <ul>
+        <li>100g de ervas secas (ou 200g frescas)</li>
+        <li>500ml de álcool de cereais 70% ou vodka</li>
+        <li>Vidro âmbar com tampa hermética</li>
+      </ul>
+      <p><strong>Preparo:</strong></p>
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <div class="step-content">Pique as ervas e coloque no vidro</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <div class="step-content">Cubra com álcool (2cm acima das ervas)</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <div class="step-content">Feche bem e etiquete com data</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <div class="step-content">Agite diariamente por 2-4 semanas</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">5</div>
+        <div class="step-content">Coe com pano fino, esprema bem</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">6</div>
+        <div class="step-content">Armazene em frasco conta-gotas âmbar</div>
+      </div>
+      <p><strong>Dosagem típica:</strong> 20-40 gotas, 2-3x ao dia, diluídas em água</p>
+    </div>
+
+    <div class="page-number">Guia 4 - Formas Farmacêuticas - Página 31</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 2: Xaropes Medicinais</h2>
+
+    <div class="prep-card">
+      <h4>O que são Xaropes?</h4>
+      <p>Preparações doces e viscosas, ideais para problemas respiratórios e para quem não gosta do sabor das ervas.</p>
+      <table>
+        <tr>
+          <th>Vantagens</th>
+          <th>Desvantagens</th>
+        </tr>
+        <tr>
+          <td>Sabor agradável (crianças aceitam)</td>
+          <td>Contém muito açúcar</td>
+        </tr>
+        <tr>
+          <td>Ação demulcente (acalma garganta)</td>
+          <td>Dura menos (1-3 meses refrigerado)</td>
+        </tr>
+        <tr>
+          <td>Fácil de tomar</td>
+          <td>Não indicado para diabéticos</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="herb-card">
+      <h4>🍯 Receita: Xarope de Guaco para Tosse</h4>
+      <p><strong>Ingredientes:</strong></p>
+      <ul>
+        <li>50g de folhas de guaco frescas</li>
+        <li>500ml de água filtrada</li>
+        <li>500g de açúcar cristal ou mel</li>
+      </ul>
+      <p><strong>Preparo:</strong></p>
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <div class="step-content">Faça uma decocção: ferva as folhas em água por 15 min</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <div class="step-content">Coe e meça o líquido (deve ter ~400ml)</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <div class="step-content">Adicione açúcar/mel em fogo baixo</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <div class="step-content">Mexa até dissolver completamente (não ferver)</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">5</div>
+        <div class="step-content">Deixe esfriar e envase em vidro esterilizado</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">6</div>
+        <div class="step-content">Refrigere - dura até 3 meses</div>
+      </div>
+      <p><strong>Dosagem:</strong> Adultos: 1 colher (sopa) 3-4x/dia | Crianças: 1 colher (chá) 3x/dia</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>⚠️ Versão sem Açúcar:</h4>
+      <p>Use mel puro (não aquecer acima de 40°C) ou xilitol. Para diabéticos, considere usar tintura em vez de xarope.</p>
+    </div>
+
+    <div class="page-number">Guia 4 - Formas Farmacêuticas - Página 32</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 3: Pomadas e Unguentos</h2>
+
+    <div class="prep-card">
+      <h4>O que são Pomadas?</h4>
+      <p>Preparações semi-sólidas para aplicação na pele. Ideais para cicatrização, dores musculares, irritações.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>🌿 Receita: Pomada de Calêndula Cicatrizante</h4>
+      <p><strong>Ingredientes:</strong></p>
+      <ul>
+        <li>100ml de óleo de calêndula (ver receita abaixo)</li>
+        <li>15g de cera de abelha (ou cera vegetal)</li>
+        <li>5 gotas de óleo essencial de lavanda (opcional)</li>
+      </ul>
+      <p><strong>Preparo:</strong></p>
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <div class="step-content">Derreta a cera em banho-maria (60-70°C)</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <div class="step-content">Adicione o óleo de calêndula lentamente, mexendo</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <div class="step-content">Retire do fogo quando mistura homogênea</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <div class="step-content">Adicione óleo essencial quando esfriar um pouco (~40°C)</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">5</div>
+        <div class="step-content">Despeje em potinhos antes de solidificar</div>
+      </div>
+      <p><strong>Validade:</strong> 6 meses a 1 ano em local fresco e seco</p>
+      <p><strong>Uso:</strong> Aplicar em cortes, queimaduras leves, assaduras, irritações</p>
+    </div>
+
+    <h3>Proporção Cera x Óleo</h3>
+    <table>
+      <tr>
+        <th>Consistência</th>
+        <th>Proporção</th>
+        <th>Uso Ideal</th>
+      </tr>
+      <tr>
+        <td>Mole (bálsamo)</td>
+        <td>10g cera : 100ml óleo</td>
+        <td>Lábios, áreas sensíveis</td>
+      </tr>
+      <tr>
+        <td>Média (pomada)</td>
+        <td>15g cera : 100ml óleo</td>
+        <td>Uso geral</td>
+      </tr>
+      <tr>
+        <td>Firme</td>
+        <td>20g cera : 100ml óleo</td>
+        <td>Bastões, stick</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia 4 - Formas Farmacêuticas - Página 33</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 4: Óleos Medicinais</h2>
+
+    <div class="prep-card">
+      <h4>O que são Óleos Medicinais?</h4>
+      <p>Óleos vegetais infundidos com ervas. Base para pomadas, massagens e tratamentos capilares.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>🌻 Receita: Óleo de Calêndula (Maceração Solar)</h4>
+      <p><strong>Ingredientes:</strong></p>
+      <ul>
+        <li>1 xícara de flores de calêndula secas</li>
+        <li>2 xícaras de óleo vegetal (oliva, girassol ou amêndoas)</li>
+        <li>Vidro transparente com tampa</li>
+      </ul>
+      <p><strong>Preparo:</strong></p>
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <div class="step-content">Coloque flores secas (IMPORTANTE: sem umidade) no vidro</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <div class="step-content">Cubra com óleo (2cm acima das flores)</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <div class="step-content">Tampe e deixe em local ensolarado por 2-4 semanas</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">4</div>
+        <div class="step-content">Agite suavemente a cada 2-3 dias</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">5</div>
+        <div class="step-content">Coe com pano fino, esprema bem as flores</div>
+      </div>
+      <div class="step-box">
+        <div class="step-number">6</div>
+        <div class="step-content">Armazene em vidro âmbar, local fresco</div>
+      </div>
+      <p><strong>Validade:</strong> 6-12 meses</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>⚡ Método Rápido: Óleo em Banho-Maria</h4>
+      <ul>
+        <li>Mesmas proporções acima</li>
+        <li>Aqueça em banho-maria por 2-4 horas (60-70°C máx)</li>
+        <li>Nunca deixe ferver ou superaquecer</li>
+        <li>Coe ainda morno</li>
+      </ul>
+      <p><strong>Vantagem:</strong> Pronto em horas em vez de semanas</p>
+      <p><strong>Desvantagem:</strong> Pode perder alguns compostos sensíveis ao calor</p>
+    </div>
+
+    <div class="page-number">Guia 4 - Formas Farmacêuticas - Página 34</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 5: Compressas e Cataplasmas</h2>
+
+    <div class="prep-card">
+      <h4>Compressas vs Cataplasmas</h4>
+      <table>
+        <tr>
+          <th>Compressa</th>
+          <th>Cataplasma</th>
+        </tr>
+        <tr>
+          <td>Pano embebido em chá/infusão</td>
+          <td>Pasta das próprias ervas aplicada</td>
+        </tr>
+        <tr>
+          <td>Mais suave</td>
+          <td>Mais intenso</td>
+        </tr>
+        <tr>
+          <td>Limpa</td>
+          <td>Pode sujar</td>
+        </tr>
+        <tr>
+          <td>Pode ser quente ou fria</td>
+          <td>Geralmente morna</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="herb-card">
+      <h4>💧 Receita: Compressa de Camomila para Olhos</h4>
+      <ol>
+        <li>Prepare um chá forte de camomila (2 colheres/xícara)</li>
+        <li>Deixe esfriar até temperatura ambiente ou refrigere</li>
+        <li>Embeba algodão ou gaze no chá</li>
+        <li>Aplique sobre os olhos fechados por 15-20 min</li>
+      </ol>
+      <p><strong>Indicações:</strong> Olhos cansados, conjuntivite (auxiliar), olheiras</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>🍃 Receita: Cataplasma de Confrei para Contusões</h4>
+      <ol>
+        <li>Amasse folhas frescas de confrei até formar pasta</li>
+        <li>Aplique diretamente sobre a área afetada</li>
+        <li>Cubra com gaze ou pano limpo</li>
+        <li>Deixe por 30 min a 1 hora</li>
+        <li>Lave bem após remover</li>
+      </ol>
+      <p><strong>Indicações:</strong> Pancadas, hematomas, dores musculares</p>
+      <div class="danger-box">
+        <p><strong>⚠️ NUNCA aplicar em feridas abertas!</strong> O confrei é apenas para uso EXTERNO em pele íntegra.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Guia 4 - Formas Farmacêuticas - Página 35</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 6: Outras Preparações</h2>
+
+    <h3>6.1 Mel Medicinal</h3>
+    <div class="herb-card">
+      <h4>🍯 Mel de Gengibre</h4>
+      <ul>
+        <li>100g de gengibre fresco ralado</li>
+        <li>300g de mel puro</li>
+        <li>Misture e deixe macerar por 1 semana</li>
+        <li>Use 1 colher de chá para gripes e dores de garganta</li>
+      </ul>
+      <p><strong>Validade:</strong> 6 meses (o mel é conservante natural)</p>
+    </div>
+
+    <h3>6.2 Vinagre Medicinal</h3>
+    <div class="herb-card">
+      <h4>🍎 Vinagre de Ervas</h4>
+      <ul>
+        <li>Ervas frescas (alecrim, tomilho, lavanda)</li>
+        <li>Vinagre de maçã não pasteurizado</li>
+        <li>Macere por 2-4 semanas</li>
+        <li>Coe e use</li>
+      </ul>
+      <p><strong>Usos:</strong> Tônico capilar, loção facial, tempero</p>
+    </div>
+
+    <h3>6.3 Sachê Aromático</h3>
+    <div class="herb-card">
+      <h4>🌸 Sachê para Sono</h4>
+      <ul>
+        <li>Lavanda seca (3 partes)</li>
+        <li>Camomila seca (2 partes)</li>
+        <li>Erva-cidreira seca (1 parte)</li>
+        <li>Coloque em saquinho de tecido</li>
+        <li>Deixe no travesseiro</li>
+      </ul>
+    </div>
+
+    <h3>6.4 Tabela de Formas por Indicação</h3>
+    <table>
+      <tr>
+        <th>Problema</th>
+        <th>Melhor Forma</th>
+      </tr>
+      <tr>
+        <td>Tosse, garganta</td>
+        <td>Xarope, gargarejo</td>
+      </tr>
+      <tr>
+        <td>Feridas, queimaduras</td>
+        <td>Pomada, óleo</td>
+      </tr>
+      <tr>
+        <td>Dores musculares</td>
+        <td>Cataplasma, óleo de massagem</td>
+      </tr>
+      <tr>
+        <td>Ansiedade crônica</td>
+        <td>Tintura, chá regular</td>
+      </tr>
+      <tr>
+        <td>Digestão ocasional</td>
+        <td>Chá</td>
+      </tr>
+      <tr>
+        <td>Gripe aguda</td>
+        <td>Chá + inalação + xarope</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia 4 - Formas Farmacêuticas - Página 36</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 7: Inalação e Vaporização</h2>
+
+    <div class="prep-card">
+      <h4>Inalação de Vapor</h4>
+      <p>Ideal para problemas respiratórios. Os óleos essenciais são absorvidos diretamente pelos pulmões.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>💨 Receita: Inalação Descongestionante</h4>
+      <p><strong>Ingredientes:</strong></p>
+      <ul>
+        <li>1 litro de água fervente</li>
+        <li>5-6 folhas de eucalipto OU</li>
+        <li>3-5 gotas de óleo essencial de eucalipto</li>
+        <li>Toalha grande</li>
+      </ul>
+      <p><strong>Preparo:</strong></p>
+      <ol>
+        <li>Coloque a água quente em tigela grande</li>
+        <li>Adicione ervas/óleo essencial</li>
+        <li>Cubra a cabeça e a tigela com a toalha</li>
+        <li>Inale o vapor por 10-15 minutos</li>
+        <li>Mantenha os olhos fechados</li>
+      </ol>
+      <div class="warning-box">
+        <p><strong>⚠️ Cuidados:</strong></p>
+        <ul>
+          <li>Não use em crianças menores de 3 anos</li>
+          <li>Mantenha distância segura para não queimar</li>
+          <li>Se tiver asma, consulte médico antes</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>7.2 Banho de Imersão</h3>
+    <div class="herb-card">
+      <h4>🛁 Banho Relaxante de Ervas</h4>
+      <ul>
+        <li>Prepare 1 litro de chá concentrado (lavanda + camomila + melissa)</li>
+        <li>Coe bem</li>
+        <li>Adicione à água da banheira</li>
+        <li>Opcional: 1 xícara de sal grosso ou sal de Epsom</li>
+        <li>Mergulhe por 20-30 minutos</li>
+      </ul>
+      <p><strong>Indicações:</strong> Insônia, estresse, dores musculares, TPM</p>
+    </div>
+
+    <div class="page-number">Guia 4 - Formas Farmacêuticas - Página 37</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 8: Equipamentos e Higiene</h2>
+
+    <h3>8.1 Equipamentos Essenciais</h3>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Uso</th>
+        <th>Alternativa</th>
+      </tr>
+      <tr>
+        <td>Balança de precisão</td>
+        <td>Medir ervas e ingredientes</td>
+        <td>Colheres medidoras</td>
+      </tr>
+      <tr>
+        <td>Panela de inox/vidro</td>
+        <td>Preparos com calor</td>
+        <td>Evitar alumínio</td>
+      </tr>
+      <tr>
+        <td>Vidros âmbar</td>
+        <td>Armazenamento</td>
+        <td>Vidro comum em armário escuro</td>
+      </tr>
+      <tr>
+        <td>Conta-gotas</td>
+        <td>Dosagem de tinturas</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Panos de algodão</td>
+        <td>Coar preparados</td>
+        <td>Gaze, filtro de café</td>
+      </tr>
+      <tr>
+        <td>Termômetro</td>
+        <td>Controlar temperatura</td>
+        <td>Observação visual</td>
+      </tr>
+    </table>
+
+    <h3>8.2 Boas Práticas de Higiene</h3>
+    <div class="highlight-box">
+      <ul>
+        <li>✅ Lave bem as mãos antes de manipular</li>
+        <li>✅ Esterilize vidros (água fervente por 10 min ou forno 100°C)</li>
+        <li>✅ Use utensílios limpos e secos</li>
+        <li>✅ Trabalhe em superfície limpa</li>
+        <li>✅ Etiquete TUDO com nome, data, ingredientes</li>
+        <li>✅ Armazene corretamente</li>
+        <li>❌ Nunca use ervas mofadas ou com cheiro ruim</li>
+        <li>❌ Nunca misture lotes diferentes sem etiqueta</li>
+      </ul>
+    </div>
+
+    <h3>8.3 Validade das Preparações</h3>
+    <table>
+      <tr>
+        <th>Preparação</th>
+        <th>Validade</th>
+        <th>Armazenamento</th>
+      </tr>
+      <tr>
+        <td>Tintura</td>
+        <td>2-5 anos</td>
+        <td>Temp. ambiente, escuro</td>
+      </tr>
+      <tr>
+        <td>Xarope com açúcar</td>
+        <td>3-6 meses</td>
+        <td>Refrigerado</td>
+      </tr>
+      <tr>
+        <td>Pomada</td>
+        <td>6-12 meses</td>
+        <td>Temp. ambiente, seco</td>
+      </tr>
+      <tr>
+        <td>Óleo medicinal</td>
+        <td>6-12 meses</td>
+        <td>Escuro, fresco</td>
+      </tr>
+      <tr>
+        <td>Chá (preparado)</td>
+        <td>24-48 horas</td>
+        <td>Refrigerado</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia 4 - Formas Farmacêuticas - Página 38</div>
+  </div>
+
+  <!-- ==================== GUIA 5: AROMATERAPIA ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 5: Aromaterapia com Ervas</h2>
+      <p>O poder terapêutico dos aromas</p>
+    </div>
+
+    <h2>Capítulo 1: Fundamentos da Aromaterapia</h2>
+
+    <div class="aroma-card">
+      <h4>O que é Aromaterapia?</h4>
+      <p>Uso terapêutico de óleos essenciais e aromas de plantas para promover bem-estar físico e emocional. Os aromas ativam o sistema límbico (centro das emoções) diretamente pelo nariz.</p>
+    </div>
+
+    <h3>1.1 Vias de Aplicação</h3>
+    <table>
+      <tr>
+        <th>Via</th>
+        <th>Método</th>
+        <th>Indicações</th>
+      </tr>
+      <tr>
+        <td>Inalação</td>
+        <td>Difusor, inalação direta, banho</td>
+        <td>Emocional, respiratório</td>
+      </tr>
+      <tr>
+        <td>Tópica</td>
+        <td>Massagem, compressas</td>
+        <td>Dores, pele, localizado</td>
+      </tr>
+      <tr>
+        <td>Ambiental</td>
+        <td>Difusor, spray</td>
+        <td>Ambiente, bem-estar geral</td>
+      </tr>
+    </table>
+
+    <h3>1.2 Óleos Essenciais das Ervas do Kit</h3>
+    <table>
+      <tr>
+        <th>Erva</th>
+        <th>Componente Principal</th>
+        <th>Efeito Aromático</th>
+      </tr>
+      <tr>
+        <td>Lavanda</td>
+        <td>Linalol</td>
+        <td>Calmante, equilibrador</td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>1,8-cineol, cânfora</td>
+        <td>Estimulante, clareza mental</td>
+      </tr>
+      <tr>
+        <td>Hortelã-pimenta</td>
+        <td>Mentol</td>
+        <td>Energizante, refrescante</td>
+      </tr>
+      <tr>
+        <td>Capim-limão</td>
+        <td>Citral</td>
+        <td>Relaxante, repelente</td>
+      </tr>
+      <tr>
+        <td>Eucalipto</td>
+        <td>Eucaliptol</td>
+        <td>Descongestionante, purificador</td>
+      </tr>
+      <tr>
+        <td>Tomilho</td>
+        <td>Timol</td>
+        <td>Antisséptico, fortificante</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia 5 - Aromaterapia - Página 39</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 2: Aromaterapia Sem Óleos Essenciais</h2>
+
+    <p>Você não precisa comprar óleos essenciais caros! Suas ervas frescas e secas podem ser usadas aromaterapeuticamente.</p>
+
+    <div class="aroma-card">
+      <h4>🌿 Método 1: Sachês Aromáticos</h4>
+      <p>Ervas secas em saquinhos de tecido natural (algodão, linho).</p>
+      <ul>
+        <li><strong>Para sono:</strong> Lavanda + camomila + erva-cidreira</li>
+        <li><strong>Para energia:</strong> Alecrim + hortelã + limão (casca seca)</li>
+        <li><strong>Para repelir insetos:</strong> Citronela + lavanda + cravo</li>
+        <li><strong>Para guarda-roupas:</strong> Lavanda + cedro + tomilho</li>
+      </ul>
+      <p><strong>Duração:</strong> 2-3 meses (aperte para reativar o aroma)</p>
+    </div>
+
+    <div class="aroma-card">
+      <h4>🌿 Método 2: Ervas no Banho</h4>
+      <p>Coloque ervas frescas ou secas em saquinho de pano e pendure na torneira, ou adicione chá concentrado à água.</p>
+      <ul>
+        <li><strong>Relaxante:</strong> Lavanda, camomila, pétalas de rosa</li>
+        <li><strong>Descongestão:</strong> Eucalipto, alecrim, hortelã</li>
+        <li><strong>Revitalizante:</strong> Capim-limão, hortelã, gengibre</li>
+      </ul>
+    </div>
+
+    <div class="aroma-card">
+      <h4>🌿 Método 3: Travesseiro de Ervas</h4>
+      <p>Faça uma almofadinha pequena recheada de ervas secas para colocar dentro do travesseiro.</p>
+      <ul>
+        <li><strong>Mistura calmante:</strong> 2 partes lavanda, 1 parte lúpulo, 1 parte camomila</li>
+        <li><strong>Para dor de cabeça:</strong> Lavanda, hortelã, melissa</li>
+      </ul>
+    </div>
+
+    <div class="aroma-card">
+      <h4>🌿 Método 4: Vaporizador Caseiro</h4>
+      <p>Panela com água e ervas em fogo baixo, deixando o aroma perfumar a casa.</p>
+      <ul>
+        <li><strong>Para limpeza energética:</strong> Alecrim, sálvia, lavanda</li>
+        <li><strong>Para gripes:</strong> Eucalipto, tomilho, gengibre</li>
+        <li><strong>Aconchegante:</strong> Canela, cravo, casca de laranja</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 5 - Aromaterapia - Página 40</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 3: Guia de Aromas por Intenção</h2>
+
+    <h3>3.1 Para Relaxamento e Sono</h3>
+    <div class="aroma-card">
+      <ul>
+        <li><strong>Lavanda:</strong> O clássico calmante - seguro até para crianças</li>
+        <li><strong>Camomila:</strong> Suave, reconfortante</li>
+        <li><strong>Erva-cidreira:</strong> Cítrico relaxante</li>
+        <li><strong>Capim-limão:</strong> Relaxante muscular</li>
+      </ul>
+      <p><strong>Combinação ideal:</strong> 3 partes lavanda + 2 partes camomila + 1 parte melissa</p>
+    </div>
+
+    <h3>3.2 Para Energia e Concentração</h3>
+    <div class="aroma-card">
+      <ul>
+        <li><strong>Alecrim:</strong> Clareza mental, memória</li>
+        <li><strong>Hortelã-pimenta:</strong> Energizante, alerta</li>
+        <li><strong>Limão:</strong> Frescor, otimismo</li>
+        <li><strong>Eucalipto:</strong> Clareza, respiração profunda</li>
+      </ul>
+      <p><strong>Combinação ideal:</strong> 2 partes alecrim + 2 partes hortelã + 1 parte limão</p>
+    </div>
+
+    <h3>3.3 Para Alívio Respiratório</h3>
+    <div class="aroma-card">
+      <ul>
+        <li><strong>Eucalipto:</strong> Descongestionante principal</li>
+        <li><strong>Hortelã:</strong> Abre vias aéreas</li>
+        <li><strong>Tomilho:</strong> Antisséptico</li>
+        <li><strong>Guaco:</strong> Expectorante</li>
+      </ul>
+      <p><strong>Método:</strong> Inalação com vapor ou difusor</p>
+    </div>
+
+    <h3>3.4 Para Ambiente e Purificação</h3>
+    <div class="aroma-card">
+      <ul>
+        <li><strong>Alecrim:</strong> Purifica, energiza ambiente</li>
+        <li><strong>Sálvia:</strong> Limpeza energética tradicional</li>
+        <li><strong>Lavanda:</strong> Harmoniza</li>
+        <li><strong>Citronela/Capim-limão:</strong> Repele insetos</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 5 - Aromaterapia - Página 41</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 4: Segurança em Aromaterapia</h2>
+
+    <div class="danger-box">
+      <h4>⚠️ Regras de Segurança para Óleos Essenciais</h4>
+      <ul>
+        <li><strong>NUNCA</strong> aplique óleos essenciais puros na pele - sempre dilua</li>
+        <li><strong>NUNCA</strong> ingira óleos essenciais sem orientação profissional</li>
+        <li><strong>TESTE</strong> antes: aplique diluído em pequena área e espere 24h</li>
+        <li><strong>EVITE</strong> contato com olhos e mucosas</li>
+        <li><strong>CUIDADO</strong> com crianças, grávidas e pets</li>
+      </ul>
+    </div>
+
+    <h3>4.1 Diluições Seguras</h3>
+    <table>
+      <tr>
+        <th>Uso</th>
+        <th>Diluição</th>
+        <th>Gotas/10ml óleo vegetal</th>
+      </tr>
+      <tr>
+        <td>Rosto, áreas sensíveis</td>
+        <td>0.5-1%</td>
+        <td>1-2 gotas</td>
+      </tr>
+      <tr>
+        <td>Corpo geral</td>
+        <td>2%</td>
+        <td>4 gotas</td>
+      </tr>
+      <tr>
+        <td>Massagem terapêutica</td>
+        <td>3%</td>
+        <td>6 gotas</td>
+      </tr>
+      <tr>
+        <td>Dores agudas (adultos)</td>
+        <td>5%</td>
+        <td>10 gotas</td>
+      </tr>
+    </table>
+
+    <h3>4.2 Grupos Especiais</h3>
+    <div class="safety-card">
+      <h4>👶 Crianças</h4>
+      <ul>
+        <li>0-3 meses: Apenas difusão suave de lavanda ou camomila</li>
+        <li>3-24 meses: Diluição máxima 0.5%</li>
+        <li>2-6 anos: Diluição máxima 1%</li>
+        <li>EVITAR: Hortelã, eucalipto, alecrim (podem causar problemas respiratórios)</li>
+      </ul>
+    </div>
+
+    <div class="safety-card">
+      <h4>🤰 Grávidas</h4>
+      <ul>
+        <li>1º trimestre: Evitar uso de óleos essenciais</li>
+        <li>2º-3º trimestre: Apenas lavanda, limão, camomila em baixas diluições</li>
+        <li>EVITAR: Alecrim, sálvia, hortelã-pimenta, canela, cravo</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 5 - Aromaterapia - Página 42</div>
+  </div>
+
+  <div class="page">
+    <h3>4.3 Óleos Fototóxicos</h3>
+    <div class="warning-box">
+      <h4>☀️ Atenção: Óleos que causam queimaduras ao sol</h4>
+      <p>Cítricos prensados a frio (limão, laranja, bergamota, grapefruit) contêm furocumarinas que causam queimaduras graves quando a pele é exposta ao sol.</p>
+      <ul>
+        <li>Não aplicar na pele que será exposta ao sol</li>
+        <li>Esperar 12-24 horas antes da exposição solar</li>
+        <li>Versões "FCF" (furanocumarin-free) são seguras</li>
+      </ul>
+    </div>
+
+    <h3>4.4 Pets e Aromaterapia</h3>
+    <div class="danger-box">
+      <h4>🐱🐕 MUITO CUIDADO com animais!</h4>
+      <p><strong>Gatos:</strong> EXTREMAMENTE sensíveis. Muitos óleos são TÓXICOS (árvore de chá, hortelã, eucalipto, citronela, pinho). Metabolismo diferente - não conseguem processar.</p>
+      <p><strong>Cães:</strong> Mais tolerantes, mas ainda sensíveis. Evite óleos fortes. Nunca aplique diretamente.</p>
+      <p><strong>Recomendação:</strong> Use difusão apenas em ambientes bem ventilados onde o animal possa sair. Sachês de ervas secas são mais seguros.</p>
+    </div>
+
+    <h2>Capítulo 5: DIY - Produtos Aromáticos</h2>
+
+    <div class="aroma-card">
+      <h4>🌸 Receita: Spray Ambiente Relaxante</h4>
+      <ul>
+        <li>100ml água destilada</li>
+        <li>10ml álcool de cereais</li>
+        <li>30 gotas de OE lavanda</li>
+        <li>10 gotas de OE camomila</li>
+        <li>5 gotas de OE cedro</li>
+      </ul>
+      <p>Misture em frasco spray. Agite antes de usar. Borrife no quarto antes de dormir.</p>
+    </div>
+
+    <div class="aroma-card">
+      <h4>🌿 Receita: Óleo de Massagem Muscular</h4>
+      <ul>
+        <li>50ml óleo de amêndoas</li>
+        <li>15 gotas OE alecrim</li>
+        <li>10 gotas OE lavanda</li>
+        <li>5 gotas OE hortelã-pimenta</li>
+      </ul>
+      <p>Misture bem. Massageie músculos doloridos ou tensionados.</p>
+    </div>
+
+    <div class="page-number">Guia 5 - Aromaterapia - Página 43</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 6: Rituais Aromáticos</h2>
+
+    <div class="aroma-card">
+      <h4>🌙 Ritual Noturno para Sono</h4>
+      <ol>
+        <li><strong>30 min antes:</strong> Ligue difusor com lavanda ou sachê no quarto</li>
+        <li><strong>Banho morno:</strong> Com sais e chá de camomila + lavanda</li>
+        <li><strong>Pós-banho:</strong> Óleo de massagem nos pés (lavanda + camomila)</li>
+        <li><strong>Na cama:</strong> Chá de erva-cidreira + almofada de ervas</li>
+      </ol>
+    </div>
+
+    <div class="aroma-card">
+      <h4>☀️ Ritual Matinal Energizante</h4>
+      <ol>
+        <li><strong>Ao acordar:</strong> Inale óleo de hortelã ou alecrim direto do frasco</li>
+        <li><strong>No banho:</strong> Sachê de alecrim + hortelã na água</li>
+        <li><strong>Café da manhã:</strong> Chá de alecrim ou hortelã</li>
+        <li><strong>No trabalho:</strong> Sachê de hortelã + limão na mesa</li>
+      </ol>
+    </div>
+
+    <div class="aroma-card">
+      <h4>🧘 Ritual para Meditação</h4>
+      <ol>
+        <li>Prepare o ambiente: difusor com sândalo ou lavanda</li>
+        <li>Aplique 1 gota de lavanda nas têmporas (diluída)</li>
+        <li>Inale profundamente 3 vezes antes de começar</li>
+        <li>Ao final, inale hortelã para "aterrar"</li>
+      </ol>
+    </div>
+
+    <h2>Resumo: Ervas e seus Usos Aromáticos</h2>
+    <table>
+      <tr>
+        <th>Erva</th>
+        <th>Aroma</th>
+        <th>Uso Principal</th>
+      </tr>
+      <tr>
+        <td>Lavanda</td>
+        <td>Floral, herbáceo</td>
+        <td>Sono, ansiedade, pele</td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>Canforado, fresco</td>
+        <td>Memória, energia, cabelo</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>Mentolado, intenso</td>
+        <td>Energia, dor de cabeça, digestão</td>
+      </tr>
+      <tr>
+        <td>Eucalipto</td>
+        <td>Canforado, limpo</td>
+        <td>Respiratório, limpeza</td>
+      </tr>
+      <tr>
+        <td>Camomila</td>
+        <td>Doce, maçã</td>
+        <td>Calma, sono, pele</td>
+      </tr>
+      <tr>
+        <td>Capim-limão</td>
+        <td>Cítrico, fresco</td>
+        <td>Repelente, relaxante</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia 5 - Aromaterapia - Página 44</div>
+  </div>
+
+  <!-- ==================== GUIA 6: SEGURANÇA E INTERAÇÕES ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 6: Segurança e Interações</h2>
+      <p>Quando NÃO usar ervas medicinais</p>
+    </div>
+
+    <p>Ervas medicinais são potentes e seguras QUANDO usadas corretamente. Este guia ensina você a evitar problemas.</p>
+
+    <h2>Capítulo 1: Interações com Medicamentos</h2>
+
+    <div class="danger-box">
+      <h4>⚠️ REGRA DE OURO</h4>
+      <p>Se você toma medicamentos de uso contínuo, SEMPRE consulte um profissional de saúde antes de usar ervas medicinais regularmente. Muitas ervas interagem com medicamentos comuns!</p>
+    </div>
+
+    <h3>1.1 Interações com Anticoagulantes</h3>
+    <div class="interaction-warning">
+      <h4>🩸 Medicamentos: Varfarina, AAS, Heparina, Clopidogrel</h4>
+      <p><strong>Ervas que AUMENTAM efeito anticoagulante (risco de sangramento):</strong></p>
+      <ul>
+        <li>Guaco (cumarina)</li>
+        <li>Gengibre (em doses altas)</li>
+        <li>Alho (em doses altas)</li>
+        <li>Ginkgo biloba</li>
+        <li>Camomila (uso prolongado)</li>
+      </ul>
+      <p><strong>Recomendação:</strong> Suspender estas ervas 2 semanas antes de cirurgias</p>
+    </div>
+
+    <h3>1.2 Interações com Antidepressivos</h3>
+    <div class="interaction-warning">
+      <h4>💊 Medicamentos: ISRS, IMAO, Tricíclicos</h4>
+      <p><strong>Ervas com potencial de interação:</strong></p>
+      <ul>
+        <li>Hipérico (Erva-de-São-João) - interação grave!</li>
+        <li>Valeriana - potencializa sedação</li>
+        <li>Maracujá - contém IMAOs naturais</li>
+        <li>Ginseng - pode reduzir eficácia</li>
+      </ul>
+      <p><strong>Risco:</strong> Síndrome serotoninérgica (potencialmente fatal)</p>
+    </div>
+
+    <div class="page-number">Guia 6 - Segurança - Página 45</div>
+  </div>
+
+  <div class="page">
+    <h3>1.3 Interações com Anti-hipertensivos</h3>
+    <div class="interaction-warning">
+      <h4>❤️ Medicamentos: Losartana, Atenolol, Anlodipino, etc.</h4>
+      <p><strong>Ervas que REDUZEM pressão (risco de hipotensão):</strong></p>
+      <ul>
+        <li>Hibisco</li>
+        <li>Alho</li>
+        <li>Oliveira (folhas)</li>
+        <li>Valeriana</li>
+      </ul>
+      <p><strong>Recomendação:</strong> Monitorar pressão regularmente se usar junto</p>
+    </div>
+
+    <h3>1.4 Interações com Hipoglicemiantes</h3>
+    <div class="interaction-warning">
+      <h4>🍬 Medicamentos: Metformina, Glibenclamida, Insulina</h4>
+      <p><strong>Ervas que REDUZEM glicose (risco de hipoglicemia):</strong></p>
+      <ul>
+        <li>Pata-de-vaca</li>
+        <li>Gengibre</li>
+        <li>Alho</li>
+        <li>Feno-grego</li>
+        <li>Gymnema</li>
+      </ul>
+      <p><strong>Recomendação:</strong> Monitorar glicemia com frequência se usar junto</p>
+    </div>
+
+    <h3>1.5 Interações com Sedativos/Ansiolíticos</h3>
+    <div class="interaction-warning">
+      <h4>😴 Medicamentos: Diazepam, Clonazepam, Zolpidem</h4>
+      <p><strong>Ervas que POTENCIALIZAM sedação:</strong></p>
+      <ul>
+        <li>Valeriana</li>
+        <li>Maracujá</li>
+        <li>Camomila</li>
+        <li>Erva-cidreira</li>
+        <li>Lúpulo</li>
+      </ul>
+      <p><strong>Risco:</strong> Sedação excessiva, sonolência grave, depressão respiratória</p>
+    </div>
+
+    <div class="page-number">Guia 6 - Segurança - Página 46</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 2: Contraindicações por Grupo</h2>
+
+    <h3>2.1 Gravidez</h3>
+    <div class="danger-box">
+      <h4>🤰 Ervas PROIBIDAS na Gravidez</h4>
+      <table>
+        <tr>
+          <th>Erva</th>
+          <th>Risco</th>
+        </tr>
+        <tr>
+          <td>Arruda</td>
+          <td>ABORTIVA - risco grave</td>
+        </tr>
+        <tr>
+          <td>Boldo</td>
+          <td>Abortivo em doses altas</td>
+        </tr>
+        <tr>
+          <td>Poejo</td>
+          <td>Abortivo (pulegona)</td>
+        </tr>
+        <tr>
+          <td>Alecrim (doses altas)</td>
+          <td>Estimulante uterino</td>
+        </tr>
+        <tr>
+          <td>Sálvia</td>
+          <td>Estimulante uterino</td>
+        </tr>
+        <tr>
+          <td>Canela (doses altas)</td>
+          <td>Estimulante uterino</td>
+        </tr>
+        <tr>
+          <td>Gengibre (1º trimestre)</td>
+          <td>Controverso - doses baixas ok</td>
+        </tr>
+      </table>
+      <p><strong>Seguras com moderação:</strong> Camomila, erva-cidreira, hortelã (pequenas quantidades)</p>
+    </div>
+
+    <h3>2.2 Lactação</h3>
+    <div class="safety-card">
+      <h4>🤱 Na Amamentação</h4>
+      <p><strong>Evitar:</strong> Sálvia (reduz leite), boldo, arruda, poejo, confrei</p>
+      <p><strong>Galactagogas (aumentam leite):</strong> Erva-doce, feno-grego, blessed thistle</p>
+      <p><strong>Seguras:</strong> Camomila, erva-cidreira (podem passar para o leite e acalmar bebê)</p>
+    </div>
+
+    <h3>2.3 Crianças</h3>
+    <div class="safety-card">
+      <h4>👶 Cuidados com Crianças</h4>
+      <ul>
+        <li><strong>0-6 meses:</strong> Apenas banho com camomila ou lavanda</li>
+        <li><strong>6-12 meses:</strong> Camomila e erva-doce em doses mínimas</li>
+        <li><strong>1-6 anos:</strong> Doses = 1/4 a 1/2 da dose adulta</li>
+        <li><strong>6-12 anos:</strong> Doses = 1/2 a 3/4 da dose adulta</li>
+        <li><strong>NUNCA:</strong> Óleos essenciais de hortelã/eucalipto em menores de 6 anos</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 6 - Segurança - Página 47</div>
+  </div>
+
+  <div class="page">
+    <h3>2.4 Idosos</h3>
+    <div class="safety-card">
+      <h4>👴👵 Cuidados com Idosos</h4>
+      <ul>
+        <li>Metabolismo mais lento = doses menores</li>
+        <li>Mais sensíveis a interações medicamentosas</li>
+        <li>Maior risco de hipotensão postural</li>
+        <li>Cuidado especial com ervas sedativas (risco de quedas)</li>
+        <li><strong>Dose sugerida:</strong> 1/2 a 3/4 da dose adulta padrão</li>
+      </ul>
+    </div>
+
+    <h3>2.5 Condições Específicas</h3>
+    <table>
+      <tr>
+        <th>Condição</th>
+        <th>Evitar</th>
+        <th>Motivo</th>
+      </tr>
+      <tr>
+        <td>Problemas renais</td>
+        <td>Cavalinha, dente-de-leão</td>
+        <td>Diuréticos potentes</td>
+      </tr>
+      <tr>
+        <td>Problemas hepáticos</td>
+        <td>Boldo, confrei, kava</td>
+        <td>Hepatotóxicos</td>
+      </tr>
+      <tr>
+        <td>Úlceras/gastrite</td>
+        <td>Gengibre (jejum), hortelã</td>
+        <td>Irritantes gástricos</td>
+      </tr>
+      <tr>
+        <td>Refluxo</td>
+        <td>Hortelã</td>
+        <td>Relaxa esfíncter esofágico</td>
+      </tr>
+      <tr>
+        <td>Cálculos biliares</td>
+        <td>Boldo, alcachofra</td>
+        <td>Estimulam vesícula</td>
+      </tr>
+      <tr>
+        <td>Epilepsia</td>
+        <td>Alecrim, sálvia, eucalipto</td>
+        <td>Podem baixar limiar convulsivo</td>
+      </tr>
+      <tr>
+        <td>Hipotireoidismo</td>
+        <td>Melissa (uso crônico)</td>
+        <td>Pode reduzir função tireoidiana</td>
+      </tr>
+      <tr>
+        <td>Doenças autoimunes</td>
+        <td>Equinácea, astrágalo</td>
+        <td>Imunoestimulantes</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Guia 6 - Segurança - Página 48</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 3: Sinais de Alerta</h2>
+
+    <div class="danger-box">
+      <h4>🚨 PARE O USO e procure ajuda se notar:</h4>
+      <ul>
+        <li>Reação alérgica (coceira, inchaço, dificuldade respiratória)</li>
+        <li>Náusea ou vômitos persistentes</li>
+        <li>Dor abdominal intensa</li>
+        <li>Urina escura ou fezes claras (problemas hepáticos)</li>
+        <li>Sangramento inexplicado</li>
+        <li>Batimentos cardíacos irregulares</li>
+        <li>Tontura severa ou desmaio</li>
+        <li>Confusão mental</li>
+      </ul>
+    </div>
+
+    <h2>Capítulo 4: Regras de Ouro da Fitoterapia Segura</h2>
+
+    <div class="highlight-box">
+      <h4>✅ 10 Regras de Segurança</h4>
+      <ol>
+        <li><strong>Identificação correta:</strong> Tenha 100% certeza da espécie</li>
+        <li><strong>Comece devagar:</strong> Dose baixa, aumente gradualmente</li>
+        <li><strong>Uma de cada vez:</strong> Ao testar nova erva, use sozinha primeiro</li>
+        <li><strong>Intervalos:</strong> Não use a mesma erva continuamente por meses</li>
+        <li><strong>Medicamentos:</strong> Informe seu médico sobre todas as ervas que usa</li>
+        <li><strong>Cirurgias:</strong> Suspenda ervas 2 semanas antes</li>
+        <li><strong>Reações:</strong> Ao menor sinal adverso, pare imediatamente</li>
+        <li><strong>Qualidade:</strong> Compre de fontes confiáveis</li>
+        <li><strong>Dosagem:</strong> Mais NÃO é melhor - respeite as doses</li>
+        <li><strong>Bom senso:</strong> Ervas complementam, não substituem tratamento médico</li>
+      </ol>
+    </div>
+
+    <div class="herb-card">
+      <h4>📞 Em caso de intoxicação:</h4>
+      <p><strong>CIATOX - Centro de Informação e Assistência Toxicológica:</strong></p>
+      <p>0800 722 6001 (24 horas, gratuito)</p>
+      <p>Tenha em mãos: nome da erva, quantidade ingerida, hora da ingestão, sintomas</p>
+    </div>
+
+    <div class="page-number">Guia 6 - Segurança - Página 49</div>
+  </div>
+
+  <div class="page">
+    <h2>Capítulo 5: Tabela Resumo de Contraindicações</h2>
+
+    <table>
+      <tr>
+        <th>Erva</th>
+        <th>Principais Contraindicações</th>
+      </tr>
+      <tr>
+        <td>Camomila</td>
+        <td>Alergia a Asteraceae, anticoagulantes</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>Refluxo, crianças pequenas (OE)</td>
+      </tr>
+      <tr>
+        <td>Boldo</td>
+        <td>Gravidez, obstrução biliar, uso prolongado</td>
+      </tr>
+      <tr>
+        <td>Gengibre</td>
+        <td>Cálculos biliares, anticoagulantes (doses altas)</td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>Gravidez, epilepsia, hipertensão</td>
+      </tr>
+      <tr>
+        <td>Guaco</td>
+        <td>Anticoagulantes, pré-operatório</td>
+      </tr>
+      <tr>
+        <td>Arruda</td>
+        <td>Gravidez (ABORTIVA), crianças, uso interno</td>
+      </tr>
+      <tr>
+        <td>Confrei</td>
+        <td>USO INTERNO, feridas abertas, gravidez</td>
+      </tr>
+      <tr>
+        <td>Equinácea</td>
+        <td>Doenças autoimunes, uso prolongado (8+ semanas)</td>
+      </tr>
+      <tr>
+        <td>Valeriana</td>
+        <td>Sedativos, álcool, dirigir</td>
+      </tr>
+      <tr>
+        <td>Melissa</td>
+        <td>Hipotireoidismo (uso crônico)</td>
+      </tr>
+      <tr>
+        <td>Poejo</td>
+        <td>Gravidez (ABORTIVO), doses altas (tóxico)</td>
+      </tr>
+      <tr>
+        <td>Cavalinha</td>
+        <td>Problemas renais, deficiência de tiamina</td>
+      </tr>
+      <tr>
+        <td>Espinheira-santa</td>
+        <td>Gravidez, lactação</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>📝 Lembre-se:</h4>
+      <p>Esta lista não é exaustiva. Sempre pesquise contraindicações específicas antes de usar qualquer erva, especialmente se você tem condições de saúde ou usa medicamentos.</p>
+    </div>
+
+    <div class="page-number">Guia 6 - Segurança - Página 50</div>
+  </div>
+
+  <!-- ==================== GUIA 7: CALENDÁRIO POR REGIÃO ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>GUIA 7: Calendário por Região Brasileira</h2>
+      <p>Quando plantar e colher em cada região do Brasil</p>
+    </div>
+
+    <p>O Brasil é um país continental com climas diversos. O que funciona no Sul pode não funcionar no Norte. Use este guia adaptado à sua região.</p>
+
+    <h2>Região Norte (AM, PA, RO, RR, AP, AC, TO)</h2>
+    <div class="region-card norte">
+      <h4>🌴 Clima: Equatorial - Quente e úmido o ano todo</h4>
+      <p><strong>Temperatura média:</strong> 25-28°C | <strong>Chuvas:</strong> Abundantes (set-mai mais chuvoso)</p>
+
+      <h4>Ervas que se adaptam bem:</h4>
+      <ul>
+        <li>✅ Gengibre, cúrcuma, capim-limão (EXCELENTES)</li>
+        <li>✅ Hortelã, boldo-brasileiro, guaco</li>
+        <li>✅ Unha-de-gato, ora-pro-nóbis, moringa</li>
+        <li>⚠️ Alecrim, tomilho, lavanda (difícil - muito úmido)</li>
+        <li>❌ Valeriana, equinácea (não se adaptam)</li>
+      </ul>
+
+      <h4>Plantio:</h4>
+      <p>Ano todo para a maioria das ervas tropicais. Evitar auge das chuvas para sementes pequenas (jan-mar).</p>
+    </div>
+
+    <h2>Região Nordeste (MA, PI, CE, RN, PB, PE, AL, SE, BA)</h2>
+    <div class="region-card nordeste">
+      <h4>☀️ Clima: Tropical/Semiárido - Quente, chuvas concentradas</h4>
+      <p><strong>Temperatura média:</strong> 24-28°C | <strong>Chuvas:</strong> Concentradas (mar-jul litoral, jan-abr sertão)</p>
+
+      <h4>Ervas que se adaptam bem:</h4>
+      <ul>
+        <li>✅ Capim-limão, hortelã, boldo-brasileiro</li>
+        <li>✅ Alecrim, tomilho (excelentes no semiárido)</li>
+        <li>✅ Babosa (perfeita para o sertão)</li>
+        <li>⚠️ Gengibre, cúrcuma (precisam de irrigação)</li>
+        <li>❌ Lavanda (muito quente), valeriana</li>
+      </ul>
+
+      <h4>Plantio:</h4>
+      <p>Início das chuvas (fev-abr). No sertão, com irrigação, ano todo.</p>
+    </div>
+
+    <div class="page-number">Guia 7 - Calendário Regional - Página 51</div>
+  </div>
+
+  <div class="page">
+    <h2>Região Centro-Oeste (MT, MS, GO, DF)</h2>
+    <div class="region-card centro-oeste">
+      <h4>🌾 Clima: Tropical de altitude - Quente com estação seca definida</h4>
+      <p><strong>Temperatura média:</strong> 22-26°C | <strong>Chuvas:</strong> Out-Mar (seca Mai-Set)</p>
+
+      <h4>Ervas que se adaptam bem:</h4>
+      <ul>
+        <li>✅ Alecrim, tomilho, orégano (gostam da seca)</li>
+        <li>✅ Capim-limão, hortelã, boldo</li>
+        <li>✅ Gengibre, cúrcuma (com irrigação)</li>
+        <li>✅ Camomila (outono-inverno)</li>
+        <li>⚠️ Lavanda (possível nas serras)</li>
+      </ul>
+
+      <h4>Calendário:</h4>
+      <table>
+        <tr>
+          <th>Época</th>
+          <th>Ação</th>
+        </tr>
+        <tr>
+          <td>Set-Out</td>
+          <td>Plantio geral (início das chuvas)</td>
+        </tr>
+        <tr>
+          <td>Mar-Abr</td>
+          <td>Plantar camomila, erva-doce</td>
+        </tr>
+        <tr>
+          <td>Mai-Ago</td>
+          <td>Colheita principal, secar ervas</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>Região Sudeste (SP, RJ, MG, ES)</h2>
+    <div class="region-card sudeste">
+      <h4>🏙️ Clima: Tropical de altitude a subtropical</h4>
+      <p><strong>Temperatura média:</strong> 18-24°C | <strong>Chuvas:</strong> Out-Mar</p>
+
+      <h4>Ervas que se adaptam bem:</h4>
+      <ul>
+        <li>✅ Praticamente TODAS as ervas do kit!</li>
+        <li>✅ Mediterrâneas (alecrim, tomilho, lavanda) nas serras</li>
+        <li>✅ Tropicais (gengibre, cúrcuma) no litoral</li>
+        <li>✅ Camomila, calêndula (outono-inverno)</li>
+        <li>⚠️ Valeriana (apenas em regiões serranas)</li>
+      </ul>
+
+      <h4>Calendário:</h4>
+      <table>
+        <tr>
+          <th>Época</th>
+          <th>Ação</th>
+        </tr>
+        <tr>
+          <td>Set-Nov</td>
+          <td>Plantio geral primavera</td>
+        </tr>
+        <tr>
+          <td>Mar-Mai</td>
+          <td>Plantar camomila, erva-doce, calêndula</td>
+        </tr>
+        <tr>
+          <td>Jun-Ago</td>
+          <td>Colheita e secagem</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="page-number">Guia 7 - Calendário Regional - Página 52</div>
+  </div>
+
+  <div class="page">
+    <h2>Região Sul (PR, SC, RS)</h2>
+    <div class="region-card sul">
+      <h4>❄️ Clima: Subtropical a temperado - Estações bem definidas</h4>
+      <p><strong>Temperatura média:</strong> 14-22°C | <strong>Chuvas:</strong> Bem distribuídas</p>
+
+      <h4>Ervas que se adaptam bem:</h4>
+      <ul>
+        <li>✅ TODAS as mediterrâneas (alecrim, lavanda, tomilho, sálvia)</li>
+        <li>✅ Camomila, calêndula, equinácea (EXCELENTES)</li>
+        <li>✅ Valeriana, melissa (adoram o frio)</li>
+        <li>✅ Hortelã, erva-cidreira</li>
+        <li>⚠️ Gengibre, cúrcuma (proteger do frio)</li>
+        <li>❌ Capim-limão (pode morrer na geada)</li>
+      </ul>
+
+      <h4>Calendário:</h4>
+      <table>
+        <tr>
+          <th>Época</th>
+          <th>Ação</th>
+        </tr>
+        <tr>
+          <td>Set-Out</td>
+          <td>Plantio de primavera (após geadas)</td>
+        </tr>
+        <tr>
+          <td>Mar-Abr</td>
+          <td>Plantar camomila, erva-doce</td>
+        </tr>
+        <tr>
+          <td>Dez-Fev</td>
+          <td>Colheita principal de verão</td>
+        </tr>
+        <tr>
+          <td>Mai-Ago</td>
+          <td>Proteger tropicais, colher raízes</td>
+        </tr>
+      </table>
+
+      <div class="highlight-box">
+        <h4>❄️ Proteção contra Geada:</h4>
+        <ul>
+          <li>Cobrir plantas sensíveis com TNT ou plástico à noite</li>
+          <li>Mulching grosso protege raízes</li>
+          <li>Trazer vasos para área coberta</li>
+          <li>Gengibre/cúrcuma: parte aérea morre mas rizoma sobrevive sob mulch</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">Guia 7 - Calendário Regional - Página 53</div>
+  </div>
+
+  <div class="page">
+    <h2>Resumo: Melhor Época por Erva</h2>
+
+    <table>
+      <tr>
+        <th>Erva</th>
+        <th>Plantio</th>
+        <th>Colheita</th>
+        <th>Melhor Região</th>
+      </tr>
+      <tr>
+        <td>Camomila</td>
+        <td>Outono</td>
+        <td>Primavera</td>
+        <td>Sul, Sudeste</td>
+      </tr>
+      <tr>
+        <td>Hortelã</td>
+        <td>Ano todo</td>
+        <td>Ano todo</td>
+        <td>Todas</td>
+      </tr>
+      <tr>
+        <td>Gengibre</td>
+        <td>Primavera</td>
+        <td>Outono seguinte</td>
+        <td>Norte, Nordeste, Sudeste</td>
+      </tr>
+      <tr>
+        <td>Alecrim</td>
+        <td>Primavera/Outono</td>
+        <td>Ano todo</td>
+        <td>Sudeste, Sul, Nordeste seco</td>
+      </tr>
+      <tr>
+        <td>Lavanda</td>
+        <td>Outono</td>
+        <td>Verão</td>
+        <td>Sul, serras do Sudeste</td>
+      </tr>
+      <tr>
+        <td>Guaco</td>
+        <td>Primavera</td>
+        <td>Ano todo</td>
+        <td>Sudeste, Sul</td>
+      </tr>
+      <tr>
+        <td>Boldo</td>
+        <td>Ano todo</td>
+        <td>Ano todo</td>
+        <td>Todas</td>
+      </tr>
+      <tr>
+        <td>Capim-limão</td>
+        <td>Primavera/Verão</td>
+        <td>Ano todo</td>
+        <td>Norte, Nordeste, Sudeste</td>
+      </tr>
+      <tr>
+        <td>Calêndula</td>
+        <td>Outono/Primavera</td>
+        <td>60-90 dias após</td>
+        <td>Sul, Sudeste, CO</td>
+      </tr>
+      <tr>
+        <td>Babosa</td>
+        <td>Ano todo</td>
+        <td>Ano todo</td>
+        <td>Todas (sol)</td>
+      </tr>
+    </table>
+
+    <div class="herb-card">
+      <h4>🌡️ Regra Geral por Temperatura:</h4>
+      <ul>
+        <li><strong>Mediterrâneas</strong> (alecrim, tomilho, lavanda): Preferem 15-25°C, pouca umidade</li>
+        <li><strong>Tropicais</strong> (gengibre, cúrcuma): Preferem 20-30°C, alta umidade</li>
+        <li><strong>Temperadas</strong> (camomila, valeriana): Preferem 10-22°C</li>
+        <li><strong>Versáteis</strong> (hortelã, boldo, melissa): Adaptam-se a 15-30°C</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia 7 - Calendário Regional - Página 54</div>
+  </div>
+
+  <!-- ==================== BÔNUS: 50 RECEITAS ==================== -->
+  <div class="page">
+    <div class="module-header">
+      <h2>BÔNUS: 50 Receitas de Blends Terapêuticos</h2>
+      <p>Fórmulas testadas para cada necessidade</p>
+    </div>
+
+    <h2>Receitas para Relaxamento e Sono (1-10)</h2>
+
+    <div class="recipe-box">
+      <h4>1. Chá "Boa Noite Profunda"</h4>
+      <ul>
+        <li>1 col. sopa camomila</li>
+        <li>1 col. chá erva-cidreira</li>
+        <li>1/2 col. chá maracujá (folhas)</li>
+        <li>3-4 flores de lavanda</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Tomar 30 min antes de dormir.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>2. Chá Anti-Ansiedade</h4>
+      <ul>
+        <li>1 col. sopa erva-cidreira</li>
+        <li>1 col. chá camomila</li>
+        <li>3-4 folhas de capim-limão</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 8 min. Até 3 xícaras ao dia.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>3. Chá Relaxante Muscular</h4>
+      <ul>
+        <li>1 col. sopa camomila</li>
+        <li>1 col. chá alecrim</li>
+        <li>Gengibre (1 rodela fina)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção gengibre 5 min, infusão das outras 8 min.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>4. Chá para Estresse Crônico</h4>
+      <ul>
+        <li>1 col. sopa tulsi (manjericão-santo)</li>
+        <li>1 col. chá erva-cidreira</li>
+        <li>1/2 col. chá lavanda</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. 2x ao dia.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>5. Blend "Desliga a Mente"</h4>
+      <ul>
+        <li>1 col. sopa maracujá (folhas)</li>
+        <li>1 col. chá camomila</li>
+        <li>1/2 col. chá valeriana (raiz)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção valeriana 10 min, infusão das outras 8 min.</p>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 55</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>6. Chá para Palpitações de Ansiedade</h4>
+      <ul>
+        <li>1 col. sopa erva-cidreira</li>
+        <li>1 col. chá maracujá</li>
+        <li>1/2 col. chá espinheiro-alvar</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>7. Chá Noturno para Crianças (6+ anos)</h4>
+      <ul>
+        <li>1 col. chá camomila</li>
+        <li>1/2 col. chá erva-cidreira</li>
+        <li>Mel a gosto</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 5 min. Dose reduzida.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>8. Blend "Fim de Semana"</h4>
+      <ul>
+        <li>1 col. sopa capim-limão</li>
+        <li>1 col. chá hortelã</li>
+        <li>1 col. chá camomila</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 8 min. Relaxante sem sonolência.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>9. Chá para Insônia Persistente</h4>
+      <ul>
+        <li>1 col. chá valeriana (raiz)</li>
+        <li>1 col. sopa maracujá</li>
+        <li>1 col. chá camomila</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção 15 min. Forte - usar com cautela.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>10. Chá "Meditação"</h4>
+      <ul>
+        <li>1 col. sopa tulsi</li>
+        <li>1/2 col. chá lavanda</li>
+        <li>Casca de limão</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 8 min. Antes de meditar.</p>
+    </div>
+
+    <h2>Receitas Digestivas (11-20)</h2>
+
+    <div class="recipe-box">
+      <h4>11. Chá Pós-Refeição Clássico</h4>
+      <ul>
+        <li>1 col. sopa hortelã</li>
+        <li>1/2 col. chá erva-doce</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 5 min. Logo após comer.</p>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 56</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>12. Chá para Gases</h4>
+      <ul>
+        <li>1 col. chá erva-doce (sementes)</li>
+        <li>1 col. chá hortelã</li>
+        <li>1 col. chá camomila</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Após refeições.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>13. Chá "Ressaca"</h4>
+      <ul>
+        <li>2 folhas pequenas de boldo</li>
+        <li>Gengibre (2 rodelas)</li>
+        <li>Suco de 1/2 limão (depois)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão boldo 5 min máx. Adicione limão após coar.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>14. Chá para Náusea</h4>
+      <ul>
+        <li>Gengibre fresco (3 rodelas)</li>
+        <li>1/2 col. chá hortelã</li>
+        <li>Mel a gosto</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção gengibre 10 min, infusão hortelã 3 min.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>15. Chá para Cólicas Abdominais</h4>
+      <ul>
+        <li>1 col. sopa camomila</li>
+        <li>1 col. chá erva-doce</li>
+        <li>Gengibre (1 rodela)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Tomar quente.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>16. Chá para Azia</h4>
+      <ul>
+        <li>1 col. sopa espinheira-santa</li>
+        <li>1/2 col. chá camomila</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Antes das refeições.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>17. Chá "Digestão de Gorduras"</h4>
+      <ul>
+        <li>1 folha pequena boldo</li>
+        <li>1 col. chá hortelã</li>
+        <li>1/2 col. chá alecrim</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 5 min. Após feijoada/churrasco.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>18. Chá para Intestino Preso</h4>
+      <ul>
+        <li>1 col. sopa sene (use com cautela)</li>
+        <li>1 col. chá erva-doce</li>
+        <li>1/2 col. chá hortelã</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Apenas ocasionalmente!</p>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 57</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>19. Chá Anti-inflamatório Digestivo</h4>
+      <ul>
+        <li>Cúrcuma fresca (2 rodelas)</li>
+        <li>Gengibre (1 rodela)</li>
+        <li>Pimenta preta (1 pitada)</li>
+        <li>Mel a gosto</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção 15 min.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>20. Chá para Estômago Nervoso</h4>
+      <ul>
+        <li>1 col. sopa camomila</li>
+        <li>1 col. chá erva-cidreira</li>
+        <li>1/2 col. chá hortelã</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 8 min. Quando ansiedade afeta estômago.</p>
+    </div>
+
+    <h2>Receitas para Gripe e Imunidade (21-30)</h2>
+
+    <div class="recipe-box">
+      <h4>21. Chá "Mata-Gripe"</h4>
+      <ul>
+        <li>Gengibre (4 rodelas grossas)</li>
+        <li>1 col. chá alecrim</li>
+        <li>Mel e limão a gosto</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção gengibre 15 min, infusão alecrim 5 min.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>22. Chá para Tosse Seca</h4>
+      <ul>
+        <li>3-4 folhas guaco</li>
+        <li>1 col. chá tomilho</li>
+        <li>Mel generoso</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção 10 min. 3-4x ao dia.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>23. Chá para Tosse com Catarro</h4>
+      <ul>
+        <li>3 folhas guaco</li>
+        <li>1 col. chá eucalipto</li>
+        <li>Gengibre (2 rodelas)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção 15 min. Inalar vapor antes de beber.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>24. Chá Descongestionante</h4>
+      <ul>
+        <li>Gengibre (3 rodelas)</li>
+        <li>1 col. sopa hortelã</li>
+        <li>1 pau de canela</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção 15 min. Inalar vapor.</p>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 58</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>25. Chá Imunidade Diária</h4>
+      <ul>
+        <li>1 col. chá equinácea</li>
+        <li>Gengibre (1 rodela)</li>
+        <li>Limão (casca)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. 1x ao dia por até 8 semanas.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>26. Chá para Dor de Garganta</h4>
+      <ul>
+        <li>1 col. sopa sálvia</li>
+        <li>1 col. chá tomilho</li>
+        <li>Mel</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Gargarejar morno + beber.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>27. Chá para Febre</h4>
+      <ul>
+        <li>1 col. sopa capim-limão</li>
+        <li>1 col. chá sabugueiro (flores)</li>
+        <li>Gengibre (1 rodela)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Tomar quente, cobrir-se.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>28. Chá para Sinusite</h4>
+      <ul>
+        <li>1 col. chá eucalipto</li>
+        <li>1 col. chá hortelã-pimenta</li>
+        <li>Gengibre (2 rodelas)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção 10 min. Inalação + beber.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>29. Chá Preventivo (Época de Gripe)</h4>
+      <ul>
+        <li>1 col. chá própolis verde (planta)</li>
+        <li>1 col. chá equinácea</li>
+        <li>Mel e limão</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. 1x ao dia.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>30. Chá para Recuperação Pós-Gripe</h4>
+      <ul>
+        <li>1 col. sopa tulsi</li>
+        <li>1 col. chá alecrim</li>
+        <li>Gengibre (1 rodela)</li>
+        <li>Mel</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Restaura energia.</p>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 59</div>
+  </div>
+
+  <div class="page">
+    <h2>Receitas para Saúde da Mulher (31-35)</h2>
+
+    <div class="recipe-box">
+      <h4>31. Chá para Cólicas Menstruais</h4>
+      <ul>
+        <li>1 col. sopa camomila</li>
+        <li>1 col. chá erva-cidreira</li>
+        <li>Gengibre (1 rodela)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Tomar quente, 2-3x/dia.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>32. Chá para TPM</h4>
+      <ul>
+        <li>1 col. sopa erva-cidreira</li>
+        <li>1 col. chá camomila</li>
+        <li>1 col. chá capim-limão</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 8 min. Iniciar 1 semana antes.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>33. Chá para Lactação</h4>
+      <ul>
+        <li>1 col. chá erva-doce</li>
+        <li>1/2 col. chá feno-grego</li>
+        <li>1/2 col. chá funcho</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. 2-3x ao dia.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>34. Chá para Ondas de Calor (Menopausa)</h4>
+      <ul>
+        <li>1 col. sopa sálvia</li>
+        <li>1 col. chá erva-cidreira</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. 2x ao dia.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>35. Chá Regulador Hormonal</h4>
+      <ul>
+        <li>1 col. chá vitex (agnocasto)</li>
+        <li>1 col. chá camomila</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. 1x ao dia por ciclo.</p>
+    </div>
+
+    <h2>Receitas Energizantes e Concentração (36-40)</h2>
+
+    <div class="recipe-box">
+      <h4>36. Chá para Concentração</h4>
+      <ul>
+        <li>1 col. sopa alecrim</li>
+        <li>1/2 col. chá hortelã</li>
+        <li>Casca de limão</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Manhã/tarde.</p>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 60</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>37. Chá Energizante Natural</h4>
+      <ul>
+        <li>Gengibre (4 rodelas)</li>
+        <li>1 col. chá alecrim</li>
+        <li>Casca de limão ou laranja</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção 10 min. Pela manhã.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>38. Chá para Memória</h4>
+      <ul>
+        <li>1 col. sopa alecrim</li>
+        <li>1 col. chá ginkgo biloba</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. 1-2x ao dia.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>39. Chá "Segunda-Feira"</h4>
+      <ul>
+        <li>1 col. sopa hortelã-pimenta</li>
+        <li>1/2 col. chá alecrim</li>
+        <li>Gengibre (1 rodela)</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 5 min. Energiza sem agitar.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>40. Chá Adaptogênico</h4>
+      <ul>
+        <li>1 col. sopa tulsi</li>
+        <li>1/2 col. chá alecrim</li>
+        <li>1/2 col. chá gengibre</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Equilíbrio energia.</p>
+    </div>
+
+    <h2>Receitas para Uso Externo (41-45)</h2>
+
+    <div class="recipe-box">
+      <h4>41. Compressa para Olhos Cansados</h4>
+      <ul>
+        <li>Chá forte de camomila (frio)</li>
+        <li>Algodão</li>
+      </ul>
+      <p><strong>Uso:</strong> Embeba e aplique nos olhos 15 min.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>42. Chá para Gargarejo (Garganta)</h4>
+      <ul>
+        <li>1 col. sopa sálvia</li>
+        <li>1 col. chá tomilho</li>
+        <li>Sal (1 pitada)</li>
+      </ul>
+      <p><strong>Uso:</strong> Gargarejar morno 3-4x ao dia.</p>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 61</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>43. Chá para Banho Relaxante</h4>
+      <ul>
+        <li>2 col. sopa lavanda</li>
+        <li>2 col. sopa camomila</li>
+        <li>1 col. sopa erva-cidreira</li>
+      </ul>
+      <p><strong>Preparo:</strong> Faça 1L de chá forte, adicione à banheira.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>44. Chá para Lavagem Capilar</h4>
+      <ul>
+        <li>2 col. sopa alecrim</li>
+        <li>1 col. sopa hortelã</li>
+      </ul>
+      <p><strong>Uso:</strong> Chá forte, usar como último enxágue.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>45. Chá para Banho de Assento</h4>
+      <ul>
+        <li>2 col. sopa camomila</li>
+        <li>1 col. sopa calêndula</li>
+        <li>1 col. sopa sálvia</li>
+      </ul>
+      <p><strong>Uso:</strong> Chá forte morno, banho de assento 15-20 min.</p>
+    </div>
+
+    <h2>Receitas Especiais (46-50)</h2>
+
+    <div class="recipe-box">
+      <h4>46. Chá para Dor de Cabeça Tensional</h4>
+      <ul>
+        <li>1 col. sopa camomila</li>
+        <li>1 col. chá hortelã</li>
+        <li>1/2 col. chá alecrim</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 8 min. + aplicar óleo de hortelã nas têmporas.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>47. Chá Anti-inflamatório Geral</h4>
+      <ul>
+        <li>Cúrcuma (2 rodelas)</li>
+        <li>Gengibre (2 rodelas)</li>
+        <li>Pimenta preta (1 pitada)</li>
+        <li>Canela (1/2 pau)</li>
+        <li>Mel</li>
+      </ul>
+      <p><strong>Preparo:</strong> Decocção 15 min. "Golden milk" versão chá.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>48. Chá para Ressaca de Sol</h4>
+      <ul>
+        <li>1 col. sopa hortelã</li>
+        <li>1 col. chá hibisco</li>
+        <li>Limão</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão, beber gelado. Hidratante.</p>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 62</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>49. Chá Detox Suave</h4>
+      <ul>
+        <li>1 col. chá dente-de-leão</li>
+        <li>1 col. chá hortelã</li>
+        <li>Gengibre (1 rodela)</li>
+        <li>Limão</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 10 min. Pela manhã, em jejum.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>50. Chá "Felicidade" (Blend Especial)</h4>
+      <ul>
+        <li>1 col. chá tulsi</li>
+        <li>1 col. chá camomila</li>
+        <li>1/2 col. chá lavanda</li>
+        <li>Casca de laranja</li>
+        <li>Mel</li>
+      </ul>
+      <p><strong>Preparo:</strong> Infusão 8 min. Para dias difíceis.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>📝 Dicas para as Receitas:</h4>
+      <ul>
+        <li>Todas as medidas são para 1 xícara (250ml)</li>
+        <li>Ajuste quantidades ao seu gosto</li>
+        <li>Ervas frescas: use o dobro da quantidade</li>
+        <li>Mel: adicione apenas após esfriar um pouco</li>
+        <li>Não reutilize ervas - perdem potência</li>
+      </ul>
+    </div>
+
+    <div class="herb-card">
+      <h4>⚠️ Lembretes de Segurança:</h4>
+      <ul>
+        <li>Verifique contraindicações antes de usar qualquer receita</li>
+        <li>Gestantes e lactantes: consultar profissional</li>
+        <li>Crianças: reduzir doses pela metade ou mais</li>
+        <li>Interações medicamentosas: verificar Guia 6</li>
+        <li>Se sintomas persistirem, procure um médico</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 63</div>
+  </div>
+
+  <!-- PÁGINA FINAL -->
+  <div class="page">
+    <h1>Parabéns!</h1>
+    <p>Você completou o <strong>Kit Horta de Chás e Ervas Medicinais</strong> - o guia mais completo de fitoterapia caseira!</p>
+
+    <h2>O que você dominou:</h2>
+    <ul>
+      <li>✅ Cultivar 30 ervas medicinais com fichas detalhadas</li>
+      <li>✅ Preparar chás perfeitos com técnicas profissionais</li>
+      <li>✅ Entender fitoquímica e princípios ativos</li>
+      <li>✅ Fazer tinturas, xaropes, pomadas e óleos</li>
+      <li>✅ Aplicar aromaterapia segura em casa</li>
+      <li>✅ Evitar interações perigosas com medicamentos</li>
+      <li>✅ Plantar na época certa para sua região</li>
+      <li>✅ 50 receitas de blends terapêuticos</li>
+    </ul>
+
+    <h2>Próximos Passos:</h2>
+    <ol>
+      <li>Escolha 5 ervas para começar sua farmácia natural</li>
+      <li>Prepare substrato e vasos adequados</li>
+      <li>Plante seguindo o calendário da sua região</li>
+      <li>Comece com as receitas mais simples</li>
+      <li>Expanda gradualmente seu conhecimento</li>
+      <li>Compartilhe com amigos e família!</li>
+    </ol>
+
+    <div class="danger-box">
+      <h4>Lembre-se Sempre:</h4>
+      <p>Ervas medicinais são poderosas aliadas da saúde, mas <strong>não substituem tratamento médico</strong>. Use com consciência, respeite as contraindicações e, na dúvida, consulte um profissional de saúde.</p>
+    </div>
+
+    <div class="herb-card">
+      <h4>Suporte</h4>
+      <p>Tem dúvidas? Entre em contato!</p>
+      <ul>
+        <li>Email: contato@minhahortaemcasa.com.br</li>
+        <li>Site: minhahortaemcasa.com.br</li>
+      </ul>
+      <p><strong>Garantia de 7 dias</strong> - Se não ficar satisfeito, devolvemos seu dinheiro.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <p><strong>Minha Horta em Casa</strong></p>
+      <p>minhahortaemcasa.com.br</p>
+      <p><em>Sua farmácia natural começa aqui!</em></p>
+    </div>
+
+    <div class="page-number">Kit Chás Medicinais - Página Final</div>
+  </div>
+
+</body>
+</html>

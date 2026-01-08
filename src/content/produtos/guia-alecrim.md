@@ -5,6 +5,7 @@ originalPrice: 19
 description: "Cultive alecrim saudável e aromático o ano todo"
 category: "plantas"
 relatedPlant: "alecrim"
+checkoutUrl: "https://checkout.pagtrust.com.br/ck6ec71b35?funnel=fn85ff55ff"
 ---
 
 # Guia Completo do Alecrim - R$ 9

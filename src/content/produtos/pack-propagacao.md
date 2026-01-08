@@ -5,6 +5,7 @@ originalPrice: 39
 description: "Multiplique suas plantas gastando zero. Estacas, divisão, sementes - domine todas as técnicas."
 category: "kit"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ck9cbd3930?funnel=fn23336854"
 ---
 
 # Pack Propagação de Plantas - R$ 19

@@ -5,6 +5,7 @@ originalPrice: 19
 description: "Nunca mais mate plantas por excesso ou falta de água"
 category: "problemas"
 relatedProblem: "como-regar"
+checkoutUrl: "https://checkout.pagtrust.com.br/ck83f395f2?funnel=fn7fd4e957"
 ---
 
 # Guia Definitivo de Rega - R$ 9

@@ -5,6 +5,7 @@ originalPrice: 57
 description: "Pacote completo para resolver qualquer problema na horta"
 category: "combo"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ck87b08eb3?funnel=fn01c3cfc6"
 ---
 
 # Kit Salve Sua Horta - R$ 24

@@ -1,0 +1,176 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+import ContentIllustration from '../../components/illustrations/ContentIllustration.astro';
+import Mascote from '../../components/illustrations/Mascote.astro';
+
+export const prerender = true;
+
+const allMicroverdes = await getCollection('microverdes', ({ data }) => !data.draft);
+const sortedMicroverdes = allMicroverdes.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Microverdes | Cultivo de Mini Plantas Nutritivas"
+  description="Aprenda a cultivar microverdes em casa. Superalimentos em miniatura prontos para colher em 7-14 dias. Guias práticos para iniciantes."
+>
+  <!-- Hero Section -->
+  <section class="relative py-20 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-leaf-50"></div>
+    <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl blob-animate"></div>
+    <div class="absolute bottom-10 right-10 w-64 h-64 bg-leaf-200/20 rounded-full blur-3xl blob-animate" style="animation-delay: -3s;"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <!-- Content -->
+        <div class="flex-1 text-center lg:text-left">
+          <nav class="text-sm text-gray-500 mb-4">
+            <a href="/" class="hover:text-leaf-600 transition-colors">Início</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 font-medium">Microverdes</span>
+          </nav>
+
+          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <span class="text-gradient">Microverdes</span> em Casa
+          </h1>
+
+          <p class="text-xl text-gray-600 max-w-xl mb-8">
+            Superalimentos em miniatura prontos para colher em apenas 7-14 dias. Nutrição concentrada na sua cozinha.
+          </p>
+
+          <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+            <span class="badge badge-leaf">Superalimento</span>
+            <span class="badge badge-sun">Colheita rápida</span>
+            <span class="badge badge-water">Fácil cultivo</span>
+          </div>
+        </div>
+
+        <!-- Mascote -->
+        <div class="relative">
+          <Mascote mood="excited" size="xl" />
+
+          <!-- Floating icons -->
+          <div class="absolute -top-2 -right-6 animate-float bg-white rounded-2xl shadow-lg p-3">
+            <svg class="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+
+          <div class="absolute -bottom-4 -left-4 animate-float bg-white rounded-2xl shadow-lg p-3" style="animation-delay: -2s;">
+            <svg class="w-8 h-8 text-leaf-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Microverdes Grid -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {sortedMicroverdes.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedMicroverdes.map((artigo, index) => (
+            <a
+              href={`/microverdes/${artigo.slug}`}
+              class={`group bg-white rounded-3xl border border-gray-100 p-6 hover:shadow-xl hover:border-emerald-200 transition-all card-hover scroll-reveal reveal-delay-${Math.min(index + 1, 5)}`}
+            >
+              <div class="w-20 h-20 bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform overflow-hidden">
+                <ContentIllustration slug={artigo.slug} category="Microverdes" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors">
+                {artigo.data.title.split(':')[0]}
+              </h3>
+              <p class="text-gray-500 mb-4 line-clamp-2">{artigo.data.description}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-gray-400">{artigo.data.readTime}</span>
+                <span class="flex items-center text-emerald-600 text-sm font-medium group-hover:translate-x-1 transition-transform">
+                  Ver artigo
+                  <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16 bg-gray-50 rounded-3xl">
+          <Mascote mood="sleeping" size="lg" class="mx-auto mb-4" />
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Artigos em breve</h3>
+          <p class="text-gray-600">O Verdinho está preparando conteúdos incríveis sobre microverdes!</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-16 bg-gradient-to-r from-emerald-50 to-leaf-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 scroll-reveal">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+          Por que Cultivar Microverdes?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Mini plantas com máximo poder nutricional
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-6 shadow-sm scroll-reveal reveal-delay-1">
+          <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">40x Mais Nutrientes</h3>
+          <p class="text-gray-600">Microverdes têm até 40x mais nutrientes que a planta adulta.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm scroll-reveal reveal-delay-2">
+          <div class="w-12 h-12 bg-leaf-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-leaf-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Prontos em 7-14 Dias</h3>
+          <p class="text-gray-600">Da semente à colheita em até duas semanas. Resultado rápido!</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm scroll-reveal reveal-delay-3">
+          <div class="w-12 h-12 bg-sun-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-sun-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Espaço Mínimo</h3>
+          <p class="text-gray-600">Uma bandeja na bancada da cozinha é suficiente para começar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-reveal">
+      <div class="flex justify-center mb-6">
+        <Mascote mood="happy" size="lg" />
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+        Quer começar sua horta?
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Descubra qual planta é perfeita para seu espaço e estilo de vida!
+      </p>
+      <a href="/quiz" class="btn-primary">
+        Fazer o quiz
+        <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guia Completo do Alecrim - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.6; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 44px; font-weight: 800; color: #15803d; margin-bottom: 20px; }
+    .cover .subtitle { font-size: 22px; color: #166534; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #15803d; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #22c55e; }
+    h1 { font-size: 32px; color: #15803d; margin-bottom: 20px; border-bottom: 3px solid #22c55e; padding-bottom: 10px; }
+    h2 { font-size: 26px; color: #166534; margin: 25px 0 15px; }
+    h3 { font-size: 20px; color: #15803d; margin: 20px 0 10px; }
+    h4 { font-size: 18px; color: #166534; margin: 15px 0 10px; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; }
+    .intro-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-radius: 12px; padding: 25px; margin: 20px 0; text-align: center; }
+    .intro-box h2 { color: #065f46; margin-top: 0; border: none; }
+    .highlight-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid #22c55e; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .danger-box { background: #fef2f2; border-left: 4px solid #ef4444; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .success-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .variety-card { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 15px 0; }
+    .variety-card h4 { color: #15803d; margin-top: 0; font-size: 18px; }
+    .variety-card .tag { display: inline-block; background: #dcfce7; color: #166534; padding: 3px 10px; border-radius: 20px; font-size: 12px; margin-right: 8px; }
+    .step-box { background: #f8fafc; border-radius: 8px; padding: 20px; margin: 15px 0; border-left: 4px solid #22c55e; }
+    .step-box h4 { color: #15803d; margin-top: 0; }
+    .step-number { display: inline-block; width: 28px; height: 28px; background: #22c55e; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: bold; margin-right: 10px; }
+    .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+    .info-item { background: #f0fdf4; padding: 15px; border-radius: 8px; text-align: center; }
+    .info-item .label { font-size: 12px; color: #6b7280; text-transform: uppercase; }
+    .info-item .value { font-size: 18px; font-weight: 700; color: #15803d; }
+    .recipe-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .recipe-box h4 { color: #92400e; margin-top: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #d1d5db; padding: 12px; text-align: left; }
+    th { background: #15803d; color: white; }
+    tr:nth-child(even) { background: #f0fdf4; }
+    .checklist { background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    .checklist li { list-style: none; padding-left: 30px; position: relative; }
+    .checklist li:before { content: "☐"; position: absolute; left: 0; color: #22c55e; font-size: 18px; }
+    .tip-box { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .problem-solution { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 15px 0; }
+    .problem { background: #fef2f2; padding: 15px; border-radius: 8px; }
+    .problem h5 { color: #dc2626; margin: 0 0 10px 0; }
+    .solution { background: #f0fdf4; padding: 15px; border-radius: 8px; }
+    .solution h5 { color: #16a34a; margin: 0 0 10px 0; }
+    .month-calendar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0; }
+    .month-item { background: #f0fdf4; padding: 10px; border-radius: 8px; text-align: center; font-size: 14px; }
+    .month-item.active { background: #22c55e; color: white; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+    .toc { background: #f8fafc; padding: 30px; border-radius: 12px; margin: 20px 0; }
+    .toc h2 { text-align: center; margin-bottom: 20px; }
+    .toc ul { list-style: none; margin: 0; padding: 0; }
+    .toc li { padding: 10px 0; border-bottom: 1px dashed #d1d5db; }
+    .toc li:last-child { border-bottom: none; }
+    .toc a { color: #15803d; text-decoration: none; }
+    .module-header { background: linear-gradient(135deg, #15803d, #22c55e); color: white; padding: 30px; border-radius: 12px; margin: 30px 0 20px 0; text-align: center; }
+    .module-header h2 { color: white; border: none; margin: 0; }
+    .module-header p { color: #dcfce7; margin: 10px 0 0 0; }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pg8)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bg8)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/><ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/><ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/><ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs><linearGradient id="pg8" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient><radialGradient id="bg8" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient></defs>
+      </svg>
+    </div>
+    <h1>Guia Completo do Alecrim</h1>
+    <p class="subtitle">Cultive alecrim saudável e aromático o ano todo</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>Sumário</h2>
+      <ul>
+        <li><strong>Capítulo 1:</strong> Conhecendo o Alecrim</li>
+        <li><strong>Capítulo 2:</strong> Variedades de Alecrim</li>
+        <li><strong>Capítulo 3:</strong> Preparação do Solo e Vaso</li>
+        <li><strong>Capítulo 4:</strong> Plantio por Sementes</li>
+        <li><strong>Capítulo 5:</strong> Plantio por Mudas e Estaquia</li>
+        <li><strong>Capítulo 6:</strong> Rega - O Segredo é Regar Menos</li>
+        <li><strong>Capítulo 7:</strong> Podas e Manutenção</li>
+        <li><strong>Capítulo 8:</strong> Colheita e Conservação</li>
+        <li><strong>Capítulo 9:</strong> Usos Culinários e Medicinais</li>
+        <li><strong>Capítulo 10:</strong> Problemas e Soluções</li>
+        <li><strong>Capítulo 11:</strong> Cultivo por Região do Brasil</li>
+        <li><strong>Capítulo 12:</strong> Consórcio e Plantas Companheiras</li>
+        <li><strong>Capítulo 13:</strong> Aromaterapia e Cosméticos</li>
+        <li><strong>Capítulo 14:</strong> Alecrim na Jardinagem Ornamental</li>
+        <li><strong>Capítulo 15:</strong> 30 Receitas com Alecrim</li>
+        <li><strong>Capítulo 16:</strong> Calendário Mensal de Cuidados</li>
+        <li><strong>Capítulo 17:</strong> 20 Perguntas Frequentes</li>
+        <li><strong>Bônus 1:</strong> 10 Produtos DIY com Alecrim</li>
+        <li><strong>Bônus 2:</strong> Diagnóstico Visual - 12 Problemas</li>
+        <li><strong>Checklist Final</strong></li>
+      </ul>
+    </div>
+
+    <div class="intro-box">
+      <h2>Bem-vindo ao Guia do Alecrim!</h2>
+      <p>O alecrim (Rosmarinus officinalis) é uma das ervas mais versáteis e fáceis de cultivar. Originário do Mediterrâneo, ele prospera em condições que matariam outras plantas: solo pobre, sol forte e pouca água. Siga este guia e tenha alecrim fresco o ano todo!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 1</div>
+  </div>
+
+  <!-- CAPÍTULO 1: CONHECENDO O ALECRIM -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 1</h2>
+      <p>Conhecendo o Alecrim</p>
+    </div>
+
+    <h3>Origem e História</h3>
+    <p>O alecrim é nativo da região do Mar Mediterrâneo, onde cresce naturalmente em encostas rochosas e solos pobres. Seu nome científico "Rosmarinus" significa "orvalho do mar", referência ao seu habitat costeiro.</p>
+    <p>Usado há mais de 5.000 anos, o alecrim era considerado sagrado por gregos e romanos, que o usavam em cerimônias religiosas e como símbolo de fidelidade.</p>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="label">Nome Científico</div>
+        <div class="value">Rosmarinus officinalis</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Família</div>
+        <div class="value">Lamiaceae</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Origem</div>
+        <div class="value">Mediterrâneo</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Ciclo de Vida</div>
+        <div class="value">Perene (vive anos)</div>
+      </div>
+    </div>
+
+    <h3>Características da Planta</h3>
+    <ul>
+      <li><strong>Altura:</strong> 30cm a 2 metros, dependendo da variedade</li>
+      <li><strong>Folhas:</strong> Lineares, verde-escuras em cima, esbranquiçadas embaixo</li>
+      <li><strong>Flores:</strong> Pequenas, azuis, roxas ou brancas (primavera/verão)</li>
+      <li><strong>Aroma:</strong> Intenso, canforado, levemente amargo</li>
+      <li><strong>Longevidade:</strong> Pode viver 15-20 anos com cuidados adequados</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>Por que o Alecrim é Fácil de Cultivar?</h4>
+      <ul>
+        <li>Tolera sol forte e calor intenso</li>
+        <li>Prefere solo seco - menos rega = menos trabalho</li>
+        <li>Resistente a pragas e doenças</li>
+        <li>Não precisa de fertilização frequente</li>
+        <li>Perene - plante uma vez, colha por anos</li>
+      </ul>
+    </div>
+
+    <h3>Condições Ideais de Cultivo</h3>
+    <table>
+      <tr>
+        <th>Fator</th>
+        <th>Ideal</th>
+        <th>Tolerável</th>
+      </tr>
+      <tr>
+        <td>Sol</td>
+        <td>6-8 horas de sol direto</td>
+        <td>Mínimo 4 horas</td>
+      </tr>
+      <tr>
+        <td>Temperatura</td>
+        <td>20°C a 30°C</td>
+        <td>-5°C a 35°C</td>
+      </tr>
+      <tr>
+        <td>Umidade do ar</td>
+        <td>40-60%</td>
+        <td>Tolera seco</td>
+      </tr>
+      <tr>
+        <td>pH do solo</td>
+        <td>6,0 a 7,5</td>
+        <td>5,5 a 8,0</td>
+      </tr>
+      <tr>
+        <td>Solo</td>
+        <td>Arenoso, bem drenado</td>
+        <td>Qualquer solo drenado</td>
+      </tr>
+    </table>
+
+    <div class="page-number">Minha Horta em Casa - Página 2</div>
+  </div>
+
+  <!-- CAPÍTULO 2: VARIEDADES -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 2</h2>
+      <p>Variedades de Alecrim</p>
+    </div>
+
+    <p>Existem diversas variedades de alecrim, cada uma com características únicas. Escolha a melhor para seu espaço e uso.</p>
+
+    <div class="variety-card">
+      <h4>Alecrim Comum (Rosmarinus officinalis)</h4>
+      <span class="tag">Culinário</span>
+      <span class="tag">Ereto</span>
+      <span class="tag">Mais Comum</span>
+      <p><strong>Altura:</strong> 60cm a 1,5m</p>
+      <p><strong>Características:</strong> Crescimento ereto, folhas verde-escuras, aroma intenso. É a variedade mais usada na culinária e a mais fácil de encontrar.</p>
+      <p><strong>Melhor para:</strong> Cozinha, chás, uso medicinal.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>Alecrim Rasteiro (Rosmarinus prostratus)</h4>
+      <span class="tag">Ornamental</span>
+      <span class="tag">Rasteiro</span>
+      <span class="tag">Cascata</span>
+      <p><strong>Altura:</strong> 15-30cm (se espalha horizontalmente até 1,5m)</p>
+      <p><strong>Características:</strong> Crescimento horizontal, ideal para vasos suspensos ou muros. Flores azuis abundantes.</p>
+      <p><strong>Melhor para:</strong> Jardins ornamentais, vasos suspensos, bordaduras.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>Alecrim Toscana Blue</h4>
+      <span class="tag">Culinário</span>
+      <span class="tag">Flores Abundantes</span>
+      <p><strong>Altura:</strong> 80cm a 1,2m</p>
+      <p><strong>Características:</strong> Flores azul-intenso, muito aromático. Excelente para culinária italiana.</p>
+      <p><strong>Melhor para:</strong> Culinária gourmet, decoração.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>Alecrim Arp</h4>
+      <span class="tag">Resistente ao Frio</span>
+      <span class="tag">Rústico</span>
+      <p><strong>Altura:</strong> 90cm a 1,2m</p>
+      <p><strong>Características:</strong> A variedade mais resistente ao frio, suporta até -15°C. Aroma mais suave.</p>
+      <p><strong>Melhor para:</strong> Regiões frias do Sul do Brasil.</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>Qual Variedade Escolher?</h4>
+      <ul>
+        <li><strong>Para cozinhar:</strong> Alecrim Comum ou Toscana Blue</li>
+        <li><strong>Para vasos suspensos:</strong> Alecrim Rasteiro</li>
+        <li><strong>Para regiões frias:</strong> Alecrim Arp</li>
+        <li><strong>Espaço pequeno:</strong> Qualquer variedade (poda controla tamanho)</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 3</div>
+  </div>
+
+  <!-- CAPÍTULO 3: SOLO E VASO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 3</h2>
+      <p>Preparação do Solo e Vaso</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>O Erro #1 que Mata Alecrim</h4>
+      <p><strong>Excesso de água!</strong> O alecrim é mediterrâneo - ele ODEIA solo encharcado. Solo pesado e úmido = raízes podres = planta morta. A drenagem é mais importante que a fertilidade!</p>
+    </div>
+
+    <h3>Substrato Ideal para Vaso</h3>
+    <p>O segredo é um substrato que drene MUITO bem. Use esta receita:</p>
+
+    <div class="recipe-box">
+      <h4>Receita de Substrato para Alecrim</h4>
+      <ul>
+        <li><strong>40%</strong> Terra vegetal ou substrato comercial</li>
+        <li><strong>30%</strong> Areia grossa ou pedrisco fino</li>
+        <li><strong>20%</strong> Perlita ou vermiculita</li>
+        <li><strong>10%</strong> Composto orgânico</li>
+      </ul>
+      <p><em>Misture bem todos os ingredientes antes de usar.</em></p>
+    </div>
+
+    <h3>Escolha do Vaso</h3>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="label">Tamanho Mínimo</div>
+        <div class="value">25cm diâmetro</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Tamanho Ideal</div>
+        <div class="value">35-40cm diâmetro</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Material Ideal</div>
+        <div class="value">Terracota ou Barro</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Furos de Drenagem</div>
+        <div class="value">OBRIGATÓRIO</div>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <h4>Montagem do Vaso Passo a Passo</h4>
+      <p><span class="step-number">1</span> Coloque uma camada de 3-5cm de argila expandida ou cacos de telha no fundo</p>
+      <p><span class="step-number">2</span> Adicione uma manta de bidim ou TNT para evitar que o substrato escape</p>
+      <p><span class="step-number">3</span> Preencha com o substrato até 2/3 do vaso</p>
+      <p><span class="step-number">4</span> Posicione a muda no centro</p>
+      <p><span class="step-number">5</span> Complete com substrato, deixando 2cm da borda livre</p>
+      <p><span class="step-number">6</span> Regue levemente apenas para assentar o substrato</p>
+    </div>
+
+    <h3>Plantio em Canteiro</h3>
+    <p>Se for plantar direto no solo:</p>
+    <ul>
+      <li>Escolha o local mais ensolarado do jardim</li>
+      <li>Se o solo for argiloso, faça um canteiro elevado de 20-30cm</li>
+      <li>Misture areia e composto ao solo nativo</li>
+      <li>Espaçamento: 60-80cm entre plantas</li>
+      <li>Evite áreas que acumulam água após chuva</li>
+    </ul>
+
+    <div class="warning-box">
+      <h4>Teste de Drenagem</h4>
+      <p>Antes de plantar, faça este teste: encha o vaso com o substrato e regue bastante. Se a água demorar mais de 30 segundos para escorrer pelos furos, adicione mais areia à mistura.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 4</div>
+  </div>
+
+  <!-- CAPÍTULO 4: PLANTIO POR SEMENTES -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 4</h2>
+      <p>Plantio por Sementes</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Atenção: Germinação Lenta</h4>
+      <p>Sementes de alecrim têm germinação irregular e lenta (15-25 dias). Se você é iniciante ou quer resultados rápidos, pule para o Capítulo 5 (mudas e estaquia).</p>
+    </div>
+
+    <h3>Quando Plantar</h3>
+    <div class="month-calendar">
+      <div class="month-item">JAN</div>
+      <div class="month-item">FEV</div>
+      <div class="month-item active">MAR</div>
+      <div class="month-item active">ABR</div>
+      <div class="month-item active">MAI</div>
+      <div class="month-item">JUN</div>
+      <div class="month-item">JUL</div>
+      <div class="month-item active">AGO</div>
+      <div class="month-item active">SET</div>
+      <div class="month-item active">OUT</div>
+      <div class="month-item">NOV</div>
+      <div class="month-item">DEZ</div>
+    </div>
+    <p><em>Meses em verde = ideais para semeadura. Evite verão muito quente e inverno rigoroso.</em></p>
+
+    <h3>Passo a Passo da Semeadura</h3>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Preparação das sementes:</strong> Deixe as sementes de molho em água morna (não quente) por 24 horas para amolecer a casca e acelerar germinação.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Prepare a sementeira:</strong> Use copinhos descartáveis ou bandeja de germinação com substrato leve (50% terra + 50% areia fina).</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Semeie superficialmente:</strong> Coloque 2-3 sementes por célula, cobrindo com uma camada FINA de substrato (2-3mm). A semente precisa de luz para germinar!</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Umidade controlada:</strong> Borrife água para umedecer (não encharcar). Cubra com plástico transparente para manter umidade.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">5</span> <strong>Local adequado:</strong> Coloque em local com luz indireta e temperatura entre 20-25°C. Retire o plástico diariamente para arejar.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">6</span> <strong>Germinação:</strong> Aguarde 15-25 dias. Nem todas as sementes germinam - taxa de 40-60% é normal.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">7</span> <strong>Transplante:</strong> Quando as mudas tiverem 4-6 folhas verdadeiras (cerca de 5cm), transplante para o vaso definitivo.</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>Taxa de Germinação Baixa?</h4>
+      <p>É normal! Alecrim tem germinação irregular. Plante sempre mais sementes do que precisa. 10 sementes podem gerar apenas 4-6 mudas.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 5</div>
+  </div>
+
+  <!-- CAPÍTULO 5: MUDAS E ESTAQUIA -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 5</h2>
+      <p>Plantio por Mudas e Estaquia</p>
+    </div>
+
+    <div class="success-box">
+      <h4>Método Recomendado!</h4>
+      <p>A estaquia é o melhor método para propagar alecrim. É mais rápido, tem taxa de sucesso de 80-90%, e você obtém uma planta idêntica à matriz.</p>
+    </div>
+
+    <h3>Comprando Mudas</h3>
+    <p>Ao comprar mudas prontas, observe:</p>
+    <ul>
+      <li><strong>Folhas:</strong> Verde-escuras, sem manchas ou amarelamento</li>
+      <li><strong>Caule:</strong> Firme, sem partes moles ou escuras</li>
+      <li><strong>Raízes:</strong> Se visíveis, devem ser claras (não pretas)</li>
+      <li><strong>Aroma:</strong> Deve ter cheiro característico ao tocar as folhas</li>
+      <li><strong>Pragas:</strong> Verifique a parte de baixo das folhas</li>
+    </ul>
+
+    <h3>Fazendo Mudas por Estaquia</h3>
+    <p>Com uma planta adulta, você pode fazer dezenas de mudas grátis!</p>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Escolha o ramo:</strong> Selecione ramos semi-lenhosos (nem muito novos, nem muito velhos) com cerca de 10-15cm.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Corte correto:</strong> Corte logo abaixo de um nó (onde nascem as folhas), em ângulo de 45°. Use tesoura afiada e limpa.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Prepare a estaca:</strong> Remova as folhas dos 5cm inferiores. Mantenha apenas as folhas da ponta.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Hormônio enraizador (opcional):</strong> Mergulhe a base em hormônio enraizador. Aumenta a taxa de sucesso em 20-30%.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">5</span> <strong>Plante a estaca:</strong> Enterre 5cm da estaca em substrato arenoso (70% areia + 30% terra). Firme levemente.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">6</span> <strong>Ambiente ideal:</strong> Coloque em local com luz indireta, protegido do sol direto. Mantenha o substrato levemente úmido (não encharcado).</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">7</span> <strong>Enraizamento:</strong> Em 3-6 semanas, a estaca estará enraizada. Teste puxando levemente - se houver resistência, criou raízes!</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Hormônio Enraizador Caseiro</h4>
+      <p>Não precisa comprar hormônio! Use este método natural:</p>
+      <ul>
+        <li><strong>Opção 1:</strong> Mergulhe a base da estaca em mel por 2 horas antes de plantar</li>
+        <li><strong>Opção 2:</strong> Faça chá de salgueiro (galhos de salgueiro em água por 24h) e use para regar</li>
+        <li><strong>Opção 3:</strong> Água de lentilhas germinadas (deixe lentilhas de molho 48h, use a água)</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 6</div>
+  </div>
+
+  <!-- CAPÍTULO 6: REGA -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 6</h2>
+      <p>Rega - O Segredo é Regar MENOS</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Regra de Ouro do Alecrim</h4>
+      <p><strong>Na dúvida, NÃO regue!</strong> É muito mais fácil recuperar um alecrim seco do que um alecrim com raízes apodrecidas. O excesso de água é a causa #1 de morte de alecrim.</p>
+    </div>
+
+    <h3>Como Saber Quando Regar</h3>
+    <p>Use o "Teste do Dedo":</p>
+    <div class="step-box">
+      <p><span class="step-number">1</span> Enfie o dedo 3-4cm no substrato</p>
+      <p><span class="step-number">2</span> Se estiver SECO até essa profundidade = hora de regar</p>
+      <p><span class="step-number">3</span> Se estiver úmido = NÃO regue, espere mais 2-3 dias</p>
+    </div>
+
+    <h3>Frequência de Rega por Estação</h3>
+    <table>
+      <tr>
+        <th>Estação</th>
+        <th>Frequência em Vaso</th>
+        <th>Frequência em Canteiro</th>
+      </tr>
+      <tr>
+        <td>Verão (quente/seco)</td>
+        <td>2x por semana</td>
+        <td>1x por semana</td>
+      </tr>
+      <tr>
+        <td>Primavera/Outono</td>
+        <td>1x por semana</td>
+        <td>A cada 10-14 dias</td>
+      </tr>
+      <tr>
+        <td>Inverno</td>
+        <td>A cada 10-15 dias</td>
+        <td>Quase nunca (só se muito seco)</td>
+      </tr>
+    </table>
+
+    <h3>Técnica Correta de Rega</h3>
+    <ul>
+      <li><strong>Regue o solo, não as folhas:</strong> Evite molhar a folhagem para prevenir fungos</li>
+      <li><strong>Regue pela manhã:</strong> Permite que excessos evaporem durante o dia</li>
+      <li><strong>Regue profundamente:</strong> Quando regar, molhe bem até sair água pelos furos. Depois, deixe secar completamente</li>
+      <li><strong>Nunca deixe água no prato:</strong> Descarte a água acumulada no prato após 30 minutos</li>
+    </ul>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Sinais de EXCESSO de Água</h5>
+        <ul>
+          <li>Folhas amarelando e caindo</li>
+          <li>Caule mole/escurecido na base</li>
+          <li>Cheiro de mofo/podre</li>
+          <li>Fungo branco no solo</li>
+        </ul>
+      </div>
+      <div class="solution">
+        <h5>Sinais de FALTA de Água</h5>
+        <ul>
+          <li>Folhas murchas e secas</li>
+          <li>Folhas acinzentadas</li>
+          <li>Crescimento paralisado</li>
+          <li>Galhos secos nas pontas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Recuperando Alecrim com Excesso de Água</h4>
+      <ol>
+        <li>Pare de regar imediatamente</li>
+        <li>Se em vaso, remova e examine as raízes</li>
+        <li>Corte raízes pretas/podres (saudáveis são claras)</li>
+        <li>Replante em substrato NOVO e bem drenado</li>
+        <li>Não regue por 7-10 dias</li>
+        <li>Coloque em local ventilado e ensolarado</li>
+      </ol>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 7</div>
+  </div>
+
+  <!-- CAPÍTULO 7: PODAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 7</h2>
+      <p>Podas e Manutenção</p>
+    </div>
+
+    <p>A poda regular é essencial para manter o alecrim saudável, compacto e produtivo. Sem poda, ele fica "pelado" na base e lenhoso.</p>
+
+    <h3>Tipos de Poda</h3>
+
+    <div class="variety-card">
+      <h4>Poda de Formação</h4>
+      <span class="tag">Plantas Jovens</span>
+      <p><strong>Quando:</strong> Quando a planta atingir 15-20cm de altura</p>
+      <p><strong>Como:</strong> Corte as pontas dos ramos principais para estimular ramificação lateral. Isso cria uma planta mais cheia e compacta.</p>
+      <p><strong>Frequência:</strong> 2-3 vezes no primeiro ano</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>Poda de Manutenção</h4>
+      <span class="tag">Plantas Adultas</span>
+      <p><strong>Quando:</strong> Durante toda a temporada de crescimento (primavera/verão)</p>
+      <p><strong>Como:</strong> Apare 1/3 do crescimento novo regularmente. Use ao colher para cozinha.</p>
+      <p><strong>Frequência:</strong> A cada colheita ou mensalmente</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>Poda de Rejuvenescimento</h4>
+      <span class="tag">Plantas Velhas</span>
+      <p><strong>Quando:</strong> Quando a planta está muito lenhosa ou sem folhas na base</p>
+      <p><strong>Como:</strong> No início da primavera, corte até 2/3 da planta, mas NUNCA corte na madeira velha (marrom). Sempre deixe folhas verdes.</p>
+      <p><strong>Atenção:</strong> Cortar na madeira velha pode matar a planta!</p>
+    </div>
+
+    <h3>Regras de Poda do Alecrim</h3>
+    <div class="checklist">
+      <ul>
+        <li>Sempre corte acima de um par de folhas</li>
+        <li>Use tesoura afiada e limpa</li>
+        <li>Nunca remova mais de 1/3 da planta de uma vez</li>
+        <li>Não corte na madeira velha (marrom escuro)</li>
+        <li>Evite podar no inverno ou em dias muito quentes</li>
+        <li>Após poda drástica, diminua a rega</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Erro Fatal: Cortar na Madeira Velha</h4>
+      <p>O alecrim NÃO rebrota da madeira velha (parte marrom e sem folhas). Se você cortar muito baixo, aquele ramo morre. Sempre deixe pelo menos alguns centímetros de ramo verde com folhas.</p>
+    </div>
+
+    <h3>Manutenção Geral</h3>
+    <ul>
+      <li><strong>Fertilização:</strong> Muito leve! Uma vez na primavera com composto orgânico é suficiente. Excesso de fertilizante reduz o aroma.</li>
+      <li><strong>Limpeza:</strong> Remova folhas secas e galhos mortos regularmente</li>
+      <li><strong>Rotação:</strong> Gire o vaso semanalmente para crescimento uniforme</li>
+      <li><strong>Proteção no inverno:</strong> Em regiões frias, proteja do vento gelado</li>
+    </ul>
+
+    <div class="page-number">Minha Horta em Casa - Página 8</div>
+  </div>
+
+  <!-- CAPÍTULO 8: COLHEITA E CONSERVAÇÃO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 8</h2>
+      <p>Colheita e Conservação</p>
+    </div>
+
+    <h3>Quando Colher</h3>
+    <ul>
+      <li><strong>Primeira colheita:</strong> Quando a planta tiver pelo menos 20cm e estiver bem estabelecida (2-3 meses após plantio)</li>
+      <li><strong>Melhor momento do dia:</strong> Pela manhã, após o orvalho secar mas antes do sol forte</li>
+      <li><strong>Melhor estação:</strong> Primavera e verão (maior concentração de óleos)</li>
+    </ul>
+
+    <h3>Como Colher Corretamente</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Escolha os ramos:</strong> Prefira ramos jovens e flexíveis (verde claro). Evite galhos muito lenhosos.</p>
+      <p><span class="step-number">2</span> <strong>Corte correto:</strong> Corte 5-10cm acima de um par de folhas. Isso estimula novos brotos.</p>
+      <p><span class="step-number">3</span> <strong>Quantidade:</strong> Nunca colha mais de 1/3 da planta de uma vez.</p>
+      <p><span class="step-number">4</span> <strong>Regularidade:</strong> Colheitas frequentes e leves são melhores que colheitas espaçadas e grandes.</p>
+    </div>
+
+    <h3>Métodos de Conservação</h3>
+
+    <div class="variety-card">
+      <h4>Alecrim Fresco (até 2 semanas)</h4>
+      <ul>
+        <li>Envolva os ramos em papel toalha úmido</li>
+        <li>Coloque em saco plástico aberto na geladeira</li>
+        <li>Ou coloque os ramos em um copo com água, como flores</li>
+      </ul>
+    </div>
+
+    <div class="variety-card">
+      <h4>Alecrim Seco (até 1 ano)</h4>
+      <p><strong>Método 1 - Pendurado:</strong></p>
+      <ul>
+        <li>Amarre pequenos maços com barbante</li>
+        <li>Pendure de cabeça para baixo em local seco, arejado e escuro</li>
+        <li>Aguarde 2-3 semanas até ficar crocante</li>
+      </ul>
+      <p><strong>Método 2 - Desidratador:</strong></p>
+      <ul>
+        <li>Espalhe os ramos em camada única</li>
+        <li>Desidratar a 35-40°C por 4-6 horas</li>
+      </ul>
+      <p><strong>Método 3 - Forno:</strong></p>
+      <ul>
+        <li>Forno na temperatura mais baixa (50-60°C)</li>
+        <li>Porta entreaberta, 2-4 horas</li>
+        <li>Vire os ramos na metade do tempo</li>
+      </ul>
+    </div>
+
+    <div class="variety-card">
+      <h4>Alecrim Congelado (até 6 meses)</h4>
+      <ul>
+        <li><strong>Inteiro:</strong> Lave, seque bem, coloque em saco zip e congele</li>
+        <li><strong>Em azeite:</strong> Pique fino, coloque em forminhas de gelo, cubra com azeite e congele</li>
+        <li><strong>Em manteiga:</strong> Misture alecrim picado com manteiga, enrole em plástico filme e congele</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h4>Proporção Fresco x Seco</h4>
+      <p>1 colher de sopa de alecrim fresco = 1 colher de chá de alecrim seco</p>
+      <p>O alecrim seco é mais concentrado, então use menos!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 9</div>
+  </div>
+
+  <!-- CAPÍTULO 9: USOS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 9</h2>
+      <p>Usos Culinários e Medicinais</p>
+    </div>
+
+    <h3>Usos na Culinária</h3>
+    <p>O alecrim é extremamente versátil na cozinha. Seu sabor intenso combina especialmente com:</p>
+
+    <table>
+      <tr>
+        <th>Categoria</th>
+        <th>Combinações</th>
+      </tr>
+      <tr>
+        <td>Carnes</td>
+        <td>Cordeiro, frango, porco, carnes de caça</td>
+      </tr>
+      <tr>
+        <td>Vegetais</td>
+        <td>Batatas, abobrinha, berinjela, tomates</td>
+      </tr>
+      <tr>
+        <td>Pães</td>
+        <td>Focaccia, pão italiano, grissini</td>
+      </tr>
+      <tr>
+        <td>Outros</td>
+        <td>Azeites aromatizados, marinadas, molhos</td>
+      </tr>
+    </table>
+
+    <div class="recipe-box">
+      <h4>Azeite de Alecrim</h4>
+      <p><strong>Ingredientes:</strong></p>
+      <ul>
+        <li>500ml de azeite extra virgem</li>
+        <li>3-4 ramos de alecrim fresco</li>
+        <li>3 dentes de alho (opcional)</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong></p>
+      <ol>
+        <li>Lave e seque completamente o alecrim (umidade = mofo)</li>
+        <li>Coloque em garrafa de vidro esterilizada</li>
+        <li>Cubra com azeite</li>
+        <li>Deixe em local escuro por 2 semanas</li>
+        <li>Coe e transfira para garrafa limpa</li>
+      </ol>
+      <p><em>Validade: 3 meses em local escuro e fresco</em></p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Sal de Alecrim</h4>
+      <ul>
+        <li>1 xícara de sal grosso</li>
+        <li>2 colheres de sopa de folhas de alecrim frescas</li>
+      </ul>
+      <p>Bata no processador até ficar homogêneo. Seque em assadeira por 1 hora em temperatura ambiente. Guarde em pote de vidro.</p>
+    </div>
+
+    <h3>Usos Medicinais Tradicionais</h3>
+    <p>O alecrim é usado há milênios na medicina tradicional para:</p>
+    <ul>
+      <li><strong>Digestão:</strong> Chá após refeições pesadas</li>
+      <li><strong>Memória e concentração:</strong> O aroma estimula a mente</li>
+      <li><strong>Circulação:</strong> Banhos e compressas</li>
+      <li><strong>Cabelo:</strong> Enxague estimula crescimento e dá brilho</li>
+      <li><strong>Dores musculares:</strong> Óleo de massagem</li>
+    </ul>
+
+    <div class="recipe-box">
+      <h4>Chá de Alecrim</h4>
+      <ul>
+        <li>1 colher de chá de folhas frescas (ou 1/2 colher de secas)</li>
+        <li>1 xícara de água quente (não fervendo)</li>
+        <li>Deixe em infusão por 5-10 minutos</li>
+        <li>Coe e beba. Pode adoçar com mel.</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Contraindicações</h4>
+      <p>Evite consumo excessivo de alecrim se você:</p>
+      <ul>
+        <li>Está grávida ou amamentando</li>
+        <li>Tem pressão alta não controlada</li>
+        <li>Tem epilepsia</li>
+        <li>Usa anticoagulantes</li>
+      </ul>
+      <p><em>Em caso de dúvida, consulte um profissional de saúde.</em></p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 10</div>
+  </div>
+
+  <!-- CAPÍTULO 10: PROBLEMAS E SOLUÇÕES -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 10</h2>
+      <p>Problemas e Soluções</p>
+    </div>
+
+    <h3>Problemas Comuns e Como Resolver</h3>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Folhas Amarelando</h5>
+        <p>Causa mais comum: excesso de água. Também pode ser falta de sol ou solo muito pesado.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Reduza a rega drasticamente. Verifique drenagem. Mova para local mais ensolarado.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Planta Murcha/Caindo</h5>
+        <p>Se o solo está molhado = raízes podres. Se o solo está seco = falta de água (raro).</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Se encharcado: pare de regar, melhore drenagem ou replante. Se seco: regue profundamente.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Manchas Brancas nas Folhas</h5>
+        <p>Provavelmente oídio (fungo) causado por umidade alta e pouca circulação de ar.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Melhore ventilação. Não molhe as folhas. Pulverize com bicarbonato de sódio (1 colher/litro de água).</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Planta Pelada na Base</h5>
+        <p>Falta de poda regular. Os ramos crescem e perdem folhas na parte inferior.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Inicie podas regulares. Infelizmente, a parte pelada não recupera folhas. Faça novas mudas por estaquia.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Crescimento Lento/Parado</h5>
+        <p>Pouco sol, temperaturas muito baixas, ou planta presa no vaso (raízes enoveladas).</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Mova para local mais ensolarado. Se raízes saindo pelos furos, transplante para vaso maior.</p>
+      </div>
+    </div>
+
+    <h3>Pragas Comuns</h3>
+    <p>O alecrim é naturalmente resistente a pragas (o aroma repele muitos insetos), mas pode sofrer com:</p>
+
+    <ul>
+      <li><strong>Pulgões:</strong> Jatos de água forte ou sabão de coco diluído</li>
+      <li><strong>Cochonilhas:</strong> Remova com cotonete embebido em álcool</li>
+      <li><strong>Ácaros:</strong> Aumente umidade do ar, pulverize água nas folhas ocasionalmente</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>Prevenção é o Melhor Remédio</h4>
+      <ul>
+        <li>Sol adequado (mínimo 4h direto)</li>
+        <li>Boa drenagem (nunca solo encharcado)</li>
+        <li>Boa circulação de ar</li>
+        <li>Não molhar as folhas ao regar</li>
+        <li>Inspecionar regularmente</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 11</div>
+  </div>
+
+  <!-- CAPÍTULO 11: CULTIVO POR REGIÃO DO BRASIL -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 11</h2>
+      <p>Cultivo por Região do Brasil</p>
+    </div>
+
+    <p>O Brasil tem climas muito diferentes em cada região. Adapte o cultivo do alecrim às condições locais para melhores resultados.</p>
+
+    <div class="variety-card">
+      <h4>🌡️ Região Sul (RS, SC, PR)</h4>
+      <span class="tag">Clima Subtropical</span>
+      <span class="tag">Invernos Frios</span>
+      <p><strong>Desafio:</strong> Geadas no inverno (especialmente Serra Gaúcha e planalto)</p>
+      <p><strong>Vantagem:</strong> Verões amenos são ideais para o alecrim</p>
+      <h5>Dicas Específicas:</h5>
+      <ul>
+        <li>Prefira variedade Alecrim Arp (mais resistente ao frio)</li>
+        <li>Plante em local protegido de ventos frios do sul</li>
+        <li>Cubra com TNT em noites de geada</li>
+        <li>Cultivo em vasos permite proteger no inverno</li>
+        <li>Evite podar no outono/inverno</li>
+        <li>Reduza rega drasticamente no inverno (quase zero)</li>
+      </ul>
+      <p><strong>Melhor época de plantio:</strong> Setembro a Novembro</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>☀️ Região Sudeste (SP, RJ, MG, ES)</h4>
+      <span class="tag">Clima Variado</span>
+      <span class="tag">Ideal para Alecrim</span>
+      <p><strong>Desafio:</strong> Verões muito chuvosos podem causar fungos</p>
+      <p><strong>Vantagem:</strong> Clima mediterrâneo em várias áreas - perfeito!</p>
+      <h5>Dicas Específicas:</h5>
+      <ul>
+        <li>Em áreas litorâneas (RJ, ES): proteja do sal marinho</li>
+        <li>Regiões serranas (Campos do Jordão, Petrópolis): similar ao Sul</li>
+        <li>Interior de SP e MG: condições ideais, pouca intervenção necessária</li>
+        <li>No verão chuvoso, melhore drenagem e evite regar</li>
+        <li>Qualquer variedade cresce bem</li>
+      </ul>
+      <p><strong>Melhor época de plantio:</strong> Março a Maio ou Agosto a Outubro</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 12</div>
+  </div>
+
+  <div class="page">
+    <div class="variety-card">
+      <h4>🌾 Região Centro-Oeste (GO, MT, MS, DF)</h4>
+      <span class="tag">Cerrado</span>
+      <span class="tag">Estação Seca Longa</span>
+      <p><strong>Desafio:</strong> Seca extrema (Maio-Setembro) e calor intenso</p>
+      <p><strong>Vantagem:</strong> Baixa umidade reduz doenças fúngicas</p>
+      <h5>Dicas Específicas:</h5>
+      <ul>
+        <li>Alecrim adora a seca do cerrado!</li>
+        <li>Proteja do sol das 11h às 15h no auge do verão</li>
+        <li>Na estação seca, regue 1x por semana mesmo assim</li>
+        <li>Mulching com pedras claras ajuda a manter raízes frescas</li>
+        <li>Vasos de terracota são ideais (respiram)</li>
+        <li>Evite vasos de plástico preto (aquecem demais)</li>
+      </ul>
+      <p><strong>Melhor época de plantio:</strong> Fevereiro a Abril (início das chuvas) ou Outubro</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>🌴 Região Nordeste (BA, SE, AL, PE, PB, RN, CE, PI, MA)</h4>
+      <span class="tag">Clima Quente</span>
+      <span class="tag">Semiárido/Litorâneo</span>
+      <p><strong>Desafio:</strong> Calor intenso o ano todo, sol muito forte</p>
+      <p><strong>Vantagem:</strong> Seca natural favorece o alecrim</p>
+      <h5>Dicas Específicas:</h5>
+      <ul>
+        <li><strong>Sertão:</strong> Alecrim prospera! Regue apenas quando muito seco</li>
+        <li><strong>Litoral:</strong> Proteja do sal marinho e umidade excessiva</li>
+        <li>Ofereça sombra parcial nas horas mais quentes (50% sombrite)</li>
+        <li>Regue pela manhã cedo (5h-7h) para evitar evaporação</li>
+        <li>Use cobertura morta clara para refletir calor</li>
+        <li>Vasos elevados do chão (não absorvem calor do piso)</li>
+      </ul>
+      <p><strong>Melhor época de plantio:</strong> Março a Maio (menos calor)</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>🌳 Região Norte (AM, PA, AC, RO, RR, AP, TO)</h4>
+      <span class="tag">Clima Equatorial</span>
+      <span class="tag">Alta Umidade</span>
+      <p><strong>Desafio:</strong> Umidade constante alta - o oposto do que alecrim gosta</p>
+      <p><strong>Vantagem:</strong> Temperatura estável o ano todo</p>
+      <h5>Dicas Específicas:</h5>
+      <ul>
+        <li>Cultivo OBRIGATÓRIO em vaso com excelente drenagem</li>
+        <li>Substrato com 50% de areia grossa ou perlita</li>
+        <li>Local com máxima circulação de ar</li>
+        <li>Proteja da chuva excessiva (sob telhado parcial)</li>
+        <li>Nunca regue - a umidade do ar é suficiente</li>
+        <li>Vaso de barro NUNCA de plástico</li>
+        <li>Pode ser o cultivo mais desafiador, mas é possível!</li>
+      </ul>
+      <p><strong>Melhor época de plantio:</strong> Junho a Setembro (estação menos chuvosa)</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 13</div>
+  </div>
+
+  <!-- CAPÍTULO 12: CONSÓRCIO E PLANTAS COMPANHEIRAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 12</h2>
+      <p>Consórcio e Plantas Companheiras</p>
+    </div>
+
+    <p>O alecrim é um excelente companheiro de jardim! Seu aroma forte repele pragas e atrai polinizadores. Veja como usá-lo estrategicamente.</p>
+
+    <h3>Melhores Companheiros do Alecrim</h3>
+
+    <div class="variety-card">
+      <h4>✓ Excelentes Companheiros</h4>
+      <table>
+        <tr>
+          <th>Planta</th>
+          <th>Benefício</th>
+        </tr>
+        <tr>
+          <td>Sálvia</td>
+          <td>Mesmas necessidades de água e sol</td>
+        </tr>
+        <tr>
+          <td>Tomilho</td>
+          <td>Ambos mediterrâneos, condições idênticas</td>
+        </tr>
+        <tr>
+          <td>Lavanda</td>
+          <td>Repelem pragas juntos, visual lindo</td>
+        </tr>
+        <tr>
+          <td>Orégano</td>
+          <td>Baixa rega, sol pleno - compatíveis</td>
+        </tr>
+        <tr>
+          <td>Repolho/Couve</td>
+          <td>Alecrim repele a lagarta da couve</td>
+        </tr>
+        <tr>
+          <td>Cenoura</td>
+          <td>Alecrim afasta a mosca da cenoura</td>
+        </tr>
+        <tr>
+          <td>Feijão</td>
+          <td>Repele o caruncho do feijão</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="danger-box">
+      <h4>✗ Evite Plantar Junto</h4>
+      <table>
+        <tr>
+          <th>Planta</th>
+          <th>Por quê evitar</th>
+        </tr>
+        <tr>
+          <td>Manjericão</td>
+          <td>Precisa de MUITA água - oposto do alecrim</td>
+        </tr>
+        <tr>
+          <td>Hortelã/Menta</td>
+          <td>Invasiva, rouba água, precisa de umidade</td>
+        </tr>
+        <tr>
+          <td>Pepino</td>
+          <td>Precisa de solo úmido constantemente</td>
+        </tr>
+        <tr>
+          <td>Abóbora</td>
+          <td>Muita água, espalha demais</td>
+        </tr>
+        <tr>
+          <td>Tomate</td>
+          <td>Necessidades de água muito diferentes</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>Alecrim como Repelente Natural</h3>
+    <div class="highlight-box">
+      <h4>Pragas que o Alecrim Repele</h4>
+      <ul>
+        <li><strong>Mosca da cenoura:</strong> Plante alecrim nas bordas do canteiro de cenouras</li>
+        <li><strong>Lagarta da couve:</strong> Intercale alecrim entre brássicas</li>
+        <li><strong>Borboleta da borboleta:</strong> O aroma confunde os insetos</li>
+        <li><strong>Mosquitos:</strong> Plante perto de áreas de estar</li>
+        <li><strong>Traças:</strong> Ramos secos em armários</li>
+        <li><strong>Pulgas:</strong> Espalhe ramos onde animais dormem</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h4>Projeto: Canteiro Mediterrâneo</h4>
+      <p>Crie um canteiro só com ervas mediterrâneas que têm as mesmas necessidades:</p>
+      <ul>
+        <li>Centro: Alecrim ereto (60-100cm)</li>
+        <li>Bordas: Tomilho rasteiro</li>
+        <li>Laterais: Sálvia e orégano</li>
+        <li>Cantos: Lavanda</li>
+      </ul>
+      <p>Todas precisam de pouca água, muito sol e boa drenagem. Rega e cuidados unificados!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 14</div>
+  </div>
+
+  <!-- CAPÍTULO 13: AROMATERAPIA E COSMÉTICOS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 13</h2>
+      <p>Aromaterapia e Cosméticos Naturais</p>
+    </div>
+
+    <p>O alecrim é rico em óleos essenciais com propriedades estimulantes, antimicrobianas e revigorantes. Aprenda a usá-lo para bem-estar e beleza.</p>
+
+    <h3>Benefícios Aromáticos</h3>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="label">Mente</div>
+        <div class="value">Clareza e Foco</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Corpo</div>
+        <div class="value">Energizante</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Emoções</div>
+        <div class="value">Combate Fadiga</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Ambiente</div>
+        <div class="value">Purifica o Ar</div>
+      </div>
+    </div>
+
+    <h3>Receitas de Aromaterapia</h3>
+
+    <div class="recipe-box">
+      <h4>Sachê Aromático para Armário</h4>
+      <ul>
+        <li>1 xícara de alecrim seco</li>
+        <li>1/2 xícara de lavanda seca (opcional)</li>
+        <li>Saquinho de tecido fino ou organza</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Misture as ervas e coloque no saquinho. Pendure no armário ou coloque entre roupas. Repele traças e deixa aroma agradável. Aperte o sachê ocasionalmente para liberar mais aroma. Dura 3-6 meses.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Água de Alecrim para Ambiente</h4>
+      <ul>
+        <li>500ml de água destilada</li>
+        <li>3 ramos de alecrim fresco</li>
+        <li>Borrifador</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Ferva a água, desligue e adicione o alecrim. Tampe e deixe esfriar completamente. Coe e transfira para o borrifador. Borrife no ambiente para purificar e energizar. Guarde na geladeira por até 2 semanas.</p>
+    </div>
+
+    <h3>Receitas Cosméticas</h3>
+
+    <div class="recipe-box">
+      <h4>Tônico Capilar de Alecrim</h4>
+      <p><em>Estimula crescimento e dá brilho aos cabelos</em></p>
+      <ul>
+        <li>2 xícaras de água</li>
+        <li>4 ramos de alecrim fresco</li>
+        <li>1 colher de sopa de vinagre de maçã</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong></p>
+      <ol>
+        <li>Ferva a água com o alecrim por 5 minutos</li>
+        <li>Desligue, tampe e deixe em infusão por 30 minutos</li>
+        <li>Coe e adicione o vinagre</li>
+        <li>Após lavar o cabelo, aplique como enxague final</li>
+        <li>Não precisa enxaguar</li>
+      </ol>
+      <p><em>Guarde na geladeira por até 1 semana.</em></p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 15</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>Óleo de Massagem Revigorante</h4>
+      <p><em>Para dores musculares e circulação</em></p>
+      <ul>
+        <li>200ml de óleo carreador (amêndoas, girassol ou coco)</li>
+        <li>5 ramos de alecrim fresco</li>
+        <li>Opcional: 3 ramos de hortelã</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong></p>
+      <ol>
+        <li>Seque completamente o alecrim (sem umidade!)</li>
+        <li>Coloque em pote de vidro esterilizado</li>
+        <li>Cubra com o óleo</li>
+        <li>Deixe em local ensolarado por 2-3 semanas, agitando diariamente</li>
+        <li>Coe e guarde em frasco escuro</li>
+      </ol>
+      <p><em>Validade: 6 meses em local fresco e escuro.</em></p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Esfoliante Corporal de Alecrim e Sal</h4>
+      <ul>
+        <li>1 xícara de sal grosso</li>
+        <li>1/2 xícara de azeite de oliva</li>
+        <li>2 colheres de sopa de alecrim fresco picado fino</li>
+        <li>Opcional: casca ralada de 1 limão</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Misture todos os ingredientes. Aplique no corpo úmido com movimentos circulares. Enxágue. Deixa a pele macia e perfumada.</p>
+      <p><em>Use imediatamente ou guarde por até 2 semanas.</em></p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Banho Relaxante e Energizante</h4>
+      <ul>
+        <li>4-5 ramos de alecrim fresco</li>
+        <li>1 xícara de sal grosso ou sal de Epsom</li>
+        <li>Opcional: algumas gotas de óleo essencial de alecrim</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong></p>
+      <ol>
+        <li>Faça um saquinho com os ramos de alecrim (use gaze ou meia fina)</li>
+        <li>Pendure na torneira enquanto enche a banheira</li>
+        <li>Adicione o sal</li>
+        <li>Relaxe por 20-30 minutos</li>
+      </ol>
+      <p><em>Ideal para aliviar dores musculares e revigorar após exercícios.</em></p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Cuidados com Cosméticos Naturais</h4>
+      <ul>
+        <li>Sempre faça teste de alergia: aplique um pouco no pulso e aguarde 24h</li>
+        <li>Evite usar em peles sensíveis ou irritadas</li>
+        <li>Não use óleo de alecrim puro na pele (sempre diluído)</li>
+        <li>Grávidas devem evitar uso tópico de alecrim</li>
+        <li>Guarde sempre em recipientes limpos e esterilizados</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 16</div>
+  </div>
+
+  <!-- CAPÍTULO 14: ALECRIM NA JARDINAGEM ORNAMENTAL -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 14</h2>
+      <p>Alecrim na Jardinagem Ornamental</p>
+    </div>
+
+    <p>Além de útil na cozinha, o alecrim é uma planta ornamental versátil e de baixa manutenção. Veja como usá-lo em projetos de paisagismo.</p>
+
+    <h3>Estilos de Uso Ornamental</h3>
+
+    <div class="variety-card">
+      <h4>🏛️ Topiaria com Alecrim</h4>
+      <span class="tag">Decorativo</span>
+      <span class="tag">Elegante</span>
+      <p>O alecrim pode ser podado em formas geométricas e esculturas vivas!</p>
+      <h5>Formas Populares:</h5>
+      <ul>
+        <li><strong>Bola:</strong> Forma mais simples, pode inicial</li>
+        <li><strong>Cone/Árvore de Natal:</strong> Popular para decoração natalina</li>
+        <li><strong>Espiral:</strong> Elegante, requer prática</li>
+        <li><strong>Arvoreta (padrão):</strong> Tronco limpou com copa redonda</li>
+      </ul>
+      <h5>Como Fazer Topiaria Simples:</h5>
+      <ol>
+        <li>Escolha uma planta jovem e saudável</li>
+        <li>Defina a forma desejada mentalmente</li>
+        <li>Pode gradualmente, nunca mais de 1/3 por vez</li>
+        <li>Faça podas de manutenção a cada 2-3 semanas</li>
+        <li>Use tesoura afiada para cortes limpos</li>
+      </ol>
+    </div>
+
+    <div class="variety-card">
+      <h4>🌊 Alecrim Rasteiro em Muros e Cascatas</h4>
+      <span class="tag">Cobertura</span>
+      <span class="tag">Cascata</span>
+      <p>O Alecrim Prostrado (Rosmarinus prostratus) é perfeito para:</p>
+      <ul>
+        <li>Cobrir muros de arrimo</li>
+        <li>Cascatear de vasos suspensos</li>
+        <li>Bordaduras de canteiros elevados</li>
+        <li>Cobertura de solo em áreas secas</li>
+        <li>Jardins de pedra (rock gardens)</li>
+      </ul>
+      <p><strong>Dica:</strong> Em muros voltados ao norte (sol pleno), o alecrim rasteiro cria uma cortina verde-azulada linda quando florida!</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>🚧 Cercas Vivas de Alecrim</h4>
+      <span class="tag">Privacidade</span>
+      <span class="tag">Aromática</span>
+      <p>Alecrim forma cercas vivas densas, aromáticas e de baixa manutenção!</p>
+      <h5>Como Criar:</h5>
+      <ul>
+        <li>Espaçamento: 40-50cm entre plantas</li>
+        <li>Altura alcançável: 80cm a 1,5m</li>
+        <li>Pode regularmente para manter compacta</li>
+        <li>Leva 2-3 anos para fechar completamente</li>
+      </ul>
+      <p><strong>Vantagens:</strong> Repele insetos, atrai abelhas, aroma delicioso ao passar!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 17</div>
+  </div>
+
+  <div class="page">
+    <h3>Projetos Ornamentais com Alecrim</h3>
+
+    <div class="step-box">
+      <h4>Projeto 1: Espiral de Ervas</h4>
+      <p>Construa uma espiral de pedras (tradicional em permacultura) e plante:</p>
+      <ul>
+        <li><strong>Topo (seco):</strong> Alecrim e tomilho</li>
+        <li><strong>Meio:</strong> Sálvia, orégano, manjericão</li>
+        <li><strong>Base (úmido):</strong> Hortelã, cebolinha</li>
+      </ul>
+      <p>A espiral cria microclimas diferentes, e o alecrim prospera no topo seco e ensolarado!</p>
+    </div>
+
+    <div class="step-box">
+      <h4>Projeto 2: Jardim de Fragrâncias</h4>
+      <p>Crie um canteiro "sensorial" com plantas aromáticas:</p>
+      <ul>
+        <li><strong>Alecrim:</strong> Centro ou fundo (mais alto)</li>
+        <li><strong>Lavanda:</strong> Ao redor do alecrim</li>
+        <li><strong>Tomilho-limão:</strong> Bordas (rasteiro)</li>
+        <li><strong>Sálvia roxa:</strong> Contraste de cor</li>
+      </ul>
+      <p>Plante perto de áreas de passagem para sentir o aroma ao tocar nas folhas!</p>
+    </div>
+
+    <div class="step-box">
+      <h4>Projeto 3: Vasos Combinados</h4>
+      <p>Em um vaso grande (60cm+), combine:</p>
+      <ul>
+        <li><strong>Centro:</strong> Alecrim ereto (altura)</li>
+        <li><strong>Laterais:</strong> Lavanda ou sálvia</li>
+        <li><strong>Bordas cascateando:</strong> Tomilho ou alecrim rasteiro</li>
+      </ul>
+      <p>Todas têm necessidades similares e ficam lindas juntas!</p>
+    </div>
+
+    <h3>Alecrim e Decoração de Festas</h3>
+    <div class="highlight-box">
+      <h4>Ideias Criativas</h4>
+      <ul>
+        <li><strong>Centro de mesa:</strong> Vaso de alecrim em forma de arvoreta</li>
+        <li><strong>Casamentos:</strong> Ramos de alecrim nos arranjos (símbolo de fidelidade!)</li>
+        <li><strong>Natal:</strong> Alecrim em formato de pinheiro como árvore alternativa</li>
+        <li><strong>Marcadores de lugar:</strong> Pequenos ramos com etiquetas</li>
+        <li><strong>Guirlandas:</strong> Ramos entrelaçados em base de arame</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Mini Árvore de Natal de Alecrim</h4>
+      <p>Compre ou faça uma topiaria em formato cônico. Decore com:</p>
+      <ul>
+        <li>Pequenos laços vermelhos ou dourados</li>
+        <li>Mini luzes de LED (sem calor)</li>
+        <li>Pequenas bolas ou estrelas</li>
+      </ul>
+      <p>Após as festas, remova a decoração e você tem uma planta útil!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 18</div>
+  </div>
+
+  <!-- CAPÍTULO 15: RECEITAS CULINÁRIAS COMPLETAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 15</h2>
+      <p>30 Receitas com Alecrim</p>
+    </div>
+
+    <p>O alecrim é versátil na cozinha! Seu sabor intenso combina com carnes, pães, vegetais e até sobremesas. Veja 30 receitas para aproveitar sua colheita.</p>
+
+    <h3>Carnes e Proteínas</h3>
+
+    <div class="recipe-box">
+      <h4>1. Frango ao Alecrim e Limão</h4>
+      <p><strong>Ingredientes:</strong></p>
+      <ul>
+        <li>1 frango inteiro ou 8 pedaços</li>
+        <li>4 ramos de alecrim fresco</li>
+        <li>2 limões (suco e raspas)</li>
+        <li>6 dentes de alho</li>
+        <li>4 colheres de azeite</li>
+        <li>Sal e pimenta a gosto</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Misture azeite, suco de limão, raspas, alho picado e folhas de alecrim. Marine o frango por pelo menos 2 horas (ideal overnight). Asse a 200°C por 45-60 minutos até dourar e cozer.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>2. Lombo Suíno com Crosta de Alecrim</h4>
+      <ul>
+        <li>1kg de lombo suíno</li>
+        <li>3 colheres de alecrim fresco picado</li>
+        <li>2 colheres de mostarda Dijon</li>
+        <li>1 xícara de farinha de rosca</li>
+        <li>4 colheres de azeite</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Passe mostarda no lombo. Misture farinha de rosca, alecrim, azeite e sal. Cubra o lombo com essa mistura. Asse a 180°C por 50-60 minutos.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>3. Cordeiro com Alecrim e Alho</h4>
+      <p><em>O clássico perfeito!</em></p>
+      <ul>
+        <li>1kg de paleta ou pernil de cordeiro</li>
+        <li>6 ramos de alecrim</li>
+        <li>1 cabeça de alho</li>
+        <li>1/2 xícara de vinho branco</li>
+        <li>Azeite, sal e pimenta</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Faça cortes no cordeiro e insira alho e alecrim. Tempere com sal, pimenta e azeite. Asse a 180°C por 2 horas, regando com vinho. Descanse 10 minutos antes de fatiar.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>4. Espetinhos de Alecrim</h4>
+      <p><em>Use os ramos como espeto!</em></p>
+      <ul>
+        <li>Ramos grossos de alecrim (como espetos)</li>
+        <li>500g de carne bovina em cubos</li>
+        <li>Legumes (cebola, pimentão, abobrinha)</li>
+        <li>Azeite, sal, pimenta</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Desfolhe os ramos deixando apenas as pontas. Espete alternando carne e legumes. Tempere e grelhe ou asse. O alecrim aromatiza por dentro!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 19</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>5. Peito de Pato com Mel e Alecrim</h4>
+      <ul>
+        <li>2 peitos de pato</li>
+        <li>3 colheres de mel</li>
+        <li>2 ramos de alecrim</li>
+        <li>1/2 xícara de vinho do porto</li>
+        <li>Sal e pimenta</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Risque a pele do pato em grade. Tempere com sal e pimenta. Grelhe com a pele para baixo até dourar, vire e finalize. Faça o molho com vinho, mel e alecrim. Sirva fatiado com o molho.</p>
+    </div>
+
+    <h3>Acompanhamentos e Vegetais</h3>
+
+    <div class="recipe-box">
+      <h4>6. Batatas Assadas ao Alecrim</h4>
+      <p><em>Clássico irresistível!</em></p>
+      <ul>
+        <li>1kg de batatas cortadas em cubos</li>
+        <li>4 colheres de azeite</li>
+        <li>4 ramos de alecrim fresco</li>
+        <li>4 dentes de alho</li>
+        <li>Sal grosso e pimenta</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Misture batatas com azeite, alho amassado, folhas de alecrim e sal. Espalhe em assadeira. Asse a 220°C por 35-40 minutos, virando na metade, até dourar e crocante.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>7. Abóbora Assada com Alecrim e Queijo</h4>
+      <ul>
+        <li>1 abóbora cabotiá em fatias grossas</li>
+        <li>3 ramos de alecrim</li>
+        <li>100g de queijo parmesão ralado</li>
+        <li>Azeite, sal, pimenta</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Tempere as fatias de abóbora com azeite, sal, pimenta e folhas de alecrim. Asse a 200°C por 25 minutos. Adicione o queijo e asse mais 10 minutos até gratinar.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>8. Legumes Grelhados Mediterrâneos</h4>
+      <ul>
+        <li>2 abobrinhas, 1 berinjela, 2 pimentões</li>
+        <li>1 cebola roxa, 10 tomates cereja</li>
+        <li>4 ramos de alecrim + 4 de tomilho</li>
+        <li>1/4 xícara de azeite</li>
+        <li>Vinagre balsâmico para finalizar</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Corte os legumes em rodelas ou tiras. Misture com azeite e ervas. Grelhe ou asse a 220°C por 20-25 minutos. Finalize com balsâmico.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>9. Cogumelos Salteados com Alecrim</h4>
+      <ul>
+        <li>500g de cogumelos Paris ou shiitake</li>
+        <li>3 colheres de manteiga</li>
+        <li>2 ramos de alecrim fresco</li>
+        <li>3 dentes de alho picados</li>
+        <li>1/4 xícara de vinho branco</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Salteie os cogumelos na manteiga em fogo alto até dourar. Adicione alho e alecrim, refogue 1 minuto. Deglace com vinho e deixe reduzir. Tempere e sirva.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 20</div>
+  </div>
+
+  <div class="page">
+    <h3>Pães e Massas</h3>
+
+    <div class="recipe-box">
+      <h4>10. Focaccia de Alecrim</h4>
+      <p><em>Pão italiano clássico!</em></p>
+      <ul>
+        <li>500g de farinha de trigo</li>
+        <li>10g de fermento seco</li>
+        <li>350ml de água morna</li>
+        <li>3 colheres de azeite + mais para regar</li>
+        <li>3 ramos de alecrim fresco</li>
+        <li>Sal grosso para polvilhar</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Misture farinha, fermento, água, azeite e sal. Sove até lisa e elástica. Deixe crescer 1 hora. Abra em assadeira untada, faça furos com os dedos, regue com azeite, espalhe alecrim e sal grosso. Deixe crescer 30 minutos. Asse a 220°C por 20-25 minutos.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>11. Grissini de Alecrim</h4>
+      <ul>
+        <li>300g de farinha</li>
+        <li>5g de fermento seco</li>
+        <li>150ml de água morna</li>
+        <li>2 colheres de azeite</li>
+        <li>2 colheres de alecrim picado</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Misture os ingredientes, sove bem. Deixe crescer 30 minutos. Divida em tiras finas, enrole como palitos. Asse a 200°C por 12-15 minutos até crocante.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>12. Pão de Alecrim e Azeite</h4>
+      <ul>
+        <li>600g de farinha</li>
+        <li>10g de fermento seco</li>
+        <li>400ml de água morna</li>
+        <li>1/4 xícara de azeite</li>
+        <li>3 colheres de alecrim fresco picado</li>
+        <li>2 colheres de chá de sal</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Misture tudo, sove 10 minutos. Deixe crescer 1h30. Modele, deixe crescer mais 45 minutos. Asse a 200°C por 35-40 minutos.</p>
+    </div>
+
+    <h3>Molhos e Condimentos</h3>
+
+    <div class="recipe-box">
+      <h4>13. Manteiga de Alecrim e Alho</h4>
+      <ul>
+        <li>200g de manteiga sem sal em temperatura ambiente</li>
+        <li>3 colheres de alecrim fresco picado fino</li>
+        <li>2 dentes de alho assados e amassados</li>
+        <li>Sal e pimenta a gosto</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Misture todos os ingredientes. Coloque em filme plástico e enrole como rocambole. Refrigere por 2 horas. Fatie e sirva sobre carnes, pães ou vegetais grelhados.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>14. Vinagrete de Alecrim</h4>
+      <ul>
+        <li>1/2 xícara de azeite</li>
+        <li>3 colheres de vinagre de vinho</li>
+        <li>1 colher de mostarda Dijon</li>
+        <li>2 colheres de alecrim fresco picado</li>
+        <li>1 colher de mel</li>
+        <li>Sal e pimenta</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Bata ou chacoalhe todos os ingredientes até emulsionar. Use em saladas ou como marinada.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 21</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>15. Pesto de Alecrim</h4>
+      <p><em>Variação diferente do tradicional!</em></p>
+      <ul>
+        <li>1 xícara de folhas de alecrim fresco (só as folhas)</li>
+        <li>1/2 xícara de nozes ou amêndoas</li>
+        <li>1/2 xícara de parmesão ralado</li>
+        <li>2 dentes de alho</li>
+        <li>3/4 xícara de azeite</li>
+        <li>Suco de 1/2 limão</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Bata tudo no processador até formar uma pasta. Use em massas, bruschetas ou como tempero para carnes.</p>
+    </div>
+
+    <h3>Bebidas</h3>
+
+    <div class="recipe-box">
+      <h4>16. Limonada com Alecrim</h4>
+      <ul>
+        <li>1 litro de água</li>
+        <li>Suco de 4 limões</li>
+        <li>4 colheres de açúcar ou mel</li>
+        <li>2 ramos de alecrim</li>
+        <li>Gelo</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Faça um xarope fervendo 1/2 xícara de água com açúcar e alecrim por 5 minutos. Deixe esfriar. Misture com água gelada e suco de limão. Sirva com gelo e ramo de alecrim.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>17. Gin Tônica com Alecrim</h4>
+      <ul>
+        <li>50ml de gin</li>
+        <li>150ml de água tônica</li>
+        <li>1 ramo de alecrim</li>
+        <li>Gelo</li>
+        <li>Fatias de limão</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Flame ligeiramente o alecrim (queime 2 segundos e apague) para liberar aromas. Coloque no copo com gelo, gin, tônica e limão.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>18. Chá de Alecrim com Mel e Gengibre</h4>
+      <ul>
+        <li>1 ramo de alecrim fresco</li>
+        <li>1 fatia de gengibre</li>
+        <li>1 colher de mel</li>
+        <li>250ml de água quente</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Deixe alecrim e gengibre em infusão na água quente por 5-7 minutos. Coe, adicione mel e beba. Ótimo para digestão e imunidade.</p>
+    </div>
+
+    <h3>Sobremesas (Sim, Alecrim em Doces!)</h3>
+
+    <div class="recipe-box">
+      <h4>19. Sorvete de Mel e Alecrim</h4>
+      <ul>
+        <li>500ml de creme de leite</li>
+        <li>250ml de leite</li>
+        <li>3/4 xícara de mel</li>
+        <li>3 ramos de alecrim</li>
+        <li>4 gemas</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Aqueça leite e creme com alecrim até ferver, desligue e deixe em infusão 30 minutos. Coe. Bata gemas com mel, misture ao leite aquecido. Cozinhe em banho-maria até engrossar. Esfrie e leve à sorveteira.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 22</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>20. Bolo de Limão e Alecrim</h4>
+      <ul>
+        <li>200g de manteiga</li>
+        <li>200g de açúcar</li>
+        <li>4 ovos</li>
+        <li>250g de farinha</li>
+        <li>Raspas de 2 limões</li>
+        <li>2 colheres de alecrim fresco picado fino</li>
+        <li>1 colher de fermento</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Bata manteiga com açúcar até cremoso. Adicione ovos um a um. Junte farinha, fermento, raspas de limão e alecrim. Asse a 180°C por 40-45 minutos. Opcional: calda de limão por cima.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>21. Peras Assadas com Alecrim e Vinho</h4>
+      <ul>
+        <li>4 peras maduras mas firmes</li>
+        <li>1 xícara de vinho tinto</li>
+        <li>1/2 xícara de açúcar</li>
+        <li>2 ramos de alecrim</li>
+        <li>1 canela em pau</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Descasque as peras, corte ao meio e retire sementes. Acomode em assadeira. Misture vinho, açúcar e especiarias, despeje sobre as peras. Asse a 180°C por 40 minutos, virando na metade. Sirva com sorvete de creme.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>22. Shortbread de Alecrim</h4>
+      <p><em>Biscoito amanteigado escocês!</em></p>
+      <ul>
+        <li>200g de manteiga fria</li>
+        <li>100g de açúcar</li>
+        <li>300g de farinha</li>
+        <li>2 colheres de alecrim fresco picado</li>
+        <li>Pitada de sal</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Misture manteiga gelada com farinha (usar as mãos) até formar farofa. Adicione açúcar, sal e alecrim. Pressione em forma retangular (2cm de altura). Refrigere 30 minutos. Corte em retângulos e asse a 160°C por 20-25 minutos até levemente dourado.</p>
+    </div>
+
+    <h3>Conservas e Preparações</h3>
+
+    <div class="recipe-box">
+      <h4>23. Mel Aromatizado com Alecrim</h4>
+      <ul>
+        <li>500g de mel</li>
+        <li>4 ramos de alecrim fresco</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Aqueça levemente o mel (não ferver). Adicione alecrim. Transfira para pote de vidro. Deixe em infusão por 1 semana antes de usar. Use em chás, torradas, queijos ou marinadas.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>24. Vinagre de Alecrim</h4>
+      <ul>
+        <li>500ml de vinagre de vinho branco</li>
+        <li>4-5 ramos de alecrim fresco</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Coloque alecrim em garrafa esterilizada. Cubra com vinagre. Feche e deixe em local escuro por 2-3 semanas. Use em saladas, marinadas e molhos.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 23</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>25. Tomates Secos com Alecrim</h4>
+      <ul>
+        <li>1kg de tomates italianos</li>
+        <li>3 ramos de alecrim</li>
+        <li>4 dentes de alho</li>
+        <li>Azeite para cobrir</li>
+        <li>Sal</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Corte tomates ao meio, remova sementes. Salgue e coloque em assadeira com a parte cortada para cima. Espalhe alecrim e alho. Asse a 100°C por 3-4 horas até murcharem. Transfira para pote, cubra com azeite. Dura 2 meses na geladeira.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>26. Azeitonas Marinadas</h4>
+      <ul>
+        <li>500g de azeitonas pretas e verdes</li>
+        <li>3 ramos de alecrim</li>
+        <li>Casca de 1 laranja em tiras</li>
+        <li>4 dentes de alho fatiados</li>
+        <li>Azeite para cobrir</li>
+        <li>Pimenta dedo-de-moça</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Escorra as azeitonas. Misture com alecrim, laranja, alho e pimenta. Transfira para pote e cubra com azeite. Deixe marinar por pelo menos 3 dias antes de consumir.</p>
+    </div>
+
+    <h3>Pratos Principais</h3>
+
+    <div class="recipe-box">
+      <h4>27. Risoto de Alecrim e Limão</h4>
+      <ul>
+        <li>300g de arroz arbóreo</li>
+        <li>1 litro de caldo de legumes quente</li>
+        <li>1 cebola picada</li>
+        <li>2 ramos de alecrim</li>
+        <li>Raspas de 1 limão</li>
+        <li>100g de parmesão</li>
+        <li>50g de manteiga</li>
+        <li>1/2 xícara de vinho branco</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Refogue cebola na manteiga. Adicione arroz e toste. Acrescente vinho e deixe evaporar. Vá adicionando caldo aos poucos, mexendo sempre. Quando cremoso (18-20 min), desligue. Adicione parmesão, manteiga, raspas de limão e folhas de alecrim. Misture e sirva.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>28. Pizza Branca com Alecrim</h4>
+      <ul>
+        <li>1 massa de pizza</li>
+        <li>200g de ricota</li>
+        <li>100g de mussarela de búfala</li>
+        <li>3 colheres de alecrim fresco</li>
+        <li>Azeite, sal, pimenta</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Abra a massa, espalhe ricota temperada. Distribua pedaços de mussarela. Polvilhe alecrim e regue com azeite. Asse a 250°C por 10-12 minutos.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 24</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>29. Salmão Assado ao Alecrim</h4>
+      <ul>
+        <li>600g de filé de salmão</li>
+        <li>3 ramos de alecrim</li>
+        <li>Suco de 1 limão</li>
+        <li>3 dentes de alho</li>
+        <li>Azeite, sal e pimenta</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Marine o salmão com limão, alho, alecrim, azeite, sal e pimenta por 30 minutos. Asse a 200°C por 15-18 minutos até dourar levemente. Sirva com legumes.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>30. Nhoque de Batata com Molho de Alecrim</h4>
+      <ul>
+        <li>500g de nhoque de batata</li>
+        <li>4 colheres de manteiga</li>
+        <li>3 ramos de alecrim</li>
+        <li>1/2 xícara de nozes picadas</li>
+        <li>Parmesão ralado</li>
+        <li>Sal e pimenta</li>
+      </ul>
+      <p><strong>Modo de fazer:</strong> Cozinhe o nhoque. Em frigideira grande, derreta a manteiga e frite o alecrim até aromático (2 minutos). Adicione nozes e toste levemente. Junte o nhoque escorrido, misture. Sirva com parmesão.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Dicas Gerais para Cozinhar com Alecrim</h4>
+      <ul>
+        <li><strong>Folhas duras:</strong> Remova as folhas do talo antes de adicionar ao prato</li>
+        <li><strong>Sabor intenso:</strong> Comece com pouco e vá provando - é forte!</li>
+        <li><strong>Cozimento longo:</strong> Alecrim aguenta bem assados e ensopados</li>
+        <li><strong>Finalização:</strong> Para sabor mais fresco, adicione no final</li>
+        <li><strong>Proporção:</strong> 1 colher de sopa de fresco = 1 colher de chá de seco</li>
+        <li><strong>Harmonização:</strong> Combina com alho, limão, azeite, mel, mostarda</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h4>Como Picar Alecrim</h4>
+      <p>Passe os dedos ao longo do talo, contra o sentido de crescimento, para soltar as folhas facilmente. Depois, pique com faca afiada. As folhas são pequenas, então não precisa picar muito fino.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 25</div>
+  </div>
+
+  <!-- CAPÍTULO 16: CALENDÁRIO MENSAL DE CUIDADOS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 16</h2>
+      <p>Calendário Mensal de Cuidados</p>
+    </div>
+
+    <p>Siga este calendário para saber exatamente o que fazer com seu alecrim em cada mês do ano.</p>
+
+    <h3>Janeiro - Verão Pleno</h3>
+    <div class="step-box">
+      <ul>
+        <li><strong>Rega:</strong> 2x por semana se não chover</li>
+        <li><strong>Proteção:</strong> Sombra parcial nas horas mais quentes</li>
+        <li><strong>Colheita:</strong> Colha pela manhã, antes do calor</li>
+      </ul>
+    </div>
+
+    <h3>Fevereiro - Março</h3>
+    <div class="step-box">
+      <ul>
+        <li><strong>Rega:</strong> Atenção às chuvas de verão</li>
+        <li><strong>Poda:</strong> Março é boa época para poda de formação</li>
+        <li><strong>Plantio:</strong> Excelente época para plantar mudas novas</li>
+      </ul>
+    </div>
+
+    <h3>Abril - Maio (Outono)</h3>
+    <div class="step-box">
+      <ul>
+        <li><strong>Rega:</strong> Reduza para 1x por semana ou menos</li>
+        <li><strong>Colheita:</strong> Ótima época - aroma intenso!</li>
+        <li><strong>Secagem:</strong> Seque ramos para o inverno</li>
+      </ul>
+    </div>
+
+    <h3>Junho - Julho - Agosto (Inverno)</h3>
+    <div class="step-box">
+      <ul>
+        <li><strong>Rega:</strong> Mínima! Apenas se solo muito seco</li>
+        <li><strong>Geadas:</strong> Cubra com TNT em noites frias (Sul)</li>
+        <li><strong>Poda:</strong> NÃO pode durante o inverno</li>
+        <li><strong>Agosto:</strong> Final do mês pode iniciar poda leve</li>
+      </ul>
+    </div>
+
+    <h3>Setembro - Outubro - Novembro (Primavera)</h3>
+    <div class="step-box">
+      <ul>
+        <li><strong>Plantio:</strong> MELHOR época para novos plantios!</li>
+        <li><strong>Estaquia:</strong> Faça novas mudas</li>
+        <li><strong>Floração:</strong> Flores azuis aparecem!</li>
+        <li><strong>Adubação:</strong> Composto orgânico leve</li>
+      </ul>
+    </div>
+
+    <h3>Dezembro</h3>
+    <div class="step-box">
+      <ul>
+        <li><strong>Rega:</strong> 2x por semana em dias quentes</li>
+        <li><strong>Colheita:</strong> Aproveite para receitas de fim de ano!</li>
+        <li><strong>Decoração:</strong> Use ramos na decoração natalina</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 26</div>
+  </div>
+
+  <!-- CAPÍTULO 17: PERGUNTAS FREQUENTES -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 17</h2>
+      <p>20 Perguntas Frequentes</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>1. Meu alecrim está morrendo, o que faço?</h4>
+      <p>Na maioria dos casos (90%), é excesso de água. Pare de regar, verifique drenagem, deixe o solo secar completamente.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>2. Folhas ficando marrons. Por quê?</h4>
+      <p>Excesso de água (mais comum), falta de sol, frio excessivo ou raízes presas no vaso.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>3. Posso cultivar dentro de casa?</h4>
+      <p>Sim, mas precisa de muita luz! Mínimo 4-6 horas de sol direto na janela.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>4. Com que frequência regar?</h4>
+      <p>Deixe secar entre regas. Verão: 1-2x/semana. Inverno: a cada 2-3 semanas.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>5. Precisa de adubo?</h4>
+      <p>Muito pouco! Uma aplicação leve de composto orgânico na primavera basta.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>6. Por que não cresce?</h4>
+      <p>Pouco sol, vaso pequeno, solo sem drenagem ou inverno (normal crescer pouco).</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>7. Posso plantar junto com outras ervas?</h4>
+      <p>Sim! Escolha tomilho, sálvia, orégano, lavanda. Evite manjericão e hortelã.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>8. Por que não floresce?</h4>
+      <p>Planta jovem (menos de 2 anos), pouco sol, ou excesso de nitrogênio.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>9. Posso comer as flores?</h4>
+      <p>Sim! São comestíveis e têm sabor delicado. Ótimas para decorar pratos.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>10. Sobrevive ao inverno brasileiro?</h4>
+      <p>Sim! É perene. Em regiões muito frias, proteja com TNT ou mova vasos.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 27</div>
+  </div>
+
+  <div class="page">
+    <div class="variety-card">
+      <h4>11. Posso podar a qualquer momento?</h4>
+      <p>Evite inverno e auge do verão. Melhores épocas: primavera e outono.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>12. Tamanho ideal de vaso?</h4>
+      <p>Mínimo 25cm de diâmetro, ideal 35-40cm. Terracota é o melhor material.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>13. Repele mosquitos?</h4>
+      <p>Sim! Plante perto de áreas de estar. Também repele traças e pulgas.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>14. Por que está pegajoso?</h4>
+      <p>Pulgões ou cochonilhas. Remova com jato d'água ou álcool.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>15. Posso fazer chá todos os dias?</h4>
+      <p>Com moderação, sim. 1-2 xícaras por dia para adultos saudáveis.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>16. Como fazer mudas grátis?</h4>
+      <p>Estaquia! Corte ramos de 10-15cm, remova folhas da base, plante em substrato arenoso. Taxa de sucesso: 80-90%.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>17. Alecrim de supermercado dá para plantar?</h4>
+      <p>Às vezes! Coloque em água para desenvolver raízes, depois plante.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>18. O que fazer quando fica lenhoso?</h4>
+      <p>Poda de rejuvenescimento na primavera. Se muito velho, faça estacas e comece nova planta.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>19. Atrai abelhas?</h4>
+      <p>Sim, muito! As flores são ricas em néctar. Ótimo para a horta!</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>20. Quanto tempo vive?</h4>
+      <p>Com cuidados adequados, 15-20 anos ou mais! É uma planta perene.</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>Regra de Ouro do Alecrim</h4>
+      <p style="font-size: 18px; text-align: center;"><strong>"Na dúvida, NÃO regue e dê mais sol!"</strong></p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 28</div>
+  </div>
+
+  <!-- BÔNUS 1: PRODUTOS DIY -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Bônus 1</h2>
+      <p>10 Produtos DIY com Alecrim</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>1. Repelente Natural de Insetos</h4>
+      <p>200ml água + 50ml álcool + infusão de alecrim. Borrife no ambiente.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>2. Limpador Multiuso Aromático</h4>
+      <p>Vinagre + água + alecrim + casca de limão. Infusão por 2 semanas.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>3. Sabonete de Alecrim</h4>
+      <p>Base glicerinada derretida + azeite + alecrim seco. Molde e deixe secar.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>4. Velas Aromáticas</h4>
+      <p>Cera de soja + pavio + folhas de alecrim seco. Linda e perfumada!</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>5. Spray para Travesseiro</h4>
+      <p>Água destilada + álcool + infusão de alecrim e lavanda. Relaxante!</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>6. Sais de Banho</h4>
+      <p>Sal grosso + alecrim seco + azeite. Use 1/2 xícara por banho.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>7. Purificador de Ambiente (Simmer Pot)</h4>
+      <p>Água + alecrim + limão + canela em fogo baixo. Aromatiza a casa toda!</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>8. Óleo para Barba ou Cabelo</h4>
+      <p>Óleo de jojoba + alecrim em infusão por 2 semanas. Hidrata e dá brilho.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>9. Pomada para Lábios</h4>
+      <p>Cera de abelha + óleo de coco + infusão de alecrim. Suave e aromática.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>10. Sachês para Gavetas</h4>
+      <p>Alecrim seco + lavanda em saquinhos. Repele traças, perfuma roupas.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 29</div>
+  </div>
+
+  <!-- BÔNUS 2: TROUBLESHOOTING -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Bônus 2</h2>
+      <p>Diagnóstico Visual - 12 Problemas</p>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Folhas Amarelas na Base</h5>
+        <p>Excesso de água ou falta de luz.</p>
+      </div>
+      <div class="solution">
+        <h5>Folhas Secas e Quebradiças</h5>
+        <p>Falta de água ou ar muito seco.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Pontas das Folhas Marrons</h5>
+        <p>Sal no solo ou queimadura de sol.</p>
+      </div>
+      <div class="solution">
+        <h5>Caule Mole e Escuro</h5>
+        <p>Podridão! Corte e replante urgente.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Manchas Brancas Pó</h5>
+        <p>Oídio. Melhore ventilação.</p>
+      </div>
+      <div class="solution">
+        <h5>Teias Finas nas Folhas</h5>
+        <p>Ácaros. Aumente umidade do ar.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Insetos Pequenos Verdes</h5>
+        <p>Pulgões. Jato d'água ou sabão de coco.</p>
+      </div>
+      <div class="solution">
+        <h5>Bolinhas Marrons Grudadas</h5>
+        <p>Cochonilhas. Álcool em cotonete.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Planta Tombando</h5>
+        <p>Raízes fracas ou vaso pequeno.</p>
+      </div>
+      <div class="solution">
+        <h5>Crescimento Espigado</h5>
+        <p>Falta de luz! Mais sol.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Sem Aroma</h5>
+        <p>Excesso de água ou adubo.</p>
+      </div>
+      <div class="solution">
+        <h5>Raízes Saindo pelos Furos</h5>
+        <p>Transplante para vaso maior.</p>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <h4>Planta Totalmente Seca/Marrom?</h4>
+      <p>Se houver ramos verdes, há esperança! Pode partes mortas, regue levemente, aguarde 2-3 semanas.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 30</div>
+  </div>
+
+  <!-- CHECKLIST FINAL -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Checklist Final</h2>
+      <p>Seu Guia Rápido de Referência</p>
+    </div>
+
+    <h3>Checklist de Cuidados Semanais</h3>
+    <div class="checklist">
+      <ul>
+        <li>Verificar umidade do solo (teste do dedo)</li>
+        <li>Regar apenas se solo seco</li>
+        <li>Inspecionar folhas para pragas</li>
+        <li>Remover folhas secas</li>
+        <li>Girar vaso para crescimento uniforme</li>
+        <li>Colher ramos para uso culinário</li>
+      </ul>
+    </div>
+
+    <h3>Checklist de Cuidados Mensais</h3>
+    <div class="checklist">
+      <ul>
+        <li>Verificar necessidade de poda</li>
+        <li>Limpar folhas com pano úmido</li>
+        <li>Verificar se raízes estão presas</li>
+        <li>Avaliar necessidade de transplante</li>
+        <li>Fazer estacas (se desejado)</li>
+      </ul>
+    </div>
+
+    <h3>Checklist de Sucesso</h3>
+    <div class="checklist">
+      <ul>
+        <li>Local com 4-6 horas de sol direto</li>
+        <li>Substrato bem drenado (40% areia)</li>
+        <li>Vaso com furos funcionando</li>
+        <li>Rega apenas quando solo seco</li>
+        <li>Nunca água acumulada no prato</li>
+        <li>Poda regular</li>
+        <li>Adubação leve 1-2x por ano</li>
+        <li>Proteção contra geadas</li>
+      </ul>
+    </div>
+
+    <div class="success-box">
+      <h4>Parabéns!</h4>
+      <p>Você concluiu o <strong>Guia Completo do Alecrim</strong>! Lembre-se: sol forte, pouca água e boa drenagem são a chave do sucesso.</p>
+      <p style="margin-top: 15px;"><strong>Bom cultivo e bom apetite!</strong></p>
+    </div>
+
+    <div class="intro-box" style="margin-top: 30px;">
+      <p><strong>Minha Horta em Casa</strong></p>
+      <p>minhahortaemcasa.com.br</p>
+      <p style="font-size: 12px; margin-top: 10px;">© Todos os direitos reservados</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 31</div>
+  </div>
+
+</body>
+</html>

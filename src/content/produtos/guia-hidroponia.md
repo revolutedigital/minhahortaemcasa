@@ -5,6 +5,7 @@ originalPrice: 49
 description: "Aprenda a cultivar sem terra com sistemas simples e baratos"
 category: "guia"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ck8c035676?funnel=fnf307b011"
 ---
 
 # Guia Hidroponia Caseira - R$ 24

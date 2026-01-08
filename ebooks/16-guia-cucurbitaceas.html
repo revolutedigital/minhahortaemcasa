@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guia Cucurbitáceas em Vaso - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.7; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 44px; font-weight: 800; color: #15803d; margin-bottom: 20px; }
+    .cover .subtitle { font-size: 22px; color: #166534; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #15803d; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #22c55e; }
+    h1 { font-size: 32px; color: #15803d; margin-bottom: 20px; border-bottom: 3px solid #22c55e; padding-bottom: 10px; }
+    h2 { font-size: 26px; color: #166534; margin: 25px 0 15px; }
+    h3 { font-size: 22px; color: #15803d; margin: 20px 0 12px; }
+    h4 { font-size: 18px; color: #166534; margin: 15px 0 10px; }
+    p { margin-bottom: 15px; text-align: justify; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 10px; }
+    .toc { background: #f0fdf4; padding: 30px; border-radius: 12px; }
+    .toc h2 { border: none; margin-top: 0; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dashed #86efac; }
+    .toc a { color: #15803d; text-decoration: none; }
+    .intro-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 5px solid #22c55e; }
+    .plant-card { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 25px; margin: 20px 0; }
+    .plant-card h3 { color: #15803d; margin-top: 0; border-bottom: 2px solid #dcfce7; padding-bottom: 10px; }
+    .plant-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    .difficulty { padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+    .easy { background: #dcfce7; color: #15803d; }
+    .medium { background: #fef3c7; color: #92400e; }
+    .hard { background: #fee2e2; color: #991b1b; }
+    .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 15px 0; }
+    .info-item { background: #f0fdf4; padding: 12px; border-radius: 8px; }
+    .info-item strong { color: #15803d; display: block; font-size: 12px; text-transform: uppercase; margin-bottom: 5px; }
+    .tip-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 4px solid #22c55e; padding: 20px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .tip-box h4 { color: #15803d; margin-top: 0; }
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 20px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .warning-box h4 { color: #92400e; margin-top: 0; }
+    .danger-box { background: linear-gradient(135deg, #fee2e2, #fecaca); border-left: 4px solid #ef4444; padding: 20px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .danger-box h4 { color: #991b1b; margin-top: 0; }
+    .success-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-left: 4px solid #22c55e; padding: 20px; margin: 20px 0; border-radius: 0 12px 12px 0; }
+    .success-box h4 { color: #15803d; margin-top: 0; }
+    .step-box { background: #fff; border: 2px solid #86efac; border-radius: 12px; padding: 20px; margin: 20px 0; position: relative; }
+    .step-number { position: absolute; top: -15px; left: 20px; background: #22c55e; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+    .pollination-card { background: linear-gradient(135deg, #fdf4ff, #fae8ff); border: 2px solid #d946ef; border-radius: 12px; padding: 25px; margin: 20px 0; }
+    .pollination-card h3 { color: #a21caf; margin-top: 0; }
+    .flower-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+    .flower-type { background: #fff; padding: 20px; border-radius: 12px; text-align: center; }
+    .flower-type.male { border: 2px solid #3b82f6; }
+    .flower-type.female { border: 2px solid #ec4899; }
+    .flower-type h4 { margin-bottom: 10px; }
+    .flower-type.male h4 { color: #1d4ed8; }
+    .flower-type.female h4 { color: #be185d; }
+    .variety-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    .variety-table th { background: #15803d; color: white; padding: 12px 8px; text-align: left; }
+    .variety-table td { padding: 12px 8px; border-bottom: 1px solid #e5e7eb; }
+    .variety-table tr:nth-child(even) { background: #f0fdf4; }
+    .month-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .month-table th, .month-table td { padding: 8px; text-align: center; border: 1px solid #d1d5db; font-size: 12px; }
+    .month-table th { background: #15803d; color: white; }
+    .month-ok { background: #22c55e; color: white; }
+    .month-good { background: #86efac; }
+    .month-bad { background: #fecaca; }
+    .pest-mini { background: #fff; border: 1px solid #fca5a5; border-radius: 8px; padding: 15px; margin: 10px 0; }
+    .pest-mini h4 { color: #991b1b; margin: 0 0 10px 0; font-size: 16px; }
+    .recipe-card { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 2px dashed #22c55e; border-radius: 12px; padding: 25px; margin: 20px 0; }
+    .recipe-card h4 { color: #15803d; margin-top: 0; }
+    .harvest-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 12px; padding: 25px; margin: 20px 0; }
+    .harvest-box h3 { color: #92400e; margin-top: 0; }
+    .productivity-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .productivity-table th { background: #15803d; color: white; padding: 12px; text-align: left; }
+    .productivity-table td { padding: 12px; border-bottom: 1px solid #e5e7eb; }
+    .productivity-table tr:nth-child(even) { background: #f0fdf4; }
+    .troubleshoot { background: #fff; border: 2px solid #f59e0b; border-radius: 12px; padding: 20px; margin: 15px 0; }
+    .troubleshoot h4 { color: #92400e; margin: 0 0 10px 0; }
+    .final-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); border-radius: 12px; padding: 30px; margin: 25px 0; text-align: center; }
+    .checklist { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .checklist h4 { color: #15803d; margin-top: 0; }
+    .checklist li { list-style: none; padding-left: 30px; position: relative; margin-bottom: 12px; }
+    .checklist li:before { content: "☐"; position: absolute; left: 0; color: #22c55e; font-size: 18px; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+    .highlight { background: #fef08a; padding: 2px 6px; border-radius: 4px; }
+    blockquote { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 20px; margin: 20px 0; font-style: italic; border-radius: 0 12px 12px 0; }
+    blockquote cite { display: block; margin-top: 10px; font-weight: 600; color: #15803d; font-style: normal; }
+  </style>
+</head>
+<body>
+
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pg16)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bg16)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs>
+          <linearGradient id="pg16" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ea7531"/>
+            <stop offset="100%" stop-color="#b5441c"/>
+          </linearGradient>
+          <radialGradient id="bg16" cx="40%" cy="30%">
+            <stop offset="0%" stop-color="#86efac"/>
+            <stop offset="50%" stop-color="#4ade80"/>
+            <stop offset="100%" stop-color="#22c55e"/>
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Guia Cucurbitáceas em Vaso</h1>
+    <p class="subtitle">Pepino, abobrinha, abóbora e melão - mesmo em apartamento!</p>
+    <div class="brand">
+      Minha Horta em Casa
+      <div class="brand-url">minhahortaemcasa.com.br</div>
+    </div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>Sumário</h2>
+      <ul>
+        <li><a href="#intro">Introdução: O que são Cucurbitáceas?</a> ..... 3</li>
+        <li><a href="#modulo1">Módulo 1: Conhecendo a Família</a> ..... 4</li>
+        <li><a href="#modulo2">Módulo 2: Preparação e Plantio</a> ..... 8</li>
+        <li><a href="#modulo3">Módulo 3: Cultivo em Vaso</a> ..... 10</li>
+        <li><a href="#modulo4">Módulo 4: Polinização Manual</a> ..... 12</li>
+        <li><a href="#modulo5">Módulo 5: Cuidados e Manutenção</a> ..... 14</li>
+        <li><a href="#modulo6">Módulo 6: Pragas e Doenças</a> ..... 16</li>
+        <li><a href="#modulo7">Módulo 7: Colheita e Produtividade</a> ..... 18</li>
+        <li><a href="#modulo8">Módulo 8: Guia Completo por Espécie</a> ..... 22</li>
+        <li><a href="#modulo9">Módulo 9: Salvando Sementes</a> ..... 28</li>
+        <li><a href="#bonus">Bônus 1: Receitas e Conservação</a> ..... 32</li>
+        <li><a href="#faq">Bônus 2: 25 Perguntas Frequentes</a> ..... 36</li>
+        <li><a href="#checklist">Checklist: Acompanhamento</a> ..... 40</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 2</div>
+  </div>
+
+  <!-- INTRODUÇÃO -->
+  <div class="page" id="intro">
+    <h1>Introdução: O que são Cucurbitáceas?</h1>
+
+    <div class="intro-box">
+      <p><strong>As cucurbitáceas são uma das famílias mais generosas da horta!</strong> Abóboras, pepinos, abobrinhas, melancias e melões - todos pertencem a essa família incrível que pode produzir quilos de alimento de uma única planta.</p>
+    </div>
+
+    <p>Por muito tempo, acreditou-se que cucurbitáceas precisavam de muito espaço e eram impossíveis de cultivar em vasos ou apartamentos. <strong>Este guia vai provar o contrário!</strong></p>
+
+    <h2>Por que Cultivar Cucurbitáceas em Casa?</h2>
+
+    <ul>
+      <li><strong>Alta produtividade:</strong> Uma única abobrinha pode produzir 10-20 frutos</li>
+      <li><strong>Frescor incomparável:</strong> Pepino colhido na hora tem sabor e crocância únicos</li>
+      <li><strong>Economia real:</strong> Uma planta de pepino produz o equivalente a R$ 50+ em frutos</li>
+      <li><strong>Variedades exclusivas:</strong> Cultive tipos que não encontra no mercado</li>
+      <li><strong>Ciclo rápido:</strong> Da semente à colheita em 45-80 dias</li>
+    </ul>
+
+    <h2>Os 3 Maiores Desafios (e como vencê-los)</h2>
+
+    <div class="troubleshoot">
+      <h4>1. "Não tenho espaço suficiente"</h4>
+      <p>Solução: Técnicas de tutoramento vertical e variedades compactas permitem cultivar em varandas pequenas. Você vai aprender exatamente como fazer.</p>
+    </div>
+
+    <div class="troubleshoot">
+      <h4>2. "Minhas flores caem sem dar frutos"</h4>
+      <p>Solução: Isso acontece por falta de polinização. Em ambientes urbanos sem abelhas, a polinização manual resolve 100%. Ensinaremos a técnica perfeita.</p>
+    </div>
+
+    <div class="troubleshoot">
+      <h4>3. "As pragas sempre atacam"</h4>
+      <p>Solução: Com prevenção adequada e identificação precoce, você protege suas plantas de forma orgânica. Cobriremos as principais pragas e soluções.</p>
+    </div>
+
+    <div class="success-box">
+      <h4>O que você vai conquistar</h4>
+      <p>Ao final deste guia, você terá todo o conhecimento para cultivar pepinos crocantes, abobrinhas produtivas e até melancias em vasos - independente do espaço que tem disponível.</p>
+    </div>
+
+    <div class="page-number">Página 3</div>
+  </div>
+
+  <!-- MÓDULO 1 -->
+  <div class="page" id="modulo1">
+    <h1>Módulo 1: Conhecendo a Família</h1>
+
+    <p>A família Cucurbitaceae inclui mais de 900 espécies, mas vamos focar nas que podemos cultivar em casa com sucesso.</p>
+
+    <div class="plant-card">
+      <div class="plant-header">
+        <h3>Pepino (Cucumis sativus)</h3>
+        <span class="difficulty easy">Fácil</span>
+      </div>
+      <p>O mais indicado para iniciantes em vasos! Cresce rapidamente, produz muito e se adapta bem ao cultivo vertical.</p>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Ciclo</strong>
+          50-70 dias
+        </div>
+        <div class="info-item">
+          <strong>Vaso mínimo</strong>
+          20 litros
+        </div>
+        <div class="info-item">
+          <strong>Produção</strong>
+          15-30 frutos/pé
+        </div>
+        <div class="info-item">
+          <strong>Melhor época</strong>
+          Primavera/Verão
+        </div>
+      </div>
+      <h4>Variedades para Vaso:</h4>
+      <ul>
+        <li><strong>Pepino Japonês:</strong> Fino, sem sementes, ideal para saladas</li>
+        <li><strong>Pepino Caipira:</strong> Mais rústico, casca grossa</li>
+        <li><strong>Mini Pepino:</strong> Compacto, perfeito para vasos menores</li>
+        <li><strong>Pepino Conserva:</strong> Pequenos, ideais para picles</li>
+      </ul>
+    </div>
+
+    <div class="plant-card">
+      <div class="plant-header">
+        <h3>Abobrinha Italiana (Cucurbita pepo)</h3>
+        <span class="difficulty easy">Fácil</span>
+      </div>
+      <p>Produção absurda! Uma única planta bem cuidada produz abobrinhas semanalmente por 2-3 meses.</p>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Ciclo</strong>
+          45-60 dias
+        </div>
+        <div class="info-item">
+          <strong>Vaso mínimo</strong>
+          30 litros
+        </div>
+        <div class="info-item">
+          <strong>Produção</strong>
+          10-20 frutos/pé
+        </div>
+        <div class="info-item">
+          <strong>Melhor época</strong>
+          Set-Março
+        </div>
+      </div>
+      <h4>Variedades Recomendadas:</h4>
+      <ul>
+        <li><strong>Caserta:</strong> A mais comum, verde listrada</li>
+        <li><strong>Menina Brasileira:</strong> Pescoço longo, muito produtiva</li>
+        <li><strong>Abobrinha Amarela:</strong> Sabor mais suave</li>
+        <li><strong>Pattypan/Patisson:</strong> Formato de disco, decorativa</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 4</div>
+  </div>
+
+  <!-- MÓDULO 1 - Continuação -->
+  <div class="page">
+    <h2>Mais Membros da Família</h2>
+
+    <div class="plant-card">
+      <div class="plant-header">
+        <h3>Abóbora (Cucurbita moschata/maxima)</h3>
+        <span class="difficulty medium">Médio</span>
+      </div>
+      <p>Exige mais espaço, mas variedades compactas funcionam em vasos grandes. Frutos armazenam por meses!</p>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Ciclo</strong>
+          90-120 dias
+        </div>
+        <div class="info-item">
+          <strong>Vaso mínimo</strong>
+          50 litros
+        </div>
+        <div class="info-item">
+          <strong>Produção</strong>
+          2-5 frutos/pé
+        </div>
+        <div class="info-item">
+          <strong>Melhor época</strong>
+          Primavera
+        </div>
+      </div>
+      <h4>Variedades para Vaso:</h4>
+      <ul>
+        <li><strong>Abóbora Japonesa (Cabotiá):</strong> Tamanho médio, casca dura</li>
+        <li><strong>Moranga:</strong> Doce, casca laranja vibrante</li>
+        <li><strong>Butternut:</strong> Formato de pera, polpa cremosa</li>
+        <li><strong>Mini Abóbora:</strong> Decorativas e comestíveis</li>
+      </ul>
+    </div>
+
+    <div class="plant-card">
+      <div class="plant-header">
+        <h3>Melão (Cucumis melo)</h3>
+        <span class="difficulty medium">Médio</span>
+      </div>
+      <p>Possível em vasos grandes com suporte para os frutos. Exige mais calor e cuidado na polinização.</p>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Ciclo</strong>
+          70-90 dias
+        </div>
+        <div class="info-item">
+          <strong>Vaso mínimo</strong>
+          40 litros
+        </div>
+        <div class="info-item">
+          <strong>Produção</strong>
+          2-4 frutos/pé
+        </div>
+        <div class="info-item">
+          <strong>Melhor época</strong>
+          Verão
+        </div>
+      </div>
+      <h4>Variedades para Vaso:</h4>
+      <ul>
+        <li><strong>Melão Cantaloupe:</strong> Casca rendilhada, polpa laranja</li>
+        <li><strong>Melão Gália:</strong> Casca amarela, polpa verde</li>
+        <li><strong>Melão Orange:</strong> Compacto, ideal para iniciantes</li>
+      </ul>
+    </div>
+
+    <div class="plant-card">
+      <div class="plant-header">
+        <h3>Melancia (Citrullus lanatus)</h3>
+        <span class="difficulty hard">Avançado</span>
+      </div>
+      <p>O maior desafio, mas variedades mini tornam possível em vasos. Exige muito sol e calor.</p>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Ciclo</strong>
+          80-100 dias
+        </div>
+        <div class="info-item">
+          <strong>Vaso mínimo</strong>
+          50 litros
+        </div>
+        <div class="info-item">
+          <strong>Produção</strong>
+          1-3 frutos/pé
+        </div>
+        <div class="info-item">
+          <strong>Melhor época</strong>
+          Verão intenso
+        </div>
+      </div>
+      <h4>Variedades para Vaso:</h4>
+      <ul>
+        <li><strong>Sugar Baby:</strong> Mini melancia, 2-4kg, perfeita para vasos</li>
+        <li><strong>Crimson Sweet Mini:</strong> Doce, tamanho reduzido</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 5</div>
+  </div>
+
+  <!-- TABELA COMPARATIVA -->
+  <div class="page">
+    <h2>Tabela Comparativa: Qual Escolher?</h2>
+
+    <table class="variety-table">
+      <tr>
+        <th>Cucurbitácea</th>
+        <th>Dificuldade</th>
+        <th>Vaso (L)</th>
+        <th>Ciclo</th>
+        <th>Produção</th>
+        <th>Nota</th>
+      </tr>
+      <tr>
+        <td>Pepino Japonês</td>
+        <td>Fácil</td>
+        <td>20L</td>
+        <td>50-60 dias</td>
+        <td>20-30 frutos</td>
+        <td>Melhor para iniciantes</td>
+      </tr>
+      <tr>
+        <td>Mini Pepino</td>
+        <td>Fácil</td>
+        <td>15L</td>
+        <td>45-55 dias</td>
+        <td>30-50 frutos</td>
+        <td>Vasos menores</td>
+      </tr>
+      <tr>
+        <td>Abobrinha Italiana</td>
+        <td>Fácil</td>
+        <td>30L</td>
+        <td>45-60 dias</td>
+        <td>10-20 frutos</td>
+        <td>Mais produtiva</td>
+      </tr>
+      <tr>
+        <td>Abobrinha Menina</td>
+        <td>Fácil</td>
+        <td>30L</td>
+        <td>50-65 dias</td>
+        <td>8-15 frutos</td>
+        <td>Rústica</td>
+      </tr>
+      <tr>
+        <td>Abóbora Cabotiá</td>
+        <td>Médio</td>
+        <td>50L</td>
+        <td>90-120 dias</td>
+        <td>2-4 frutos</td>
+        <td>Armazena bem</td>
+      </tr>
+      <tr>
+        <td>Melão Cantaloupe</td>
+        <td>Médio</td>
+        <td>40L</td>
+        <td>70-85 dias</td>
+        <td>2-3 frutos</td>
+        <td>Exige calor</td>
+      </tr>
+      <tr>
+        <td>Melancia Sugar Baby</td>
+        <td>Avançado</td>
+        <td>50L</td>
+        <td>80-100 dias</td>
+        <td>1-2 frutos</td>
+        <td>Muito sol</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>Recomendação para Iniciantes</h4>
+      <p>Comece com <strong>pepino japonês ou abobrinha italiana</strong>. São as mais fáceis, produtivas e perdoam erros. Depois de dominar essas, avance para melões e melancias.</p>
+    </div>
+
+    <h2>Calendário de Plantio por Região</h2>
+
+    <table class="month-table">
+      <tr>
+        <th>Região</th>
+        <th>J</th>
+        <th>F</th>
+        <th>M</th>
+        <th>A</th>
+        <th>M</th>
+        <th>J</th>
+        <th>J</th>
+        <th>A</th>
+        <th>S</th>
+        <th>O</th>
+        <th>N</th>
+        <th>D</th>
+      </tr>
+      <tr>
+        <td>Sul</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-good">*</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-good">*</td>
+      </tr>
+      <tr>
+        <td>Sudeste</td>
+        <td class="month-good">*</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+      </tr>
+      <tr>
+        <td>Centro-Oeste</td>
+        <td class="month-good">*</td>
+        <td class="month-good">*</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-bad">-</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+      </tr>
+      <tr>
+        <td>Nordeste</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-good">*</td>
+        <td class="month-good">*</td>
+        <td class="month-good">*</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+      </tr>
+      <tr>
+        <td>Norte</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+        <td class="month-ok">✓</td>
+      </tr>
+    </table>
+    <p><small>✓ = Época ideal | * = Possível com cuidados | - = Evitar</small></p>
+
+    <div class="page-number">Página 6</div>
+  </div>
+
+  <!-- MÓDULO 2 -->
+  <div class="page" id="modulo2">
+    <h1>Módulo 2: Preparação e Plantio</h1>
+
+    <h2>Escolhendo as Sementes</h2>
+
+    <p>A qualidade das sementes determina 50% do seu sucesso. Siga estas dicas:</p>
+
+    <div class="tip-box">
+      <h4>Onde Comprar Sementes</h4>
+      <ul>
+        <li><strong>Lojas agrícolas:</strong> Maior variedade, sementes testadas</li>
+        <li><strong>Online:</strong> Isla, Feltrin, Topseed - marcas confiáveis</li>
+        <li><strong>Feiras de sementes:</strong> Variedades crioulas únicas</li>
+        <li><strong>Coleta própria:</strong> De frutos maduros (não híbridos F1)</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Atenção com Sementes F1 (Híbridas)</h4>
+      <p>Sementes híbridas F1 produzem plantas vigorosas, mas suas sementes não reproduzem as mesmas características. Se quiser guardar sementes, prefira variedades de polinização aberta (OP) ou crioulas.</p>
+    </div>
+
+    <h2>Germinação das Sementes</h2>
+
+    <p>Cucurbitáceas germinam facilmente, mas o método certo acelera o processo:</p>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Pré-germinação em papel (Opcional, mas recomendado)</h4>
+      <p>Coloque as sementes entre duas folhas de papel toalha umedecido. Guarde em saco plástico entreaberto em local aquecido (25-30°C). Em 2-4 dias a radícula emerge.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Plantio em copinho</h4>
+      <p>Plante em copinhos de 300-500ml com substrato leve. Profundidade: 2cm, deitada. Mantenha úmido mas não encharcado. Germinação: 5-10 dias.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Transplante</h4>
+      <p>Quando tiver 2-3 folhas verdadeiras (não os cotilédones), transplante para o vaso definitivo. Faça isso no final da tarde para reduzir estresse.</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>ERRO FATAL: Transplante Tardio</h4>
+      <p>Cucurbitáceas odeiam ter as raízes perturbadas! Se deixar a muda muito tempo no copinho, ela entorta a raiz (enovelamento) e nunca desenvolve bem. Transplante com no máximo 15-20 dias.</p>
+    </div>
+
+    <div class="page-number">Página 7</div>
+  </div>
+
+  <!-- MÓDULO 2 - Continuação -->
+  <div class="page">
+    <h2>Plantio Direto no Vaso Definitivo</h2>
+
+    <p>Método alternativo que evita o trauma do transplante:</p>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Prepare o vaso completo</h4>
+      <p>Monte o vaso com substrato, drenagem e tudo pronto como se já fosse receber uma planta adulta.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Plante 2-3 sementes</h4>
+      <p>Faça pequenas covas de 2cm de profundidade, espaçadas 10cm. Coloque 1 semente em cada cova, deitada.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Desbaste</h4>
+      <p>Quando as mudas tiverem 2-3 folhas verdadeiras, escolha a mais forte e corte as outras na base (não arranque!).</p>
+    </div>
+
+    <h2>O Substrato Perfeito para Cucurbitáceas</h2>
+
+    <p>Cucurbitáceas são plantas gulosas - precisam de substrato rico e bem drenado.</p>
+
+    <div class="recipe-card">
+      <h4>Receita do Substrato Ideal</h4>
+      <ul>
+        <li>3 partes de terra vegetal peneirada</li>
+        <li>2 partes de composto orgânico bem curtido</li>
+        <li>1 parte de areia grossa ou perlita</li>
+        <li>1 parte de húmus de minhoca</li>
+        <li>100g de farinha de osso por vaso de 30L</li>
+        <li>50g de torta de mamona por vaso de 30L</li>
+      </ul>
+      <p><strong>Misture bem</strong> e deixe "curar" por 1 semana antes de plantar, regando ocasionalmente.</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>Dica: Substrato Comercial</h4>
+      <p>Se usar substrato pronto, escolha um para hortaliças e enriqueça com composto orgânico (50/50). Substratos puros costumam ser pobres demais para cucurbitáceas.</p>
+    </div>
+
+    <h2>Camada de Drenagem</h2>
+
+    <p>Essencial para evitar encharcamento:</p>
+
+    <ol>
+      <li>Cubra os furos com manta bidim ou tela fina</li>
+      <li>Adicione 5-7cm de argila expandida ou pedriscos</li>
+      <li>Cubra com manta bidim ou TNT</li>
+      <li>Complete com o substrato</li>
+    </ol>
+
+    <div class="warning-box">
+      <h4>Furos Suficientes!</h4>
+      <p>Vasos de plástico costumam ter poucos furos. Faça mais! No mínimo 8-10 furos de 1cm no fundo de um vaso de 30L.</p>
+    </div>
+
+    <div class="page-number">Página 8</div>
+  </div>
+
+  <!-- MÓDULO 3 -->
+  <div class="page" id="modulo3">
+    <h1>Módulo 3: Cultivo em Vaso</h1>
+
+    <h2>Escolhendo o Vaso Certo</h2>
+
+    <table class="variety-table">
+      <tr>
+        <th>Planta</th>
+        <th>Volume Mínimo</th>
+        <th>Volume Ideal</th>
+        <th>Profundidade</th>
+      </tr>
+      <tr>
+        <td>Mini Pepino</td>
+        <td>15 litros</td>
+        <td>20 litros</td>
+        <td>30cm</td>
+      </tr>
+      <tr>
+        <td>Pepino Comum</td>
+        <td>20 litros</td>
+        <td>30 litros</td>
+        <td>35cm</td>
+      </tr>
+      <tr>
+        <td>Abobrinha</td>
+        <td>30 litros</td>
+        <td>50 litros</td>
+        <td>40cm</td>
+      </tr>
+      <tr>
+        <td>Abóbora</td>
+        <td>50 litros</td>
+        <td>100 litros</td>
+        <td>45cm</td>
+      </tr>
+      <tr>
+        <td>Melão</td>
+        <td>40 litros</td>
+        <td>60 litros</td>
+        <td>40cm</td>
+      </tr>
+      <tr>
+        <td>Melancia Mini</td>
+        <td>50 litros</td>
+        <td>80 litros</td>
+        <td>45cm</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>Alternativas Econômicas</h4>
+      <ul>
+        <li><strong>Baldes de 20L:</strong> Perfeitos para pepinos (faça furos!)</li>
+        <li><strong>Caixas d'água 100L:</strong> Ideais para abóboras e melancias</li>
+        <li><strong>Sacos de ráfia:</strong> Econômicos, descartáveis após safra</li>
+        <li><strong>Grow bags:</strong> Práticos, boa drenagem natural</li>
+      </ul>
+    </div>
+
+    <h2>Posicionamento e Luz</h2>
+
+    <div class="warning-box">
+      <h4>Cucurbitáceas PRECISAM de Sol!</h4>
+      <p>Mínimo <strong>6 horas de sol direto por dia</strong>. Menos que isso = poucas flores, pouca produção, plantas fracas. Em varandas parcialmente sombreadas, considere outras culturas.</p>
+    </div>
+
+    <h3>Dicas de Posicionamento:</h3>
+    <ul>
+      <li>Varandas voltadas para <strong>Norte ou Oeste</strong> são ideais no hemisfério Sul</li>
+      <li>Coloque o vaso no ponto de maior incidência solar</li>
+      <li>Evite correntes de vento forte constante</li>
+      <li>Deixe espaço para as ramas crescerem ou instale treliça</li>
+    </ul>
+
+    <div class="page-number">Página 9</div>
+  </div>
+
+  <!-- MÓDULO 3 - Tutoramento -->
+  <div class="page">
+    <h2>Tutoramento Vertical: A Solução para Espaços Pequenos</h2>
+
+    <p>Cultivar cucurbitáceas verticalmente economiza até 80% do espaço horizontal!</p>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Estrutura de Treliça</h4>
+      <p>Monte uma treliça de 1,5-2m de altura atrás do vaso. Use bambu, PVC, madeira ou tela de arame galvanizado.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Condução da Rama Principal</h4>
+      <p>Quando a planta tiver 30-40cm, comece a amarrar na treliça. Use barbante de sisal ou fita de amarrio - nunca arame!</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Poda de Condução</h4>
+      <p>Remova brotos laterais até 60cm de altura. Acima disso, deixe 2-3 ramas secundárias para aumentar produção.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">4</div>
+      <h4>Suporte para Frutos</h4>
+      <p>Frutos pesados (melão, melancia, abóbora) precisam de rede ou pano amarrado na treliça para não cair.</p>
+    </div>
+
+    <div class="recipe-card">
+      <h4>Modelo de Treliça Econômica</h4>
+      <p><strong>Materiais:</strong></p>
+      <ul>
+        <li>3 canos de PVC de 2m (20mm)</li>
+        <li>2 conectores T</li>
+        <li>2 conectores cotovelo 90°</li>
+        <li>Tela de arame ou rede de nylon</li>
+      </ul>
+      <p><strong>Montagem:</strong> Forme um "U" invertido com os canos, fixe a tela na estrutura. Enterre 30cm no vaso ou fixe com abraçadeiras na parede.</p>
+    </div>
+
+    <h2>Espaçamento em Cultivo Vertical</h2>
+
+    <table class="variety-table">
+      <tr>
+        <th>Planta</th>
+        <th>Horizontal</th>
+        <th>Vertical (com treliça)</th>
+        <th>Economia</th>
+      </tr>
+      <tr>
+        <td>Pepino</td>
+        <td>80x100cm</td>
+        <td>30x30cm</td>
+        <td>89%</td>
+      </tr>
+      <tr>
+        <td>Abobrinha</td>
+        <td>100x100cm</td>
+        <td>40x40cm</td>
+        <td>84%</td>
+      </tr>
+      <tr>
+        <td>Melão</td>
+        <td>100x150cm</td>
+        <td>50x50cm</td>
+        <td>83%</td>
+      </tr>
+    </table>
+
+    <div class="success-box">
+      <h4>Resultado Real</h4>
+      <p>Em uma varanda de 2x3m, usando treliças verticais, é possível cultivar 4 pepineiros + 2 abobrinhas + vasos de ervas. Sem treliça, caberia apenas 1 abobrinha!</p>
+    </div>
+
+    <div class="page-number">Página 10</div>
+  </div>
+
+  <!-- MÓDULO 4 -->
+  <div class="page" id="modulo4">
+    <h1>Módulo 4: Polinização Manual</h1>
+
+    <div class="intro-box">
+      <p><strong>Este é o módulo mais importante do guia!</strong> A falta de polinização é a causa #1 de frustração no cultivo de cucurbitáceas em apartamentos. Sem abelhas, você PRECISA fazer a polinização manual.</p>
+    </div>
+
+    <h2>Entendendo as Flores</h2>
+
+    <p>Cucurbitáceas têm flores masculinas e femininas separadas na mesma planta (são monóicas). Saber diferenciá-las é essencial:</p>
+
+    <div class="flower-comparison">
+      <div class="flower-type male">
+        <h4>Flor Masculina ♂</h4>
+        <p><strong>Identificação:</strong></p>
+        <ul style="text-align: left;">
+          <li>Haste fina e longa</li>
+          <li>Sem "bolinha" atrás</li>
+          <li>Centro com estames (pólen)</li>
+          <li>Aparecem primeiro e em maior quantidade</li>
+        </ul>
+      </div>
+      <div class="flower-type female">
+        <h4>Flor Feminina ♀</h4>
+        <p><strong>Identificação:</strong></p>
+        <ul style="text-align: left;">
+          <li>Haste curta e grossa</li>
+          <li>"Mini fruto" atrás da flor</li>
+          <li>Centro com estigma (pegajoso)</li>
+          <li>Aparecem depois, em menor número</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <h4>Por que só tem flores masculinas?</h4>
+      <p>Nas primeiras semanas, a planta produz apenas flores masculinas. Isso é normal! As femininas surgem quando a planta está mais madura (geralmente após 3-4 semanas de floração). Tenha paciência.</p>
+    </div>
+
+    <h2>A Técnica de Polinização Manual</h2>
+
+    <p>Existem dois métodos eficientes:</p>
+
+    <h3>Método 1: Cotonete ou Pincel</h3>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Colete o pólen</h4>
+      <p>Logo cedo (6-9h da manhã), quando as flores estão bem abertas, passe o cotonete ou pincel macio nos estames da flor masculina. O pólen é um pó amarelo.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Transfira para a flor feminina</h4>
+      <p>Com o mesmo cotonete cheio de pólen, esfregue gentilmente no centro da flor feminina (o estigma pegajoso).</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Repita</h4>
+      <p>Uma flor masculina pode polinizar 2-3 femininas. Use várias masculinas para garantir.</p>
+    </div>
+
+    <div class="page-number">Página 11</div>
+  </div>
+
+  <!-- MÓDULO 4 - Continuação -->
+  <div class="page">
+    <h3>Método 2: Flor Direta (Mais Eficiente)</h3>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Colha a flor masculina</h4>
+      <p>Destaque a flor masculina inteira da planta, segurando pela haste.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Remova as pétalas</h4>
+      <p>Retire as pétalas amarelas para expor completamente os estames com pólen.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Esfregue diretamente</h4>
+      <p>Pressione os estames da flor masculina diretamente no estigma da flor feminina, girando levemente para garantir transferência total do pólen.</p>
+    </div>
+
+    <div class="success-box">
+      <h4>Este é o método mais eficiente!</h4>
+      <p>Garante máxima transferência de pólen e taxa de pegamento acima de 90%.</p>
+    </div>
+
+    <h2>Quando e Quantas Vezes Polinizar</h2>
+
+    <div class="warning-box">
+      <h4>Horário Crítico!</h4>
+      <p>As flores de cucurbitáceas abrem de manhã cedo e fecham antes do meio-dia. O pólen fica viável por poucas horas. <strong>Polinize entre 6h e 10h da manhã</strong>, preferencialmente antes das 9h.</p>
+    </div>
+
+    <h3>Frequência:</h3>
+    <ul>
+      <li><strong>Pepino:</strong> Polinize toda flor feminina que aparecer</li>
+      <li><strong>Abobrinha:</strong> Polinize diariamente durante a floração</li>
+      <li><strong>Melão/Melancia:</strong> Polinize e depois limite a 2-3 frutos por planta</li>
+      <li><strong>Abóbora:</strong> Polinize 3-5 flores e deixe apenas 2-4 frutos desenvolverem</li>
+    </ul>
+
+    <h2>Sinais de Polinização Bem-Sucedida</h2>
+
+    <table class="variety-table">
+      <tr>
+        <th>Tempo após polinização</th>
+        <th>Sinal de sucesso</th>
+        <th>Sinal de falha</th>
+      </tr>
+      <tr>
+        <td>1-2 dias</td>
+        <td>Flor murcha mas mini fruto firme</td>
+        <td>Mini fruto amarelando</td>
+      </tr>
+      <tr>
+        <td>3-5 dias</td>
+        <td>Fruto crescendo visivelmente</td>
+        <td>Fruto murcha e cai</td>
+      </tr>
+      <tr>
+        <td>1 semana</td>
+        <td>Fruto dobrou de tamanho</td>
+        <td>Fruto apodreceu</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>Não desanime!</h4>
+      <p>Taxa de pegamento de 50-70% é normal mesmo com polinização manual. Se o fruto não vingar, não significa que você errou - às vezes a planta aborta por falta de energia ou condições climáticas.</p>
+    </div>
+
+    <div class="page-number">Página 12</div>
+  </div>
+
+  <!-- MÓDULO 5 -->
+  <div class="page" id="modulo5">
+    <h1>Módulo 5: Cuidados e Manutenção</h1>
+
+    <h2>Rega: O Equilíbrio Perfeito</h2>
+
+    <p>Cucurbitáceas precisam de água constante mas não toleram encharcamento.</p>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <strong>Frequência</strong>
+        1-2x ao dia no verão
+      </div>
+      <div class="info-item">
+        <strong>Quantidade</strong>
+        Até sair pelo furo
+      </div>
+      <div class="info-item">
+        <strong>Horário</strong>
+        Manhã cedo ou fim da tarde
+      </div>
+      <div class="info-item">
+        <strong>Onde</strong>
+        No substrato, não nas folhas
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <h4>Teste do Dedo</h4>
+      <p>Enfie o dedo 3-4cm no substrato. Se sentir úmido, não regue. Se sentir seco, regue abundantemente. O solo deve secar levemente entre regas, mas nunca ficar completamente seco.</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Sinais de Problema</h4>
+      <ul>
+        <li><strong>Folhas murchas de manhã:</strong> Falta água (ou raízes podres)</li>
+        <li><strong>Folhas murchas ao meio-dia:</strong> Normal no calor intenso</li>
+        <li><strong>Folhas amarelando da base:</strong> Possível excesso de água</li>
+        <li><strong>Frutos amargos:</strong> Estresse hídrico durante o crescimento</li>
+      </ul>
+    </div>
+
+    <h2>Adubação: Fome de Nutrientes</h2>
+
+    <p>Cucurbitáceas são "plantas gulosas" - exigem adubação constante para produzir bem.</p>
+
+    <h3>Cronograma de Adubação:</h3>
+
+    <div class="step-box">
+      <div class="step-number">1</div>
+      <h4>Adubação de Base (no plantio)</h4>
+      <p>O substrato já deve conter composto, húmus, farinha de osso e torta de mamona conforme receita anterior.</p>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">2</div>
+      <h4>Adubação de Crescimento (15-30 dias)</h4>
+      <p>Quando aparecerem as primeiras folhas verdadeiras, aplique adubo rico em nitrogênio:</p>
+      <ul>
+        <li>Bokashi: 1 colher de sopa por semana ao redor da planta</li>
+        <li>Ou húmus líquido: 100ml/L de água, 1x por semana</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <div class="step-number">3</div>
+      <h4>Adubação de Floração (30-45 dias)</h4>
+      <p>Quando iniciarem as flores, mude para adubo rico em fósforo e potássio:</p>
+      <ul>
+        <li>Farinha de osso: 1 colher de sopa quinzenal</li>
+        <li>Cinza de madeira: 1 colher de sopa quinzenal</li>
+        <li>Ou NPK 4-14-8: 1 colher de chá quinzenal</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 13</div>
+  </div>
+
+  <!-- MÓDULO 5 - Continuação -->
+  <div class="page">
+    <div class="step-box">
+      <div class="step-number">4</div>
+      <h4>Adubação de Frutificação (45+ dias)</h4>
+      <p>Com frutos em desenvolvimento, aumente potássio:</p>
+      <ul>
+        <li>Casca de banana seca triturada: 2 colheres de sopa</li>
+        <li>Sulfato de potássio: 1 colher de chá</li>
+        <li>Mantenha fósforo para novos frutos</li>
+      </ul>
+    </div>
+
+    <div class="recipe-card">
+      <h4>Receita: Adubo Líquido Caseiro para Cucurbitáceas</h4>
+      <p><strong>Ingredientes:</strong></p>
+      <ul>
+        <li>500g de cascas de banana</li>
+        <li>200g de borra de café</li>
+        <li>100g de casca de ovo triturada</li>
+        <li>5 litros de água</li>
+      </ul>
+      <p><strong>Modo de preparo:</strong></p>
+      <ol>
+        <li>Corte as cascas de banana em pedaços</li>
+        <li>Misture tudo em um balde</li>
+        <li>Deixe fermentar 7-10 dias, mexendo diariamente</li>
+        <li>Coe e dilua 1:10 (100ml para 1L de água)</li>
+        <li>Aplique semanalmente no substrato</li>
+      </ol>
+    </div>
+
+    <h2>Poda e Condução</h2>
+
+    <h3>Poda de Formação (Pepino e Melão)</h3>
+
+    <ul>
+      <li>Remova todos os brotos laterais até 50-60cm de altura</li>
+      <li>Acima disso, deixe 2-3 ramas secundárias</li>
+      <li>Quando atingir o topo da treliça, pode a ponta para estimular laterais</li>
+    </ul>
+
+    <h3>Poda de Frutificação (Melão e Melancia)</h3>
+
+    <ul>
+      <li>Após 2-3 frutos vingarem, corte a ponta da rama</li>
+      <li>Remova novos brotos e flores para concentrar energia nos frutos existentes</li>
+      <li>Mais frutos = frutos menores e menos doces</li>
+    </ul>
+
+    <h3>Abobrinha: Não Precisa Podar!</h3>
+
+    <p>Abobrinha cresce em formato de roseta e não precisa de poda. Apenas remova folhas velhas ou doentes da base.</p>
+
+    <div class="tip-box">
+      <h4>Desfolha Seletiva</h4>
+      <p>Remova folhas velhas, amareladas ou com sinais de doença da base da planta. Isso melhora a circulação de ar e reduz doenças fúngicas. Nunca remova mais de 20% das folhas de uma vez.</p>
+    </div>
+
+    <div class="page-number">Página 14</div>
+  </div>
+
+  <!-- MÓDULO 6 -->
+  <div class="page" id="modulo6">
+    <h1>Módulo 6: Pragas e Doenças</h1>
+
+    <p>Cucurbitáceas têm algumas pragas específicas. Conhecê-las é metade da batalha.</p>
+
+    <h2>Pragas Principais</h2>
+
+    <div class="pest-mini">
+      <h4>1. Pulgões</h4>
+      <p><strong>Identificação:</strong> Pequenos insetos verdes, pretos ou amarelos agrupados em brotos e folhas novas.</p>
+      <p><strong>Dano:</strong> Sugam seiva, transmitem viroses, folhas enrolam.</p>
+      <p><strong>Controle:</strong></p>
+      <ul>
+        <li>Jato forte de água para derrubar</li>
+        <li>Calda de sabão neutro (10g em 1L de água)</li>
+        <li>Óleo de neem (5ml em 1L de água + gotas de detergente)</li>
+      </ul>
+    </div>
+
+    <div class="pest-mini">
+      <h4>2. Mosca-Branca</h4>
+      <p><strong>Identificação:</strong> Pequenas moscas brancas que voam quando a folha é tocada. Ficam na parte de baixo das folhas.</p>
+      <p><strong>Dano:</strong> Sugam seiva, excretam melado, atraem fumagina, transmitem viroses.</p>
+      <p><strong>Controle:</strong></p>
+      <ul>
+        <li>Armadilhas amarelas adesivas</li>
+        <li>Óleo de neem semanalmente</li>
+        <li>Aspirador de pó (sim, funciona!) de manhã cedo quando estão lentas</li>
+      </ul>
+    </div>
+
+    <div class="pest-mini">
+      <h4>3. Broca-das-Cucurbitáceas</h4>
+      <p><strong>Identificação:</strong> Lagarta que penetra na haste perto do solo. Planta murcha de repente.</p>
+      <p><strong>Dano:</strong> Destrói o sistema vascular, mata a planta.</p>
+      <p><strong>Controle:</strong></p>
+      <ul>
+        <li>Inspecione a base regularmente</li>
+        <li>Se encontrar furo, corte e remova a lagarta com faca</li>
+        <li>Enterrar parte da rama para enraizar como backup</li>
+        <li>Bacillus thuringiensis (Bt) preventivo</li>
+      </ul>
+    </div>
+
+    <div class="pest-mini">
+      <h4>4. Ácaros</h4>
+      <p><strong>Identificação:</strong> Pontos minúsculos que se movem na parte de baixo das folhas. Folhas ficam com aspecto bronzeado/prateado.</p>
+      <p><strong>Dano:</strong> Raspam células, folhas secam e caem.</p>
+      <p><strong>Controle:</strong></p>
+      <ul>
+        <li>Aumentar umidade ambiente (borrifar água)</li>
+        <li>Calda de alho-pimenta</li>
+        <li>Enxofre molhável em casos graves</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 15</div>
+  </div>
+
+  <!-- MÓDULO 6 - Continuação -->
+  <div class="page">
+    <h2>Doenças Comuns</h2>
+
+    <div class="pest-mini">
+      <h4>1. Oídio (Pó Branco)</h4>
+      <p><strong>Identificação:</strong> Manchas brancas como talco nas folhas, especialmente as mais velhas.</p>
+      <p><strong>Causa:</strong> Fungo favorecido por tempo seco com noites úmidas.</p>
+      <p><strong>Controle:</strong></p>
+      <ul>
+        <li>Leite diluído 10% (100ml em 1L de água), aplique ao sol</li>
+        <li>Bicarbonato de sódio (1 colher de chá em 1L de água + sabão)</li>
+        <li>Remova folhas muito afetadas</li>
+        <li>Melhore circulação de ar</li>
+      </ul>
+    </div>
+
+    <div class="pest-mini">
+      <h4>2. Míldio</h4>
+      <p><strong>Identificação:</strong> Manchas amarelas na parte de cima das folhas, com mofo acinzentado embaixo.</p>
+      <p><strong>Causa:</strong> Fungo favorecido por umidade alta e água nas folhas.</p>
+      <p><strong>Controle:</strong></p>
+      <ul>
+        <li>Evite molhar folhas</li>
+        <li>Calda bordalesa preventiva</li>
+        <li>Remova folhas afetadas imediatamente</li>
+      </ul>
+    </div>
+
+    <div class="pest-mini">
+      <h4>3. Antracnose</h4>
+      <p><strong>Identificação:</strong> Manchas marrons circulares com centro claro em folhas e frutos.</p>
+      <p><strong>Causa:</strong> Fungo que sobrevive em restos culturais.</p>
+      <p><strong>Controle:</strong></p>
+      <ul>
+        <li>Remova folhas e frutos afetados</li>
+        <li>Não reutilize substrato contaminado</li>
+        <li>Calda bordalesa ou sulfato de cobre</li>
+      </ul>
+    </div>
+
+    <div class="pest-mini">
+      <h4>4. Virose do Mosaico</h4>
+      <p><strong>Identificação:</strong> Folhas com padrão de mosaico verde claro/escuro, deformadas. Frutos manchados.</p>
+      <p><strong>Causa:</strong> Vírus transmitido por pulgões e mosca-branca.</p>
+      <p><strong>Controle:</strong></p>
+      <ul>
+        <li>NÃO TEM CURA - arranque a planta inteira</li>
+        <li>Controle rigoroso de pulgões e mosca-branca</li>
+        <li>Use variedades resistentes</li>
+        <li>Lave ferramentas com álcool entre plantas</li>
+      </ul>
+    </div>
+
+    <div class="danger-box">
+      <h4>Viroses são Incuráveis!</h4>
+      <p>Se sua planta tiver virose, arranque imediatamente e jogue no lixo (não composte). Ela só vai contaminar as outras. Plante variedades resistentes na próxima safra.</p>
+    </div>
+
+    <div class="page-number">Página 16</div>
+  </div>
+
+  <!-- MÓDULO 7 -->
+  <div class="page" id="modulo7">
+    <h1>Módulo 7: Colheita e Produtividade</h1>
+
+    <h2>Ponto Ideal de Colheita</h2>
+
+    <div class="harvest-box">
+      <h3>Pepino</h3>
+      <p><strong>Quando:</strong> Firme, cor verde uniforme, tamanho adequado à variedade.</p>
+      <p><strong>Tamanho ideal:</strong></p>
+      <ul>
+        <li>Japonês: 20-25cm</li>
+        <li>Caipira: 15-20cm</li>
+        <li>Conserva: 5-8cm</li>
+      </ul>
+      <p><strong>Dica:</strong> Colha antes de amarelarem ou engrossarem demais. Pepino maduro demais fica amargo e com sementes duras.</p>
+    </div>
+
+    <div class="harvest-box">
+      <h3>Abobrinha</h3>
+      <p><strong>Quando:</strong> Casca brilhante, tamanho de 15-20cm. Unha deve riscar a casca facilmente.</p>
+      <p><strong>Dica:</strong> Colha frequentemente! Abobrinha deixada na planta cresce demais, fica aguada e para a produção de novas flores.</p>
+      <p><strong>Colheita ideal:</strong> A cada 2-3 dias no pico da produção.</p>
+    </div>
+
+    <div class="harvest-box">
+      <h3>Abóbora</h3>
+      <p><strong>Quando:</strong> Casca dura (unha não risca), cor característica da variedade, pedúnculo secando.</p>
+      <p><strong>Cura:</strong> Deixe curar ao sol por 7-10 dias após colheita. Isso aumenta o teor de açúcar e a durabilidade.</p>
+      <p><strong>Armazenamento:</strong> Local seco e arejado, dura 3-6 meses!</p>
+    </div>
+
+    <div class="harvest-box">
+      <h3>Melão</h3>
+      <p><strong>Quando:</strong></p>
+      <ul>
+        <li>Aroma doce perceptível</li>
+        <li>A ponta oposta ao pedúnculo cede levemente à pressão</li>
+        <li>Rachadura circular ao redor do pedúnculo (alguns tipos)</li>
+        <li>Mudança de cor (verde → amarelo em alguns tipos)</li>
+      </ul>
+    </div>
+
+    <div class="harvest-box">
+      <h3>Melancia</h3>
+      <p><strong>Quando:</strong></p>
+      <ul>
+        <li>Mancha do solo muda de branco para amarelo-creme</li>
+        <li>Gavinha mais próxima do fruto seca</li>
+        <li>Som oco ao bater (como tambor, não como sino)</li>
+        <li>Casca perde brilho e fica mais fosca</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Página 17</div>
+  </div>
+
+  <!-- PRODUTIVIDADE -->
+  <div class="page">
+    <h2>Expectativa de Produtividade</h2>
+
+    <table class="productivity-table">
+      <tr>
+        <th>Planta</th>
+        <th>Produção/Pé</th>
+        <th>Valor Mercado</th>
+        <th>Economia</th>
+      </tr>
+      <tr>
+        <td>Pepino Japonês</td>
+        <td>15-25 frutos</td>
+        <td>R$ 3-4/unidade</td>
+        <td>R$ 45-100</td>
+      </tr>
+      <tr>
+        <td>Mini Pepino</td>
+        <td>30-50 frutos</td>
+        <td>R$ 15-20/bandeja</td>
+        <td>R$ 30-60</td>
+      </tr>
+      <tr>
+        <td>Abobrinha Italiana</td>
+        <td>10-20 frutos</td>
+        <td>R$ 4-6/unidade</td>
+        <td>R$ 40-120</td>
+      </tr>
+      <tr>
+        <td>Abóbora Cabotiá</td>
+        <td>2-4 frutos (2-3kg cada)</td>
+        <td>R$ 10-15/kg</td>
+        <td>R$ 40-180</td>
+      </tr>
+      <tr>
+        <td>Melão</td>
+        <td>2-3 frutos</td>
+        <td>R$ 12-20/unidade</td>
+        <td>R$ 24-60</td>
+      </tr>
+      <tr>
+        <td>Melancia Mini</td>
+        <td>1-2 frutos</td>
+        <td>R$ 20-30/unidade</td>
+        <td>R$ 20-60</td>
+      </tr>
+    </table>
+
+    <div class="success-box">
+      <h4>Cálculo de Retorno</h4>
+      <p>Investimento médio por planta: R$ 15-25 (vaso, substrato, semente)</p>
+      <p>Retorno médio: R$ 40-120 em produção</p>
+      <p><strong>ROI: 200-500% em uma única safra!</strong></p>
+    </div>
+
+    <h2>Maximizando a Produção</h2>
+
+    <div class="checklist">
+      <h4>Checklist para Alta Produtividade</h4>
+      <ul>
+        <li>Sol mínimo de 6 horas diárias</li>
+        <li>Rega consistente (nunca deixar secar completamente)</li>
+        <li>Adubação semanal durante floração e frutificação</li>
+        <li>Polinização manual de todas as flores femininas</li>
+        <li>Colheita frequente (estimula novas flores)</li>
+        <li>Controle preventivo de pragas</li>
+        <li>Tutoramento adequado para variedades trepadeiras</li>
+        <li>Limite de frutos em melão/melancia (qualidade > quantidade)</li>
+      </ul>
+    </div>
+
+    <blockquote>
+      "Minha abobrinha produziu 18 frutos em 2 meses! Dei para vizinhos, família, e ainda sobrou. Incrível como uma planta pode produzir tanto."
+      <cite>- Carla, São Paulo</cite>
+    </blockquote>
+
+    <div class="page-number">Página 18</div>
+  </div>
+
+  <!-- BÔNUS -->
+  <div class="page" id="bonus">
+    <h1>Bônus: Receitas e Conservação</h1>
+
+    <h2>Conservando a Colheita</h2>
+
+    <h3>Pepino em Conserva (Picles)</h3>
+    <div class="recipe-card">
+      <h4>Ingredientes:</h4>
+      <ul>
+        <li>500g de pepinos pequenos</li>
+        <li>500ml de vinagre de maçã</li>
+        <li>250ml de água</li>
+        <li>2 colheres de sal</li>
+        <li>1 colher de açúcar</li>
+        <li>Dill, alho, pimenta a gosto</li>
+      </ul>
+      <h4>Modo de Preparo:</h4>
+      <ol>
+        <li>Lave os pepinos e corte as pontas</li>
+        <li>Ferva água, vinagre, sal e açúcar</li>
+        <li>Coloque pepinos e temperos em pote esterilizado</li>
+        <li>Despeje a salmoura quente, feche</li>
+        <li>Aguarde 2 semanas antes de consumir</li>
+      </ol>
+      <p><strong>Validade:</strong> 6 meses fechado, 1 mês na geladeira após abrir</p>
+    </div>
+
+    <h3>Abobrinha em Conserva no Óleo</h3>
+    <div class="recipe-card">
+      <h4>Ingredientes:</h4>
+      <ul>
+        <li>1kg de abobrinha em rodelas</li>
+        <li>Sal a gosto</li>
+        <li>Vinagre para cobrir</li>
+        <li>Azeite de oliva</li>
+        <li>Alho, orégano, pimenta calabresa</li>
+      </ul>
+      <h4>Modo de Preparo:</h4>
+      <ol>
+        <li>Corte abobrinhas em rodelas de 0,5cm</li>
+        <li>Salgue e deixe descansar 1 hora, escorra</li>
+        <li>Cozinhe em vinagre por 5 minutos, escorra</li>
+        <li>Seque bem as rodelas</li>
+        <li>Em pote esterilizado, alterne camadas de abobrinha e temperos</li>
+        <li>Cubra com azeite</li>
+      </ol>
+      <p><strong>Validade:</strong> 3 meses na geladeira</p>
+    </div>
+
+    <h3>Congelamento de Abobrinha</h3>
+    <ol>
+      <li>Corte em cubos ou rodelas</li>
+      <li>Branqueie: 2 minutos em água fervente, depois água gelada</li>
+      <li>Seque bem e congele em porções</li>
+      <li>Use direto em refogados (não descongele antes)</li>
+    </ol>
+    <p><strong>Validade:</strong> 6-8 meses no freezer</p>
+
+    <div class="page-number">Página 19</div>
+  </div>
+
+  <!-- CHECKLIST FINAL -->
+  <div class="page">
+    <h2>Checklist de Cultivo - Para Imprimir</h2>
+
+    <div class="checklist">
+      <h4>Preparação (Semana 0)</h4>
+      <ul>
+        <li>Sementes de boa procedência adquiridas</li>
+        <li>Vaso do tamanho adequado preparado</li>
+        <li>Drenagem instalada</li>
+        <li>Substrato enriquecido misturado</li>
+        <li>Local com 6+ horas de sol definido</li>
+        <li>Treliça montada (se necessário)</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Plantio e Crescimento (Semanas 1-4)</h4>
+      <ul>
+        <li>Sementes plantadas a 2cm de profundidade</li>
+        <li>Substrato mantido úmido (não encharcado)</li>
+        <li>Mudas desbastadas (deixar apenas a mais forte)</li>
+        <li>Transplante feito com 2-3 folhas verdadeiras</li>
+        <li>Adubação de crescimento iniciada</li>
+        <li>Amarração na treliça iniciada</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Floração (Semanas 5-8)</h4>
+      <ul>
+        <li>Flores masculinas aparecendo (normal!)</li>
+        <li>Flores femininas identificadas</li>
+        <li>Polinização manual diária (6-10h)</li>
+        <li>Adubação de floração (fósforo/potássio)</li>
+        <li>Controle preventivo de pragas</li>
+        <li>Poda de condução realizada</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Frutificação e Colheita (Semanas 8+)</h4>
+      <ul>
+        <li>Frutos se desenvolvendo após polinização</li>
+        <li>Rede de suporte em frutos pesados</li>
+        <li>Adubação de frutificação (potássio)</li>
+        <li>Colheita no ponto certo</li>
+        <li>Colheita frequente para estimular produção</li>
+        <li>Pragas e doenças monitoradas</li>
+      </ul>
+    </div>
+
+    <div class="final-box">
+      <h2>Parabéns!</h2>
+      <p>Você agora tem todo o conhecimento para cultivar cucurbitáceas incríveis em casa!</p>
+      <p>Lembre-se: a prática leva à perfeição. Sua primeira safra pode não ser perfeita, mas cada tentativa é um aprendizado.</p>
+      <p><strong>Bom cultivo!</strong></p>
+    </div>
+
+    <div class="page-number">Página 20</div>
+  </div>
+
+  <!-- MÓDULO 8: GUIA POR ESPÉCIE -->
+  <div class="page" id="modulo8">
+    <h1>Módulo 8: Guia Completo por Espécie</h1>
+
+    <div class="plant-profile">
+      <h2>Abobrinha Italiana</h2>
+      <table class="productivity-table">
+        <tr><th>Característica</th><th>Detalhe</th></tr>
+        <tr><td>Dias para colheita</td><td>45-60 dias</td></tr>
+        <tr><td>Produção por planta</td><td>15-25 frutos/ciclo</td></tr>
+        <tr><td>Tamanho ideal colheita</td><td>15-20cm</td></tr>
+        <tr><td>Espaçamento</td><td>80x80cm</td></tr>
+        <tr><td>Vaso mínimo</td><td>30L</td></tr>
+      </table>
+      <div class="tip-box">
+        <h4>Dica de Ouro</h4>
+        <p>Colha jovens! Deixar crescer muito faz a planta parar de produzir novos frutos.</p>
+      </div>
+    </div>
+
+    <div class="plant-profile">
+      <h2>Pepino</h2>
+      <table class="productivity-table">
+        <tr><th>Característica</th><th>Detalhe</th></tr>
+        <tr><td>Dias para colheita</td><td>50-70 dias</td></tr>
+        <tr><td>Produção por planta</td><td>10-20 frutos</td></tr>
+        <tr><td>Tamanho ideal</td><td>15-20cm (tipo salada)</td></tr>
+        <tr><td>Espaçamento</td><td>60x100cm</td></tr>
+        <tr><td>Tutoramento</td><td>Obrigatório (cresce 2m+)</td></tr>
+      </table>
+    </div>
+
+    <div class="page-number">Página 21</div>
+  </div>
+
+  <div class="page">
+    <div class="plant-profile">
+      <h2>Melancia</h2>
+      <table class="productivity-table">
+        <tr><th>Característica</th><th>Detalhe</th></tr>
+        <tr><td>Dias para colheita</td><td>80-110 dias</td></tr>
+        <tr><td>Produção por planta</td><td>2-4 frutos</td></tr>
+        <tr><td>Espaçamento</td><td>200x200cm (!)</td></tr>
+        <tr><td>Dica</td><td>Bata no fruto - som oco = maduro</td></tr>
+      </table>
+      <div class="warning-box">
+        <h4>Precisa de Muito Espaço!</h4>
+        <p>Não recomendada para vasos. Ideal para quintais e sítios.</p>
+      </div>
+    </div>
+
+    <div class="plant-profile">
+      <h2>Melão</h2>
+      <table class="productivity-table">
+        <tr><th>Característica</th><th>Detalhe</th></tr>
+        <tr><td>Dias para colheita</td><td>75-90 dias</td></tr>
+        <tr><td>Produção por planta</td><td>3-5 frutos</td></tr>
+        <tr><td>Sinal de maduro</td><td>Aroma doce, casca amarelada</td></tr>
+        <tr><td>Espaçamento</td><td>150x150cm</td></tr>
+      </table>
+    </div>
+
+    <div class="plant-profile">
+      <h2>Abóbora Moranga</h2>
+      <table class="productivity-table">
+        <tr><th>Característica</th><th>Detalhe</th></tr>
+        <tr><td>Dias para colheita</td><td>100-120 dias</td></tr>
+        <tr><td>Produção por planta</td><td>2-4 frutos grandes</td></tr>
+        <tr><td>Durabilidade</td><td>6-12 meses após colheita!</td></tr>
+        <tr><td>Espaçamento</td><td>200x200cm</td></tr>
+      </table>
+    </div>
+
+    <div class="page-number">Página 22</div>
+  </div>
+
+  <!-- MÓDULO 9: SALVANDO SEMENTES -->
+  <div class="page" id="modulo9">
+    <h1>Módulo 9: Salvando Sementes de Cucurbitáceas</h1>
+
+    <div class="intro-box">
+      <h3>Por que Salvar?</h3>
+      <ul>
+        <li>Economia: nunca mais comprar sementes</li>
+        <li>Seleção: escolha as melhores plantas</li>
+        <li>Adaptação: sementes adaptam ao seu clima</li>
+      </ul>
+    </div>
+
+    <h2>Passo a Passo</h2>
+    <div class="step-box">
+      <h4>1. Escolha o Fruto</h4>
+      <p>Deixe amadurecer completamente na planta. Para abobrinhas, significa deixar MUITO além do ponto de consumo.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>2. Retire as Sementes</h4>
+      <p>Corte o fruto, retire as sementes com a polpa.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>3. Fermentação (Opcional)</h4>
+      <p>Para pepinos: deixe 2-3 dias em água. Remove a gelatina.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>4. Lavagem e Secagem</h4>
+      <p>Lave bem em peneira. Seque em local arejado por 2 semanas.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>5. Armazenamento</h4>
+      <p>Envelope de papel, local seco e fresco. Dura 4-6 anos!</p>
+    </div>
+
+    <div class="page-number">Página 23</div>
+  </div>
+
+  <div class="page">
+    <h2>Cuidado com Cruzamentos!</h2>
+    <div class="warning-box">
+      <h4>Importante</h4>
+      <p>Cucurbitáceas cruzam facilmente entre si. Se você plantar abobrinha e abóbora moranga juntas, as sementes podem gerar híbridos estranhos!</p>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Plantar apenas uma variedade por vez</li>
+        <li>Isolar por 500m+ de distância</li>
+        <li>Polinização manual controlada</li>
+      </ul>
+    </div>
+
+    <h2>Tabela de Viabilidade</h2>
+    <table class="productivity-table">
+      <tr><th>Espécie</th><th>Duração das Sementes</th></tr>
+      <tr><td>Abobrinha</td><td>4-5 anos</td></tr>
+      <tr><td>Pepino</td><td>5-6 anos</td></tr>
+      <tr><td>Melancia</td><td>4-5 anos</td></tr>
+      <tr><td>Melão</td><td>5-6 anos</td></tr>
+      <tr><td>Abóbora</td><td>4-6 anos</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>Teste de Viabilidade</h4>
+      <p>Coloque 10 sementes em papel úmido. Após 7 dias, conte quantas germinaram. 70%+ = lote bom!</p>
+    </div>
+
+    <div class="page-number">Página 24</div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="page" id="faq">
+    <h1>Bônus 2: 25 Perguntas Frequentes</h1>
+
+    <div class="troubleshoot">
+      <h4>1. Por que só flores masculinas?</h4>
+      <p>Normal no início! Femininas aparecem depois. Tenha paciência.</p>
+    </div>
+
+    <div class="troubleshoot">
+      <h4>2. Fruto amarelou e caiu - por quê?</h4>
+      <p>Falta de polinização. Faça polinização manual.</p>
+    </div>
+
+    <div class="troubleshoot">
+      <h4>3. Posso plantar em vaso?</h4>
+      <p>Sim! Abobrinha e pepino funcionam bem. Melancia precisa de muito espaço.</p>
+    </div>
+
+    <div class="troubleshoot">
+      <h4>4. Precisa de muito sol?</h4>
+      <p>Sim! Mínimo 6h de sol direto. Mais = melhor.</p>
+    </div>
+
+    <div class="troubleshoot">
+      <h4>5. Com que frequência regar?</h4>
+      <p>Diariamente no calor. Solo sempre úmido, nunca encharcado.</p>
+    </div>
+
+    <div class="troubleshoot">
+      <h4>6-10. Folhas com pó branco?</h4>
+      <p>Oídio! Trate com leite diluído (1:9) ou bicarbonato.</p>
+    </div>
+
+    <div class="troubleshoot">
+      <h4>11-15. Qual o melhor adubo?</h4>
+      <p>Rico em potássio para frutificação. Cinzas de madeira funcionam bem.</p>
+    </div>
+
+    <div class="page-number">Página 25</div>
+  </div>
+
+  <div class="page">
+    <div class="troubleshoot">
+      <h4>16-20. Pepino amargo - por quê?</h4>
+      <p>Estresse hídrico ou calor excessivo. Regue mais regularmente.</p>
+    </div>
+
+    <div class="troubleshoot">
+      <h4>21-25. Abobrinha gigante - serve?</h4>
+      <p>Fica fibrosa e sem sabor. Melhor para sopa ou dar para animais.</p>
+    </div>
+
+    <h2>Checklist de Acompanhamento</h2>
+    <div class="checklist">
+      <h4>Semanalmente</h4>
+      <ul>
+        <li>Verificar umidade do solo</li>
+        <li>Inspecionar pragas e doenças</li>
+        <li>Polinizar manualmente se necessário</li>
+        <li>Colher frutos no ponto</li>
+        <li>Remover folhas doentes</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>A Cada 15 Dias</h4>
+      <ul>
+        <li>Adubação de cobertura</li>
+        <li>Conduzir ramas/tutorar</li>
+        <li>Verificar amarrações</li>
+      </ul>
+    </div>
+
+    <div class="final-box">
+      <h2>Parabéns!</h2>
+      <p>Você agora domina o cultivo de cucurbitáceas!</p>
+      <p><strong>Boas colheitas!</strong></p>
+    </div>
+
+    <div class="page-number">Página 26</div>
+  </div>
+
+  <!-- PÁGINA FINAL -->
+  <div class="page">
+    <div class="final-box">
+      <div class="mascote">
+        <svg width="120" height="144" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+          <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pgf16)" stroke="#b5441c" stroke-width="2"/>
+          <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+          <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+          <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bgf16)" stroke="#15803d" stroke-width="2.5"/>
+          <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+          <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+          <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+          <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+          <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+          <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+          <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="pgf16" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ea7531"/>
+              <stop offset="100%" stop-color="#b5441c"/>
+            </linearGradient>
+            <radialGradient id="bgf16" cx="40%" cy="30%">
+              <stop offset="0%" stop-color="#86efac"/>
+              <stop offset="50%" stop-color="#4ade80"/>
+              <stop offset="100%" stop-color="#22c55e"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+      <h2>Obrigado por adquirir este guia!</h2>
+      <p>Esperamos que ele transforme sua varanda em uma fonte abundante de pepinos crocantes, abobrinhas suculentas e quem sabe até melancias doces!</p>
+      <p style="margin-top: 30px;">
+        <strong>Minha Horta em Casa</strong><br>
+        <span style="color: #22c55e;">minhahortaemcasa.com.br</span>
+      </p>
+      <p style="margin-top: 20px; font-size: 14px; color: #6b7280;">
+        Dúvidas? Entre em contato pelo site.<br>
+        Compartilhe seus resultados nas redes sociais!
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

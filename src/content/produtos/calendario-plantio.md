@@ -5,6 +5,7 @@ originalPrice: 19
 description: "Saiba exatamente o que plantar em cada mês do ano"
 category: "guia"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ck6e55654b?funnel=fn4be7a366"
 ---
 
 # Calendário de Plantio Anual - R$ 9

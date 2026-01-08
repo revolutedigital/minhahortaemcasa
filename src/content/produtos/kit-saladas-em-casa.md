@@ -5,6 +5,7 @@ originalPrice: 49
 description: "Cultive folhas e hortaliças para saladas o ano todo"
 category: "combo"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ckc501d171?funnel=fn0ae15bc1"
 ---
 
 # Kit Saladas Frescas em Casa - R$ 22

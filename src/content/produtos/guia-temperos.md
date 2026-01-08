@@ -5,6 +5,7 @@ originalPrice: 45
 description: "Guias completos: manjericão, alecrim, hortelã, cebolinha e salsinha"
 category: "combo"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ck24bf9eac?funnel=fnd9ff362b"
 ---
 
 # Kit 5 Temperos Essenciais - R$ 19

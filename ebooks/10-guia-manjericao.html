@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guia Completo do Manjericão - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.6; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .page:last-child { page-break-after: avoid; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 44px; font-weight: 800; color: #15803d; margin-bottom: 20px; }
+    .cover .subtitle { font-size: 22px; color: #166534; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #15803d; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #22c55e; }
+    h1 { font-size: 32px; color: #15803d; margin-bottom: 20px; border-bottom: 3px solid #22c55e; padding-bottom: 10px; }
+    h2 { font-size: 26px; color: #166534; margin: 25px 0 15px; }
+    h3 { font-size: 20px; color: #15803d; margin: 20px 0 10px; }
+    h4 { font-size: 18px; color: #166534; margin: 15px 0 10px; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; }
+    .intro-box { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-radius: 12px; padding: 25px; margin: 20px 0; text-align: center; }
+    .intro-box h2 { color: #065f46; margin-top: 0; border: none; }
+    .highlight-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid #22c55e; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .danger-box { background: #fef2f2; border-left: 4px solid #ef4444; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .success-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .variety-card { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 15px 0; }
+    .variety-card h4 { color: #15803d; margin-top: 0; font-size: 18px; }
+    .variety-card .tag { display: inline-block; background: #dcfce7; color: #166534; padding: 3px 10px; border-radius: 20px; font-size: 12px; margin-right: 8px; }
+    .step-box { background: #f8fafc; border-radius: 8px; padding: 20px; margin: 15px 0; border-left: 4px solid #22c55e; }
+    .step-box h4 { color: #15803d; margin-top: 0; }
+    .step-number { display: inline-block; width: 28px; height: 28px; background: #22c55e; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: bold; margin-right: 10px; }
+    .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 20px 0; }
+    .info-item { background: #f0fdf4; padding: 15px; border-radius: 8px; text-align: center; }
+    .info-item .label { font-size: 12px; color: #6b7280; text-transform: uppercase; }
+    .info-item .value { font-size: 18px; font-weight: 700; color: #15803d; }
+    .recipe-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .recipe-box h4 { color: #92400e; margin-top: 0; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #d1d5db; padding: 12px; text-align: left; }
+    th { background: #15803d; color: white; }
+    tr:nth-child(even) { background: #f0fdf4; }
+    .checklist { background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    .checklist li { list-style: none; padding-left: 30px; position: relative; }
+    .checklist li:before { content: "☐"; position: absolute; left: 0; color: #22c55e; font-size: 18px; }
+    .tip-box { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .problem-solution { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 15px 0; }
+    .problem { background: #fef2f2; padding: 15px; border-radius: 8px; }
+    .problem h5 { color: #dc2626; margin: 0 0 10px 0; }
+    .solution { background: #f0fdf4; padding: 15px; border-radius: 8px; }
+    .solution h5 { color: #16a34a; margin: 0 0 10px 0; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+    .toc { background: #f8fafc; padding: 30px; border-radius: 12px; margin: 20px 0; }
+    .toc h2 { text-align: center; margin-bottom: 20px; }
+    .toc ul { list-style: none; margin: 0; padding: 0; }
+    .toc li { padding: 10px 0; border-bottom: 1px dashed #d1d5db; }
+    .toc li:last-child { border-bottom: none; }
+    .module-header { background: linear-gradient(135deg, #15803d, #22c55e); color: white; padding: 30px; border-radius: 12px; margin: 30px 0 20px 0; text-align: center; }
+    .module-header h2 { color: white; border: none; margin: 0; }
+    .module-header p { color: #dcfce7; margin: 10px 0 0 0; }
+    .month-calendar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0; }
+    .month-item { background: #f0fdf4; padding: 10px; border-radius: 8px; text-align: center; font-size: 14px; }
+    .month-item.active { background: #22c55e; color: white; }
+    .month-item.partial { background: #86efac; color: #166534; }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#pg10)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bg10)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/><ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/><ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/><ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs><linearGradient id="pg10" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient><radialGradient id="bg10" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient></defs>
+      </svg>
+    </div>
+    <h1>Guia Completo do Manjericão</h1>
+    <p class="subtitle">Do plantio à colheita perfeita</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>Sumário</h2>
+      <ul>
+        <li><strong>Capítulo 1:</strong> Conhecendo o Manjericão</li>
+        <li><strong>Capítulo 2:</strong> 5 Variedades e Qual Escolher</li>
+        <li><strong>Capítulo 3:</strong> Plantio por Sementes</li>
+        <li><strong>Capítulo 4:</strong> Propagação por Estaquia</li>
+        <li><strong>Capítulo 5:</strong> Solo, Vaso e Local</li>
+        <li><strong>Capítulo 6:</strong> Rega e Fertilização</li>
+        <li><strong>Capítulo 7:</strong> Podas para Produção Máxima</li>
+        <li><strong>Capítulo 8:</strong> Como Evitar Floração Precoce</li>
+        <li><strong>Capítulo 9:</strong> Colheita e Conservação</li>
+        <li><strong>Capítulo 10:</strong> 10 Receitas com Manjericão</li>
+        <li><strong>Capítulo 11:</strong> 15 Problemas e Soluções</li>
+      </ul>
+    </div>
+
+    <div class="intro-box">
+      <h2>O Rei das Ervas Aromáticas!</h2>
+      <p>O manjericão é a estrela da culinária italiana e uma das ervas mais amadas do mundo. Com seu aroma incomparável e sabor fresco, ele transforma qualquer prato. Aprenda a cultivar manjericão abundante e saudável!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 1</div>
+  </div>
+
+  <!-- CAPÍTULO 1: CONHECENDO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 1</h2>
+      <p>Conhecendo o Manjericão</p>
+    </div>
+
+    <h3>Origem e História</h3>
+    <p>O manjericão (Ocimum basilicum) é originário da Índia e do sudeste asiático, onde é cultivado há mais de 5.000 anos. O nome "basilicum" vem do grego "basileus" (rei), refletindo sua importância histórica.</p>
+    <p>Chegou ao Mediterrâneo através das rotas de comércio e tornou-se fundamental na culinária italiana. No Brasil, é uma das ervas mais cultivadas em hortas caseiras.</p>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="label">Nome Científico</div>
+        <div class="value">Ocimum basilicum</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Família</div>
+        <div class="value">Lamiaceae</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Origem</div>
+        <div class="value">Índia/Ásia</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Ciclo de Vida</div>
+        <div class="value">Anual (1 ano)</div>
+      </div>
+    </div>
+
+    <h3>Características da Planta</h3>
+    <ul>
+      <li><strong>Altura:</strong> 30-60cm (varia por variedade)</li>
+      <li><strong>Folhas:</strong> Ovais, verdes brilhantes (ou roxas), muito aromáticas</li>
+      <li><strong>Flores:</strong> Brancas ou rosadas em espigasv(reduzem produção de folhas)</li>
+      <li><strong>Aroma:</strong> Doce, com notas de anis e cravo</li>
+      <li><strong>Ciclo:</strong> Planta anual - vive uma temporada (primavera a outono)</li>
+    </ul>
+
+    <div class="warning-box">
+      <h4>Manjericão é Anual!</h4>
+      <p>Diferente do alecrim e hortelã (perenes), o manjericão completa seu ciclo em uma temporada. Após florescer e produzir sementes, a planta morre. Por isso, é importante fazer novas mudas regularmente.</p>
+    </div>
+
+    <h3>Condições Ideais de Cultivo</h3>
+    <table>
+      <tr>
+        <th>Fator</th>
+        <th>Ideal</th>
+        <th>Tolerável</th>
+      </tr>
+      <tr>
+        <td>Sol</td>
+        <td>6-8 horas de sol direto</td>
+        <td>Mínimo 4 horas</td>
+      </tr>
+      <tr>
+        <td>Temperatura</td>
+        <td>20°C a 30°C</td>
+        <td>15°C a 35°C (não tolera frio!)</td>
+      </tr>
+      <tr>
+        <td>Umidade do solo</td>
+        <td>Úmido, mas bem drenado</td>
+        <td>Não deixe secar demais</td>
+      </tr>
+      <tr>
+        <td>pH do solo</td>
+        <td>6,0 a 7,0</td>
+        <td>5,5 a 7,5</td>
+      </tr>
+    </table>
+
+    <div class="danger-box">
+      <h4>Manjericão ODEIA Frio!</h4>
+      <p>Temperaturas abaixo de 10°C danificam o manjericão. Uma única geada pode matá-lo. No Sul do Brasil, cultive na primavera/verão ou em ambiente protegido.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 2</div>
+  </div>
+
+  <!-- CAPÍTULO 2: VARIEDADES -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 2</h2>
+      <p>5 Variedades e Qual Escolher</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>1. Manjericão Italiano/Genovês</h4>
+      <span class="tag">Mais Comum</span>
+      <span class="tag">Pesto</span>
+      <span class="tag">Culinária</span>
+      <p><strong>Folhas:</strong> Grandes (5-8cm), verde intenso, aromáticas</p>
+      <p><strong>Aroma:</strong> Clássico, doce, levemente apimentado</p>
+      <p><strong>Uso:</strong> O melhor para pesto, caprese, molhos italianos</p>
+      <p><strong>Ideal para:</strong> Quem quer o manjericão "tradicional"</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>2. Manjericão Alfavaca/Basilicão</h4>
+      <span class="tag">Brasileiro</span>
+      <span class="tag">Rústico</span>
+      <p><strong>Folhas:</strong> Menores, textura mais áspera, sabor mais forte</p>
+      <p><strong>Aroma:</strong> Intenso, com notas de canela e cravo</p>
+      <p><strong>Uso:</strong> Culinária brasileira, feijão, carnes, chás</p>
+      <p><strong>Ideal para:</strong> Mais resistente ao calor tropical</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>3. Manjericão Roxo</h4>
+      <span class="tag">Decorativo</span>
+      <span class="tag">Gourmet</span>
+      <p><strong>Folhas:</strong> Roxas/púrpura, muito decorativas</p>
+      <p><strong>Aroma:</strong> Similar ao italiano, levemente mais suave</p>
+      <p><strong>Uso:</strong> Decoração de pratos, saladas, vinagres aromáticos</p>
+      <p><strong>Ideal para:</strong> Quem quer visual diferenciado</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>4. Manjericão Limão</h4>
+      <span class="tag">Cítrico</span>
+      <span class="tag">Bebidas</span>
+      <p><strong>Folhas:</strong> Menores, verde claro</p>
+      <p><strong>Aroma:</strong> Cítrico intenso, limão com manjericão</p>
+      <p><strong>Uso:</strong> Drinks, sobremesas, peixes, chás</p>
+      <p><strong>Ideal para:</strong> Receitas que pedem toque cítrico</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>5. Manjericão Tailandês</h4>
+      <span class="tag">Asiático</span>
+      <span class="tag">Resistente</span>
+      <p><strong>Folhas:</strong> Estreitas, caule roxo</p>
+      <p><strong>Aroma:</strong> Forte, com anis e especiarias</p>
+      <p><strong>Uso:</strong> Culinária asiática, currys, salteados</p>
+      <p><strong>Ideal para:</strong> Mais resistente ao calor</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>Qual Escolher para Começar?</h4>
+      <ul>
+        <li><strong>Culinária italiana:</strong> Manjericão Italiano/Genovês</li>
+        <li><strong>Culinária brasileira:</strong> Alfavaca</li>
+        <li><strong>Decoração:</strong> Manjericão Roxo</li>
+        <li><strong>Clima muito quente:</strong> Alfavaca ou Tailandês</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 3</div>
+  </div>
+
+  <!-- CAPÍTULO 3: PLANTIO POR SEMENTES -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 3</h2>
+      <p>Plantio por Sementes</p>
+    </div>
+
+    <h3>Melhor Época para Plantar</h3>
+    <div class="month-calendar">
+      <div class="month-item">JAN</div>
+      <div class="month-item partial">FEV</div>
+      <div class="month-item active">MAR</div>
+      <div class="month-item active">ABR</div>
+      <div class="month-item partial">MAI</div>
+      <div class="month-item">JUN</div>
+      <div class="month-item">JUL</div>
+      <div class="month-item partial">AGO</div>
+      <div class="month-item active">SET</div>
+      <div class="month-item active">OUT</div>
+      <div class="month-item active">NOV</div>
+      <div class="month-item">DEZ</div>
+    </div>
+    <p><em>Verde escuro = ideal | Verde claro = possível | Branco = evitar</em></p>
+    <p>No Brasil, a melhor época é primavera (setembro-novembro). Evite plantar no inverno.</p>
+
+    <h3>Passo a Passo do Plantio</h3>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Prepare a sementeira:</strong> Use copinhos, células de isopor ou bandeja de mudas. Preencha com substrato leve (60% terra + 40% vermiculita ou areia fina).</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Semeie superficialmente:</strong> As sementes são pequenas. Coloque 2-3 por célula, cobrindo com uma camada MUITO fina de substrato (2-3mm). Elas precisam de luz para germinar!</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Umidade constante:</strong> Borrife água delicadamente. Cubra com plástico transparente ou tampa para manter a umidade. Retire o plástico diariamente para arejar.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Local ideal:</strong> Coloque em local quente (20-25°C) com luz indireta. Nunca deixe as sementes em sol direto forte.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">5</span> <strong>Germinação:</strong> Em 5-10 dias as sementes germinarão. Retire o plástico quando brotar. Mantenha o substrato úmido mas não encharcado.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">6</span> <strong>Desbaste:</strong> Quando as mudas tiverem 2 pares de folhas verdadeiras, mantenha apenas a mais forte por célula (corte as outras com tesoura).</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">7</span> <strong>Transplante:</strong> Com 4-6 folhas verdadeiras (cerca de 8-10cm), transplante para o vaso definitivo ou canteiro.</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>Dica de Germinação</h4>
+      <p>Sementes de manjericão liberam uma mucilagem quando molhadas (como chia). Isso é normal! Essa gelatina ajuda a manter a umidade e protege a semente.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 4</div>
+  </div>
+
+  <!-- CAPÍTULO 4: ESTAQUIA -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 4</h2>
+      <p>Propagação por Estaquia</p>
+    </div>
+
+    <div class="success-box">
+      <h4>Método Mais Rápido!</h4>
+      <p>A estaquia é o jeito mais fácil de multiplicar manjericão. Em 7-14 dias você tem uma nova planta pronta - muito mais rápido que sementes!</p>
+    </div>
+
+    <h3>Estaquia em Água</h3>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Escolha o ramo:</strong> Selecione um ramo saudável de 10-15cm que ainda não floresceu. Deve ter pelo menos 4-6 folhas.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Corte:</strong> Corte logo abaixo de um nó (onde saem as folhas) em ângulo de 45°.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Prepare a estaca:</strong> Remova as folhas da metade inferior. Deixe apenas as 4 folhas do topo.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Coloque na água:</strong> Use um copo ou pote de vidro com água limpa. A estaca deve ficar com apenas o caule submerso (folhas fora).</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">5</span> <strong>Posicione:</strong> Coloque em local com luz indireta (não sol direto forte). Temperatura ambiente de 20-25°C.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">6</span> <strong>Troque a água:</strong> A cada 2-3 dias, troque por água limpa para evitar bactérias.</p>
+    </div>
+
+    <div class="step-box">
+      <p><span class="step-number">7</span> <strong>Raízes:</strong> Em 7-14 dias, aparecerão raízes brancas. Quando tiverem 3-5cm, transplante para vaso com terra.</p>
+    </div>
+
+    <h3>Estaquia Direta no Solo</h3>
+    <p>Também funciona, mas exige mais atenção:</p>
+    <ul>
+      <li>Prepare a estaca da mesma forma</li>
+      <li>Plante diretamente em substrato úmido</li>
+      <li>Mantenha o solo SEMPRE úmido por 2 semanas</li>
+      <li>Proteja do sol direto forte</li>
+      <li>Taxa de sucesso: ~70% (água é mais segura: ~90%)</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>Comprou Manjericão no Supermercado?</h4>
+      <p>Aquele manjericão em vaso do mercado serve para estaquia! Corte os ramos maiores, coloque na água e multiplique sua planta. É grátis!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 5</div>
+  </div>
+
+  <!-- CAPÍTULO 5: SOLO E VASO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 5</h2>
+      <p>Solo, Vaso e Local</p>
+    </div>
+
+    <h3>Substrato Ideal</h3>
+    <p>O manjericão gosta de solo fértil, leve e bem drenado.</p>
+
+    <div class="recipe-box">
+      <h4>Receita de Substrato para Manjericão</h4>
+      <ul>
+        <li><strong>40%</strong> Terra vegetal ou substrato comercial</li>
+        <li><strong>30%</strong> Composto orgânico ou húmus de minhoca</li>
+        <li><strong>20%</strong> Perlita, vermiculita ou areia grossa</li>
+        <li><strong>10%</strong> Casca de arroz carbonizada (opcional)</li>
+      </ul>
+      <p><em>Mistura rica, leve e bem drenada.</em></p>
+    </div>
+
+    <h3>Escolha do Vaso</h3>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="label">Tamanho Mínimo</div>
+        <div class="value">20cm diâmetro</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Tamanho Ideal</div>
+        <div class="value">30-40cm diâmetro</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Profundidade</div>
+        <div class="value">Mínimo 20cm</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Material</div>
+        <div class="value">Qualquer com furos</div>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <h4>Montando o Vaso</h4>
+      <p><span class="step-number">1</span> Coloque camada de 3cm de argila expandida ou pedriscos no fundo</p>
+      <p><span class="step-number">2</span> Adicione manta de bidim ou TNT sobre a drenagem</p>
+      <p><span class="step-number">3</span> Preencha com substrato até 2/3</p>
+      <p><span class="step-number">4</span> Plante a muda no centro</p>
+      <p><span class="step-number">5</span> Complete com substrato (deixe 2cm da borda)</p>
+      <p><span class="step-number">6</span> Regue bem após o plantio</p>
+    </div>
+
+    <h3>Local Ideal</h3>
+    <ul>
+      <li><strong>Sol:</strong> Mínimo 4-6 horas de sol direto (quanto mais, melhor)</li>
+      <li><strong>Proteção:</strong> Proteger de ventos fortes e chuvas intensas</li>
+      <li><strong>Temperatura:</strong> Locais quentes (acima de 15°C)</li>
+      <li><strong>Ventilação:</strong> Boa circulação de ar previne fungos</li>
+    </ul>
+
+    <div class="tip-box">
+      <h4>Manjericão em Apartamento</h4>
+      <p>Funciona bem em varandas e janelas ensolaradas! Use vasos autoirrigáveis se você viaja muito. Evite ambientes com ar-condicionado direto (resseca).</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 6</div>
+  </div>
+
+  <!-- CAPÍTULO 6: REGA E FERTILIZAÇÃO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 6</h2>
+      <p>Rega e Fertilização</p>
+    </div>
+
+    <h3>Rega</h3>
+    <p>O manjericão gosta de umidade equilibrada - nem seco demais, nem encharcado.</p>
+
+    <table>
+      <tr>
+        <th>Estação</th>
+        <th>Frequência</th>
+        <th>Quantidade</th>
+      </tr>
+      <tr>
+        <td>Verão (quente)</td>
+        <td>Diariamente ou 2x ao dia</td>
+        <td>Até sair pelos furos</td>
+      </tr>
+      <tr>
+        <td>Primavera/Outono</td>
+        <td>A cada 1-2 dias</td>
+        <td>Solo úmido</td>
+      </tr>
+      <tr>
+        <td>Inverno (se cultivar)</td>
+        <td>A cada 2-3 dias</td>
+        <td>Moderada</td>
+      </tr>
+    </table>
+
+    <div class="step-box">
+      <h4>Como Saber Quando Regar</h4>
+      <p><span class="step-number">1</span> Enfie o dedo 2-3cm no substrato</p>
+      <p><span class="step-number">2</span> Se estiver seco = hora de regar</p>
+      <p><span class="step-number">3</span> Se estiver úmido = espere mais 1 dia</p>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>Falta de Água</h5>
+        <ul>
+          <li>Folhas murchas e caídas</li>
+          <li>Folhas perdendo brilho</li>
+          <li>Crescimento lento</li>
+        </ul>
+      </div>
+      <div class="solution">
+        <h5>Excesso de Água</h5>
+        <ul>
+          <li>Folhas amarelando</li>
+          <li>Caule mole na base</li>
+          <li>Raízes podres</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Fertilização</h3>
+    <p>O manjericão é uma planta "gulosa" - responde muito bem à adubação regular.</p>
+
+    <table>
+      <tr>
+        <th>Tipo de Adubo</th>
+        <th>Frequência</th>
+        <th>Benefício</th>
+      </tr>
+      <tr>
+        <td>Húmus de minhoca</td>
+        <td>Quinzenal</td>
+        <td>Nutrição completa e suave</td>
+      </tr>
+      <tr>
+        <td>Composto orgânico</td>
+        <td>Mensal</td>
+        <td>Melhora estrutura do solo</td>
+      </tr>
+      <tr>
+        <td>Bokashi</td>
+        <td>A cada 2-3 semanas</td>
+        <td>Crescimento vigoroso</td>
+      </tr>
+      <tr>
+        <td>NPK 10-10-10</td>
+        <td>A cada 3 semanas</td>
+        <td>Crescimento rápido</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>Cuidado com Excesso de Nitrogênio!</h4>
+      <p>Muito nitrogênio faz o manjericão crescer rápido, mas com menos aroma. Prefira adubos orgânicos equilibrados. Folhas verde muito escuro podem indicar excesso.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 7</div>
+  </div>
+
+  <!-- CAPÍTULO 7: PODAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 7</h2>
+      <p>Podas para Produção Máxima</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>O Segredo do Manjericão Abundante</h4>
+      <p>A poda regular é o segredo #1 para ter manjericão cheio e produtivo. Sem poda, a planta cresce espigada, com poucas folhas e floresce rapidamente. COM poda, ela ramifica e produz muito mais!</p>
+    </div>
+
+    <h3>A Técnica do "Pinçamento"</h3>
+    <p>Sempre que colher ou podar, corte logo ACIMA de um par de folhas. Do ponto de corte nascerão DOIS novos ramos!</p>
+
+    <div class="step-box">
+      <h4>Poda de Desponte (Semanal)</h4>
+      <p><span class="step-number">1</span> Identifique os ramos mais altos (geralmente 4-6 pares de folhas)</p>
+      <p><span class="step-number">2</span> Corte a ponta do ramo logo acima do 3º ou 4º par de folhas</p>
+      <p><span class="step-number">3</span> Use tesoura limpa ou unhas (para ramos tenros)</p>
+      <p><span class="step-number">4</span> Do ponto de corte nascerão 2 novos ramos!</p>
+    </div>
+
+    <h3>O Ciclo de Crescimento</h3>
+    <table>
+      <tr>
+        <th>Semana</th>
+        <th>Ação</th>
+        <th>Resultado</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1 ramo cortado</td>
+        <td>2 ramos nascem</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>2 ramos cortados</td>
+        <td>4 ramos nascem</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>4 ramos cortados</td>
+        <td>8 ramos nascem</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>8 ramos cortados</td>
+        <td>16 ramos nascem</td>
+      </tr>
+    </table>
+    <p><em>Em 4 semanas de poda regular, você multiplica sua produção por 16!</em></p>
+
+    <h3>Quando Começar a Podar</h3>
+    <ul>
+      <li><strong>Primeira poda:</strong> Quando a muda tiver 15-20cm e 6 pares de folhas</li>
+      <li><strong>Frequência:</strong> Toda semana, ou sempre que for usar na cozinha</li>
+      <li><strong>Quantidade:</strong> Pode remover até 1/3 da planta por vez</li>
+    </ul>
+
+    <div class="danger-box">
+      <h4>Nunca Corte Deixando Apenas Caule!</h4>
+      <p>Sempre deixe pelo menos 2-3 pares de folhas em cada ramo. Se cortar muito baixo (só caule), o ramo pode não rebrotar.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 8</div>
+  </div>
+
+  <!-- CAPÍTULO 8: EVITAR FLORAÇÃO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 8</h2>
+      <p>Como Evitar Floração Precoce</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Por que Evitar a Floração?</h4>
+      <p>Quando o manjericão floresce, ele para de produzir folhas e concentra energia em fazer sementes. As folhas ficam menores, mais amargas e menos aromáticas. Após florescer e produzir sementes, a planta morre.</p>
+    </div>
+
+    <h3>O que Causa a Floração</h3>
+    <ul>
+      <li><strong>Estresse hídrico:</strong> Falta ou excesso de água</li>
+      <li><strong>Temperaturas extremas:</strong> Muito calor ou frio</li>
+      <li><strong>Falta de poda:</strong> Planta "entende" que deve reproduzir</li>
+      <li><strong>Dias longos:</strong> Mais de 14h de luz acelera floração</li>
+      <li><strong>Envelhecimento natural:</strong> Após 3-4 meses</li>
+    </ul>
+
+    <h3>Como Prevenir</h3>
+    <div class="checklist">
+      <ul>
+        <li>Pode as pontas semanalmente (estimula crescimento vegetativo)</li>
+        <li>Mantenha a planta bem regada e adubada</li>
+        <li>Proteja de temperaturas extremas</li>
+        <li>Colha regularmente (planta "pensa" que ainda não produziu)</li>
+        <li>Corte botões florais ASSIM que aparecerem</li>
+      </ul>
+    </div>
+
+    <h3>Quando Aparecerem Flores...</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Corte imediatamente:</strong> Assim que vir os botões, corte o ramo todo (não só a flor)</p>
+      <p><span class="step-number">2</span> <strong>Corte bem abaixo:</strong> Corte 2-3 nós abaixo do botão para garantir</p>
+      <p><span class="step-number">3</span> <strong>Adube:</strong> Dê uma dose de fertilizante para estimular novo crescimento</p>
+      <p><span class="step-number">4</span> <strong>Regue bem:</strong> Mantenha a planta hidratada</p>
+    </div>
+
+    <div class="tip-box">
+      <h4>E se Quiser Sementes?</h4>
+      <p>No final da temporada, deixe uma planta florescer completamente. Quando as flores secarem, colete as sementes (pequenas e pretas). Guarde em envelope de papel em local seco por até 3 anos.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Renovação Constante</h4>
+      <p>A melhor estratégia é ter sempre mudas novas crescendo. A cada 2-3 meses, faça novas estacas ou semeie. Assim, quando uma planta começar a envelhecer, você terá outra pronta!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 9</div>
+  </div>
+
+  <!-- CAPÍTULO 9: COLHEITA E CONSERVAÇÃO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 9</h2>
+      <p>Colheita e Conservação</p>
+    </div>
+
+    <h3>Quando Colher</h3>
+    <ul>
+      <li><strong>Primeira colheita:</strong> Quando a planta tiver 6-8 pares de folhas (cerca de 20cm)</li>
+      <li><strong>Melhor momento:</strong> Pela manhã, após o orvalho secar</li>
+      <li><strong>Melhor fase:</strong> Antes da floração (máximo aroma)</li>
+    </ul>
+
+    <h3>Como Colher</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Corte ramos inteiros:</strong> É melhor que arrancar folhas individuais</p>
+      <p><span class="step-number">2</span> <strong>Corte acima de um nó:</strong> Logo acima de um par de folhas para estimular rebrota</p>
+      <p><span class="step-number">3</span> <strong>Colha por fora:</strong> Comece pelos ramos externos e mais velhos</p>
+      <p><span class="step-number">4</span> <strong>Nunca mais que 1/3:</strong> Deixe sempre 2/3 da planta para recuperar</p>
+    </div>
+
+    <h3>Conservação</h3>
+
+    <div class="variety-card">
+      <h4>Fresco (até 1 semana)</h4>
+      <p><strong>Método 1 - Bouquet:</strong> Coloque os ramos em um copo com água (como flores) e cubra com saco plástico. Guarde na geladeira ou em local fresco.</p>
+      <p><strong>Método 2 - Papel:</strong> Envolva em papel toalha levemente úmido e coloque em saco plástico aberto na geladeira.</p>
+    </div>
+
+    <div class="variety-card">
+      <h4>Congelado (até 6 meses)</h4>
+      <ul>
+        <li><strong>Folhas inteiras:</strong> Lave, seque bem, espalhe em assadeira, congele. Transfira para saco zip.</li>
+        <li><strong>Em azeite:</strong> Pique as folhas, coloque em forminhas de gelo, cubra com azeite e congele.</li>
+        <li><strong>Pasta:</strong> Bata folhas com um pouco de azeite, congele em porções.</li>
+      </ul>
+    </div>
+
+    <div class="variety-card">
+      <h4>Seco (até 1 ano)</h4>
+      <p>O manjericão seco perde muito do aroma, mas ainda é útil:</p>
+      <ul>
+        <li>Pendure ramos em local seco, escuro e arejado por 2 semanas</li>
+        <li>Ou use desidratador a 35°C por 4-6 horas</li>
+        <li>Guarde em pote de vidro escuro</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h4>Proporção Fresco x Seco</h4>
+      <p>3 colheres de manjericão fresco = 1 colher de manjericão seco</p>
+      <p>Sempre prefira fresco quando possível - o sabor é incomparavelmente melhor!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 10</div>
+  </div>
+
+  <!-- CAPÍTULO 10: RECEITAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 10</h2>
+      <p>10 Receitas com Manjericão</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>1. Pesto Genovês Clássico</h4>
+      <ul>
+        <li>2 xícaras de folhas de manjericão fresco</li>
+        <li>1/3 xícara de pinhões (ou castanha de caju)</li>
+        <li>2 dentes de alho</li>
+        <li>1/2 xícara de parmesão ralado</li>
+        <li>1/2 xícara de azeite extra virgem</li>
+        <li>Sal a gosto</li>
+      </ul>
+      <p>Bata tudo no processador, adicionando o azeite aos poucos. Dura 1 semana na geladeira, 3 meses congelado.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>2. Salada Caprese</h4>
+      <ul>
+        <li>Tomates maduros fatiados</li>
+        <li>Mussarela de búfala fatiada</li>
+        <li>Folhas de manjericão fresco</li>
+        <li>Azeite, sal e pimenta</li>
+      </ul>
+      <p>Alterne fatias de tomate e mussarela. Coloque folhas de manjericão entre elas. Regue com azeite e tempere.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>3. Azeite de Manjericão</h4>
+      <ul>
+        <li>500ml de azeite extra virgem</li>
+        <li>1 xícara de folhas de manjericão</li>
+      </ul>
+      <p>Lave e seque BEM as folhas (umidade estraga). Coloque no azeite em garrafa de vidro. Deixe 2 semanas. Dura 2 meses.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>4. Água Aromatizada</h4>
+      <ul>
+        <li>1 litro de água gelada</li>
+        <li>10 folhas de manjericão</li>
+        <li>1/2 limão fatiado</li>
+        <li>1/2 pepino fatiado</li>
+      </ul>
+      <p>Amasse levemente o manjericão para liberar o aroma. Misture tudo e deixe gelar por 2 horas.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>5. Manteiga de Manjericão</h4>
+      <ul>
+        <li>200g de manteiga em temperatura ambiente</li>
+        <li>1/4 xícara de manjericão picado fino</li>
+        <li>1 dente de alho picado</li>
+        <li>Sal a gosto</li>
+      </ul>
+      <p>Misture tudo com garfo. Enrole em plástico filme formando um rolo. Congele. Use em carnes, massas e pães.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 11</div>
+  </div>
+
+  <div class="page">
+    <h3>Mais Receitas com Manjericão</h3>
+
+    <div class="recipe-box">
+      <h4>6. Bruschetta de Tomate</h4>
+      <ul>
+        <li>Pão italiano fatiado e tostado</li>
+        <li>Tomates picados</li>
+        <li>Manjericão em tiras (chiffonade)</li>
+        <li>Alho, azeite, sal</li>
+      </ul>
+      <p>Esfregue alho no pão tostado. Cubra com tomates temperados e manjericão. Finalize com azeite.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>7. Limonada com Manjericão</h4>
+      <ul>
+        <li>4 limões (suco)</li>
+        <li>1 litro de água</li>
+        <li>4 colheres de açúcar (ou a gosto)</li>
+        <li>10 folhas de manjericão</li>
+      </ul>
+      <p>Bata tudo no liquidificador. Coe e sirva gelado com folhas de manjericão para decorar.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>8. Pizza Margherita</h4>
+      <ul>
+        <li>Massa de pizza</li>
+        <li>Molho de tomate</li>
+        <li>Mussarela fatiada</li>
+        <li>Manjericão fresco (APÓS assar)</li>
+        <li>Azeite</li>
+      </ul>
+      <p>Asse a pizza normalmente. Adicione o manjericão fresco DEPOIS de sair do forno para preservar o aroma.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>9. Risoto de Manjericão</h4>
+      <p>Prepare seu risoto favorito e, ao final, adicione:</p>
+      <ul>
+        <li>1/2 xícara de folhas de manjericão</li>
+        <li>2 colheres de pesto</li>
+        <li>Parmesão ralado</li>
+      </ul>
+      <p>Misture delicadamente com o fogo já desligado.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>10. Sorvete de Manjericão</h4>
+      <ul>
+        <li>500ml de creme de leite</li>
+        <li>1/2 xícara de manjericão</li>
+        <li>200g de leite condensado</li>
+      </ul>
+      <p>Bata o manjericão com um pouco de creme de leite. Misture com os demais ingredientes. Congele por 6 horas. Sabor surpreendente!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 12</div>
+  </div>
+
+  <!-- CAPÍTULO 11: PROBLEMAS E SOLUÇÕES -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 11</h2>
+      <p>15 Problemas Comuns e Soluções</p>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>1. Folhas Amarelando</h5>
+        <p>Causas: excesso de água, falta de nutrientes, ou raízes enoveladas.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Verifique drenagem, reduza rega, adube com húmus, ou transplante para vaso maior.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>2. Folhas com Manchas Pretas</h5>
+        <p>Causa: fungo (geralmente por excesso de umidade nas folhas).</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Remova folhas afetadas. Não molhe folhas ao regar. Melhore ventilação. Pulverize bicarbonato.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>3. Planta Espigada/Alta</h5>
+        <p>Causa: falta de poda ou pouca luz.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Pode as pontas para estimular ramificação. Mova para local mais ensolarado.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>4. Floração Precoce</h5>
+        <p>Causa: estresse (calor, sede, falta de poda).</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Corte todos os botões imediatamente. Pode toda a planta em 1/3. Adube e regue bem.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>5. Folhas Murchando</h5>
+        <p>Causa: falta de água, sol muito forte, ou raízes danificadas.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Regue profundamente. Proteja do sol da tarde. Verifique se não há pragas nas raízes.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>6. Pulgões</h5>
+        <p>Pequenos insetos verdes/pretos nas folhas novas.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Jatos de água forte. Sabão de coco diluído (5g/litro). Óleo de neem.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>7. Lagartas</h5>
+        <p>Folhas comidas, presença de fezes escuras.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Remoção manual. Bacillus thuringiensis (Bt). Atraia pássaros.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 13</div>
+  </div>
+
+  <div class="page">
+    <h3>Mais Problemas e Soluções</h3>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>8. Folhas Enrolando</h5>
+        <p>Causa: falta de água, ácaros, ou excesso de calor.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Aumente a rega. Borrife água nas folhas. Proteja do sol intenso da tarde.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>9. Crescimento Lento</h5>
+        <p>Causa: pouco sol, falta de nutrientes, ou temperaturas baixas.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Mova para local ensolarado. Adube a cada 2 semanas. Proteja do frio.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>10. Folhas Pálidas</h5>
+        <p>Causa: falta de nitrogênio ou sol excessivo.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Adube com húmus ou composto. Se sol muito forte, ofereça sombra parcial à tarde.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>11. Planta Morreu Após Transplantar</h5>
+        <p>Causa: choque de transplante.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Transplante no fim da tarde. Mantenha úmido por 1 semana. Proteja do sol direto por 3-5 dias.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>12. Sementes Não Germinam</h5>
+        <p>Causa: sementes velhas, muito fundo, ou substrato seco.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Use sementes novas. Cubra apenas 2-3mm. Mantenha sempre úmido. Temperatura 20-25°C.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>13. Pouco Aroma</h5>
+        <p>Causa: excesso de nitrogênio, pouco sol, ou genética.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Reduza adubação. Aumente sol. Colha pela manhã. Considere trocar variedade.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>14. Caule Mole/Podre na Base</h5>
+        <p>Causa: fungo de solo (pythium) por excesso de umidade.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Difícil recuperar. Faça estacas das partes saudáveis. Melhore drenagem para próximas plantas.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h5>15. Folhas com Bordas Queimadas</h5>
+        <p>Causa: excesso de fertilizante ou água com muito cloro/sal.</p>
+      </div>
+      <div class="solution">
+        <h5>Solução</h5>
+        <p>Reduza adubação. Use água filtrada ou deixe a água descansar 24h antes de regar.</p>
+      </div>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 14</div>
+  </div>
+
+  <!-- CAPÍTULO 12: CULTIVO POR REGIÃO DO BRASIL -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 12</h2>
+      <p>Cultivo por Região do Brasil</p>
+    </div>
+
+    <h3>Região Sul (RS, SC, PR)</h3>
+    <div class="step-box">
+      <h4>Desafios:</h4>
+      <ul>
+        <li>Invernos rigorosos com geadas</li>
+        <li>Temperaturas abaixo de 10°C por meses</li>
+        <li>Manjericão morre no frio</li>
+      </ul>
+      <h4>Soluções:</h4>
+      <ul>
+        <li><strong>Cultivo sazonal:</strong> Setembro a Abril</li>
+        <li><strong>Estufas simples:</strong> Cobertura plástica para proteção</li>
+        <li><strong>Cultivo indoor:</strong> Perto de janelas ensolaradas no inverno</li>
+        <li><strong>Fazer estacas:</strong> Em março, faça mudas para cultivar dentro de casa</li>
+      </ul>
+      <h4>Melhor época para plantar:</h4>
+      <p>Setembro-Outubro (após risco de geadas)</p>
+    </div>
+
+    <h3>Região Sudeste (SP, RJ, MG, ES)</h3>
+    <div class="step-box">
+      <h4>Vantagens:</h4>
+      <ul>
+        <li>Clima ameno permite cultivo quase o ano todo</li>
+        <li>Invernos suaves na maioria das áreas</li>
+      </ul>
+      <h4>Cuidados:</h4>
+      <ul>
+        <li><strong>Áreas serranas:</strong> Proteger de geadas no inverno</li>
+        <li><strong>Litoral:</strong> Atenção à salinidade e umidade excessiva</li>
+        <li><strong>Verão intenso:</strong> Sombreamento parcial nas horas mais quentes</li>
+      </ul>
+      <h4>Melhor época:</h4>
+      <p>Agosto a Março (pode plantar o ano todo com cuidados)</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 15</div>
+  </div>
+
+  <div class="page">
+    <h3>Região Centro-Oeste (GO, MT, MS, DF)</h3>
+    <div class="step-box">
+      <h4>Características:</h4>
+      <ul>
+        <li>Estação seca muito prolongada</li>
+        <li>Calor intenso no verão</li>
+        <li>Boa luminosidade o ano todo</li>
+      </ul>
+      <h4>Cuidados:</h4>
+      <ul>
+        <li><strong>Irrigação:</strong> Fundamental na estação seca (maio-setembro)</li>
+        <li><strong>Mulching:</strong> Cobertura morta para reter umidade</li>
+        <li><strong>Sombreamento:</strong> Tela 30-50% nas horas mais quentes</li>
+        <li><strong>Vasos grandes:</strong> Retêm mais umidade</li>
+      </ul>
+    </div>
+
+    <h3>Região Nordeste</h3>
+    <div class="step-box">
+      <h4>Características:</h4>
+      <ul>
+        <li>Sol intenso o ano todo</li>
+        <li>Duas situações: semiárido (seco) ou litoral (úmido)</li>
+      </ul>
+      <h4>Semiárido (Sertão):</h4>
+      <ul>
+        <li>Irrigação rigorosa é essencial</li>
+        <li>Cultive em vasos para controlar água</li>
+        <li>Sombreamento obrigatório 11h-15h</li>
+      </ul>
+      <h4>Litoral/Zona da Mata:</h4>
+      <ul>
+        <li>Umidade favorece fungos - boa drenagem</li>
+        <li>Atenção à salinidade em áreas costeiras</li>
+        <li>Pode cultivar o ano todo</li>
+      </ul>
+    </div>
+
+    <h3>Região Norte</h3>
+    <div class="step-box">
+      <h4>Características:</h4>
+      <ul>
+        <li>Clima equatorial quente e úmido</li>
+        <li>Chuvas intensas em parte do ano</li>
+        <li>Sem problema de frio</li>
+      </ul>
+      <h4>Cuidados:</h4>
+      <ul>
+        <li><strong>Drenagem excelente:</strong> Evitar encharcamento</li>
+        <li><strong>Fungos:</strong> Maior risco pela umidade - boa circulação de ar</li>
+        <li><strong>Pragas:</strong> Mais intensas no calor úmido</li>
+        <li>Cultive em locais cobertos na época de chuvas fortes</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 16</div>
+  </div>
+
+  <!-- CAPÍTULO 13: CONSÓRCIO COM OUTRAS PLANTAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 13</h2>
+      <p>Consórcio: Plantas Companheiras</p>
+    </div>
+
+    <p>O manjericão não só cresce bem com outras plantas como pode melhorar o sabor de algumas e proteger outras de pragas!</p>
+
+    <h3>Melhores Companheiras</h3>
+    <table>
+      <tr>
+        <th>Planta</th>
+        <th>Benefício do Consórcio</th>
+        <th>Distância</th>
+      </tr>
+      <tr>
+        <td>Tomate</td>
+        <td>Melhora sabor, repele mosca branca</td>
+        <td>30cm</td>
+      </tr>
+      <tr>
+        <td>Pimenta/Pimentão</td>
+        <td>Mesmo regime de água e sol</td>
+        <td>30cm</td>
+      </tr>
+      <tr>
+        <td>Petúnia</td>
+        <td>Atrai polinizadores, repele pulgões</td>
+        <td>20cm</td>
+      </tr>
+      <tr>
+        <td>Aspargo</td>
+        <td>Repele besouro do aspargo</td>
+        <td>40cm</td>
+      </tr>
+      <tr>
+        <td>Orégano</td>
+        <td>Mesmo clima mediterrâneo</td>
+        <td>25cm</td>
+      </tr>
+    </table>
+
+    <div class="success-box">
+      <h4>O Casamento Perfeito: Manjericão + Tomate</h4>
+      <p>A combinação mais famosa! O manjericão repele pragas do tomate e, segundo jardineiros experientes, melhora o sabor dos frutos. Além disso, na cozinha formam a dupla perfeita para molhos!</p>
+    </div>
+
+    <h3>Plantas para EVITAR Próximas</h3>
+    <div class="danger-box">
+      <h4>Não plante manjericão próximo de:</h4>
+      <ul>
+        <li><strong>Sálvia:</strong> Inibe o crescimento do manjericão</li>
+        <li><strong>Arruda:</strong> Alelopatia negativa</li>
+        <li><strong>Alecrim:</strong> Competem por nutrientes similares</li>
+        <li><strong>Hortelã:</strong> Muito invasiva, domina o espaço</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 17</div>
+  </div>
+
+  <div class="page">
+    <h3>Projeto: Vaso de Consórcio</h3>
+    <div class="step-box">
+      <h4>Vaso "Pizza Garden" - 40cm de diâmetro</h4>
+      <p>Monte um vaso temático com os ingredientes de uma pizza margherita:</p>
+      <ul>
+        <li><strong>Centro:</strong> 1 pé de tomate cereja (com tutor)</li>
+        <li><strong>Ao redor:</strong> 3-4 pés de manjericão</li>
+        <li><strong>Bordas:</strong> Orégano rasteiro</li>
+      </ul>
+      <h4>Cuidados:</h4>
+      <ul>
+        <li>Vaso profundo (mínimo 30cm) para o tomate</li>
+        <li>Rega diária no verão</li>
+        <li>Sol pleno obrigatório</li>
+        <li>Adube quinzenalmente</li>
+      </ul>
+    </div>
+
+    <h3>Projeto: Canteiro Mediterrâneo</h3>
+    <div class="step-box">
+      <h4>Combinação de ervas italianas</h4>
+      <ul>
+        <li><strong>Fileira do fundo:</strong> Alecrim (mais alto, menor rega)</li>
+        <li><strong>Fileira do meio:</strong> Manjericão + orégano</li>
+        <li><strong>Fileira da frente:</strong> Tomilho rasteiro</li>
+      </ul>
+      <h4>Observação:</h4>
+      <p>O alecrim fica no fundo pois precisa de menos água. Regue mais na frente onde está o manjericão.</p>
+    </div>
+
+    <h3>Repelente Natural de Pragas</h3>
+    <div class="highlight-box">
+      <h4>O manjericão repele:</h4>
+      <ul>
+        <li>Mosca branca</li>
+        <li>Pulgões (parcialmente)</li>
+        <li>Mosquitos</li>
+        <li>Traça-das-crucíferas</li>
+        <li>Besouros do aspargo</li>
+      </ul>
+      <p>Plante manjericão intercalado com suas hortaliças para proteção natural!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 18</div>
+  </div>
+
+  <!-- CAPÍTULO 14: USO MEDICINAL -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 14</h2>
+      <p>Propriedades Medicinais</p>
+    </div>
+
+    <div class="warning-box">
+      <h4>Aviso Importante</h4>
+      <p>As informações aqui são educativas. Consulte um profissional de saúde antes de usar plantas medicinalmente, especialmente se estiver grávida, amamentando ou tomando medicamentos.</p>
+    </div>
+
+    <h3>Compostos Ativos do Manjericão</h3>
+    <table>
+      <tr>
+        <th>Composto</th>
+        <th>Propriedade</th>
+        <th>Presente em</th>
+      </tr>
+      <tr>
+        <td>Eugenol</td>
+        <td>Anti-inflamatório, analgésico</td>
+        <td>Folhas e óleo essencial</td>
+      </tr>
+      <tr>
+        <td>Linalol</td>
+        <td>Calmante, relaxante</td>
+        <td>Aroma das folhas</td>
+      </tr>
+      <tr>
+        <td>Ácido rosmarínico</td>
+        <td>Antioxidante</td>
+        <td>Folhas frescas</td>
+      </tr>
+      <tr>
+        <td>Flavonoides</td>
+        <td>Anti-inflamatório, imunidade</td>
+        <td>Toda a planta</td>
+      </tr>
+    </table>
+
+    <h3>Usos Tradicionais</h3>
+    <div class="step-box">
+      <h4>Chá de Manjericão</h4>
+      <ul>
+        <li><strong>Para quê:</strong> Digestão, gases, cólicas leves</li>
+        <li><strong>Preparo:</strong> 5-10 folhas em 200ml de água quente</li>
+        <li><strong>Tempo:</strong> Abafe por 5-10 minutos</li>
+        <li><strong>Dose:</strong> 1-2 xícaras ao dia</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Cataplasma para Picadas</h4>
+      <ul>
+        <li><strong>Para quê:</strong> Coceira de picada de inseto</li>
+        <li><strong>Preparo:</strong> Amasse folhas frescas</li>
+        <li><strong>Uso:</strong> Aplique sobre a picada por 15 min</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Banho Relaxante</h4>
+      <ul>
+        <li><strong>Para quê:</strong> Relaxamento, estresse</li>
+        <li><strong>Preparo:</strong> Ferva 1 maço em 1L de água</li>
+        <li><strong>Uso:</strong> Adicione à água do banho</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 19</div>
+  </div>
+
+  <div class="page">
+    <h3>Benefícios Comprovados por Estudos</h3>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="value">Antioxidante</div>
+        <div class="label">Combate radicais livres</div>
+      </div>
+      <div class="info-item">
+        <div class="value">Anti-inflamatório</div>
+        <div class="label">Reduz inflamações leves</div>
+      </div>
+      <div class="info-item">
+        <div class="value">Antibacteriano</div>
+        <div class="label">Inibe bactérias nocivas</div>
+      </div>
+      <div class="info-item">
+        <div class="value">Digestivo</div>
+        <div class="label">Alivia desconfortos gástricos</div>
+      </div>
+    </div>
+
+    <h3>Óleo Essencial de Manjericão</h3>
+    <div class="step-box">
+      <h4>Usos do óleo essencial:</h4>
+      <ul>
+        <li><strong>Aromaterapia:</strong> 2-3 gotas no difusor para clareza mental</li>
+        <li><strong>Massagem:</strong> Diluído em óleo carreador para tensão muscular</li>
+        <li><strong>Repelente:</strong> Diluído em água para repelir mosquitos</li>
+      </ul>
+      <h4>Cuidados:</h4>
+      <ul>
+        <li>Nunca aplique puro na pele</li>
+        <li>Não ingerir</li>
+        <li>Evitar na gravidez</li>
+      </ul>
+    </div>
+
+    <h3>Nutrientes do Manjericão Fresco</h3>
+    <p>Em 2 colheres de sopa (5g) de manjericão fresco:</p>
+    <table>
+      <tr>
+        <th>Nutriente</th>
+        <th>Quantidade</th>
+        <th>% Diário</th>
+      </tr>
+      <tr>
+        <td>Vitamina K</td>
+        <td>21,8 mcg</td>
+        <td>27%</td>
+      </tr>
+      <tr>
+        <td>Vitamina A</td>
+        <td>277 UI</td>
+        <td>6%</td>
+      </tr>
+      <tr>
+        <td>Manganês</td>
+        <td>0,06 mg</td>
+        <td>3%</td>
+      </tr>
+      <tr>
+        <td>Vitamina C</td>
+        <td>0,9 mg</td>
+        <td>2%</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <h4>Dica de Saúde</h4>
+      <p>Para maximizar os benefícios, consuma o manjericão FRESCO e CRU, adicionando no final do preparo dos pratos. O calor reduz o teor de alguns compostos benéficos.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 20</div>
+  </div>
+
+  <!-- CAPÍTULO 15: MAIS 15 RECEITAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 15</h2>
+      <p>+15 Receitas com Manjericão</p>
+    </div>
+
+    <h3>Receitas Salgadas</h3>
+
+    <div class="recipe-box">
+      <h4>11. Bruschetta Clássica</h4>
+      <ul>
+        <li>Tomate picado + manjericão fresco</li>
+        <li>Azeite, alho, sal</li>
+        <li>Sirva sobre pão italiano torrado</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>12. Risoto de Manjericão</h4>
+      <ul>
+        <li>Risoto básico (arroz arbóreo, caldo, vinho)</li>
+        <li>No final: 1 maço de manjericão batido com azeite</li>
+        <li>Finalize com parmesão</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>13. Frango ao Manjericão</h4>
+      <ul>
+        <li>Peito de frango grelhado</li>
+        <li>Molho: tomate, cebola, alho + muito manjericão</li>
+        <li>Finalize com folhas frescas</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>14. Sopa de Tomate com Manjericão</h4>
+      <ul>
+        <li>Tomates assados + cebola + alho</li>
+        <li>Bata com caldo de legumes</li>
+        <li>Sirva com creme e manjericão picado</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>15. Macarrão ao Pomodoro</h4>
+      <ul>
+        <li>Molho de tomate fresco</li>
+        <li>Manjericão fresco rasgado (não corte!)</li>
+        <li>Azeite extra virgem no final</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 21</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>16. Pesto de Manjericão Roxo</h4>
+      <ul>
+        <li>Variação com manjericão roxo</li>
+        <li>Cor mais escura, sabor mais intenso</li>
+        <li>Ótimo com queijo pecorino</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>17. Omelete de Ervas</h4>
+      <ul>
+        <li>Ovos + manjericão + salsinha + cebolinha</li>
+        <li>Queijo a gosto</li>
+        <li>Café da manhã perfeito</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>18. Manteiga de Manjericão</h4>
+      <ul>
+        <li>200g manteiga em temperatura ambiente</li>
+        <li>1/2 maço manjericão picado fino</li>
+        <li>1 dente de alho ralado</li>
+        <li>Misture, enrole em filme, congele</li>
+      </ul>
+    </div>
+
+    <h3>Receitas Doces</h3>
+
+    <div class="recipe-box">
+      <h4>19. Sorvete de Manjericão</h4>
+      <ul>
+        <li>Base de sorvete de creme</li>
+        <li>Infusão de manjericão no leite</li>
+        <li>Surpreendentemente delicioso!</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>20. Morango com Manjericão</h4>
+      <ul>
+        <li>Morangos fatiados</li>
+        <li>Manjericão chiffonade (cortado fino)</li>
+        <li>Açúcar + gotas de limão</li>
+        <li>Combinação clássica italiana</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>21. Geleia de Manjericão</h4>
+      <ul>
+        <li>1 maço manjericão + 500ml água</li>
+        <li>Faça infusão forte</li>
+        <li>Adicione 400g açúcar + pectina</li>
+        <li>Cozinhe até engrossar</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 22</div>
+  </div>
+
+  <div class="page">
+    <h3>Bebidas</h3>
+
+    <div class="recipe-box">
+      <h4>22. Água Aromatizada</h4>
+      <ul>
+        <li>Água + manjericão + limão + pepino</li>
+        <li>Deixe na geladeira por 2h</li>
+        <li>Refrescante e saudável</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>23. Suco Verde com Manjericão</h4>
+      <ul>
+        <li>Abacaxi + couve + manjericão + gengibre</li>
+        <li>Água de coco</li>
+        <li>Super energizante</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>24. Mojito de Manjericão</h4>
+      <ul>
+        <li>Substitua a hortelã por manjericão</li>
+        <li>Rum + limão + açúcar + água com gás</li>
+        <li>Versão sofisticada do clássico</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>25. Limonada de Manjericão</h4>
+      <ul>
+        <li>Suco de 4 limões</li>
+        <li>1L água + açúcar a gosto</li>
+        <li>10 folhas de manjericão maceradas</li>
+        <li>Gelo e sirva</li>
+      </ul>
+    </div>
+
+    <h3>Conservas</h3>
+
+    <div class="recipe-box">
+      <h4>Cubos de Manjericão Congelado</h4>
+      <ul>
+        <li>Pique manjericão fino</li>
+        <li>Coloque em forminhas de gelo</li>
+        <li>Cubra com azeite</li>
+        <li>Congele - use direto nos pratos</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <h4>Dica: Manjericão no Azeite</h4>
+      <p>Folhas inteiras em azeite podem desenvolver botulismo se não refrigeradas. SEMPRE guarde na geladeira e use em até 1 semana. Ou congele em cubos.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 23</div>
+  </div>
+
+  <!-- CAPÍTULO 16: CALENDÁRIO MENSAL -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 16</h2>
+      <p>Calendário Mensal de Cuidados</p>
+    </div>
+
+    <h3>Janeiro</h3>
+    <div class="step-box">
+      <ul>
+        <li>Auge do verão - rega 2x ao dia</li>
+        <li>Colheita frequente</li>
+        <li>Fazer estacas para multiplicar</li>
+        <li>Atenção a pragas (calor = mais pulgões)</li>
+      </ul>
+    </div>
+
+    <h3>Fevereiro</h3>
+    <div class="step-box">
+      <ul>
+        <li>Continuar rega intensa</li>
+        <li>Última chance de estacas de verão</li>
+        <li>Remover flores para prolongar colheita</li>
+        <li>Adubação quinzenal</li>
+      </ul>
+    </div>
+
+    <h3>Março</h3>
+    <div class="step-box">
+      <ul>
+        <li>Transição - reduzir rega gradualmente</li>
+        <li>Fazer MUITAS estacas (plantas começam a envelhecer)</li>
+        <li>Colher e secar/congelar excedentes</li>
+        <li>Sul: preparar proteção para o frio</li>
+      </ul>
+    </div>
+
+    <h3>Abril</h3>
+    <div class="step-box">
+      <ul>
+        <li>Plantas podem começar a florescer mais</li>
+        <li>Colher sementes se desejar</li>
+        <li>Sul: trazer vasos para dentro ou proteger</li>
+        <li>Preparar mudas para cultivo indoor</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 24</div>
+  </div>
+
+  <div class="page">
+    <h3>Maio</h3>
+    <div class="step-box">
+      <ul>
+        <li>Sul: plantas externas podem morrer (normal)</li>
+        <li>Manter mudas em local protegido</li>
+        <li>Reduzir adubação</li>
+        <li>Norte/Nordeste: cultivo normal</li>
+      </ul>
+    </div>
+
+    <h3>Junho</h3>
+    <div class="step-box">
+      <ul>
+        <li>Inverno - crescimento lento</li>
+        <li>Rega reduzida (substrato seca devagar)</li>
+        <li>Proteger de geadas</li>
+        <li>Luz artificial se cultivando dentro</li>
+      </ul>
+    </div>
+
+    <h3>Julho</h3>
+    <div class="step-box">
+      <ul>
+        <li>Mês mais frio - mínima atividade</li>
+        <li>Planejar plantios de primavera</li>
+        <li>Comprar/guardar sementes</li>
+        <li>Manutenção de equipamentos</li>
+      </ul>
+    </div>
+
+    <h3>Agosto</h3>
+    <div class="step-box">
+      <ul>
+        <li>Final do inverno - preparar substrato</li>
+        <li>Limpar vasos para novos plantios</li>
+        <li>Sudeste/Norte: pode começar semeadura</li>
+        <li>Sul: aguardar setembro</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 25</div>
+  </div>
+
+  <div class="page">
+    <h3>Setembro</h3>
+    <div class="step-box">
+      <ul>
+        <li>PRIMAVERA! Época de plantar!</li>
+        <li>Semear ou plantar mudas</li>
+        <li>Sul: após últimas geadas</li>
+        <li>Iniciar adubação regular</li>
+      </ul>
+    </div>
+
+    <h3>Outubro</h3>
+    <div class="step-box">
+      <ul>
+        <li>Crescimento acelerado</li>
+        <li>Primeira poda de formação</li>
+        <li>Aumentar rega conforme calor</li>
+        <li>Monitorar pragas</li>
+      </ul>
+    </div>
+
+    <h3>Novembro</h3>
+    <div class="step-box">
+      <ul>
+        <li>Plantas vigorosas</li>
+        <li>Iniciar colheitas regulares</li>
+        <li>Fazer primeiras estacas da temporada</li>
+        <li>Adubação semanal</li>
+      </ul>
+    </div>
+
+    <h3>Dezembro</h3>
+    <div class="step-box">
+      <ul>
+        <li>Plena produção</li>
+        <li>Colher frequentemente (estimula mais folhas)</li>
+        <li>Rega abundante</li>
+        <li>Preparar pesto e conservas para as festas!</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Resumo do Ciclo Anual</h4>
+      <p><strong>Plantar:</strong> Setembro-Novembro</p>
+      <p><strong>Colher:</strong> Novembro-Abril</p>
+      <p><strong>Multiplicar:</strong> Janeiro-Março</p>
+      <p><strong>Descanso:</strong> Maio-Agosto (ou cultivo protegido)</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 26</div>
+  </div>
+
+  <!-- CAPÍTULO 17: PERGUNTAS FREQUENTES -->
+  <div class="page">
+    <div class="module-header">
+      <h2>Capítulo 17</h2>
+      <p>20 Perguntas Frequentes</p>
+    </div>
+
+    <div class="step-box">
+      <h4>1. Por que meu manjericão está com folhas pequenas?</h4>
+      <p>Provavelmente falta de nutrientes ou vaso pequeno demais. Transplante para vaso maior e adube regularmente.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>2. Posso cultivar manjericão o ano todo?</h4>
+      <p>No Sul, apenas com proteção ou dentro de casa no inverno. No resto do Brasil, sim, com os cuidados adequados.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>3. Quanto tempo vive um pé de manjericão?</h4>
+      <p>É planta anual - uma temporada (6-8 meses). Após florescer e produzir sementes, morre naturalmente.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>4. Posso plantar manjericão comprado no supermercado?</h4>
+      <p>Sim! Coloque o raminho em água até criar raízes (7-14 dias), depois plante em substrato.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>5. Por que as folhas estão caindo?</h4>
+      <p>Pode ser choque térmico, falta de água, ou estresse de transplante. Verifique condições e dê tempo para adaptação.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>6. Qual o melhor vaso para manjericão?</h4>
+      <p>Mínimo 15cm de diâmetro, mas 20-25cm é ideal. Profundidade de pelo menos 20cm.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 27</div>
+  </div>
+
+  <div class="page">
+    <div class="step-box">
+      <h4>7. Posso deixar o manjericão florescer?</h4>
+      <p>Pode, mas a produção de folhas diminui drasticamente. Deixe florescer apenas se quiser colher sementes.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>8. Como sei que está na hora de regar?</h4>
+      <p>Enfie o dedo 2cm no substrato. Seco? Regue. Úmido? Espere. No verão, geralmente é diariamente.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>9. Manjericão precisa de sol pleno?</h4>
+      <p>Idealmente 6-8 horas de sol direto. Tolera meia-sombra mas produz menos e fica esticado.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>10. Como colher sem matar a planta?</h4>
+      <p>Corte sempre acima de um par de folhas. Nunca remova mais de 1/3 da planta de uma vez.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>11. Por que o manjericão do supermercado morre rápido?</h4>
+      <p>Vem de estufas com condições perfeitas. Em casa, sofre adaptação. Além disso, geralmente são várias plantas juntas competindo.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>12. Manjericão e hortelã podem ficar juntos?</h4>
+      <p>Não recomendado. A hortelã é muito invasiva e dominará o espaço. Mantenha em vasos separados.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>13. Qual a diferença entre manjericão verde e roxo?</h4>
+      <p>O roxo tem sabor mais forte e levemente apimentado. O verde é mais doce e versátil na cozinha.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 28</div>
+  </div>
+
+  <div class="page">
+    <div class="step-box">
+      <h4>14. Posso cultivar manjericão só com luz artificial?</h4>
+      <p>Sim, com lâmpadas LED específicas para plantas, 12-16 horas por dia. Mas sol natural é sempre melhor.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>15. Quanto tempo leva da semente à colheita?</h4>
+      <p>Germinação em 7-14 dias + 4-6 semanas até primeira colheita = cerca de 2 meses no total.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>16. Por que minha semente não germina?</h4>
+      <p>Sementes velhas, enterradas muito fundo (só cubra levemente), substrato seco ou frio demais.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>17. Quanto produz um pé de manjericão?</h4>
+      <p>Um pé bem cuidado produz 50-100g de folhas por mês durante a temporada (equivale a 5-10 maços de supermercado).</p>
+    </div>
+
+    <div class="step-box">
+      <h4>18. Manjericão pode tomar chuva?</h4>
+      <p>Chuva leve sim. Chuvas fortes e constantes podem causar fungos. Proteja em épocas muito chuvosas.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>19. É seguro comer folhas com furinhos de pragas?</h4>
+      <p>Sim, é seguro. Basta lavar bem. Mas trate a praga para não perder toda a planta.</p>
+    </div>
+
+    <div class="step-box">
+      <h4>20. Posso plantar manjericão em hidroponia?</h4>
+      <p>Sim, e se adapta muito bem! Cresce mais rápido e produz mais. Pesquise sistemas NFT ou DWC.</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 29</div>
+  </div>
+
+  <!-- CHECKLIST FINAL -->
+  <div class="page">
+    <h2>Checklist do Manjericão Perfeito</h2>
+
+    <div class="checklist">
+      <h4>Ambiente</h4>
+      <ul>
+        <li>Local com 6+ horas de sol direto</li>
+        <li>Protegido de ventos fortes</li>
+        <li>Temperatura acima de 15°C</li>
+        <li>Boa circulação de ar</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Vaso e Substrato</h4>
+      <ul>
+        <li>Vaso de no mínimo 15cm</li>
+        <li>Furos de drenagem</li>
+        <li>Substrato rico e bem drenado</li>
+        <li>Camada de drenagem no fundo</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Cuidados Regulares</h4>
+      <ul>
+        <li>Rega quando solo seco (teste do dedo)</li>
+        <li>Adubação quinzenal na temporada</li>
+        <li>Poda regular para estimular ramificação</li>
+        <li>Remoção de flores precoces</li>
+        <li>Inspeção semanal de pragas</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h4>Colheita</h4>
+      <ul>
+        <li>Colher acima de um par de folhas</li>
+        <li>Não remover mais de 1/3 por vez</li>
+        <li>Colher pela manhã (mais aroma)</li>
+        <li>Usar fresco ou conservar corretamente</li>
+      </ul>
+    </div>
+
+    <div class="success-box">
+      <h4>Parabéns!</h4>
+      <p>Você agora é um especialista em manjericão! Com este guia completo, você tem todo o conhecimento para cultivar manjericão abundante, aromático e saudável. Lembre-se: <strong>SOL + PODA + AMOR</strong> são os ingredientes do sucesso!</p>
+    </div>
+
+    <div class="page-number">Minha Horta em Casa - Página 30</div>
+  </div>
+
+</body>
+</html>

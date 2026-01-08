@@ -5,6 +5,7 @@ originalPrice: 59
 description: "Monte sua primeira horta gastando o mínimo. Guia completo de custos, materiais reciclados e DIY."
 category: "kit"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ck1dad8dbc?funnel=fn1f6050ce"
 ---
 
 # Kit Iniciante Econômico - R$ 29

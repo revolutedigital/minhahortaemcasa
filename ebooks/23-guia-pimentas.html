@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Completo de Cultivo de Pimentas - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.6; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #fecaca 0%, #fca5a5 50%, #f87171 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 42px; font-weight: 800; color: #991b1b; margin-bottom: 20px; line-height: 1.2; }
+    .cover .subtitle { font-size: 22px; color: #b91c1c; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #991b1b; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #dc2626; }
+    h1 { font-size: 36px; color: #991b1b; margin-bottom: 20px; border-bottom: 3px solid #ef4444; padding-bottom: 10px; }
+    h2 { font-size: 28px; color: #b91c1c; margin: 30px 0 15px; }
+    h3 { font-size: 22px; color: #991b1b; margin: 25px 0 12px; }
+    h4 { font-size: 18px; color: #b91c1c; margin: 15px 0 10px; }
+    p { margin-bottom: 15px; font-size: 16px; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: linear-gradient(135deg, #fef2f2, #fecaca); border-left: 4px solid #ef4444; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: linear-gradient(135deg, #fef3c7, #fde68a); border-left: 4px solid #f59e0b; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .danger-box { background: linear-gradient(135deg, #fee2e2, #fecaca); border-left: 4px solid #ef4444; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .success-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid #22c55e; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .step-box { background: #fff; border: 2px solid #ef4444; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .step-box h4 { color: #991b1b; margin-bottom: 10px; border-bottom: 1px solid #fecaca; padding-bottom: 8px; }
+    .materials-box { background: linear-gradient(135deg, #faf5ff, #f3e8ff); border: 2px solid #a855f7; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .materials-box h4 { color: #7c3aed; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #d1d5db; padding: 10px; text-align: left; }
+    th { background: #991b1b; color: white; }
+    tr:nth-child(even) { background: #fef2f2; }
+    .toc { background: #f8fafc; padding: 30px; border-radius: 12px; margin: 30px 0; }
+    .toc h2 { border-bottom: none; margin-top: 0; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dashed #d1d5db; }
+    .module-header { background: linear-gradient(135deg, #991b1b, #dc2626); color: white; padding: 30px; border-radius: 12px; margin: 40px 0 30px; text-align: center; }
+    .module-header h2 { color: white; border-bottom: none; margin: 0; }
+    .module-header p { color: #fecaca; margin: 10px 0 0; }
+    .checklist { background: #fef2f2; padding: 20px; border-radius: 8px; margin: 20px 0; }
+    .checklist li { list-style: none; padding-left: 30px; position: relative; }
+    .checklist li:before { content: "☐"; position: absolute; left: 0; color: #ef4444; font-size: 18px; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; }
+    .scoville-bar { height: 20px; border-radius: 10px; margin: 5px 0; }
+    .scoville-mild { background: linear-gradient(to right, #22c55e, #84cc16); }
+    .scoville-medium { background: linear-gradient(to right, #84cc16, #eab308); }
+    .scoville-hot { background: linear-gradient(to right, #eab308, #f97316); }
+    .scoville-extreme { background: linear-gradient(to right, #f97316, #dc2626); }
+    @media print { .page { page-break-after: always; } }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#991b1b" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGrad23)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGrad23)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/><ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/><ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M40 65C40 65 50 60 60 65" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.7"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.7"/>
+        <!-- Pepper elements -->
+        <path d="M40 25C40 25 35 30 38 40C42 35 45 28 40 25Z" fill="#dc2626" stroke="#991b1b" stroke-width="1"/>
+        <path d="M50 20C50 20 55 28 52 38C48 32 47 24 50 20Z" fill="#f97316" stroke="#c2410c" stroke-width="1"/>
+        <path d="M60 25C60 25 65 30 62 40C58 35 55 28 60 25Z" fill="#eab308" stroke="#a16207" stroke-width="1"/>
+        <path d="M40 25L42 20" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
+        <path d="M50 20L50 14" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
+        <path d="M60 25L58 20" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
+        <defs>
+          <linearGradient id="potGrad23" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bodyGrad23" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Guia Completo de Cultivo de Pimentas</h1>
+    <p class="subtitle">Da semente à colheita: seu guia definitivo!</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <h1>Sumário</h1>
+    <p>Este guia completo vai te ensinar tudo sobre o cultivo de pimentas em casa: da dedo-de-moça à Carolina Reaper.</p>
+
+    <div class="toc">
+      <h2>Conteúdo</h2>
+      <ul>
+        <li><strong>Módulo 1:</strong> Introdução ao Mundo das Pimentas (Páginas 3-6)</li>
+        <li><strong>Módulo 2:</strong> Escala Scoville Completa (Páginas 7-10)</li>
+        <li><strong>Módulo 3:</strong> Germinação de Sementes (Páginas 11-14)</li>
+        <li><strong>Módulo 4:</strong> Cultivo e Cuidados (Páginas 15-20)</li>
+        <li><strong>Módulo 5:</strong> Colheita e Conservação (Páginas 21-24)</li>
+        <li><strong>Módulo 6:</strong> Problemas e Soluções (Páginas 25-28)</li>
+        <li><strong>Bônus 1:</strong> Pimentas em Apartamento (Páginas 29-31)</li>
+        <li><strong>Bônus 2:</strong> Receitas de Conservas (Páginas 32-34)</li>
+      </ul>
+    </div>
+
+    <h3>Por que Cultivar Pimentas?</h3>
+    <ul>
+      <li><strong>Economia:</strong> Uma planta produz por 2-5 anos</li>
+      <li><strong>Frescor:</strong> Pimenta do pé tem sabor incomparável</li>
+      <li><strong>Variedade:</strong> Acesso a tipos raros</li>
+      <li><strong>Decoração:</strong> Plantas lindas com frutos coloridos</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4>O que você vai aprender:</h4>
+      <ul>
+        <li>Germinar sementes de pimenta</li>
+        <li>Cuidar das plantas corretamente</li>
+        <li>Entender a Escala Scoville</li>
+        <li>Colher e conservar pimentas</li>
+        <li>Resolver problemas comuns</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Guia de Pimentas - Página 2</div>
+  </div>
+
+  <!-- MÓDULO 1 -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 1: Introdução ao Mundo das Pimentas</h2>
+      <p>Conheça o universo picante</p>
+    </div>
+
+    <h2>Origem e História</h2>
+    <p>As pimentas são originárias das Américas, cultivadas há mais de 6.000 anos. Após a chegada dos europeus, espalharam-se pelo mundo todo, tornando-se essenciais em diversas culinárias.</p>
+
+    <h2>Gênero Capsicum</h2>
+    <p>Todas as pimentas comestíveis pertencem ao gênero Capsicum. As principais espécies são:</p>
+
+    <table>
+      <tr>
+        <th>Espécie</th>
+        <th>Pimentas Famosas</th>
+        <th>Ardor</th>
+      </tr>
+      <tr>
+        <td>C. annuum</td>
+        <td>Jalapeño, Cayenne, Dedo-de-moça</td>
+        <td>Suave a Médio</td>
+      </tr>
+      <tr>
+        <td>C. chinense</td>
+        <td>Habanero, Carolina Reaper, Biquinho</td>
+        <td>Suave a Extremo</td>
+      </tr>
+      <tr>
+        <td>C. frutescens</td>
+        <td>Tabasco, Malagueta</td>
+        <td>Médio a Alto</td>
+      </tr>
+      <tr>
+        <td>C. baccatum</td>
+        <td>Dedo-de-moça (algumas), Cumari</td>
+        <td>Médio</td>
+      </tr>
+      <tr>
+        <td>C. pubescens</td>
+        <td>Rocoto</td>
+        <td>Alto</td>
+      </tr>
+    </table>
+
+    <h2>Anatomia da Pimenta</h2>
+    <ul>
+      <li><strong>Placenta:</strong> Parte branca interna - concentra a capsaicina (ardor)</li>
+      <li><strong>Sementes:</strong> Não contêm capsaicina, mas ficam cobertas</li>
+      <li><strong>Pericarpo:</strong> A "carne" da pimenta - sabor</li>
+      <li><strong>Pedúnculo:</strong> O cabinho</li>
+    </ul>
+
+    <div class="page-number">Módulo 1 - Introdução - Página 3</div>
+  </div>
+
+  <div class="page">
+    <h2>Pimentas Brasileiras</h2>
+    <p>O Brasil tem uma rica tradição de pimentas nativas e adaptadas:</p>
+
+    <div class="step-box">
+      <h4>Dedo-de-moça</h4>
+      <ul>
+        <li><strong>Ardor:</strong> 5.000-15.000 SHU</li>
+        <li><strong>Cor:</strong> Verde → Vermelho</li>
+        <li><strong>Uso:</strong> A mais versátil, usada em tudo</li>
+        <li><strong>Cultivo:</strong> Muito fácil, produtiva</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Biquinho</h4>
+      <ul>
+        <li><strong>Ardor:</strong> 0-1.000 SHU (sem ardor!)</li>
+        <li><strong>Cor:</strong> Vermelho ou amarelo</li>
+        <li><strong>Uso:</strong> Conservas, aperitivos</li>
+        <li><strong>Cultivo:</strong> Muito fácil, muito produtiva</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Malagueta</h4>
+      <ul>
+        <li><strong>Ardor:</strong> 60.000-100.000 SHU</li>
+        <li><strong>Cor:</strong> Verde → Vermelho</li>
+        <li><strong>Uso:</strong> Azeites, molhos, conservas</li>
+        <li><strong>Cultivo:</strong> Médio, arbustiva</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Cumari</h4>
+      <ul>
+        <li><strong>Ardor:</strong> 30.000-60.000 SHU</li>
+        <li><strong>Cor:</strong> Amarelo ou vermelho</li>
+        <li><strong>Uso:</strong> Cachaça de pimenta, molhos</li>
+        <li><strong>Cultivo:</strong> Fácil, extremamente produtiva</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Módulo 1 - Introdução - Página 4</div>
+  </div>
+
+  <div class="page">
+    <h2>Pimentas Internacionais Populares</h2>
+
+    <div class="step-box">
+      <h4>Jalapeño (México)</h4>
+      <ul>
+        <li><strong>Ardor:</strong> 2.500-8.000 SHU</li>
+        <li><strong>Uso:</strong> Nachos, hambúrgueres, em conserva</li>
+        <li><strong>Cultivo:</strong> Muito fácil, recomendado para iniciantes</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Habanero (Caribe)</h4>
+      <ul>
+        <li><strong>Ardor:</strong> 100.000-350.000 SHU</li>
+        <li><strong>Uso:</strong> Molhos premium, pratos caribenhos</li>
+        <li><strong>Cultivo:</strong> Intermediário, precisa de calor</li>
+        <li><strong>Dica:</strong> Sabor frutado único, aromática</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Carolina Reaper (EUA)</h4>
+      <ul>
+        <li><strong>Ardor:</strong> 1.400.000-2.200.000 SHU</li>
+        <li><strong>Uso:</strong> Desafios, molhos extremos</li>
+        <li><strong>Cultivo:</strong> Avançado, germinação difícil</li>
+        <li><strong>Aviso:</strong> Use com extrema cautela!</li>
+      </ul>
+    </div>
+
+    <h2>Benefícios da Capsaicina</h2>
+    <ul>
+      <li><strong>Metabolismo:</strong> Aumenta queima de calorias</li>
+      <li><strong>Dor:</strong> Efeito analgésico comprovado</li>
+      <li><strong>Circulação:</strong> Melhora fluxo sanguíneo</li>
+      <li><strong>Humor:</strong> Libera endorfinas</li>
+      <li><strong>Antioxidantes:</strong> Rica em vitaminas A e C</li>
+    </ul>
+
+    <div class="page-number">Módulo 1 - Introdução - Página 5</div>
+  </div>
+
+  <!-- MÓDULO 2: ESCALA SCOVILLE -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 2: Escala Scoville Completa</h2>
+      <p>Entenda o ardor de cada pimenta</p>
+    </div>
+
+    <h2>O Que é a Escala Scoville?</h2>
+    <p>Criada em 1912 por Wilbur Scoville, mede a concentração de capsaicina. SHU = Scoville Heat Units.</p>
+
+    <h2>Tabela Completa</h2>
+
+    <h3>🟢 Sem Ardor (0-2.500 SHU)</h3>
+    <div class="scoville-bar scoville-mild" style="width: 10%;"></div>
+    <table>
+      <tr><th>Pimenta</th><th>SHU</th></tr>
+      <tr><td>Pimentão</td><td>0</td></tr>
+      <tr><td>Biquinho</td><td>0-1.000</td></tr>
+      <tr><td>Banana Pepper</td><td>0-500</td></tr>
+      <tr><td>Pepperoncini</td><td>100-500</td></tr>
+    </table>
+
+    <h3>🟡 Suave (2.500-15.000 SHU)</h3>
+    <div class="scoville-bar scoville-medium" style="width: 25%;"></div>
+    <table>
+      <tr><th>Pimenta</th><th>SHU</th></tr>
+      <tr><td>Jalapeño</td><td>2.500-8.000</td></tr>
+      <tr><td>Dedo-de-moça</td><td>5.000-15.000</td></tr>
+      <tr><td>Serrano</td><td>10.000-23.000</td></tr>
+      <tr><td>Chipotle</td><td>2.500-8.000</td></tr>
+    </table>
+
+    <div class="page-number">Módulo 2 - Escala Scoville - Página 6</div>
+  </div>
+
+  <div class="page">
+    <h3>🟠 Quente (30.000-100.000 SHU)</h3>
+    <div class="scoville-bar scoville-hot" style="width: 50%;"></div>
+    <table>
+      <tr><th>Pimenta</th><th>SHU</th></tr>
+      <tr><td>Cayenne</td><td>30.000-50.000</td></tr>
+      <tr><td>Tabasco</td><td>30.000-50.000</td></tr>
+      <tr><td>Cumari</td><td>30.000-60.000</td></tr>
+      <tr><td>Malagueta</td><td>60.000-100.000</td></tr>
+      <tr><td>Piri-Piri</td><td>50.000-100.000</td></tr>
+    </table>
+
+    <h3>🔴 Muito Quente (100.000-500.000 SHU)</h3>
+    <div class="scoville-bar scoville-extreme" style="width: 75%;"></div>
+    <table>
+      <tr><th>Pimenta</th><th>SHU</th></tr>
+      <tr><td>Habanero</td><td>100.000-350.000</td></tr>
+      <tr><td>Scotch Bonnet</td><td>100.000-350.000</td></tr>
+      <tr><td>Bird's Eye</td><td>50.000-100.000</td></tr>
+      <tr><td>Fatalii</td><td>125.000-325.000</td></tr>
+    </table>
+
+    <h3>🔥 Extrema (500.000+ SHU)</h3>
+    <div class="scoville-bar scoville-extreme" style="width: 100%;"></div>
+    <table>
+      <tr><th>Pimenta</th><th>SHU</th></tr>
+      <tr><td>Ghost Pepper</td><td>855.000-1.041.000</td></tr>
+      <tr><td>Trinidad Scorpion</td><td>1.200.000-2.000.000</td></tr>
+      <tr><td>Carolina Reaper</td><td>1.400.000-2.200.000</td></tr>
+      <tr><td>Pepper X</td><td>2.693.000</td></tr>
+    </table>
+
+    <div class="danger-box">
+      <h4>⚠️ Aviso sobre Super Hots:</h4>
+      <p>Pimentas acima de 500.000 SHU podem causar dor intensa, vômitos e até queimaduras. Use EPI (luvas, óculos) ao manusear!</p>
+    </div>
+
+    <div class="page-number">Módulo 2 - Escala Scoville - Página 7</div>
+  </div>
+
+  <!-- MÓDULO 3: GERMINAÇÃO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 3: Germinação de Sementes</h2>
+      <p>O primeiro passo para sua pimenteira</p>
+    </div>
+
+    <h2>Tempo de Germinação por Tipo</h2>
+    <table>
+      <tr>
+        <th>Categoria</th>
+        <th>Exemplos</th>
+        <th>Tempo</th>
+      </tr>
+      <tr>
+        <td>Fáceis</td>
+        <td>Jalapeño, Dedo-de-moça, Biquinho</td>
+        <td>7-14 dias</td>
+      </tr>
+      <tr>
+        <td>Intermediárias</td>
+        <td>Habanero, Cayenne, Malagueta</td>
+        <td>14-21 dias</td>
+      </tr>
+      <tr>
+        <td>Difíceis</td>
+        <td>Carolina Reaper, Ghost Pepper</td>
+        <td>21-35 dias</td>
+      </tr>
+    </table>
+
+    <h2>Materiais para Germinação</h2>
+    <div class="materials-box">
+      <h4>Lista de Materiais:</h4>
+      <ul>
+        <li>Copinhos descartáveis ou sementeira</li>
+        <li>Substrato fino para mudas</li>
+        <li>Filme plástico ou tampa</li>
+        <li>Borrifador</li>
+        <li>Sementes de qualidade</li>
+        <li>Opcional: esteira de aquecimento</li>
+      </ul>
+    </div>
+
+    <h2>Passo a Passo</h2>
+
+    <div class="step-box">
+      <h4>Passo 1: Pré-tratamento (Opcional)</h4>
+      <ul>
+        <li>Deixe sementes de molho em água morna por 12-24h</li>
+        <li>Adicione um pouco de água oxigenada (1 colher/litro)</li>
+        <li>Isso amolece a casca e acelera germinação</li>
+        <li><strong>Especialmente útil para:</strong> Super hots e sementes velhas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Módulo 3 - Germinação - Página 8</div>
+  </div>
+
+  <div class="page">
+    <div class="step-box">
+      <h4>Passo 2: Preparo do Substrato</h4>
+      <ol>
+        <li>Umedeça o substrato (esponja torcida)</li>
+        <li>Preencha os copinhos até 1cm da borda</li>
+        <li>Não compacte demais</li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 3: Semeadura</h4>
+      <ol>
+        <li>Faça um furo de 0,5cm de profundidade</li>
+        <li>Coloque 1-2 sementes por copo</li>
+        <li>Cubra levemente com substrato</li>
+        <li>Borrife água</li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 4: Ambiente de Germinação</h4>
+      <ul>
+        <li>Cubra com filme plástico</li>
+        <li>Mantenha em local <strong>quente (25-30°C)</strong></li>
+        <li>Não precisa de luz para germinar</li>
+        <li>Mantenha úmido (não encharcado)</li>
+        <li>Ventile diariamente (abra o plástico)</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Passo 5: Após Germinar</h4>
+      <ol>
+        <li>Remova o filme plástico</li>
+        <li>Coloque em local com luz (janela ou grow light)</li>
+        <li>Regue com cuidado (mudas são frágeis)</li>
+        <li>Mantenha temperatura acima de 18°C</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4>Dica Importante:</h4>
+      <p>Temperatura é CRUCIAL para germinação de pimentas. Abaixo de 20°C, muitas variedades simplesmente não germinam. Use esteira de aquecimento se necessário.</p>
+    </div>
+
+    <div class="page-number">Módulo 3 - Germinação - Página 9</div>
+  </div>
+
+  <!-- MÓDULO 4: CULTIVO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 4: Cultivo e Cuidados</h2>
+      <p>Do transplante à produção abundante</p>
+    </div>
+
+    <h2>Transplante para Vaso Definitivo</h2>
+
+    <h3>Quando Transplantar:</h3>
+    <ul>
+      <li>Muda com 4-6 folhas verdadeiras</li>
+      <li>Altura de 10-15cm</li>
+      <li>Após 30-45 dias da germinação</li>
+    </ul>
+
+    <h3>Tamanho do Vaso:</h3>
+    <table>
+      <tr>
+        <th>Tipo de Pimenta</th>
+        <th>Vaso Mínimo</th>
+        <th>Vaso Ideal</th>
+      </tr>
+      <tr>
+        <td>Pequenas (cumari, biquinho)</td>
+        <td>5 litros</td>
+        <td>8-10 litros</td>
+      </tr>
+      <tr>
+        <td>Médias (jalapeño, dedo-de-moça)</td>
+        <td>10 litros</td>
+        <td>15 litros</td>
+      </tr>
+      <tr>
+        <td>Grandes (habanero)</td>
+        <td>15 litros</td>
+        <td>20 litros</td>
+      </tr>
+      <tr>
+        <td>Super Hot</td>
+        <td>20 litros</td>
+        <td>30+ litros</td>
+      </tr>
+    </table>
+
+    <h2>Requisitos de Cultivo</h2>
+
+    <div class="step-box">
+      <h4>☀️ Luz Solar</h4>
+      <ul>
+        <li><strong>Ideal:</strong> 6-8 horas de sol direto</li>
+        <li><strong>Mínimo:</strong> 4 horas de sol</li>
+        <li><strong>Indoor:</strong> 12-16 horas de grow light</li>
+        <li><strong>Dica:</strong> Mais sol = mais pimentas e mais ardidas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Módulo 4 - Cultivo - Página 10</div>
+  </div>
+
+  <div class="page">
+    <div class="step-box">
+      <h4>💧 Rega</h4>
+      <ul>
+        <li><strong>Frequência:</strong> Quando o solo estiver seco (2-3cm)</li>
+        <li><strong>Quantidade:</strong> Até sair água pelo fundo</li>
+        <li><strong>Horário:</strong> Manhã ou fim da tarde</li>
+        <li><strong>Evite:</strong> Molhar as folhas</li>
+        <li><strong>Dica:</strong> Estresse hídrico leve = pimentas mais ardidas</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>🌡️ Temperatura</h4>
+      <ul>
+        <li><strong>Ideal:</strong> 20-30°C</li>
+        <li><strong>Mínima:</strong> 15°C (crescimento para)</li>
+        <li><strong>Máxima:</strong> 35°C (queda de flores)</li>
+        <li><strong>Geada:</strong> Morte da planta</li>
+      </ul>
+    </div>
+
+    <h2>Fertilização</h2>
+
+    <table>
+      <tr>
+        <th>Fase</th>
+        <th>NPK</th>
+        <th>Frequência</th>
+      </tr>
+      <tr>
+        <td>Crescimento</td>
+        <td>10-10-10 (equilibrado)</td>
+        <td>Quinzenal</td>
+      </tr>
+      <tr>
+        <td>Floração</td>
+        <td>4-14-8 (mais P e K)</td>
+        <td>Quinzenal</td>
+      </tr>
+      <tr>
+        <td>Frutificação</td>
+        <td>4-14-8 + Cálcio</td>
+        <td>Quinzenal</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>Sobre o Cálcio:</h4>
+      <p>Deficiência de cálcio causa <strong>podridão apical</strong> (mancha preta na ponta). Adicione calcário ou cascas de ovo trituradas ao substrato.</p>
+    </div>
+
+    <div class="page-number">Módulo 4 - Cultivo - Página 11</div>
+  </div>
+
+  <div class="page">
+    <h2>Polinização</h2>
+    <p>Pimentas são autopolinizáveis, mas ajudar aumenta a produção:</p>
+
+    <ul>
+      <li><strong>Método 1:</strong> Sacuda a planta quando florida</li>
+      <li><strong>Método 2:</strong> Use cotonete entre flores</li>
+      <li><strong>Método 3:</strong> Ventilador próximo</li>
+      <li><strong>Método 4:</strong> Cultive ao ar livre (abelhas)</li>
+    </ul>
+
+    <h2>Poda</h2>
+
+    <h3>Poda de Formação (Topping)</h3>
+    <ol>
+      <li>Quando a planta tiver 15-20cm (6-8 folhas)</li>
+      <li>Corte a ponta do caule principal</li>
+      <li>Estimula ramificação lateral</li>
+      <li>Resultado: planta mais cheia = mais frutos</li>
+    </ol>
+
+    <h3>Poda de Manutenção</h3>
+    <ul>
+      <li>Remova folhas amarelas ou doentes</li>
+      <li>Corte galhos que não produzem</li>
+      <li>Remova flores/frutos da primeira florada (opcional - fortalece a planta)</li>
+    </ul>
+
+    <h2>Tutoramento</h2>
+    <p>Plantas carregadas de frutos podem quebrar:</p>
+    <ul>
+      <li>Use estacas de bambu ou madeira</li>
+      <li>Amarre com barbante (sem apertar)</li>
+      <li>Comece quando a planta atingir 30-40cm</li>
+    </ul>
+
+    <div class="page-number">Módulo 4 - Cultivo - Página 12</div>
+  </div>
+
+  <!-- MÓDULO 5: COLHEITA -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 5: Colheita e Conservação</h2>
+      <p>Aproveite sua produção ao máximo</p>
+    </div>
+
+    <h2>Quando Colher?</h2>
+
+    <table>
+      <tr>
+        <th>Cor</th>
+        <th>Estágio</th>
+        <th>Características</th>
+      </tr>
+      <tr>
+        <td>Verde</td>
+        <td>Imaturo</td>
+        <td>Menos doce, menos ardido, mais vegetal</td>
+      </tr>
+      <tr>
+        <td>Colorido</td>
+        <td>Maduro</td>
+        <td>Mais doce, mais ardido, sabor completo</td>
+      </tr>
+      <tr>
+        <td>Murchando</td>
+        <td>Passado</td>
+        <td>Use para extrair sementes</td>
+      </tr>
+    </table>
+
+    <h2>Como Colher</h2>
+    <ul>
+      <li>Use tesoura ou faca afiada</li>
+      <li>Corte o cabo (não arranque!)</li>
+      <li>Colha pela manhã (mais frescas)</li>
+      <li>Use luvas para pimentas ardidas</li>
+    </ul>
+
+    <h2>Métodos de Conservação</h2>
+
+    <div class="step-box">
+      <h4>1. Geladeira (Frescas)</h4>
+      <ul>
+        <li><strong>Duração:</strong> 1-2 semanas</li>
+        <li><strong>Como:</strong> Saco plástico na gaveta de legumes</li>
+        <li><strong>Dica:</strong> Não lave antes de guardar</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>2. Congelamento</h4>
+      <ul>
+        <li><strong>Duração:</strong> 6-12 meses</li>
+        <li><strong>Como:</strong> Inteiras ou picadas em saco</li>
+        <li><strong>Uso:</strong> Direto do congelador no cozimento</li>
+        <li><strong>Obs:</strong> Textura muda, mas sabor mantém</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Módulo 5 - Colheita - Página 13</div>
+  </div>
+
+  <div class="page">
+    <div class="step-box">
+      <h4>3. Desidratação</h4>
+      <ul>
+        <li><strong>Duração:</strong> 1 ano+</li>
+        <li><strong>Métodos:</strong>
+          <ul>
+            <li>Forno: 60°C por 8-12 horas</li>
+            <li>Desidratador: 57°C por 6-10 horas</li>
+            <li>Sol: 3-5 dias em local ventilado</li>
+          </ul>
+        </li>
+        <li><strong>Uso:</strong> Inteiras ou triturar para pó</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>4. Conserva em Vinagre</h4>
+      <ul>
+        <li><strong>Duração:</strong> 1 ano</li>
+        <li><strong>Receita básica:</strong>
+          <ul>
+            <li>Pimentas limpas em vidro esterilizado</li>
+            <li>Vinagre fervente com sal</li>
+            <li>Aguardar 2 semanas antes de consumir</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>5. Em Azeite</h4>
+      <ul>
+        <li><strong>Duração:</strong> 6 meses</li>
+        <li><strong>Como:</strong>
+          <ul>
+            <li>Pimentas secas ou frescas</li>
+            <li>Cubra com azeite</li>
+            <li>Guarde na geladeira</li>
+          </ul>
+        </li>
+        <li><strong>Bônus:</strong> O azeite fica aromatizado!</li>
+      </ul>
+    </div>
+
+    <h2>Extraindo Sementes</h2>
+    <ol>
+      <li>Escolha pimentas bem maduras</li>
+      <li>Corte e remova as sementes</li>
+      <li>Lave em água corrente</li>
+      <li>Seque em papel por 1-2 semanas</li>
+      <li>Guarde em envelope de papel</li>
+      <li>Armazene em local seco e escuro</li>
+      <li><strong>Validade:</strong> 2-4 anos</li>
+    </ol>
+
+    <div class="page-number">Módulo 5 - Colheita - Página 14</div>
+  </div>
+
+  <!-- MÓDULO 6: PROBLEMAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>MÓDULO 6: Problemas e Soluções</h2>
+      <p>Resolva issues comuns rapidamente</p>
+    </div>
+
+    <h2>Problema 1: Queda de Flores</h2>
+    <div class="danger-box">
+      <h4>Sintomas:</h4>
+      <p>Flores caem antes de formar frutos</p>
+      <h4>Causas:</h4>
+      <ul>
+        <li>Temperatura muito alta (>35°C) ou baixa (<15°C)</li>
+        <li>Falta de polinização</li>
+        <li>Excesso ou falta de água</li>
+        <li>Deficiência nutricional</li>
+      </ul>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Mantenha temperatura entre 20-30°C</li>
+        <li>Polinize manualmente</li>
+        <li>Ajuste a rega</li>
+        <li>Fertilize com fósforo e potássio</li>
+      </ul>
+    </div>
+
+    <h2>Problema 2: Podridão Apical (BER)</h2>
+    <div class="danger-box">
+      <h4>Sintomas:</h4>
+      <p>Mancha preta/marrom na ponta do fruto</p>
+      <h4>Causa:</h4>
+      <p>Deficiência de cálcio ou rega irregular</p>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Adicione cálcio (calcário, cascas de ovo)</li>
+        <li>Regue regularmente (não deixe secar demais)</li>
+        <li>Mulch para manter umidade</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Módulo 6 - Problemas - Página 15</div>
+  </div>
+
+  <div class="page">
+    <h2>Problema 3: Pulgões</h2>
+    <div class="warning-box">
+      <h4>Sintomas:</h4>
+      <p>Insetos pequenos nas folhas novas, folhas enroladas</p>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Jato d'água forte</li>
+        <li>Água com sabão (detergente neutro)</li>
+        <li>Óleo de neem</li>
+        <li>Atraia joaninhas (predadoras naturais)</li>
+      </ul>
+    </div>
+
+    <h2>Problema 4: Mosca Branca</h2>
+    <div class="warning-box">
+      <h4>Sintomas:</h4>
+      <p>Mosquinhas brancas voam quando mexe na planta</p>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Armadilhas adesivas amarelas</li>
+        <li>Óleo de neem</li>
+        <li>Sabão de potássio</li>
+      </ul>
+    </div>
+
+    <h2>Problema 5: Oídio</h2>
+    <div class="warning-box">
+      <h4>Sintomas:</h4>
+      <p>Pó branco nas folhas (fungo)</p>
+      <h4>Soluções:</h4>
+      <ul>
+        <li>Leite diluído (1:10) pulverizado</li>
+        <li>Bicarbonato de sódio</li>
+        <li>Melhore a ventilação</li>
+        <li>Evite molhar folhas</li>
+      </ul>
+    </div>
+
+    <h2>Problema 6: Folhas Amarelas</h2>
+    <div class="warning-box">
+      <h4>Causas possíveis:</h4>
+      <ul>
+        <li><strong>Folhas velhas:</strong> Normal, remova</li>
+        <li><strong>Excesso de água:</strong> Reduza rega</li>
+        <li><strong>Falta de nitrogênio:</strong> Fertilize</li>
+        <li><strong>pH errado:</strong> Corrija substrato</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Módulo 6 - Problemas - Página 16</div>
+  </div>
+
+  <!-- BÔNUS: APARTAMENTO -->
+  <div class="page">
+    <div class="module-header">
+      <h2>BÔNUS: Pimentas em Apartamento</h2>
+      <p>Cultive na varanda ou janela</p>
+    </div>
+
+    <h2>Melhores Variedades para Apartamento</h2>
+    <table>
+      <tr>
+        <th>Pimenta</th>
+        <th>Altura</th>
+        <th>Vaso</th>
+        <th>Dificuldade</th>
+      </tr>
+      <tr>
+        <td>Biquinho</td>
+        <td>40-60cm</td>
+        <td>5-10L</td>
+        <td>Fácil</td>
+      </tr>
+      <tr>
+        <td>Dedo-de-moça</td>
+        <td>50-80cm</td>
+        <td>10-15L</td>
+        <td>Fácil</td>
+      </tr>
+      <tr>
+        <td>Jalapeño</td>
+        <td>60-90cm</td>
+        <td>10-15L</td>
+        <td>Fácil</td>
+      </tr>
+      <tr>
+        <td>Thai Chili</td>
+        <td>30-50cm</td>
+        <td>5-8L</td>
+        <td>Fácil</td>
+      </tr>
+    </table>
+
+    <h2>Escolhendo o Local</h2>
+    <ul>
+      <li><strong>Varanda:</strong> Ideal se pegar 4+ horas de sol</li>
+      <li><strong>Janela:</strong> Funciona, mas produção menor</li>
+      <li><strong>Orientação Sul:</strong> Melhor (mais sol)</li>
+      <li><strong>Orientação Norte:</strong> Evite (pouco sol)</li>
+    </ul>
+
+    <h2>Dicas Específicas</h2>
+
+    <div class="step-box">
+      <h4>Rega em Apartamento</h4>
+      <ul>
+        <li>Vasos secam mais rápido</li>
+        <li>No verão: rega diária ou 2x/dia</li>
+        <li>Prato com pedras para umidade</li>
+        <li>Considere vaso autoirrigante</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Polinização Manual</h4>
+      <p>Sem abelhas, você precisa ajudar:</p>
+      <ul>
+        <li>Sacuda a planta diariamente</li>
+        <li>Use cotonete entre flores</li>
+        <li>Ventilador ligado por algumas horas</li>
+      </ul>
+    </div>
+
+    <div class="page-number">Bônus - Apartamento - Página 17</div>
+  </div>
+
+  <!-- BÔNUS: RECEITAS -->
+  <div class="page">
+    <div class="module-header">
+      <h2>BÔNUS: Receitas de Conservas</h2>
+      <p>Preserve sua colheita</p>
+    </div>
+
+    <h2>1. Pimenta em Conserva Clássica</h2>
+    <div class="step-box">
+      <h4>Ingredientes:</h4>
+      <ul>
+        <li>500g de pimentas (dedo-de-moça, biquinho)</li>
+        <li>500ml de vinagre de maçã</li>
+        <li>1 colher de sopa de sal</li>
+        <li>2 dentes de alho</li>
+        <li>Ervas a gosto (louro, orégano)</li>
+      </ul>
+      <h4>Preparo:</h4>
+      <ol>
+        <li>Lave e seque as pimentas</li>
+        <li>Fure cada pimenta com palito</li>
+        <li>Ferva vinagre, sal e alho</li>
+        <li>Coloque pimentas em vidro esterilizado</li>
+        <li>Despeje o vinagre quente</li>
+        <li>Feche e aguarde 2 semanas</li>
+      </ol>
+      <p><strong>Duração:</strong> 1 ano</p>
+    </div>
+
+    <h2>2. Molho de Pimenta Caseiro</h2>
+    <div class="step-box">
+      <h4>Ingredientes:</h4>
+      <ul>
+        <li>300g de pimentas maduras</li>
+        <li>1 xícara de vinagre</li>
+        <li>3 dentes de alho</li>
+        <li>1 colher de sal</li>
+        <li>1/2 xícara de água</li>
+      </ul>
+      <h4>Preparo:</h4>
+      <ol>
+        <li>Bata tudo no liquidificador</li>
+        <li>Cozinhe por 15 minutos</li>
+        <li>Passe na peneira (opcional)</li>
+        <li>Envase em vidros esterilizados</li>
+      </ol>
+      <p><strong>Duração:</strong> 6 meses</p>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 18</div>
+  </div>
+
+  <div class="page">
+    <h2>3. Geleia de Pimenta</h2>
+    <div class="step-box">
+      <h4>Ingredientes:</h4>
+      <ul>
+        <li>200g de pimentas (biquinho ou dedo-de-moça)</li>
+        <li>2 xícaras de açúcar</li>
+        <li>1/2 xícara de vinagre</li>
+        <li>1 maçã ralada</li>
+      </ul>
+      <h4>Preparo:</h4>
+      <ol>
+        <li>Bata as pimentas no processador</li>
+        <li>Junte todos os ingredientes em panela</li>
+        <li>Cozinhe em fogo baixo por 40 minutos</li>
+        <li>Mexa constantemente</li>
+        <li>Teste o ponto (gotas firmes)</li>
+        <li>Envase quente em vidros</li>
+      </ol>
+      <p><strong>Uso:</strong> Queijos, carnes, aperitivos</p>
+    </div>
+
+    <h2>4. Pimenta Desidratada em Pó</h2>
+    <div class="step-box">
+      <h4>Preparo:</h4>
+      <ol>
+        <li>Lave e seque as pimentas</li>
+        <li>Corte ao meio (opcional)</li>
+        <li>Desidrate:
+          <ul>
+            <li>Forno: 60°C por 8-12h</li>
+            <li>Desidratador: 57°C por 6-10h</li>
+          </ul>
+        </li>
+        <li>Quando estiverem crocantes, triture</li>
+        <li>Peneire para pó fino</li>
+        <li>Guarde em vidro fechado</li>
+      </ol>
+      <p><strong>Duração:</strong> 1 ano+</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>⚠️ Cuidado ao Processar:</h4>
+      <p>Use luvas e máscara ao processar pimentas ardidas. A capsaicina em pó pode irritar olhos e vias respiratórias!</p>
+    </div>
+
+    <div class="page-number">Bônus - Receitas - Página 19</div>
+  </div>
+
+  <!-- PÁGINA FINAL -->
+  <div class="page">
+    <h1>Parabéns!</h1>
+    <p>Você completou o Guia Completo de Cultivo de Pimentas. Agora você tem todo o conhecimento para cultivar pimentas incríveis em casa!</p>
+
+    <div class="success-box">
+      <h4>Resumo do que você aprendeu:</h4>
+      <ul>
+        <li>✅ O universo das pimentas e espécies</li>
+        <li>✅ A Escala Scoville completa</li>
+        <li>✅ Germinação de sementes</li>
+        <li>✅ Cultivo e cuidados diários</li>
+        <li>✅ Colheita e conservação</li>
+        <li>✅ Resolução de problemas</li>
+        <li>✅ Cultivo em apartamento</li>
+        <li>✅ Receitas de conservas</li>
+      </ul>
+    </div>
+
+    <h2>Próximos Passos</h2>
+    <ol>
+      <li>Escolha suas primeiras variedades (jalapeño, biquinho)</li>
+      <li>Adquira sementes de qualidade</li>
+      <li>Comece a germinação</li>
+      <li>Prepare os vasos definitivos</li>
+      <li>Aguarde sua primeira colheita (3-4 meses)</li>
+    </ol>
+
+    <div class="highlight-box">
+      <h4>Dúvidas?</h4>
+      <p>Acesse <strong>minhahortaemcasa.com.br/pimentas</strong> para mais artigos, dicas e inspiração.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+      <p><strong>Minha Horta em Casa</strong></p>
+      <p>minhahortaemcasa.com.br</p>
+      <p style="margin-top: 20px; color: #9ca3af;">© 2025 - Todos os direitos reservados</p>
+    </div>
+  </div>
+</body>
+</html>

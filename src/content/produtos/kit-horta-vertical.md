@@ -5,6 +5,7 @@ originalPrice: 67
 description: "Tudo para montar sua horta vertical em qualquer espaço"
 category: "combo"
 featured: true
+checkoutUrl: "https://checkout.pagtrust.com.br/ckf0577565?funnel=fna8999baf"
 ---
 
 # Kit Horta Vertical Completo - R$ 29

@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guia Adubo Natural e Compostagem - Minha Horta em Casa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; color: #1f2937; line-height: 1.6; background: #fff; }
+    .page { max-width: 800px; margin: 0 auto; padding: 40px; page-break-after: always; }
+    .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); padding: 60px 40px; page-break-after: always; }
+    .cover h1 { font-size: 44px; font-weight: 800; color: #15803d; margin-bottom: 20px; }
+    .cover .subtitle { font-size: 22px; color: #166534; margin-bottom: 40px; }
+    .mascote { margin: 30px 0; }
+    .brand { margin-top: 40px; font-size: 18px; color: #15803d; font-weight: 600; }
+    .brand-url { font-size: 14px; color: #22c55e; }
+    h1 { font-size: 36px; color: #15803d; margin-bottom: 20px; border-bottom: 3px solid #22c55e; padding-bottom: 10px; }
+    h2 { font-size: 28px; color: #166534; margin: 30px 0 15px; }
+    h3 { font-size: 22px; color: #15803d; margin: 25px 0 12px; }
+    h4 { font-size: 18px; color: #166534; margin: 15px 0 10px; }
+    p { margin-bottom: 15px; }
+    ul, ol { margin: 15px 0 20px 25px; }
+    li { margin-bottom: 8px; }
+    .highlight-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-left: 4px solid #22c55e; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .warning-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .danger-box { background: #fef2f2; border-left: 4px solid #ef4444; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+    .recipe-box { background: #fff; border: 2px solid #22c55e; border-radius: 12px; padding: 20px; margin: 20px 0; }
+    .recipe-box h4 { color: #15803d; margin-bottom: 10px; border-bottom: 1px solid #dcfce7; padding-bottom: 8px; }
+    .step-box { background: #f8fafc; border-radius: 8px; padding: 15px; margin: 15px 0; }
+    .step-number { display: inline-block; background: #15803d; color: white; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; margin-right: 10px; font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #d1d5db; padding: 10px; text-align: left; }
+    th { background: #15803d; color: white; }
+    tr:nth-child(even) { background: #f0fdf4; }
+    .toc { background: #f8fafc; padding: 30px; border-radius: 12px; margin: 20px 0; }
+    .toc h2 { margin-top: 0; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { padding: 8px 0; border-bottom: 1px dotted #d1d5db; }
+    .nutrient-tag { display: inline-block; padding: 3px 10px; border-radius: 15px; font-size: 12px; margin-right: 5px; color: white; }
+    .n-tag { background: #22c55e; }
+    .p-tag { background: #f59e0b; }
+    .k-tag { background: #3b82f6; }
+    .ca-tag { background: #8b5cf6; }
+    .tip-box { background: #dbeafe; border-left: 4px solid #3b82f6; padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .page-number { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 30px; }
+    .materials-list { background: #f0fdf4; padding: 15px; border-radius: 8px; margin: 15px 0; }
+    .problem-solution { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+    .problem { background: #fef2f2; padding: 15px; border-radius: 8px; }
+    .solution { background: #f0fdf4; padding: 15px; border-radius: 8px; }
+    @media print { .page { page-break-after: always; } }
+  </style>
+</head>
+<body>
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="mascote">
+      <svg width="150" height="180" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGrad)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGrad)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs>
+          <linearGradient id="potGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bodyGrad" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Guia Adubo Natural e Compostagem</h1>
+    <p class="subtitle">Transforme lixo em ouro para suas plantas!</p>
+    <div class="brand">Minha Horta em Casa<div class="brand-url">minhahortaemcasa.com.br</div></div>
+  </div>
+
+  <!-- SUMÁRIO -->
+  <div class="page">
+    <div class="toc">
+      <h2>Sumário</h2>
+      <ul>
+        <li><strong>Introdução</strong> - Por que fazer adubo caseiro?.......3</li>
+        <li><strong>Parte 1: Nutrientes Essenciais</strong>.......4</li>
+        <li><strong>Parte 2: Adubos de Cozinha</strong>.......8</li>
+        <li>- Casca de Banana.......9</li>
+        <li>- Borra de Café.......11</li>
+        <li>- Casca de Ovo.......13</li>
+        <li>- Água de Cozimento.......15</li>
+        <li><strong>Parte 3: Adubos Líquidos</strong>.......17</li>
+        <li>- Chá de Composto.......18</li>
+        <li>- Biofertilizante de Urtiga.......20</li>
+        <li>- Fertilizante de Algas.......22</li>
+        <li><strong>Parte 4: Composteira Caseira</strong>.......24</li>
+        <li>- Minhocário (Vermicompostagem).......26</li>
+        <li>- Composteira de Baldes.......32</li>
+        <li>- Pilha de Compostagem.......38</li>
+        <li>- Bokashi.......44</li>
+        <li><strong>Parte 5: Chorume e Húmus</strong>.......50</li>
+        <li><strong>Parte 6: Calendário de Adubação</strong>.......54</li>
+        <li><strong>Parte 7: Solução de Problemas</strong>.......58</li>
+        <li><strong>Parte 8: Adubação por Tipo de Planta</strong>.......62</li>
+        <li><strong>Parte 9: Receitas Completas de Biofertilizantes</strong>.......68</li>
+        <li><strong>Bônus 1: 30 Perguntas Frequentes</strong>.......74</li>
+        <li><strong>Bônus 2: Tabela de Conversão e Medidas</strong>.......80</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 2</div>
+  </div>
+
+  <!-- INTRODUÇÃO -->
+  <div class="page">
+    <h1>Introdução: Por Que Fazer Adubo Caseiro?</h1>
+    <p>Você sabia que <strong>cerca de 50% do lixo doméstico</strong> pode virar adubo de alta qualidade? E que esse adubo caseiro é muitas vezes <strong>melhor</strong> que os adubos comerciais?</p>
+
+    <h3>O Problema com Adubos Químicos</h3>
+    <ul>
+      <li><strong>Custo alto:</strong> R$ 20-50 por kg de adubo</li>
+      <li><strong>Degradam o solo:</strong> Matam micro-organismos benéficos</li>
+      <li><strong>Dependência:</strong> Solo fica "viciado" e precisa cada vez mais</li>
+      <li><strong>Poluição:</strong> Contaminam lençóis freáticos</li>
+      <li><strong>Nutrição incompleta:</strong> Só fornecem NPK, ignorando micronutrientes</li>
+    </ul>
+
+    <h3>As Vantagens do Adubo Orgânico</h3>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>Gratuito ou muito barato</strong></li>
+        <li><strong>Melhora a estrutura do solo</strong> - mais fofo e drenado</li>
+        <li><strong>Alimenta a vida do solo</strong> - bactérias, fungos, minhocas</li>
+        <li><strong>Nutrição completa</strong> - macro e micronutrientes</li>
+        <li><strong>Liberação lenta</strong> - sem risco de queimar plantas</li>
+        <li><strong>Sustentável</strong> - reduz lixo orgânico</li>
+        <li><strong>Alimentos mais saborosos e nutritivos</strong></li>
+      </ul>
+    </div>
+
+    <h3>Quanto Você Vai Economizar?</h3>
+    <table>
+      <tr><th>Item</th><th>Preço Comercial</th><th>Custo Caseiro</th><th>Economia/Ano</th></tr>
+      <tr><td>Húmus (5kg/mês)</td><td>R$ 25/mês</td><td>R$ 0</td><td>R$ 300</td></tr>
+      <tr><td>Adubo líquido (2L/mês)</td><td>R$ 70/mês</td><td>R$ 0</td><td>R$ 840</td></tr>
+      <tr><td>NPK (1kg/mês)</td><td>R$ 20/mês</td><td>R$ 0</td><td>R$ 240</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td></td><td></td><td><strong>R$ 1.380/ano</strong></td></tr>
+    </table>
+    <div class="page-number">Página 3</div>
+  </div>
+
+  <!-- PARTE 1: NUTRIENTES -->
+  <div class="page">
+    <h1>Parte 1: Nutrientes Essenciais</h1>
+    <p>Antes de fazer adubos, você precisa entender o que as plantas precisam. Existem três grupos de nutrientes:</p>
+
+    <h3>Macronutrientes Primários (NPK)</h3>
+    <div class="recipe-box">
+      <h4><span class="nutrient-tag n-tag">N</span> Nitrogênio</h4>
+      <p><strong>Função:</strong> Crescimento vegetativo, folhas verdes</p>
+      <p><strong>Carência:</strong> Folhas amareladas (das mais velhas para as novas), crescimento lento</p>
+      <p><strong>Fontes caseiras:</strong> Borra de café, restos verdes, urina diluída, urtiga</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4><span class="nutrient-tag p-tag">P</span> Fósforo</h4>
+      <p><strong>Função:</strong> Raízes fortes, floração, frutificação</p>
+      <p><strong>Carência:</strong> Folhas arroxeadas, pouca floração, raízes fracas</p>
+      <p><strong>Fontes caseiras:</strong> Farinha de osso, casca de banana, cinza de madeira</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4><span class="nutrient-tag k-tag">K</span> Potássio</h4>
+      <p><strong>Função:</strong> Resistência a doenças, qualidade dos frutos, transporte de nutrientes</p>
+      <p><strong>Carência:</strong> Bordas das folhas secas/queimadas, frutos pequenos</p>
+      <p><strong>Fontes caseiras:</strong> Casca de banana, cinza de madeira, água de cozimento</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> "NPK" é o trio que você verá em todos os adubos comerciais (ex: 10-10-10). Com adubos caseiros, você obtém esses nutrientes de forma natural e equilibrada!
+    </div>
+    <div class="page-number">Página 4</div>
+  </div>
+
+  <div class="page">
+    <h3>Macronutrientes Secundários</h3>
+    <div class="recipe-box">
+      <h4><span class="nutrient-tag ca-tag">Ca</span> Cálcio</h4>
+      <p><strong>Função:</strong> Paredes celulares fortes, desenvolvimento de raízes</p>
+      <p><strong>Carência:</strong> Podridão apical em tomates/pimentões, folhas deformadas</p>
+      <p><strong>Fontes caseiras:</strong> Casca de ovo, calcário, leite</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Magnésio (Mg)</h4>
+      <p><strong>Função:</strong> Centro da molécula de clorofila (fotossíntese)</p>
+      <p><strong>Carência:</strong> Amarelamento entre as nervuras (nervuras ficam verdes)</p>
+      <p><strong>Fontes caseiras:</strong> Sal amargo (Epsom), folhas de bananeira decompostas</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Enxofre (S)</h4>
+      <p><strong>Função:</strong> Formação de proteínas, sabor em alho/cebola</p>
+      <p><strong>Carência:</strong> Folhas novas amareladas (diferente do N)</p>
+      <p><strong>Fontes caseiras:</strong> Composto orgânico, cebola/alho em decomposição</p>
+    </div>
+
+    <h3>Micronutrientes</h3>
+    <p>Necessários em pequenas quantidades, mas essenciais:</p>
+    <table>
+      <tr><th>Nutriente</th><th>Função</th><th>Fonte Caseira</th></tr>
+      <tr><td>Ferro (Fe)</td><td>Clorofila</td><td>Pregos enferrujados na água</td></tr>
+      <tr><td>Zinco (Zn)</td><td>Enzimas</td><td>Composto orgânico</td></tr>
+      <tr><td>Manganês (Mn)</td><td>Fotossíntese</td><td>Folhas secas</td></tr>
+      <tr><td>Boro (B)</td><td>Transporte açúcares</td><td>Bórax diluído</td></tr>
+      <tr><td>Cobre (Cu)</td><td>Resistência</td><td>Calda bordalesa</td></tr>
+      <tr><td>Molibdênio (Mo)</td><td>Fixação N</td><td>Composto rico</td></tr>
+    </table>
+    <div class="page-number">Página 5</div>
+  </div>
+
+  <div class="page">
+    <h3>Identificando Carências Nutricionais</h3>
+    <p>Use esta tabela para diagnosticar o que suas plantas precisam:</p>
+
+    <table>
+      <tr><th>Sintoma</th><th>Carência Provável</th><th>Solução Caseira</th></tr>
+      <tr><td>Folhas velhas amareladas</td><td>Nitrogênio</td><td>Borra de café, chá de urtiga</td></tr>
+      <tr><td>Folhas novas amareladas</td><td>Enxofre ou Ferro</td><td>Composto, água com prego</td></tr>
+      <tr><td>Folhas arroxeadas</td><td>Fósforo</td><td>Farinha de osso, casca banana</td></tr>
+      <tr><td>Bordas secas/queimadas</td><td>Potássio</td><td>Cinza, casca de banana</td></tr>
+      <tr><td>Amarelamento entre nervuras</td><td>Magnésio</td><td>Sal amargo diluído</td></tr>
+      <tr><td>Podridão apical (tomate)</td><td>Cálcio</td><td>Casca de ovo</td></tr>
+      <tr><td>Crescimento lento geral</td><td>Múltiplas</td><td>Composto completo</td></tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>Atenção!</h4>
+      <p>Nem sempre amarelamento é falta de nutrientes! Pode ser:</p>
+      <ul>
+        <li><strong>Excesso de água:</strong> Raízes afogadas não absorvem nutrientes</li>
+        <li><strong>pH errado:</strong> Nutrientes ficam "presos" no solo</li>
+        <li><strong>Pragas/doenças:</strong> Verifique folhas e raízes</li>
+        <li><strong>Excesso de sol/sombra:</strong> Plantas estressadas</li>
+      </ul>
+    </div>
+
+    <h3>O pH do Solo</h3>
+    <p>O pH determina se os nutrientes estão disponíveis para as plantas:</p>
+    <ul>
+      <li><strong>pH 6.0-7.0:</strong> Ideal para a maioria das hortaliças</li>
+      <li><strong>pH abaixo de 6:</strong> Solo ácido - adicione calcário ou cinza</li>
+      <li><strong>pH acima de 7:</strong> Solo alcalino - adicione enxofre ou composto</li>
+    </ul>
+    <div class="page-number">Página 6</div>
+  </div>
+
+  <div class="page">
+    <h3>Tabela de Preferência de pH por Planta</h3>
+    <table>
+      <tr><th>Planta</th><th>pH Ideal</th><th>Observação</th></tr>
+      <tr><td>Tomate</td><td>6.0-6.8</td><td>Levemente ácido</td></tr>
+      <tr><td>Alface</td><td>6.0-7.0</td><td>Neutro</td></tr>
+      <tr><td>Cenoura</td><td>6.0-6.8</td><td>Não gosta de solo muito ácido</td></tr>
+      <tr><td>Batata</td><td>5.5-6.5</td><td>Prefere mais ácido</td></tr>
+      <tr><td>Pimentão</td><td>6.0-6.8</td><td>Similar ao tomate</td></tr>
+      <tr><td>Morango</td><td>5.5-6.5</td><td>Levemente ácido</td></tr>
+      <tr><td>Couve</td><td>6.5-7.0</td><td>Prefere neutro</td></tr>
+      <tr><td>Mirtilo</td><td>4.5-5.5</td><td>Muito ácido!</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Teste Caseiro de pH:</strong>
+      <ol>
+        <li>Pegue uma amostra de solo</li>
+        <li>Adicione vinagre: se borbulhar, é alcalino</li>
+        <li>Adicione bicarbonato: se borbulhar, é ácido</li>
+        <li>Se não reagir a nenhum, é neutro</li>
+      </ol>
+      <p><em>Para maior precisão, compre um kit de pH (R$ 15-30)</em></p>
+    </div>
+
+    <h3>O Princípio da Adubação Orgânica</h3>
+    <div class="highlight-box">
+      <p><strong>Não alimente a planta, alimente o SOLO!</strong></p>
+      <p>Na agricultura orgânica, o foco é criar um solo vivo e saudável. Bilhões de micro-organismos (bactérias, fungos, protozoários) processam a matéria orgânica e disponibilizam os nutrientes para as plantas de forma gradual e equilibrada.</p>
+      <p>É um sistema sustentável onde o solo melhora a cada ano, ao contrário dos adubos químicos que degradam progressivamente.</p>
+    </div>
+    <div class="page-number">Página 7</div>
+  </div>
+
+  <!-- PARTE 2: ADUBOS DE COZINHA -->
+  <div class="page">
+    <h1>Parte 2: Adubos de Cozinha</h1>
+    <p>Sua cozinha é uma mina de ouro para a horta! Restos que iriam para o lixo podem nutrir suas plantas de graça.</p>
+
+    <h3>Visão Geral dos Adubos de Cozinha</h3>
+    <table>
+      <tr><th>Material</th><th>Nutrientes</th><th>Melhor Uso</th></tr>
+      <tr><td>Casca de banana</td><td>K, P</td><td>Floração, frutificação</td></tr>
+      <tr><td>Borra de café</td><td>N, K</td><td>Folhosas, acidificar solo</td></tr>
+      <tr><td>Casca de ovo</td><td>Ca</td><td>Tomates, prevenção pragas</td></tr>
+      <tr><td>Água de cozimento</td><td>Vários</td><td>Rega nutritiva</td></tr>
+      <tr><td>Restos de legumes</td><td>Vários</td><td>Compostagem</td></tr>
+      <tr><td>Casca de batata</td><td>K</td><td>Floração</td></tr>
+      <tr><td>Folhas de chá</td><td>N</td><td>Folhosas</td></tr>
+      <tr><td>Borra de cerveja</td><td>N, P</td><td>Crescimento geral</td></tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>O Que NÃO Usar</h4>
+      <ul>
+        <li><strong>Carnes e ossos crus:</strong> Atraem animais, cheiro horrível</li>
+        <li><strong>Laticínios:</strong> Mesmo problema</li>
+        <li><strong>Óleos e gorduras:</strong> Impermeabilizam o solo</li>
+        <li><strong>Alho e cebola em excesso:</strong> Podem inibir crescimento</li>
+        <li><strong>Cítricos em excesso:</strong> Muito ácidos, matam minhocas</li>
+        <li><strong>Restos salgados:</strong> Sal prejudica plantas</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 8</div>
+  </div>
+
+  <!-- CASCA DE BANANA -->
+  <div class="page">
+    <h2>Casca de Banana - O Adubo de Potássio</h2>
+    <p><span class="nutrient-tag k-tag">K</span> <span class="nutrient-tag p-tag">P</span> Rico em potássio e fósforo</p>
+
+    <p>A casca de banana é um dos melhores adubos caseiros, especialmente para plantas que estão florescendo ou frutificando.</p>
+
+    <div class="recipe-box">
+      <h4>Método 1: Casca Picada no Solo</h4>
+      <p><strong>Dificuldade:</strong> Muito fácil</p>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Pique as cascas em pedaços pequenos (1-2cm)</p>
+        <p><span class="step-number">2</span> Enterre ao redor da planta, a 5cm de profundidade</p>
+        <p><span class="step-number">3</span> Cubra com terra ou mulch</p>
+      </div>
+      <p><strong>Frequência:</strong> 1 casca por vaso médio, a cada 15 dias</p>
+      <p><strong>Melhor para:</strong> Tomates, pimentões, roseiras</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Método 2: Chá de Casca de Banana</h4>
+      <p><strong>Dificuldade:</strong> Fácil</p>
+      <div class="materials-list">
+        <strong>Materiais:</strong>
+        <ul>
+          <li>3-4 cascas de banana</li>
+          <li>1 litro de água</li>
+          <li>Recipiente com tampa</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Pique as cascas e coloque no recipiente</p>
+        <p><span class="step-number">2</span> Adicione 1 litro de água</p>
+        <p><span class="step-number">3</span> Deixe descansar por 48 horas (tampado)</p>
+        <p><span class="step-number">4</span> Coe e use para regar</p>
+      </div>
+      <p><strong>Diluição:</strong> Usar puro ou diluir 1:1 com água</p>
+      <p><strong>Frequência:</strong> 1x por semana durante floração</p>
+    </div>
+    <div class="page-number">Página 9</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>Método 3: Casca Desidratada em Pó</h4>
+      <p><strong>Dificuldade:</strong> Média</p>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Seque as cascas ao sol por 3-5 dias (ou no forno baixo por 2h)</p>
+        <p><span class="step-number">2</span> Quando estiverem crocantes, triture no liquidificador</p>
+        <p><span class="step-number">3</span> Armazene em pote fechado (dura 6 meses)</p>
+        <p><span class="step-number">4</span> Use 1 colher de sopa por vaso médio</p>
+      </div>
+      <p><strong>Vantagem:</strong> Concentrado, fácil de armazenar, não atrai moscas</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Método 4: Casca Fermentada</h4>
+      <p><strong>Dificuldade:</strong> Média</p>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Pique cascas e coloque em garrafa PET</p>
+        <p><span class="step-number">2</span> Adicione 1 colher de açúcar por litro</p>
+        <p><span class="step-number">3</span> Complete com água, deixando espaço</p>
+        <p><span class="step-number">4</span> Feche sem apertar (vai liberar gás)</p>
+        <p><span class="step-number">5</span> Deixe fermentar 7-14 dias</p>
+        <p><span class="step-number">6</span> Dilua 1:10 para usar</p>
+      </div>
+      <p><strong>Resultado:</strong> Biofertilizante potente com micro-organismos benéficos</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Guarde suas cascas no freezer até ter quantidade suficiente. Assim não atraem mosquinhas e você pode fazer um lote maior de chá!
+    </div>
+    <div class="page-number">Página 10</div>
+  </div>
+
+  <!-- BORRA DE CAFÉ -->
+  <div class="page">
+    <h2>Borra de Café - Nitrogênio + Acidez</h2>
+    <p><span class="nutrient-tag n-tag">N</span> <span class="nutrient-tag k-tag">K</span> Rico em nitrogênio e potássio</p>
+
+    <p>A borra de café é excelente para folhosas e plantas que gostam de solo ácido. Mas atenção: use com moderação!</p>
+
+    <div class="recipe-box">
+      <h4>Uso Direto no Solo</h4>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Deixe a borra secar (evita fungos)</p>
+        <p><span class="step-number">2</span> Espalhe uma camada fina ao redor da planta</p>
+        <p><span class="step-number">3</span> Misture levemente com a terra superficial</p>
+      </div>
+      <p><strong>Quantidade:</strong> Máximo 1cm de espessura, 1x por mês</p>
+      <p><strong>Melhor para:</strong> Alface, espinafre, azaleias, hortênsias azuis</p>
+    </div>
+
+    <div class="danger-box">
+      <h4>Cuidados com a Borra de Café</h4>
+      <ul>
+        <li><strong>Excesso:</strong> Pode acidificar demais o solo</li>
+        <li><strong>Úmida:</strong> Atrai fungos e mofo</li>
+        <li><strong>Camada grossa:</strong> Impermeabiliza, impede água entrar</li>
+        <li><strong>Diretamente nas sementes:</strong> Pode inibir germinação</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Chá de Borra de Café</h4>
+      <div class="materials-list">
+        <strong>Materiais:</strong>
+        <ul>
+          <li>2 colheres de sopa de borra seca</li>
+          <li>1 litro de água</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Misture a borra na água</p>
+        <p><span class="step-number">2</span> Deixe descansar por 24 horas</p>
+        <p><span class="step-number">3</span> Coe e use para regar</p>
+      </div>
+      <p><strong>Frequência:</strong> 1x a cada 2 semanas</p>
+    </div>
+    <div class="page-number">Página 11</div>
+  </div>
+
+  <div class="page">
+    <h3>Borra de Café como Repelente</h3>
+    <p>Além de adubo, a borra de café tem outros usos na horta:</p>
+
+    <div class="highlight-box">
+      <h4>Repele:</h4>
+      <ul>
+        <li><strong>Lesmas e caracóis:</strong> Não gostam da textura</li>
+        <li><strong>Formigas:</strong> O cheiro as confunde</li>
+        <li><strong>Gatos:</strong> Odeiam o aroma de café</li>
+      </ul>
+      <p><strong>Como usar:</strong> Faça uma barreira ao redor das plantas</p>
+    </div>
+
+    <h3>Compostagem com Borra</h3>
+    <p>A borra de café é um excelente ativador de compostagem:</p>
+    <ul>
+      <li>Acelera a decomposição</li>
+      <li>Atrai minhocas (adoram!)</li>
+      <li>Adiciona nitrogênio à pilha</li>
+    </ul>
+    <p><strong>Proporção:</strong> Até 20% do material verde da composteira</p>
+
+    <h3>Plantas que Amam Café</h3>
+    <table>
+      <tr><th>Planta</th><th>Motivo</th></tr>
+      <tr><td>Azaleia</td><td>Adora solo ácido</td></tr>
+      <tr><td>Hortênsia (azul)</td><td>Acidez intensifica cor azul</td></tr>
+      <tr><td>Mirtilo</td><td>Precisa de pH baixo</td></tr>
+      <tr><td>Alface</td><td>Gosta do nitrogênio</td></tr>
+      <tr><td>Roseiras</td><td>Aprecia o potássio</td></tr>
+    </table>
+
+    <div class="warning-box">
+      <strong>Evite em:</strong> Tomate jovem, pimentão, plantas que preferem solo neutro/alcalino
+    </div>
+    <div class="page-number">Página 12</div>
+  </div>
+
+  <!-- CASCA DE OVO -->
+  <div class="page">
+    <h2>Casca de Ovo - Cálcio Puro</h2>
+    <p><span class="nutrient-tag ca-tag">Ca</span> Rica em carbonato de cálcio</p>
+
+    <p>A casca de ovo é sua fonte caseira de cálcio, essencial para evitar a temida podridão apical em tomates e pimentões.</p>
+
+    <div class="recipe-box">
+      <h4>Preparo Básico da Casca</h4>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Lave as cascas para remover restos de clara</p>
+        <p><span class="step-number">2</span> Deixe secar completamente (sol ou forno baixo)</p>
+        <p><span class="step-number">3</span> Triture até virar pó fino (quanto mais fino, melhor)</p>
+        <p><span class="step-number">4</span> Armazene em pote fechado</p>
+      </div>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Método 1: Pó no Solo</h4>
+      <p><strong>Uso:</strong> Misture 1 colher de sopa de pó na cova de plantio</p>
+      <p><strong>Manutenção:</strong> Espalhe 1 colher ao redor da planta mensalmente</p>
+      <p><strong>Melhor para:</strong> Tomate, pimentão, berinjela, abobrinha</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Método 2: Água de Casca de Ovo</h4>
+      <div class="materials-list">
+        <strong>Materiais:</strong>
+        <ul>
+          <li>Cascas de 10-12 ovos (secas e trituradas)</li>
+          <li>1 litro de água</li>
+          <li>Recipiente de vidro</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Coloque as cascas trituradas na água</p>
+        <p><span class="step-number">2</span> Deixe descansar por 5-7 dias, mexendo diariamente</p>
+        <p><span class="step-number">3</span> Coe e use para regar</p>
+      </div>
+      <p><strong>Frequência:</strong> 1x por semana durante frutificação</p>
+    </div>
+    <div class="page-number">Página 13</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>Método 3: Casca com Vinagre (Cálcio Solúvel)</h4>
+      <p>O vinagre dissolve o carbonato de cálcio, tornando-o imediatamente disponível:</p>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Coloque cascas trituradas em um pote</p>
+        <p><span class="step-number">2</span> Cubra com vinagre branco</p>
+        <p><span class="step-number">3</span> Vai borbulhar (reação química)</p>
+        <p><span class="step-number">4</span> Quando parar de borbulhar (1-2 dias), está pronto</p>
+        <p><span class="step-number">5</span> Dilua 1 colher de sopa em 1 litro de água</p>
+      </div>
+      <p><strong>Vantagem:</strong> Cálcio absorvido imediatamente pela planta</p>
+      <p><strong>Uso:</strong> Pulverizar folhas ou regar</p>
+    </div>
+
+    <h3>Casca de Ovo como Barreira</h3>
+    <p>Cascas trituradas grosseiramente também funcionam como barreira física:</p>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>Lesmas e caracóis:</strong> As bordas cortantes machucam seu corpo mole</li>
+        <li><strong>Lagartas:</strong> Dificuldade de passar</li>
+      </ul>
+      <p><strong>Como usar:</strong> Espalhe cascas quebradas ao redor das plantas</p>
+    </div>
+
+    <h3>Quanto Usar?</h3>
+    <table>
+      <tr><th>Tamanho do Vaso</th><th>Quantidade de Pó</th><th>Frequência</th></tr>
+      <tr><td>Pequeno (até 2L)</td><td>1 colher de chá</td><td>Mensal</td></tr>
+      <tr><td>Médio (3-10L)</td><td>1 colher de sopa</td><td>Mensal</td></tr>
+      <tr><td>Grande (10-20L)</td><td>2 colheres de sopa</td><td>Mensal</td></tr>
+      <tr><td>Canteiro (por planta)</td><td>3 colheres de sopa</td><td>Mensal</td></tr>
+    </table>
+    <div class="page-number">Página 14</div>
+  </div>
+
+  <!-- ÁGUA DE COZIMENTO -->
+  <div class="page">
+    <h2>Água de Cozimento - Fertilizante Pronto</h2>
+    <p>Toda vez que você cozinha vegetais, está jogando nutrientes fora! A água de cozimento é um fertilizante gratuito.</p>
+
+    <div class="recipe-box">
+      <h4>Melhores Águas de Cozimento</h4>
+      <table>
+        <tr><th>Água de</th><th>Nutrientes</th><th>Melhor para</th></tr>
+        <tr><td>Batata</td><td>Amido, K</td><td>Todas as plantas</td></tr>
+        <tr><td>Macarrão</td><td>Amido, Fe</td><td>Folhosas</td></tr>
+        <tr><td>Arroz</td><td>Amido, N</td><td>Crescimento geral</td></tr>
+        <tr><td>Ovo (sem sal)</td><td>Ca</td><td>Tomates, pimentões</td></tr>
+        <tr><td>Legumes</td><td>Vários</td><td>Todas</td></tr>
+        <tr><td>Feijão/Lentilha</td><td>N, P</td><td>Folhosas</td></tr>
+      </table>
+    </div>
+
+    <div class="danger-box">
+      <h4>NUNCA Use Água Com:</h4>
+      <ul>
+        <li><strong>Sal:</strong> Mata as plantas!</li>
+        <li><strong>Óleo:</strong> Impermeabiliza o solo</li>
+        <li><strong>Temperos fortes:</strong> Podem prejudicar</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h4>Como Usar</h4>
+      <p><span class="step-number">1</span> Deixe a água esfriar completamente</p>
+      <p><span class="step-number">2</span> Use pura para regar (não precisa diluir)</p>
+      <p><span class="step-number">3</span> Use no mesmo dia ou guarde na geladeira por até 3 dias</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Mantenha um balde perto da pia para coletar as águas de cozimento sem sal. No final do dia, use para regar!
+    </div>
+    <div class="page-number">Página 15</div>
+  </div>
+
+  <div class="page">
+    <h3>Água de Arroz Fermentada</h3>
+    <p>Um fertilizante especial usado na agricultura natural coreana:</p>
+
+    <div class="recipe-box">
+      <h4>Receita Água de Arroz Fermentada</h4>
+      <div class="materials-list">
+        <strong>Materiais:</strong>
+        <ul>
+          <li>1 xícara de arroz cru</li>
+          <li>3 xícaras de água</li>
+          <li>Recipiente de vidro</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Lave o arroz na água, mexendo bem</p>
+        <p><span class="step-number">2</span> Reserve essa água leitosa</p>
+        <p><span class="step-number">3</span> Coloque em recipiente de vidro</p>
+        <p><span class="step-number">4</span> Cubra com pano e deixe fermentar 3-7 dias</p>
+        <p><span class="step-number">5</span> Quando azedo, está pronto</p>
+        <p><span class="step-number">6</span> Dilua 1:10 para usar</p>
+      </div>
+      <p><strong>Benefícios:</strong> Rico em lactobacilos que fortalecem a planta</p>
+    </div>
+
+    <h3>Outros Líquidos Úteis</h3>
+    <div class="recipe-box">
+      <h4>Água de Aquário</h4>
+      <p><strong>O que contém:</strong> Nitrogênio, fósforo, micro-organismos benéficos</p>
+      <p><strong>Como usar:</strong> Direto para regar, sem diluir</p>
+      <p><strong>Frequência:</strong> Toda vez que trocar a água do aquário</p>
+      <p><strong>Atenção:</strong> Não use se o aquário foi tratado com medicamentos</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Água de Lagoa/Açude</h4>
+      <p><strong>O que contém:</strong> Algas, micro-organismos, nutrientes naturais</p>
+      <p><strong>Como usar:</strong> Direto ou diluído 1:1</p>
+      <p><strong>Vantagem:</strong> Rico em vida microbiológica</p>
+    </div>
+    <div class="page-number">Página 16</div>
+  </div>
+
+  <!-- PARTE 3: ADUBOS LÍQUIDOS -->
+  <div class="page">
+    <h1>Parte 3: Adubos Líquidos Avançados</h1>
+    <p>Adubos líquidos são absorvidos mais rapidamente pelas plantas, sendo ideais para correções rápidas ou alimentação foliar.</p>
+
+    <h3>Vantagens dos Adubos Líquidos</h3>
+    <ul>
+      <li><strong>Absorção rápida:</strong> Resultados em dias</li>
+      <li><strong>Aplicação foliar:</strong> Nutrientes entram pelas folhas</li>
+      <li><strong>Controle preciso:</strong> Fácil dosar</li>
+      <li><strong>Distribuição uniforme:</strong> Alcança todo o sistema radicular</li>
+    </ul>
+
+    <h3>Tabela de Adubos Líquidos</h3>
+    <table>
+      <tr><th>Adubo</th><th>Principal Nutriente</th><th>Tempo de Preparo</th></tr>
+      <tr><td>Chá de composto</td><td>Equilibrado</td><td>24-48h</td></tr>
+      <tr><td>Chá de urtiga</td><td>Nitrogênio</td><td>7-14 dias</td></tr>
+      <tr><td>Chá de confrei</td><td>Potássio</td><td>3-4 semanas</td></tr>
+      <tr><td>Biofertilizante</td><td>Completo</td><td>14-30 dias</td></tr>
+      <tr><td>Chorume de minhoca</td><td>Equilibrado</td><td>Pronto (subproduto)</td></tr>
+    </table>
+
+    <div class="warning-box">
+      <h4>Regra de Ouro dos Líquidos</h4>
+      <p><strong>Na dúvida, dilua mais!</strong> É melhor aplicar diluído várias vezes do que concentrado uma vez e queimar as plantas.</p>
+    </div>
+    <div class="page-number">Página 17</div>
+  </div>
+
+  <!-- CHÁ DE COMPOSTO -->
+  <div class="page">
+    <h2>Chá de Composto - O Coringa</h2>
+    <p>O chá de composto é feito a partir do húmus da composteira e é um fertilizante completo e equilibrado.</p>
+
+    <div class="recipe-box">
+      <h4>Receita do Chá de Composto</h4>
+      <div class="materials-list">
+        <strong>Materiais:</strong>
+        <ul>
+          <li>1 parte de composto/húmus maduro</li>
+          <li>5 partes de água (sem cloro)</li>
+          <li>Balde ou recipiente grande</li>
+          <li>Saco de pano ou meia velha</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Coloque o composto dentro do saco de pano</p>
+        <p><span class="step-number">2</span> Mergulhe o saco na água</p>
+        <p><span class="step-number">3</span> Deixe em infusão por 24-48 horas</p>
+        <p><span class="step-number">4</span> Mexa ocasionalmente</p>
+        <p><span class="step-number">5</span> Remova o saco (composto volta para composteira)</p>
+        <p><span class="step-number">6</span> Use o líquido imediatamente</p>
+      </div>
+      <p><strong>Cor ideal:</strong> Marrom claro, como chá fraco</p>
+      <p><strong>Diluição:</strong> Usar puro ou 1:1 com água</p>
+    </div>
+
+    <h3>Chá de Composto Aerado (AACT)</h3>
+    <p>Versão potencializada com oxigenação:</p>
+    <div class="step-box">
+      <p><span class="step-number">1</span> Prepare como acima</p>
+      <p><span class="step-number">2</span> Adicione uma bomba de aquário</p>
+      <p><span class="step-number">3</span> Deixe aerando por 24-48 horas</p>
+      <p><span class="step-number">4</span> Use imediatamente após desligar</p>
+    </div>
+    <p><strong>Benefício:</strong> Multiplica os micro-organismos benéficos exponencialmente</p>
+    <div class="page-number">Página 18</div>
+  </div>
+
+  <div class="page">
+    <h3>Aplicação do Chá de Composto</h3>
+
+    <div class="recipe-box">
+      <h4>Rega no Solo</h4>
+      <ul>
+        <li><strong>Diluição:</strong> Puro ou 1:1</li>
+        <li><strong>Quantidade:</strong> Mesmo volume que uma rega normal</li>
+        <li><strong>Frequência:</strong> 1x por semana ou a cada 15 dias</li>
+        <li><strong>Quando:</strong> Manhã cedo ou final de tarde</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Pulverização Foliar</h4>
+      <ul>
+        <li><strong>Diluição:</strong> 1:2 (1 parte chá, 2 partes água)</li>
+        <li><strong>Coe bem:</strong> Para não entupir o pulverizador</li>
+        <li><strong>Frequência:</strong> 1x a cada 2 semanas</li>
+        <li><strong>Quando:</strong> Manhã cedo (folhas secam antes do sol forte)</li>
+        <li><strong>Onde:</strong> Principalmente na parte de baixo das folhas</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Benefícios da Pulverização Foliar</h4>
+      <ul>
+        <li>Nutrientes absorvidos diretamente</li>
+        <li>Coloniza folhas com micro-organismos benéficos</li>
+        <li>Compete com fungos patogênicos</li>
+        <li>Aumenta resistência natural da planta</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Use o chá de composto em até 4 horas após preparo para máxima eficácia dos micro-organismos vivos. Se refrigerado, dura até 48h.
+    </div>
+    <div class="page-number">Página 19</div>
+  </div>
+
+  <!-- CHÁ DE URTIGA -->
+  <div class="page">
+    <h2>Biofertilizante de Urtiga - Super Nitrogênio</h2>
+    <p><span class="nutrient-tag n-tag">N</span> Um dos fertilizantes caseiros mais potentes!</p>
+
+    <p>A urtiga (Urtica sp.) é uma planta "daninha" que concentra enormes quantidades de nitrogênio e minerais. Se você tem urtiga crescendo perto, aproveite!</p>
+
+    <div class="recipe-box">
+      <h4>Receita do Chá de Urtiga</h4>
+      <div class="materials-list">
+        <strong>Materiais:</strong>
+        <ul>
+          <li>1 kg de folhas frescas de urtiga (ou 200g secas)</li>
+          <li>10 litros de água (sem cloro)</li>
+          <li>Balde com tampa</li>
+          <li>Luvas (urtiga queima!)</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Colha as urtigas com luvas</p>
+        <p><span class="step-number">2</span> Pique grosseiramente e coloque no balde</p>
+        <p><span class="step-number">3</span> Cubra com água</p>
+        <p><span class="step-number">4</span> Tampe (mas não hermeticamente)</p>
+        <p><span class="step-number">5</span> Mexa diariamente</p>
+        <p><span class="step-number">6</span> Espere 7-14 dias (vai feder muito!)</p>
+        <p><span class="step-number">7</span> Quando parar de borbulhar, está pronto</p>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <h4>Aviso: O Cheiro!</h4>
+      <p>O chá de urtiga fermentado tem um odor MUITO forte (semelhante a esgoto). Faça em local afastado de vizinhos e janelas!</p>
+    </div>
+    <div class="page-number">Página 20</div>
+  </div>
+
+  <div class="page">
+    <h3>Como Usar o Chá de Urtiga</h3>
+
+    <div class="recipe-box">
+      <h4>Diluições Recomendadas</h4>
+      <table>
+        <tr><th>Uso</th><th>Diluição</th><th>Frequência</th></tr>
+        <tr><td>Mudas jovens</td><td>1:20</td><td>1x por semana</td></tr>
+        <tr><td>Plantas adultas (rega)</td><td>1:10</td><td>1x por semana</td></tr>
+        <tr><td>Pulverização foliar</td><td>1:20</td><td>A cada 15 dias</td></tr>
+        <tr><td>Plantas debilitadas</td><td>1:5</td><td>2x por semana</td></tr>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Benefícios do Chá de Urtiga</h4>
+      <ul>
+        <li><strong>Alto nitrogênio:</strong> Estimula crescimento vegetativo</li>
+        <li><strong>Ferro:</strong> Folhas mais verdes</li>
+        <li><strong>Fortalece imunidade:</strong> Plantas mais resistentes</li>
+        <li><strong>Repele pragas:</strong> O cheiro afasta pulgões</li>
+        <li><strong>Ativador de compostagem:</strong> Acelera decomposição</li>
+      </ul>
+    </div>
+
+    <h3>Alternativas à Urtiga</h3>
+    <p>Se não tiver urtiga, pode usar plantas similares:</p>
+    <table>
+      <tr><th>Planta</th><th>Nutrientes</th><th>Observação</th></tr>
+      <tr><td>Confrei</td><td>K, Ca</td><td>Excelente para floração</td></tr>
+      <tr><td>Cavalinha</td><td>Sílica</td><td>Fortalece estrutura</td></tr>
+      <tr><td>Esterco fresco</td><td>N, P, K</td><td>Mesmo processo</td></tr>
+      <tr><td>Grama cortada</td><td>N</td><td>Versão mais fraca</td></tr>
+    </table>
+    <div class="page-number">Página 21</div>
+  </div>
+
+  <!-- FERTILIZANTE DE ALGAS -->
+  <div class="page">
+    <h2>Fertilizante de Algas - Micronutrientes</h2>
+    <p>As algas marinhas são riquíssimas em micronutrientes, hormônios vegetais e estimulantes de crescimento.</p>
+
+    <div class="recipe-box">
+      <h4>Chá de Algas Marinhas</h4>
+      <div class="materials-list">
+        <strong>Materiais:</strong>
+        <ul>
+          <li>500g de algas frescas (ou 100g secas)</li>
+          <li>10 litros de água</li>
+          <li>Balde com tampa</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Se frescas, lave para remover excesso de sal</p>
+        <p><span class="step-number">2</span> Pique e coloque no balde</p>
+        <p><span class="step-number">3</span> Cubra com água</p>
+        <p><span class="step-number">4</span> Deixe fermentar 2-3 semanas</p>
+        <p><span class="step-number">5</span> Coe e dilua 1:10 para usar</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Benefícios Únicos das Algas</h4>
+      <ul>
+        <li><strong>Citocininas:</strong> Hormônio que estimula divisão celular</li>
+        <li><strong>Auxinas:</strong> Promove enraizamento</li>
+        <li><strong>Ácido algínico:</strong> Melhora estrutura do solo</li>
+        <li><strong>60+ minerais:</strong> Nutrição completa</li>
+        <li><strong>Aumenta resistência:</strong> A estresses e doenças</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Não mora perto do mar? Compre algas secas em lojas de produtos naturais ou japoneses (Nori, Wakame). Funcionam muito bem!
+    </div>
+    <div class="page-number">Página 22</div>
+  </div>
+
+  <div class="page">
+    <h3>Outros Biofertilizantes Poderosos</h3>
+
+    <div class="recipe-box">
+      <h4>Biofertilizante Supermagro</h4>
+      <p>Um clássico da agricultura orgânica brasileira:</p>
+      <div class="materials-list">
+        <strong>Ingredientes básicos:</strong>
+        <ul>
+          <li>200L de água</li>
+          <li>40kg de esterco fresco</li>
+          <li>4kg de cinza de madeira</li>
+          <li>4L de leite</li>
+          <li>4L de melaço ou garapa</li>
+        </ul>
+      </div>
+      <p><strong>Preparo:</strong> Fermentar por 30-60 dias, mexendo semanalmente</p>
+      <p><strong>Uso:</strong> Diluir 1:20 para rega, 1:50 para foliar</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Biofertilizante Simples</h4>
+      <p>Versão reduzida e prática:</p>
+      <div class="materials-list">
+        <strong>Ingredientes:</strong>
+        <ul>
+          <li>20L de água</li>
+          <li>2kg de esterco fresco</li>
+          <li>200g de açúcar ou melaço</li>
+          <li>200ml de leite</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Misture tudo em balde com tampa</p>
+        <p><span class="step-number">2</span> Mexa diariamente</p>
+        <p><span class="step-number">3</span> Pronto em 15-20 dias</p>
+        <p><span class="step-number">4</span> Dilua 1:10 para usar</p>
+      </div>
+    </div>
+    <div class="page-number">Página 23</div>
+  </div>
+
+  <!-- PARTE 4: COMPOSTEIRA -->
+  <div class="page">
+    <h1>Parte 4: Composteira Caseira</h1>
+    <p>A composteira é a "fábrica" de adubo da sua casa. Ela transforma restos orgânicos em húmus, o melhor condicionador de solo que existe.</p>
+
+    <h3>Tipos de Composteira</h3>
+    <table>
+      <tr><th>Tipo</th><th>Espaço</th><th>Velocidade</th><th>Manutenção</th></tr>
+      <tr><td>Minhocário</td><td>Pequeno</td><td>Média (2-3 meses)</td><td>Baixa</td></tr>
+      <tr><td>Baldes empilhados</td><td>Pequeno</td><td>Média (2-3 meses)</td><td>Baixa</td></tr>
+      <tr><td>Pilha/leira</td><td>Grande</td><td>Rápida (1-2 meses)</td><td>Média</td></tr>
+      <tr><td>Bokashi</td><td>Muito pequeno</td><td>Rápida (2-4 semanas)</td><td>Baixa</td></tr>
+      <tr><td>Tambor giratório</td><td>Médio</td><td>Rápida (3-4 semanas)</td><td>Baixa</td></tr>
+    </table>
+
+    <h3>A Ciência da Compostagem</h3>
+    <p>A compostagem é um processo biológico onde micro-organismos decompõem matéria orgânica. Para funcionar bem, precisa de:</p>
+
+    <div class="highlight-box">
+      <h4>Os 4 Elementos da Compostagem</h4>
+      <ul>
+        <li><strong>Carbono (marrom):</strong> Folhas secas, serragem, papelão</li>
+        <li><strong>Nitrogênio (verde):</strong> Restos de comida, grama fresca</li>
+        <li><strong>Água:</strong> Umidade de esponja espremida</li>
+        <li><strong>Oxigênio:</strong> Aeração periódica</li>
+      </ul>
+    </div>
+
+    <div class="tip-box">
+      <strong>Proporção ideal:</strong> 3 partes de carbono (marrom) para 1 parte de nitrogênio (verde)
+    </div>
+    <div class="page-number">Página 24</div>
+  </div>
+
+  <div class="page">
+    <h3>O Que Pode e Não Pode na Composteira</h3>
+
+    <div class="recipe-box">
+      <h4>PODE (Verde - Nitrogênio)</h4>
+      <ul>
+        <li>Cascas de frutas e legumes</li>
+        <li>Borra de café e chá</li>
+        <li>Restos de verduras</li>
+        <li>Grama fresca cortada</li>
+        <li>Esterco de herbívoros</li>
+        <li>Flores e plantas verdes</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>PODE (Marrom - Carbono)</h4>
+      <ul>
+        <li>Folhas secas</li>
+        <li>Serragem (não tratada)</li>
+        <li>Papelão e papel (sem tinta colorida)</li>
+        <li>Cascas de ovo (trituradas)</li>
+        <li>Palha seca</li>
+        <li>Galhos triturados</li>
+      </ul>
+    </div>
+
+    <div class="danger-box">
+      <h4>NÃO PODE</h4>
+      <ul>
+        <li><strong>Carnes e peixes:</strong> Apodrecem, atraem animais</li>
+        <li><strong>Laticínios:</strong> Mesmo problema</li>
+        <li><strong>Gorduras e óleos:</strong> Impermeabilizam</li>
+        <li><strong>Fezes de pets:</strong> Podem ter patógenos</li>
+        <li><strong>Plantas doentes:</strong> Espalham doenças</li>
+        <li><strong>Ervas daninhas com semente:</strong> Vão germinar depois</li>
+        <li><strong>Cítricos em excesso:</strong> Acidificam demais, matam minhocas</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 25</div>
+  </div>
+
+  <!-- MINHOCÁRIO -->
+  <div class="page">
+    <h2>Minhocário (Vermicompostagem)</h2>
+    <p>O minhocário é perfeito para apartamentos. Ocupa pouco espaço, não tem cheiro (se bem cuidado) e produz o melhor húmus que existe.</p>
+
+    <h3>Materiais para Montar</h3>
+    <div class="materials-list">
+      <ul>
+        <li>3 caixas plásticas empilháveis (30-50L cada)</li>
+        <li>Furadeira com broca de 6mm</li>
+        <li>1 torneirinha plástica (opcional)</li>
+        <li>Tela mosquiteiro ou TNT</li>
+        <li>500g a 1kg de minhocas californianas</li>
+        <li>Substrato inicial (terra + composto)</li>
+      </ul>
+    </div>
+
+    <h3>Montagem Passo a Passo</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Caixa de baixo (coletora):</strong> Não fure. Instale a torneirinha na lateral, próximo ao fundo.</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Caixas do meio e de cima (digestoras):</strong> Fure o fundo com furos de 6mm, espaçados 5cm entre si.</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Tampa:</strong> Fure algumas vezes para ventilação ou coloque tela.</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Coloque tela mosquiteiro:</strong> No fundo das caixas furadas, para minhocas não caírem.</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">5</span> <strong>Empilhe:</strong> Caixa coletora embaixo, digestora no meio, digestora vazia em cima.</p>
+    </div>
+    <div class="page-number">Página 26</div>
+  </div>
+
+  <div class="page">
+    <h3>Iniciando o Minhocário</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> <strong>Camada base:</strong> Coloque 5-10cm de terra + composto na caixa do meio</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">2</span> <strong>Adicione as minhocas:</strong> Distribua uniformemente</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">3</span> <strong>Cubra:</strong> Com folhas secas ou papelão úmido</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">4</span> <strong>Espere 1 semana:</strong> Para as minhocas se adaptarem</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">5</span> <strong>Comece a alimentar:</strong> Aos poucos, aumentando gradualmente</p>
+    </div>
+
+    <h3>Alimentando as Minhocas</h3>
+    <div class="recipe-box">
+      <h4>Restos Ideais para Minhocas</h4>
+      <ul>
+        <li>Cascas de frutas (exceto cítricos em excesso)</li>
+        <li>Cascas de legumes</li>
+        <li>Borra de café</li>
+        <li>Folhas de chá</li>
+        <li>Cascas de ovo trituradas</li>
+        <li>Restos de verduras (não temperados)</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Evite Dar às Minhocas</h4>
+      <ul>
+        <li>Alho e cebola (irritam a pele)</li>
+        <li>Cítricos em excesso (muito ácido)</li>
+        <li>Pimentas e temperos fortes</li>
+        <li>Sal ou comida temperada</li>
+        <li>Carnes, gorduras, laticínios</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 27</div>
+  </div>
+
+  <div class="page">
+    <h3>Manutenção do Minhocário</h3>
+
+    <div class="recipe-box">
+      <h4>Rotina Semanal</h4>
+      <ul>
+        <li>Adicione restos orgânicos picados</li>
+        <li>Cubra sempre com material seco</li>
+        <li>Verifique a umidade</li>
+        <li>Colete o chorume da torneirinha</li>
+      </ul>
+    </div>
+
+    <h3>Problemas Comuns e Soluções</h3>
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Moscas e Mau Cheiro</h4>
+        <p><strong>Causa:</strong> Comida exposta, excesso de umidade</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Cubra bem com serragem. Adicione mais material seco. Pique menor os restos.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Minhocas Fugindo</h4>
+        <p><strong>Causa:</strong> Ambiente inadequado (muito ácido, úmido, ou quente)</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Adicione casca de ovo (neutraliza). Melhore ventilação. Reduza alimentação.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Composto Muito Seco</h4>
+        <p><strong>Causa:</strong> Pouca umidade</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Borrife água. Adicione mais restos úmidos.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Processo Muito Lento</h4>
+        <p><strong>Causa:</strong> Frio, pouca comida, ou poucas minhocas</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Mantenha em local aquecido. Alimente regularmente.</p>
+      </div>
+    </div>
+    <div class="page-number">Página 28</div>
+  </div>
+
+  <div class="page">
+    <h3>Quando Trocar as Caixas</h3>
+    <p>O sistema de rotação funciona assim:</p>
+
+    <div class="step-box">
+      <p><span class="step-number">1</span> Quando a caixa do meio estiver cheia de húmus (2-3 meses)</p>
+      <p><span class="step-number">2</span> Pare de alimentar a caixa do meio</p>
+      <p><span class="step-number">3</span> Comece a alimentar a caixa de cima</p>
+      <p><span class="step-number">4</span> As minhocas migram para cima em busca de comida</p>
+      <p><span class="step-number">5</span> Após 2-3 semanas, a caixa do meio estará sem minhocas</p>
+      <p><span class="step-number">6</span> Retire o húmus pronto</p>
+      <p><span class="step-number">7</span> Coloque a caixa vazia em cima da pilha</p>
+      <p><span class="step-number">8</span> Repita o ciclo</p>
+    </div>
+
+    <h3>Como Saber se o Húmus Está Pronto</h3>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>Cor:</strong> Marrom escuro, quase preto</li>
+        <li><strong>Textura:</strong> Homogênea, como terra fina</li>
+        <li><strong>Cheiro:</strong> Terra fresca, cheiro de floresta</li>
+        <li><strong>Forma:</strong> Não dá para identificar os restos originais</li>
+      </ul>
+    </div>
+
+    <h3>Quantidade de Minhocas</h3>
+    <table>
+      <tr><th>Restos/Dia</th><th>Minhocas Necessárias</th></tr>
+      <tr><td>100g</td><td>250g de minhocas</td></tr>
+      <tr><td>250g</td><td>500g de minhocas</td></tr>
+      <tr><td>500g</td><td>1kg de minhocas</td></tr>
+      <tr><td>1kg</td><td>2kg de minhocas</td></tr>
+    </table>
+    <p><em>Minhocas se reproduzem! Uma população saudável dobra a cada 2-3 meses.</em></p>
+    <div class="page-number">Página 29</div>
+  </div>
+
+  <div class="page">
+    <h3>Tipos de Minhocas para Compostagem</h3>
+
+    <div class="recipe-box">
+      <h4>Minhoca Californiana (Eisenia fetida)</h4>
+      <p><strong>A mais indicada!</strong></p>
+      <ul>
+        <li>Vive na superfície (não cava fundo)</li>
+        <li>Come matéria orgânica em decomposição</li>
+        <li>Reproduz-se rapidamente</li>
+        <li>Tolera variações de temperatura</li>
+        <li>Tamanho: 5-10cm</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Minhoca Vermelha da Califórnia (Lumbricus rubellus)</h4>
+      <ul>
+        <li>Similar à californiana</li>
+        <li>Ligeiramente maior</li>
+        <li>Também excelente para compostagem</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Não Use Minhocas Comuns de Jardim!</h4>
+      <p>As minhocas que você encontra no jardim (Pontoscolex corethrurus, etc.) são escavadoras e não se adaptam bem à composteira. Elas precisam de solo profundo e fogem das caixas.</p>
+    </div>
+
+    <h3>Onde Comprar Minhocas</h3>
+    <ul>
+      <li><strong>Minhocários comerciais:</strong> Procure na sua região</li>
+      <li><strong>Agricultores orgânicos:</strong> Muitos têm e vendem</li>
+      <li><strong>Internet:</strong> Diversos fornecedores com entrega</li>
+      <li><strong>Grupos de compostagem:</strong> Troca e doação entre membros</li>
+    </ul>
+    <p><strong>Preço médio:</strong> R$ 50-100 por 500g</p>
+    <div class="page-number">Página 30</div>
+  </div>
+
+  <div class="page">
+    <h3>O Chorume de Minhoca</h3>
+    <p>O líquido que escorre para a caixa coletora é um fertilizante poderoso!</p>
+
+    <div class="recipe-box">
+      <h4>Como Usar o Chorume</h4>
+      <ul>
+        <li><strong>Cor ideal:</strong> Marrom escuro, como café</li>
+        <li><strong>Diluição:</strong> 1:10 (1 parte chorume, 10 partes água)</li>
+        <li><strong>Frequência:</strong> 1x por semana</li>
+        <li><strong>Aplicação:</strong> Rega no solo ou foliar (mais diluído)</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Por Que é Tão Bom?</h4>
+      <ul>
+        <li>Passou pelo sistema digestivo das minhocas</li>
+        <li>Rico em ácidos húmicos e fúlvicos</li>
+        <li>Contém milhões de micro-organismos benéficos</li>
+        <li>Nutrientes em forma quelada (facilmente absorvíveis)</li>
+        <li>Hormônios naturais de crescimento</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Chorume Fedido?</h4>
+      <p>Se o chorume tiver cheiro muito forte ou desagradável, algo está errado na composteira:</p>
+      <ul>
+        <li>Excesso de umidade</li>
+        <li>Material apodrecendo (não compostando)</li>
+        <li>Falta de oxigênio</li>
+      </ul>
+      <p><strong>Solução:</strong> Não use esse chorume. Corrija a composteira adicionando material seco e melhorando aeração.</p>
+    </div>
+    <div class="page-number">Página 31</div>
+  </div>
+
+  <!-- COMPOSTEIRA DE BALDES -->
+  <div class="page">
+    <h2>Composteira de Baldes (Sem Minhocas)</h2>
+    <p>Se você prefere não lidar com minhocas, esta é uma ótima alternativa para apartamentos e espaços pequenos.</p>
+
+    <h3>Materiais Necessários</h3>
+    <div class="materials-list">
+      <ul>
+        <li>2-3 baldes de 20L com tampa</li>
+        <li>Furadeira com broca de 8mm</li>
+        <li>Torneirinha plástica</li>
+        <li>Tijolo ou suporte para elevar</li>
+        <li>Material seco (serragem, folhas)</li>
+      </ul>
+    </div>
+
+    <h3>Montagem</h3>
+    <div class="step-box">
+      <p><span class="step-number">1</span> Fure a lateral do balde, próximo ao fundo, e instale a torneirinha</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">2</span> Fure a tampa várias vezes (ventilação)</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">3</span> Coloque o balde sobre tijolos (para a torneira funcionar)</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">4</span> Comece com uma camada de 10cm de material seco</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">5</span> Adicione restos orgânicos picados</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">6</span> Cubra com mais material seco</p>
+    </div>
+    <div class="step-box">
+      <p><span class="step-number">7</span> Repita as camadas até encher</p>
+    </div>
+    <div class="page-number">Página 32</div>
+  </div>
+
+  <div class="page">
+    <h3>Sistema de Rotação com 3 Baldes</h3>
+
+    <div class="recipe-box">
+      <h4>Balde 1 - Ativo</h4>
+      <p>Recebe restos frescos diariamente. Fica ativo por 2-3 meses até encher.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Balde 2 - Em Maturação</h4>
+      <p>Cheio, não recebe mais restos. Fica "descansando" e decompondo por 2-3 meses.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Balde 3 - Pronto</h4>
+      <p>Composto maduro, pronto para usar. Ao esvaziar, volta a ser o Balde 1.</p>
+    </div>
+
+    <h3>Dicas para Sucesso</h3>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>Pique pequeno:</strong> Quanto menor, mais rápido decompõe</li>
+        <li><strong>Proporção 3:1:</strong> 3 partes seco, 1 parte verde</li>
+        <li><strong>Mexa semanalmente:</strong> Aera e acelera o processo</li>
+        <li><strong>Umidade certa:</strong> Como esponja espremida</li>
+        <li><strong>Cubra sempre:</strong> Evita moscas e mau cheiro</li>
+      </ul>
+    </div>
+
+    <h3>Acelerando o Processo</h3>
+    <p>Truques para composto mais rápido:</p>
+    <ul>
+      <li>Adicione borra de café (ativa micro-organismos)</li>
+      <li>Use EM (micro-organismos eficazes)</li>
+      <li>Mantenha em local aquecido</li>
+      <li>Pique muito fino ou processe no liquidificador</li>
+      <li>Adicione um pouco de composto maduro (inóculo)</li>
+    </ul>
+    <div class="page-number">Página 33</div>
+  </div>
+
+  <div class="page">
+    <h3>Compostagem Elétrica</h3>
+    <p>Para quem quer praticidade máxima, existem composteiras elétricas que processam restos em 24 horas.</p>
+
+    <div class="recipe-box">
+      <h4>Como Funcionam</h4>
+      <ul>
+        <li>Trituram e aquecem os restos</li>
+        <li>Desidratam o material</li>
+        <li>Resultado em 24 horas</li>
+        <li>Compactas, cabem na cozinha</li>
+        <li>Preço: R$ 500-2.000</li>
+      </ul>
+    </div>
+
+    <div class="warning-box">
+      <h4>Limitações</h4>
+      <ul>
+        <li>Consomem energia</li>
+        <li>O "composto" é mais um pré-composto desidratado</li>
+        <li>Ainda precisa maturar 2-4 semanas no solo</li>
+        <li>Não tem a riqueza microbiológica do composto tradicional</li>
+      </ul>
+    </div>
+
+    <h3>Comparativo de Composteiras de Apartamento</h3>
+    <table>
+      <tr><th>Tipo</th><th>Custo</th><th>Tempo</th><th>Qualidade</th></tr>
+      <tr><td>Minhocário</td><td>R$ 100-200</td><td>2-3 meses</td><td>Excelente</td></tr>
+      <tr><td>Baldes</td><td>R$ 50-100</td><td>3-4 meses</td><td>Muito boa</td></tr>
+      <tr><td>Bokashi</td><td>R$ 150-300</td><td>2-4 semanas</td><td>Muito boa</td></tr>
+      <tr><td>Elétrica</td><td>R$ 500-2000</td><td>24 horas*</td><td>Boa</td></tr>
+    </table>
+    <p><em>* Mais 2-4 semanas de maturação</em></p>
+    <div class="page-number">Página 34</div>
+  </div>
+
+  <!-- Continuando com mais páginas... -->
+
+  <div class="page">
+    <h1>Parte 5: Chorume e Húmus - Uso Correto</h1>
+
+    <h3>O Húmus de Minhoca</h3>
+    <p>O húmus de minhoca é o produto final da vermicompostagem - o melhor condicionador de solo que existe.</p>
+
+    <div class="recipe-box">
+      <h4>Composição do Húmus</h4>
+      <ul>
+        <li><strong>Matéria orgânica:</strong> 40-60%</li>
+        <li><strong>Nitrogênio:</strong> 1,5-2,5%</li>
+        <li><strong>Fósforo:</strong> 1,5-2%</li>
+        <li><strong>Potássio:</strong> 1-2%</li>
+        <li><strong>Cálcio:</strong> 2-3%</li>
+        <li><strong>Micro-organismos:</strong> Bilhões por grama!</li>
+      </ul>
+    </div>
+
+    <h3>Como Usar o Húmus</h3>
+    <table>
+      <tr><th>Aplicação</th><th>Quantidade</th><th>Frequência</th></tr>
+      <tr><td>Vasos (mistura no substrato)</td><td>20-30% do volume</td><td>No plantio</td></tr>
+      <tr><td>Cobertura em vasos</td><td>1-2cm de camada</td><td>A cada 2 meses</td></tr>
+      <tr><td>Canteiros (incorporar)</td><td>2-4 kg/m²</td><td>A cada plantio</td></tr>
+      <tr><td>Covas de plantio</td><td>1-2 punhados</td><td>No plantio</td></tr>
+      <tr><td>Chá de húmus</td><td>1:5 com água</td><td>Semanal</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> O húmus não queima as plantas mesmo em excesso! Mas usar demais é desperdício - siga as quantidades recomendadas.
+    </div>
+    <div class="page-number">Página 50</div>
+  </div>
+
+  <div class="page">
+    <h3>O Chorume (Biofertilizante Líquido)</h3>
+    <p>O chorume é o líquido que escorre durante a compostagem - um fertilizante concentrado e poderoso.</p>
+
+    <div class="recipe-box">
+      <h4>Diluições Corretas</h4>
+      <table>
+        <tr><th>Uso</th><th>Diluição</th><th>Observação</th></tr>
+        <tr><td>Rega de plantas adultas</td><td>1:10</td><td>Padrão</td></tr>
+        <tr><td>Mudas e plantas jovens</td><td>1:20</td><td>Mais diluído</td></tr>
+        <tr><td>Pulverização foliar</td><td>1:20 ou mais</td><td>Coar bem antes</td></tr>
+        <tr><td>Plantas sensíveis</td><td>1:30</td><td>Na dúvida, dilua mais</td></tr>
+      </table>
+    </div>
+
+    <div class="danger-box">
+      <h4>Chorume NUNCA Puro!</h4>
+      <p>O chorume concentrado pode queimar as raízes das plantas! Sempre dilua antes de usar.</p>
+    </div>
+
+    <h3>Frequência de Aplicação</h3>
+    <ul>
+      <li><strong>Plantas em crescimento:</strong> 1x por semana</li>
+      <li><strong>Plantas em floração:</strong> 1x a cada 15 dias</li>
+      <li><strong>Plantas estabelecidas:</strong> 1x por mês</li>
+      <li><strong>Hortaliças folhosas:</strong> 1x por semana</li>
+    </ul>
+
+    <h3>Armazenamento</h3>
+    <ul>
+      <li>Guarde em recipiente escuro</li>
+      <li>Em local fresco</li>
+      <li>Dura até 3 meses</li>
+      <li>Se criar mofo ou cheiro muito ruim, descarte</li>
+    </ul>
+    <div class="page-number">Página 51</div>
+  </div>
+
+  <!-- CALENDÁRIO DE ADUBAÇÃO -->
+  <div class="page">
+    <h1>Parte 6: Calendário de Adubação</h1>
+    <p>Cada fase do crescimento da planta pede nutrientes diferentes. Use este calendário para saber o que aplicar em cada momento.</p>
+
+    <h3>Fases de Crescimento</h3>
+    <table>
+      <tr><th>Fase</th><th>Necessidade Principal</th><th>Adubo Indicado</th></tr>
+      <tr><td>Germinação</td><td>Umidade, poucos nutrientes</td><td>Apenas substrato leve</td></tr>
+      <tr><td>Crescimento inicial</td><td>Nitrogênio (N)</td><td>Chá de composto, borra café</td></tr>
+      <tr><td>Crescimento vegetativo</td><td>N, K</td><td>Húmus, chá urtiga</td></tr>
+      <tr><td>Pré-floração</td><td>Fósforo (P)</td><td>Farinha de osso</td></tr>
+      <tr><td>Floração</td><td>P, K</td><td>Casca de banana</td></tr>
+      <tr><td>Frutificação</td><td>K, Ca</td><td>Cinza, casca de ovo</td></tr>
+      <tr><td>Maturação</td><td>K</td><td>Casca de banana, cinza</td></tr>
+    </table>
+
+    <h3>Calendário Mensal Geral</h3>
+    <div class="recipe-box">
+      <h4>Primavera (Set-Nov)</h4>
+      <ul>
+        <li>Foco em nitrogênio para crescimento</li>
+        <li>Aplicar húmus nos canteiros</li>
+        <li>Chá de composto semanalmente</li>
+        <li>Preparar solo para transplantes</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Verão (Dez-Fev)</h4>
+      <ul>
+        <li>Manter adubação de manutenção</li>
+        <li>Casca de banana para floração</li>
+        <li>Casca de ovo para frutificação</li>
+        <li>Atenção à rega (nutrientes lixiviam)</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 54</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>Outono (Mar-Mai)</h4>
+      <ul>
+        <li>Reduzir nitrogênio gradualmente</li>
+        <li>Potássio para fortalecer plantas</li>
+        <li>Preparar solo para plantios de inverno</li>
+        <li>Adicionar composto aos canteiros</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Inverno (Jun-Ago)</h4>
+      <ul>
+        <li>Adubação mais leve (crescimento lento)</li>
+        <li>Aproveitar para enriquecer canteiros vazios</li>
+        <li>Fazer e maturar composto</li>
+        <li>Aplicar calcário se necessário</li>
+      </ul>
+    </div>
+
+    <h3>Frequência por Tipo de Planta</h3>
+    <table>
+      <tr><th>Tipo</th><th>Frequência</th><th>Adubo Principal</th></tr>
+      <tr><td>Folhosas (alface, couve)</td><td>Semanal</td><td>Rico em N</td></tr>
+      <tr><td>Frutos (tomate, pimentão)</td><td>Quinzenal</td><td>Equilibrado, mais K</td></tr>
+      <tr><td>Raízes (cenoura, beterraba)</td><td>Mensal</td><td>Pouco N, mais P/K</td></tr>
+      <tr><td>Temperos (manjericão, salsa)</td><td>Quinzenal</td><td>Equilibrado</td></tr>
+      <tr><td>Leguminosas (feijão, ervilha)</td><td>Mensal</td><td>Pouco N (fixam próprio)</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Plantas leguminosas (feijão, ervilha, amendoim) fixam nitrogênio do ar através de bactérias nas raízes. Não precisam de adubação nitrogenada!
+    </div>
+    <div class="page-number">Página 55</div>
+  </div>
+
+  <!-- SOLUÇÃO DE PROBLEMAS -->
+  <div class="page">
+    <h1>Parte 7: Solução de Problemas</h1>
+
+    <h3>Problemas na Composteira</h3>
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Cheiro Forte de Amônia</h4>
+        <p>Excesso de nitrogênio (verde)</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Adicione muito material seco (carbono). Mexa para aerar.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Cheiro de Ovo Podre</h4>
+        <p>Falta de oxigênio (anaeróbico)</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Mexa urgentemente! Adicione material grosseiro para criar bolsas de ar.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Moscas de Fruta</h4>
+        <p>Comida exposta</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Cubra sempre com serragem. Enterre os restos. Use armadilha de vinagre.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Processo Muito Lento</h4>
+        <p>Material seco demais ou frio</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Adicione umidade. Aumente material verde. Mova para local mais quente.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Muito Úmido/Encharcado</h4>
+        <p>Excesso de verde ou chuva</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Adicione muito material seco. Proteja da chuva. Melhore drenagem.</p>
+      </div>
+    </div>
+    <div class="page-number">Página 58</div>
+  </div>
+
+  <div class="page">
+    <h3>Problemas com Adubos</h3>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Planta Queimou Após Adubar</h4>
+        <p>Adubo muito concentrado ou em contato com raízes</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Regue abundantemente para diluir. Próxima vez, dilua mais e aplique longe do caule.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Adubei Mas Não Melhorou</h4>
+        <p>pH errado, problema não é nutricional, ou nutriente não disponível</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Teste o pH. Verifique pragas/doenças. Use composto orgânico completo.</p>
+      </div>
+    </div>
+
+    <div class="problem-solution">
+      <div class="problem">
+        <h4>Folhas Muito Verdes, Sem Frutos</h4>
+        <p>Excesso de nitrogênio</p>
+      </div>
+      <div class="solution">
+        <h4>Solução</h4>
+        <p>Pare a adubação nitrogenada. Aplique fósforo e potássio.</p>
+      </div>
+    </div>
+
+    <h3>Checklist de Diagnóstico</h3>
+    <div class="highlight-box">
+      <p>Antes de adubar, pergunte-se:</p>
+      <ol>
+        <li>A rega está correta?</li>
+        <li>A luminosidade é adequada?</li>
+        <li>Há pragas ou doenças?</li>
+        <li>O vaso/canteiro tem drenagem?</li>
+        <li>O pH está na faixa ideal?</li>
+        <li>Quando foi a última adubação?</li>
+      </ol>
+      <p><strong>Muitos problemas parecem nutricionais mas não são!</strong></p>
+    </div>
+    <div class="page-number">Página 59</div>
+  </div>
+
+  <!-- PARTE 8: ADUBAÇÃO POR TIPO DE PLANTA -->
+  <div class="page">
+    <h1>Parte 8: Adubação por Tipo de Planta</h1>
+    <p>Cada grupo de plantas tem necessidades nutricionais específicas. Use estas fichas para adubar corretamente cada cultura.</p>
+
+    <h2>Hortaliças Folhosas</h2>
+    <p><em>Alface, rúcula, espinafre, couve, acelga, agrião</em></p>
+
+    <div class="recipe-box">
+      <h4>Necessidades Principais</h4>
+      <p><span class="nutrient-tag n-tag">N</span> Alto nitrogênio para folhas grandes e verdes</p>
+      <ul>
+        <li><strong>Nitrogênio:</strong> ALTO - folhas dependem disso</li>
+        <li><strong>Potássio:</strong> Médio - para qualidade</li>
+        <li><strong>Fósforo:</strong> Baixo - não frutificam</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Programa de Adubação</h4>
+      <table>
+        <tr><th>Momento</th><th>Adubo</th><th>Quantidade</th></tr>
+        <tr><td>Preparo do solo</td><td>Húmus + composto</td><td>3-4 kg/m²</td></tr>
+        <tr><td>Transplante</td><td>Chá de composto</td><td>500ml/planta</td></tr>
+        <tr><td>Semanalmente</td><td>Chá de urtiga 1:10</td><td>Rega normal</td></tr>
+        <tr><td>A cada 15 dias</td><td>Borra de café</td><td>1 colher/planta</td></tr>
+      </table>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica:</strong> Folhosas têm ciclo curto (30-60 dias). Adube desde cedo para aproveitar o tempo!
+    </div>
+    <div class="page-number">Página 62</div>
+  </div>
+
+  <div class="page">
+    <h2>Hortaliças de Fruto</h2>
+    <p><em>Tomate, pimentão, berinjela, pepino, abobrinha, quiabo</em></p>
+
+    <div class="recipe-box">
+      <h4>Necessidades Principais</h4>
+      <p><span class="nutrient-tag k-tag">K</span> <span class="nutrient-tag p-tag">P</span> <span class="nutrient-tag ca-tag">Ca</span></p>
+      <ul>
+        <li><strong>Nitrogênio:</strong> Médio (só no início)</li>
+        <li><strong>Fósforo:</strong> Alto - para floração</li>
+        <li><strong>Potássio:</strong> ALTO - qualidade dos frutos</li>
+        <li><strong>Cálcio:</strong> ALTO - previne podridão apical</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Programa de Adubação</h4>
+      <table>
+        <tr><th>Fase</th><th>Adubo</th><th>Frequência</th></tr>
+        <tr><td>Plantio</td><td>Húmus + farinha de osso + casca de ovo</td><td>Na cova</td></tr>
+        <tr><td>Crescimento</td><td>Chá de composto</td><td>Semanal</td></tr>
+        <tr><td>Pré-floração</td><td>Farinha de osso</td><td>1x</td></tr>
+        <tr><td>Floração</td><td>Casca de banana (chá ou pó)</td><td>Semanal</td></tr>
+        <tr><td>Frutificação</td><td>Casca de ovo + cinza</td><td>Quinzenal</td></tr>
+      </table>
+    </div>
+
+    <div class="danger-box">
+      <h4>Erro Comum!</h4>
+      <p>Excesso de nitrogênio na floração = muitas folhas, poucos frutos! Reduza N quando começar a florir.</p>
+    </div>
+    <div class="page-number">Página 63</div>
+  </div>
+
+  <div class="page">
+    <h2>Raízes e Tubérculos</h2>
+    <p><em>Cenoura, beterraba, rabanete, nabo, batata, mandioquinha</em></p>
+
+    <div class="recipe-box">
+      <h4>Necessidades Principais</h4>
+      <p><span class="nutrient-tag k-tag">K</span> <span class="nutrient-tag p-tag">P</span></p>
+      <ul>
+        <li><strong>Nitrogênio:</strong> BAIXO - excesso causa raízes finas e muita folha</li>
+        <li><strong>Fósforo:</strong> Alto - desenvolvimento das raízes</li>
+        <li><strong>Potássio:</strong> Alto - engorda a raiz</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Programa de Adubação</h4>
+      <table>
+        <tr><th>Momento</th><th>Adubo</th><th>Observação</th></tr>
+        <tr><td>Preparo do solo (30 dias antes)</td><td>Composto bem curtido</td><td>Não use esterco fresco!</td></tr>
+        <tr><td>Plantio</td><td>Farinha de osso + cinza</td><td>Misturar ao solo</td></tr>
+        <tr><td>Durante o ciclo</td><td>Chá de casca de banana</td><td>Quinzenal</td></tr>
+        <tr><td>Metade do ciclo</td><td>Cinza de madeira</td><td>Cobertura leve</td></tr>
+      </table>
+    </div>
+
+    <div class="warning-box">
+      <h4>Cuidado!</h4>
+      <ul>
+        <li><strong>Esterco fresco:</strong> Causa raízes bifurcadas e tortas</li>
+        <li><strong>Excesso de N:</strong> Muita rama, raiz fina</li>
+        <li><strong>Solo compactado:</strong> Raízes curtas e feias</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 64</div>
+  </div>
+
+  <div class="page">
+    <h2>Temperos e Ervas Aromáticas</h2>
+    <p><em>Manjericão, salsa, cebolinha, coentro, orégano, tomilho, alecrim</em></p>
+
+    <div class="recipe-box">
+      <h4>Necessidades Principais</h4>
+      <ul>
+        <li><strong>Nitrogênio:</strong> Moderado (folhosos) / Baixo (lenhosos)</li>
+        <li><strong>Fósforo:</strong> Baixo a médio</li>
+        <li><strong>Potássio:</strong> Médio - intensifica aroma</li>
+        <li><strong>Solo:</strong> Bem drenado, não muito rico</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Segredo dos Temperos</h4>
+      <p><strong>Menos é mais!</strong> Ervas muito adubadas crescem rápido mas perdem aroma e sabor. Estresse leve intensifica óleos essenciais.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Adubação por Grupo</h4>
+      <table>
+        <tr><th>Grupo</th><th>Exemplos</th><th>Adubação</th></tr>
+        <tr><td>Folhosos (ciclo curto)</td><td>Manjericão, salsa, coentro</td><td>Composto leve + chá quinzenal</td></tr>
+        <tr><td>Perenes herbáceos</td><td>Cebolinha, hortelã</td><td>Húmus 2x/ano + chá mensal</td></tr>
+        <tr><td>Lenhosos mediterrâneos</td><td>Alecrim, tomilho, orégano</td><td>Quase nenhum! Composto 1x/ano</td></tr>
+      </table>
+    </div>
+
+    <div class="tip-box">
+      <strong>Dica do Verdinho:</strong> Alecrim, lavanda e tomilho são de origem mediterrânea. Preferem solo pobre, calcário e seco. Adubar demais os mata!
+    </div>
+    <div class="page-number">Página 65</div>
+  </div>
+
+  <div class="page">
+    <h2>Leguminosas</h2>
+    <p><em>Feijão, ervilha, vagem, amendoim, lentilha</em></p>
+
+    <div class="highlight-box">
+      <h4>O Superpoder das Leguminosas</h4>
+      <p>Leguminosas têm bactérias (Rhizobium) nas raízes que captam nitrogênio do AR e transformam em adubo! Elas são <strong>fábricas naturais de nitrogênio</strong>.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Adubação Especial</h4>
+      <ul>
+        <li><strong>Nitrogênio:</strong> NÃO ADUBAR! Elas produzem o próprio</li>
+        <li><strong>Fósforo:</strong> Médio - ajuda na fixação de N</li>
+        <li><strong>Potássio:</strong> Médio - para vagens cheias</li>
+        <li><strong>Cálcio:</strong> Importante para as bactérias</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Programa Simples</h4>
+      <table>
+        <tr><th>Momento</th><th>Adubo</th><th>Quantidade</th></tr>
+        <tr><td>Preparo do solo</td><td>Composto + cinza + casca de ovo</td><td>2 kg/m²</td></tr>
+        <tr><td>Floração</td><td>Casca de banana</td><td>Cobertura leve</td></tr>
+      </table>
+    </div>
+
+    <div class="tip-box">
+      <strong>Bônus:</strong> Após a colheita, corte as leguminosas rente ao solo e deixe as raízes. Elas liberam nitrogênio para a próxima cultura! É a famosa "adubação verde".
+    </div>
+    <div class="page-number">Página 66</div>
+  </div>
+
+  <div class="page">
+    <h2>Frutíferas em Vaso</h2>
+    <p><em>Limão, jabuticaba, pitanga, acerola, morango</em></p>
+
+    <div class="recipe-box">
+      <h4>Desafios do Vaso</h4>
+      <ul>
+        <li>Solo limitado = nutrientes se esgotam rápido</li>
+        <li>Regas frequentes = nutrientes lixiviam</li>
+        <li>Sem vida do solo natural</li>
+        <li>Necessidade de reposição constante</li>
+      </ul>
+    </div>
+
+    <div class="recipe-box">
+      <h4>Programa Anual</h4>
+      <table>
+        <tr><th>Quando</th><th>O Quê</th><th>Como</th></tr>
+        <tr><td>Início primavera</td><td>Húmus + torta de mamona</td><td>Renovar camada superior</td></tr>
+        <tr><td>Pré-floração</td><td>Farinha de osso</td><td>1-2 colheres</td></tr>
+        <tr><td>Floração</td><td>Casca de banana (semanal)</td><td>Chá ou enterrar</td></tr>
+        <tr><td>Frutificação</td><td>Casca de ovo + chorume</td><td>Quinzenal</td></tr>
+        <tr><td>Pós-colheita</td><td>Composto + NPK orgânico</td><td>Recuperar</td></tr>
+        <tr><td>Todo mês</td><td>Chá de composto</td><td>1 rega</td></tr>
+      </table>
+    </div>
+
+    <div class="warning-box">
+      <h4>Sinais de Fome</h4>
+      <ul>
+        <li>Folhas amarelando de baixo para cima</li>
+        <li>Queda excessiva de flores</li>
+        <li>Frutos pequenos ou caindo verdes</li>
+        <li>Crescimento estagnado</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 67</div>
+  </div>
+
+  <!-- PARTE 9: RECEITAS DE BIOFERTILIZANTES -->
+  <div class="page">
+    <h1>Parte 9: Receitas Completas de Biofertilizantes</h1>
+    <p>Aqui estão receitas testadas e aprovadas para você fazer em casa.</p>
+
+    <div class="recipe-box">
+      <h4>1. Super Chá de Banana Fermentado</h4>
+      <div class="materials-list">
+        <strong>Ingredientes:</strong>
+        <ul>
+          <li>5 cascas de banana bem maduras</li>
+          <li>2 litros de água sem cloro</li>
+          <li>1 colher de açúcar mascavo</li>
+          <li>Garrafa PET de 2L</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Pique as cascas em pedaços pequenos</p>
+        <p><span class="step-number">2</span> Coloque na garrafa com água e açúcar</p>
+        <p><span class="step-number">3</span> Feche sem apertar (vai gerar gás)</p>
+        <p><span class="step-number">4</span> Deixe em local escuro por 7-10 dias</p>
+        <p><span class="step-number">5</span> Abra para liberar gás a cada 2 dias</p>
+        <p><span class="step-number">6</span> Quando parar de borbulhar, está pronto</p>
+      </div>
+      <p><strong>Diluição:</strong> 1:10 para rega, 1:20 para foliar</p>
+      <p><strong>Melhor para:</strong> Floração e frutificação</p>
+      <p><strong>Validade:</strong> 3 meses em local fresco</p>
+    </div>
+    <div class="page-number">Página 68</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>2. Biofertilizante de Ovo e Vinagre (Cálcio Solúvel)</h4>
+      <div class="materials-list">
+        <strong>Ingredientes:</strong>
+        <ul>
+          <li>Cascas de 12 ovos (lavadas e secas)</li>
+          <li>500ml de vinagre branco</li>
+          <li>Pote de vidro com tampa</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Triture as cascas grosseiramente</p>
+        <p><span class="step-number">2</span> Coloque no pote de vidro</p>
+        <p><span class="step-number">3</span> Cubra com vinagre (vai borbulhar!)</p>
+        <p><span class="step-number">4</span> Deixe destampado até parar de fazer bolhas (1-3 dias)</p>
+        <p><span class="step-number">5</span> Coe e guarde</p>
+      </div>
+      <p><strong>Diluição:</strong> 1 colher de sopa por litro de água</p>
+      <p><strong>Aplicação:</strong> Pulverizar nas folhas ou regar</p>
+      <p><strong>Melhor para:</strong> Prevenção de podridão apical em tomates</p>
+      <p><strong>Validade:</strong> 6 meses</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>3. Água de Arroz Lactobacillus (LABS)</h4>
+      <div class="materials-list">
+        <strong>Ingredientes:</strong>
+        <ul>
+          <li>1 xícara de arroz cru</li>
+          <li>2 xícaras de água</li>
+          <li>1 copo de leite</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Lave o arroz na água, reserve o líquido leitoso</p>
+        <p><span class="step-number">2</span> Cubra com pano e deixe 3-5 dias até azedo</p>
+        <p><span class="step-number">3</span> Adicione ao leite (1:10) e espere separar</p>
+        <p><span class="step-number">4</span> Use a parte líquida (soro)</p>
+      </div>
+      <p><strong>Diluição:</strong> 1:20</p>
+      <p><strong>Benefício:</strong> Rico em lactobacilos que fortalecem plantas</p>
+    </div>
+    <div class="page-number">Página 69</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>4. Extrato de Alho (Repelente + Fortalecedor)</h4>
+      <div class="materials-list">
+        <strong>Ingredientes:</strong>
+        <ul>
+          <li>1 cabeça de alho</li>
+          <li>1 litro de água</li>
+          <li>1 colher de sabão neutro ralado</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Amasse os dentes de alho</p>
+        <p><span class="step-number">2</span> Deixe de molho na água por 24 horas</p>
+        <p><span class="step-number">3</span> Adicione o sabão e misture</p>
+        <p><span class="step-number">4</span> Coe e pulverize nas plantas</p>
+      </div>
+      <p><strong>Uso:</strong> Pulverização semanal</p>
+      <p><strong>Benefícios:</strong> Repele pulgões, fortalece imunidade</p>
+      <p><strong>Validade:</strong> Usar em 24 horas</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>5. Bokashi Caseiro</h4>
+      <div class="materials-list">
+        <strong>Ingredientes:</strong>
+        <ul>
+          <li>10 kg de farelo de trigo ou arroz</li>
+          <li>1 kg de torta de mamona</li>
+          <li>500g de farinha de osso</li>
+          <li>100ml de EM (micro-organismos eficazes)</li>
+          <li>100ml de melaço</li>
+          <li>Água (para umidade)</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Misture todos os ingredientes secos</p>
+        <p><span class="step-number">2</span> Dilua EM e melaço em água morna</p>
+        <p><span class="step-number">3</span> Umedeça a mistura (teste do punhado)</p>
+        <p><span class="step-number">4</span> Coloque em saco plástico, tire o ar</p>
+        <p><span class="step-number">5</span> Fermente por 15-21 dias</p>
+      </div>
+      <p><strong>Uso:</strong> 100g por vaso médio, enterrar levemente</p>
+    </div>
+    <div class="page-number">Página 70</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>6. Biofertilizante Completo "Supermagro Light"</h4>
+      <div class="materials-list">
+        <strong>Ingredientes:</strong>
+        <ul>
+          <li>20 litros de água sem cloro</li>
+          <li>2 kg de esterco fresco de vaca ou galinha</li>
+          <li>1 litro de leite</li>
+          <li>500ml de melaço ou 500g de açúcar mascavo</li>
+          <li>200g de cinza de madeira</li>
+          <li>1 kg de restos vegetais picados</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Coloque tudo em balde de 30L com tampa</p>
+        <p><span class="step-number">2</span> Mexa vigorosamente todos os dias</p>
+        <p><span class="step-number">3</span> Deixe fermentar por 30-45 dias</p>
+        <p><span class="step-number">4</span> Coe e dilua 1:10 para usar</p>
+      </div>
+      <p><strong>Diluição rega:</strong> 1:10</p>
+      <p><strong>Diluição foliar:</strong> 1:20</p>
+      <p><strong>Frequência:</strong> Quinzenal</p>
+      <p><strong>Validade:</strong> 4 meses</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>7. Chá de Confrei (Potássio Natural)</h4>
+      <div class="materials-list">
+        <strong>Ingredientes:</strong>
+        <ul>
+          <li>1 kg de folhas de confrei</li>
+          <li>10 litros de água</li>
+        </ul>
+      </div>
+      <p><strong>Preparo:</strong> Igual ao chá de urtiga, fermentar 3-4 semanas</p>
+      <p><strong>Diluição:</strong> 1:10</p>
+      <p><strong>Especial para:</strong> Floração e frutificação (rico em K)</p>
+    </div>
+    <div class="page-number">Página 71</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>8. Adubo de Cinza Líquido</h4>
+      <div class="materials-list">
+        <strong>Ingredientes:</strong>
+        <ul>
+          <li>1 xícara de cinza de madeira pura</li>
+          <li>5 litros de água</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Misture a cinza na água</p>
+        <p><span class="step-number">2</span> Deixe descansar por 24 horas</p>
+        <p><span class="step-number">3</span> Use o líquido para regar (sem coar)</p>
+      </div>
+      <p><strong>Nutrientes:</strong> Potássio, cálcio, magnésio</p>
+      <p><strong>Frequência:</strong> Quinzenal</p>
+      <p><strong>Cuidado:</strong> Não use em plantas que preferem solo ácido</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>9. Fertilizante de Peixe (Para Quem Não Tem Medo do Cheiro)</h4>
+      <div class="materials-list">
+        <strong>Ingredientes:</strong>
+        <ul>
+          <li>500g de restos de peixe (cabeça, espinhas)</li>
+          <li>10 litros de água</li>
+          <li>500g de açúcar mascavo</li>
+        </ul>
+      </div>
+      <div class="step-box">
+        <p><span class="step-number">1</span> Pique os restos e coloque em balde com tampa</p>
+        <p><span class="step-number">2</span> Adicione água e açúcar</p>
+        <p><span class="step-number">3</span> Fermente por 30-45 dias (MUITO CHEIRO!)</p>
+        <p><span class="step-number">4</span> Coe e dilua 1:20</p>
+      </div>
+      <p><strong>Nutrientes:</strong> N, P, Ca, micronutrientes</p>
+      <p><strong>Aviso:</strong> Faça bem longe de vizinhos!</p>
+    </div>
+    <div class="page-number">Página 72</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>10. Extrato Pirolenhoso (Vinagre de Madeira)</h4>
+      <p>Subproduto da queima de madeira em ambiente fechado. Pode ser comprado pronto.</p>
+      <div class="step-box">
+        <p><strong>Diluição para solo:</strong> 1:200</p>
+        <p><strong>Diluição foliar:</strong> 1:500</p>
+      </div>
+      <p><strong>Benefícios:</strong></p>
+      <ul>
+        <li>Estimula enraizamento</li>
+        <li>Aumenta absorção de nutrientes</li>
+        <li>Repele pragas</li>
+        <li>Acelera compostagem</li>
+      </ul>
+    </div>
+
+    <h3>Tabela Resumo de Biofertilizantes</h3>
+    <table>
+      <tr><th>Receita</th><th>Principal Nutriente</th><th>Tempo de Preparo</th><th>Validade</th></tr>
+      <tr><td>Chá de Banana</td><td>Potássio</td><td>7-10 dias</td><td>3 meses</td></tr>
+      <tr><td>Ovo + Vinagre</td><td>Cálcio</td><td>1-3 dias</td><td>6 meses</td></tr>
+      <tr><td>Água de Arroz</td><td>Lactobacilos</td><td>5-7 dias</td><td>1 mês</td></tr>
+      <tr><td>Extrato de Alho</td><td>Repelente</td><td>24 horas</td><td>24 horas</td></tr>
+      <tr><td>Bokashi</td><td>Completo</td><td>15-21 dias</td><td>6 meses</td></tr>
+      <tr><td>Supermagro</td><td>Completo</td><td>30-45 dias</td><td>4 meses</td></tr>
+      <tr><td>Chá de Confrei</td><td>Potássio</td><td>3-4 semanas</td><td>2 meses</td></tr>
+      <tr><td>Cinza Líquida</td><td>K, Ca</td><td>24 horas</td><td>Imediato</td></tr>
+    </table>
+    <div class="page-number">Página 73</div>
+  </div>
+
+  <!-- BÔNUS 1: FAQ -->
+  <div class="page">
+    <h1>Bônus 1: 30 Perguntas Frequentes</h1>
+
+    <div class="recipe-box">
+      <h4>1. Posso usar adubo químico junto com orgânico?</h4>
+      <p>Pode, mas não é ideal. O químico pode matar os micro-organismos que você está cultivando com orgânicos. Se for usar, aplique com 15 dias de intervalo.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>2. Minha composteira está com mau cheiro. O que fazer?</h4>
+      <p>Adicione urgentemente material seco (serragem, folhas secas). Mexa para aerar. Se o cheiro for de ovo podre, está faltando oxigênio.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>3. Quanto tempo demora para o húmus ficar pronto?</h4>
+      <p>No minhocário: 2-3 meses. Na composteira tradicional: 3-6 meses. Com Bokashi: 2-4 semanas (mais maturação no solo).</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>4. Posso usar esterco de cachorro ou gato?</h4>
+      <p><strong>NÃO!</strong> Fezes de carnívoros e onívoros podem conter patógenos perigosos que não são eliminados na compostagem caseira.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>5. A borra de café é ácida?</h4>
+      <p>Depois de usada, a borra tem pH quase neutro (6.5-6.8). A acidez foi para o café que você bebeu. Pode usar sem medo.</p>
+    </div>
+    <div class="page-number">Página 74</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>6. Quantas minhocas preciso para começar?</h4>
+      <p>500g de minhocas processam cerca de 250g de restos por dia. Para uma família média, 500g a 1kg é suficiente. Elas se reproduzem rapidamente.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>7. O chorume tem cheiro forte. É normal?</h4>
+      <p>Um leve cheiro é normal. Se estiver muito forte (ovo podre), algo está errado. Não use esse chorume e corrija a composteira.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>8. Posso usar cinza de churrasco?</h4>
+      <p>Depende. Se usou apenas madeira e carvão vegetal, sim. Se usou acendedor químico, carvão mineral ou madeira tratada, <strong>não use</strong>.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>9. Farinha de osso atrai animais?</h4>
+      <p>Pode atrair se deixada na superfície. Sempre enterre ou misture bem ao solo.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>10. Quanto tempo a casca de ovo demora para se decompor?</h4>
+      <p>Triturada fina: 3-6 meses. Em pedaços grandes: pode levar anos. Sempre triture o máximo possível!</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>11. Posso adubar plantas recém-transplantadas?</h4>
+      <p>Espere 2-3 semanas para as raízes se estabelecerem. Adubação imediata pode queimar raízes danificadas no transplante.</p>
+    </div>
+    <div class="page-number">Página 75</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>12. O que é torta de mamona e onde encontro?</h4>
+      <p>É o resíduo da extração do óleo de mamona. Rico em nitrogênio. Encontra em casas agropecuárias, garden centers ou online.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>13. Posso usar adubo de floração em folhosas?</h4>
+      <p>Não é ideal. Adubos de floração são ricos em P e K e pobres em N. Folhosas precisam de muito N para crescer.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>14. Cascas de cítricos podem ir na composteira?</h4>
+      <p>Em pequenas quantidades, sim. Excesso acidifica demais e pode matar minhocas. Máximo 10% do total.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>15. O que fazer com minhocas em excesso?</h4>
+      <p>Doe para amigos, venda, solte no jardim, ou use como alimento para peixes e galinhas. Minhocas são proteína pura!</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>16. Posso compostar papel de jornal?</h4>
+      <p>Sim, mas evite páginas coloridas e papel brilhante. Rasgue em tiras finas. Jornais modernos usam tinta à base de soja.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>17. Por que minhas plantas estão com folhas amarelas mesmo adubando?</h4>
+      <p>Pode ser: pH errado, excesso de água (raízes afogadas), pragas, ou o nutriente não está disponível. Não é sempre falta de adubo!</p>
+    </div>
+    <div class="page-number">Página 76</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>18. O que é NPK?</h4>
+      <p>N = Nitrogênio (crescimento), P = Fósforo (raízes/flores), K = Potássio (frutos/resistência). A fórmula 10-10-10 significa 10% de cada.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>19. Posso usar água da máquina de lavar para regar?</h4>
+      <p>Somente água do enxágue (sem sabão). Água com sabão, mesmo neutro, pode prejudicar plantas a longo prazo.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>20. Adubo orgânico pode queimar plantas?</h4>
+      <p>Se muito concentrado ou fresco (esterco não curtido), sim! Sempre dilua líquidos e use compostos bem maturados.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>21. Qual a diferença entre composto e húmus?</h4>
+      <p>Composto: resultado da decomposição por bactérias/fungos. Húmus: resultado da digestão por minhocas. Húmus é mais refinado e rico.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>22. Posso usar urina como adubo?</h4>
+      <p>Sim! Urina é rica em nitrogênio. Dilua 1:10 e use em plantas não-comestíveis ou folhosas que serão lavadas antes de consumir.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>23. Por que meu tomate tem podridão apical (fundo preto)?</h4>
+      <p>Falta de cálcio, geralmente causada por rega irregular. O cálcio não se move dentro da planta. Use casca de ovo e regue regularmente.</p>
+    </div>
+    <div class="page-number">Página 77</div>
+  </div>
+
+  <div class="page">
+    <div class="recipe-box">
+      <h4>24. Posso usar chá de ervas vencido como adubo?</h4>
+      <p>Sim! Chás de ervas são matéria orgânica. Dilua em água e use para regar. Evite chás com açúcar ou leite.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>25. O que é calda bordalesa?</h4>
+      <p>Mistura de sulfato de cobre + cal virgem. É um fungicida/bactericida permitido em agricultura orgânica. Também fornece cobre.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>26. Posso misturar diferentes adubos líquidos?</h4>
+      <p>Geralmente sim, desde que ambos estejam bem diluídos. Evite misturar ácidos (vinagre) com alcalinos (cinza) diretamente.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>27. Como sei se meu composto está pronto?</h4>
+      <p>Cor marrom escuro, cheiro de terra, textura homogênea, não identifica os materiais originais, temperatura ambiente.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>28. Moscas na composteira são normais?</h4>
+      <p>Moscas do vinagre (pequenas) são normais em pequena quantidade. Moscas grandes ou varejeiras indicam problema. Cubra melhor os restos.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>29. Posso compostar restos de comida cozida?</h4>
+      <p>Com moderação. Evite muito sal, óleo ou temperos fortes. Prefira compostar crus sempre que possível.</p>
+    </div>
+
+    <div class="recipe-box">
+      <h4>30. Qual o melhor adubo para iniciantes?</h4>
+      <p>Húmus de minhoca! É completo, equilibrado, impossível de errar a dose e não queima plantas. Comece por ele!</p>
+    </div>
+    <div class="page-number">Página 78</div>
+  </div>
+
+  <!-- BÔNUS 2: TABELAS -->
+  <div class="page">
+    <h1>Bônus 2: Tabelas de Conversão e Medidas</h1>
+
+    <h3>Medidas Caseiras</h3>
+    <table>
+      <tr><th>Medida</th><th>Equivalente (ml)</th><th>Equivalente (g)*</th></tr>
+      <tr><td>1 colher de chá</td><td>5 ml</td><td>3-5g</td></tr>
+      <tr><td>1 colher de sopa</td><td>15 ml</td><td>10-15g</td></tr>
+      <tr><td>1 xícara</td><td>240 ml</td><td>150-200g</td></tr>
+      <tr><td>1 copo americano</td><td>200 ml</td><td>120-160g</td></tr>
+      <tr><td>1 punhado</td><td>-</td><td>30-50g</td></tr>
+      <tr><td>1 litro</td><td>1000 ml</td><td>-</td></tr>
+    </table>
+    <p><em>*Varia conforme o material (pó, grânulo, líquido)</em></p>
+
+    <h3>Diluições Comuns</h3>
+    <table>
+      <tr><th>Proporção</th><th>Significa</th><th>Exemplo Prático</th></tr>
+      <tr><td>1:5</td><td>1 parte produto : 5 partes água</td><td>200ml + 1L água</td></tr>
+      <tr><td>1:10</td><td>1 parte produto : 10 partes água</td><td>100ml + 1L água</td></tr>
+      <tr><td>1:20</td><td>1 parte produto : 20 partes água</td><td>50ml + 1L água</td></tr>
+      <tr><td>1:50</td><td>1 parte produto : 50 partes água</td><td>20ml + 1L água</td></tr>
+      <tr><td>1:100</td><td>1 parte produto : 100 partes água</td><td>10ml + 1L água</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Dica:</strong> Sempre meça o produto concentrado primeiro, depois complete com água. Nunca o contrário!
+    </div>
+    <div class="page-number">Página 80</div>
+  </div>
+
+  <div class="page">
+    <h3>Quantidade de Adubo por Área</h3>
+    <table>
+      <tr><th>Área</th><th>Composto/Húmus</th><th>Bokashi</th><th>Farinha de Osso</th></tr>
+      <tr><td>Vaso pequeno (1-2L)</td><td>100g</td><td>20g</td><td>1 colher chá</td></tr>
+      <tr><td>Vaso médio (5-10L)</td><td>300g</td><td>50g</td><td>1 colher sopa</td></tr>
+      <tr><td>Vaso grande (15-30L)</td><td>500g</td><td>100g</td><td>2 colheres sopa</td></tr>
+      <tr><td>1 metro quadrado</td><td>2-4 kg</td><td>200g</td><td>100g</td></tr>
+      <tr><td>Cova de plantio</td><td>500g-1kg</td><td>50g</td><td>2 colheres sopa</td></tr>
+    </table>
+
+    <h3>Frequência de Adubação</h3>
+    <table>
+      <tr><th>Tipo de Planta</th><th>Adubo Sólido</th><th>Adubo Líquido</th></tr>
+      <tr><td>Folhosas (alface, couve)</td><td>Mensal</td><td>Semanal</td></tr>
+      <tr><td>Frutíferas (tomate, pimentão)</td><td>Mensal</td><td>Quinzenal</td></tr>
+      <tr><td>Raízes (cenoura, beterraba)</td><td>No plantio</td><td>Quinzenal</td></tr>
+      <tr><td>Temperos</td><td>Bimestral</td><td>Quinzenal</td></tr>
+      <tr><td>Frutíferas perenes</td><td>Trimestral</td><td>Mensal</td></tr>
+    </table>
+
+    <h3>Nutrientes por Fonte Caseira</h3>
+    <table>
+      <tr><th>Material</th><th>N</th><th>P</th><th>K</th><th>Ca</th><th>Outros</th></tr>
+      <tr><td>Húmus de minhoca</td><td>++</td><td>++</td><td>++</td><td>++</td><td>Completo</td></tr>
+      <tr><td>Casca de banana</td><td>+</td><td>++</td><td>+++</td><td>-</td><td>-</td></tr>
+      <tr><td>Borra de café</td><td>++</td><td>+</td><td>++</td><td>-</td><td>Acidifica</td></tr>
+      <tr><td>Casca de ovo</td><td>-</td><td>-</td><td>-</td><td>+++</td><td>-</td></tr>
+      <tr><td>Cinza de madeira</td><td>-</td><td>+</td><td>+++</td><td>++</td><td>Alcaliniza</td></tr>
+      <tr><td>Farinha de osso</td><td>+</td><td>+++</td><td>-</td><td>+++</td><td>-</td></tr>
+    </table>
+    <div class="page-number">Página 81</div>
+  </div>
+
+  <div class="page">
+    <h3>Checklist: Kit Básico de Adubação</h3>
+    <div class="highlight-box">
+      <h4>Para Começar (Custo: R$ 0-50)</h4>
+      <ul>
+        <li>☐ Balde de 20L com tampa (composteira simples)</li>
+        <li>☐ Serragem ou folhas secas (grátis)</li>
+        <li>☐ Cascas de ovo (guardando)</li>
+        <li>☐ Borra de café (guardando)</li>
+        <li>☐ Cascas de banana (guardando)</li>
+        <li>☐ Regador ou pulverizador</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Kit Intermediário (Custo: R$ 50-150)</h4>
+      <ul>
+        <li>☐ Minhocário de 3 caixas</li>
+        <li>☐ 500g de minhocas californianas</li>
+        <li>☐ Farinha de osso (1kg)</li>
+        <li>☐ Torta de mamona (1kg)</li>
+        <li>☐ Kit teste de pH</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Kit Avançado (adicional)</h4>
+      <ul>
+        <li>☐ Bokashi pronto ou EM para fazer</li>
+        <li>☐ Calcário dolomítico</li>
+        <li>☐ Sulfato de magnésio (sal amargo)</li>
+        <li>☐ Bomba de aquário (chá aerado)</li>
+        <li>☐ Termômetro de compostagem</li>
+      </ul>
+    </div>
+    <div class="page-number">Página 82</div>
+  </div>
+
+  <div class="page">
+    <h3>Calendário Anual de Adubação</h3>
+    <table>
+      <tr><th>Mês</th><th>Atividade Principal</th><th>Adubos Indicados</th></tr>
+      <tr><td>Janeiro</td><td>Manutenção verão</td><td>Chorume, casca de banana</td></tr>
+      <tr><td>Fevereiro</td><td>Frutificação</td><td>Casca de ovo, potássio</td></tr>
+      <tr><td>Março</td><td>Transição outono</td><td>Composto, preparar solo</td></tr>
+      <tr><td>Abril</td><td>Plantios de inverno</td><td>Húmus nas covas</td></tr>
+      <tr><td>Maio</td><td>Crescimento lento</td><td>Adubação leve</td></tr>
+      <tr><td>Junho</td><td>Descanso</td><td>Enriquecer canteiros vazios</td></tr>
+      <tr><td>Julho</td><td>Preparação</td><td>Calcário se necessário</td></tr>
+      <tr><td>Agosto</td><td>Fim do inverno</td><td>Composto, húmus</td></tr>
+      <tr><td>Setembro</td><td>Início primavera</td><td>Nitrogênio, chá de urtiga</td></tr>
+      <tr><td>Outubro</td><td>Crescimento intenso</td><td>Adubação completa</td></tr>
+      <tr><td>Novembro</td><td>Floração</td><td>Fósforo, potássio</td></tr>
+      <tr><td>Dezembro</td><td>Frutificação</td><td>Cálcio, potássio</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>Lembre-se:</strong> Este calendário é para o Brasil (hemisfério sul). Adapte conforme sua região e microclima!
+    </div>
+    <div class="page-number">Página 83</div>
+  </div>
+
+  <!-- CONCLUSÃO -->
+  <div class="page">
+    <h1>Conclusão</h1>
+    <p>Parabéns por chegar até aqui! Agora você tem todo o conhecimento necessário para:</p>
+
+    <div class="highlight-box">
+      <ul>
+        <li>Fazer adubos caseiros de alta qualidade</li>
+        <li>Montar e manter uma composteira</li>
+        <li>Diagnosticar e corrigir deficiências nutricionais</li>
+        <li>Economizar centenas de reais por ano em adubos</li>
+        <li>Produzir alimentos mais saudáveis e saborosos</li>
+        <li>Reduzir seu impacto ambiental</li>
+      </ul>
+    </div>
+
+    <h3>Próximos Passos</h3>
+    <ol>
+      <li>Escolha UM tipo de adubo caseiro para começar (sugiro casca de banana)</li>
+      <li>Monte uma composteira simples (minhocário ou baldes)</li>
+      <li>Comece a guardar restos orgânicos</li>
+      <li>Observe suas plantas e aprenda com elas</li>
+      <li>Gradualmente, expanda para outros adubos</li>
+    </ol>
+
+    <div class="tip-box">
+      <strong>Lembre-se:</strong> Não precisa fazer tudo de uma vez! Comece simples e vá evoluindo. O importante é começar.
+    </div>
+
+    <h3>Precisa de Mais Ajuda?</h3>
+    <p>Visite nosso site para mais conteúdos:</p>
+    <p><strong>minhahortaemcasa.com.br</strong></p>
+
+    <div class="page-number">Página 84</div>
+  </div>
+
+  <div class="cover" style="min-height: 50vh;">
+    <div class="mascote">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="115" rx="25" ry="4" fill="#15803d" fill-opacity="0.15"/>
+        <path d="M30 85H70L65 110H35L30 85Z" fill="url(#potGrad2)" stroke="#b5441c" stroke-width="2"/>
+        <path d="M27 80H73V88H27V80Z" fill="#db5a21" stroke="#b5441c" stroke-width="2" rx="3"/>
+        <ellipse cx="50" cy="85" rx="18" ry="4" fill="#5c4033"/>
+        <ellipse cx="50" cy="55" rx="28" ry="30" fill="url(#bodyGrad2)" stroke="#15803d" stroke-width="2.5"/>
+        <ellipse cx="40" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="60" cy="50" rx="4" ry="5" fill="#15803d"/>
+        <ellipse cx="41" cy="48" rx="1.5" ry="2" fill="white"/>
+        <ellipse cx="61" cy="48" rx="1.5" ry="2" fill="white"/>
+        <path d="M38 62C38 62 50 72 62 62" stroke="#15803d" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="4" ry="3" fill="#fca5a5" fill-opacity="0.5"/>
+        <path d="M50 30C50 30 45 15 42 5C48 5 52 15 50 30Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M50 30C50 30 55 15 58 5C52 5 48 15 50 30Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M40 35C40 35 28 25 20 20C28 18 38 25 40 35Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+        <path d="M60 35C60 35 72 25 80 20C72 18 62 25 60 35Z" fill="#4ade80" stroke="#15803d" stroke-width="1.5"/>
+        <defs>
+          <linearGradient id="potGrad2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ea7531"/><stop offset="100%" stop-color="#b5441c"/></linearGradient>
+          <radialGradient id="bodyGrad2" cx="40%" cy="30%"><stop offset="0%" stop-color="#86efac"/><stop offset="50%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <h2 style="color: #15803d;">Bons cultivos!</h2>
+    <p>Minha Horta em Casa</p>
+    <p style="color: #22c55e;">minhahortaemcasa.com.br</p>
+  </div>
+</body>
+</html>
