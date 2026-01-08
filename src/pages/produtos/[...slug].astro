@@ -74,7 +74,9 @@ const categoryLabels: Record<string, string> = {
 
             <!-- CTA Button -->
             <a
-              href="#comprar"
+              href={entry.data.checkoutUrl || '#comprar'}
+              target={entry.data.checkoutUrl ? "_blank" : undefined}
+              rel={entry.data.checkoutUrl ? "noopener noreferrer" : undefined}
               class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 text-white rounded-lg font-bold text-lg hover:bg-primary-700 transition-colors"
             >
               Comprar Agora
@@ -138,14 +140,15 @@ const categoryLabels: Record<string, string> = {
           </span>
         </div>
         <a
-          href="#"
-          data-checkout={entry.slug}
+          href={entry.data.checkoutUrl || '#'}
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center justify-center px-8 py-4 bg-white text-leaf-700 rounded-xl font-bold text-lg hover:bg-gray-100 hover:shadow-lg transition-all"
         >
           Comprar Agora - R$ {entry.data.price}
         </a>
         <p class="text-primary-100 text-sm mt-4">
-          Pagamento seguro via Kiwify. Cartão, PIX ou boleto.
+          Pagamento seguro via PagTrust. Cartão, PIX ou boleto.
         </p>
       </section>
 
