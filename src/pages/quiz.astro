@@ -1470,7 +1470,11 @@ import Mascote from '../components/illustrations/Mascote.astro';
     const target = document.querySelector(`[data-question="${num}"]`);
     if (target) {
       target.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Scroll para o container do quiz, não para o topo da página
+      const progressContainer = document.getElementById('progress-container');
+      if (progressContainer) {
+        progressContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   }
 
@@ -1647,6 +1651,8 @@ import Mascote from '../components/illustrations/Mascote.astro';
 
     document.getElementById('progress-container').style.display = 'none';
     showQuestion('result');
+    // Scroll para o resultado (resultContainer já foi declarado acima)
+    resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   // Event listeners
