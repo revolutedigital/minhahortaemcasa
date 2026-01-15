@@ -1487,39 +1487,49 @@ import Mascote from '../components/illustrations/Mascote.astro';
   }
 
   function determineProfile() {
-    // Lógica de determinação de perfil baseada nos scores
-    let profile = 'iniciante_economico'; // default
+    // Sistema de pontuação ponderada - calcula score para cada perfil
+    const profileScores = {
+      hidroponia_tech: (scores.interesse_hidro || 0) * 3 + (scores.tech || 0) * 2,
+      pimentas_especialista: (scores.interesse_pimenta || 0) * 3 + (scores.especialista || 0) * 2,
+      sustentavel_compost: (scores.interesse_compost || 0) * 3 + (scores.mot_sustentavel || 0) * 2 + (scores.sustentavel || 0),
+      rapido_microverdes: (scores.tempo_urgente || 0) * 2 + (scores.ansioso || 0) + (scores.escala_mini || 0),
+      ocupado_viajante: (scores.viaja_muito || 0) * 2 + (scores.rega_esquece || 0) * 2 + (scores.tempo_pouco || 0) + (scores.precisa_auto || 0),
+      apartamento_sombra: (scores.sol_pouco || 0) * 2 + (scores.tipo_sombra || 0) * 2 + (scores.esp_limitado || 0),
+      vertical_espaco: (scores.esp_limitado || 0) * 2 + (scores.medo_espaco || 0) * 2 + (scores.precisa_vertical || 0) + (scores.esp_mini || 0),
+      pragas_problemas: (scores.prob_pragas || 0) * 2 + (scores.medo_pragas || 0) * 2 + (scores.precisa_pragas || 0),
+      temperos_pratico: (scores.quer_temperos || 0) * 3 + (scores.pratico || 0) + (scores.escala_mini || 0),
+      saladas_producao: (scores.quer_folhosas || 0) * 3 + (scores.producao || 0) + (scores.escala_media || 0),
+      chas_medicinal: (scores.quer_chas || 0) * 3 + (scores.medicinal || 0) * 2,
+      iniciante_ansioso: (scores.medo_matar || 0) * 2 + (scores.medo_comecar || 0) * 2 + (scores.inseguro || 0) + (scores.precisa_guia || 0),
+      iniciante_economico: (scores.orcamento_mini || 0) * 2 + (scores.economico || 0) * 2 + (scores.perfil_iniciante || 0) + (scores.exp || 0 < 2 ? 2 : 0)
+    };
 
-    // Verificar condições especiais primeiro
-    if (scores.interesse_hidro >= 4) {
-      profile = 'hidroponia_tech';
-    } else if (scores.interesse_pimenta >= 4) {
-      profile = 'pimentas_especialista';
-    } else if (scores.interesse_compost >= 4 || scores.mot_sustentavel >= 3) {
-      profile = 'sustentavel_compost';
-    } else if (scores.tempo_urgente >= 4 || scores.ansioso >= 2) {
-      profile = 'rapido_microverdes';
-    } else if (scores.viaja_muito >= 4 || scores.rega_esquece >= 4) {
-      profile = 'ocupado_viajante';
-    } else if (scores.sol_pouco >= 4 || scores.tipo_sombra >= 3) {
-      profile = 'apartamento_sombra';
-    } else if (scores.esp_limitado >= 4 || scores.medo_espaco >= 4) {
-      profile = 'vertical_espaco';
-    } else if (scores.prob_pragas >= 4 || scores.medo_pragas >= 4) {
-      profile = 'pragas_problemas';
-    } else if (scores.quer_temperos >= 4) {
-      profile = 'temperos_pratico';
-    } else if (scores.quer_folhosas >= 4) {
-      profile = 'saladas_producao';
-    } else if (scores.quer_chas >= 4 || scores.medicinal >= 2) {
-      profile = 'chas_medicinal';
-    } else if (scores.medo_matar >= 4 || scores.medo_comecar >= 4) {
-      profile = 'iniciante_ansioso';
-    } else if (scores.orcamento_mini >= 4 || scores.economico >= 3) {
-      profile = 'iniciante_economico';
+    // Encontrar o perfil com maior pontuação
+    let bestProfile = 'iniciante_economico';
+    let bestScore = 0;
+
+    for (const [profile, score] of Object.entries(profileScores)) {
+      if (score > bestScore) {
+        bestScore = score;
+        bestProfile = profile;
+      }
     }
 
-    return profile;
+    // Se nenhum perfil teve pontuação significativa (< 4), default para iniciante
+    if (bestScore < 4) {
+      // Verificar se é iniciante ou já tem experiência
+      if ((scores.exp || 0) >= 3) {
+        bestProfile = 'temperos_pratico'; // já tem experiência, recomendar algo prático
+      } else {
+        bestProfile = 'iniciante_economico';
+      }
+    }
+
+    console.log('Scores:', scores);
+    console.log('Profile Scores:', profileScores);
+    console.log('Best Profile:', bestProfile, 'Score:', bestScore);
+
+    return bestProfile;
   }
 
   function showResult() {
@@ -1603,8 +1613,8 @@ import Mascote from '../components/illustrations/Mascote.astro';
             <p class="text-sm text-gray-600 mb-4 text-center">
               <strong>Por que este guia?</strong> Ele foi criado especificamente para resolver os desafios do perfil "${profile.title}".
             </p>
-            <a href="${mainProduct.checkoutUrl}" target="_blank" class="btn-primary w-full text-center text-lg py-4 block">
-              Quero Este Guia - R$ ${mainProduct.price}
+            <a href="/produtos/${mainProduct.slug}" class="btn-primary w-full text-center text-lg py-4 block">
+              Ver Guia Completo - R$ ${mainProduct.price}
               <svg class="w-5 h-5 ml-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -1619,7 +1629,7 @@ import Mascote from '../components/illustrations/Mascote.astro';
         <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">Também combinam com seu perfil:</h3>
         <div class="grid sm:grid-cols-2 gap-4">
           ${secondaryProducts.map(p => `
-            <a href="${p.checkoutUrl}" target="_blank" class="block p-5 bg-white rounded-xl border border-gray-200 hover:border-leaf-300 hover:shadow-lg transition-all group">
+            <a href="/produtos/${p.slug}" class="block p-5 bg-white rounded-xl border border-gray-200 hover:border-leaf-300 hover:shadow-lg transition-all group">
               <div class="flex items-center gap-4 mb-3">
                 <span class="text-3xl">${p.icon}</span>
                 <div class="flex-1">
